@@ -729,6 +729,8 @@ The approach for all the modifications is the same - take a log resolution, choo
 
 Perhaps the most useful form of modification is a dlt modification. The main difficulty versus a terminalisation arises from the need to run an MMP for a pair which is not klt.
 
+\myworries{This section needs more care vis a vis Bertini}
+
 \begin{theorem}
 	Let $(X,\Delta)$ an $R$ pair. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
 	\begin{itemize}
@@ -774,7 +776,7 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 
 The case that $(X,\Delta)$ is dlt, or even klt, is particularly important and is called a $\mathbb{Q}$-factorialisation.
 
-A useful application of DLT modifications is the following generalisation of the Cone Theorem.
+A useful application of DLT modifications is the study of the NKLT locus. In particular we have following generalisation of the Cone Theorem as well as a connectedness result for suitable pairs.
 
 	\begin{theorem}[Nlc Cone Theorem]\label{WCT}
 	Let $(X,B)/T$ be an $R$-pair with the coefficients $B$ bounded above by $1$. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
@@ -803,7 +805,7 @@ A useful application of DLT modifications is the following generalisation of the
 \end{proof}
 
 
-\begin{theorem}
+\begin{theorem}[Weak Connectedness Lemma]\label{WLC}
 	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres such that the coefficients of $\Delta$ bounded above by $1$. Then if $-(K_{X}+\Delta)$ is big and nef, $\text{Nklt}(X,\Delta)$ is either empty or connected.
 \end{theorem}
 
@@ -830,6 +832,7 @@ A useful application of DLT modifications is the following generalisation of the
 	Otherwise have that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected by induction, a contradiction.
 \end{proof}
 
+\myworries{What if $-(K_{X}+B)$ is nef? What about close to a fibre?}
 
 Dlt modifications are also closely related to the study of adjunction.
 
