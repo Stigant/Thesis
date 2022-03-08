@@ -1,117 +1,117 @@
-%\documentclass[a4paper,12pt]{book}
-%\usepackage[a4paper, margin=1in]{geometry}
-%\setlength{\parindent}{0cm}
-%\setlength{\parskip}{1\baselineskip}
-%
-%\setcounter{secnumdepth}{4}
-%\usepackage{amsthm}
-%\usepackage{aliascnt}
-%\usepackage{amsmath,amssymb,amsfonts}
-%\usepackage{hyperref}
-%\usepackage[shortlabels]{enumitem}
-%
-%\usepackage{tikz-cd}
-%
-%\newcommand{\basetheorem}[3]{
-%	\newtheorem{#1}{#2}[#3]
-%	\newtheorem*{#1*}{#2}
-%	\expandafter\def\csname #1autorefname\endcsname{#2}
-%}
-%\newcommand{\maketheorem}[3]{
-%	\newaliascnt{#1}{#3}
-%	\newtheorem{#1}[#1]{#2}
-%	\aliascntresetthe{#1}
-%	\expandafter\def\csname #1autorefname\endcsname{#2}
-%	\newtheorem{#1*}{#2}
-%}
-%
-%%\theoremstyle{plain}
-%\basetheorem{theorem}{Theorem}{section}
-%\maketheorem{definition}{Definition}{theorem}
-%\maketheorem{lemma}{Lemma}{theorem}
-%\maketheorem{example}{Example}{theorem}
-%\maketheorem{corollary}{Corollary}{theorem}
-%\maketheorem{conjecture}{Conjecture}{theorem}
-%\maketheorem{proposition}{Proposition}{theorem}
-%\maketheorem{question}{Question}{theorem}
-%\maketheorem{remark}{Remark}{theorem}
-%
-%\makeatletter
-%\newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
-%\makeatother
-%\makeatletter
-%\@namedef{subjclassname@2020}{%
-%	\textup{2020} Mathematics Subject Classification}
-%\makeatother
-%
-%
-%%\newreptheorem{theorem}{Theorem}
-%
-%%begin: Iacopo-defined newcommands
-%\DeclareMathOperator{\Spec}{Spec}
-%\DeclareMathOperator{\Proj}{Proj}
-%\newcommand{\bP}{\mathbb{P}}
-%\newcommand{\bR}{\mathbb{R}}
-%\newcommand{\bQ}{\mathbb{Q}}
-%\newcommand{\bN}{\mathbb{N}}
-%\newcommand{\bZ}{\mathbb{Z}}
-%\newcommand{\fB}{\mathbf{B}}
-%\newcommand{\fM}{\mathbf{M}}
-%\newcommand{\charac}{\textup{char }}
-%\newcommand{\id}{\textup{id}}
-%\newcommand{\Alb}{\textup{Alb}}
-%\newcommand{\cO}{\mathcal{O}}
-%\newcommand{\red}{\textup{red}}
-%\newcommand{\lct}{\textup{lct}}
-%\newcommand{\exc}{\textup{Ex}}
-%\newcommand{\coeff}{\textup{coeff}}
-%\newcommand{\cent}{\textup{centre}}
-%\newcommand{\codim}{\textup{codim}}
-%\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
-%\newcommand{\rk}{\textup{rk}}
-%\newcommand{\WDiv}{\textup{WDiv}}
-%%end: Iacopo-defined newcommands
-%
-%
-%\newcommand{\A}{\mathcal{A}}
-%\newcommand{\B}{\mathcal{B}}
-%\newcommand{\C}{\mathcal{C}}
-%\newcommand{\E}{\mathcal{E}}
-%\newcommand{\F}{\mathcal{F}}
-%\newcommand{\PP}{\mathcal{P}}
-%\newcommand{\HH}{\mathcal{H}}
-%\newcommand{\SB}{\mathbf{SB}}
-%\newcommand{\BB}{\mathbf{B}}
-%\newcommand{\BS}{\mathbf{B}_{+}}
-%\newcommand{\disc}{\text{Discrepancy}}
-%
-%
-%\newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
-%\newcommand{\at}[1]{\mathcal{A}^{\geq #1}}
-%\newcommand{\tb}[1]{\mathcal{B}^{\leq #1}}
-%\newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
-%\newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
-%\newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
-%\newcommand{\nklt}{\textup{Nklt}}
-%\newcommand{\Ht}[1]{H^{i}_{t}}
-%\newcommand{\orth}{^{\perp}}
-%\newcommand{\Hom}{\textup{Hom}}
-%\newcommand{\shom}{\mathcal{H}\textup{om}}
-%\newcommand{\Fe}{F^{e}_{*}}
-%\newcommand{\Fn}[1]{F^{#1}_{*}}
-%\newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
-%\newcommand{\ai}{\alpha_{\bullet}}
-%\newcommand{\im}{\textup{Im}}
-%\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
-%\newcommand{\me}{M^{e}_{\Delta,a^{t}}}
-%\newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
-%\newcommand{\zp}{\mathbb{Z}_{(p)}}
-%\newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
-%\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
-%\newcommand{\coker}{\text{coker }}
-%\newcommand\myworries[1]{\textcolor{red}{#1}}
-%
-%\begin{document}
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper, margin=1in]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1\baselineskip}
+
+\setcounter{secnumdepth}{4}
+\usepackage{amsthm}
+\usepackage{aliascnt}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{tikz-cd}
+
+\newcommand{\basetheorem}[3]{
+	\newtheorem{#1}{#2}[#3]
+	\newtheorem*{#1*}{#2}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+}
+\newcommand{\maketheorem}[3]{
+	\newaliascnt{#1}{#3}
+	\newtheorem{#1}[#1]{#2}
+	\aliascntresetthe{#1}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+	\newtheorem{#1*}{#2}
+}
+
+%\theoremstyle{plain}
+\basetheorem{theorem}{Theorem}{section}
+\maketheorem{definition}{Definition}{theorem}
+\maketheorem{lemma}{Lemma}{theorem}
+\maketheorem{example}{Example}{theorem}
+\maketheorem{corollary}{Corollary}{theorem}
+\maketheorem{conjecture}{Conjecture}{theorem}
+\maketheorem{proposition}{Proposition}{theorem}
+\maketheorem{question}{Question}{theorem}
+\maketheorem{remark}{Remark}{theorem}
+
+\makeatletter
+\newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
+\makeatother
+\makeatletter
+\@namedef{subjclassname@2020}{%
+	\textup{2020} Mathematics Subject Classification}
+\makeatother
+
+
+%\newreptheorem{theorem}{Theorem}
+
+%begin: Iacopo-defined newcommands
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\fB}{\mathbf{B}}
+\newcommand{\fM}{\mathbf{M}}
+\newcommand{\charac}{\textup{char }}
+\newcommand{\id}{\textup{id}}
+\newcommand{\Alb}{\textup{Alb}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\red}{\textup{red}}
+\newcommand{\lct}{\textup{lct}}
+\newcommand{\exc}{\textup{Ex}}
+\newcommand{\coeff}{\textup{coeff}}
+\newcommand{\cent}{\textup{centre}}
+\newcommand{\codim}{\textup{codim}}
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+\newcommand{\rk}{\textup{rk}}
+\newcommand{\WDiv}{\textup{WDiv}}
+%end: Iacopo-defined newcommands
+
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\SB}{\mathbf{SB}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\BS}{\mathbf{B}_{+}}
+\newcommand{\disc}{\text{Discrepancy}}
+
+
+\newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
+\newcommand{\at}[1]{\mathcal{A}^{\geq #1}}
+\newcommand{\tb}[1]{\mathcal{B}^{\leq #1}}
+\newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
+\newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
+\newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
+\newcommand{\nklt}{\textup{Nklt}}
+\newcommand{\Ht}[1]{H^{i}_{t}}
+\newcommand{\orth}{^{\perp}}
+\newcommand{\Hom}{\textup{Hom}}
+\newcommand{\shom}{\mathcal{H}\textup{om}}
+\newcommand{\Fe}{F^{e}_{*}}
+\newcommand{\Fn}[1]{F^{#1}_{*}}
+\newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
+\newcommand{\ai}{\alpha_{\bullet}}
+\newcommand{\im}{\textup{Im}}
+\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
+\newcommand{\me}{M^{e}_{\Delta,a^{t}}}
+\newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
+\newcommand{\zp}{\mathbb{Z}_{(p)}}
+\newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
+\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
+\newcommand{\coker}{\text{coker }}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\begin{document}
 \chapter{Preliminaries}
 \section{Singularity Theory}
 
@@ -987,8 +987,8 @@ It also holds in dimension $4$ when the residue field is perfect, under the assu
 
 
 
-%\bibliography{refs}
-%\bibliographystyle{alpha}
-%\end{document}
+\bibliography{refs}
+\bibliographystyle{alpha}
+\end{document}
 
 

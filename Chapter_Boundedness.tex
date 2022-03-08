@@ -1,115 +1,113 @@
-%\documentclass[a4paper,12pt]{book}
-%\usepackage[a4paper, margin=1in]{geometry}
-%\setlength{\parindent}{0cm}
-%\setlength{\parskip}{1\baselineskip}
-%
-%\setcounter{secnumdepth}{4}
-%\usepackage{amsthm}
-%\usepackage{aliascnt}
-%\usepackage{amsmath,amssymb,amsfonts}
-%\usepackage{xr-hyper}
-%\usepackage{hyperref}
-%\usepackage[shortlabels]{enumitem}
-%
-%\usepackage{tikz-cd}
-%
-%
-%
-%
-%\newcommand{\basetheorem}[3]{
-%	\newtheorem{#1}{#2}[#3]
-%	\newtheorem*{#1*}{#2}
-%	\expandafter\def\csname #1autorefname\endcsname{#2}
-%}
-%\newcommand{\maketheorem}[3]{
-%	\newaliascnt{#1}{#3}
-%	\newtheorem{#1}[#1]{#2}
-%	\aliascntresetthe{#1}
-%	\expandafter\def\csname #1autorefname\endcsname{#2}
-%	\newtheorem{#1*}{#2}
-%}
-%
-%%\theoremstyle{plain}
-%\basetheorem{theorem}{Theorem}{section}
-%\maketheorem{definition}{Definition}{theorem}
-%\maketheorem{lemma}{Lemma}{theorem}
-%\maketheorem{example}{Example}{theorem}
-%\maketheorem{corollary}{Corollary}{theorem}
-%\maketheorem{conjecture}{Conjecture}{theorem}
-%\maketheorem{proposition}{Proposition}{theorem}
-%\maketheorem{question}{Question}{theorem}
-%\maketheorem{remark}{Remark}{theorem}
-%
-%
-%\usepackage{etoolbox}
-%\AtBeginEnvironment{theorem}
-%{\setlength{\parskip}{0.5em}}
-%\AtBeginEnvironment{itemize}
-%{\setlength{\parskip}{0em}}
-%\AtBeginEnvironment{enumerate}
-%{\setlength{\parskip}{0em}}
-%\AtBeginEnvironment{reptheorem}
-%{\setlength{\parskip}{0.5em}}
-%
-%\makeatletter
-%\newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
-%\makeatother
-%\makeatletter
-%\@namedef{subjclassname@2020}{%
-%	\textup{2020} Mathematics Subject Classification}
-%\makeatother
-%
-%
-%
-%
-%
-%\newreptheorem{theorem}{Theorem}
-%
-%\newcommand{\A}{\mathcal{A}}
-%\newcommand{\B}{\mathcal{B}}
-%\newcommand{\C}{\mathcal{C}}
-%\newcommand{\D}{\Delta}
-%\newcommand{\Vol}{\text{Vol}}
-%\newcommand{\Sing}{\text{Sing}}
-%\newcommand{\E}{\mathcal{E}}
-%\newcommand{\F}{\mathcal{F}}
-%\newcommand{\PP}{\mathcal{P}}
-%\newcommand{\HH}{\mathcal{H}}
-%\newcommand{\SB}{\mathbf{SB}}
-%\newcommand{\BS}{\mathbf{B}_{+}}
-%\newcommand{\disc}{\text{Discrepancy}}
-%
-%
-%\newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
-%\newcommand{\at}[1]{\mathcal{A}^{\geq #1}}
-%\newcommand{\tb}[1]{\mathcal{B}^{\leq #1}}
-%\newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
-%\newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
-%\newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
-%\newcommand{\nklt}{\text{Nklt}}
-%\newcommand{\Ht}[1]{H^{i}_{t}}
-%\newcommand{\orth}{^{\perp}}
-%\newcommand{\Hom}{\text{Hom}}
-%\newcommand{\Fe}{F^{e}_{*}}
-%\newcommand{\Fn}[1]{F^{#1}_{*}}
-%\newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
-%\newcommand{\ai}{\alpha_{\bullet}}
-%\newcommand{\im}{\text{Im}}
-%\newcommand{\ox}{\mathcal{O}_{X}}
-%\newcommand{\me}{M^{e}_{\Delta,a^{t}}}
-%\newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
-%\newcommand{\zp}{\mathbb{Z}_{(p)}}
-%\newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
-%\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
-%
-%\usepackage{xcolor}
-%\newcommand\myworries[1]{\textcolor{red}{#1}}
-%
-%\newcommand{\coker}{\text{coker }}
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper, margin=1in]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1\baselineskip}
 
-%\begin{document}
-	
-	%\externaldocument{Chapter - Preliminaries}
+\setcounter{secnumdepth}{4}
+\usepackage{amsthm}
+\usepackage{aliascnt}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{tikz-cd}
+
+
+
+
+\newcommand{\basetheorem}[3]{
+	\newtheorem{#1}{#2}[#3]
+	\newtheorem*{#1*}{#2}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+}
+\newcommand{\maketheorem}[3]{
+	\newaliascnt{#1}{#3}
+	\newtheorem{#1}[#1]{#2}
+	\aliascntresetthe{#1}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+	\newtheorem{#1*}{#2}
+}
+
+%\theoremstyle{plain}
+\basetheorem{theorem}{Theorem}{section}
+\maketheorem{definition}{Definition}{theorem}
+\maketheorem{lemma}{Lemma}{theorem}
+\maketheorem{example}{Example}{theorem}
+\maketheorem{corollary}{Corollary}{theorem}
+\maketheorem{conjecture}{Conjecture}{theorem}
+\maketheorem{proposition}{Proposition}{theorem}
+\maketheorem{question}{Question}{theorem}
+\maketheorem{remark}{Remark}{theorem}
+
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{theorem}
+{\setlength{\parskip}{0.5em}}
+\AtBeginEnvironment{itemize}
+{\setlength{\parskip}{0em}}
+\AtBeginEnvironment{enumerate}
+{\setlength{\parskip}{0em}}
+\AtBeginEnvironment{reptheorem}
+{\setlength{\parskip}{0.5em}}
+
+\makeatletter
+\newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
+\makeatother
+\makeatletter
+\@namedef{subjclassname@2020}{%
+	\textup{2020} Mathematics Subject Classification}
+\makeatother
+
+
+
+
+
+\newreptheorem{theorem}{Theorem}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\Delta}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\Sing}{\text{Sing}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\SB}{\mathbf{SB}}
+\newcommand{\BS}{\mathbf{B}_{+}}
+\newcommand{\disc}{\text{Discrepancy}}
+
+
+\newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
+\newcommand{\at}[1]{\mathcal{A}^{\geq #1}}
+\newcommand{\tb}[1]{\mathcal{B}^{\leq #1}}
+\newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
+\newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
+\newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
+\newcommand{\nklt}{\text{Nklt}}
+\newcommand{\Ht}[1]{H^{i}_{t}}
+\newcommand{\orth}{^{\perp}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Fe}{F^{e}_{*}}
+\newcommand{\Fn}[1]{F^{#1}_{*}}
+\newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
+\newcommand{\ai}{\alpha_{\bullet}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\ox}{\mathcal{O}_{X}}
+\newcommand{\me}{M^{e}_{\Delta,a^{t}}}
+\newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
+\newcommand{\zp}{\mathbb{Z}_{(p)}}
+\newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
+\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
+
+\usepackage{xcolor}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\newcommand{\coker}{\text{coker }}
+
+\begin{document}
 	
 	\chapter{Boundedness of Globally $F$-split varieties}
 	
@@ -837,10 +835,10 @@ Though the proof is given for characteristic zero, it is essentially an arithmet
 	
 	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{setup} this is bounded.	
 	\end{proof}
-%\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 
-%\bibliography{refs}
-%\bibliographystyle{alpha}
+\bibliography{refs}
+\bibliographystyle{alpha}
 	
 	
-%\end{document}
+\end{document}
