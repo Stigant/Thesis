@@ -76,12 +76,14 @@
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\Delta}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\Sing}{\text{Sing}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\PP}{\mathcal{P}}
 \newcommand{\HH}{\mathcal{H}}
 \newcommand{\SB}{\mathbf{SB}}
-\newcommand{\BB}{\mathbf{B}}
 \newcommand{\BS}{\mathbf{B}_{+}}
 \newcommand{\disc}{\text{Discrepancy}}
 
@@ -92,23 +94,20 @@
 \newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
 \newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
 \newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
-\newcommand{\nklt}{\textup{Nklt}}
+\newcommand{\nklt}{\text{Nklt}}
 \newcommand{\Ht}[1]{H^{i}_{t}}
 \newcommand{\orth}{^{\perp}}
-\newcommand{\Hom}{\textup{Hom}}
-\newcommand{\shom}{\mathcal{H}\textup{om}}
+\newcommand{\Hom}{\text{Hom}}
 \newcommand{\Fe}{F^{e}_{*}}
 \newcommand{\Fn}[1]{F^{#1}_{*}}
 \newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
 \newcommand{\ai}{\alpha_{\bullet}}
-\newcommand{\im}{\textup{Im}}
-\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\ox}{\mathcal{O}_{X}}
 \newcommand{\me}{M^{e}_{\Delta,a^{t}}}
 \newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
 \newcommand{\zp}{\mathbb{Z}_{(p)}}
 \newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
-\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
-\newcommand{\coker}{\text{coker }}
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 
 \begin{document}
@@ -802,6 +801,35 @@ A useful application of DLT modifications is the following generalisation of the
 	
 	Since each $R$ is the pushforward of a $(K_{Y}+B_{Y})$ negative extremal ray, there are only countably many generating curves $C_{i}$ and they cannot accumulate in $(K_{X}+\Delta)_{< 0}$ else they would accumulate on $Y$ also.
 \end{proof}
+
+
+\begin{theorem}
+	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres such that the coefficients of $\Delta$ bounded above by $1$. Then if $-(K_{X}+\Delta)$ is big and nef, $\text{Nklt}(X,\Delta)$ is either empty or connected.
+\end{theorem}
+
+\begin{proof}
+	
+	Writing $-K_{X}+\Delta=A+E$ for suitably small $E$ such that $\text{Nklt}(X,\Delta)=\text{Nklt}(X,\Delta+E)$, we may replace $\Delta$ with $\Delta+E$ and assume that $-(K_{X}+\Delta)$ is ample. If $(X,\Delta)$ is klt, the result is trivial so assume otherwise.
+	
+	We prove this by induction. Suppose first that $(X,\Delta)$ has dimension $1$, then $R$ is a field. If $-(K_{X}+\Delta)$ is big and nef then so is $-K_{X}$. Then we have $\deg K_{X} = -2$ by \cite[Corollary 2.8]{tanaka2018minimal} giving that $ \deg \Delta <2$. The non-klt locus of $(X,\Delta)$ is precisely the support of $\lfloor \D \rfloor$ and hence can contain at most one point.
+	
+	Now suppose that the result holds when the total dimension of $X$ is less than $n$, take $X$ of dimension $n$.
+	
+	Let $(Y,\D_{Y}) \to (X,\D)$ be a dlt modification. Then $-L:=K_{Y}+\D_{Y}+F=f^{*}(K_{X}+\D)$ with $(Y,\D_{Y})$ dlt and $L$ nef and big. We may further write $L=A+E$ with $A$ ample and $E$ effective and exceptional over $X$. In particular $E$ has support contained inside $S_{Y}=\lfloor \D_{Y} \rfloor$. Note that $S_{Y}$ maps surjectively onto $\nklt(X,\D)$ so it is sufficient to show that $S_{Y}$ is connected.
+	
+	Take a general $G_{Y} \sim \epsilon A +(1-\epsilon) L-\delta S_{Y}$, then for small $\delta$ we may assume $G_{Y}$ is ample, and hence further that $(X,\D_{Y}+G_{Y})$ is dlt. Write $K_{Y}+\D_{Y}+G_{Y}\sim - P_{Y}=-(\epsilon E + F + \delta S_{Y})$ and note $\text{Supp}(P_{Y})=S_{Y}$. In particular $K_{Y}+\D_{Y}+G_{Y}$ is not pseudo-effective and hence we may run a $(Y,\D_{Y}+G_{Y})$ LMMP which terminates in a Mori fibre spaces $Y' \to Z$. 
+	
+	We claim that on the induced pair $(Y',\D_{Y'})$, $\nklt(Y',\D_{Y'})=\text{Supp}(\lfloor \D_{Y'} \rfloor)=\text{Supp}(P_{Y'})$ has the same number of connected components as $\nklt(X,\Delta)$. Indeed $P_{Y}$ has the same number of components, so suppose for contradiction there is an MMP step which reduced the number of connected components. Replacing $Y$ with the first point of failure, we can assume there is a step $\pi: Y \dashrightarrow \hat{Y}$ such that $P_{\hat{Y}}$ has one fewer connected components. 
+	
+	Since $\text{Supp}(P_{Y})=\lfloor \D_{Y} \rfloor$, we can subtract components of $P_{Y}$ from $\Delta$ and assume that $\lfloor \D_{Y} \rfloor$ contains only two components which are disjoint on $Y$ but whose strict transforms meet on $\hat{Y}$. However $(Y,\Delta_{Y})$ is then plt, and thus so too must $(\hat{Y},\D_{\hat{Y}})$ be. In particular $\lfloor \D_{\hat{Y}} \rfloor$ consists of disconnected divisors, a contradiction.
+
+	Hence, as claimed, the number of connected components of $P_{Y'}$ is the same as $P_{Y}$.
+	
+	Suppose then that $\dim Z=0$. Then $\rho(Y')=1$. In particular if $D,D'$ are effective and $H$ ample, then $H^{n-2}.D.D' >0$, so certainly $D\cap D' \neq \emptyset$. Thus $P_{Y'}$ cannot have disconnected support.
+	
+	Otherwise have that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected by induction, a contradiction.
+\end{proof}
+
 
 Dlt modifications are also closely related to the study of adjunction.
 
