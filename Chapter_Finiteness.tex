@@ -162,57 +162,9 @@
 	\textbf{Acknowledgments}
 	Thanks to Federico Bongiorno and Paolo Cascini for their support and for many useful discussions. Thanks also to the EPSRC for my funding.	
 	
-	\section{Preliminaries}
-	
-	
-	\begin{definition}\label{setup}
-		An $R$-pair $(X,\Delta)/ T$ with $\mathbb{K}$-boundary will be the following data:
-		\begin{itemize}
-			\item An excellent, normal ring $R$ of mixed characteristic and finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$
-			\item A quasi-projective $R$-variety $T$
-			\item A normal, integral scheme $X$ projective over $T$ with $X_{\mathbb{Q}}:=X \times_{R} \mathbb{Q} \neq \emptyset$ 
-			\item A $\mathbb{K}$-divisor $\Delta \geq 0$ with $(K_{X}+\Delta)$ $\mathbb{K}$-Cartier, for $\mathbb{K}=\mathbb{R}$ or $\mathbb{Q}$.
-		\end{itemize}
+	\section{Termination}
 		
-		The dimension of such a pair is the dimension of $X$. Equally the pair is said to $\mathbb{Q}$-factorial if $X$ is. If no $\mathbb{K}$ is specified we default to $\mathbb{K}=\mathbb{R}$.
-	\end{definition}
-
-	
-	\begin{definition}
-		Let $(X,\Delta)/T$ be an $R$-pair and $\pi:Y \to X$ be a proper birational morphism of $T$-schemes. There is a unique divisor $\Delta_{Y}$ with $K_{Y}+\Delta_{Y}=\pi^{*}(K_{X}+\Delta)$ agreeing with $\Delta$ away from the exceptional locus. 
-		
-		We say $(X,\Delta)/T$ is klt if $\text{mult}_{E}(\Delta_{Y}) <1$ for every prime divisor $E$ on every choice of $Y$.
-		
-		We say $(X,\Delta)/T$ is lc if $\text{mult}_{E}(\Delta_{Y}) \leq 1$ for every prime divisor $E$ on every choice of $Y$.
-		
-		We say $(X,\Delta)/T$ is dlt if $\text{mult}_{E}(\Delta_{Y}) \leq 1$ for every exceptional prime divisor $E$ on some log resolution $Y\to X$ of $(X,\Delta)$.
-	\end{definition}
-	
-	Both klt, lc may be checked on a single log resolution.
-	
-	
-	\begin{theorem}[Cone Theorem]\cite[Theorem H]{bhatt2020globally+}
-		Let $(X,\Delta)/T$ be a dlt $\mathbb{Q}$-factorial threefold $R$-pair. Then there is a countable collection of curves $\{C_{i}\}$ on $X$ such that:
-		\begin{enumerate}
-			\item $$\overline{NE}(X/T)=\overline{NE}(X/T)_{K_{Y}+\Delta \geq 0} + \sum_{i} \mathbb{R}[C_{i}]$$
-			\item The rays $C_{i}$ do not accumulate in $(K_{Y}+\Delta)_{<0}$.
-			\item For each $i$ there is $d_{C_{i}}$ with 
-			\[0 < -(K_{X}+\Delta).C_{i} \leq 4d_{c_{i}}\]
-			and $d_{C_{i}}$ divides $L\cdot_{k}C_{i}$ for every Cartier divisor $L$ on $X$.
-		\end{enumerate}
-	\end{theorem}
-	
-	\begin{theorem}[Basepoint Free Theorem]\cite[Theorem G]{bhatt2020globally+}\label{bpt}
-		Let $(X,\Delta)/T$ be a klt $R$-pair of dimension $3$. Let $L$ be an $f$-nef divisor with $L-(K_{X}+\Delta)$ is $f$-big and nef. Then $L$ is semiample. 
-	\end{theorem}
-	
-	\begin{theorem}\cite[Theorem F]{bhatt2020globally+}
-		
-		Let $(X,\Delta)/T$ be a klt $R$-pair of dimension $3$. We can run a $K_{X}+\Delta$ MMP. If $K_{X}+\Delta$ is pseudo-effective then this MMP terminates. Further an MMP with scaling by an ample divisor will terminate for any choice of pair.
-		
-	\end{theorem}
-	
-	Termination for psuedo-effective pairs in this setting is assured by the following theorem, together with the observation that if $\kappa(K_{X}+\Delta) \geq 0$ then the pair is effective. 
+	In this section we study termination for threefold pairs in mixed characteristic. Termination for psuedo-effective pairs in this setting is assured by the following theorem, together with the observation that if $\kappa(K_{X}+\Delta) \geq 0$ then the pair is effective. 
 	
 	\begin{theorem}\cite[Proposition 9.20]{bhatt2020globally+}\label{partial-termination}
 		Let $(X,\Delta)\to T$ be a threefold klt $R$-pair. Suppose that
@@ -220,6 +172,8 @@
 		
 		is a sequence of $(K_{X}+\Delta)$ flips. Then neither the flipped nor the flipping locus are contained the support of $\Delta_{n}$ for all sufficiently large $n$.
 	\end{theorem}
+
+	The remainder of the chapter will show that any klt MMP terminates for mixed characteristic threefolds. In particular full termination holds for pairs which are not pseudo-effective.We will heavily rely on the observation, due to \cite{katsura1985elliptic}, that $-1$ curves on the special fibre of a smooth family over a DVR can be contracted after possibly taking a finite extension of the base. We will also regularly use the following idea: If $\pi:X \to Y$ is some extremal contraction over $R$, and there is some base change $R' \to R$ such that $X_{R'}$ admits a divisorial contraction over $Y_{R'}$ then the original contraction must also have been divisorial.
 
 	We will also need the following construction, essentially due to \cite{mumford1961topology}.
 	
@@ -255,11 +209,8 @@
 		
 		
 	\end{proof}
-		
-	
-	\section{Termination}
-	
-	In this section we show that any klt MMP terminates for mixed characteristic threefolds. In particular full termination holds for pairs which are not pseudo-effective.	We will heavily rely on the observation, due to \cite{katsura1985elliptic}, that $-1$ curves on the special fibre of a smooth family over a DVR can be contracted after possibly taking a finite extension of the base. We will also regularly use the following idea: If $\pi:X \to Y$ is some extremal contraction over $R$, and there is some base change $R' \to R$ such that $X_{R'}$ admits a divisorial contraction over $Y_{R'}$ then the original contraction must also have been divisorial.
+			
+
 	
 	
 	\begin{lemma}\cite[Lemma 9.4]{katsura1985elliptic} \label{KU}
@@ -378,24 +329,8 @@
 		
 		If instead $\phi:X \dashrightarrow Y$ is a rational map then it is an ample model for $D$ if there is $H$ ample on $Y$ such that $p^{*}D\sim_{\mathbb{R}}q^{*}H+E$ where $E \geq 0$ is such that $E \leq B$ for any $p^{*}D \sim_{\mathbb{R}} B \geq 0$.
 	\end{definition}
-	
-	
-	Note that ample models are unique. Indeed if $X \dashrightarrow Y$ and $X \dashrightarrow Z$ are two ample models, then on some common resolution $W$ of both maps we have $f:W \to Y$, $g:W \to Z$ and $h:W \to X$. Now there are ample divisors $A_{Y}$, $A_{Z}$ with $f^{*}A_{Y}+E_{Y}\sim_{\mathbb{R}}h^{*}D \sim_{\mathbb{R}}g^{*}A_{Z}+E_{Z}$. But by definition $E_{Z}=E_{Y}$ and hence $f^{*}A_{Y}\sim_{\mathbb{R}}g^{*}A_{Z}$, so there is an isomorphism $i:Z \to Y$ with $i \circ f= g$ as required.
-	
-	If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample model of $(X,\Delta)$ if it is an ample model for $K_{X}+\Delta$. We can often replace pairs with linearly equivalent versions.
-	
-	\begin{lemma}\label{equiv}\cite[Lemma 3.6.8]{birkar2010existence}
-		Let $\phi:X \to Y$ be a rational map. Suppose $(X,\Delta)$ and $(X,\Delta')$ are two pairs and $D,D'$ two $\mathbb{R}$-Cartier divisors on $X$. Take $t >0$ a positive real number.
-		\begin{itemize}
-			\item If $D \equiv tD'$ and $\phi_{*}D$, $\phi_{*}D'$ are both $\mathbb{R}$-Cartier then $\phi$ is $D$ negative (resp $D$ non-negative) if and only if it is $D'$ negative (resp. non-negative)
-			\item If both pairs are lc and $K_{X}+\Delta \sim_{\mathbb{R}} t(K_{X}+\Delta')$ then $\phi$ is a wlc model for $(X,\Delta)$ if and only if it is a wlc model for $(X,\Delta')$.
-			\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log minimal model for $(X,\Delta)$ if and only if it is a log minimal model for $(X,\Delta')$.
-			\item If $D\sim_{\mathbb{R}} tD$ then $\phi$ is an ample model for $D$ if and only if it is an ample model for $D'$.
-		\end{itemize}
-	\end{lemma}
-	
-	In particular these definitions extend naturally to rlt pairs as follows.
-	
+
+	The definitions of various birational models for klt or lc pairs in \autoref{Model-defs} extend naturally to the rlt case.
 	
 	\begin{definition}
 		Let $\phi:X \dashrightarrow Y$ be a rational map. If $U_{i}$ is an open cover of $T$ we write $\phi_{i}:X_{i}\dashrightarrow Y_{i}=Y\times U_{i}$.

@@ -1,8 +1,17 @@
-\documentclass[12pt,twoside]{amsart}
-\usepackage{mabliautoref}
-\usepackage{amssymb,amsthm,amsmath}
-\RequirePackage[dvipsnames,usenames]{xcolor}
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper, margin=1in]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1\baselineskip}
+
+\setcounter{secnumdepth}{4}
+\usepackage{amsthm}
+\usepackage{aliascnt}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+
+\RequirePackage[dvipsnames,usenames]{xcolor}
 \usepackage{mathtools}
 %\usepackage{showkeys}
 \usepackage[abbrev,alphabetic]{amsrefs}
@@ -11,36 +20,31 @@
 \usepackage{tikz-cd}
 \usepackage{systeme}
 
-\hypersetup{
-	bookmarks,
-	bookmarksdepth=3,
-	bookmarksopen,
-	bookmarksnumbered,
-	pdfstartview=FitH,
-	colorlinks,backref,hyperindex,
-	linkcolor=Sepia,
-	anchorcolor=BurntOrange,
-	citecolor=MidnightBlue,
-	citecolor=OliveGreen,
-	filecolor=BlueViolet,
-	menucolor=Yellow,
-	urlcolor=OliveGreen
+\usepackage{tikz-cd}
+
+\newcommand{\basetheorem}[3]{
+	\newtheorem{#1}{#2}[#3]
+	\newtheorem*{#1*}{#2}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+}
+\newcommand{\maketheorem}[3]{
+	\newaliascnt{#1}{#3}
+	\newtheorem{#1}[#1]{#2}
+	\aliascntresetthe{#1}
+	\expandafter\def\csname #1autorefname\endcsname{#2}
+	\newtheorem{#1*}{#2}
 }
 
-%%%%
-%%%%%%%
-
-
-
-%\usepackage{etoolbox}
-%\AtBeginEnvironment{theorem}
-%{\setlength{\parskip}{0.5em}}
-%\AtBeginEnvironment{itemize}
-%{\setlength{\parskip}{0em}}
-%\AtBeginEnvironment{enumerate}
-%{\setlength{\parskip}{0em}}
-%\AtBeginEnvironment{reptheorem}
-%{\setlength{\parskip}{0.5em}}
+%\theoremstyle{plain}
+\basetheorem{theorem}{Theorem}{section}
+\maketheorem{definition}{Definition}{theorem}
+\maketheorem{lemma}{Lemma}{theorem}
+\maketheorem{example}{Example}{theorem}
+\maketheorem{corollary}{Corollary}{theorem}
+\maketheorem{conjecture}{Conjecture}{theorem}
+\maketheorem{proposition}{Proposition}{theorem}
+\maketheorem{question}{Question}{theorem}
+\maketheorem{remark}{Remark}{theorem}
 
 \makeatletter
 \newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
@@ -83,14 +87,15 @@
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\D}{\Delta}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\Sing}{\text{Sing}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\PP}{\mathcal{P}}
 \newcommand{\HH}{\mathcal{H}}
 \newcommand{\SB}{\mathbf{SB}}
 \newcommand{\BS}{\mathbf{B}_{+}}
-\newcommand{\disc}{\textup{Discrepancy}}
-
+\newcommand{\disc}{\text{Discrepancy}}
 
 
 \newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
@@ -99,59 +104,32 @@
 \newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
 \newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
 \newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
-\newcommand{\nklt}{\textup{Nklt}}
+\newcommand{\nklt}{\text{Nklt}}
 \newcommand{\Ht}[1]{H^{i}_{t}}
 \newcommand{\orth}{^{\perp}}
-\newcommand{\Hom}{\textup{Hom}}
+\newcommand{\Hom}{\text{Hom}}
 \newcommand{\Fe}{F^{e}_{*}}
 \newcommand{\Fn}[1]{F^{#1}_{*}}
 \newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
 \newcommand{\ai}{\alpha_{\bullet}}
-\newcommand{\im}{\textup{Im}}
-\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\ox}{\mathcal{O}_{X}}
 \newcommand{\me}{M^{e}_{\Delta,a^{t}}}
 \newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
 \newcommand{\zp}{\mathbb{Z}_{(p)}}
 \newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
 \newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
+%
 
 \newtheorem{case}{Case}
 
 \usepackage{xcolor}
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 
-\newcommand{\coker}{\textup{coker }}
+%\usepackage{subfiles}
 
-\title[Abundance for arithmetic threefolds]{Abundance theorem for threefolds in mixed characteristic}
-
-\author{Fabio Bernasconi, Iacopo Brivio, and Liam Stigant}
-
-\address{\'Ecole Polytechnique F\'ed\'erale de Lausanne, Chair of Algebraic Geometry
-	(B\^atiment MA), Station 8, CH-1015 Lausanne} 
-\email{fabio.bernasconi@epfl.ch}
-
-\address{National Center for Theoretical Sciences, Taipei, 106, Taiwan}
-\email{ibrivio@ncts.ntu.edu.tw}
-
-\address{Department of Mathematics, Imperial College London, 180 Queen's Gate, 
-	London SW7 2AZ, UK} 
-\email{l.stigant18@imperial.ac.uk}
-
-\subjclass[2020]{14J30, 14J32, 14M22 14E30, 14G17, 14B05}
-\keywords{Abundance conjecture, mixed characteristic, invariance of plurigenera}
-%\date{\today}
-
-%\pagestyle{myheadings} \markboth{\hfill  Liam Stigant
-%	\hfill}{\hfill Abundance in mixed characteristic\hfill}
 
 \begin{document}
-	\begin{abstract}
-		We show the abundance theorem for arithmetic klt threefold pairs whose closed point have residue characteristic greater than five.
-		As a consequence, we give a sufficient condition for the asymptotic invariance of plurigenera for certain families of singular surface pairs to hold in mixed characteristic.
-	\end{abstract}
-	\maketitle
-	\tableofcontents
-	
 	\section{Introduction}
 	
 	The Minimal Model Program is a conjecture on the birational structure of algebraic varieties which aims to extends the theory of minimal models of surfaces to higher-dimensional varieties.
@@ -221,62 +199,20 @@
 	
 	\section{Preliminaries}
 	
-	\subsection{Notation}\label{notation}
+
+%	\begin{enumerate}
+%		\item In this article, $R$ denotes an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+%		\item We say $(X, \Delta)$ is a \emph{log pair} if $X$ is an excellent normal scheme with a dualising complex, $\Delta$ is a $\mathbb{K}$-divisor and $K_X+\Delta$ is $\mathbb{K}$-Cartier, where $\mathbb{K}=\mathbb{Q}$ or $\mathbb{R}$.  When not specified we default to $\mathbb{K}=\mathbb{R}$. By $\dim(X)$ we mean the dimension of the scheme $X$.
+%		%	\item For us, an $R$-pair $(X,\Delta)/T$ with $\mathbb{K}$-boundary is a projective, surjective morphism $X \to T$ of normal integral schemes of finite type over $R$, with $T$ quasi-projective over $R$, such that $K_X+\Delta$ is $\mathbb{K}$-Cartier and $X_{\mathbb{Q}} \neq \emptyset$. When $T=\Spec (R)$ it is omitted from the notation. Here $\mathbb{K}=  \mathbb{Q}$ or $\mathbb{R}$ and. When we say $\dim(X)$ we mean the dimension of the scheme $X$.
+%		\item For the definitions of the singularities of the MMP (as klt, plt, lc), we refer to \cite{kk-singbook,bhatt2020}.
+%		\item A \textit{contraction} of normal schemes is a projective morphism $f\colon X\to Y$ such that $f_*\cO_X=\cO_Y$.  A \emph{birational contraction} $\varphi \colon X \dashrightarrow Y$ is a birational map of normal integral schemes such that $\varphi^{-1}$ does not contract any divisor.
+%		\item Let $L$ be a nef line bundle on a scheme $X$ projective over $S$. We define $\mathbb{E}(L)$ to be the union of subschemes of $X$ on which the restriction of $L$ is not big.
+%		\item If $X \to S$ is a projective morphism and $D$ is a $\mathbb{Q}$-Cartier divisor on $X$, the \emph{diminished locus of $D$ over $S$}  is  $$\mathbf{B}_{-}(D/S) = \bigcup_{A \, \mathbb{Q}\text{-divisor} \text{ ample }/S} \mathbf{B}(D+A/S),$$ where $\mathbf{B}(D+A/S)$ is the stable base locus of $D+A$ over $S$. If $S$ is clear from the context, we will simply write $\mathbf{B}_{-}(D)$.
+%		\item We say that a field $k$ of positive characteristic $p>0$ is $F$-finite if $[k:k^p]< \infty$.
+%		\item When $R$ is a DVR with residue field $k$ and fraction field $K$, and $(X,\Delta)$ is a pair defined over $R$, we will denote the special, resp. generic, fibre as $X_{k}$, resp. $X_K$. An analogous notation will be used for sheaves and $R$-horizontal $\mathbb{K}$-divisors on $X$.
+%	\end{enumerate}
 	
-	\begin{enumerate}
-		\item In this article, $R$ denotes an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
-		\item We say $(X, \Delta)$ is a \emph{log pair} if $X$ is an excellent normal scheme with a dualising complex, $\Delta$ is a $\mathbb{K}$-divisor and $K_X+\Delta$ is $\mathbb{K}$-Cartier, where $\mathbb{K}=\mathbb{Q}$ or $\mathbb{R}$.  When not specified we default to $\mathbb{K}=\mathbb{R}$. By $\dim(X)$ we mean the dimension of the scheme $X$.
-		%	\item For us, an $R$-pair $(X,\Delta)/T$ with $\mathbb{K}$-boundary is a projective, surjective morphism $X \to T$ of normal integral schemes of finite type over $R$, with $T$ quasi-projective over $R$, such that $K_X+\Delta$ is $\mathbb{K}$-Cartier and $X_{\mathbb{Q}} \neq \emptyset$. When $T=\Spec (R)$ it is omitted from the notation. Here $\mathbb{K}=  \mathbb{Q}$ or $\mathbb{R}$ and. When we say $\dim(X)$ we mean the dimension of the scheme $X$.
-		\item For the definitions of the singularities of the MMP (as klt, plt, lc), we refer to \cite{kk-singbook,bhatt2020}.
-		\item A \textit{contraction} of normal schemes is a projective morphism $f\colon X\to Y$ such that $f_*\cO_X=\cO_Y$.  A \emph{birational contraction} $\varphi \colon X \dashrightarrow Y$ is a birational map of normal integral schemes such that $\varphi^{-1}$ does not contract any divisor.
-		\item Let $L$ be a nef line bundle on a scheme $X$ projective over $S$. We define $\mathbb{E}(L)$ to be the union of subschemes of $X$ on which the restriction of $L$ is not big.
-		\item If $X \to S$ is a projective morphism and $D$ is a $\mathbb{Q}$-Cartier divisor on $X$, the \emph{diminished locus of $D$ over $S$}  is  $$\mathbf{B}_{-}(D/S) = \bigcup_{A \, \mathbb{Q}\text{-divisor} \text{ ample }/S} \mathbf{B}(D+A/S),$$ where $\mathbf{B}(D+A/S)$ is the stable base locus of $D+A$ over $S$. If $S$ is clear from the context, we will simply write $\mathbf{B}_{-}(D)$.
-		\item We say that a field $k$ of positive characteristic $p>0$ is $F$-finite if $[k:k^p]< \infty$.
-		\item When $R$ is a DVR with residue field $k$ and fraction field $K$, and $(X,\Delta)$ is a pair defined over $R$, we will denote the special, resp. generic, fibre as $X_{k}$, resp. $X_K$. An analogous notation will be used for sheaves and $R$-horizontal $\mathbb{K}$-divisors on $X$.
-	\end{enumerate}
-	
-	\subsection{Results from the three-dimensional MMP}
-	
-	In this section we collect results on the three-dimensional MMP proven in \cite{bhatt2020}.
-	Recall that the existence of projective log resolutions for excellent schemes of dimension at most three has been established in \cite{CP19, CJS20} and we will use this fact repeatedly in the article.
-	In the following, $T$ always denotes a quasi-projective scheme over $R$.
-	
-	
-	\begin{theorem}[Base point free Theorem] \cite[Theorem G]{bhatt2020} \label{t-bpf}
-		Let $(X,\Delta)$ be a $\mathbb{Q}$-factorial klt pair of dimension $3$ and let $f \colon X \to T$ be a projective $R$-morphism. 
-		Let $L$ be a $f$-nef Cartier divisor such that $L-(K_{X}+\Delta)$ is $f$-big and $f$-nef.
-		If the image of of $X$ in $T$ is positive dimensional, then $L$ is $f$-semiample. 
-	\end{theorem}
-	
-	\begin{theorem}[Running the MMP] \cite[Theorem F]{bhatt2020} \label{MMP}
-		Let $(X,\Delta)$ be a $\mathbb{Q}$-factorial klt pair of dimension $3$ and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ has positive dimension. 
-		Then we can run a $(K_{X}+\Delta)$-MMP over $T$. 
-		If $K_{X}+\Delta$ is pseudo-effective over $T$, then any sequence of $(K_X+\Delta)$-MMP terminates. 
-		Further, a $(K_X+\Delta)$-MMP over $T$ with scaling by an ample divisor $A$ will terminate.
-	\end{theorem}
-	We recall some standard consequences of the MMP that we will need.
-	\begin{lemma}\label{lemma:extraction}
-		Let $(X,B)$ be a dlt threefold pair having no residue fields of characteristic $p=2,3$ or $5$. 
-		Let $E$ be an exceptional divisor with $-1<a(E, X, B)<0$. 
-		Then there exists a crepant birational model $\mu \colon (Y,B_Y) \to (X,B)$ such that 
-		\begin{enumerate}
-			\item $(Y,B_Y)$ is a $\bQ$-factorial dlt pair;
-			\item $E$ is the sole exceptional divisor of $\mu$;
-			\item $-E$ is $\mu$-nef.
-		\end{enumerate}
-	\end{lemma}
-	
-	\begin{proof}
-		The same proof of \cite[Corollary 1.39]{kk-singbook} works in this setting thanks to the existence of log resolutions and \autoref{MMP}.
-	\end{proof}
-	
-	\begin{lemma}\label{Q-factorial}
-		Let $(X,B)$ be a plt threefold pair having no residue fields of characteristic $p=2,3$ or $5$. 
-		Then there exists a small birational morphism $f \colon Y \to X$ such that $Y$ is $\mathbb{Q}$-factorial.
-	\end{lemma}
-	\begin{proof}
-		Let $\pi \colon Z \to (X,B)$ be a projective log resolution with exceptional divisor $\sum_i E_i$ and $K_Z+\pi_*^{-1}B=\pi^*(K_X+B)+\sum_i a_iE_i$ for certain $a_i >-1$. By \cite[Proposition 9.18]{bhatt2020} we can run a $(K_Z+\pi^{-1}_*Z+\sum_i E_i)$-MMP over $X$, which is a $\sum_i (1+a_i)E_i$-MMP. Since $1+a_i>0$ for each $i>0$, this MMP terminates with a small $\mathbb{Q}$-factorial model $Y$ over $X$ by the negativity lemma \cite[Lemma 2.14]{bhatt2020}.
-	\end{proof}
+
 	
 	\subsection{Semiample and EWM line bundles}
 	
@@ -300,10 +236,10 @@
 	\end{theorem}
 	
 	\begin{proof}
-		The direction $(a) \implies (b) \implies (c)$ is the content of \cite[Theorem 2.1.26]{La1}. That $(c) \implies (a)$ follows straight from the definition of ample.
+		The direction $(1) \implies (2) \implies (3)$ is the content of \cite[Theorem 2.1.26]{La1}. That $(3) \implies (1)$ follows straight from the definition of ample.
 	\end{proof}
 	
-	The morphism $f$ is the same in both $(a)$ and $(b)$ of \autoref{t-semiamplefibration} is called the \textit{Iitaka fibration} (or \textit{semiample fibration}) \textit{of $L$}. 
+	The morphism $f$ is the same in both $(2)$ and $(3)$ of \autoref{t-semiamplefibration}. It is called the \textit{Iitaka fibration} (or \textit{semiample fibration}) \textit{of $L$}. 
 	
 	\begin{remark}
 		Since $f \colon X \to Z$ is a contraction, if $X$ is normal then so is $Z$.
@@ -318,7 +254,7 @@
 	The definition of semiample (resp. EWM) extends naturally to $\mathbb{Q}$-Cartier divisors (resp. $\mathbb{R}$-Cartier divisors).
 	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$.
 	
-	\subsubsection{Semi-ampleness criteria}
+	\subsubsection{Semiampleness Criteria}
 	
 	We recall Keel-Witaszek's base point free theorem, which will be a crucial tool in the proof of abundance.
 	
@@ -569,7 +505,7 @@ In positive or mixed characteristic a crucial condition we show during our proof
 		Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation given by \autoref{Q-factorial}. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{normality}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
 	\end{proof}
 	
-	\subsection{MMP in families}
+	\subsection{MMP in families}\myworries{Greater Generality?}
 	
 	We fix $R$ to be an excellent DVR with $F$-finite residue field $k$ of residue field $p>5$.
 	We collect some results on the MMP in families over $R$ that we will use in \autoref{s-inv-plurigenera}.
@@ -674,44 +610,6 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 		Suppose that $V$ is a non-canonical centre of $(Y,\Gamma+Y_{k})$ and take a model $Z$ dominating $X,Y$ and containing an exceptional divisor $E$ such that $V=\cent_Y(E)$ and $a(E, Y, \Gamma+Y_{k}) <0$. Then by \autoref{l:increase-discr} it must be that $a(E,X,X_k+B) \leq a(E,Y,\Gamma+Y_{k}) < 0$, hence the image, $W$, of $E$ on $X$ is a non-canonical centre of $(X,B+X_{k})$. By \autoref{l-stable-base-loci} if $V \subseteq \mathbf{B}_{-}(Y, K_{Y}+\Gamma)$ then so too do we have $W \subseteq \mathbf{B}_{-}(X, K_{X}+B)$. In which case $W$ is horizontal and hence so is $V$, therefore (2) holds as claimed.
 
 		Since a $(K_X+B)$-MMP over $R$ is a $(K_X+X_k+B)$-MMP, we have that the map $(X_k,B_k) \rightarrow (Y_k, \Gamma_k)$ is a $(K_{X_k}+B_k)$-negative birational contraction and thus $h^0(X_t,m(K_{X_t}+B_t))=h^0(Y_t,m(K_{Y_t}+\Gamma_t))$ for all $t\in\Spec (R)$ and all $m\geq 0$ sufficiently divisible by \autoref{l-stein-invariance}.
-	\end{proof}
-	
-	\subsection{Rational polytopes of boundaries}
-	
-	In this section we show how abundance for $\mathbb{R}$-pairs can be deduced from abundance for $\mathbb{Q}$-pairs, following a strategy due to Shokurov.
-	We recall the definition of the various polytopes we will need.
-	
-	\begin{definition}
-		Let  $X$ be a three-dimensional $\mathbb{Q}$-factorial integral scheme and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ is positive dimensional. 
-		Fix a $\mathbb{Q}$-divisor $A\geq 0$. Let $V$ be a finite dimensional, rational affine subspace of $\text{WDiv}_{\mathbb{R}}(X)$ containing no components of $A$.
-		
-		We have the following subsets of $\text{WDiv}_\mathbb{R}(X)$.
-		\[V_{A}= \{A+B \colon B \in V\};\]
-		\[\mathcal{L}_{A}(V)=\{\Delta=A+B \in V_{A} \colon (X,\Delta) \textup{ is an lc pair}\};\]
-		\[\mathcal{N}_{A}(V)=\{\Delta \in \mathcal{L}_{A}(V) \colon K_{X}+\Delta \textup{ is nef over } T\}.\]
-	\end{definition}
-	
-	Recall that as long as there is a projective log resolution of $(X,A)$ together with $V$ the set $\mathcal{L}_{A}(V)$ is a rational polytope by the work of Shokurov \cite{Sho92}, in particular this is true when $\dim X \leq 3$. Further if $(X,A+B)$ is klt and $(X,A+B')$ is lc then $(X,A+tB+(1-t)B')$ is klt for any $0 \leq t < 1$, so the set of klt pairs is open in $\mathcal{L}_{A}(V)$. In fact if $\mathcal{L}_{A}(V)$ contains a klt pair, the entire interior consists of klt boundaries and the same is true for any sub-polytope.
-	
-	The cone theorem, even the slightly weaker form proved in mixed characteristic in \cite{bhatt2020}, implies that $\mathcal{N}_{A}(V)$ is a rational polytope. 
-	
-	\begin{lemma}\label{neftope} \cite[Proposition 9.31]{bhatt2020}
-		Fix a $\mathbb{Q}$-divisor $A \geq 0$ such that $(X,A)$ is a $\mathbb{Q}$-factorial klt three-dimensional pair.
-		Let $f\colon X \to T$ be a projective morphism of quasi-projective $R$-schemes.
-		Then $\mathcal{N}_{A}(V)$ is a rational polytope.
-	\end{lemma}
-	
-	We now infer abundance for pairs with $\mathbb{R}$-boundaries given the appropriate results for $\mathbb{Q}$-boundaries.
-	
-	\begin{proposition}\label{QtoR}
-		Let $f \colon X \to T$ be a projective $R$-morphism of quasi-projective $R$-schemes such that $(X,\Delta)$ is a $\mathbb{Q}$-factorial klt pair of dimension three and the image of $X$ in $T$ is positive dimensional. 
-		Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ $f$-nef, then $K_{X}+B$ $f$-semiample.
-		
-		Then for every $\mathbb{R}$-divisor $\Delta$ such that $(X, \Delta)$ is klt and $K_X+\Delta$ is $f$-nef, then $K_X+\Delta$ is $f$-semiample.
-	\end{proposition}
-	\begin{proof}
-		Let $\Delta= \sum_{1}^{n} t_{i}B_{i}$ and $V$ be the $\mathbb{R}$-linear span of $B_i$ in $\text{WDiv}_\mathbb{R}(X)$. By \autoref{neftope} we have that $\mathcal{N}_{0}(V)$ is a rational polytope. Hence there are rational boundaries $D_{i} \in \mathcal{N}_{0}(V)$ such that $\Delta=\sum \lambda_{i} D_{i}$ where $\sum \lambda_{i} =1$. Since $(X,\Delta)$ is klt, by choosing $D_{i}$ sufficiently close to $\Delta$ we may suppose that each $(X,D_{i})$ is a klt pair with $\mathbb{Q}$-boundary and $K_X+D_i$ $f$-nef. 
-		By assumption $K_{X}+D_{i}$ is $f$-semiample and thus so is $K_{X}+\Delta=\sum \lambda_{i} (K_{X}+D_{i})$.
 	\end{proof}
 	
 	\section{Abundance for mixed characteristic threefolds}
