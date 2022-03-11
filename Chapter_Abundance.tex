@@ -1,0 +1,1099 @@
+\documentclass[12pt,twoside]{amsart}
+\usepackage{mabliautoref}
+\usepackage{amssymb,amsthm,amsmath}
+\RequirePackage[dvipsnames,usenames]{xcolor}
+\usepackage{hyperref}
+\usepackage{mathtools}
+%\usepackage{showkeys}
+\usepackage[abbrev,alphabetic]{amsrefs}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{systeme}
+
+\hypersetup{
+	bookmarks,
+	bookmarksdepth=3,
+	bookmarksopen,
+	bookmarksnumbered,
+	pdfstartview=FitH,
+	colorlinks,backref,hyperindex,
+	linkcolor=Sepia,
+	anchorcolor=BurntOrange,
+	citecolor=MidnightBlue,
+	citecolor=OliveGreen,
+	filecolor=BlueViolet,
+	menucolor=Yellow,
+	urlcolor=OliveGreen
+}
+
+%%%%
+%%%%%%%
+
+
+
+%\usepackage{etoolbox}
+%\AtBeginEnvironment{theorem}
+%{\setlength{\parskip}{0.5em}}
+%\AtBeginEnvironment{itemize}
+%{\setlength{\parskip}{0em}}
+%\AtBeginEnvironment{enumerate}
+%{\setlength{\parskip}{0em}}
+%\AtBeginEnvironment{reptheorem}
+%{\setlength{\parskip}{0.5em}}
+
+\makeatletter
+\newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
+\makeatother
+\makeatletter
+\@namedef{subjclassname@2020}{%
+	\textup{2020} Mathematics Subject Classification}
+\makeatother
+
+
+%\newreptheorem{theorem}{Theorem}
+
+%begin: Iacopo-defined newcommands
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\fB}{\mathbf{B}}
+\newcommand{\fM}{\mathbf{M}}
+\newcommand{\charac}{\textup{char }}
+\newcommand{\id}{\textup{id}}
+\newcommand{\Alb}{\textup{Alb}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\red}{\textup{red}}
+\newcommand{\lct}{\textup{lct}}
+\newcommand{\exc}{\textup{Ex}}
+\newcommand{\coeff}{\textup{coeff}}
+\newcommand{\cent}{\textup{centre}}
+\newcommand{\codim}{\textup{codim}}
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+\newcommand{\rk}{\textup{rk}}
+\newcommand{\WDiv}{\textup{WDiv}}
+%end: Iacopo-defined newcommands
+
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\Delta}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\SB}{\mathbf{SB}}
+\newcommand{\BS}{\mathbf{B}_{+}}
+\newcommand{\disc}{\textup{Discrepancy}}
+
+
+
+\newcommand{\ta}[1]{\mathcal{A}^{\leq #1}}
+\newcommand{\at}[1]{\mathcal{A}^{\geq #1}}
+\newcommand{\tb}[1]{\mathcal{B}^{\leq #1}}
+\newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
+\newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
+\newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
+\newcommand{\nklt}{\textup{Nklt}}
+\newcommand{\Ht}[1]{H^{i}_{t}}
+\newcommand{\orth}{^{\perp}}
+\newcommand{\Hom}{\textup{Hom}}
+\newcommand{\Fe}{F^{e}_{*}}
+\newcommand{\Fn}[1]{F^{#1}_{*}}
+\newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
+\newcommand{\ai}{\alpha_{\bullet}}
+\newcommand{\im}{\textup{Im}}
+\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
+\newcommand{\me}{M^{e}_{\Delta,a^{t}}}
+\newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
+\newcommand{\zp}{\mathbb{Z}_{(p)}}
+\newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
+\newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
+
+\newtheorem{case}{Case}
+
+\usepackage{xcolor}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\newcommand{\coker}{\textup{coker }}
+
+\title[Abundance for arithmetic threefolds]{Abundance theorem for threefolds in mixed characteristic}
+
+\author{Fabio Bernasconi, Iacopo Brivio, and Liam Stigant}
+
+\address{\'Ecole Polytechnique F\'ed\'erale de Lausanne, Chair of Algebraic Geometry
+	(B\^atiment MA), Station 8, CH-1015 Lausanne} 
+\email{fabio.bernasconi@epfl.ch}
+
+\address{National Center for Theoretical Sciences, Taipei, 106, Taiwan}
+\email{ibrivio@ncts.ntu.edu.tw}
+
+\address{Department of Mathematics, Imperial College London, 180 Queen's Gate, 
+	London SW7 2AZ, UK} 
+\email{l.stigant18@imperial.ac.uk}
+
+\subjclass[2020]{14J30, 14J32, 14M22 14E30, 14G17, 14B05}
+\keywords{Abundance conjecture, mixed characteristic, invariance of plurigenera}
+%\date{\today}
+
+%\pagestyle{myheadings} \markboth{\hfill  Liam Stigant
+%	\hfill}{\hfill Abundance in mixed characteristic\hfill}
+
+\begin{document}
+	\begin{abstract}
+		We show the abundance theorem for arithmetic klt threefold pairs whose closed point have residue characteristic greater than five.
+		As a consequence, we give a sufficient condition for the asymptotic invariance of plurigenera for certain families of singular surface pairs to hold in mixed characteristic.
+	\end{abstract}
+	\maketitle
+	\tableofcontents
+	
+	\section{Introduction}
+	
+	The Minimal Model Program is a conjecture on the birational structure of algebraic varieties which aims to extends the theory of minimal models of surfaces to higher-dimensional varieties.
+	While the MMP is usually studied for projective varieties over a field, it is worth developing the program for projective schemes over more general bases, especially if one is interested in arithmetic applications. 
+	Although the MMP for surfaces over excellent schemes can be considered a classical result (see \cite{Sha66} for the regular case and \cite{Tan18} for the logarithmic and singular case), only recent breakthroughs in commutative algebra (see \cite{bhatt2020cohenmacaulayness}) have allowed progress on the birational geometry of arithmetic threefolds in the works \cite{takamatsu2021minimal,bhatt2020}, where the authors show that one can run the MMP for threefolds over rings of mixed characterstic $(0, p>5)$. 
+	
+	After showing the existence of minimal models, it is natural to ask whether the abundance conjecture, which states that a minimal model has semiample canonical divisor, holds for threefolds in mixed characteristic. 
+	The case of surfaces defined over a field was proven in increasing generality in \cite{fujino2012log, Tan14, tanaka2020abundance} while the case of threefolds over a perfect field characteristic $p>5$ is still open, though the non-vanishing conjecture being settled in \cite{XZ19, Wit} and various cases have been verified (\cite{DW19, Zha20})
+	The aim of this article is to show the validity of the abundance conjecture for mixed characteristic threefolds.
+	
+	\begin{theorem}\label{main-thm}
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		
+		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
+		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
+	\end{theorem}
+	
+	The key idea of the proof is to apply abundance on the generic fibre $X_\eta$ where $\eta$ is the generic point of $\pi(X)$ and on the characteristic zero part $X_{\mathbb{Q}} \to T_{\mathbb{Q}}$. From there we spread out the semiampleness over the positive characteristic points of $\pi(X)$ by a careful application of the MMP developed in \cite{bhatt2020} and Keel-Witaszek's base point free theorem \cite{witaszek2020keels}. 
+	
+	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
+	
+	\begin{theorem}
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		
+		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
+		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{Q}$-boundary. 
+		
+		Then the canonical $\ox[T]$-algebra
+		\[R(\pi,\Delta):=\bigoplus_{m \in \mathbb{N}} \pi_{*}\ox(\lfloor m(K_{X}+\Delta)\rfloor)\]
+		is finitely generated.
+	\end{theorem}
+
+	In characteristic $0$, finite generation of the canonical ring follows from finite generation in the log general type case (\cite{BCHM10}) and by a result of Fujino and Mori \cite[Theorem 5.2]{FM00}. However, their result requires a canonical bundle formula which is not available in the positive or mixed characteristic settings.
+
+\begin{remark}
+	An important step towards abundance consists of proving the non-vanishing conjecture, which is already a difficult result for threefolds over fields of characteristic $0$ (resp. over perfect fields $p>5$), proven in  \cite{FA} (resp. \cite{XZ19}).
+	However in our situation the non-vanishing follows immediately from non-vanishing on the generic fibre of $\pi$, which has dimension at most two and so the result is well-known.
+\end{remark}
+	As a further application of \autoref{main-thm}, we study the invariance of plurigenera for families of klt surface pairs in mixed characteristic.
+	It is well-known that invariance of plurigenera might fail over DVR of positive or mixed characteristic as shown in \cite{KU, Suh08, Bri20}.
+	However it was proven in \cite{EH} that an asymptotic version of invariance of plurigenera holds for log smooth surface pairs if the Kodaira dimension is not one.
+	Using techniques of \cite{HMX18}, we use the MMP and the abundance \autoref{main-thm} to show an asymptotic invariance of plurigenera for families of klt surface pairs (possibly even defined over imperfect fields), extending the work of Egbert and Hacon.
+	
+	\begin{theorem}\label{thm:ADIOP_final}
+		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
+		Let $(X,B)$ be a three-dimensional klt pair and let $(X,B)\to \Spec(R)$ be a projective surjective morphism of quasi-projective $R$-schemes.  Suppose that the following conditions are satisfied:
+		
+		\begin{enumerate}
+		\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
+		\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+		\end{enumerate}
+		
+		Suppose further that at least one of the following holds:
+		\begin{enumerate}
+			\item $\kappa(K_{X_{k}}+B_{k}) \neq 1$; or
+			\item $B_{k}$ is big over $\textup{Proj}(K_{X_{k}}+B_{k})$
+		\end{enumerate}	
+		Then there is $m_{0} \in \mathbb{N}$ such that 
+		$$h^{0}(X_{K},m(K_{X_{K}}+B_{K}))=h^{0}(X_{k},m(K_{X_{k}}+B_{k}))$$
+		for all $m \in m_{0}\mathbb{N}$.
+		
+	\end{theorem}
+	
+	\textbf{Acknowledgments.}
+	The authors thank F. Bongiorno, P. Cascini, J.A. Chen, S. Filipazzi and C.D. Hacon for useful discussions and comments on the content of this article. 
+	FB was supported by the NSF under grant number DMS-1801851 and by a grant from the Simons Foundation; Award Number: 256202; IB was supported by the National Center for Theoretical Sciences and a grant from the Ministry of Science and Technology; grant number MOST-110-2123-M-002-005; LS is grateful to the EPSRC for his funding.
+	
+	\section{Preliminaries}
+	
+	\subsection{Notation}\label{notation}
+	
+	\begin{enumerate}
+		\item In this article, $R$ denotes an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		\item We say $(X, \Delta)$ is a \emph{log pair} if $X$ is an excellent normal scheme with a dualising complex, $\Delta$ is a $\mathbb{K}$-divisor and $K_X+\Delta$ is $\mathbb{K}$-Cartier, where $\mathbb{K}=\mathbb{Q}$ or $\mathbb{R}$.  When not specified we default to $\mathbb{K}=\mathbb{R}$. By $\dim(X)$ we mean the dimension of the scheme $X$.
+		%	\item For us, an $R$-pair $(X,\Delta)/T$ with $\mathbb{K}$-boundary is a projective, surjective morphism $X \to T$ of normal integral schemes of finite type over $R$, with $T$ quasi-projective over $R$, such that $K_X+\Delta$ is $\mathbb{K}$-Cartier and $X_{\mathbb{Q}} \neq \emptyset$. When $T=\Spec (R)$ it is omitted from the notation. Here $\mathbb{K}=  \mathbb{Q}$ or $\mathbb{R}$ and. When we say $\dim(X)$ we mean the dimension of the scheme $X$.
+		\item For the definitions of the singularities of the MMP (as klt, plt, lc), we refer to \cite{kk-singbook,bhatt2020}.
+		\item A \textit{contraction} of normal schemes is a projective morphism $f\colon X\to Y$ such that $f_*\cO_X=\cO_Y$.  A \emph{birational contraction} $\varphi \colon X \dashrightarrow Y$ is a birational map of normal integral schemes such that $\varphi^{-1}$ does not contract any divisor.
+		\item Let $L$ be a nef line bundle on a scheme $X$ projective over $S$. We define $\mathbb{E}(L)$ to be the union of subschemes of $X$ on which the restriction of $L$ is not big.
+		\item If $X \to S$ is a projective morphism and $D$ is a $\mathbb{Q}$-Cartier divisor on $X$, the \emph{diminished locus of $D$ over $S$}  is  $$\mathbf{B}_{-}(D/S) = \bigcup_{A \, \mathbb{Q}\text{-divisor} \text{ ample }/S} \mathbf{B}(D+A/S),$$ where $\mathbf{B}(D+A/S)$ is the stable base locus of $D+A$ over $S$. If $S$ is clear from the context, we will simply write $\mathbf{B}_{-}(D)$.
+		\item We say that a field $k$ of positive characteristic $p>0$ is $F$-finite if $[k:k^p]< \infty$.
+		\item When $R$ is a DVR with residue field $k$ and fraction field $K$, and $(X,\Delta)$ is a pair defined over $R$, we will denote the special, resp. generic, fibre as $X_{k}$, resp. $X_K$. An analogous notation will be used for sheaves and $R$-horizontal $\mathbb{K}$-divisors on $X$.
+	\end{enumerate}
+	
+	\subsection{Results from the three-dimensional MMP}
+	
+	In this section we collect results on the three-dimensional MMP proven in \cite{bhatt2020}.
+	Recall that the existence of projective log resolutions for excellent schemes of dimension at most three has been established in \cite{CP19, CJS20} and we will use this fact repeatedly in the article.
+	In the following, $T$ always denotes a quasi-projective scheme over $R$.
+	
+	
+	\begin{theorem}[Base point free Theorem] \cite[Theorem G]{bhatt2020} \label{t-bpf}
+		Let $(X,\Delta)$ be a $\mathbb{Q}$-factorial klt pair of dimension $3$ and let $f \colon X \to T$ be a projective $R$-morphism. 
+		Let $L$ be a $f$-nef Cartier divisor such that $L-(K_{X}+\Delta)$ is $f$-big and $f$-nef.
+		If the image of of $X$ in $T$ is positive dimensional, then $L$ is $f$-semiample. 
+	\end{theorem}
+	
+	\begin{theorem}[Running the MMP] \cite[Theorem F]{bhatt2020} \label{MMP}
+		Let $(X,\Delta)$ be a $\mathbb{Q}$-factorial klt pair of dimension $3$ and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ has positive dimension. 
+		Then we can run a $(K_{X}+\Delta)$-MMP over $T$. 
+		If $K_{X}+\Delta$ is pseudo-effective over $T$, then any sequence of $(K_X+\Delta)$-MMP terminates. 
+		Further, a $(K_X+\Delta)$-MMP over $T$ with scaling by an ample divisor $A$ will terminate.
+	\end{theorem}
+	We recall some standard consequences of the MMP that we will need.
+	\begin{lemma}\label{lemma:extraction}
+		Let $(X,B)$ be a dlt threefold pair having no residue fields of characteristic $p=2,3$ or $5$. 
+		Let $E$ be an exceptional divisor with $-1<a(E, X, B)<0$. 
+		Then there exists a crepant birational model $\mu \colon (Y,B_Y) \to (X,B)$ such that 
+		\begin{enumerate}
+			\item $(Y,B_Y)$ is a $\bQ$-factorial dlt pair;
+			\item $E$ is the sole exceptional divisor of $\mu$;
+			\item $-E$ is $\mu$-nef.
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		The same proof of \cite[Corollary 1.39]{kk-singbook} works in this setting thanks to the existence of log resolutions and \autoref{MMP}.
+	\end{proof}
+	
+	\begin{lemma}\label{Q-factorial}
+		Let $(X,B)$ be a plt threefold pair having no residue fields of characteristic $p=2,3$ or $5$. 
+		Then there exists a small birational morphism $f \colon Y \to X$ such that $Y$ is $\mathbb{Q}$-factorial.
+	\end{lemma}
+	\begin{proof}
+		Let $\pi \colon Z \to (X,B)$ be a projective log resolution with exceptional divisor $\sum_i E_i$ and $K_Z+\pi_*^{-1}B=\pi^*(K_X+B)+\sum_i a_iE_i$ for certain $a_i >-1$. By \cite[Proposition 9.18]{bhatt2020} we can run a $(K_Z+\pi^{-1}_*Z+\sum_i E_i)$-MMP over $X$, which is a $\sum_i (1+a_i)E_i$-MMP. Since $1+a_i>0$ for each $i>0$, this MMP terminates with a small $\mathbb{Q}$-factorial model $Y$ over $X$ by the negativity lemma \cite[Lemma 2.14]{bhatt2020}.
+	\end{proof}
+	
+	\subsection{Semiample and EWM line bundles}
+	
+	In this subsection we recall some basic results about semiample and EWM line bundles we will need later on. 
+	
+	\begin{definition}
+		Let $S$ be a scheme and let $\varphi \colon X \to S$ be a proper morphism. A line bundle $L$ on $X$ is said to be \textit{semiample} over $S$ if there exists $m>0$ such that $L^{\otimes m}$ is globally generated over $S$, \emph{i.e.} the natural morphism $\varphi^*(\varphi_*L^{\otimes m}) \to L^{\otimes m}$ is surjective.
+	\end{definition} 
+	
+	\begin{theorem}\label{t-semiamplefibration}
+		Let $X$ be a normal projective $S$-scheme and let $L$ be a line bundle on $X$. Then the following are equivalent.
+		\begin{enumerate}
+			\item $L$ is semiample over $S$;
+			\item there is a contraction 
+			$f\colon X\to Z/S$
+			such that $f$ is the $S$-morphism induced by $|L^m/S|$ for all sufficiently divisible $m$;
+			\item There is a contraction 
+			$f\colon X\to Z/S$
+			such that $L\sim_{\mathbb{Q}} f^{*}A$ for $A$ ample $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $Z$.
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{proof}
+		The direction $(a) \implies (b) \implies (c)$ is the content of \cite[Theorem 2.1.26]{La1}. That $(c) \implies (a)$ follows straight from the definition of ample.
+	\end{proof}
+	
+	The morphism $f$ is the same in both $(a)$ and $(b)$ of \autoref{t-semiamplefibration} is called the \textit{Iitaka fibration} (or \textit{semiample fibration}) \textit{of $L$}. 
+	
+	\begin{remark}
+		Since $f \colon X \to Z$ is a contraction, if $X$ is normal then so is $Z$.
+	\end{remark}
+	
+	\begin{definition}
+		Let $S$ be a scheme and let $\varphi \colon X \to S$ be a proper morphism. A line bundle $L$ on $X$ is said to be \emph{EWM over $S$} if there
+		exists a proper $S$-morphism $f \colon X \rightarrow Y $ to an algebraic space $Y$ proper over $S$ such that a proper curve $C \subset X$ over $S$ is contracted by $f$ if and only if
+		$L \cdot C = 0$.
+	\end{definition}
+	
+	The definition of semiample (resp. EWM) extends naturally to $\mathbb{Q}$-Cartier divisors (resp. $\mathbb{R}$-Cartier divisors).
+	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$.
+	
+	\subsubsection{Semi-ampleness criteria}
+	
+	We recall Keel-Witaszek's base point free theorem, which will be a crucial tool in the proof of abundance.
+	
+	\begin{theorem}[\cite{witaszek2020keels}]
+		Let $L$ be a nef line bundle on a scheme $X$
+		projective over an excellent Noetherian base scheme $S$. Then $L$ is semiample over $S$ if and only if both $L|_{\mathbb{E}(L)}$ and $L|_{X_{\mathbb{Q}}}$
+		are so.
+	\end{theorem}
+	
+	We will need the following descent result on semiampleness for normal schemes.
+	
+	\begin{lemma}\label{pullback}
+		
+		Let $f \colon X \to Y$ be a proper surjective morphism of integral, excellent schemes over a base $S$. Suppose that $Y$ is normal and $L$  is a line bundle on $Y$ such that $f^{*}L$ semiample over $S$.
+		Then $L$ is semiample over $S$.
+		
+	\end{lemma}
+	
+	\begin{proof}
+		
+		The proof is similar to \cite[Lemma 2.10]{Keel}.	
+		We may freely assume that $X$ is normal. 
+		Let $$X \xrightarrow{g} Z \xrightarrow{h} Y$$ be the Stein factorisation of $f$, where $g$ is a contraction and $h$ is a finite map. 
+		We first show that $h^*L$ is semiample. Take $m>0$ such that $f^*L^{\otimes m}$ is base point free. By the projection formula $H^0(X, f^*L^{\otimes m})=H^0(Z, h^*L^{\otimes m})$ and so $h^*L^{\otimes m}$ is base point free.
+		We can thus assume from now on $f$ is a finite morphism.
+		By passing to a further finite cover, we can assume the field extension $K(Y) \subset K(X)$ is normal. Let $G$ be the Galois group of the extension.
+		Take $Y'$ to be the integral closure of $Y$ inside $K(X)^G$ and we have the following factorisation 
+		$$f \colon X \xrightarrow{g} Y' \xrightarrow{h} Y,$$ 
+		where the first map is Galois while the second is purely inseparable. Since $h$ is finite (in particular affine), we conclude that $h$ is a universal homeomorphism by \autoref{affine-uni-hom}  as $Y$ is normal. 
+		
+		We first prove that $M:=h^*L$ is semiample, knowing that $g^*M$ is semiample.
+		Let $G$ be the Galois group of $g$, so $Y \to X'$ is the quotient by $G$ and thus $H^{0}(X,g^*M^{\otimes k})\simeq H^{0}(Y',M^{\otimes k})^{G}$. 
+		Since $g^*M$ is semiample, there exists $m > 0$ such that for any $p \in Y$ there exists a section $s$ of $g^{*}M^{\otimes m}$ which does not vanishing on the Galois orbit lying over $p$. Then $s_{G}=\prod_{g \in G} g^*s $ is a $G$-equivariant section of $g^*M^{\otimes |G|m}$, thus it descends to a section $t \in H^0(Y, M^{\otimes |G|m})$ not vanishing at $p$.
+		
+	 	If $h$ is not trivial then both $K(Y)$ and $K(Y')$ have positive characteristic and $h$ is a universal homeomorphism. Since $M=h^{*}L$ is semiample, then $L$ is semiample by \cite[Proposition 3.5]{witaszek2020keels} as $X_{\mathbb{Q}}=\emptyset=Y_{\mathbb{Q}}$.
+	\end{proof}
+	
+	\begin{lemma}\label{affine-uni-hom}
+		
+		Let $R$ be a Noetherian domain integrally closed in a field $F$. Suppose that $L/F$ is a purely inseparable finite field extension. Let $S$ be the integral closure of $R$ in $L$, then the induced map of affine schemes $\Spec(S) \to \Spec(R)$ is a universal homeomorphism.
+	\end{lemma}
+	
+	\begin{proof}
+		Let $p$ be the characteristic of $F$. If $p=0$ then $L=F$ and the result is trivial as $R$ is integrally closed.
+		Suppose that $p>0$ and as $L/F$ is purely inseparable and finite there exists $n>0$ such that $L^{p^n }\subset F$.
+		
+		We now show that $S^{p^n} \subset R$. 
+		Choose $x \in S$ and consider a monic polynomial $P=T^m+a_1T^{m-1}+ \dots +a_m \in R[T]$ such that $P(x)=0$.
+		Note that $0=P(x)^{p^n}=Q(x^{p^n})$ for the monic polynomial $Q=T^m+a_1^{p^n}T^{m-1}+ \dots +a_m^{p^n} \in R[T]$ and moreover $x^{p^n} \in F$, concluding that $x^{p^n} \in R$ as $R$ is integrally closed. 
+		Hence $R \to S$ induces a universal homeomorphism on the relative spectra by \cite[Tag 0BRA]{stacks-project}. 
+	\end{proof}
+	
+	\subsubsection{Semiample line bundles over DVRs}
+	We now specialize to the case in which $X\to\Spec (R)$ is a family of normal projective varieties over a DVR and we study how the spaces of global sections of $L$ behave in family.
+	
+	\begin{lemma}\label{lemma_DIOK}
+		Let $R$ be a DVR and let $\pi \colon X\to \Spec (R)$ be a flat projective morphism. 
+		Let $L$ be a $\bQ$-Cartier divisor on $X$, semiample over $R$. 
+		Then $\kappa(L_k)=\kappa(L_K)$.
+	\end{lemma}
+	
+	\begin{proof}
+		Let $f \colon X\to Z/\Spec (R)$ be the Iitaka fibration of $L$. Since $\pi$ is flat, it is equidimensional and thus by upper-semicontinuity of the dimension of the fibres of $f$, the morphism $Z\to\Spec (R)$ is equidimensional as well. Let $d$ be the dimension of the fibres $Z \to \Spec(R)$, and let $A$ be an ample $\bQ$-divisor on $Z$ such that $L\sim_{\bQ}f^\ast A$. By the projection formula and asymptotic Riemann-Roch \cite[Theorem VI.2.15]{k-rat-curves} for each $t \in \Spec(R)$ we have
+		\begin{equation*}
+			\begin{split}
+				h^0(X_t,mL_t)&=h^0(Z_t,f_{t,*} \cO_{X_t}\otimes\cO_{Z_t}(mA_t))\\
+				&=\mathrm{rk} (f_{t,*} \cO_{X_t})\frac{(mA_t)^d}{d!}+O(m^{d-1})
+			\end{split}
+		\end{equation*}
+		for all $m> 0$ sufficiently divisible. Thus we conclude that for each $t \in \Spec(R)$, $\kappa(L_t)=d$.
+	\end{proof}
+	
+	
+	\begin{lemma}\label{l-stein-invariance}
+		Let $R$ be a DVR and let $\pi \colon X \to \Spec(R)$ be a projective normal $R$-scheme such that $X_k$ is normal. 
+		Let $L$ be a $\bQ$-Cartier divisor on $X$, semiample over $R$ and let $f \colon X \to Z / \Spec(R)$ be the  fibration associated to $L$.
+		Then the following are equivalent:
+		\begin{enumerate}
+			\item[(1)] $f_{k,*} \cO_{X_k} = \cO_{Z_k}$;
+			\item[(2)] $h^0(X_k, mL_k)=h^0(X_K, mL_K)$ for all $m\geq 0$ sufficiently divisible.
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		Let $A$ be an ample $\bQ$-Cartier on $Z$ such that $L \sim_{\bQ}f^*A$. 
+		By the projection formula we have 
+		\begin{equation}\label{e-globalsectionsPF}
+			h^0(X_t,mL_t)=h^0(Z_t,f_{t,\ast}\cO_{X_t}\otimes\cO_{Z_t}(mA_t))
+		\end{equation}
+		for all sufficiently divisible $m$ and all $t\in \Spec (R)$. By flat base change we have $f_{K,\ast}\cO_{X_K}=\cO_{Z_K}$.
+		
+		$(1) \implies (2)$ Suppose that $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. Then the right hand side of Equation (\ref{e-globalsectionsPF}) coincides with $\chi(Z_t,mA_t)$ when $m\gg 0$, by Serre vanishing. Hence we conclude by invariance of the Euler characteristic in a flat family.
+		
+		$(2) \implies (1)$ By \cite[Corollary III.12.9]{Ha77} the natural restriction map
+		$$H^0(X,mL)\to H^0(X_k,mL_k)$$
+		is surjective for $m\geq 0$ sufficiently divisible. Hence $f_k$ is the Iitaka fibration of $L_k$ by \autoref{t-semiamplefibration}, in particular $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. 
+	\end{proof}
+	
+	\begin{remark}\label{r-connected fibers v contraction}
+	Condition (1) in \autoref{l-stein-invariance} is almost automatic when $R$ is of equicharacteristic zero. More precisely, suppose $f\colon X\to Z/\Spec(R)$ is the relative Iitaka fibration of a semiample line bundle $L$, and assume furthermore that $Z_t$ is normal for all $t\in\Spec(R)$. As $f_*\cO_X=\cO_Z$ then $f$ has connected fibers, hence so does $f_k$. If $R$ is of equicharacteristic zero, Zariski Main Theorem implies $f_{k,*}\cO_{X_k}=\cO_{Z_k}$. On the other hand, in positive characteristic being a contraction is a strictly stronger condition than having connected fibers, thus we may have a non-trivial Stein Factorization
+	$$f_k\colon X_k\xrightarrow{\bar{f_k}} Z_k\xrightarrow{F^e}Z_k$$
+where $F$ denotes the geometric Frobenius.  
+See \cite{Bri20} for the details of such a construction when $L=K_X$.
+In positive or mixed characteristic a crucial condition we show during our proof of invariance of plurigenera (see \autoref{thm:ADIOP_SA}) is the validity of $f_{k*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the Iitaka fibration of the canonical divisor.
+\end{remark}
+	
+	\subsection{Adjunction for non $\mathbb{Q}$-factorial threefolds}
+	The aim of this subsection is to study the normality of the special fibres of certain mixed characteristic families. In particular we show that threefold plt centres appearing as fibres of a family over a DVR $R$ whose residue field has characteristic $p>5$ are normal, extending some previous results in the literature to the non $\mathbb{Q}$-factorial case. 
+	
+	We start by recalling normality of plt centres in the $\mathbb{Q}$-factorial case, using results from \cite{ma2019analog}.
+	\begin{theorem}{\cite[Theorem G]{ma2019analog}}\label{invAdj}
+		Let $A$ be a normal 3-dimensional local ring, essentially of finite type over an excellent DVR with $F$-finite residue field of characteristic $p > 5$, and denote $X: = \Spec (A)$.
+		Let $D$ be a prime divisor on $X$ and $\Delta \geq 0$ be a $\bQ$-divisor with standard coefficients such that $K_X + D + \Delta$ is $\bQ$-Cartier.  
+		
+		If $(D^{\mathrm{N}}, \textup{Diff}_{D^N}(\Delta+D))$ is klt, then the completion $(\widehat{A}, \widehat{D}+\widehat{\Delta})$ is purely BCM regular. In particular, $(X, D+\Delta)$ is plt and $D$ is normal.	
+	\end{theorem}
+	
+	We will particularly interested in the case that $D=X_{k}$ is the central fibre over a DVR. 
+	In this case we write $\Delta_{k}=\Delta|_{X_k}$. Note that since $X_{k}$ is Cartier, this is well defined even if $\Delta$ is not $\mathbb{Q}$-Cartier.
+	Moreover, if $(X,\Delta+X_{k})$ is plt then the different $\textup{Diff}_{X_k}(\Delta+X_k)$ coincides with $\Delta_{k}$ by \cite[Proposition 4.5]{kk-singbook}.
+	
+	\begin{corollary}\label{normality}
+		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p>5$. Let $(X,X_{k}+\Delta)$ be a $\mathbb{Q}$-factorial plt pair of dimension three quasi-projective over $R$. 
+		Then $X_{k}$ is normal and $(X_k, \Delta_k)$ is klt.
+	\end{corollary}
+	\begin{proof}
+		Since $X$ is $\mathbb{Q}$-factorial, the pair $(X, X_k)$ is plt.
+			By adjunction for this pair, \cite[Lemma 4.8]{kk-singbook}, $X^{N}_{k}$ is klt.  
+		By \autoref{invAdj} we conclude $X_{k}=X^{N}_{k}$ is normal and thus by adjunction $(X_k, \Delta_k)$ is klt.
+	\end{proof}
+	
+	Given suitable vanishing results over $k$, we can extend this adjunction result to more general situations by making use of lifting arguments.
+	
+	\begin{proposition}\label{push-lift}
+		Let $S$ be a local Artinian ring and $T \hookrightarrow S$ be a closed immersion defined by a square-zero ideal $I$.  Let $f\colon Y \to T$, and $h\colon X \to T$ be flat morphisms and let $g\colon Y \to X$ be a morphism of $T$-schemes. 
+		Suppose that $g_{*} \ox[Y]=\ox$, $R^{1}g_{*} \ox[Y] = 0$ and $Y$ has a flat lifting $f' \colon Y' \to S$. Then there exists a flat lifting $X'$ over $S$ and a morphism $g' \colon Y' \to X'$ making the following commutative diagram:
+		
+		\[\begin{tikzcd}
+			Y \arrow[r] \arrow[d, "g"]  \arrow[bend right=60,swap, "f"]{dd}
+			& Y' \arrow[d, "g'"] \arrow[bend left=60,swap, "f'"]{dd} \\
+			X \arrow[d, "h"] \arrow[r] & X' \arrow[d, "h'"] \\
+			T \arrow[r]                        & S    .                     
+		\end{tikzcd}\]
+		
+		Moreover,  $g'_{*} \ox[Y']=\ox[X']$ and $R^{1}g'_{*} \ox[Y'] = 0$.
+	\end{proposition}
+	
+	\begin{proof}
+%		\textcolor{blue}{L: I made some changes based on what we discussed last time. I'm not sure if this is any clearer though... It's weirdly difficult to give a good proof of this}
+		This is the construction of \cite[Theorem 3.1]{cynk2009small}.\end{proof} %of which we write the details for clarity.
+		
+%		As $Y'$ has the same underlying topological space of $Y$, we may see the sheaf $\mathcal{O}_{Y'}$ as a sheaf on the topological space $Y$. 	
+%		Now we define $X'$ to coincide with $X$ as a topological space and the natural map $g'$ coinciding with $g$. The schematic structure on $X'$ is given by the sheaf $g_*\mathcal{O}_{Y'}$. 
+%		This construction fits naturally in a commutative diagram as above and we are only left to check that $X'$ is a flat lifting of $X$ over $S$.
+% Since this can be checked locally, we may assume that $X, X'$ are affine.
+%		The defining short exact sequence of the extension $T \to S$ is
+%		\[\mathcal{E} \colon 0 \to I \to S \to T \to 0 \]
+%		Since $\mathcal{O}_{Y'}$ is flat over $S$, this induces a corresponding short exact sequence of $\ox[Y']$ modules on $Y'$.
+%		\[ \mathbf{L}f'^{*}\mathcal{E} \colon 0 \to f'^{*}I \to \ox[Y'] \to \ox[Y] \to 0 \]
+		
+%		We now push this forward by $g'$ onto $X'$. Since the pushforward is a topological in nature we have $\mathbf{R}g'_{*}\ox[Y]=\mathbf{R}g_{*}\ox[Y]$. Similarly since $I$ has the natural structure of an $R$ module, induced by $I^{2}=0$, we have an identification $f^{*}I=f'^{*}I$ as group sheaves.
+%		Thus we obtain the following.
+%		\[0 \to h^{*}I \to g'_{*}\ox[Y'] \to \ox[X] \to \mathbf{R}^{1}g_{*}\ox[Y] \otimes h^{*}I \to \mathbf{R}^{1}g'_{*}\ox[Y'] \to \mathbf{R}^{1}g_{*}\ox[Y] \to \] 
+%		By assumption $\mathbf{R}^{1}g_{*}\ox[Y]=0$ and so we have
+%		\[\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathbf{E}\colon 0 \to h'^{*}I \to \ox[X'] \to \ox[X] \to 0\]
+%		viewed here as a sequence of $\ox[X']$ modules.
+		
+%		Moreover we have $\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathcal{E}=\mathbf{L}h'^{*}\mathcal{E}$, and thus we see that there is a canonical identification $\ox[X']\otimes R= \ox[X]$. That is $X' \times_{S} T= X$. We also see that $\textup{Tor}^{i}(\ox[X'], R)=0$, since $\mathbf{L}h'^{*}\mathcal{E}$ is nothing but $\ox[X'] \otimes^{L} \mathcal{E}$. Since $\ox= \ox[X']/ I \ox[X']$ is flat over $R$, by assumption, we must have by \cite[\href{https://stacks.math.columbia.edu/tag/0AS8}{Tag 0AS8}]{stacks-project} that $\ox[X']$ is a flat $S$ module, as required.
+		%	
+		%	
+		%	We start by showing that $X' \times_S T \simeq X$.
+		%	We clearly have a morphism of schemes $X \to X' \times_S T$, which is an homeomorphism. We are left to check it is actually an isomorphism of schemes.
+		%	For this, let $U$ be an affine open set of $X'$. Since $g_*\mathcal{O}_Y=\mathcal{O}_X$ we have
+		%	\begin{small}
+		%	$$H^0(U,\mathcal{O}_{X'})  \otimes_{\mathcal{O}_S} \mathcal{O}_T = H^0(g^{-1}(U), \mathcal{O}_{Y'}) \otimes_{\mathcal{O}_S} \mathcal{O}_T=H^0(g^{-1}(U), \mathcal{O}_Y)=H^0(U, \mathcal{O}_X),  $$
+		%	\end{small}
+		%	thus concluding.
+		%	
+		%\textcolor{red}{F: I am a bit confused by this part... are we using local criterion of flatness? To write with more detail!!!}	
+		%	We now show that $X'$ is flat over $S$.
+		%	Since $Y'$ is flat over $S$, we have the following short exact sequence of $\mathcal{O}_{Y'}$-modules on $Y'$:
+		%	\[0 \to (f')^{*}I \to \ox[Y'] \to \ox[Y] \to 0.\]
+		%	
+		%	By construction $g'_{*}\ox[Y']=\mathcal{O}_{X'}$, thus we deduce $g'_*f'^*I \simeq h'^*I$ by projection formula.
+		%	Applying $g'_*$ we thus have the following long exact sequence:
+		%	\[0 \to (h')^{*} I \to \mathcal{O}_{X'} \to g'_* \mathcal{O}_{Y} \to h^{*} I \otimes R^{1}g'_{*}\ox[Y] \to R^{1}g'_{*}\ox[Y'] \to R^{1}g_{*}\ox[Y] \to \dots \]
+		%	
+		%	By assumption $R^{1}g_{*}\ox[Y] =0$ and hence $0 \to h^{*} I \to \mathcal{O}_{X'} \to \ox \to 0$ is exact. We therefore conclude. As $h^*I$ and $\mathcal{O}_X$ are flat, we conclude. \textcolor{red}{is this the point??}
+%	\end{proof}
+	
+	\begin{theorem}\label{adj-push}
+		Let $R$ be a DVR and let $X$ be a normal projective $R$-scheme such that $X_{k}$ is normal. 
+		Let $f \colon X \to Z$ be a contraction over $R$ and suppose that $$f_{k}\colon X_{k} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{k}$$ is the Stein factorisation of $f_{k}$. If $R^{1}g_{1,*} \ox[X_{k}]=0$, then $Z_k$ is normal and $h_{1}$ is an isomorphism. In particular $f_{k,*}\ox[X_{k}]=g_{1,*}\ox[X_{k}]=\ox[Z_{k}].$
+	\end{theorem}
+	
+	\begin{proof}
+		Since we are only interested in the special fibre, we can replace $R$ with its completion at its maximal ideal $\mathfrak{m}$ without any loss of generality.
+		Write $R_{i}=R/\mathfrak{m}^{i}$ where $m$ is the maximal ideal of $R$, then let $X_{i}=X \times R_{i}$, $Z_{i}=Z\times R_{i}$ and $f_{i}=f\times R_{i}\colon X_{i} \to Z_{i}$.
+		Then $f_{1}$ factors as $f_{1}\colon X_{1} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{1}$ where $R^{i}g_{1,*}\ox[X_{1}]=0$, so by \autoref{push-lift} we can lift $g_{1}\colon X_{1} \to Y_{1}$ to $g_{i}\colon X_{i} \to Y_{i}$ over $R_{i}$ such that the following diagram commutes.
+		
+		\[\begin{tikzcd}
+			X_{1} \arrow[r] \arrow[d, "g_{1}"] & X_{2} \arrow[r] \arrow[d, "g_{2}"] & ... \\
+			Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & ... \\
+			Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & ...
+		\end{tikzcd}\]
+		
+		Here the $h_{i}$ are defined as follows. The underlying topological map is just $h_{1}$ and the map $\ox[Z_{i}] \to h_{i,*}\ox[Y_{i}]$ comes from the map ${\ox[Z_{i}] \to f_{i,*}\ox[X_{i}]}$ and the identification $f_{i,*}\ox[X_{i}]=h_{i,*}g_{i,*}\ox[X_{i}]\simeq h_{i,*}\ox[Y_{i}]$.
+		Each $h_{i}$ is finite, and thus by
+		\cite[\href{https://stacks.math.columbia.edu/tag/09ZT}{Tag 09ZT}]{stacks-project} we have that the compatible system $\left\{Y_{i} \to Z_i \right\}$ lifts to a finite morphism $Y \to Z$ over $R$. By \cite[\href{https://stacks.math.columbia.edu/tag/0A42}{Tag 0A42}]{stacks-project} there is a factorisation ${f\colon X \xrightarrow{g} Y \xrightarrow{h} Z}$, where $g_{*}\ox = \cO_Y$, because $g_{i,*}\cO_{X_i}=\cO_{Y_i}$ for all $i$. Similarly $h$ is a finite morphism. 
+		
+		Therefore $f \colon X \xrightarrow{g} Y \xrightarrow{h} Z$ is the Stein factorisation for $f$, but since $f$ is a contraction of normal schemes we conclude that $h$ has to be an isomorphism.
+		In particular, $h_1$ is an isomorphism and $Z_{k}=Y_{k}$, thus concluding.
+		%By construction the special fibre $Y_k$ of $Y$ is normal, and thus so is $Y$. Hence as $X \to Y$ contracts all the same curves as $X \to Z$ we must have that $h$ defines an isomorphism $Y \simeq Z$.
+		%	\textcolor{red}{Could we also argue as follows:   - Yes, I think of this as being the case because they're both contractions which contract the same curves, but I can rephrase this if you'd like}
+	\end{proof}
+	
+	
+	\begin{remark}
+		The key observation in previous proof is that we can think of $Y_{i}$ as the lift of $Y_{1}$ over $Z_{i}$ rather than simply over $R_{i}$. This construction can be thought of as a generalisation of \autoref{push-lift}.
+	\end{remark}
+	
+	
+	\begin{lemma}\label{invAdj2}
+		Let $R$ be an excellent DVR.
+		Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. Suppose that
+		\begin{enumerate}
+			\item $(X, X_k+\Delta)$ is plt and $X_k$ is normal;
+			\item there is a contraction $f \colon X \to Z$ over $R$ such that $-(K_{X_{k}}+\Delta_{k})$ is $f_{k}$-big and $f_k$-nef.
+		\end{enumerate}  
+	Then $Z_{k}$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$. Further, if $f$ is birational and $B:=f_{*}\Delta$, then $(Z, Z_k+B)$ is plt and $(Z_{k},B_{k})$ is klt.
+	\end{lemma}
+	
+	\begin{proof}
+		Since $X_{k}$ is normal, the pair $(X_{k},\Delta_{k})$ is klt by adjunction (see \cite[Lemma 4.8]{kk-singbook}). 
+		Let $$f_{k}\colon X_{k} \xrightarrow{\bar{f}_{k}} \bar{Z_k} \xrightarrow{h_k} Z_{k}$$ be the Stein factorisation. 
+		Since $-(K_{X_{k}}+\Delta_{k})$ is $\bar{f}_{k}$-big and $\bar{f}_{k}$-nef, we conclude $R^{i}\bar{f}_{k,*}\ox[X_{k}]=0$ for $i> 0$ by \cite[Proposition 3.2]{Tan18}.
+		By \autoref{adj-push} $h_k$ is an isomorphism, $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$ and $Z_{k}$ is normal.
+		
+		Suppose now $f$ is birational. As $(X,\Delta+X_k)$ is plt, so is $(Z,B+Z_k)$ as the plt centre $Z_k$ is not contracted. Hence $(Z_k,B_k)$ is klt by adjunction.			\end{proof}
+	
+	We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-factorial.
+	\begin{corollary}\label{invAdj3}
+		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p> 5$. Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. 
+		Suppose $(X,\Delta+X_{k})$ is a plt pair. Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is klt.	
+	\end{corollary}
+	
+	\begin{proof}
+		Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation given by \autoref{Q-factorial}. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{normality}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
+	\end{proof}
+	
+	\subsection{MMP in families}
+	
+	We fix $R$ to be an excellent DVR with $F$-finite residue field $k$ of residue field $p>5$.
+	We collect some results on the MMP in families over $R$ that we will use in \autoref{s-inv-plurigenera}.
+	
+	We start by recalling that discrepancies do not decrease while running an MMP.
+		\begin{lemma}\label{l:increase-discr}
+		Let 
+		\[
+		\xymatrix{
+			(X,\Delta) \ar[dr]_{f}   \ar@{-->}[rr]^{\varphi} &  &  (X', \Delta') \ar[dl]^{f'}  \\
+			&Z & ,
+		}
+		\]
+		be a commutative diagram  where $(X,\Delta)$ and $(X', \Delta')$ are normal excellent log pairs and the morphisms $f$ and $f'$ are birational.
+		Assume that
+		\begin{enumerate}
+			\item $f_*\Delta=f'_*\Delta'$;
+			\item $-(K_X+\Delta)$ is $f$-nef;
+			\item $K_{X'}+\Delta'$ is $f'$-nef. 
+		\end{enumerate}
+		Then for any exceptional divisor $E$ over $Z$ we have $$a(E, X, \Delta ) \leq a(E, X', \Delta').$$
+		Furthermore, if $-(K_X+\Delta)$ is $f$-ample and $f$ is not an isomorphism above the generic point of $\cent_X(E)$, then
+		$$ a(E, X, \Delta ) < a(E, X', \Delta').$$
+	\end{lemma}
+	\begin{proof}
+		Let $E$ be an exceptional divisor over $Z$ and let $W$ be a normal excellent scheme with birational projective morphisms $g \colon W \to X$ and $g' \colon W \to X'$ such that $\textup{centre}_W(E)$ is divisorial. Denote by $\pi:= f \circ g=f' \circ g'$. Let $E_{i}$ be $\pi$ exceptional divisors. By hypothesis, the following divisor
+		$$\Gamma:= \sum_i \left( a(E_i, X, \Delta)-a(E_i, X', \Delta') \right)E_i $$ 
+		is $\pi$-nef and sum of $\pi$-exceptional divisors.
+		Therefore, by the negativity lemma for excellent schemes (see \cite[Lemma 2.14]{bhatt2020}), we have $-\Gamma\geq 0$. Finally, if $\Gamma$ is not numerically $\pi$-trivial over $\cent_Z(E)$, we conclude the strict inequality.
+	\end{proof}
+	
+	As we will need to impose some conditions on the base loci and non-canonical centres for our applications to invariance of plurigenera (see \autoref{ex-kawamata}), we study the behaviour of the diminished base locus $\mathbf{B}_{-}(K_X+\Delta)$ during an MMP.
+	
+	
+	\begin{lemma}\label{l-stable-base-loci}
+		Let $(X,\Delta_X)$ be a klt pair, projective over a base scheme $T$.
+		Let $f\colon (X, \Delta_X) \dashrightarrow (Y, \Delta_Y)$ be a birational contraction which is a step of a  $(K_X+\Delta)$-MMP over $T$.
+		Let
+		\begin{equation*}
+			\xymatrix{
+				& W \ar[dr]^q \ar[dl]_p & \\
+				X \ar@{-->}[rr]^{f} & & Y}
+		\end{equation*} 
+		be a resolution of indeterminacies of $f$.
+		Then $q^{-1}\mathbf{B}_{-}(K_Y+\Delta_Y) \subset p^{-1}\mathbf{B}_{-}(K_X+\Delta).$
+	\end{lemma}
+	
+	\begin{proof}
+		By the negativity lemma, we deduce $p^*(K_X+\Delta)=q^*(K_Y+\Delta_Y)+G,$ where $G \geq 0$ and therefore we clearly have the following containment of stable base loci: $q^{-1}\mathbf{B}(K_Y+\Delta_Y) \subset p^{-1}\mathbf{B}(K_X+\Delta).$
+		Similarly, note that for every sufficiently small ample $A$ on $X$,
+		a $(K_X+\Delta)$-MMP step is a $(K_X+\Delta+A)$-MMP step. As $A$ is ample and $f$ birational, we can write $f_*A \sim_{\mathbb{Q}} H+E$, where $H$ is ample and $E$ effective. 
+		Therefore  $q^{-1}\mathbf{B}(K_Y+\Delta_Y+\frac{1}{n}H) \subset p^{-1}\mathbf{B}(K_Y+\Delta_Y+ \frac{1}{n}f_*A)\subset  p^{-1}\mathbf{B}(K_X+\Delta+ \frac{1}{n}A) $.
+		As $\mathbf{B}_{-}(K_Y+\Delta_Y)=\bigcup_{n \geq 0} \mathbf{B}(K_Y+\Delta_Y+\frac{1}{n}H)$ by \cite[Proposition 1.19]{asympt-baseloci} we conclude.
+	\end{proof}
+
+	We recall that, given a log pair $(X,\Delta)$, a \emph{non-canonical centre} $V$ of $(X,\Delta)$ is the centre of a divisorial valuation $E$ with discrepancy $a(E, X, \Delta)<0$.  
+
+The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefolds over DVRs. 
+	
+	\begin{proposition}\label{lemma:MMP_in_fam2}
+		Let $R$ be an excellent DVR with residue field $k$ of characteristic $>5$. Let $X \to \Spec(R)$ be a projective surjective morphism and suppose that $(X,B)$ is a three dimensional $\bQ$-factorial klt pair with $\mathbb{Q}$-boundary.
+		Suppose the following conditions are satisfied:
+		\begin{itemize}
+		\item[(1)] $(X,B+X_k)$ is plt with $X_k$ integral;
+		\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+		\end{itemize}
+		Let $f \colon X\dashrightarrow Y$ be a step of a $(K_X+B)$-MMP$/R$. Then:
+		\begin{enumerate}
+			\item  If $f$ is a contraction of fibre type, then so is $f_k$;
+			\item if $f$ is birational, then:
+			\subitem(i) $f$ is a divisorial contraction;
+			\subitem(ii) letting $\Gamma:=f_\ast B$, conditions (1) and (2) also hold for $(Y,\Gamma)\to\Spec (R)$.
+		\end{enumerate} 
+		In particular, if $f$ is birational then $h^0(X_t,m(K_{X_t}+B_t))=h^0(Y_t,m(K_{Y_t}+\Gamma_t))$ for all $t\in\Spec (R)$ and all $m\geq 0$ sufficiently divisible.
+	\end{proposition}
+	
+	\begin{proof}
+		If $f$ is not birational then it is a Mori fibre space, hence $f_k$ is not birational by upper semicontinuity of the dimension of the fibres for flat morphism. 
+		
+		So we assume that $f$ is birational. Suppose by contradiction that $f$ is a flip and consider the following diagram:
+		
+		\begin{equation*}
+		\xymatrix{
+			X \ar@{->}_{g}[rd] \ar@{-->}^{f}[rr]
+			&
+			& Y \ar@{->}^{g^+}[ld]\\
+			&Z,}
+		\end{equation*} 
+		where $g$ is the $(K_X+B)$-flipping contraction.
+		Note that $Y_k$ is irreducible since $f$ does not extract divisors, thus $f_k$ is birational. As $(X,B+X_k)$ is plt, so is $(Y,\Gamma+Y_k)$ hence both $X_k$ and $Y_k$ are normal by \autoref{invAdj3}. 
+		
+		We now derive the contradiction. Since $f$ is a flip, there exists a prime divisor $D$ on $Y_k$ such that its centre $p$ on $X_k$ is a closed point.
+		Since $f_k$ is not an isomorphism at $N$ we have
+		$$a(D;X_k,B_k)<a(D;Y_k,\Gamma_k)\leq 0$$
+		by \autoref{l:increase-discr}.
+		Hence $p$ is a non-canonical centre of $(X_{k},B_k)$. Note that $p \subseteq \textup{Exc}(g) \subseteq \mathbf{B}_{-}(X, K_{X}+X_k+B)$ since $D$ is exceptional over $Z_k$. 
+		Moreover $p$ is also a non-canonical centre of $(X,B+X_{k})$ as $$0 > \textup{totdiscrep}(p, X_k, B_k) \geq \textup{discrep}(p, X, X_k+B), $$ by easy adjunction (\cite[Theorem 17.2]{FA}).
+		So $p$ is an isolated non-canonical centre of $(X,X_k+B)$ contained in $\mathbf{B}_{-}(X, K_{X}+X_k+B)$, thus contradicting (2).
+		
+		Thus $f$, and therefore $f_k$, is a divisorial birational contraction. Condition (1) holds on $(Y,\Gamma+Y_k)$ immediately, so it remains to check condition (2).
+		
+		Suppose that $V$ is a non-canonical centre of $(Y,\Gamma+Y_{k})$ and take a model $Z$ dominating $X,Y$ and containing an exceptional divisor $E$ such that $V=\cent_Y(E)$ and $a(E, Y, \Gamma+Y_{k}) <0$. Then by \autoref{l:increase-discr} it must be that $a(E,X,X_k+B) \leq a(E,Y,\Gamma+Y_{k}) < 0$, hence the image, $W$, of $E$ on $X$ is a non-canonical centre of $(X,B+X_{k})$. By \autoref{l-stable-base-loci} if $V \subseteq \mathbf{B}_{-}(Y, K_{Y}+\Gamma)$ then so too do we have $W \subseteq \mathbf{B}_{-}(X, K_{X}+B)$. In which case $W$ is horizontal and hence so is $V$, therefore (2) holds as claimed.
+
+		Since a $(K_X+B)$-MMP over $R$ is a $(K_X+X_k+B)$-MMP, we have that the map $(X_k,B_k) \rightarrow (Y_k, \Gamma_k)$ is a $(K_{X_k}+B_k)$-negative birational contraction and thus $h^0(X_t,m(K_{X_t}+B_t))=h^0(Y_t,m(K_{Y_t}+\Gamma_t))$ for all $t\in\Spec (R)$ and all $m\geq 0$ sufficiently divisible by \autoref{l-stein-invariance}.
+	\end{proof}
+	
+	\subsection{Rational polytopes of boundaries}
+	
+	In this section we show how abundance for $\mathbb{R}$-pairs can be deduced from abundance for $\mathbb{Q}$-pairs, following a strategy due to Shokurov.
+	We recall the definition of the various polytopes we will need.
+	
+	\begin{definition}
+		Let  $X$ be a three-dimensional $\mathbb{Q}$-factorial integral scheme and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ is positive dimensional. 
+		Fix a $\mathbb{Q}$-divisor $A\geq 0$. Let $V$ be a finite dimensional, rational affine subspace of $\text{WDiv}_{\mathbb{R}}(X)$ containing no components of $A$.
+		
+		We have the following subsets of $\text{WDiv}_\mathbb{R}(X)$.
+		\[V_{A}= \{A+B \colon B \in V\};\]
+		\[\mathcal{L}_{A}(V)=\{\Delta=A+B \in V_{A} \colon (X,\Delta) \textup{ is an lc pair}\};\]
+		\[\mathcal{N}_{A}(V)=\{\Delta \in \mathcal{L}_{A}(V) \colon K_{X}+\Delta \textup{ is nef over } T\}.\]
+	\end{definition}
+	
+	Recall that as long as there is a projective log resolution of $(X,A)$ together with $V$ the set $\mathcal{L}_{A}(V)$ is a rational polytope by the work of Shokurov \cite{Sho92}, in particular this is true when $\dim X \leq 3$. Further if $(X,A+B)$ is klt and $(X,A+B')$ is lc then $(X,A+tB+(1-t)B')$ is klt for any $0 \leq t < 1$, so the set of klt pairs is open in $\mathcal{L}_{A}(V)$. In fact if $\mathcal{L}_{A}(V)$ contains a klt pair, the entire interior consists of klt boundaries and the same is true for any sub-polytope.
+	
+	The cone theorem, even the slightly weaker form proved in mixed characteristic in \cite{bhatt2020}, implies that $\mathcal{N}_{A}(V)$ is a rational polytope. 
+	
+	\begin{lemma}\label{neftope} \cite[Proposition 9.31]{bhatt2020}
+		Fix a $\mathbb{Q}$-divisor $A \geq 0$ such that $(X,A)$ is a $\mathbb{Q}$-factorial klt three-dimensional pair.
+		Let $f\colon X \to T$ be a projective morphism of quasi-projective $R$-schemes.
+		Then $\mathcal{N}_{A}(V)$ is a rational polytope.
+	\end{lemma}
+	
+	We now infer abundance for pairs with $\mathbb{R}$-boundaries given the appropriate results for $\mathbb{Q}$-boundaries.
+	
+	\begin{proposition}\label{QtoR}
+		Let $f \colon X \to T$ be a projective $R$-morphism of quasi-projective $R$-schemes such that $(X,\Delta)$ is a $\mathbb{Q}$-factorial klt pair of dimension three and the image of $X$ in $T$ is positive dimensional. 
+		Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ $f$-nef, then $K_{X}+B$ $f$-semiample.
+		
+		Then for every $\mathbb{R}$-divisor $\Delta$ such that $(X, \Delta)$ is klt and $K_X+\Delta$ is $f$-nef, then $K_X+\Delta$ is $f$-semiample.
+	\end{proposition}
+	\begin{proof}
+		Let $\Delta= \sum_{1}^{n} t_{i}B_{i}$ and $V$ be the $\mathbb{R}$-linear span of $B_i$ in $\text{WDiv}_\mathbb{R}(X)$. By \autoref{neftope} we have that $\mathcal{N}_{0}(V)$ is a rational polytope. Hence there are rational boundaries $D_{i} \in \mathcal{N}_{0}(V)$ such that $\Delta=\sum \lambda_{i} D_{i}$ where $\sum \lambda_{i} =1$. Since $(X,\Delta)$ is klt, by choosing $D_{i}$ sufficiently close to $\Delta$ we may suppose that each $(X,D_{i})$ is a klt pair with $\mathbb{Q}$-boundary and $K_X+D_i$ $f$-nef. 
+		By assumption $K_{X}+D_{i}$ is $f$-semiample and thus so is $K_{X}+\Delta=\sum \lambda_{i} (K_{X}+D_{i})$.
+	\end{proof}
+	
+	\section{Abundance for mixed characteristic threefolds}
+	
+	Given a lc pair $(X,\Delta)$ with a projective $R$-morphism $f \colon X \to T$ with $K_{X}+\Delta$ $f$-nef, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
+	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{t-bpf}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
+	
+	The starting point of our proof is to use the abundance theorem for surfaces over excellent bases, which we now recall. 
+	
+	\begin{theorem}\label{abundance-dim2}
+		Let $(S,B)$ be a klt pair of dimension two with $\mathbb{Q}$-boundary. 
+		Let $\pi \colon (S,B) \to T$ be a projective and surjective morphism of integral schemes. If $K_{S}+B$ is $\pi$-nef, then it is $\pi$-semiample.
+	\end{theorem}
+	
+	\begin{proof}	
+		If $T$ is a field then this is \cite[Theorem 1.2]{fujino2012log} for perfect fields and \cite{tanaka2020abundance} for imperfect fields. 
+		Suppose from now on that $\dim T > 0$.
+		If $K_{S}+B$ is big over $T$ then this follows immediately from the base point free theorem \cite[Theorem 4.2]{Tan18} with $D=2(K_{S}+B)$. Hence we may suppose that $\dim T=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves and the result follows by \autoref{lemma:EDSemiampleness}. 
+	\end{proof}
+	
+	The following is \cite[Lemma 2.17]{cascini2020relative}. We include the proof for completeness as the result is used often.
+	
+	
+	\begin{lemma}\label{lemma:EDSemiampleness}
+		Let $f\colon X \to Y$ be a contraction of integral, normal and excellent schemes. Suppose $L$ is an $f$-nef $\mathbb{Q}$-Cartier with $L|_{X_{K(Y)}} \sim_{\mathbb{Q}} 0$. If $Y$ is $\mathbb{Q}$-factorial and $X \to Y$ is equidimensional then $L \sim_{Y,\mathbb{Q}} 0$.
+	\end{lemma}
+	
+	\begin{proof}
+		Since $L|_{X_{K(Y)}} \sim_{\mathbb{Q}} 0$ we may write $L\sim_{Y, \mathbb{Q}} D\geq 0$ such that $D|_{X_{K(Y)}}=0$. If $C$ is any component of $D$ then $f(C)$ is a prime divisor, since $f$ is equidimensional. Thus, since $Y$ is $\mathbb{Q}$-factorial, it is enough to know that $L \sim_{\bQ,Y} 0$ after localisation about any codimension one point of $Y$. In particular we may suppose that $Y= \Spec (R)$ for some DVR $R$ with closed point $p$.
+		
+		Let $\left\{G_i \right\}_{i=1}^n$ be the irreducible components of the special fibre $F_p=f^*p$, so that by construction $D = \sum_{i=1}^n a_i G_i$ for certain $a_i \geq 0$.	
+		
+		We introduce $r:= \min \left\{ t \mid D -tF_p \leq 0 \right\}$. We are left to show that $D-rF_p=0$. 
+		If not, up to rearranging the order of $G_i$, we have $D-rF_p=-\sum_{i=2}^n l_i G_i \equiv_Y 0$, with $l_2 >0, l_i \geq 0$ and $G_{1}$ meeting $G_{2}$. Note that $(rF_p-D)$ is effective curve not containing $G_{1}$ but intersecting it. Hence there must be a curve $C$ on $G_{1}$ with $(rF-D) \cdot C >0$, but $rF-D \sim_{T} -D$ and $D$ is nef, a contradiction. Therefore $D-rF_p=0$ as claimed.
+	\end{proof}
+	
+	
+	For the readers' convenience we recall the following result, proved in \cite[Lemma 9.24]{bhatt2020}, which is an immediate application of the previous lemma. It can be thought of as a very controlled version of resolution of indeterminacy.
+	
+	\begin{lemma}\label{two}
+		Let $f \colon X \to Z$ be a projective contraction between normal quasi-projective, integral schemes over $R$.
+		Let $L$ be a $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$, nef over $Z$ such that $L|_{X_{k(Z)}}$ is semiample.
+		Assume $\dim X \leq 3$. Then there is a commutative diagram 
+		\[\begin{tikzcd}
+		X' \arrow[d, "g"] \arrow[r, "\phi"] & X \arrow[d, "f"] \\
+		Z' \arrow[r, "\pi"]                 & Z               
+		\end{tikzcd}\]
+		such that 
+		\begin{enumerate}
+			\item $\phi$ and $\pi$ are projective and birational;
+			\item  $g$ is equidimensional and $Z'$ is regular;
+			\item $g$ agrees with the map induced by $f^*L$ over the generic point of $Z$;
+			\item $\phi^{*}L \sim_{\mathbb{R}} g^{*}D$, where $D$ is a $\mathbb{Q}$-Cartier divisor on $Z'$.
+		\end{enumerate}  
+	\end{lemma}
+	
+	The following is a useful technique to reduce to the case of equidimensional morphisms. In turn this will allow us to make use of \autoref{lemma:EDSemiampleness}, at least in codimension $1$.
+	
+	\begin{proposition}\label{three}
+		Let $(X,B)$ be a $\mathbb{Q}$-factorial klt threefold pair.
+		Let $(X,B) \to T$ be a projective $R$-morphism such that $K_{X}+B$ is nef over $T$. Suppose there is a commutative diagram of normal schemes over $T$:
+		\[\begin{tikzcd}
+		W \arrow[d, "g"] \arrow[r, "f"] & X \arrow[d, "h"]  \\
+		Y     \arrow[r, "\pi"]           & Z,              
+		\end{tikzcd}\]
+		where $h$ is a contraction. Suppose  that 
+		\begin{enumerate}
+			\item  $Z,Y$ have dimension $2$ where $Y$ is a regular scheme and $Z$ is a normal algebraic space;
+			\item $D$ is a big, nef and EWM divisor on $Y$ and $\pi$ is the associated contraction;
+			\item  $f^{*}(K_{X}+B)=g^{*}D$;
+			\item $g$ is equidimensional. 
+		\end{enumerate} 
+		
+		Then there exists a $(K_X+B)$-trivial birational contraction $f \colon (X,B) \dashrightarrow (X', B')$ over $Z$ such that $X' \to Z$ is equidimensional. 
+		%\begin{enumerate}
+		%	\item[(1)] there is a boundary $\Delta \geq B$ such that $(X,\Delta)$ is klt,
+		%	\item[(2)] there is a $(K_X+\Delta)$-MMP over $Z$ which terminates with an equidimensional pair over $Z$. Moreover, every step of this MMP is $(K_X+B)$-trivial. 
+		%\end{enumerate} 
+	\end{proposition}
+	\begin{proof}
+		Let $z \in Z$ be a closed point such that the fibre $h^{-1}(z)$ is not one-dimensional. By upper semicontinuity of fibre dimensions, $h^{-1}(z)$ must contain a divisor $F$.
+		
+		Take $t >0$ with $(X,B+tF)$ klt and run a $(K_X+B+tF)$-MMP over $T$. 
+		We now show that this is an MMP over $Z$ as well.	
+		Let $C$ be a curve generating an extremal $(K_X+B+tF)$-negative ray. As $(K_{X}+B)$ is nef over $T$, then $F\cdot C <0$. Therefore $C \subseteq F$ and since $F$ is contracted by $h$ to a point, so too is $C$. By definition $X \to Z$ contracts only curves on which $(K_{X}+B)$ is trivial. From this we can conclude that the $(K_X+B+tF)$-MMP over $T$ is also a $(K_X+B+tF)$-MMP over $Z$ which is entirely $(K_{X}+B)$-trivial.  
+		
+		After each step of this MMP $X \dashrightarrow X'$ we may need to replace $W$ with a higher model so that it admits a morphism to $X'$. We can then modify $Y$, using \autoref{two}, such that $W \to Y$ is equidimensional and hence the original assumptions of the proposition still hold on $X'$ with $Z$ unchanged. Note we can apply \autoref{two} by abundance on the generic fibre $(X_{k(Z)},B_{k(Z)})$.
+		
+		Since this is an MMP of a pseudo-effective klt pair over $T$ it terminates by \autoref{MMP}. In fact we claim it terminates when the strict transform of $F$ is contracted. If $X\dashrightarrow X'$ does not contract $F$ then its transform on $X'$ remains the divisorial part of a fibre, so to establish this claim it is sufficient to show that the divisorial part of a fibre on $X \to Z$ satisfying $(a)$-$(d)$ is never nef. 
+		
+		To this end, let $F'$ be the strict transform of $F$ on $W$. Then $g(F')=\gamma$ must be an irreducible curve by equidimensionality and $\pi_*(\gamma)=z$. Choose a general curve $C$ in $F'$ such that $g(C)=\gamma$.
+		Since $D$ big and nef, we write $D\sim_{\mathbb{R}} A+E$, for $A$ ample and $E$ effective by Kodaira's lemma.
+		By Bertini theorems (see \cite[Theorem 2.15]{bhatt2020}) we can choose a general $H \sim_{\mathbb{R}} A$ meeting $\gamma$ transversally. 
+		Then $g^{*}H \cap C$ is a finite set of points and $g^{*}H$ is not contracted by $f$ as $H$ is general.
+		%since $H$ is horizontal over $R$ and $f$ is an isomorphism over $\mathbb{Q}$ (\textcolor{red}{we need less than $f$ iso over $\mathbb{Q}$, no? we always have it essentially. no?}).
+		We have $K_{X}+B \sim_{\mathbb{R}}f_{*}g^{*}(A+E) \sim_{\mathbb{R}}f_{*}g^{*}H+S$ where $S \geq 0$. As $C$ is general in $F'$ we have
+		$$f_{*}g^{*}H \cdot f_{*}C >0 \textup{ and } (K_{X}+B)\cdot f_{*}C=g^{*}D \cdot C=D \cdot \gamma=0 \text{ as } \pi_*\gamma=z,$$ so we have $S \cdot C <0$. Since $C$ is general in $F'$ we must have that $F$ is contained in the support of $S$ and $F \cdot f_{*}C <0$.
+		
+		Since there are only finitely many closed points $z \in Z$ for which the fibres are not one dimensional, we can repeat the above process a finite number of times and we terminate with a crepant model $(X',B')$ which is equidimensional over $Z$.	
+		%	Let $p_{i}$ be the points of $Z$ over which $X \dashrightarrow X'$ is not an isomorphism. Let $F_{i}$ be the divisorial parts of the fibres over $p_{i}$. Then for small $t$, $\Delta=B+\sum tF_{i}$ is klt. Since the $F_{i}$ are disjoint, $X \dashrightarrow X'$ is an MMP for $(X,\Delta)$ satisfying the desired conditions.	
+	\end{proof}
+	
+	Once we are in such a situation, it is possible to prove a suitable semiampleness result.
+	
+	\begin{proposition}\label{EDsemiampleness2}
+		Let $R$ be an excellent normal ring and take $T$ quasi-projective over $R$. Suppose that there is a commutative diagram of normal algebraic spaces, projective over $T$:
+		
+		\[\begin{tikzcd}
+		W \arrow[d, "g"] \arrow[r, "f"] & X \arrow[d, "\phi"] \\
+		Y \arrow[r, "\psi"]             & Z                  
+		\end{tikzcd}\]
+		
+		such that
+		
+		\begin{enumerate}
+			\item $W,X,Y$ are schemes and $\dim Y =2$;
+			\item the vertical maps $g$ and $\varphi$ are equi-dimensional;
+			\item the horizontal maps $f$ and $\psi$ are projective and birational;
+			\item there exists a EWM nef line bundles $L$ on $X$ (resp.  $D$ on $Y$) whose associated maps is $\phi$ (resp. $\psi$);
+			\item $L|_{X_{k(Z)}}$ and $L|_{X_\mathbb{Q}}$ are semiample;
+			\item $g^{*}D=f^{*}L$.
+		\end{enumerate}
+		
+		Then $L$ is semiample.
+	\end{proposition}
+	
+	\begin{proof}
+		
+		Since $Z$ is normal, there is an open immersion of a smooth scheme $U \to Z$ containing every codimension one point of $Z$ by \cite[Tag 0ADD]{stacks-project}. By $(b,e),$ $X_{U} \to U$ satisfies the assumptions of \autoref{lemma:EDSemiampleness} and we have that $L|_{X_{U}} \sim_{U,\mathbb{Q}} 0$. 
+		
+		Since $Z$ is a surface, $Z \setminus U$ consists of finitely many points. Let $r$ be the relative dimension of $X/Z$. Then we may choose $S$ to the intersection of $r$ general hyperplanes on $X$ such that $S$ meets each fibre over $Z \setminus U$ at only finitely many points. This may be done by inductively choosing hyperplanes $H_{i}$ such that they do not contain any component of any fibre of $S_{i}=\bigcap_{j< i} H_{j}$ over $Z\setminus U$. Then if $F$ is such a fibre, we have $\dim F\cap S_{i}=\dim F-i=r-i$, so $S=S_{r}$ meets $F$ at finitely many points.
+		
+		Note that $L|_{S}$ is clearly big and moreover if $C$ is any curve on $S$ with $L \cdot C =0$, then $C$ must be contracted by $X \to Z$ as $\phi$ is the contraction associated to $L$. In particular $C$ is contained in some fibre and by construction $C$ is not contained in a fibre over $Z \setminus U$, as $S$ contains no such curves. Thus in fact $C \subseteq X_{U}$. Therefore $\mathbb{E}(L|_{S}) \subseteq X_{U}$ and so $S|_{\mathbb{E}(L|_{S})}$ is semiample since $L|_{X_{U}}$ is. As $L|_{S_{\mathbb{Q}}}$ is semiample by assumption, we conclude that $L|_{S}$ is semiample by \cite[Theorem 6.1]{witaszek2020keels}. 
+		
+		Let $S'$ be the strict transform of $S$ surface on $W$, which must dominate $Y$. Let $f_{S'}, g_{S'}$ be restrictions of $f,g$ to $S'$. Then $(f^{*}L)|_{S'}=f_{S'}^{*}(L|_{S})=g_{S'}^{*}D$ and since $L|_{S}$ is semiample and $Y$ is normal, we must have that $D$ is semiample by \autoref{pullback}. In turn this implies that $L$ is semiample, since $f^{*}L=g^{*}D$.			
+	\end{proof}
+	
+	The following states that it's sufficient to prove abundance for a single minimal model inside its birational class.
+	
+	\begin{lemma}\label{inv}
+		Suppose that $(X,B)$ is a log canonical pair, projective over $T$. 
+		Let $\phi_{i} \colon (X, B) \dashrightarrow (Y_{i},B_{i})$ be minimal models for $(X,B)$ over $T$. 
+		Then $K_{Y_{1}}+B_{1}$ is semiample over $T$ if and only if $K_{Y_{2}}+B_{2}$ is so.
+	\end{lemma}
+	\begin{proof}
+		
+		Let $f \colon Z \to (X,B)$ be a birational contraction of normal schemes such that we induce the maps $g_i \colon Z \to Y_i$. We can write
+		$$K_Z+\Delta_Z \equiv g_i^*(K_{Y_i}+B_i) + E_i,$$
+		where $E_i$ are effective and contain all $\phi_i$-exceptional divisors.
+		Consider 
+		$$g_1^*(K_{Y_1}+B_1)-g_2^*(K_{Y_2}+B_2)=E_2-E_1. $$
+		In particular, $E_2-E_1$ is $g_2$-nef and therefore by the negativity lemma (\cite[Lemma 2.14]{bhatt2020}) we conclude that $E_2 -E_1 \leq 0$. By symmetry, we conclude that $E_2=E_1$. Therefore $g_1^*(K_{Y_1}+B_1)=g_2^*(K_{Y_2}+B_2)$. In particular, $K_{Y_1}+B_1$ is semiample  iff $K_{Y_2}+B_2$ is so.
+	\end{proof}
+	
+	We are now ready to prove the abundance theorem for klt threefolds over positive-dimensional basis.
+	
+	\begin{theorem}\label{abundance}
+		Let $\pi \colon (X,B) \to T$ be a projective morphism of $R$-schemes such that the $\pi(X)$ is positive dimensional.
+		Suppose $(X,B)$ is a klt pair of dimension three with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
+	\end{theorem}
+	
+	\begin{proof}
+		We can assume $\pi$ to be surjective.
+		If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace $(X,\Delta)$ with a $\mathbb{Q}$-factorialisation by \autoref{Q-factorial}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier divisors).
+		
+		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{t-bpf}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
+		
+		From now on, we suppose that $\kappa(K_{X}+B)+\dim T=2$.
+		If $T_\mathbb{Q} \neq \emptyset$, we set $\eta=\Spec(\mathbb{Q})$, otherwise we set $\eta$ to be the generic point of $T$. 
+		By \autoref{abundance-dim2},  $K_{X_\eta}+B_\eta$ is semiample and we have an induced map $\varphi_{\eta} \colon X_{\eta} \to Y_{\eta}$.
+		Take a model $Y$ over $T$ such that $\varphi \colon X \dashrightarrow Y$ restricts to $\varphi_{\eta}$. Note that $Y$ has dimension two. Let us consider a resolution of indeterminacy for $\varphi$.
+		
+		\[\begin{tikzcd}
+		& W \arrow[ld, "f"'] \arrow[rd, "g"] &   \\
+		X \arrow[rr, "\varphi", dashed] &                                   & Y
+		\end{tikzcd}\]
+		
+		Note $L=f^{*}(K_{X}+B)$ must satisfy the hypotheses of \autoref{two} with respect to $W \to Y$ as the generic fibre $F$ of $W \to Y$ is precisely the generic fibre of $\varphi_{\eta} \colon X_{\eta} \to Y_{\eta}$ so $L|_{F}\sim_{\mathbb{Q}} 0$ also. 
+		
+		Hence by \autoref{two} we can find a commutative square
+		\[\begin{tikzcd}
+		W \arrow[d, "g"]  & W' \arrow[d, "g'"] \arrow[l, "\psi'"'] \\
+		Y               & Y' ;   \arrow[l, "\psi"']               
+		\end{tikzcd}\] 
+		with $g'^{*}(D')=\psi'^{*}L$ and $W' \to Y'$ equidimensional. Then replacing $W,Y$ with $W',Y'$ we may assume that $f^{*}(K_{X}+B)=g^{*}D$ for some $D$ on $Y$ and that $W \to Y$ is equidimensional.
+		
+		We now verify that $D$ is a EWM $\mathbb{Q}$-Cartier nef divisor.
+		Since $f^{*}(K_{X}+B)$ is nef over $T$, so is $D$. Moreover since $D_\eta$ is big $\mathbb{Q}$-divisor by construction, we have $D$ is big over $T$. 
+		We finally apply \cite[Theorem 6.1]{witaszek2020keels} to conclude that $D$ is EWM as $D|_{Y_{\mathbb{Q}}}$ semiample and ${\mathbb{E}(D)}$ is just a finite disjoint collection of (possibly reducible) curves in positive characteristic and so $D|_{\mathbb{E}(D)}$ is clearly EWM. Hence $D$ induces a morphism of algebraic spaces $\theta \colon Y \to Z$.
+		
+		We claim that $D$ is semiample over $T$. 
+	%	We now distinguish two cases: if all the exceptional curves are defined over a field contained in $\overline{\mathbb{F}_{p}}$ for any $p$ then in fact $D$ is semiample by combining \cite[Lemma 2.16]{Keel} and \cite[Theorem 6.1]{witaszek2020keels}.
+	%	From now on, we can also suppose all the residue fields are infinite.
+		Since $D$ is EWM, we have the following commutative diagram, satisfying the conditions of \autoref{three}:
+		\[\begin{tikzcd}
+		X \arrow[d, "h"] & W \arrow[d, "g"] \arrow[l, "f"'] \\
+		Z                & Y \arrow[l, "\theta"']             
+		\end{tikzcd}\]
+		
+		By \autoref{three} and \autoref{inv} we may replace $X$, $Y$ and $W$ so that $X \to Z$ is equidimensional. We may then directly apply \autoref{EDsemiampleness2} to deduce that $K_{X}+\Delta$ is $\pi$-semiample.
+	\end{proof}
+	
+	\begin{remark}
+		While in this section we worked over mixed characteristic rings whose residue fields have characteristic $p> 5$, this is just due to the current state of the art on the MMP for mixed characteristic threefolds. The arguments in the section work over any excellent ring of mixed or positive characteristic as long as the MMP results are known to hold.
+		
+		In fact the arguments in this section show that abundance in mixed characteristic holds in the case that $\kappa(K_{X}+B)+\dim R = 2$, assuming the MMP holds for pairs of dimension $\dim X $ and that appropriate resolution and abundance results hold in lower dimensions. 
+	\end{remark}
+	
+	\section{Applications to invariance of plurigenera}\label{s-inv-plurigenera}
+	
+	
+	In this section, $R$ will always be an excellent DVR with $F$-finite residue field $k$ of characteristic $p>5$ and fraction field $K$. 
+	
+	The purpose of this section is to generalise the asymptotic invariance of plurigenera proven in \cite[Theorem 3.1]{EH} to families of \emph{non-log-smooth} surface pairs, as well as DVRs with non-perfect residue field. Similar results in characteristic zero are proven in \cite{HMX13, HMX18}.
+	The first case we discuss is the asymptotic invariance for families of good minimal models.
+	\begin{theorem}\label{thm:ADIOP_SA}
+		Let $(X,B)$ be a three-dimensional klt pair with $\mathbb{Q}$-boundary.
+		Let $\pi \colon X \to\Spec (R)$ be a  surjective projective contraction. Assume that $(X,B+X_k)$ is plt and $K_X+B$ is semiample over $R$.
+		Suppose one of the following holds:
+		\begin{enumerate}
+			\item $\kappa(K_{X_k}+B_k)\neq 1$; or
+			\item  $B_k$ big over $\Proj R(K_{X_k}+B_k)$.
+		\end{enumerate} 
+		Then there exists an $m_{0} \in \mathbb{N}$ such that 
+		$$h^0(X_K,m(K_{X_K}+B_K))=h^0(X_k,m(K_{X_k}+B_k))$$
+		for all $m\in m_0\bN$.
+	\end{theorem}
+	
+	We start by showing the normality of the central fibre of the image of the $(K_X+B)$-semiample fibration.
+	
+	\begin{proposition}\label{p-gen-case}
+		Let $(X,B)$ be a three-dimensional klt pair with $\mathbb{Q}$-boundary.
+		Let $\pi \colon X \to\Spec (R)$ be a  surjective projective contraction.
+		Suppose that $(X,B+X_{k})$ is plt. If $f \colon X \to Z$ is a birational morphism over $R$ such that $-(K_{X}+B)$ is $f$-nef, then $Z_k$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$.
+	\end{proposition}
+	
+	\begin{proof}
+		By \autoref{invAdj3} the central fibre $X_{k}$ is normal. 
+		As $f$ is birational over $R$, so is $f_{k}$ and thus $-(K_{X_{k}}+B_{k})$ is $f_{k}$-big and $f_k$-nef. We conclude by \autoref{invAdj2}.
+	\end{proof}
+	
+	The previous is useful for small $(K_{X}+B)$-trivial birational morphisms, and in particular to reduce the non $\mathbb{Q}$-factorial case to the $\mathbb{Q}$-factorial one.
+	
+	\begin{lemma}\label{l-reduce-Q-fac}
+		Let $(X,B)$ be a klt pair of dimension $3$ with a contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt.
+		Let $\pi\colon (Y,\Delta) \to (X,B)$ be a small, birational and $(K_{Y}+\Delta)$-trivial contraction with $B=\pi_{*}\Delta$. 
+		Then
+		$$h^{0}(X_{k},m(K_{X_k}+B_{k}))= h^{0}(Y_{k},m(K_{Y_{k}}+\Delta_{k}))$$ 
+		for all $m$ sufficiently divisible. 
+	\end{lemma}
+
+	\begin{proof}
+		Write $K_Y+\Delta'=\pi^* (K_X+B)$, since $K_{Y}+\Delta$ is numerically $\pi$ trivial we have that $\Delta'-\Delta \equiv_{\pi} 0$. Similarly as $B=\pi_{*}\Delta$ we have that $\Delta'-\Delta$ is exceptional and hence $\Delta'-\Delta=0$ by the negativity lemma \cite[Lemma 2.14]{bhatt2020}. As $\pi$ is small, the central fibre $Y_k$ is irreducible. 
+		Then by \autoref{p-gen-case}, $Y_k$ and $X_k$ are both normal.
+		As $\pi$ is the Iitaka fibration associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
+	\end{proof}
+	
+	We now discuss the delicate case of invariance for plurigenera where the Kodaira dimension is one and the boundary is big.
+	
+	
+	\begin{proposition}\label{p-1-case}
+		
+		Let $(X,B)$ be a klt pair of dimension $3$ with a contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
+		\begin{enumerate}
+			\item $K_X+B$ is semiample and let $f\colon X \to Z$ its Iitaka fibration over $R$;
+			\item $\kappa(K_X+B/R)=1$;
+			\item $B_{k}$ is big over $Z_{k}$.
+		\end{enumerate}
+		Then there exists an $m_{0} \in \mathbb{N}$  such that 
+		$$h^0(X_K,m(K_{X_K}+B_K))=h^0(X_k,m(K_{X_k}+B_k))$$
+		for all $m\in m_0\bN$.	
+	\end{proposition}
+	
+	\begin{proof}
+		Let $(Y, \Delta) \to (X, B)$ be a small $\mathbb{Q}$-factorialisation. 
+		Consider the morphism $X_{k} \to Z_{k}$. If $F$ is a general fibre then $F \cdot B_{k} > 0$ by assumption. Let $G=\pi^{*}_{k}F$ be a general fibre of $Y_{k} \to Z_{k}$. Then as $\pi_{k,*}\Delta_{k}=B_{k}$ we have $\Delta_{k} \cdot G=B_{k}\cdot F > 0$, so $\Delta_{k}$ is also big over $Z_{k}$. Together with \autoref{l-reduce-Q-fac} we can replace $(X,B)$ by $(Y,\Delta)$ and suppose $\mathbb{Q}$-factoriality of the pair $(X,B)$.
+		
+		As $K_X$ is not pseudoeffective over $X$, we now run a $K_{X}$-MMP over $Z$ with scaling of $A$ which terminates by \autoref{MMP} with a Mori fibre space $X \to Z'/Z$ since $B_k$ is big over $Z_k$. 
+		Since each step is $(K_{X}+B)$-trivial and does not contract $X_{k}$, $(X,B+X_{k})$ remains plt and so $X_{k}$ stays irreducible and normal by \autoref{invAdj3}.
+		
+		Consider a step of this MMP $\phi \colon X \dashrightarrow X'$ and let $B':=\phi_*B$.  We have
+		
+		\[\begin{tikzcd}
+			X \arrow[swap, rd, "g"] \arrow[rr, "\phi", dashed] &                 & X' \arrow[ld, "h"] \\
+			& Y \arrow[d] &                        \\
+			& Z ,         &                       
+		\end{tikzcd}\]
+
+where $h$ may either be an isomorphism or a small birational contraction. As $g$ is $(K_X+B)$-trivial, by \autoref{p-gen-case} we have that $Y_k$ is irreducible and normal as well. Let now $(Y,\Xi)$ be the induced pair on $Y$: we then have
+		$$h^{0}(X_{k},m(K_{X_k}+B_{k}))=h^{0}(Y_{k},m(K_{Y_{k}}+\Xi_k))=h^{0}(X'_{k},m(K_{X'_k}+B'_{k}))$$ 
+		
+		where the first equality also follows from \autoref{p-gen-case} and \autoref{l-stein-invariance} and the latter is \autoref{l-reduce-Q-fac}. Also the sections of $m(K_{X}+B)$ are preserved by this MMP for large divisible $m > 0$.
+		
+		Hence we can now suppose $X$ admits a Mori fibre space $X \to Z'/Z$, with $B_{k}$ big over $Z_{k}$.
+		
+		We claim that $Z'=Z$.
+		Indeed, suppose for contradiction that there exists a divisor $D$ on $Z'$ which is contracted by $Z' \to Z$. Since $\dim Z=2$, $D$ must be contained in $Z'_k$. But then $f^{-1}D$ is a surface inside $X_{k}$, which is irreducible by assumption. It cannot be that $X_{k}$ is contracted to a point over $Z$, thus no such $D$ exists and we have $Z=Z'$.
+		
+		In particular $-K_{X'}$ is ample over $Z$ and hence by \autoref{invAdj2} we have that $f_{k,*} \ox[X_{k}]=\ox[Z_{k}]$ and the result follows from \autoref{l-stein-invariance}.
+	\end{proof}
+	
+	
+	We can now prove the asymptotic invariance of plurigenera in a family of minimal models.
+	
+	\begin{proof}[Proof of \autoref{thm:ADIOP_SA}]
+		We have $\kappa(K_{X_k}+B_k)=\kappa(K_{X_K}+B_K)=\kappa$, since the Iitaka dimension is deformation invariant for semiample line bundles by \autoref{lemma_DIOK}. Let $f \colon X\to Z/\Spec (R)$ be the relative Iitaka fibration, so that $K_X+B\sim_{\bQ}f^\ast A$ for some ample $\bQ$-divisor. 
+		We now divide in various cases.
+		
+		If $\kappa=0$, then $K_X+B\sim_{\bQ}0$ and hence we conclude by \autoref{lemma_DIOK}.
+		If $\kappa=1$, then this is \autoref{p-1-case}. 
+		Finally in the case $\kappa=2$ we conclude by \autoref{p-gen-case} and \autoref{l-stein-invariance}. 	
+	\end{proof}
+	
+	
+	Putting these results together with \autoref{lemma:MMP_in_fam2} and the abundance theorem \autoref{abundance} we deduce an asymptotic invariance result for plurigenera on suitable families. To enlighten the conditions we need to impose on the non-canonical locus of the family, we revisit an example due to Kawamata (see \cite[Example 4.3]{Kaw99}).
+	%Note the proof of \autoref{abundance} holds in positive characteristic since $X$ is still of relative dimension $2$ over a DVR. 
+	
+	\begin{example}	\label{ex-kawamata}
+		Let $R$ be an excellent DVR and consider the following diagram of $R$-flat families:
+		
+		\[\begin{tikzcd}
+			\mathcal{X} \ar[rr, dashed, "\phi"] \arrow[rd, "g",swap] \ar[rdd, bend right,
+			"f",swap] &   & \mathcal{X}^{+}  \arrow[ld, "g^+"]  \\
+			&  \mathcal{Z}    \ar[d]                             & 	\\
+			& \Spec(R) &
+		\end{tikzcd}
+		\] 
+		where
+		\begin{enumerate}
+			\item $\mathcal{X}$ is a terminal threefold and the central fibre  $X_0$ is strictly klt with a singular point $p$;
+			\item $g$ is en extremal $K_{\mathcal{X}}$-negative flipping contraction;
+			\item $\mathcal{X}^{+}$ is regular.
+		\end{enumerate}
+		%	Note that ${Z_0}$ is klt.
+		A local model is given by the Francia flip explained in \cite{Kaw99}. 
+		As explained by Kawamata, one can construct such a situation and the map
+		$f_*\mathcal{O}_{\mathcal{X}}(mK_{\mathcal{X}}) \to f_* \mathcal{O}_{X_0}(mK_{X_0})$ is not surjective.
+		
+		%	The map $\mathcal{O}_{\mathcal{X}}(mK_{\mathcal{X}}) \to f_* \mathcal{O}_{X_0}(mK_{X_0})$ is not surjective. This is because the map $$g_*\mathcal{O}_{\mathcal{X}}(mK_{\mathcal{X}})=\mathcal{O}_{\mathcal{Z}}mK_{\mathcal{Z}} \to g_*\mathcal{O}_{X_0}(mK_{X_0})=\mathcal{O}_{Z_0}(mK_{Z_0}) $$	 is not surjective as otherwise $K_{\mathcal{Z}}$ would be $\mathbb{Q}$-Cartier.
+		
+		Note that this situation is excluded by condition (2) of \autoref{lemma:MMP_in_fam2} and \autoref{thm:ADIOP_final2}.
+		Indeed $\textbf{B}_{-}(X_k, K_{X_k})$ clearly contains the flipped locus of $g$, which must contain the non-canonical singular points $p$ of $X_k$. As $\mathcal{X}$ is terminal, $p$ is not the restriction of a horizontal non-canonical centre of $\mathcal{X}$.
+	\end{example}
+	
+
+Imposing the conditions of \autoref{lemma:MMP_in_fam2}, we are able to prove the invariance of plurigenera for families of klt surfaces from \autoref{thm:ADIOP_SA}.
+	
+	\begin{theorem}\label{thm:ADIOP_final2}
+		Let $X \to \Spec(R)$ be a projective surjective morphism and suppose that $(X,B)$ is a three dimensional klt pair with $\mathbb{Q}$-boundary.
+		Suppose that all of the following are satisfied:
+		
+		\begin{enumerate}
+			\item[(1)] $(X, X_{k}+B)$ is plt with $X_k$ integral and normal;
+			\item[(2)]  ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+		\end{enumerate}
+		
+		Suppose further that at least one of the following holds:
+		\begin{enumerate}
+			\item $\kappa(K_{X_{k}}+B_{k}) \neq 1$; or
+			\item $B_{k}$ is big over $\textup{Proj}(K_{X_{k}}+B_{k})$
+		\end{enumerate}	
+		Then there is $m_{0} \in \mathbb{N}$ such that 
+		$$h^{0}(X_{K},m(K_{X_{K}}+B_{K}))=h^{0}(X_{k},m(K_{X_{k}}+B_{k}))$$
+		for all $m \in m_{0}\mathbb{N}$.
+		
+	\end{theorem}
+	
+	\begin{proof}
+		By \autoref{l-reduce-Q-fac} we can suppose $X$ is $\mathbb{Q}$-factorial.
+		We may run a $(K_X+B)$-MMP over $R$ which terminates by \autoref{MMP}. 
+		We call $(Y,\Gamma)$ the end-product of this MMP. Since $(X,B)$ satisfies conditions (1)-(2) of \autoref{lemma:MMP_in_fam2} we deduce $h^{0}(X_{k},m(K_{X_{k}} + B_{k}))=h^0(Y_k, m(K_{Y_k}+\Gamma_k))$ for all sufficiently divisible $m$. 
+		In the case where $\kappa(K_{X_{k}}+B_{k})=1$, the condition that $B_{k}$ is big over $\textup{Proj}(K_{X_{k}}+B_{k})$ is also preserved by the MMP.
+		
+		If $K_{X}+B$ is pseudo-effective then $K_Y+\Gamma$ is nef over $R$. Therefore, by \autoref{abundance}, $K_{X}+B$ is semiample and the result then follows from \autoref{thm:ADIOP_SA}. 
+		If $K_X+B$ is not pseudoeffective over $R$, then there is a Mori fibre space structure $(Y,\Gamma) \to Z$. This ensures that neither $K_{Y}+\Gamma$ nor $K_{Y_{k}}+\Gamma_{k}$ are pseudo-effective and thus the result holds trivially. 
+	\end{proof}
+	
+	
+	\begin{remark}	
+		The $p>5$ assumption is essential to the adjunction type results used  in \autoref{p-gen-case}. Even if the MMP was known in lower characteristic, our arguments in this section would not extend immediately.
+	\end{remark}
+	
+	\bibliographystyle{amsalpha}
+	\bibliography{refs}
+\end{document}
