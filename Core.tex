@@ -10,6 +10,16 @@
 \usepackage{hyperref}
 \usepackage[shortlabels]{enumitem}
 
+
+\RequirePackage[dvipsnames,usenames]{xcolor}
+\usepackage{mathtools}
+%\usepackage{showkeys}
+\usepackage[abbrev,alphabetic]{amsrefs}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{systeme}
+
 \usepackage{tikz-cd}
 
 \newcommand{\basetheorem}[3]{
@@ -124,6 +134,8 @@
 	
 	\input{Chapter_Preliminaries}
 	\input{Chapter_Boundedness}
+	\input{Chapter_Abundance}
+	\input{Chapter_Finiteness}
 	
 	\bibliography{refs}
 	\bibliographystyle{alpha}
