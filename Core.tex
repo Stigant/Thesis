@@ -125,17 +125,26 @@
 
 \usepackage{xcolor}
 \newcommand\myworries[1]{\textcolor{red}{#1}}
-
+\setcounter{tocdepth}{1}
 %\usepackage{subfiles}
 
 
+\usepackage[titles]{tocloft}
+
 \begin{document}
 	
+	
+	\tableofcontents
+	
+	\chapter{Introduction}
 	
 	\input{Chapter_Preliminaries}
 	\input{Chapter_Boundedness}
 	\input{Chapter_Abundance}
 	\input{Chapter_Finiteness}
+
+	
+	
 	
 	\bibliography{refs}
 	\bibliographystyle{alpha}

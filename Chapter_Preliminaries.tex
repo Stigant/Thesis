@@ -837,6 +837,8 @@ A useful application of DLT modifications is the study of the NKLT locus. In par
 
 \myworries{What if $-(K_{X}+B)$ is nef? What about close to a fibre?}
 
+\subsection{Adjunction}
+
 Dlt modifications are also closely related to the study of adjunction.
 
 In particular we have the following easy application.
@@ -1018,11 +1020,90 @@ In particular the result holds when $X$ has dimension $3$ without any further as
 \end{proof}
 
 It also holds in dimension $4$ when the residue field is perfect, under the assumption that resolutions exist by \cite{}.
-%
-%
-%
+
+\subsection{Rational Polytopes of Boundaries}
+
+In this section we recall relevant information about rational polytopes and their application to different kinds of birational models.
+
+A non-exhaustive list of import kinds of birational models is as follows.
+
+\begin{definition}\label{Model-defs}
+	Let $\phi:X \dashrightarrow Y$ be a birational contraction. Take a divisor $D$ and write $D'=\phi_{*}D$. 
+	
+	We say it is $D$-non-positive (resp. $D$-negative) if there is a common resolution $p:W \to X$, $q:W \to Y$ where 
+	
+	\[p^{*}D=q^{*}D'+E\]
+	and $E \geq 0$ is $q$ exceptional (resp. $E \geq 0$ is $q$ exceptional and contains the strict transform of every $\phi$ exceptional divisor in its support). 
+	
+	If $(X,\Delta)$ is a psuedoeffective lc pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
+	
+	If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log minimal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
+	
+	If instead $\phi:X \dashrightarrow Y$ is a rational map then it is an ample model for $D$ if there is $H$ ample on $Y$ such that $p^{*}D\sim_{\mathbb{R}}q^{*}H+E$ where $E \geq 0$ is such that $E \leq B$ for any $p^{*}D \sim_{\mathbb{R}} B \geq 0$.
+\end{definition}
+
+
+Note that ample models are unique. Indeed if $X \dashrightarrow Y$ and $X \dashrightarrow Z$ are two ample models, then on some common resolution $W$ of both maps we have $f:W \to Y$, $g:W \to Z$ and $h:W \to X$. Now there are ample divisors $A_{Y}$, $A_{Z}$ with $f^{*}A_{Y}+E_{Y}\sim_{\mathbb{R}}h^{*}D \sim_{\mathbb{R}}g^{*}A_{Z}+E_{Z}$. But by definition $E_{Z}=E_{Y}$ and hence $f^{*}A_{Y}\sim_{\mathbb{R}}g^{*}A_{Z}$, so there is an isomorphism $i:Z \to Y$ with $i \circ f= g$ as required.
+
+If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample model of $(X,\Delta)$ if it is an ample model for $K_{X}+\Delta$. We can often replace pairs with linearly equivalent versions.
+
+\begin{lemma}\label{equiv}\cite[Lemma 3.6.8]{birkar2010existence}
+	Let $\phi:X \to Y$ be a rational map. Suppose $(X,\Delta)$ and $(X,\Delta')$ are two pairs and $D,D'$ two $\mathbb{R}$-Cartier divisors on $X$. Take $t >0$ a positive real number.
+	\begin{itemize}
+		\item If $D \equiv tD'$ and $\phi_{*}D$, $\phi_{*}D'$ are both $\mathbb{R}$-Cartier then $\phi$ is $D$ negative (resp $D$ non-negative) if and only if it is $D'$ negative (resp. non-negative)
+		\item If both pairs are lc and $K_{X}+\Delta \sim_{\mathbb{R}} t(K_{X}+\Delta')$ then $\phi$ is a wlc model for $(X,\Delta)$ if and only if it is a wlc model for $(X,\Delta')$.
+		\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log minimal model for $(X,\Delta)$ if and only if it is a log minimal model for $(X,\Delta')$.
+		\item If $D\sim_{\mathbb{R}} tD$ then $\phi$ is an ample model for $D$ if and only if it is an ample model for $D'$.
+	\end{itemize}
+\end{lemma}
+
+An import tool for studying different outputs of the MMP and associated models on a scheme are rational polytopes of divisors. We recall the definition of the various polytopes we will need.
+
+\begin{definition}
+	Let  $X$ be a three-dimensional $\mathbb{Q}$-factorial integral scheme and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ is positive dimensional. 
+	Fix a $\mathbb{Q}$-divisor $A\geq 0$. Let $V$ be a finite dimensional, rational affine subspace of $\text{WDiv}_{\mathbb{R}}(X)$ containing no components of $A$.
+	
+	We have the following subsets of $\text{WDiv}_\mathbb{R}(X)$.
+	\[V_{A}= \{A+B \colon B \in V\};\]
+	\[\mathcal{L}_{A}(V)=\{\Delta=A+B \in V_{A} \colon (X,\Delta) \textup{ is an lc pair}\};\]
+	\[\mathcal{N}_{A}(V)=\{\Delta \in \mathcal{L}_{A}(V) \colon K_{X}+\Delta \textup{ is nef over } T\}.\]
+	
+	Given a birational contraction $\phi:X \dashrightarrow Y$ we also define
+	%\[\mathcal{RW}_{A,\phi}(V)=\{\Delta \in \mathcal{RE}_{A}(V): \phi \text{ is a weak log canonical (wlc) model of } (X,\Delta)\}\]
+	\[\mathcal{W}_{\phi}(C)=\{\Delta \in \mathcal{E}(C): \phi \text{ is a weak log canonical (wlc) model of } (X,\Delta)\}\]
+	and given a rational map $\psi:X \dashrightarrow Z$
+	%\[\mathcal{RA}_{A,\phi}(V)=\{\Delta \in \mathcal{RE}_{A}(V): \phi \text{ is the ample model of } (X,\Delta)\}\]
+	\[\mathcal{A}_{\phi}(C)=\{\Delta \in \mathcal{E}(C): \phi \text{ is the ample model of } (X,\Delta)\}\]
+\end{definition}
+
+Recall that as long as there is a projective log resolution of $(X,A)$ together with $V$ the set $\mathcal{L}_{A}(V)$ is a rational polytope by the work of Shokurov \cite{Sho92}, in particular this is true when $\dim X \leq 3$. Further if $(X,A+B)$ is klt and $(X,A+B')$ is lc then $(X,A+tB+(1-t)B')$ is klt for any $0 \leq t < 1$, so the set of klt pairs is open in $\mathcal{L}_{A}(V)$. In fact if $\mathcal{L}_{A}(V)$ contains a klt pair, the entire interior consists of klt boundaries and the same is true for any sub-polytope.
+
+The cone theorem, even the slightly weaker form proved in mixed characteristic in \cite{bhatt2020}, implies that $\mathcal{N}_{A}(V)$ is a rational polytope. 
+
+\begin{lemma}\label{neftope} \cite[Proposition 9.31]{bhatt2020}
+	Fix a $\mathbb{Q}$-divisor $A \geq 0$ such that $(X,A)$ is a $\mathbb{Q}$-factorial klt three-dimensional pair.
+	Let $f\colon X \to T$ be a projective morphism of quasi-projective $R$-schemes.
+	Then $\mathcal{N}_{A}(V)$ is a rational polytope.
+\end{lemma}
+
+The further study of these objects will largely be deferred till \myworries{Chapter ref}, where we will introduce a slightly more flexible notion of a pair in order to better work with suck poltyopes.
+
+We include now, however, one important application. We can prove abundance for pairs with $\mathbb{R}$-boundaries given the appropriate results for $\mathbb{Q}$-boundaries.
+
+\begin{proposition}\label{QtoR}
+	Let $f \colon X \to T$ be a projective $R$-morphism of quasi-projective $R$-schemes such that $(X,\Delta)$ is a $\mathbb{Q}$-factorial klt pair of dimension three and the image of $X$ in $T$ is positive dimensional. 
+	Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ $f$-nef, then $K_{X}+B$ $f$-semiample.
+	
+	Then for every $\mathbb{R}$-divisor $\Delta$ such that $(X, \Delta)$ is klt and $K_X+\Delta$ is $f$-nef, then $K_X+\Delta$ is $f$-semiample.
+\end{proposition}
+\begin{proof}
+	Let $\Delta= \sum_{1}^{n} t_{i}B_{i}$ and $V$ be the $\mathbb{R}$-linear span of $B_i$ in $\text{WDiv}_\mathbb{R}(X)$. By \autoref{neftope} we have that $\mathcal{N}_{0}(V)$ is a rational polytope. Hence there are rational boundaries $D_{i} \in \mathcal{N}_{0}(V)$ such that $\Delta=\sum \lambda_{i} D_{i}$ where $\sum \lambda_{i} =1$. Since $(X,\Delta)$ is klt, by choosing $D_{i}$ sufficiently close to $\Delta$ we may suppose that each $(X,D_{i})$ is a klt pair with $\mathbb{Q}$-boundary and $K_X+D_i$ $f$-nef. 
+	By assumption $K_{X}+D_{i}$ is $f$-semiample and thus so is $K_{X}+\Delta=\sum \lambda_{i} (K_{X}+D_{i})$.
+\end{proof}
+
 %\bibliography{refs}
 %\bibliographystyle{alpha}
 %\end{document}
+
 
 
