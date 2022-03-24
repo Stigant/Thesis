@@ -125,25 +125,22 @@
 	\section{Introduction}
 	
 	Recent work in \cite{bhatt2020globally+} establishes the bulk of the Minimal Model Program for KLT threefold pairs over suitable bases in base in mixed characteristic. In particular it is shown that one can always run an MMP with scaling. When the pair is psuedo-effective more is known, it is shown that in fact every MMP terminates without the need for scaling. A small adaptation of the arguments of \cite{kawamata2008flops} ensures these models are connected by flops. This paper focuses on the outstanding questions for pairs which are not pseudo-effective over mixed characteristic bases. The main restrictions are that the residue fields of $R$ should have characteristic greater than $5$. A full characterisation of suitable base rings is given in \autoref{setup}.
-	
-	
-	
+		
 	First it is shown that in fact the threefold MMP always terminates, extending the termination result of \cite{bhatt2020globally+} to pairs which are not pseudo-effective.
 	
-	
-	\begin{theorem}[\autoref{termination}]
+	\begin{theorem}[\autoref{termination}]\label{Main_Finite3}
 		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
 	\end{theorem}
 
 	An MMP for a pair which is not pseudo-effective will always terminate with a Mori fibre space. Unlike minimal models these are not connected by flops or even isomorphic in codimension $2$. They can be very varied even in dimension $2$. Nonetheless they are conjecturally related by a sequence of elementary transformations called Sarkisov Links. This claim is known as the Sarkisov program. It is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
 	
-	\begin{theorem}[\autoref{sarkisov}]
+	\begin{theorem}[\autoref{sarkisov}]\label{Main_Finite2}
 		Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces over $R$ of dimension $3$. Then they are connected by Sarkisov links.
 	\end{theorem}
 	
 	The proof of this second theorem follows closely the work of \cite{hacon2009sarkisov}. The main technical work comes in proving a suitable version of finiteness of minimal models, which is due to \cite{birkar2010existence} in characteristic $0$. 
 	
-		\begin{theorem}[\autoref{rltfiniteness}]
+		\begin{theorem}[\autoref{rltfiniteness}]\label{Main_Finite1}
 		Let $X$ be a threefold over $R$. Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)$ is a klt pair. Then the following hold:
 		
 		\begin{enumerate}

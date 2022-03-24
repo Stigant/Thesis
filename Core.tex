@@ -154,7 +154,7 @@
 	\tableofcontents
 	
 	\chapter{Introduction}
-	
+
 	Algebraic Geometry is the study of geometric shapes described as solutions to polynomials; or perhaps more generally the study geometric objects which are locally the spectra of rings.
 	
 	While this set of definitions offers a rich and fruitful area of study and a firm mathematical foundation from which to approach, they are not particularly useful methods of actually describing the objects of interest. One would not expect to see a variety given by some list of equations, nor as a list of rings and gluing information, except perhaps in the very simplest of examples.
@@ -171,7 +171,7 @@
 			\item There is a $K_{X'}+\Delta'$ negative contraction $X' \to Z$ of relative Picard rank $1$.
 		\end{enumerate}
 	\end{conjecture*}
-
+	
 	In the first case $X'$ is said to be a minimal model. In the latter we call $X' \to Z$ a Mori fibre space.
 	
 	At its most reductive, the MMP can be understood to claim that varieties can be built from three types of geometric objects - each with their own distinct properties. These are Fano, Calabi-Yau and General Type (or canonically polarised) varieties. For birational geometers it is natural to describe these in terms of their canonical bundle, these types of variety have $K_{X}$ negative (anti-ample), $K_{X}$ (numerically) trivial or $K_{X}$ positive (ample) respectively.
@@ -181,13 +181,13 @@
 	\begin{theorem*}\myworries{cite}
 		Let $D$ be a Cartier divisor on a normal, projective variety $X$. Let $\overline{NE}(X)$ be the closure of the cone spanned by effective classes inside $N_{1}(X)$. Then $D$ is ample if and only if $D.C >0$ for any class $C \in \overline{NE}(X)$.
 	\end{theorem*}
-		
+	
 	Not every such condition is so easily interpreted, however. It is not clear even that $K_{X}$ is numerical trivial ought to ensure that $K_{X}$ is $\mathbb{Q}$-linearly trivial. Many results and theorems within the field therefore provide a means of turning numerical statements about divisors or pairs into algebraic ones. A more sophisticated example is the Base Point Free Theorem.
 	
-	\begin{theorem*}
-		Let $(X,\Delta)$ be a klt pair. Let $M$ be a nef divisor and suppose that $M-(K_{X}+\Delta)$ is big and nef. Then $M$ is semiample.
+	\begin{theorem*}\cite[Theorem 3.3]{KM}
+		Let $(X,\Delta)$ be a klt pair over a field of characteristic $0$. Let $M$ be a nef divisor and suppose that $M-(K_{X}+\Delta)$ is big and nef. Then $M$ is semiample.
 	\end{theorem*}
-
+	
 	Here nefness is an entirely numerical condition, and bigness has both numerical and cohomological characterisations, whereas semiampleness is an entirely algebraic phenomenon. We can also understand singularity conditions like klt and log canonical to be numerical conditions, though of a very different flavour to the intersection based conditions we impose upon divisors.
 	
 	In characteristic zero, one the most important tools for proving these kinds of results is Kawamata-Viehweg (KV) vanishing. A result which is known to fail in positive and mixed characteristic. Much of the difficulty of recreating the success of the MMP in characteristic zero comes from the need to find alternative methods of generating these kinds of translations from numerical conditions to algebraic. More philosophically, KV vanishing and similar results provide a clear impetus for the focus on the the canonical divisor, and more generally on klt pairs. It is less obvious in other settings exactly what the role of $K_{X}$ should be.
@@ -200,14 +200,14 @@
 	
 	In mixed characteristic, the ideas of Keel are generalised immediately by \cite{} through clever study of universal homeomorphisms in place of the Frobenius morphism. The full statement is as follows and captures both the mixed characteristic and the positive characteristic behaviour.
 	
-	\begin{theorem*}
-		Let $D$ be a big and nef divisor on $X$ with $D|_{X_{\mathbb{Q}}}$ semiample. Let $\mathbb{E}[D]$ be the union of integral subschemes of $X$ on which $D$ is not big. Then $D$ is semiample (resp. EWM) if and only if $D|_{\mathbb{E}[D]}$ is so.
+	\begin{theorem*}\cite[Theorem 1.2]{witaszek2020keels}
+		Let $D$ be a nef divisor on $X$ with $D|_{X_{\mathbb{Q}}}$ semiample. Let $\mathbb{E}[D]$ be the union of integral subschemes of $X$ on which $D$ is not big. Then $D$ is semiample (resp. EWM) if and only if $D|_{\mathbb{E}[D]}$ is so.
 	\end{theorem*}
 	
 	The $F$-singularities are less smoothly generalised, however. The BCM singularities of \cite{} are similar in some sense to $F$-regularity and provide important adjunction type results as in \cite{}. On the other hand the globally $+$-regular singularities of \cite{} are inspired by, and analogous to, globally $F$-regular singularities. In particular they provide suitable vanishing type results to prove the existence of flips. 
 	
 	The remainder of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance for minimal models and show that Mori Fibrations are connected by Sarkisov links.	
-
+	
 	\section{Boundedness}
 	
 	Once the MMP has been established for a particular class of objects, there is a natural follow up question of boundedness or birational boundedness. Loosely speaking, given that algebraic objects are constructed from certain building blocks, we might start to wonder how many of such building blocks there are, and how many different ways they might be put together.
@@ -218,17 +218,17 @@
 	
 	\begin{conjecture*}
 		Let $d \in \mathbb{N}$ and $\epsilon > 0$. Fix a field $\kappa$. Then the set of projective varieties $X$ admitting an $\epsilon$-log Calabi Yau pair $(X,\Delta)$ with $-(K_{X}+\Delta)$ big and nef form a bounded a family.
-		\end{conjecture*}	
+	\end{conjecture*}	
 	
-	In characteristic zero, it is proven in \cite{}.
+	In characteristic zero, it is proven in \cite[Theorem 1.1]{birkar2016singularities}.
 	
-	There are similar expectations for varieties of general type, \cite{}. Calabi-Yau varieties however are somewhat more subtle. Even in dimension there are issues: complex $K3$ surfaces are bounded but projective ones are not. We can understand the issue to be that the projective $K3$ surfaces consist of infinitely many lines inside the space of complex differential ones.
+	There are similar results and conjectures for varieties of general type, see for instance \cite{HMX18}. Calabi-Yau varieties, however, are somewhat more subtle. Even in dimension there are issues: complex $K3$ surfaces are bounded but projective ones are not. We can understand the issue to be that the projective $K3$ surfaces consist of infinitely many lines inside the space of complex differential ones.
 	
 	In somewhat greater generality we might expect to be able to replace the bigness condition of the BAB conjecture with some form of rational connectedness on the underlying variety $X$, at least in characteristic zero. In positive characteristic it is unclear such a result would hold, even for dimension $2$ as rational connectedness fails to rule out the possibility that $X$ is a $K3$ surface. To the best of my knowledge it is unknown if rationally connected $K3$ surfaces are bounded or not.
 	
 	\autoref{Boundedness} attempts to circumvent these issues by imposing the additional criteria that $X$ be $F$-split. As well as preventing the aforementioned issue in dimension $2$, it also provides a sufficient vanishing type result to make use of inductive style arguments. Roughly speaking, one runs an MMP to reduce the case that $X$ is a Mori Fibration, and applies the lower dimensional boundedness results on the general fibres and the base to infer the result on the total space. We prove the following.
 	
-	\begin{theo}\label{Main_Bound}\myworries{ref}
+	\begin{theo}\label{Main_Bound}
 		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions
 		\begin{itemize}
 			\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
@@ -271,7 +271,7 @@
 	
 	Although the key focus of this Chapter is mixed characteristic schemes, the proof as given applies more widely to schemes over a positive dimensional base containing points of positive characteristic. In particular it covers some cases of purely positive characteristic.
 	
-	As a consequence we prove an Invariance of Plurigenera in the style of \cite{}. 
+	As a consequence we prove an Invariance of Plurigenera result in the style of \cite{EH}. 
 	
 	\begin{theo}\label{Main_Abund2}
 		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
@@ -305,7 +305,7 @@
 	Terminal minimal models are connected by flops, due to the arguments of \cite{}. Mori Fibrations however are expected to be linked by several different kinds of birational transformations. We prove this in dimension $3$.
 	
 	\begin{theo}\label{Main_Finite1}[\autoref{sarkisov}]
-		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$. Take $g_{1}:Y_{1} \to Z_{1}$, $g_{2}:Y_{2} \to Z_{2}$ two Sarkisov related Mori fibre spaces over $R$ of dimension $3$. Then they are connected by Sarkisov links.
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$. Take $g_{1}:Y_{1} \to Z_{1}$, $g_{2}:Y_{2} \to Z_{2}$ two Sarkisov related Mori fibre spaces over $R$ of dimension $3$. Then they are connected by Sarkisov links.
 	\end{theo}
 	
 	These links are characterised diagrammatically as follows.
@@ -391,7 +391,7 @@
 	The ample divisor $A\sim -K_{X}$ plays an important role here. Indeed the key result needed to recreate this kind of decomposition is the following Finiteness of Minimal Models result.
 	
 	\begin{theo}\label{Main_Finite2}
-		Let $X$ be a threefold over $R$. Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)$ is a klt pair. Then the following hold:
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$ and take $X$ a threefold over $R$. Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)$ is a klt pair. Then the following hold:
 		
 		\begin{enumerate}
 			\item There are finitely many birational contractions $\phi_{i}:X \dashrightarrow Y_{i}$ such that 
@@ -413,7 +413,8 @@
 	In this Chapter we also give a short proof of termination for klt threefold pairs in mixed characteristic; showing that any MMP from a pair with $K_{X}+\Delta$ not psuedo-effective eventually terminates with a Mori Fibration.
 	
 	\begin{theo}\label{Main_Finite3}[\autoref{termination}]
-		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$, then any $K_{X}+\Delta$ MMP terminates.
 	\end{theo}
 	
 	
