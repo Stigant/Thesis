@@ -216,6 +216,47 @@ We will be interested in LCY varieties in which general points can be connected 
 
 If $X \to X'$ is a dominant morphism from $X$ uniruled/RCC/rationally connected then we may compose $U \to X \to X'$ to see that $X'$ is uniruled/RCC/rationally connected. 
 
+\begin{theorem}\cite[Theorem 1.2]{patakfalvi2019ordinary}\label{split}
+	Let $X$ be a normal, Cohen Macaulay variety with $W\mathcal{O}$-rational singularities over a perfect field of positive characteristic. Then $X$ cannot simultaneously satisfy all the following conditions.
+	\begin{enumerate}
+		\item $X$ is uniruled.
+		\item $X$ is $F$-split.
+		\item $X$ has trivial canonical bundle.
+	\end{enumerate}
+	If in fact $X$ is smooth then we may replace $K_{X}\sim 0$ with $K_{X} \equiv 0$.
+\end{theorem}
+
+\begin{lemma}\label{vol}\cite[Lemma 2.5]{jiang2018birational}
+	Suppose $X$ is projective and normal, $D$ is an $\mathbb{R}$-Cartier divisor and $S$ is a basepoint free normal and prime divisor. Then for any $q >0$,
+	\[\Vol(X,D+qS) \leq \Vol(X,D) + q\dim(X)\Vol(S,D|_{S}+qS|_{S}).\]
+\end{lemma}	
+
+\begin{lemma}\label{cc} \cite[Proposition 4.37]{kk-singbook}
+	Suppose that $(S,B)$ is a klt surface and $(K_{S}+B+D) \sim 0$ for $D$ effective, integral and disconnected, then $D$ has exactly two connected components.
+\end{lemma}
+
+\begin{theorem}\cite[Theorem 1]{tanaka2017semiample}\myworries{Into Prelims}
+	Let $(X,\Delta)$ be a log canonical (resp. klt) pair where $\Delta$ is an effective $\mathbb{Q}$-divisor. Suppose $D$ is a semiample divisor on $X$ then there is an effective divisor $D'\sim D$ with $(X,\Delta+D')$ log canonical (resp. klt).
+\end{theorem}
+
+\begin{corollary}\label{average}\myworries{Into Prelims}
+	Suppose that $(X,\Delta)$ is a sub klt pair together with $D$ a divisor on $X$ and $\pi\colon (X',\Delta') \to X$ a log resolution of $(X,\Delta)$. Further assume that there is some $D'$ on $X'$ with $\pi_{*}D'=D$, $-(K_{X'}+\Delta'+D')$ $\pi$-nef, $(X,\Delta')$ sub klt and $D'$ semiample. Then there is $E \sim D$ on $X$ effective with $(X,\Delta+E)$ sub klt. If in fact $(X,\Delta)$ is $\epsilon$-klt then we may choose $E$ such that $(X,\Delta+E)$ is also.
+\end{corollary}
+\begin{proof}
+	We may write $\Delta'=\Delta_{p}-\Delta_{n}$ as the difference of two effective divisors. Since $(X',\Delta')$ is log smooth we must have that $(X',\Delta_{p})$ is klt. Thus by the proceeding theorem we have that there is some $E' \sim D'$ with $(X',\Delta_{p}+E')$ klt. Then we must also have that $(X',\Delta'+E')$ is sub klt 
+	Write $E=\pi_{*}E'$, then $R=\pi^{*}(K_{X}+\Delta+E)- (K_{X'}+\Delta'+E')\equiv_{f}-(K_{X'}+\Delta'+D')$ is $\pi$-nef and exceptional. Hence by the negativity lemma we have that $-R$ is effective, and $\pi^{*}(K_{X}+\Delta+E) \leq (K_{X'}+\Delta'+E')$ giving that $(X,\Delta +E)$ is klt.
+	
+	If $(X',\Delta)$ is $\epsilon$-klt then so is $(X',\Delta_{p})$. Let $\delta =\min (1-\epsilon-c_{i})$ where $c_{i}$ are the coefficients of $\Delta_{p}$ and take $m \in \mathbb{N}$ such that $\frac{1}{m} < \delta$. Applying the previous theorem to $mD'$ instead of $D'$, yields $E'' \sim mD$ with $(X',\Delta'+E'')$ klt. Taking $E'=\frac{1}{m}E$ then continuing as above gives the required divisor. 
+\end{proof}
+
+
+\begin{theorem}\cite[Corollary 1.6]{patakfalvi2017singularities}\label{smoothness}
+	Let $f\colon X \to Z$ be a projective fibration of relative dimension $2$ from a terminal variety with $f_{*}\ox=\mathcal{O}_{Z}$ over a perfect field of positive characteristic $p \geq 11$, such that $-K_{X}$ is ample over $Z$. Then a general fibre of $f$ is smooth.
+\end{theorem}
+
+\begin{theorem}[Bertini for residually separated morphisms]\cite[Theorem 1]{cumino1986axiomatic}\label{Bertini}
+	Let $f\colon X \to \mathbb{P}^{n}$ a residually separated morphism of finite type from a smooth scheme. Then the pullback of a general hyperplane $H$ on $\mathbb{P}^{n}$ is smooth.
+\end{theorem}
 
 \subsection{Boundedness}
 
@@ -295,78 +336,6 @@ Alexeev shows boundedness over a fixed field, however it is not immediately clea
 \begin{remark}
 	In particular we have an affirmative answer to Question 1 in dimension $2$.
 \end{remark}
-
-\begin{theorem}\cite[Theorem 1.2]{patakfalvi2019ordinary}\label{split}
-	Let $X$ be a normal, Cohen Macaulay variety with $W\mathcal{O}$-rational singularities over a perfect field of positive characteristic. Then $X$ cannot simultaneously satisfy all the following conditions.
-	\begin{enumerate}
-		\item $X$ is uniruled.
-		\item $X$ is $F$-split.
-		\item $X$ has trivial canonical bundle.
-	\end{enumerate}
-	If in fact $X$ is smooth then we may replace $K_{X}\sim 0$ with $K_{X} \equiv 0$.
-\end{theorem}
-
-\begin{lemma}\label{vol}\cite[Lemma 2.5]{jiang2018birational}
-	Suppose $X$ is projective and normal, $D$ is an $\mathbb{R}$-Cartier divisor and $S$ is a basepoint free normal and prime divisor. Then for any $q >0$,
-	\[\Vol(X,D+qS) \leq \Vol(X,D) + q\dim(X)\Vol(S,D|_{S}+qS|_{S}).\]
-\end{lemma}	
-
-\begin{lemma}\myworries{Into Prelims}
-	Let $X$ be a normal curve over any field and $\Delta \geq 0 $ be a divisor with $-(K_{X}+\Delta)$ big and nef. Then the non-klt locus of $\Delta$ is either empty or geometrically connected. 
-\end{lemma}
-
-\begin{proof}
-	If $-(K_{X}+\Delta)$ is big and nef then so is $-K_{X}$. After base changing to $H^{0}(X,\ox)$ if necessary we have $\deg K_{X} = -2$ by \cite[Corollary 2.8]{tanaka2018minimal} giving that $ \deg \Delta <2$. The non-klt locus of $(X,\Delta)$ is precisely the support of $\lfloor \D \rfloor$ and hence can contain at most one point.
-\end{proof}
-
-\begin{theorem}\cite[Theorem 5.2]{tanaka2018minimal}\label{Tcl}\myworries{Into Prelims}
-	Let $(X,\Delta)$ be a surface log pair over any field $\kappa$. Let $\pi\colon X \to S$ be a morphism of $\kappa$ schemes with $\pi_{*}\ox =\mathcal{O}_{S}$. Suppose that $-(K_{X}+\Delta)$ is $\pi$-nef and $\pi$-big, then for any $s \in S$ $X_{S}\cap \nklt(X,\Delta)$ is either empty or geometrically connected. 
-\end{theorem}
-
-
-\begin{theorem}[Weak Connectedness Lemma]\myworries{Into Prelims}
-	Let $X$ be a threefold over any closed field $\kappa$ of characteristic $p>5$ together with $\Delta\geq 0$ on $X$ such that $K_{X}+\Delta$ is $\mathbb{R}$-Cartier. Suppose that $-(K_{X}+\Delta)$ is ample, then for $\nklt(X,\Delta)$ is either empty or connected. 
-\end{theorem}
-\begin{proof}
-	If $(X,\D)$ is klt the result is trivially true, so suppose otherwise.
-	
-	Let $(Y,\D_{Y}) \to (X,\D)$ be a dlt modification. Then $-L:=K_{Y}+\D_{Y}+F=f^{*}(K_{X}+\D)$ with $(Y,\D_{Y})$ dlt and $L$ nef and big. We may further write $L=A+E$ with $A$ ample and $E$ effective and exceptional over $X$. In particular $E$ has support contained inside $S_{Y}=\lfloor \D_{Y} \rfloor$. Note that $S_{Y}$ maps surjectively onto $\nklt(X,\D)$ so it is sufficient to show that $S_{Y}$ is connected.
-	
-	Take a general $G_{Y} \sim \epsilon A +(1-\epsilon) L-\delta S_{Y}$, then for small $\delta$ we may assume $G_{Y}$ is ample, and hence further that $(X,\D_{Y}+G_{Y})$ is dlt. Write $K_{Y}+\D_{Y}+G_{Y}\sim - P_{Y}=-(\epsilon E + F + \delta S_{Y})$ and note $\text{Supp}(P_{Y})=S_{Y}$. In particular $K_{Y}+\D_{Y}+G_{Y}$ is not pseudo-effective and hence we may run a $(Y,\D_{Y}+G_{Y})$ LMMP which terminates in a Mori fibre spaces $Y' \to Z$. By the arguments of \cite[Theorem 9.3]{Bir16} on the induced pair $(Y',\D_{Y'})$, $\nklt(Y',\D_{Y'})=\text{Supp}(\lfloor \D_{Y'} \rfloor)=\text{Supp}(P_{Y'})$ has the same number of connected components as $\nklt(X,\Delta)$, so it suffices to prove the result here.
-	
-	Suppose first that $\dim Z=0$. Then $\rho(Y')=1$. In particular if $D,D'$ are effective and $H$ ample, then $H.D.D' >0$, so certainly $D.D'>0$. Thus $P_{Y'}$ cannot have disconnected support.
-	
-	Suppose next that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected, a contradiction.
-\end{proof}
-
-\begin{lemma}\label{cc} \cite[Proposition 4.37]{kk-singbook}
-	Suppose that $(S,B)$ is a klt surface and $(K_{S}+B+D) \sim 0$ for $D$ effective, integral and disconnected, then $D$ has exactly two connected components.
-\end{lemma}
-
-
-\begin{theorem}\cite[Theorem 1]{tanaka2017semiample}\myworries{Into Prelims}
-	Let $(X,\Delta)$ be a log canonical (resp. klt) pair where $\Delta$ is an effective $\mathbb{Q}$-divisor. Suppose $D$ is a semiample divisor on $X$ then there is an effective divisor $D'\sim D$ with $(X,\Delta+D')$ log canonical (resp. klt).
-\end{theorem}
-
-\begin{corollary}\label{average}\myworries{Into Prelims}
-	Suppose that $(X,\Delta)$ is a sub klt pair together with $D$ a divisor on $X$ and $\pi\colon (X',\Delta') \to X$ a log resolution of $(X,\Delta)$. Further assume that there is some $D'$ on $X'$ with $\pi_{*}D'=D$, $-(K_{X'}+\Delta'+D')$ $\pi$-nef, $(X,\Delta')$ sub klt and $D'$ semiample. Then there is $E \sim D$ on $X$ effective with $(X,\Delta+E)$ sub klt. If in fact $(X,\Delta)$ is $\epsilon$-klt then we may choose $E$ such that $(X,\Delta+E)$ is also.
-\end{corollary}
-\begin{proof}
-	We may write $\Delta'=\Delta_{p}-\Delta_{n}$ as the difference of two effective divisors. Since $(X',\Delta')$ is log smooth we must have that $(X',\Delta_{p})$ is klt. Thus by the proceeding theorem we have that there is some $E' \sim D'$ with $(X',\Delta_{p}+E')$ klt. Then we must also have that $(X',\Delta'+E')$ is sub klt 
-	Write $E=\pi_{*}E'$, then $R=\pi^{*}(K_{X}+\Delta+E)- (K_{X'}+\Delta'+E')\equiv_{f}-(K_{X'}+\Delta'+D')$ is $\pi$-nef and exceptional. Hence by the negativity lemma we have that $-R$ is effective, and $\pi^{*}(K_{X}+\Delta+E) \leq (K_{X'}+\Delta'+E')$ giving that $(X,\Delta +E)$ is klt.
-	
-	If $(X',\Delta)$ is $\epsilon$-klt then so is $(X',\Delta_{p})$. Let $\delta =\min (1-\epsilon-c_{i})$ where $c_{i}$ are the coefficients of $\Delta_{p}$ and take $m \in \mathbb{N}$ such that $\frac{1}{m} < \delta$. Applying the previous theorem to $mD'$ instead of $D'$, yields $E'' \sim mD$ with $(X',\Delta'+E'')$ klt. Taking $E'=\frac{1}{m}E$ then continuing as above gives the required divisor. 
-\end{proof}
-
-
-\begin{theorem}\cite[Corollary 1.6]{patakfalvi2017singularities}\label{smoothness}
-	Let $f\colon X \to Z$ be a projective fibration of relative dimension $2$ from a terminal variety with $f_{*}\ox=\mathcal{O}_{Z}$ over a perfect field of positive characteristic $p \geq 11$, such that $-K_{X}$ is ample over $Z$. Then a general fibre of $f$ is smooth.
-\end{theorem}
-
-\begin{theorem}[Bertini for residually separated morphisms]\cite[Theorem 1]{cumino1986axiomatic}\label{Bertini}
-	Let $f\colon X \to \mathbb{P}^{n}$ a residually separated morphism of finite type from a smooth scheme. Then the pullback of a general hyperplane $H$ on $\mathbb{P}^{n}$ is smooth.
-\end{theorem}
-
 
 
 \section{Conic Bundles}
@@ -838,6 +807,7 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 	Since $(X,\Delta)$ is klt so is $(X,0)$ and hence we may run a terminating $K_{X}$ MMP $X=X_{0} \dashrightarrow X_{1} \dashrightarrow... \dashrightarrow X_{n}=X'$. At each step $X_{i} \dashrightarrow X_{i+1}$ we may pushforward $\Delta_{i}$ to $\Delta_{i+1}$, which is still klt since $K_{X}+\Delta \equiv 0$. Similarly since $X_{i}$ is $F$-split and rationally chain connected, so is $X_{i+1}$ as these are preserved under birational maps of normal varieties. Since $K_{X}$ cannot be pseudo-effective, $X'$ has a Mori fibre space structure $X' \to Z$, where $Z$ is also rationally chain connected and $F$-split. If $X$ is terminal we may run a $K_{X}$ MMP terminating at a terminal variety, hence $X'$ is terminal also.	
 \end{proof}
 
+\myworries{Rep Theorem}
 %DIF < 	\begin{reptheorem}{Main}
 %DIF < 		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions:
 %DIF < \begin{itemize}
