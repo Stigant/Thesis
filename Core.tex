@@ -45,6 +45,15 @@
 \maketheorem{proposition}{Proposition}{theorem}
 \maketheorem{question}{Question}{theorem}
 \maketheorem{remark}{Remark}{theorem}
+%\basetheorem{theorem*}{Theorem}
+
+\basetheorem{theo}{Theorem}{}
+\newcounter{tmp}
+
+\setcounter{tmp}{\value{theo}}% store current value of theorem counter
+\setcounter{theo}{0} %assign desired value to theorem counter
+\renewcommand\thetheo{\Alph{theo}}% locally redefine the representation of the theorem counter
+
 
 \makeatletter
 \newcommand{\newreptheorem}[2]{\newtheorem*{rep@#1}{\rep@title}\newenvironment{rep#1}[1]{\def\rep@title{#2 \ref*{##1}}\begin{rep@#1}}{\end{rep@#1}}}
@@ -132,12 +141,290 @@
 \usepackage[titles]{tocloft}
 
 \begin{document}
-	
-	
+	\title{On the Minimal Model Program in positive and mixed characteristic}
+	\author{Liam Stigant}
+	\date{\today}
+	\maketitle
+	\chapter*{Abstract}
+		
+		This dissertation explores the Minimal Model Program (MMP) in positive and mixed characteristic in dimension three with a particular focus on outputs of the program. In purely positive characteristic we combine the program with a detailed study of conic bundles to prove a birational boundedness result. We show that given a suitable set of log Calabi-Yau varieties, we can construct a bounded family containing fibres birational to any member of the chosen set.
+		
+		For threefolds over a base of dimension at least one, we resolve the Abundance Conjecture for klt pairs in joint work with F. Bernasconi and I. Brivio. Showing in particular that every klt minimal model in mixed characteristic admits an Iitaka Fibration. This is then applied to prove an Invariance of Plurigenera result for suitable families of surfaces.
+		
+		Finally we consider outstanding questions around Mori fibrations in mixed characteristic. We show that every klt threefold MMP terminates and that any two Mori fibre space outputs of an MMP from the same starting pair are connected by a series of Sarkisov links. As part of this we prove a mixed characteristic Finiteness of Minimal Models result. While the proof is focused in dimension three, the arguments work in any generality given that the requisite MMP results are known.
+		
 	\tableofcontents
 	
 	\chapter{Introduction}
 	
+	Algebraic Geometry is the study of geometric shapes described as solutions to polynomials; or perhaps more generally the study geometric objects which are locally the spectra of rings.
+	
+	While this set of definitions offers a rich and fruitful area of study and a firm mathematical foundation from which to approach, they are not particularly useful methods of actually describing the objects of interest. One would not expect to see a variety given by some list of equations, nor as a list of rings and gluing information, except perhaps in the very simplest of examples.
+	
+	One of the key aims, then, of modern Birational Geometry is to provide a language and structure to better understand and describe the geometric objects appearing as part of the wider study of Algebraic Geometry. This is a role taken on directly by flagship conjectures like the Minimal Model Program (MMP), but is also supported by the myriad of ideas developed in the study of birational geometry. Notions like klt, for instance, which were developed to better understand the singularities appearing in the MMP have quickly spread throughout the larger field of Algebraic Geometry.
+	
+	We might summarise the key claim of the MMP as follows.
+	
+	\begin{conjecture*}
+		Let $(X,\Delta)$ be a klt pair, projective over $T$. Then there is a $K_{X}+\Delta$ negative birational map of $T$ schemes $X \dashrightarrow X'$ inducing a pair $K_{X'}+\Delta'$ such that either
+		
+		\begin{enumerate}
+			\item $K_{X'}+\Delta$ is nef; or
+			\item There is a $K_{X'}+\Delta'$ negative contraction $X' \to Z$ of relative Picard rank $1$.
+		\end{enumerate}
+	\end{conjecture*}
+
+	In the first case $X'$ is said to be a minimal model. In the latter we call $X' \to Z$ a Mori fibre space.
+	
+	At its most reductive, the MMP can be understood to claim that varieties can be built from three types of geometric objects - each with their own distinct properties. These are Fano, Calabi-Yau and General Type (or canonically polarised) varieties. For birational geometers it is natural to describe these in terms of their canonical bundle, these types of variety have $K_{X}$ negative (anti-ample), $K_{X}$ (numerically) trivial or $K_{X}$ positive (ample) respectively.
+	
+	This kind of numerical description is central to Birational Geometry. The numerical statement, $K_{X}$ is positive, translates directly to an algebraic statement, $K_{X}$ is ample. Indeed the following characterisation is the prototypical result for this kind of theorem.
+	
+	\begin{theorem*}\myworries{cite}
+		Let $D$ be a Cartier divisor on a normal, projective variety $X$. Let $\overline{NE}(X)$ be the closure of the cone spanned by effective classes inside $N_{1}(X)$. Then $D$ is ample if and only if $D.C >0$ for any class $C \in \overline{NE}(X)$.
+	\end{theorem*}
+		
+	Not every such condition is so easily interpreted, however. It is not clear even that $K_{X}$ is numerical trivial ought to ensure that $K_{X}$ is $\mathbb{Q}$-linearly trivial. Many results and theorems within the field therefore provide a means of turning numerical statements about divisors or pairs into algebraic ones. A more sophisticated example is the Base Point Free Theorem.
+	
+	\begin{theorem*}
+		Let $(X,\Delta)$ be a klt pair. Let $M$ be a nef divisor and suppose that $M-(K_{X}+\Delta)$ is big and nef. Then $M$ is semiample.
+	\end{theorem*}
+
+	Here nefness is an entirely numerical condition, and bigness has both numerical and cohomological characterisations, whereas semiampleness is an entirely algebraic phenomenon. We can also understand singularity conditions like klt and log canonical to be numerical conditions, though of a very different flavour to the intersection based conditions we impose upon divisors.
+	
+	In characteristic zero, one the most important tools for proving these kinds of results is Kawamata-Viehweg (KV) vanishing. A result which is known to fail in positive and mixed characteristic. Much of the difficulty of recreating the success of the MMP in characteristic zero comes from the need to find alternative methods of generating these kinds of translations from numerical conditions to algebraic. More philosophically, KV vanishing and similar results provide a clear impetus for the focus on the the canonical divisor, and more generally on klt pairs. It is less obvious in other settings exactly what the role of $K_{X}$ should be.
+	
+	In positive characteristic this role is taken on by applications of the Frobenius morphism. Ideas due to Keel \cite{}, provide a powerful semiampleness criteria along with a weaker, but often still useful, result on the existence of morphisms in the larger category of Algebraic Spaces. 
+	
+	In a different direction, a suite of Frobenius based singularities provide, amongst other important applications, a way to recover certain vanishing type theorems. These are often called $F$-singularities and they consist of local versions - $F$-pure and $F$-regular, as well as global version - $F$-split and globally $F$-regular.
+	
+	Together these are sufficient to prove the MMP for threefolds in positive characteristic, at least for $p > 5$. This is done in \cite{}, and was the state of the art at the beginning of my PhD. \autoref{Boundedness} therefore focuses on some of the consequences of the MMP in this setting.
+	
+	In mixed characteristic, the ideas of Keel are generalised immediately by \cite{} through clever study of universal homeomorphisms in place of the Frobenius morphism. The full statement is as follows and captures both the mixed characteristic and the positive characteristic behaviour.
+	
+	\begin{theorem*}
+		Let $D$ be a big and nef divisor on $X$ with $D|_{X_{\mathbb{Q}}}$ semiample. Let $\mathbb{E}[D]$ be the union of integral subschemes of $X$ on which $D$ is not big. Then $D$ is semiample (resp. EWM) if and only if $D|_{\mathbb{E}[D]}$ is so.
+	\end{theorem*}
+	
+	The $F$-singularities are less smoothly generalised, however. The BCM singularities of \cite{} are similar in some sense to $F$-regularity and provide important adjunction type results as in \cite{}. On the other hand the globally $+$-regular singularities of \cite{} are inspired by, and analogous to, globally $F$-regular singularities. In particular they provide suitable vanishing type results to prove the existence of flips. 
+	
+	The remainder of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance for minimal models and show that Mori Fibrations are connected by Sarkisov links.	
+
+	\section{Boundedness}
+	
+	Once the MMP has been established for a particular class of objects, there is a natural follow up question of boundedness or birational boundedness. Loosely speaking, given that algebraic objects are constructed from certain building blocks, we might start to wonder how many of such building blocks there are, and how many different ways they might be put together.
+	
+	More concretely we ask if certain sets of objects are bounded, that is if they fit into a flat family over some quasi-projective scheme. As well as being as an interesting area of study in its own rights, such result are often viewed as the first step towards construction of a moduli space.
+	
+	Perhaps the most famous boundedness conjecture is the Borislav-Alexeev Boundedness Conjecture. This claims the following.
+	
+	\begin{conjecture*}
+		Let $d \in \mathbb{N}$ and $\epsilon > 0$. Fix a field $\kappa$. Then the set of projective varieties $X$ admitting an $\epsilon$-log Calabi Yau pair $(X,\Delta)$ with $-(K_{X}+\Delta)$ big and nef form a bounded a family.
+		\end{conjecture*}	
+	
+	In characteristic zero, it is proven in \cite{}.
+	
+	There are similar expectations for varieties of general type, \cite{}. Calabi-Yau varieties however are somewhat more subtle. Even in dimension there are issues: complex $K3$ surfaces are bounded but projective ones are not. We can understand the issue to be that the projective $K3$ surfaces consist of infinitely many lines inside the space of complex differential ones.
+	
+	In somewhat greater generality we might expect to be able to replace the bigness condition of the BAB conjecture with some form of rational connectedness on the underlying variety $X$, at least in characteristic zero. In positive characteristic it is unclear such a result would hold, even for dimension $2$ as rational connectedness fails to rule out the possibility that $X$ is a $K3$ surface. To the best of my knowledge it is unknown if rationally connected $K3$ surfaces are bounded or not.
+	
+	\autoref{Boundedness} attempts to circumvent these issues by imposing the additional criteria that $X$ be $F$-split. As well as preventing the aforementioned issue in dimension $2$, it also provides a sufficient vanishing type result to make use of inductive style arguments. Roughly speaking, one runs an MMP to reduce the case that $X$ is a Mori Fibration, and applies the lower dimensional boundedness results on the general fibres and the base to infer the result on the total space. We prove the following.
+	
+	\begin{theo}\label{Main_Bound}\myworries{ref}
+		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions
+		\begin{itemize}
+			\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
+			\item $X$ is terminal, rationally chain connected and $F$-split;
+			\item $(X,\Delta)$ is $\epsilon$-klt and log Calabi-Yau for some boundary $\Delta$; and
+			\item The coefficients of $\Delta$ are greater than $\delta$.
+		\end{itemize}
+		
+		Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$. 
+	\end{theo}
+	
+	
+	In practice we were only able to prove a birational boundedness result with this method. Furthermore it was necessary to bound the coefficients of the pair below to prevent pathologies appearing in the Mori fibration. This in turn necessitates working with terminal underling varieties. Nonetheless the result we prove is rather pleasantly independent of the base field, so long as the characteristic is sufficiently large.
+	
+	This mirrors well the understanding that $F$-split varieties should in some sense 'look like' they come from characteristic $0$. These kinds of boundedness results are one possible path towards a more concrete description of this analogy.
+	
+	\section{Abundance}
+	
+	In keeping with the earlier theme of birational geometers seeking to turn numerical criteria into algebraic ones, the Abundance Conjecture claims the following.
+	
+	\begin{conjecture*}
+		
+		Let $(X,\Delta)$ be a klt pair. Then if $K_{X}+\Delta$ is nef, it is semiample.	
+		\end{conjecture*}
+	
+	In many ways the conjecture provides the link between the modern formulation of the MMP and the original goal of classification. The fibration induced by the abundance conjecture is by definition $K_{X}+\Delta$ trivial, yielding a log Calabi-Yau fibration over a lower dimensional base. The conjecture remains open in most settings. Even in characteristic zero the result is fully known only in dimension three and below, though several key cases are known in greater generality. In particular the case that $\Delta$ is big is covered by the Base Point Free Theorem.
+	
+	In positive characteristic the result is known only for surfaces, though again several three dimensional cases have been tackled already. In \autoref{Abudnance} we prove the case of a klt threefold over base of dimension at least $1$. There is a further assumption that the base has no points of characteristic $p \leq 5$ but this is a limitation of the current MMP results, not the method of proof.
+	
+	\begin{theo}\label{Main_Abund1}
+		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		
+		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
+		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
+	\end{theo}
+	
+	They key idea is to first show that there is a fibration in the category of algebraic spaces with the correct numerical properties. Next we apply the MMP to reduce to the case that the fibration is equidimensional. The motivation being that such fibrations are generally well behaved with respect to semiampleness, at least in the category of schemes. Finally we restrict to a horizontal slice of $X$ over the base and infer the result here.
+	
+	The Keel-Witaszek theorem is a key ingredient in both the first and the last step, providing the relevant criteria to show that that $K_{X}+\Delta$ is EWM and then semiample.
+	
+	Although the key focus of this Chapter is mixed characteristic schemes, the proof as given applies more widely to schemes over a positive dimensional base containing points of positive characteristic. In particular it covers some cases of purely positive characteristic.
+	
+	As a consequence we prove an Invariance of Plurigenera in the style of \cite{}. 
+	
+	\begin{theo}\label{Main_Abund2}
+		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
+		Let $(X,B)$ be a three-dimensional klt pair and let $(X,B)\to \Spec(R)$ be a projective surjective morphism of quasi-projective $R$-schemes.  Suppose that the following conditions are satisfied:
+		
+		\begin{enumerate}
+			\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
+			\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+		\end{enumerate}
+		
+		Suppose further that at least one of the following holds:
+		\begin{enumerate}
+			\item $\kappa(K_{X_{k}}+B_{k}) \neq 1$; or
+			\item $B_{k}$ is big over $\textup{Proj}(K_{X_{k}}+B_{k})$
+		\end{enumerate}	
+		Then there is $m_{0} \in \mathbb{N}$ such that 
+		$$h^{0}(X_{K},m(K_{X_{K}}+B_{K}))=h^{0}(X_{k},m(K_{X_{k}}+B_{k}))$$
+		for all $m \in m_{0}\mathbb{N}$.
+		
+	\end{theo}
+	
+	Our new result covers a broader class of singularities as well as allowing for points with imperfect residue fields. It is natural to discuss this problem in terms of the Kodaira dimension. In this sense we provide a full characterisation of the Kodaira dimensions for which the result holds. The failure of Invariance of Plurigenera when $X_{k}$ has Kodaira dimension $1$ is closely related to super-singularity of elliptic fibres of the Iitaka fibration induced by Abundance. 
+	
+	We might therefore reasonably expect there to be additional characterisations in terms of $F$-splitness to describe when such invariance results hold. For example we might hope that if $X \to R$ is a flat, terminal family over a local ring $R$ and the Iitaka fibration $X_{k}\to Z_{k}$ is relatively $F$-split then Invariance of Plurigenera holds on $X$.
+	
+	
+	\section{Mori Fibrations in Positive Characteristic}
+	
+	Where the Abundance Conjecture is needed to establish the existence of $K_{X}$ trivial fibrations for minimal models, Mori fibrations come readily equipped with a $K_{X}$ negative fibration. Conversely however they come with a more complex relationship between outputs of the MMP. 
+	
+	Terminal minimal models are connected by flops, due to the arguments of \cite{}. Mori Fibrations however are expected to be linked by several different kinds of birational transformations. We prove this in dimension $3$.
+	
+	\begin{theo}\label{Main_Finite1}[\autoref{sarkisov}]
+		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$. Take $g_{1}:Y_{1} \to Z_{1}$, $g_{2}:Y_{2} \to Z_{2}$ two Sarkisov related Mori fibre spaces over $R$ of dimension $3$. Then they are connected by Sarkisov links.
+	\end{theo}
+	
+	These links are characterised diagrammatically as follows.
+	
+	Suppose that $f:X \to Z$, $g:Y \to W$ are two Mori Fibre Spaces over $R$. A Sarkisov link $s:X \dashrightarrow Y$ is one the following.
+	
+	\[\begin{tikzcd}
+	X' \arrow[d] \arrow[r, dotted] \arrow[r, "I", phantom, bend left=49] & Y \arrow[d]  & X' \arrow[r, dotted] \arrow[d] \arrow[r, "II",phantom, bend left=49] & Y' \arrow[d] & X \arrow[r, dotted] \arrow[d] \arrow[r, "III", phantom, bend left=49] & Y' \arrow[d] & X \arrow[d] \arrow[rr, dotted] \arrow[rr, "IV",phantom, bend left] &   & Y \arrow[d]       \\
+	X \arrow[d]                                                          & W \arrow[ld] & X \arrow[d]                                               & Y \arrow[d]  & Z \arrow[rd]                                              & Y \arrow[d]  & Z \arrow[rd, "p"]                                          &   & W \arrow[ld, "q"'] \\
+	Z                                                                    &              & Z \arrow[r, equal]                                                         & W            &                                                           & W            &                                                            & T &                  
+	\end{tikzcd} \]
+	
+	Such that the following holds:
+	\begin{itemize}
+		\item There is a klt pair $(X,\Delta)$ or $(X',\Delta')$ as appropriate such that the horizontal map is a sequence of flops for this pair
+		\item Every vertical morphism is a contraction
+		\item If the target of a vertical morphism is $X$ or $Y$ then it is an extremal divisorial contraction
+		\item Either $p,q$ are both Mori Fibre Spaces (this is type $IV_{m}$) or they are both small contractions (type $IV_{s}$)
+	\end{itemize}
+	
+	A key insight, due to \cite{}, is that the existence of these links can be seen in the structure of Shokurov polytopes. The classic example here is the following.
+	
+	Let $S$ be the blowup of $\mathbb{P}^{2}_{\kappa}$. Write $E_{1},E_{2}$ for the exceptional curves and let $L$ be the strict transform of the line between the blown up points. Then the effective cone is spanned by $E_{1},E_{2},L$ and after fixing suitable $A \sim -K_{X}$ we can run a $D \sim K_{X}+A+D$ MMP for any $D$ in the triangle, $T$, formed by $L,E_{1},E_{2}$. We can then decompose $T$ according to the output of the $D$ MMP as follows, where $\mathbb{F}_{1}$ is the blowup of $\mathbb{P}^{2}$ at a single point.
+	 
+	
+		\begin{center}
+		\tikzset{every picture/.style={line width=1pt}} %set default line width to 1pt        
+		
+		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		
+		%Shape: Triangle [id:dp7805322996155986] 
+		\draw   (300,20) -- (480,240) -- (120,240) -- cycle;
+		%Straight Lines [id:da6385330333329691] 
+		\draw    (210,130) -- (390,130) ;
+		%Straight Lines [id:da012291614577248033] 
+		\draw    (210,130) -- (480,240) ;
+		%Straight Lines [id:da6507742575307656] 
+		\draw    (390,130) -- (120,240) ;
+		
+		% Text Node
+		\draw (210,125) node [anchor=east][inner sep=2pt]  [xscale=1.25,yscale=1.25]  {$\frac{L+E_{1}}{2}$};
+		% Text Node
+		\draw (390,125) node [anchor=west][inner sep=2pt]  [xscale=1.25,yscale=1.25]   {$\frac{L+E_{2}}{2}$};
+		% Text Node
+		\draw (120,240) node [anchor=north east][inner sep=1pt]  [xscale=1.25,yscale=1.25]    {$E_{1}$};
+		% Text Node
+		\draw (480,240) node [anchor=north west][inner sep=1pt]  [xscale=1.25,yscale=1.25]    {$E_{2}$};
+		% Text Node
+		\draw (300,15) node [anchor=south][inner sep=1pt]  [xscale=1.25,yscale=1.25]   {$L$};
+		% Text Node
+		\draw (260,75) node [anchor=south east][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{1}$};
+		% Text Node
+		\draw (170,185) node [anchor=south east][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{1}$};
+		% Text Node
+		\draw (345,75) node [anchor=south west][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{1}$};
+		% Text Node
+		\draw (435,185) node [anchor=south west][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{1}$};
+		% Text Node
+		\draw (300,100) node [anchor=center][inner sep=1pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{1}\times\mathbb{P}^{1}$};
+		% Text Node
+		\draw (240,185) node [anchor=south east][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{F}_{1}$};
+		% Text Node
+		\draw (360,185) node [anchor=south west][inner sep=2pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{F}_{1}$};
+		% Text Node
+		\draw (300,260) node [anchor=center][inner sep=0pt] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\kappa$};
+		% Text Node
+		\draw (300,200) node [anchor=center][inner sep=0pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$\mathbb{P}^{2}$};
+		% Text Node
+		\draw (300,150) node [anchor=center][inner sep=0pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ,xscale=1.5,yscale=1.5]  {$S$};
+		
+		\end{tikzpicture}
+	\end{center}
+	
+	The decomposition of $T$ describes the geometry of the Mori fibre spaces.
+	\begin{enumerate}
+		\item Triangles inside $T$ with a side along the boundary correspond to Mori fibre spaces
+		\item Shared sides of interior triangles correspond to blowups
+		\item All the morphisms (blowups and Mori fibrations) are induced by Abundance for pairs on the corresponding polygon
+	\end{enumerate}
+
+	The Sarkisov links between the various Mori fibrations can be seen in the decomposition by composing the birational transformations coming from interior lines meeting at an exterior vertex.
+
+	The ample divisor $A\sim -K_{X}$ plays an important role here. Indeed the key result needed to recreate this kind of decomposition is the following Finiteness of Minimal Models result.
+	
+	\begin{theo}\label{Main_Finite2}
+		Let $X$ be a threefold over $R$. Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)$ is a klt pair. Then the following hold:
+		
+		\begin{enumerate}
+			\item There are finitely many birational contractions $\phi_{i}:X \dashrightarrow Y_{i}$ such that 
+			\[\mathcal{E}(C) = \bigcup \mathcal{W}_{i}=\mathcal{W}_{\phi_{i}}(C)\]
+			where each $\mathcal{W}_{i}$ is a rational polytope. Moreover if $\phi:X \to Y$ is a wlc model for any choice of $\Delta \in \mathcal{E}(C)$ then $\phi=\phi_{i}$ for some $i$, up to composition with an isomorphism.
+			
+			\item There are finitely many rational maps $\psi_{j}:X \dashrightarrow Z_{j}$ which partition $\mathcal{E}(C)$ into subsets $\mathcal{A}_{\psi_{j}}(C)=\mathcal{A}_{i}$.
+			\item  For each $W_{i}$ there is a $j$ such that we can find a morphism $f_{i,j}: Y_{i} \to Z_{j}$ and $W_{i} \subseteq \overline{A_{j}}$.
+			\item  $\mathcal{E}(C)$ is a rational polytope and $A_{j}$ is a union of the interiors of finitely many rational polytopes.
+		\end{enumerate}
+	\end{theo}
+	
+	The keys ideas of the proof come from \cite{}. The main difficulty in mixed characteristic is the lack of appropriate Bertini type theorems. There are sufficient results to prove the result over local rings, with some modifications to the original proof. Some work is needed, however, to translate a local version of the result to a more general one. 
+	
+	Though it does seem it should be possible, we take a slightly different approach. First introducing a notion of an rlt pair, one which is replaceable by a klt pair locally over the base. This allows us to essentially extend the local Bertini result to a global one, at the cost of a slightly more complicated type of pair. With this accounting system in place, the finiteness result is essentially no harder to prove over an arbitrary base than over a local ring. The proofs given rely only on the MMP, and will generalise immediately to higher dimensions if the appropriate MMP results are known. 
+	
+	These rlt pairs are also useful for working with Sarkisov links. Once again there are not sufficiently strong Bertini type results to produce a klt pair corresponding to the flops of a Sarkisov link, instead an rlt pair is needed.
+	
+	In this Chapter we also give a short proof of termination for klt threefold pairs in mixed characteristic; showing that any MMP from a pair with $K_{X}+\Delta$ not psuedo-effective eventually terminates with a Mori Fibration.
+	
+	\begin{theo}\label{Main_Finite3}[\autoref{termination}]
+		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
+	\end{theo}
+	
+	
+	
+	
+	
+	
+	
+		
 	\input{Chapter_Preliminaries}
 	\input{Chapter_Boundedness}
 	\input{Chapter_Abundance}

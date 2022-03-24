@@ -111,177 +111,110 @@
 	
 	\chapter{Boundedness of Globally $F$-split varieties}
 	
-	\section{Introduction}
-	There has been great success proving boundedness results in characteristic zero using the techniques and results of the LMMP. Beyond dimension $2$, however, there has not been much progress in positive characteristic. This is perhaps a consequence of the relative newness of the LMMP results in this setting, but it  also tells of the existence of difficulties unique to characteristic $p$.
-	
-	In this direction, we prove the following.
-	
-	\begin{theorem}\label{Main}
-		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions
-		\begin{itemize}
-			\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
-			\item $X$ is terminal, rationally chain connected and $F$-split ;
-			\item $(X,\Delta)$ is $\epsilon$-klt and log Calabi-Yau for some boundary $\Delta$;
-			\item the coefficients of $\Delta$ are greater than $\delta$.
-		\end{itemize}
-		
-		Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$. 
-	\end{theorem}
-	\begin{remark}
-		The condition that $X$ be terminal is to allow us to reduce to the case that $X$ is a terminal Mori fibre space. While we might normally achieve this by taking a terminalisation $\tilde{X} \to X$, we cannot do so while also ensuring that the coefficients of $\tilde{\D}$ are still bounded below. In fact while bounding the coefficients below is used to prove a canonical bundle formula for Mori fibre spaces of relative dimension $1$ it is in many ways the relative dimension $2$ case that forces the assumption $X$ is terminal.
-		
-		If $(X,\Delta) \to S$ is a klt Mori fibre space with coefficients bounded below by $\frac{2}{p}$ then we may freely take a terminalisation and run an MMP to obtain a tame conic bundle, which is what we require for our boundedness proof. If however the relative dimension is $2$ then after taking a terminalisation and running an MMP we may end with a Mori fibration of relative dimension $1$, where we cannot easily control the singularities of the base. This happens whenever $X$ is singular along a curve $C$ which maps inseparably onto the base and we expect this is the only way it might happen. 
-	\end{remark}
 
-	The main motivation for this result comes from \cite{chen2018birational} where a similar result is proven in the characteristic zero setting. More generally we have the following generalisation of BAB, which essentially appeared in \cite{mckernan2003threefold} and remains unsolved even in characteristic $0$. 
-	 
-	\begin{conjecture}
-		Fix $\kappa$, an algebraically closed field of characteristic $0$, let $d$ be a natural number and take $\epsilon$ a positive real number. Then the projective varieties $X$ over $\kappa$ such that 
-		\begin{itemize}
-			\item $X$ has dimension $d$;
-			\item $(X,B)$ is $\epsilon$-klt for some boundary $B$;
-			\item $-(K_{X}+B)$ is nef;
-			\item $X$ is rationally connected;
-		\end{itemize}
-		are bounded.	
-	\end{conjecture}
+\section{Introduction}
+There has been great success proving boundedness results in characteristic zero using the techniques and results of the LMMP. Beyond dimension $2$, however, there has not been much progress in positive characteristic. This is perhaps a consequence of the relative newness of the LMMP results in this setting, but it  also tells of the existence of difficulties unique to characteristic $p$.
 
-	With the LMMP for KLT pairs known in dimension $3$ and characteristic $p>5$, it is natural to turn our attention to results and conjectures of this type in positive and mixed characteristic. There are several major problems one would face in the pursuit of such a result, even in the weaker case of birational boundedness in dimension $3$, which do not arise in characteristic zero. Perhaps the most immediate is that $X$ rationally connected no longer removes the possibility that $K_{X} \not\equiv 0$. For example, in positive characteristic there are families of K3 surfaces which are rationally connected. It is not clear then, even in dimension $2$, that such a result would hold.
-	
-	It is also very difficult to control the singularities of the base, and indeed the fibres, of a Mori fibre space, which makes proofs of an inductive nature very challenging. The failure of Kawamata-Viehweg vanishing presents a similar difficulty.
-	
-	Unique to positive characteristic, we have singularities characterised by properties of the Frobenius morphism. In particular there are notions of globally $F$-split and globally $F$-regular which can be thought of as positive characteristic analogues of lc log Calabi-Yau varieties and klt log Fano varieties. While the exact nature of this analogy is the subject of a variety of results and conjectures, it is expected, and often known, that these varieties should behave similarly to their characteristic zero counterparts.
-	
-	Most notably, in this context, the $F$-split and globally $F$-regular conditions are preserved under the steps of the LMMP including Mori fibrations. In fact the conditions are also preserved under taking a general fibre of a fibration. They also come naturally equipped with vanishing theorems, with globally $F$-regular pairs satisfying full Kawamata-Viehweg vanishing. 
-	
-	We also have some relevant characterisations of uniruled $F$-split varieties. If $X$ is smooth it cannot be simultaneously $F$-split, Calabi-Yau and uniruled. In particular, an $F$-split, canonical surface cannot be uniruled and have pseudo-effective canonical divisor. 
-	
-	In many ways then, global $F$-singularities begin to resolve the most obvious difficulties in proving positive characteristic boundedness results. They present their own problems however, there is no satisfactory notion of ``$\epsilon$-$F$-split'' or ``$\epsilon$-globally $F$-regular'' which makes it difficult to work solely with these notions in the context of boundedness.
-	
-	That said, while the $F$-split and globally $F$-regular conditions fit naturally into the study of log pairs, we may also choose to consider them as properties of the underlying base varieties. In such a way we may formulate the following questions, though in practice even the most optimistic might expect further conditions on the characteristic. One could also reasonably ask that the $\epsilon$-klt pair $(X,B)$ is itself $F$-split, or globally $F$-regular, in place of the base variety.
-	
-	\begin{question}\label{Q1}
-		Fix $d$ a natural number and $\epsilon$ a positive real number. Then is the set, $S$, (resp. $S'$) of projective varieties $X$ such that $(1)-(4)$ (resp. $(1),(2),(3'),(4')$) hold bounded over $\mathbb{Z}$?
-		\begin{enumerate}[label=(\arabic*)]
-			\item $X$ has dimension $d$ over some closed field $\kappa$.
-			\item $(X,B)$ is $\epsilon$-klt for some boundary $B$.
-			\item $-(K_{X}+B)$ is big and nef.
-			\item[$(3')$] $K_{X}+B\equiv 0$.
-			\item If $\kappa$ has characteristic $p>0$, then $X$ is globally $F$-regular.
-			\item[$(4')$] If $\kappa$ has characteristic $p>0$, then $X$ is $F$-split and rationally chain connected.
-		\end{enumerate}
-	\end{question}
+In this direction, we prove the following.
 
-
-	\begin{remark}
-		Here rationally chain connected is chosen over rationally connected in light of \cite{gongyo2015rational} which shows that globally $F$-regular threefolds are rationally chain connected in characteristic $p\geq 11$. Further in characteristic zero, under mild assumptions on the singularities (X admits a boundary $\D$ with $(X,\D)$ dlt), rational chain connectedness coincides with rational connectedness so this is still a natural generalisation. In any case, in dimension $3$ the globally $F$-regular condition is strictly stronger than $F$-split and rationally chain connected whenever the characteristic is at least 11. 
-		
-		In fact other than the case of Fano varieties of Picard number $1$, Gongyo et al are able to show separable rational connectedness. This might, therefore, also be a natural condition to impose instead, especially since the classical proof of the boundedness of characteristic zero prime Fano threefolds so heavily relies on the existence of a free curve. 
-	\end{remark}
-	
-	Given \autoref{Q1}, it is natural to ask what can be gleaned from \autoref{Main} about globally $F$-regular varieties of the type described in \autoref{Q1}. Unfortunately the answer is very little, while every globally $F$-regular variety is $F$-split and if $X$ is of $\epsilon$-log Fano type it is also of $\epsilon$-LCY type, we cannot sensibly ensure that the resulting $\epsilon$-LCY pair $(X,\Delta)$ has coefficients bounded below, even if we require it for the pair $\epsilon$-log Fano pair $(X,\Delta')$.\\
-	
-	In addition to the main result we prove along the way, essentially in \autoref{J1} and \autoref{J2}, the following result. This in turn drew heavily on the arguments of Jiang in \cite{jiang2014boundedness}.
-	
-	\begin{theorem}\label{Main2}
-		Fix $0 < \delta, \epsilon <1$ and let $T_{\delta,\epsilon}$ be the set of threefold pairs $(X,\Delta)$ satisfying the following conditions
-		\begin{itemize}
-			\item $X$ is projective over a closed field of characteristic $p >7,\frac{2}{\delta}$;
-			 \item $X$ is terminal, rationally chain connected and $F$-split;
-			\item $(X,\Delta)$ is $\epsilon$-klt and LCY;
-			\item The coefficients of $\Delta$ are greater than $\delta$;
-			\item $X$ admits a Mori fibre space structure $X \to Z$ where $Z$ is not a point.
-		\end{itemize}
-	Then the set $\{\Vol(-K_{X})\}$ is bounded above. 
-	\end{theorem}
-	\begin{remark}
-		Together with the observation that taking a terminalisation and running a $K_{X}$-MMP can only increase the anti-canonical volume, we reduced weak BAB for varieties in $S_{\D,\epsilon}$ to the case of prime Fano varieties of $\epsilon$-LCY type. Over a fixed field, however, this is essentially superseded by the result of \cite{das2018boundedness}, which gives weak BAB for varieties $X$ with $K_{X}+\D \equiv 0$ for some boundary $\D$ taking coefficients in a DCC set and making $(X,\D)$ klt. 
-	\end{remark}
-
-	
-
-
-\section{Preliminary Results}
-
-\subsection{Boundedness}
-
-\begin{definition}\label{d_birationally-bounded} We say that a set $\mathfrak{X}$ 
-	of varieties is birationally bounded over a base $S$ if there is a flat, projective family $Z \to T$, where $T$ is a reduced quasi-projective scheme over $S$, such that every $X\in \mathfrak{X}$ is birational to some geometric fibre of $Z \to T$. If the base is clear from context, say if every $X \in \mathfrak{X}$ has the same base, we omit dependence on $S$.
-	
-	If for each $X \in \mathfrak{X}$ the map to a geometric fibre is an isomorphism we say that $\mathfrak{X}$ is bounded over $S$.
-\end{definition}
-
-If $S=\text{Spec}{R}$ we often just say (birationally) bounded over $R$. In practice we characterise boundedness over $\mathbb{Z}$ via the following result, coming from existence of the Hilbert and Chow schemes.
-
-\begin{lemma}\cite[Proposition 5.3]{tanaka2019boundedness}
-	Fix integers $d$ and $r$. Then there is a flat projective family $Z \to T$ where $T$ is a reduced quasi-projective scheme over $\mathbb{Z}$ satisfying the following property. If
-	\begin{enumerate}
-		\item $\kappa$ is a field;
-		\item $X$ is a geometrically integral projective scheme of dimension $r$ over $\kappa$;
-		\item there is a closed immersion $j\colon X \to \mathbb{P}^{m}_{\kappa}$ for some $m\in \mathbb{Z}$ such that $j^{*}(\mathcal{O}(1))^{r} \leq d$.
-	\end{enumerate}
-	
-	Then $X$ is realised as a geometric fibre of $Z \to T$
-\end{lemma}
-
-\begin{corollary}\label{l_birationally-bounded}
-	Suppose $\mathfrak{X}$ is a set of varieties over closed fields and there are positive real numbers $d,V$ such that for every $X \in \mathfrak{X}$,
+\begin{theorem}\label{Main}
+	Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions
 	\begin{itemize}
-		\item $X$ has dimension at most $d$;
-		\item There is $M$ on $X$ with $\phi_{|M|}$ birational and $\Vol(M)\leq V$.
+		\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
+		\item $X$ is terminal, rationally chain connected and $F$-split;
+		\item $(X,\Delta)$ is $\epsilon$-klt and log Calabi-Yau for some boundary $\Delta$; and
+		\item The coefficients of $\Delta$ are greater than $\delta$.
 	\end{itemize}
-	Then $\mathfrak{X}$ is birationally bounded over $\mathbb{Z}$. If in fact each $M$ is very ample then $\mathfrak{X}$ is bounded. 
-\end{corollary}
-
-Conversely, if $S$ is Noetherian then we may always choose $H$ relatively very ample on $Z \to T$ with trivial higher direct images. The restriction of $H$ to any geometric fibre is therefore very ample, and of bounded degree. 
-
-
-	\begin{theorem}\cite[Theorem 6.9]{alexeev1994boundedness}\label{BAB}
-		Fix $\epsilon >0$ and an algebraically closed field of arbitrary characteristic. Let $S$ be the set of all projective surfaces $X$ which admit a $\Delta$ such that:
-		\begin{itemize}
-			\item $(X,\Delta)$ is $\epsilon$-klt;
-			\item $-(K_{X}+\Delta)$ is nef;
-			\item Any of the following holds $K_{X} \not\equiv 0$, $\Delta \neq 0$, $X$ has worse than Du Val singularities.
-		\end{itemize}
-		Then $S$ is bounded.
-	\end{theorem}
-
-	Alexeev shows boundedness over a fixed field, however it is not immediately clear if such varieties are collectively bounded over $\mathbb{Z}$. We briefly show that his methods can be extended, via the arguments of \cite{witaszek2015effective} to give a boundedness result in mixed characteristic.
 	
-	\begin{theorem}\label{SBAB}
-			Fix $\epsilon$ a positive real number. Let $S$ be the set of projective surfaces $X$ such that following conditions hold:
-		\begin{itemize}
-			\item $X$ has dimension $d$ over some closed field $\kappa$;
-			\item $(X,B)$ is $\epsilon$-klt for some boundary $B$;
-			\item $-(K_{X}+B)$ is nef;
-			\item $X$ is rationally chain connected and $F$-split (if $\kappa$ has characteristic $p$).
-		\end{itemize}
-		Then $S$ is bounded.
-	\end{theorem}
-	\begin{proof}
-		We consider first $\hat{S}:=\{X \in S\colon  K_{X} \not\equiv 0\}$. Take any such $X \in \hat{S}$, then by Alexeev \cite[Chapter 6]{alexeev1994boundedness} we have the following:
-		\begin{itemize}
-			\item The minimal resolution $\tilde{X}\to X$ has $\rho(X) < A $, for some constant A, depending only on $\epsilon$ and admits a birational morphism to $\mathbb{P}^{2}$ or $\mathbb{F}_{n}$ for $n < \frac{2}{\epsilon}$. In particular there is a set $T_{\epsilon}$ bounded over $\mathbb{Z}$ such that every $\tilde{X}$ is a blowup of some $Y \in T_{\epsilon}$ along a finite length subscheme of dimension $0$. That is the set of minimal desingularisations is bounded over $\mathbb{Z}$.
-			\item We may run a $K_{X}$-MMP to obtain $X'$ a Mori fibre space. 
-			\item There is an $N$, independent of the field of definition, such that $NK_{X'}$ is Cartier for any Mori fibre space $X'$ obtained as above.
-			\item $\Vol(-K_{X'})$ is bounded independently of the base field.
-			\item If $X'$ is such a Mori fibre space $X' \to \mathbb{P}^{1}$ and $F$ the general fibre then $-K_{X} +(\frac{2}{\epsilon}-1)F$ is ample.
-		\end{itemize}
-		
-		It is sufficient then to show $S'=\{X' \text{ an } \epsilon-\text{LCY type, Mori fibre space }\}$ is bounded in mixed characteristic, then $\hat{S}$ is bounded by sandwiching as in Alexeev's original proof and the full result follows. In turn by \autoref{l_birationally-bounded} it is enough to find $V$ such that every $X' \in S'$ has a very ample divisor, $H$, satisfying $H^{2}\leq V$. We do this first for positive characteristic varieties.
-		
-		Fix, then, $m > \frac{2}{\epsilon}-1$ and suppose $X'\to \mathbb{P}^{1}$ is a Mori fibre space in positive characteristic. Then $A=-K_{X'} +mF$ is ample and $NA$ is Cartier. Further we have $A'=7NK_{X'}+27N^{2}A=(7N-27N^{2})K_{X'}-27N^{2}mF$ is very ample by \cite[Theorem 4.1]{witaszek2015effective}. Since $F$ is base point free, we may add further multiples of $F$ and consider the very ample Cartier divisor $\hat{A}=N(27N-7)(-K_{X'}+2F)$. Then $\hat{A}^{2}=\Vol(X',\hat{A})\leq (27N^{2}-7N^{2})(\Vol(X',-K_{X'})+2\Vol(F,-K_{F}))$ which is bounded above, since $\Vol(X',-K_{X'})$ is bounded and $\Vol(F,-K_{F})=2$. 
-		
-		Similarly if $X'$ has $\rho(X')=1$ and $-K_{X'}$ ample then $-nK_{X'}$ is a very ample Cartier divisor with vanishing higher cohomology for some $n$ fixed independently of $X'$. Then $(-nK_{X'})^{2}=n^{2}\Vol(X,-K_{X'})$ is bounded and the result follows similarly.
-		
-		Suppose then that $X \in S$ with $K_{X} \equiv 0$, then it must have worse than canonical singularities by \autoref{split}. Let $\pi\colon Y \to X$ be a minimal resolution, with $K_{Y}+B=\pi^{*}K_{X} \equiv 0$ and $B >0$, then $Y$ is still $\epsilon$-klt, so $Y \in \hat{S}$. Consequently $X$ has $\mathbb{Q}$-Cartier Index dividing $N$ also. Moreover, there is $H$ on $Y$ very ample with $H^{2}$ bounded above. Let $H'=\pi_{*}H$, so that $NH'$ is ample and Cartier on $X$. Applying \cite[Theorem 4.1]{witaszek2015effective} again we see that $A\equiv 27N^{2}H$ is very ample, since $K_{X}\equiv 0$, with $A^{2}$ bounded above.
-		
-		The arguments in characteristic $0$ are essentially the same, making use of Koll{\'a}r's effective base-point freeness result \cite[Theorem 1.1, Lemma 1.2]{kollar1993effective} instead of Witaszek's result, and the existence of very free rational curves on smooth rationally connected surfaces instead of \autoref{split}.
-	\end{proof}
+	Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$. 
+\end{theorem}
+\begin{remark}
+	The condition that $X$ be terminal is to allow us to reduce to the case that $X$ is a terminal Mori fibre space. While we might normally achieve this by taking a terminalisation $\tilde{X} \to X$, we cannot do so while also ensuring that the coefficients of $\tilde{\D}$ are still bounded below. In fact while bounding the coefficients below is used to prove a canonical bundle formula for Mori fibre spaces of relative dimension $1$ it is in many ways the relative dimension $2$ case that forces the assumption $X$ is terminal.
+	
+	If $(X,\Delta) \to S$ is a klt Mori fibre space with coefficients bounded below by $\frac{2}{p}$ then we may freely take a terminalisation and run an MMP to obtain a tame conic bundle, which is what we require for our boundedness proof. If however the relative dimension is $2$ then after taking a terminalisation and running an MMP we may end with a Mori fibration of relative dimension $1$, where we cannot easily control the singularities of the base. This happens whenever $X$ is singular along a curve $C$ which maps inseparably onto the base and we expect this is the only way it might happen. 
+\end{remark}
+
+The main motivation for this result comes from \cite{chen2018birational} where a similar result is proven in the characteristic zero setting. More generally we have the following generalisation of BAB, which essentially appeared in \cite{mckernan2003threefold} and remains unsolved even in characteristic $0$. 
+
+\begin{conjecture}
+	Fix $\kappa$, an algebraically closed field of characteristic $0$, let $d$ be a natural number and take $\epsilon$ a positive real number. Then the projective varieties $X$ over $\kappa$ such that 
+	\begin{itemize}
+		\item $X$ has dimension $d$;
+		\item $(X,B)$ is $\epsilon$-klt for some boundary $B$;
+		\item $-(K_{X}+B)$ is nef; and
+		\item $X$ is rationally connected;
+	\end{itemize}
+	are bounded.	
+\end{conjecture}
+
+With the LMMP for KLT pairs known in dimension $3$ and characteristic $p>5$, it is natural to turn our attention to results and conjectures of this type in positive and mixed characteristic. There are several major problems one would face in the pursuit of such a result, even in the weaker case of birational boundedness in dimension $3$, which do not arise in characteristic zero. Perhaps the most immediate is that $X$ rationally connected no longer removes the possibility that $K_{X} \not\equiv 0$. For example, in positive characteristic there are families of K3 surfaces which are rationally connected. It is not clear then, even in dimension $2$, that such a result would hold.
+
+It is also very difficult to control the singularities of the base, and indeed the fibres, of a Mori fibre space, which makes proofs of an inductive nature very challenging. The failure of Kawamata-Viehweg vanishing presents a similar difficulty.
+
+Unique to positive characteristic, we have singularities characterised by properties of the Frobenius morphism. In particular there are notions of globally $F$-split and globally $F$-regular which can be thought of as positive characteristic analogues of lc log Calabi-Yau varieties and klt log Fano varieties. While the exact nature of this analogy is the subject of a variety of results and conjectures, it is expected, and often known, that these varieties should behave similarly to their characteristic zero counterparts.
+
+Most notably, in this context, the $F$-split and globally $F$-regular conditions are preserved under the steps of the LMMP including Mori fibrations. In fact the conditions are also preserved under taking a general fibre of a fibration. They also come naturally equipped with vanishing theorems, with globally $F$-regular pairs satisfying full Kawamata-Viehweg vanishing. 
+
+We also have some relevant characterisations of uniruled $F$-split varieties. If $X$ is smooth it cannot be simultaneously $F$-split, Calabi-Yau and uniruled. In particular, an $F$-split, canonical surface cannot be uniruled and have pseudo-effective canonical divisor. 
+
+In many ways then, global $F$-singularities begin to resolve the most obvious difficulties in proving positive characteristic boundedness results. They present their own problems however, there is no satisfactory notion of ``$\epsilon$-$F$-split'' or ``$\epsilon$-globally $F$-regular'' which makes it difficult to work solely with these notions in the context of boundedness.
+
+That said, while the $F$-split and globally $F$-regular conditions fit naturally into the study of log pairs, we may also choose to consider them as properties of the underlying base varieties. In such a way we may formulate the following questions, though in practice even the most optimistic might expect further conditions on the characteristic. One could also reasonably ask that the $\epsilon$-klt pair $(X,B)$ is itself $F$-split, or globally $F$-regular, in place of the base variety.
+
+\begin{question}\label{Q1}
+	Fix $d$ a natural number and $\epsilon$ a positive real number. Then is the set, $S$, (resp. $S'$) of projective varieties $X$ such that $(1)-(4)$ (resp. $(1),(2),(3'),(4')$) hold bounded over $\mathbb{Z}$?
+	\begin{enumerate}[label=(\arabic*)]
+		\item $X$ has dimension $d$ over some closed field $\kappa$.
+		\item $(X,B)$ is $\epsilon$-klt for some boundary $B$.
+		\item $-(K_{X}+B)$ is big and nef.
+		\item[$(3')$] $K_{X}+B\equiv 0$.
+		\item If $\kappa$ has characteristic $p>0$, then $X$ is globally $F$-regular.
+		\item[$(4')$] If $\kappa$ has characteristic $p>0$, then $X$ is $F$-split and rationally chain connected.
+	\end{enumerate}
+\end{question}
+
 
 \begin{remark}
-	In particular we have an affirmative answer to Questions 1 in dimension $2$.
+	Here rationally chain connected is chosen over rationally connected in light of \cite{gongyo2015rational} which shows that globally $F$-regular threefolds are rationally chain connected in characteristic $p\geq 11$. Further in characteristic zero, under mild assumptions on the singularities (X admits a boundary $\D$ with $(X,\D)$ dlt), rational chain connectedness coincides with rational connectedness so this is still a natural generalisation. In any case, in dimension $3$ the globally $F$-regular condition is strictly stronger than $F$-split and rationally chain connected whenever the characteristic is at least 11. 
+	
+	In fact other than the case of Fano varieties of Picard number $1$, Gongyo et al are able to show separable rational connectedness. This might, therefore, also be a natural condition to impose instead, especially since the classical proof of the boundedness of characteristic zero prime Fano threefolds so heavily relies on the existence of a free curve. 
 \end{remark}
+
+Given \autoref{Q1}, it is natural to ask what can be gleaned from \autoref{Main} about globally $F$-regular varieties of the type described in \autoref{Q1}. Unfortunately the answer is very little, while every globally $F$-regular variety is $F$-split and if $X$ is of $\epsilon$-log Fano type it is also of $\epsilon$-LCY type, we cannot sensibly ensure that the resulting $\epsilon$-LCY pair $(X,\Delta)$ has coefficients bounded below, even if we require it for the pair $\epsilon$-log Fano pair $(X,\Delta')$.\\
+
+In addition to the main result we prove along the way, essentially in \autoref{J1} and \autoref{J2}, the following result. This in turn drew heavily on the arguments of Jiang in \cite{jiang2014boundedness}.
+
+\begin{theorem}\label{Main2}
+	Fix $0 < \delta, \epsilon <1$ and let $T_{\delta,\epsilon}$ be the set of threefold pairs $(X,\Delta)$ satisfying the following conditions
+	\begin{itemize}
+		\item $X$ is projective over a closed field of characteristic $p >7,\frac{2}{\delta}$;
+		\item $X$ is terminal, rationally chain connected and $F$-split;
+		\item $(X,\Delta)$ is $\epsilon$-klt and LCY;
+		\item The coefficients of $\Delta$ are greater than $\delta$; and
+		\item $X$ admits a Mori fibre space structure $X \to Z$ where $Z$ is not a point.
+	\end{itemize}
+	Then the set $\{\Vol(-K_{X})\}$ is bounded above. 
+\end{theorem}
+\begin{remark}
+	Together with the observation that taking a terminalisation and running a $K_{X}$-MMP can only increase the anti-canonical volume, we reduced weak BAB for varieties in $S_{\D,\epsilon}$ to the case of prime Fano varieties of $\epsilon$-LCY type. Over a fixed field, however, this is essentially superseded by the result of \cite{das2018boundedness}, which gives weak BAB for varieties $X$ with $K_{X}+\D \equiv 0$ for some boundary $\D$ taking coefficients in a DCC set and making $(X,\D)$ klt. 
+\end{remark}
+
+\section{Preliminaries}
+
+We will be interested in LCY varieties in which general points can be connected by rational curves in the following senses.
+
+\begin{definition}
+	Let $X$ be a variety over a field $\kappa$. Then $X$ is said to be:
+	\begin{itemize}
+		%			\item Uniruled if there is a variety $Y$ and a dominant morphism $Y \times \mathbb{P}^{1} \to X$ which does not factor through $Y$. \myworries{Make this more like the subsequent definitions?}\\
+		\item Uniruled if there is a proper family of connected curves $f\colon U \to Y$ where the generic fibres have only rational components together with a dominant morphism $U \to X$ which does not factor through $Y$.
+		\item Rationally chain connected (RCC) if there is $f\colon U \to Y$ as above such that $u^{2}\colon U \times_{Y} U \to X \times_{k} X$ is dominant.
+		\item Rationally connected if there is $f\colon U \to Y$ as above witnessing rational chain connectedness such that the general fibres are irreducible.
+		\item Separably rationally connected if $f$ as above is separable.
+	\end{itemize}
+\end{definition}
+
+If $X \to X'$ is a dominant morphism from $X$ uniruled/RCC/rationally connected then we may compose $U \to X \to X'$ to see that $X'$ is uniruled/RCC/rationally connected. 
 
 \begin{theorem}\cite[Theorem 1.2]{patakfalvi2019ordinary}\label{split}
 	Let $X$ be a normal, Cohen Macaulay variety with $W\mathcal{O}$-rational singularities over a perfect field of positive characteristic. Then $X$ cannot simultaneously satisfy all the following conditions.
@@ -298,45 +231,16 @@ Conversely, if $S$ is Noetherian then we may always choose $H$ relatively very a
 	\[\Vol(X,D+qS) \leq \Vol(X,D) + q\dim(X)\Vol(S,D|_{S}+qS|_{S}).\]
 \end{lemma}	
 
-\begin{lemma}
-	Let $X$ be a normal curve over any field and $\Delta \geq 0 $ be a divisor with $-(K_{X}+\Delta)$ big and nef. Then the non-klt locus of $\Delta$ is either empty or geometrically connected. 
+\begin{lemma}\label{cc} \cite[Proposition 4.37]{kk-singbook}
+	Suppose that $(S,B)$ is a klt surface and $(K_{S}+B+D) \sim 0$ for $D$ effective, integral and disconnected, then $D$ has exactly two connected components.
 \end{lemma}
 
-\begin{proof}
-	If $-(K_{X}+\Delta)$ is big and nef then so is $-K_{X}$. After base changing to $H^{0}(X,\ox)$ if necessary we have $\deg K_{X} = -2$ by \cite[Corollary 2.8]{tanaka2018minimal} giving that $ \deg \Delta <2$. The non-klt locus of $(X,\Delta)$ is precisely the support of $\lfloor \D \rfloor$ and hence can contain at most one point.
-\end{proof}
-
-\begin{theorem}\cite[Theorem 5.2]{tanaka2018minimal}\label{Tcl}
-	Let $(X,\Delta)$ be a surface log pair over any field $\kappa$. Let $\pi\colon X \to S$ be a morphism of $\kappa$ schemes with $\pi_{*}\ox =\mathcal{O}_{S}$. Suppose that $-(K_{X}+\Delta)$ is $\pi$-nef and $\pi$-big, then for any $s \in S$ $X_{S}\cap \nklt(X,\Delta)$ is either empty or geometrically connected. 
-\end{theorem}
-
-
-\begin{theorem}[Weak Connectedness Lemma]
-	Let $X$ be a threefold over any closed field $\kappa$ of characteristic $p>5$ together with $\Delta\geq 0$ on $X$ such that $K_{X}+\Delta$ is $\mathbb{R}$-Cartier. Suppose that $-(K_{X}+\Delta)$ is ample, then for $\nklt(X,\Delta)$ is either empty or connected. 
-\end{theorem}
-\begin{proof}
-	If $(X,\D)$ is klt the result is trivially true, so suppose otherwise.
-	
-	Let $(Y,\D_{Y}) \to (X,\D)$ be a dlt modification. Then $-L:=K_{Y}+\D_{Y}+F=f^{*}(K_{X}+\D)$ with $(Y,\D_{Y})$ dlt and $L$ nef and big. We may further write $L=A+E$ with $A$ ample and $E$ effective and exceptional over $X$. In particular $E$ has support contained inside $S_{Y}=\lfloor \D_{Y} \rfloor$. Note that $S_{Y}$ maps surjectively onto $\nklt(X,\D)$ so it is sufficient to show that $S_{Y}$ is connected.
-	
-	Take a general $G_{Y} \sim \epsilon A +(1-\epsilon) L-\delta S_{Y}$, then for small $\delta$ we may assume $G_{Y}$ is ample, and hence further that $(X,\D_{Y}+G_{Y})$ is dlt. Write $K_{Y}+\D_{Y}+G_{Y}\sim - P_{Y}=-(\epsilon E + F + \delta S_{Y})$ and note $\text{Supp}(P_{Y})=S_{Y}$. In particular $K_{Y}+\D_{Y}+G_{Y}$ is not pseudo-effective and hence we may run a $(Y,\D_{Y}+G_{Y})$ LMMP which terminates in a Mori fibre spaces $Y' \to Z$. By the arguments of \cite[Theorem 9.3]{Bir16} on the induced pair $(Y',\D_{Y'})$, $\nklt(Y',\D_{Y'})=\text{Supp}(\lfloor \D_{Y'} \rfloor)=\text{Supp}(P_{Y'})$ has the same number of connected components as $\nklt(X,\Delta)$, so it suffices to prove the result here.
-	
-	Suppose first that $\dim Z=0$. Then $\rho(Y')=1$. In particular if $D,D'$ are effective and $H$ ample, then $H.D.D' >0$, so certainly $D.D'>0$. Thus $P_{Y'}$ cannot have disconnected support.
-	
-	Suppose next that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected, a contradiction.
-\end{proof}
-	
-	\begin{lemma}\label{cc} \cite[Proposition 4.37]{kk-singbook}
-		Suppose that $(S,B)$ is a klt surface and $(K_{S}+B+D) \sim 0$ for $D$ effective, integral and disconnected, then $D$ has exactly two connected components.
-	\end{lemma}
-
-	
 \begin{theorem}\cite[Theorem 1]{tanaka2017semiample}\myworries{Into Prelims}
-	Let $(X,\Delta)$ be a log canonical (resp. klt) pair where $\Delta$ is an effective $\mathbb{Q}$-divisor. Suppose $D$ is a semiample divisor on $X$ then there is an effective divisor $D'\sim D$ with $(X,\Delta+D')$ log canonical (klt).
+	Let $(X,\Delta)$ be a log canonical (resp. klt) pair where $\Delta$ is an effective $\mathbb{Q}$-divisor. Suppose $D$ is a semiample divisor on $X$ then there is an effective divisor $D'\sim D$ with $(X,\Delta+D')$ log canonical (resp. klt).
 \end{theorem}
 
 \begin{corollary}\label{average}\myworries{Into Prelims}
-	Suppose that $(X,\Delta)$ is a sub klt pair together with $D$ a divisor on $X$ and $\pi\colon (X',\Delta') \to X$ a log resolution of $(X,\Delta)$. Further assume that there is some $D'$ on $X'$ with $\pi_{*}D'=D$, $-(K_{X'}+\Delta'+D')$ $\pi$-nef, $(X,\Delta')$ sub klt and $D'$ semiample. Then there is $E \sim D$ on $X$ effective with $(X,\Delta+E)$ sub klt. Further if $(X,\Delta)$ is $\epsilon$-klt we may choose $E$ such that $(X,\Delta+E)$ is also.
+	Suppose that $(X,\Delta)$ is a sub klt pair together with $D$ a divisor on $X$ and $\pi\colon (X',\Delta') \to X$ a log resolution of $(X,\Delta)$. Further assume that there is some $D'$ on $X'$ with $\pi_{*}D'=D$, $-(K_{X'}+\Delta'+D')$ $\pi$-nef, $(X,\Delta')$ sub klt and $D'$ semiample. Then there is $E \sim D$ on $X$ effective with $(X,\Delta+E)$ sub klt. If in fact $(X,\Delta)$ is $\epsilon$-klt then we may choose $E$ such that $(X,\Delta+E)$ is also.
 \end{corollary}
 \begin{proof}
 	We may write $\Delta'=\Delta_{p}-\Delta_{n}$ as the difference of two effective divisors. Since $(X',\Delta')$ is log smooth we must have that $(X',\Delta_{p})$ is klt. Thus by the proceeding theorem we have that there is some $E' \sim D'$ with $(X',\Delta_{p}+E')$ klt. Then we must also have that $(X',\Delta'+E')$ is sub klt 
@@ -345,45 +249,124 @@ Conversely, if $S$ is Noetherian then we may always choose $H$ relatively very a
 	If $(X',\Delta)$ is $\epsilon$-klt then so is $(X',\Delta_{p})$. Let $\delta =\min (1-\epsilon-c_{i})$ where $c_{i}$ are the coefficients of $\Delta_{p}$ and take $m \in \mathbb{N}$ such that $\frac{1}{m} < \delta$. Applying the previous theorem to $mD'$ instead of $D'$, yields $E'' \sim mD$ with $(X',\Delta'+E'')$ klt. Taking $E'=\frac{1}{m}E$ then continuing as above gives the required divisor. 
 \end{proof}
 
+
 \begin{theorem}\cite[Corollary 1.6]{patakfalvi2017singularities}\label{smoothness}
-	Let $f\colon X \to Z$ be a projective fibration of relative dimension $2$ from a terminal variety with $f_{*}\ox=\mathcal{O}_{Z}$ over a perfect field of positive characteristic $p \geq 11$ such that $-K_{X}$ is ample over $Z$. Then a general fibre of $f$ is smooth.
+	Let $f\colon X \to Z$ be a projective fibration of relative dimension $2$ from a terminal variety with $f_{*}\ox=\mathcal{O}_{Z}$ over a perfect field of positive characteristic $p \geq 11$, such that $-K_{X}$ is ample over $Z$. Then a general fibre of $f$ is smooth.
 \end{theorem}
 
-\begin{theorem}[Bertini for residually separated morphisms]\cite[Theorem 1]{cumino1986axiomatic}\label{Bertini}\myworries{Into Prelims?}
-	Let $f\colon X \to \mathbb{P}^{n}$ a residually separated morphism of finite type from a smooth scheme, then the pullback of a general hyperplane $H$ on $\mathbb{P}^{n}$ is smooth.
+\begin{theorem}[Bertini for residually separated morphisms]\cite[Theorem 1]{cumino1986axiomatic}\label{Bertini}
+	Let $f\colon X \to \mathbb{P}^{n}$ a residually separated morphism of finite type from a smooth scheme. Then the pullback of a general hyperplane $H$ on $\mathbb{P}^{n}$ is smooth.
 \end{theorem}
 
+\subsection{Boundedness}
+
+\begin{definition}\label{d_birationally-bounded} We say that a set $\mathfrak{X}$ 
+	of varieties is birationally bounded over a base $S$ if there is a flat, projective family $Z \to T$, where $T$ is a reduced quasi-projective scheme over $S$, such that every $X\in \mathfrak{X}$ is birational to some geometric fibre of $Z \to T$. If the base is clear from context, say if every $X \in \mathfrak{X}$ has the same base, we omit dependence on $S$.
+	
+	If for each $X \in \mathfrak{X}$ the map to a geometric fibre is an isomorphism we say that $\mathfrak{X}$ is bounded over $S$.
+\end{definition}
+
+If $S=\text{Spec}{R}$ we often just say (birationally) bounded over $R$. In practice we characterise boundedness over $\mathbb{Z}$ via the following result, coming from existence of the Hilbert and Chow schemes.
+
+\begin{lemma}\cite[Proposition 5.3]{tanaka2019boundedness}
+	Fix integers $d$ and $r$. Then there is a flat projective family $Z \to T$ where $T$ is a reduced quasi-projective scheme over $\mathbb{Z}$ satisfying the following property. If
+	\begin{enumerate}
+		\item $\kappa$ is a field;
+		\item $X$ is a geometrically integral projective scheme of dimension $r$ over $\kappa$; and
+		\item there is a closed immersion $j\colon X \to \mathbb{P}^{m}_{\kappa}$ for some $m\in \mathbb{Z}$ such that $j^{*}(\mathcal{O}(1))^{r} \leq d$.
+	\end{enumerate}
+	
+	Then $X$ is realised as a geometric fibre of $Z \to T$
+\end{lemma}
+
+\begin{corollary}\label{l_birationally-bounded}
+	Suppose $\mathfrak{X}$ is a set of varieties over closed fields and there are positive real numbers $d,V$ such that for every $X \in \mathfrak{X}$,
+	\begin{itemize}
+		\item $X$ has dimension at most $d$; and
+		\item There is $M$ on $X$ with $\phi_{|M|}$ birational and $\Vol(M)\leq V$.
+	\end{itemize}
+	Then $\mathfrak{X}$ is birationally bounded over $\mathbb{Z}$. If in fact each $M$ is very ample then $\mathfrak{X}$ is bounded. 
+\end{corollary}
+
+Conversely, if $S$ is Noetherian then we may always choose $H$ relatively very ample on $Z \to T$ with trivial higher direct images. The restriction of $H$ to any geometric fibre is therefore very ample, and of bounded degree. 
+
+\begin{theorem}\cite[Theorem 6.9]{alexeev1994boundedness}\label{BAB}
+	Fix $\epsilon >0$ and an algebraically closed field of arbitrary characteristic. Let $S$ be the set of all projective surfaces $X$ which admit a $\Delta$ such that:
+	\begin{itemize}
+		\item $(X,\Delta)$ is $\epsilon$-klt;
+		\item $-(K_{X}+\Delta)$ is nef; and
+		\item Any of the following holds $K_{X} \not\equiv 0$, $\Delta \neq 0$, $X$ has worse than Du Val singularities.
+	\end{itemize}
+	Then $S$ is bounded.
+\end{theorem}
+
+Alexeev shows boundedness over a fixed field, however it is not immediately clear if such varieties are collectively bounded over $\mathbb{Z}$. We briefly show that his methods can be extended, via the arguments of \cite{witaszek2015effective} to give a boundedness result in mixed characteristic.
+
+\begin{theorem}\label{SBAB}
+	Fix $\epsilon$ a positive real number. Let $S$ be the set of projective surfaces $X$ such that following conditions hold:
+	\begin{itemize}
+		\item $X$ has dimension $d$ over some closed field $\kappa$;
+		\item $(X,B)$ is $\epsilon$-klt for some boundary $B$;
+		\item $-(K_{X}+B)$ is nef; and
+		\item $X$ is rationally chain connected and $F$-split (if $\kappa$ has characteristic $p$).
+	\end{itemize}
+	Then $S$ is bounded.
+\end{theorem}
+\begin{proof}
+	We consider first $\hat{S}:=\{X \in S\colon  K_{X} \not\equiv 0\}$. Take any such $X \in \hat{S}$, then by Alexeev \cite[Chapter 6]{alexeev1994boundedness} we have the following:
+	\begin{itemize}
+		\item The minimal resolution $\tilde{X}\to X$ has $\rho(X) < A $, for some constant A, depending only on $\epsilon$ and admits a birational morphism to $\mathbb{P}^{2}$ or $\mathbb{F}_{n}$ for $n < \frac{2}{\epsilon}$. In particular there is a set $T_{\epsilon}$ bounded over $\mathbb{Z}$ such that every $\tilde{X}$ is a blowup of some $Y \in T_{\epsilon}$ along a finite length subscheme of dimension $0$. That is the set of minimal desingularisations is bounded over $\mathbb{Z}$.
+		\item We may run a $K_{X}$-MMP to obtain $X'$ a Mori fibre space. 
+		\item There is an $N$, independent of the field of definition, such that $NK_{X'}$ is Cartier for any Mori fibre space $X'$ obtained as above.
+		\item $\Vol(-K_{X'})$ is bounded independently of the base field.
+		\item If $X'$ is such a Mori fibre space $X' \to \mathbb{P}^{1}$ and $F$ a general fibre then $-K_{X} +(\frac{2}{\epsilon}-1)F$ is ample.
+	\end{itemize}
+	
+	It is sufficient then to show $S'=\{X' \text{ an } \epsilon-\text{LCY type, Mori fibre space }\}$ is bounded in mixed characteristic, then $\hat{S}$ is bounded by sandwiching as in Alexeev's original proof and the full result follows. In turn by \autoref{l_birationally-bounded} it is enough to find $V$ such that every $X' \in S'$ has a very ample divisor, $H$, satisfying $H^{2}\leq V$. We do this first for positive characteristic varieties.
+	
+	Fix, then, $m > \frac{2}{\epsilon}-1$ and suppose $X'\to \mathbb{P}^{1}$ is a Mori fibre space in positive characteristic. Then $A=-K_{X'} +mF$ is ample and $NA$ is Cartier. Further we have $A'=7NK_{X'}+27N^{2}A=(7N-27N^{2})K_{X'}-27N^{2}mF$ is very ample by \cite[Theorem 4.1]{witaszek2015effective}. Since $F$ is base point free, we may add further multiples of $F$ and consider the very ample Cartier divisor $\hat{A}=(27N^{2}-7N)(-K_{X'}+2F)$. Then $$\hat{A}^{2}=\Vol(X',\hat{A})\leq (27N^{2}-7N^{2})(\Vol(X',-K_{X'})+2\Vol(F,-K_{F}))$$ which is bounded above, since $\Vol(X',-K_{X'})$ is bounded and $\Vol(F,-K_{F})=2$. 
+	
+	Similarly if $X'$ has $\rho(X')=1$ and $-K_{X'}$ ample then $-nK_{X'}$ is a very ample Cartier divisor with vanishing higher cohomology for some $n$ fixed independently of $X'$. Then $(-nK_{X'})^{2}=n^{2}\Vol(X,-K_{X'})$ is bounded and the result follows similarly.
+	
+	Suppose then that $X \in S$ with $K_{X} \equiv 0$, then it must have worse than canonical singularities by \autoref{split}. Let $\pi\colon Y \to X$ be a minimal resolution, with $K_{Y}+B=\pi^{*}K_{X} \equiv 0$ and $B >0$, then $Y$ is still $\epsilon$-klt, so $Y \in \hat{S}$. Consequently $X$ has $\mathbb{Q}$-Cartier Index dividing $N$ also. Moreover, there is $H$ on $Y$ very ample with $H^{2}$ bounded above. Let $H'=\pi_{*}H$, so that $NH'$ is ample and Cartier on $X$. Applying \cite[Theorem 4.1]{witaszek2015effective} again we see that $A\equiv 27N^{2}H$ is very ample, since $K_{X}\equiv 0$, with $A^{2}$ bounded above.
+	
+	The arguments in characteristic $0$ are essentially the same, making use of Koll{\'a}r's effective base-point freeness result \cite[Theorem 1.1, Lemma 1.2]{kollar1993effective} instead of Witaszek's result, and the existence of very free rational curves on smooth rationally connected surfaces instead of \autoref{split}.
+\end{proof}
+
+\begin{remark}
+	In particular we have an affirmative answer to Question 1 in dimension $2$.
+\end{remark}
 
 
 \section{Conic Bundles}
-	We start with some useful results on finite morphisms and klt singularities.
+We start with some useful results on finite morphisms and klt singularities.
+
+\begin{definition}
+	Take a finite, separable and dominant morphism of normal varieties $f\colon X \to Y$.
 	
-	\begin{definition}
-		Take a finite, separable and dominant morphism of normal varieties $f\colon X \to Y$.
-		
-		If $D$ is a divisor on $Y$ then $f$ is said to be tamely ramified over $D$ if for every prime divisor $D'$ lying over $D$ the ramification index is not divisible by $p$ and the induced residue field extension is separable.
-		
-		Moreover $f$ is said to be divisorially tamely ramified if for any proper birational morphism of normal varieties $Y' \to Y$ we have the following. If $X' \to X$ is the normalisation of the base change $X\times_{Y}Y'$, and $f'\colon X'\to Y'$  the induced map, then $f'$ is tamely ramified over every prime divisor in $Y'$.
-		
-		If instead $f$ is generically finite, we say it is divisorially tamely ramified if the finite part of its Stein factorisation is so. Equally if either of $X$ or $Y$ is not normal, $f\colon X \to Y$ is said to be divisorially tamely ramified if the induced morphism on their normalisations is.
-	\end{definition}
+	If $D$ is a divisor on $Y$ then $f$ is said to be tamely ramified over $D$ if for every prime divisor $D'$ lying over $D$ the ramification index is not divisible by $p$ and the induced residue field extension is separable.
 	
-	If $f$ is generically finite of degree $d <p$ then it is always the divisorially tamely ramified. If $D'$ lies over a $D$ then both the ramification index, $r_{D'}$ and the inertial degree, $e_{D'}$ are bounded by $d$, in fact $d= \sum_{f(D')=D} r_{D'}e_{D'}$ by multiplicativity of the norm. This remains the case on any higher birational model.
+	Moreover $f$ is said to be divisorially tamely ramified if for any proper birational morphism of normal varieties $Y' \to Y$ we have the following. If $X' \to X$ is the normalisation of the base change $X\times_{Y}Y'$, and $f'\colon X'\to Y'$  the induced map, then $f'$ is tamely ramified over every prime divisor in $Y'$.
 	
-	\begin{lemma}
-		Let $f\colon Y \to X$ be a dominant, separable, finite morphism of normal varieties over char $p$. Suppose that $K_{X}$ is $\mathbb{Q}$-Cartier then $K_{Y}=f^{*}K_{X}+\Delta$ where $\Delta \geq 0$. Further if $f$ is divisorially tamely ramified, then for $Q \in Y$ a codimension $1$ point lying over $P \in X$ we have $\text{Coeff}_{Q}(\Delta)=r_{Q}-1$ where $r_{Q}$ is the degree of $f|_{Q}\colon Q \to P$.
-	\end{lemma}
-	\begin{proof}
-		By localising at the codimension $1$ points of $X$ we reduce to the case of Riemann-Hurwitz-Hasse to see that $\Delta$ exists as required and $\text{Coeff}_{Q}(\Delta)=\delta_{Q}$ where $\delta_{Q} \geq r_{Q}-1$ with equality when $p\nmid r_{q}$. In particular when $f$ is divisorially tamely ramified, we ensure $\delta_{Q}=r_{Q}-1$.
-	\end{proof}
-	
-	\begin{lemma}\cite[Proposition 3.16]{kollar1997singularities} \label{finite adjunction}
-		Let $f\colon X' \to X$ be a dominant, divisorially tamely ramified, finite morphism of normal varieties of degree $d$ over char $p$. Fix $\Delta$ on $X$ with $K_{X}+\Delta$ $\mathbb{Q}$-Cartier. Write $K_{X'}+\Delta'=f^{*}(K_{X}+\Delta)$ then the following hold:
-		\begin{enumerate}
-			\item $1+\text{TDisc}(X,\Delta) \leq 1+\text{TDisc}(X',\Delta') \leq d(1+\text{TDisc}(X,\Delta))$.
-			\item $(X,\Delta)$ is sub klt (resp. sub LC) iff $(Y,\Delta')$ is sub klt (resp. sub LC).
-		\end{enumerate}
-	\end{lemma}
+	If instead $f$ is generically finite, we say it is divisorially tamely ramified if the finite part of its Stein factorisation is so. Equally if either of $X$ or $Y$ is not normal, $f\colon X \to Y$ is said to be divisorially tamely ramified if the induced morphism on their normalisations is.
+\end{definition}
+
+If $f$ is generically finite of degree $d <p$ then it is always divisorially tamely ramified. If $D'$ lies over a $D$ then both the ramification index, $r_{D'}$ and the inertial degree, $e_{D'}$ are bounded by $d$, in fact $d= \sum_{f(D')=D} r_{D'}e_{D'}$ by multiplicativity of the norm. This remains the case on any higher birational model.
+
+\begin{lemma}
+	Let $f\colon Y \to X$ be a dominant, separable, finite morphism of normal varieties over char $p$. Suppose that $K_{X}$ is $\mathbb{Q}$-Cartier then $K_{Y}=f^{*}K_{X}+\Delta$ where $\Delta \geq 0$. Further if $f$ is divisorially tamely ramified, then for $Q \in Y$ a codimension $1$ point lying over $P \in X$ we have $\text{Coeff}_{Q}(\Delta)=r_{Q}-1$ where $r_{Q}$ is the degree of $f|_{Q}\colon Q \to P$.
+\end{lemma}
+\begin{proof}
+	By localising at the codimension $1$ points of $X$ we reduce to the case of Riemann-Hurwitz-Hasse to see that $\Delta$ exists as required and $\text{Coeff}_{Q}(\Delta)=\delta_{Q}$ where $\delta_{Q} \geq r_{Q}-1$ with equality when $p\nmid r_{q}$. In particular when $f$ is divisorially tamely ramified, we ensure $\delta_{Q}=r_{Q}-1$.
+\end{proof}
+
+\begin{lemma}\cite[Proposition 3.16]{kollar1997singularities} \label{finite adjunction}
+	Let $f\colon X' \to X$ be a dominant, divisorially tamely ramified, finite morphism of normal varieties of degree $d$ over char $p$. Fix $\Delta$ on $X$ with $K_{X}+\Delta$ $\mathbb{Q}$-Cartier. Write $K_{X'}+\Delta'=f^{*}(K_{X}+\Delta)$ then the following hold:
+	\begin{enumerate}
+		\item $1+\text{TDisc}(X,\Delta) \leq 1+\text{TDisc}(X',\Delta') \leq d(1+\text{TDisc}(X,\Delta))$.
+		\item $(X,\Delta)$ is sub klt (resp. sub LC) iff $(Y,\Delta')$ is sub klt (resp. sub LC).
+	\end{enumerate}
+\end{lemma}
 
 \begin{proof}
 	
@@ -405,7 +388,7 @@ Conversely, if $S$ is Noetherian then we may always choose $H$ relatively very a
 	\[r_{E'}a(E,X,\Delta)+(r_{E'}-1)=a(E',X',\Delta')\]
 	and thus $a(E,X,\Delta)+1=\frac{1}{r_{E'}}(a(E',X',\Delta')+1)$ with $1 \leq r_{E'} \leq d$.
 	
-	Since, by a theorem of Zariski \cite[Theorem VI.1.3]{k-rat-curves}, every valuation with center on $X'$ is realised by some birational $Y' \to X'$ occurring as a pullback of a $Y \to X$, this is sufficient to show that $1+\text{TDisc}(X,\Delta) \leq 1+\text{TDisc}(X',\Delta') \leq d(1+\text{TDisc}(X,\Delta))$. The second part then follows.
+	Since, by a theorem of Zariski \cite[Theorem VI.1.3]{k-rat-curves}, every valuation with center on $X'$ is realised by some birational $Y' \to X'$ occurring as a pullback of a birational morphism $Y \to X$, this is sufficient to show that $1+\text{TDisc}(X,\Delta) \leq 1+\text{TDisc}(X',\Delta') \leq d(1+\text{TDisc}(X,\Delta))$. The second part then follows.
 \end{proof}
 
 
@@ -425,7 +408,7 @@ In positive characteristic the discriminant divisor is not always well defined f
 Suppose, however, that $(X,\Delta) \to Z$ is a tame conic bundle. We may take a log resolution $X' \to X$ as this does not change $d_{P}$ and is still a tame conic bundle by the \autoref{tame base change}. Thus we may suppose that $\Delta$ is an SNC divisor and hence near $P$, $\Delta+f^{*}P$ is also SNC for all but finitely many $P$, by generic smoothness of the fibres and as the horizontal components are divisorially tamely ramified over $Z$. Hence in fact $B_{Z}$ is well defined in this case.
 
 \begin{lemma}\label{tame base change}
-	Let $f\colon (X,\Delta) \to Z$ be a tame conic bundle, and $X' \to X$ either a birational morphism from a normal variety or the base change by a divisorially tamely ramified morphism from a normal variety $g\colon Z' \to Z$ then there is $\Delta'$ with $(X',\Delta')$ a tame conic bundle over $Z$ or $Z'$ as appropriate. Moreover in this case $X' \to X$ is also divisorially tamely ramified.
+	Let $f\colon (X,\Delta) \to Z$ be a tame conic bundle, and $X' \to X$ either a birational morphism from a normal variety or the base change by a divisorially tamely ramified morphism from a normal variety $g\colon Z' \to Z$. Then there is $\Delta'$ with $(X',\Delta')$ a tame conic bundle over $Z$ or $Z'$ as appropriate. Moreover in this case $X' \to X$ is also divisorially tamely ramified.
 \end{lemma}
 
 \begin{proof}
@@ -433,18 +416,19 @@ Suppose, however, that $(X,\Delta) \to Z$ is a tame conic bundle. We may take a 
 	
 	Suppose then $g\colon Z' \to Z$ is generically finite. From above, and by Stein factorisation we may freely suppose that $g$ is finite. Then the base change morphism $g'\colon X' \to X$ is a finite morphism of normal varieties and we may induce $\Delta'$ with $g'^{*}(K_{X}+\Delta)=K_{X'}+\Delta'$. Again the horizontal components of $\Delta'$ are precisely the base changes of the horizontal components of $\Delta$. 
 	
-	It suffices to show then that if $D \to Z$ is divisorially tamely ramified then $D' \to Z'$, the base change, is also divisorially tamely ramified. Certainly $D' \to Z'$ is still separable. Suppose $C$ is any curve on $Z$ and $C'$ a curve on $Z'$ lying over it. In turn take any $C_{D'}$ lying over $C'$ on $D'$. Then $C_{D'}$ is the base change of some $C_{D}$. Since $C_{D} \to C$ is separable, so too is $C_{D'} \to C'$. Equally as the ramification indices of $C', C_{D}$ not divisible by $p$, neither can the ramification index of $C_{D'}$ over $C_{D}$ be. This same argument holds after base change by any higher birational model of $Z$, and by \cite[Theorem VI.1.3]{k-rat-curves} every valuation with centre on $Z'$ is can be realised on the pullback of some such model. Thus $D' \to Z'$ is divisorially tamely ramified.
+	It suffices to show then that if $D \to Z$ is divisorially tamely ramified then $D' \to Z'$, the base change, is also divisorially tamely ramified. Certainly $D' \to Z'$ is still separable. Suppose $C$ is any curve on $Z$ and $C'$ a curve on $Z'$ lying over it. In turn take any $C_{D'}$ lying over $C'$ on $D'$. Then $C_{D'}$ is the base change of some $C_{D}$. Since $C_{D} \to C$ is separable, so too is $C_{D'} \to C'$. Equally as the ramification indices of $C', C_{D}$ not divisible by $p$, neither can the ramification index of $C_{D'}$ over $C_{D}$ be. This same argument holds after base change by any higher birational model of $Z$, and by
+	\cite[Theorem VI.1.3]{k-rat-curves} every valuation with centre on $Z'$ is can be realised on the pullback of some such model. Thus $D' \to Z'$ is divisorially tamely ramified.
 	
 	It is enough to show that $X' \to X$ is divisorially tamely ramified after taking base changing by higher birational model of $Z$. In particular, after taking a flatification we may assume $f\colon X \to Z$ is flat. Now suppose $D$ is a divisor on $X$, lying over some curve $C$ on $Z$. We have $f^{*}C=\sum E_{i}$ with $E_{0}=D$. Let $C_{j}$ be the curves lying over $C$ in $Z'$, then if $E_{i,j}$ are the divisors lying over $E_{i}$, for some fixed $i$, they are in one-to-one correspondence with the $C_{j}$. We have $g'^{*}f^{*}C=\sum r_{i,j}E_{i,j}=\sum_{j} r_{i}\sum _{i}E_{j}$ and thus none of the $r_{i,j}$, in particular the $r_{0,j}$ are divisible by $p$. Moreover the $E_{0,j} \to E_{0}$ must be separable since the $C_{j} \to C$ are.
 	
 	The same holds after taking a higher birational model of $X$, and thus $X' \to X$ is divisorially tamely ramified as claimed.
 	
-	\end{proof}
+\end{proof}
 
 In practice we deal exclusively with tame conic bundles arising in the following fashion.
 
 \begin{lemma}\label{S2}
-	Suppose that $(X,\Delta)$ is klt and equipped with a Mori fibre space structure over a surface $Z$ and the horizontal components of $\Delta$ have coefficients bounded below by $\delta$. Then for $p > \frac{2}{\delta}$, $f\colon (X,\Delta) \to Z$ is a tame conic bundle.
+	Suppose that $(X,\Delta)$ is klt and equipped with a Mori fibre space structure over a surface $Z$ and the horizontal components of $\Delta$ have coefficients bounded below by $\delta$. Then if $X$ is defined over a field of characteristic $p > \frac{2}{\delta}$, $f\colon (X,\Delta) \to Z$ is a tame conic bundle.
 \end{lemma}
 \begin{proof}
 	
@@ -469,7 +453,7 @@ We will prove this in several steps. First we consider the case that $\Delta^{h}
 \end{lemma}
 \begin{proof}
 	This result is well known and essentially comes from \cite{prokhorov2009towards}. Details specific to positive characteristic can be found in \cite[Section 4]{das2016adjunction}, \cite[Lemma 3.1]{witaszek2017canonical} and \cite[Lemma 6.7]{cascini2013base}
-
+	
 	We sketch, some key points of the proof.
 	
 	Since generically $X \to Z$ is a $\mathbb{P}^{1}$ bundle and the horizontal part of $\Delta$ is a union of sections, we induce a rational map $\phi\colon Z \dashrightarrow \overline{\mathcal{M}}_{0, n}$, the moduli space of $n$-pointed stable curves of genus $0$. By taking an appropriate resolution we may suppose that $(X,\Delta)$ is log smooth, $Z$ is smooth and $\phi$ is defined everywhere on $Z$. Blowing down certain divisors on the universal family over $\overline{\mathcal{M}}_{0, n}$ and pulling back to $Z$ we may further assume that $X\to Z$ factors through a $\mathbb{P}^{1}$ bundle over $Z$ via a birational morphisms.
@@ -491,7 +475,7 @@ We will prove this in several steps. First we consider the case that $\Delta^{h}
 	Write then that $M_{Z'}=\phi^{*}A$ and $M_{Y}=\chi^{*}A'$. A more careful study of the proof of the previous result would give $A=A'$ and the result follows. However for simplicity one can also note that $M_{Z'}=\pi_{*}M_{Y}=\pi_{*}\chi^{*}A'=\phi^{*}A'$, so that $M_{Y}=\pi^{*}\phi^{*}A'=\pi^{*}M_{Z'}$.		
 \end{proof}
 
-	We now need to reduce to this case. This requires the following lemma, due essentially to Ambro.
+We now need to reduce to this case. This requires the following lemma, due essentially to Ambro.
 
 \begin{lemma}\cite[Theorem 3.2]{ambro1999adjunction}
 	Suppose that $f\colon (X,\Delta) \to Z$ is a tame conic bundle. Let $g\colon Z' \to Z$ be a finite, divisorially tamely ramified morphism of normal varieties and $(X',\Delta') \to Z'$ the induced fibration. Then $(X',\Delta') \to Z$ is tame and $g^{*}(K_{Z}+D_{Z})=K_{Z'}+D_{Z'}$ for $D_{Z'}$ the induced discriminant divisor of $(X',\Delta') \to Z'$.
@@ -518,7 +502,7 @@ Note that in the setup above $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ so 
 \begin{proof}
 	Let $D$ be any horizontal component of $\Delta$ which is not a section of $f$ then $f$ restricts to a divisorially tamely ramified morphism $D \to Z$. After replacing $D$ with its normalisation and Stein Factorising, we may suppose that $D\to Z$ is finite with $D$ normal. Taking the fibre product of $X \to Z$ with the normalisation $\tilde{D}$ of $D$ we find $X' \to \tilde{D}$ satisfying the initial conditions but with the one component of $\Delta$ is now  generically a section.
 	
-	 In this fashion, we eventually get to $Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and all the horizontal components of $\Delta$ being generically sections. Hence we may apply \autoref{ShokurovAdjunction} to give the theorem.
+	In this fashion, we eventually get to $Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and all the horizontal components of $\Delta$ being generically sections. Hence we may apply \autoref{ShokurovAdjunction} to give the result.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{cbf}]
@@ -538,7 +522,7 @@ Note that in the setup above $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ so 
 \end{proof}
 We also need to consider the pullbacks of very ample divisors on the base of a suitably smooth conic bundle, in particular an adjunction result is required in the next section.
 
-	\begin{lemma}
+\begin{lemma}
 	Let $(X,\Delta) \to Z$ be a regular conic bundle. Then there is some, possibly reducible, curve $C$ on $Z$ such that for any $P \in Z$ the fibre. $F_{P}$ over $P$ is determined as follows:
 	\begin{enumerate}
 		\item If $P \in Z\setminus C$ then $F_{p}$ is a smooth rational curve.
@@ -551,13 +535,13 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 	This is essentially \cite[Proposition 1.8]{sarkisov1983conic}. We sketch the proof as our statement is slightly different.
 	
 	Since $X$ is smooth $-K_{X}$ is relatively ample and defines an embedding into a $\mathbb{P}^{2}$ bundle over $Z$.
-	Fix any point $P$ in $X$ then in some neighbourhood $U$ around $P$, $X_{U}$ is given inside $\mathbb{P}^{2} \times U$ by the vanishing of $x^{t}Qx$. Here $Q$ is a diagonalisable $3\times 3$ matrix taking coefficients in $\kappa[U]$, unique up to invertible linear transformation, so we may take $C$ to be the divisor on which the rank of $Q$ is less than $3$. Then the singular points of $C$ are precisely the locus on which $Q$ has rank less than $2$. By taking a diagonalisation of $Q$ we may write $X$ as the vanishing of $\sum A_{i}x_{i}^{2}$ for some $A_{i} \in \kappa[U]$ and we obtain the classification of fibres by consideration of the rank.
+	Fix any point $P$ in $X$ then in some neighbourhood $U$ around $P$, $X_{U}$ is given inside $\mathbb{P}^{2} \times U$ by the vanishing of $x^{t}Qx$. Here $Q$ is a diagonalisable $3\times 3$ matrix taking coefficients in $\kappa[U]$, unique up to invertible linear transformation, so we may take $C$ to be the divisor on which the rank of $Q$ is less than $3$. Then the singular points of $C$ are precisely the locus on which $Q$ has rank less than $2$. By taking a diagonalisation of $Q$ we may write $X_{U}$ as the vanishing of $\sum A_{i}x_{i}^{2}$ for some $A_{i} \in \kappa[U]$ and we obtain the classification of fibres by consideration of the rank.
 	
 	Suppose then $H$ is a smooth curve as given. Away from $C$, $f^{*}H$ is clearly smooth, so it suffices to consider the intersection with $C$, however we can see it is smooth here by computing the Jacobian using the local description of $X$ given above. 
 \end{proof}
 
 
-	\begin{theorem}[Embedded resolution of surface singularities]\cite[Theorem 1.2]{cutkosky2009resolution}
+\begin{theorem}[Embedded resolution of surface singularities]\cite[Theorem 1.2]{cutkosky2009resolution}
 	Suppose that $V$ is a non-singular threefold, $S$ a reduced surface in $V$ and $E$ a simple normal crossings divisor on $V$ then there is a sequence of blowups $\pi\colon V_{n} \to V_{n-1} \to ... V$ such that the strict transform $S_{n}$ of $S$ to $V_{n}$ is smooth. Further each blowup is the blowup of a non-singular curve or a point and the blown up subvariety is contained in the locus of $V_{i}$ on which the preimage of $S+E$ is not log smooth.
 \end{theorem}
 
@@ -566,7 +550,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 \end{corollary}
 \begin{proof}
 	
-	By the previous theorem we we may find birational morphism $\pi\colon X' \to X$ which is a log resolution of $(X,\Delta)$ which factors as blowups $X'=X_{n} \to X_{n-1} \to .... X_{0}=X$ of smooth subvarieties contained in the non-log smooth locus of each step.
+	By the previous theorem we we may find birational morphism $\pi\colon X' \to X$ which is a log resolution of $(X,\Delta)$ factoring as blowups $X'=X_{n} \to X_{n-1} \to .... X_{0}=X$ of smooth subvarieties contained in the non-log smooth locus of each step.
 	
 	We show first a general $G'$ is smooth. At each stage we blow-up smooth curves $V_{i}$ in the non-log smooth locus. Let $G_{i}$ be the pullback of $H$ to $X_{i}$, suppose for induction it is smooth. We may assume that $f_{i,*}V_{i}=V'_{i}$ is a curve for $f_{i}\colon X_{i} \to X \to Z$ else a general $H$ avoids it and so a general $G_{i+1}$ is smooth also. Note that each vertical component of $\Delta$ is log smooth near the generic point of their image, since $X$ is a regular conic bundle, so $V_{i}$ must be contained in the strict transform of some horizontal component of $\Delta$. Since $V_{i}$ is not contracted, it follows that $V_{i} \to V_{i}'$ is separable as $(X,\Delta,Z)$ is tame. Thus as a general $H$ meets $V$ transversely, a general $G_{i}$ meets $V_{i}$ transversely and hence a general $G_{i+1}$ is smooth.
 	
@@ -577,7 +561,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 	Suppose then we fix two exceptional divisors $E_{1},E_{2}$ meeting at a curve $V$. Again we suppose that $V$ is not contracted by $f'=f \circ \pi$. Write $\pi_{*}V=V'$ and $f_{*}V=V''$. Then $V' \to V''$ is separable as before and for a general $G'$ meeting $V$ transversely, the intersection of $G$ with $f^{*}V'$ is a log smooth system of rational curves, and then $G.V \subseteq G.f^{*}V'$ is log smooth, or equally it is finitely many points with multiplicity $1$. 
 \end{proof}
 
-	\begin{theorem}
+\begin{theorem}
 	Let $(X,\Delta,Z)$ be a regular, tame conic bundle and $|A|$ a very ample linear system on $Z$. Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ such that for a general $H \in |A|$, the pullback $G'$ to $X'$ is smooth with $(X',\Delta'+G')$ log smooth. 
 \end{theorem}
 \begin{proof}
@@ -589,7 +573,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 
 \begin{corollary}\label{tameAdjunction}
 	Suppose $(X,\Delta,Z)$ is a terminal, sub $\epsilon$-klt, tame conic bundle. Take a general very ample $H$ on $Z$, with $G=f^{*}H$, then
-	 $(G,\Delta|_{G}=\Delta_{G})$ is sub $\epsilon$-klt.
+	$(G,\Delta|_{G}=\Delta_{G})$ is sub $\epsilon$-klt.
 \end{corollary}
 \begin{proof}
 	Throwing away finitely many points of $Z$ we may freely suppose that the conic bundle is regular.
@@ -598,15 +582,15 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 \end{proof}
 
 
-	
+
 \section{$F$-Split Mori Fibre Spaces}
 
 \begin{theorem}\label{setup}
-	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic, admitting $f\colon (X,\Delta) \to (Z,\Delta_{Z})$ a $K_{X}$ Mori fibration where either
+	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic. Suppose that $(X,\Delta)$ admits a $K_{X}$ Mori fibration$f\colon (X,\Delta) \to (Z,\Delta_{Z})$ where either
 	\begin{enumerate}
-		\item $Z$ is a smooth rational curve, there is $H$ very ample with $H^{2}=1$ and a general fibre $G$ is smooth.\\
+		\item $Z$ is a smooth rational curve, there is $H$ on $Z$ very ample of degree $1$ and a general fibre $G$ of $X \to Z$ is smooth.\\
 		\[\text{or}\]
-		\item $(X,\Delta) \to Z$ is a tame, terminal conic bundle and there is $|A|$ very ample linear system with $A^{2} \leq c$. In which case $G$ the pullback of a sufficiently general $H \in |A|$ is smooth with $(G,\Delta_{G}=\Delta|_{G})$ $\epsilon$-klt by \autoref{tameAdjunction}.
+		\item $(X,\Delta) \to Z$ is a tame, terminal conic bundle and there is a very ample linear system $|A|$ on $Z$  with $A^{2} \leq c$. In which case $G$ the pullback of a sufficiently general $H \in |A|$ is smooth with $(G,\Delta_{G}=\Delta|_{G})$ $\epsilon$-klt by \autoref{tameAdjunction}.
 	\end{enumerate}
 	Then the set of base varieties $$S'=\{X \text{ such that } \exists \Delta \text{ with } (X,\Delta) \in S\}$$ is birationally bounded over $\mathbb{Z}$. 
 \end{theorem}
@@ -626,7 +610,7 @@ If, for some $t>0$, the non-klt locus of $(X,(1+t)\Delta)$ is contracted then si
 \end{theorem}
 First we show that results of this form lift to characterisations of the non-klt locus of $(X,(1+t)\Delta)$, then show how the result above may be applied here.
 \begin{lemma}
-	 We use the notation of \autoref{setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt, then the every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	We use the notation of \autoref{setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt. Then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 \begin{proof}
 	Let $\pi\colon X' \to X$ be a log resolution of $(X,\Delta+G)$ with $(K_{X'}+\Delta')=\pi^{*}(K_{X}+\Delta)$, then $(X',\Delta'+G')$ is log smooth and $\Delta'$ and $G$ have no common components, where $G'$ is the pullback of $G$. Now $X' \to X$ must also be a log resolution of $(X,(1+t)\Delta)$, and hence if we write $(K_{X'}+B)=\pi^{*}(K_{X}+(1+t)\Delta)$ then it is also true that $(X',B+G')$ is log smooth and that $B$ and $G'$ have no common components. Hence $(G',B|_{G'})$ is sub klt by assumption and in particular it has coefficients strictly less than $1$. 
@@ -636,7 +620,7 @@ First we show that results of this form lift to characterisations of the non-klt
 
 
 \begin{lemma}
-	Using the notation of \autoref{setup} suppose that $Z$ is a curve and, writing $Y$ for the generic fibre of $f\colon X\to Z$, there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	Using the notation of \autoref{setup} suppose that $Z$ is a curve and write $Y$ for the generic fibre of $f\colon X\to Z$. If there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 
 \begin{proof}
@@ -650,21 +634,21 @@ First we show that results of this form lift to characterisations of the non-klt
 \begin{proof}
 	We consider two cases. 
 	
-	Suppose first $Z$ is a curve, so the generic fibre $Y$ is a regular Del Pezzo surface and $(G,\Delta_{G})$ is $\epsilon$-klt LCY. Then, by the work of Tanaka \cite[Corollary 4.8]{tanaka2019boundedness}, $(-K_{G}^{2}) \leq 9$. In particular if $\Delta_{G}=\sum \lambda_{i}D_{i}$ then $\sum \lambda_{i} \leq \Delta_{G}.(-K_{X}) \leq 9$ and $\Delta_{G}^{2} =(-K_{G})^{2} \leq 9$ and the result holds by \autoref{Jiang}. 
-
-	Suppose then that $Z$ is a surface, so $G$ is a smooth conic bundle over $H$ a general ample divisor on $Z$. Further $(G,\Delta_{G})$ is $\epsilon$-klt and $K_{G}+\Delta_{G}\sim kF$ where $F$ is the general fibre over $H$ and $H^{2}=k \leq c$. Finally note that $\Delta_{G}^{v} \sim_{f,\mathbb{Q}} 0$.
-
-	We may write $\Delta_{G}= \sum \lambda_{i}D_{i}+ \sum \mu_{i}F_{i}$ where $F_{i}$ are fibres over $H$ and $D_{i}$ dominate $H$. Since $F_{i}$ is a fibre and $G$ is smooth, each $F_{i}$ is reduced by the genus formula and contains at most $2$ components since $-K_{X}.F_{i}=-2$. Further $\Delta_{G}.F=(-K_{G}).F=2$ and hence $\Delta_{G}^{2}=(-K_{G}+kF)^{2}=(-K_{G}^{2})-2kK_{G}.F +(kF)^{2} \leq (-K_{G}^{2})+4c$ which in turn is bounded above by $8+4c$ since $G$ is a smooth conic bundle\cite[Proposition III.21]{beauville1996complex}. 
+	Suppose first $Z$ is a curve, so the generic fibre $Y$ is a regular del Pezzo surface and $(G,\Delta_{G})$ is $\epsilon$-klt LCY. Then, by the work of Tanaka \cite[Corollary 4.8]{tanaka2019boundedness}, $(-K_{G}^{2}) \leq 9$. In particular if $\Delta_{G}=\sum \lambda_{i}D_{i}$ then $\sum \lambda_{i} \leq \Delta_{G}.(-K_{X}) \leq 9$ and $\Delta_{G}^{2} =(-K_{G})^{2} \leq 9$ and the result holds by \autoref{Jiang}. 
 	
-	It remains then to show that the sum of the coefficients of $\Delta_{G}$ is bounded. Note that $\sum \lambda_{i} \leq \sum \lambda_{i}D_{i}.F =\Delta_{G}.F =2$. So we need only bound $\sum \mu_{i}$.
+	Suppose then that $Z$ is a surface, so $G$ is a smooth conic bundle over $H$ a general ample divisor on $Z$. Further $(G,\Delta_{G})$ is $\epsilon$-klt and $K_{G}+\Delta_{G}\sim kF$ where $F$ is the general fibre over $H$ and $H^{2}=k \leq c$. Finally note that $\Delta_{G}^{v} \sim_{f,\mathbb{Q}} 0$.
+	
+	We may write $\Delta_{G}= \sum \lambda_{i}D_{i}+ \sum \mu_{i}F_{i}$ where $F_{i}$ are fibres over $H$ and $D_{i}$ dominate $H$. Since $F_{i}$ is a fibre and $G$ is smooth, each $F_{i}$ is reduced by the genus formula and contains at most $2$ components since $-K_{X}.F_{i}=-2$. Further $\Delta_{G}.F=(-K_{G}).F=2$ and hence $\Delta_{G}^{2}=(-K_{G}+kF)^{2}=(-K_{G}^{2})-2kK_{G}.F +(kF)^{2} \leq (-K_{G}^{2})+4c$ which in turn is bounded above by $8+4c$ due to \cite[Proposition III.21]{beauville1996complex}, since $G$ is a smooth conic bundle.
+	
+	It remains then to show that the sum of the coefficients of $\Delta_{G}$ is bounded. Note that $\sum \lambda_{i} \leq \sum \lambda_{i}D_{i}.F =\Delta_{G}.F =2$. We therefore need only bound $\sum \mu_{i}$.
 	
 	Suppose for contradiction that $w=\sum \mu_{i} >3 +k$. Let $B=\sum \lambda_{i}D_{i} +(1-\frac{3+k}{w})\sum \mu_{i}F_{i}  \sim -K_{G}-(F^{1}+F^{2}+F^{3})$, for general fibres $F^{i}$.
 	
-	Then, $(G,B)$ is klt and so by \autoref{cc}, $D=F^{1}+F^{2}+F^{3}$ has 2 connected components, a clear contradiction.
+	Then $(G,B)$ is klt and so by \autoref{cc}, $D=F^{1}+F^{2}+F^{3}$ has 2 connected components, a clear contradiction.
 	
-	Therefore we may choose $A$ small and ample with $(A.\Delta_{G})<c$ and write $N=kF+A$ to satisfy the conditions of \autoref{Jiang} and prove the result as then $\Delta_{G}.N=kF.\Delta_{G}+A.B\leq 3c$ is still bounded.
+	Therefore we may choose $A$ small and ample with $A.\Delta_{G} < c$ and write $N=kF+A$ to satisfy the conditions of \autoref{Jiang}. The result then follows as $\Delta_{G}.N=kF.\Delta_{G}+A.B\leq 3c$ is still bounded.
 \end{proof}
-	\begin{corollary}\label{nAmple}
+\begin{corollary}\label{nAmple}
 	There is some $n$ such that for any $(X,\Delta) \to Z$ and $G$ as in \autoref{setup} we have $-K_{X}+nG$ is ample.
 \end{corollary}
 
@@ -677,15 +661,15 @@ First we show that results of this form lift to characterisations of the non-klt
 	Let $(X,\Delta) \to Z$ and $G$ be as in \autoref{setup}. Then there is $t$ not depending on the pair $(X,\Delta)$ nor on $G$ with $-3K_{X}+tG$ ample and defining a birational map. 
 \end{theorem}
 \begin{proof}
-	Consider first the case that $\dim Z=1$. Then $G$ is a smooth Del Pezzo surface, so $-3K_{X}$ is very ample. Let $G_{1},G_{2}$ be other general fibres and consider
+	Consider first the case that $\dim Z=1$. Then $G$ is a smooth del Pezzo surface, so $-3K_{X}$ is very ample. Let $G_{1},G_{2}$ be other general fibres and consider
 	\[0 \to \ox(-3K_{X}+kG-G_{1}-G_{2}) \to \ox(-3K_{X}+kG) \to \mathcal{O}_{G_{1}}(-3K_{G_{1}})\oplus \mathcal{O}_{G_{2}}(-3K_{G_{2}}) \to 0.\]
 	
 	Since $X$ is globally $F$-split $H^{i}(X,A)=0$ for all $i>0$ and $A$ ample by \autoref{vanish}. In particular then $H^{1}(X,\ox(-3K_{X}+kG-G_{1}-G_{2}))$ vanishes when $k\geq 3n+2$ for $n$ as given by the proceeding corollary. Therefore we may lift sections of $-3K_{G_{i}}$ to see that $-3K_{X}+kG$ defines a birational map for any $k \geq 3n+2$. 
-
+	
 	Suppose instead that $\dim Z=2$, so $G$ is a conic bundle. Choose a general $H'\sim H$ on $Z$ and let $G'$ be its pullback. Consider $A_{k}=(-K_{X}+kG)|_{G'}=(-k_{G'}+(k-1)dF)$ for $d \geq 1$, where $F$ is the general fibre of $G'\to H'$. Then $A$ is ample for $k >n$ and is Cartier since $G$ is smooth. In particular by the Fujita conjecture for smooth surfaces \cite[Corollary 2.5]{terakawa1999d}, $k_{G'}+4A_{k}$ is very ample. Choosing suitable $k,k'$ we may write $k_{X}+4A_{k}=-3K_{G'}+4(k-1)dF=(-3K_{X}+k'G)|_{G'}$. Consider now
 	\[0 \to \ox(-3K_{X}+(k'-1)G)\to \ox(-3K_{X}+k'G)\to \mathcal{O}_{G'}(-3K_{G'}+4(k-1)dF) \to 0.\]
 	Again the higher cohomology of $-3K_{X}+(k'-1)G$ vanishes and we may lift sections to $H^{0}(X,\ox(-3K_{X}+k'G))$ from general fibres. In particular $-3K_{X}+k'G$ separates points on a general $G'$ so $-3K_{X}+(k'+1)G$ separates general points and thus defines a birational map. 
-
+	
 	We may then pick some suitably large $t$ for which the result holds as $k,k'$ were chosen independently of $(X,\Delta) \to Z$ and $G,G_{1},G_{2}$.
 \end{proof}
 
@@ -699,7 +683,7 @@ First we show that results of this form lift to characterisations of the non-klt
 	Suppose first $\dim Z=1$. Then $\Vol(G,-K_{G})=(-K_{G})^{2} \leq 9$ and so by Lemma 3.4
 	\[\Vol(X,-3K_{X}+nG) \leq \Vol(X,-3K_{X}) + 3t\Vol(G,-3K_{G})\leq 27(V+9t)\]
 	as required.
-
+	
 	Suppose instead then that $\dim Z=2$. So $G$ is a conic bundle over some $H$ on $Z$ with $H^{2} \leq c$. Hence we get
 	\[\Vol(G,(-3K_{X}+tG)|_{G})= (-3K_{G}+(t+1)H^{2}F)^{2}=9K_{G}^{2}-2(t+1)H^{2}(K_{G}.F)\]
 	where $F$ is a general fibre of $G \to H$. Hence $F$ is a smooth rational curve and $K_{G}.F=-2$ and $\Vol(G,(-3K_{X}+tG)|_{G})\leq 72+4(t+1)c$. Then as before we may apply \autoref{vol} to get 
@@ -708,11 +692,13 @@ First we show that results of this form lift to characterisations of the non-klt
 \end{proof}
 
 \begin{proof}[Proof of \autoref{setup}]
-	Suppose $(X,\Delta) \in S$. Then $A=-3K_{X}+tG$ is birational with bounded volume by the proceeding results. Thus $S'$ is birationally bounded by \autoref{l_birationally-bounded}.
-	\end{proof}
+	Suppose $(X,\Delta) \in S$. Then $A=-3K_{X}+tG$ is birational with bounded volume by the preceding results. Thus $S'$ is birationally bounded by \autoref{l_birationally-bounded}.
+\end{proof}
 
 \section{Weak BAB for Mori Fibre Spaces}
-	\begin{theorem}\label{J1}
+This section is devoted to providing a bounds on the volume of $-K_{X}$ under suitable conditions. Namely that $X$ belongs to a suitable family of $\epsilon$-LCY Mori fibre spaces whose bases are bounded. We consider the first the case that $X$ is a tame conic bundle over a surface.
+
+\begin{theorem}\label{J1}
 	Pick $\epsilon,c >0$. Then there is $V(\epsilon,c)$ such that if $f\colon (X,\Delta) \to S$ is any projective, tame conic bundle over any closed field of characteristic $p> 0$, $(X,\Delta)$ is $\epsilon$-klt and $S$ admits a very ample divisor $H$ with $H^{2} \leq c$, then $\Vol(-K_{X}) \leq V(\epsilon,c)$. 
 \end{theorem}
 
@@ -736,7 +722,7 @@ If $\Vol(-K_{X})=0$ the result is trivially true, so we may suppose that $-K_{X}
 	Note however that, letting $n=mr$ we have $\lim \frac{2}{m^{2}}(h^{0}(G,-mK_{X}|_{G})-n\cdot h^{0}(F,-mK_{F}))= \Vol(-K_{X}|_{G})-2r\Vol(-K_{F}) > 0$ since $F$ is a smooth rational curve. Hence $-mK_{X}|_{G}-mrF$ admits a section for $m$ sufficiently large and divisible. Choose an effective $D\sim_{\mathbb{Q}} -K_{X}|_{G}-rF$.
 	
 	Consider now \[(G,(1-\frac{k+2}{r})B|_{G}+\frac{k+2}{r}D+F_{1}+F_{2})\]
-	 for two general fibres $F_{1}, F_{2}$.
+	for two general fibres $F_{1}, F_{2}$.
 	This has \begin{align*}
 	&-K_{G}+(1-\frac{k+2}{r})B|_{G}+\frac{k+2}{r}D+F_{1}+F_{2}	\\
 	\sim & -(K_{X}|_{G}+kF)+\frac{k+2}{r})B|_{G}+\frac{k+2}{r}(-K_{X}|_{G}-rF)+F_{1}+F_{2} \\	
@@ -783,6 +769,8 @@ Here $ulct (S,B;G)= \sup\{t\colon  (S,B+tG) \text{ is lc and } 0 \leq t \leq 1\}
 
 Though the proof is given for characteristic zero, it is essentially an arithmetic proof that the result holds for $\mathbb{P}^{2}$ and $\mathbb{F}_{n}$ for $n \leq \frac{2}{\epsilon}$. The arguments of the proof work over any algebraically closed field and as the bound is given explicitly in terms of $\epsilon$ it is independent of the base field.
 
+By applying this result to a general fibre of a Mori fibration over a curve we obtain the desired boundedness result.
+
 \begin{theorem}\label{J2}
 	Pick $\epsilon>0$. Then there is $W(\epsilon)$ such that if $f\colon X \to \mathbb{P}^{1}$ is a terminal Mori fibre space with smooth fibres and $(X,\Delta)$ is $\epsilon$-LCY then $\Vol(-K_{X})\leq W(\epsilon)$.
 \end{theorem}
@@ -797,7 +785,7 @@ Though the proof is given for characteristic zero, it is essentially an arithmet
 	\[0 \to \ox (-mK_{X}-nF) \to \ox(-mK_{X}-(n-1)F) \to \mathcal{O}_{F}(-mK_{F}).\]
 	
 	This gives $h^{0}(X,-mK_{X}-nF) \geq h^{0}(X,-mK_{X})-nh^{0}(F,-mK_{F})$ and subsequently 
-	\[\lim \frac{6}{m^{3}}(h^{0}(X,-mK_{X})-smh^{0}(F,-mK_{F})= \Vol(-K_{X})-3s\Vol(-K_{F}).\] Since $F$ is a smooth Del Pezzo surface we have $\Vol(-K_{F})\leq 9$.  So by construction $-mK_{X}-smF$ is effective for large, divisible $m$. 
+	\[\lim \frac{6}{m^{3}}(h^{0}(X,-mK_{X})-smh^{0}(F,-mK_{F})= \Vol(-K_{X})-3s\Vol(-K_{F}).\] Since $F$ is a smooth del Pezzo surface we have $\Vol(-K_{F})\leq 9$.  So by construction $-mK_{X}-smF$ is effective for large, divisible $m$. 
 	
 	Choose $D\geq 0$ with $D \sim_{\mathbb{Q}} -K_{X}-sF$ and consider $(X,\frac{t(\epsilon)+2}{s}D+F_{1}+F_{2})$ for $F_{1},F_{2}$ general fibres. By construction we have
 	
@@ -819,19 +807,21 @@ Though the proof is given for characteristic zero, it is essentially an arithmet
 	Since $(X,\Delta)$ is klt so is $(X,0)$ and hence we may run a terminating $K_{X}$ MMP $X=X_{0} \dashrightarrow X_{1} \dashrightarrow... \dashrightarrow X_{n}=X'$. At each step $X_{i} \dashrightarrow X_{i+1}$ we may pushforward $\Delta_{i}$ to $\Delta_{i+1}$, which is still klt since $K_{X}+\Delta \equiv 0$. Similarly since $X_{i}$ is $F$-split and rationally chain connected, so is $X_{i+1}$ as these are preserved under birational maps of normal varieties. Since $K_{X}$ cannot be pseudo-effective, $X'$ has a Mori fibre space structure $X' \to Z$, where $Z$ is also rationally chain connected and $F$-split. If $X$ is terminal we may run a $K_{X}$ MMP terminating at a terminal variety, hence $X'$ is terminal also.	
 \end{proof}
 
-%	\begin{reptheorem}{Main}
-%		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions:
-%\begin{itemize}
-%	\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
-%	\item $X$ is terminal, rationally chain connected and $F$-split;
-%	\item $(X,\Delta)$ is $\epsilon$-klt and log Calabi-Yau for some boundary $\Delta$;
-%	\item the coefficients of $\Delta$ are greater than $\delta$.
-%\end{itemize}
-%
-%Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$.
-%\end{reptheorem}
+\myworries{Rep Theorem}
+%DIF < 	\begin{reptheorem}{Main}
+%DIF < 		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions:
+%DIF < \begin{itemize}
+%DIF < 	\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
+%DIF < 	\item $X$ is terminal, rationally chain connected and $F$-split;
+%DIF < 	\item $(X,\Delta)$ is $\epsilon$-klt and log Calabi-Yau for some boundary $\Delta$;
+%DIF < 	\item the coefficients of $\Delta$ are greater than $\delta$.
+%DIF < \end{itemize}
+%DIF < 
+%DIF < Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$.
+%DIF < \end{reptheorem}
+
 \begin{proof}
-	Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. Further if $Z$ is a surface then $(X',\Delta')\to Z$ a tame conic bundle, in particular it admits $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$. 
+	Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. Further if $Z$ is a surface then $(X',\Delta')\to Z$ is a tame conic bundle. In particular it admits $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY by \autoref{cbf}. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$. 
 	
 	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{setup} this is bounded.	
 	\end{proof}
@@ -842,3 +832,5 @@ Though the proof is given for characteristic zero, it is essentially an arithmet
 %	
 	
 %\end{document}
+=======
+
