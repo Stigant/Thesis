@@ -241,10 +241,15 @@
 	\end{theo}
 	
 	
-	In practice we were only able to prove a birational boundedness result with this method. Furthermore it was necessary to bound the coefficients of the pair below to prevent pathologies appearing in the Mori fibration. This in turn necessitates working with terminal underling varieties. Nonetheless the result we prove is rather pleasantly independent of the base field, so long as the characteristic is sufficiently large.
+	In practice we were only able to prove a birational boundedness result with this method. Furthermore it was necessary to bound the coefficients of the pair below to prevent pathologies appearing in the Mori fibration. This in turn necessitates working with terminal underling varieties. The condition that $X$ be terminal is to allow us to reduce to the case that $X$ is a terminal Mori fibre space. While we might normally achieve this by taking a terminalisation $\tilde{X} \to X$, we cannot do so while also ensuring that the coefficients of $\tilde{\D}$ are still bounded below. In fact while bounding the coefficients below is used to prove a canonical bundle formula for Mori fibre spaces of relative dimension $1$ it is in many ways the relative dimension $2$ case that forces the assumption $X$ is terminal.
 	
-	This mirrors well the understanding that $F$-split varieties should in some sense 'look like' they come from characteristic $0$. These kinds of boundedness results are one possible path towards a more concrete description of this analogy.
+	If $(X,\Delta) \to S$ is a klt Mori fibre space with coefficients bounded below by $\frac{2}{p}$ then we may freely take a terminalisation and run an MMP to obtain a tame conic bundle, which is what we require for our boundedness proof. If however the relative dimension is $2$ then after taking a terminalisation and running an MMP we may end with a Mori fibration of relative dimension $1$, where we cannot easily control the singularities of the base. This happens whenever $X$ is singular along a curve $C$ which maps inseparably onto the base and we expect this is the only way it might happen. 
 	
+	
+	The result we prove is rather pleasantly independent of the base field, so long as the characteristic is sufficiently large. This mirrors well the understanding that $F$-split varieties should in some sense 'look like' they come from characteristic $0$. These kinds of boundedness results are one possible path towards a more concrete description of this analogy.
+	
+	
+
 	\section{Abundance}
 	
 	In keeping with the earlier theme of birational geometers seeking to turn numerical criteria into algebraic ones, the Abundance Conjecture claims the following.
@@ -255,8 +260,10 @@
 		\end{conjecture*}
 	
 	In many ways the conjecture provides the link between the modern formulation of the MMP and the original goal of classification. The fibration induced by the abundance conjecture is by definition $K_{X}+\Delta$ trivial, yielding a log Calabi-Yau fibration over a lower dimensional base. The conjecture remains open in most settings. Even in characteristic zero the result is fully known only in dimension three and below, though several key cases are known in greater generality. In particular the case that $\Delta$ is big is covered by the Base Point Free Theorem.
+
+	The case of surfaces defined over a field was proven in increasing generality in \cite{fujino2012log, Tan14, tanaka2020abundance} while the case of threefolds over a perfect field of characteristic $p>5$ is still open, though the non-vanishing conjecture has been settled in \cite{XZ19, Wit} and various cases have been verified (\cite{DW19, Zha20}).
 	
-	In positive characteristic the result is known only for surfaces, though again several three dimensional cases have been tackled already. In \autoref{Abudnance} we prove the case of a klt threefold over base of dimension at least $1$. There is a further assumption that the base has no points of characteristic $p \leq 5$ but this is a limitation of the current MMP results, not the method of proof.
+	In \autoref{Abudnance} we prove the case of a klt threefold over base of dimension at least $1$. There is a further assumption that the base has no points of characteristic $p \leq 5$ but this is a limitation of the current MMP results, not the method of proof.
 	
 	\begin{theo}\label{Main_Abund1}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
@@ -265,13 +272,16 @@
 		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
 	\end{theo}
 	
-	They key idea is to first show that there is a fibration in the category of algebraic spaces with the correct numerical properties. Next we apply the MMP to reduce to the case that the fibration is equidimensional. The motivation being that such fibrations are generally well behaved with respect to semiampleness, at least in the category of schemes. Finally we restrict to a horizontal slice of $X$ over the base and infer the result here.
+	They key idea is to first show that there is a fibration in the category of algebraic spaces with the correct numerical properties. This follows from abundance on the generic fibre of $X \to T$. Next we apply the MMP to reduce to the case that the fibration is equidimensional. The motivation being that such fibrations are generally well behaved with respect to semiampleness, at least in the category of schemes. Finally we restrict to a horizontal slice of $X$ over the base and infer the result here.
 	
 	The Keel-Witaszek theorem is a key ingredient in both the first and the last step, providing the relevant criteria to show that that $K_{X}+\Delta$ is EWM and then semiample.
 	
 	Although the key focus of this Chapter is mixed characteristic schemes, the proof as given applies more widely to schemes over a positive dimensional base containing points of positive characteristic. In particular it covers some cases of purely positive characteristic.
 	
-	As a consequence we prove an Invariance of Plurigenera result in the style of \cite{EH}. 
+	As a further application of \autoref{Main_Abund1}, we study the invariance of plurigenera for families of klt surface pairs in mixed characteristic.
+	It is well-known that invariance of plurigenera might fail over DVR of positive or mixed characteristic as shown in \cite{KU, Suh08, Bri20}.
+	However it was proven in \cite{EH} that an asymptotic version of invariance of plurigenera holds for log smooth surface pairs if the Kodaira dimension is not one.
+	Using techniques of \cite{HMX18}, we use the MMP and the abundance \autoref{Main_Abund1} to show an asymptotic invariance of plurigenera for families of klt surface pairs (possibly even defined over imperfect fields), extending the work of Egbert and Hacon.
 	
 	\begin{theo}\label{Main_Abund2}
 		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
@@ -295,7 +305,7 @@
 	
 	Our new result covers a broader class of singularities as well as allowing for points with imperfect residue fields. It is natural to discuss this problem in terms of the Kodaira dimension. In this sense we provide a full characterisation of the Kodaira dimensions for which the result holds. The failure of Invariance of Plurigenera when $X_{k}$ has Kodaira dimension $1$ is closely related to super-singularity of elliptic fibres of the Iitaka fibration induced by Abundance. 
 	
-	We might therefore reasonably expect there to be additional characterisations in terms of $F$-splitness to describe when such invariance results hold. For example we might hope that if $X \to R$ is a flat, terminal family over a local ring $R$ and the Iitaka fibration $X_{k}\to Z_{k}$ is relatively $F$-split then Invariance of Plurigenera holds on $X$.
+	We might therefore reasonably expect there to be additional characterisations in terms of $F$-splitness to describe when such invariance results hold. For example we might hope that if $X \to R$ is a flat, terminal family over a local ring $R$ and the Iitaka fibration $X_{k}\to Z_{k}$ is relatively $F$-split then Invariance of Plurigenera holds on $X$. These ideas are not explored further in this thesis.
 	
 	
 	\section{Mori Fibrations in Positive Characteristic}
@@ -326,7 +336,7 @@
 		\item Either $p,q$ are both Mori Fibre Spaces (this is type $IV_{m}$) or they are both small contractions (type $IV_{s}$)
 	\end{itemize}
 	
-	A key insight, due to \cite{}, is that the existence of these links can be seen in the structure of Shokurov polytopes. The classic example here is the following.
+	A key insight, due to \cite{hacon2009sarkisov}, is that the existence of these links can be seen in the structure of Shokurov polytopes. The classic example here is the following.
 	
 	Let $S$ be the blowup of $\mathbb{P}^{2}_{\kappa}$. Write $E_{1},E_{2}$ for the exceptional curves and let $L$ be the strict transform of the line between the blown up points. Then the effective cone is spanned by $E_{1},E_{2},L$ and after fixing suitable $A \sim -K_{X}$ we can run a $D \sim K_{X}+A+D$ MMP for any $D$ in the triangle, $T$, formed by $L,E_{1},E_{2}$. We can then decompose $T$ according to the output of the $D$ MMP as follows, where $\mathbb{F}_{1}$ is the blowup of $\mathbb{P}^{2}$ at a single point.
 	 
@@ -404,7 +414,7 @@
 		\end{enumerate}
 	\end{theo}
 	
-	The keys ideas of the proof come from \cite{}. The main difficulty in mixed characteristic is the lack of appropriate Bertini type theorems. There are sufficient results to prove the result over local rings, with some modifications to the original proof. Some work is needed, however, to translate a local version of the result to a more general one. 
+	The keys ideas of the proof come from \cite{BCHM10}. The main difficulty in mixed characteristic is the lack of appropriate Bertini type theorems. There are sufficient results to prove the result over local rings, with some modifications to the original proof. Some work is needed, however, to translate a local version of the result to a more general one. 
 	
 	Though it does seem it should be possible, we take a slightly different approach. First introducing a notion of an rlt pair, one which is replaceable by a klt pair locally over the base. This allows us to essentially extend the local Bertini result to a global one, at the cost of a slightly more complicated type of pair. With this accounting system in place, the finiteness result is essentially no harder to prove over an arbitrary base than over a local ring. The proofs given rely only on the MMP, and will generalise immediately to higher dimensions if the appropriate MMP results are known. 
 	

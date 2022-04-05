@@ -113,18 +113,10 @@
 \subjclass[2020]{14J30, 14E30, 14G45, 14B05}
 \keywords{Sarkisov Program, Minimal Model Program, Mixed Characteristic, Mori Fibre Spaces}
 \begin{document}
-	
 		
-	\begin{abstract}
-		This paper resolves several outstanding questions regarding the Minimal Model Program for klt threefolds in mixed characteristic. Namely termination for pairs which are not pseudo-effective, finiteness of minimal models and the Sarkisov Program. 
-	\end{abstract}
-		\maketitle
-	\tableofcontents
-	
-	
 	\section{Introduction}
 	
-	Recent work in \cite{bhatt2020globally+} establishes the bulk of the Minimal Model Program for KLT threefold pairs over suitable bases in base in mixed characteristic. In particular it is shown that one can always run an MMP with scaling. When the pair is psuedo-effective more is known, it is shown that in fact every MMP terminates without the need for scaling. A small adaptation of the arguments of \cite{kawamata2008flops} ensures these models are connected by flops. This paper focuses on the outstanding questions for pairs which are not pseudo-effective over mixed characteristic bases. The main restrictions are that the residue fields of $R$ should have characteristic greater than $5$. A full characterisation of suitable base rings is given in \autoref{setup}.
+	This chapter addresses remaining questions around Mori Fibrations in mixed characteristic. Much of the content is the same as \cite{}. Here $R$ will always be an excellent ring with dualising complex. We also required that the residue fields of closed points are all of characteristic $p>5$, but this is a limitation only of current MMP results in mixed characteristic.
 		
 	First it is shown that in fact the threefold MMP always terminates, extending the termination result of \cite{bhatt2020globally+} to pairs which are not pseudo-effective.
 	
@@ -132,7 +124,7 @@
 		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
 	\end{theorem}
 
-	An MMP for a pair which is not pseudo-effective will always terminate with a Mori fibre space. Unlike minimal models these are not connected by flops or even isomorphic in codimension $2$. They can be very varied even in dimension $2$. Nonetheless they are conjecturally related by a sequence of elementary transformations called Sarkisov Links. This claim is known as the Sarkisov program. It is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
+	Next, it is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
 	
 	\begin{theorem}[\autoref{sarkisov}]\label{Main_Finite2}
 		Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces over $R$ of dimension $3$. Then they are connected by Sarkisov links.
@@ -155,9 +147,6 @@
 	\end{theorem}
 	
 	In fact these results hold for a slightly more general class of singularities - rlt pairs, which are essentially pairs which are replaceable by linearly equivalent klt pairs locally over the base. This generalisation is necessary due to the lack of appropriate Bertini type theorems over a general ring. Even if one starts with Mori Fibre Spaces coming from a klt MMP, the Sarkisov links may involve rlt pairs. A full definition of rlt is given in \autoref{rlt-section} and a description of Sarkisov links in \autoref{Sarkisov-section}.
-	
-	\textbf{Acknowledgments}
-	Thanks to Federico Bongiorno and Paolo Cascini for their support and for many useful discussions. Thanks also to the EPSRC for my funding.	
 	
 	\section{Termination}
 		

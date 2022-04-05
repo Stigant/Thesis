@@ -132,13 +132,7 @@
 \begin{document}
 	\section{Introduction}
 	
-	The Minimal Model Program is a conjecture on the birational structure of algebraic varieties which aims to extends the theory of minimal models of surfaces to higher-dimensional varieties.
-	While the MMP is usually studied for projective varieties over a field, it is worth developing the program for projective schemes over more general bases, especially if one is interested in arithmetic applications. 
-	Although the MMP for surfaces over excellent schemes can be considered a classical result (see \cite{Sha66} for the regular case and \cite{Tan18} for the logarithmic and singular case), only recent breakthroughs in commutative algebra (see \cite{bhatt2020cohenmacaulayness}) have allowed progress on the birational geometry of arithmetic threefolds in the works \cite{takamatsu2021minimal,bhatt2020}, where the authors show that one can run the MMP for threefolds over rings of mixed characterstic $(0, p>5)$. 
-	
-	After showing the existence of minimal models, it is natural to ask whether the abundance conjecture, which states that a minimal model has semiample canonical divisor, holds for threefolds in mixed characteristic. 
-	The case of surfaces defined over a field was proven in increasing generality in \cite{fujino2012log, Tan14, tanaka2020abundance} while the case of threefolds over a perfect field characteristic $p>5$ is still open, though the non-vanishing conjecture being settled in \cite{XZ19, Wit} and various cases have been verified (\cite{DW19, Zha20})
-	The aim of this article is to show the validity of the abundance conjecture for mixed characteristic threefolds.
+	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{} and the work was completed in collaboration with F. Bernasconi and I. Brivio.
 	
 	\begin{theorem}\label{Main_Abund1}\autoref{abundance}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
@@ -146,9 +140,7 @@
 		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
 		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
 	\end{theorem}
-	
-	The key idea of the proof is to apply abundance on the generic fibre $X_\eta$ where $\eta$ is the generic point of $\pi(X)$ and on the characteristic zero part $X_{\mathbb{Q}} \to T_{\mathbb{Q}}$. From there we spread out the semiampleness over the positive characteristic points of $\pi(X)$ by a careful application of the MMP developed in \cite{bhatt2020} and Keel-Witaszek's base point free theorem \cite{witaszek2020keels}. 
-	
+
 	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
 	
 	\begin{theorem}
@@ -164,14 +156,6 @@
 
 	In characteristic $0$, finite generation of the canonical ring follows from finite generation in the log general type case (\cite{BCHM10}) and by a result of Fujino and Mori \cite[Theorem 5.2]{FM00}. However, their result requires a canonical bundle formula which is not available in the positive or mixed characteristic settings.
 
-\begin{remark}
-	An important step towards abundance consists of proving the non-vanishing conjecture, which is already a difficult result for threefolds over fields of characteristic $0$ (resp. over perfect fields $p>5$), proven in  \cite{FA} (resp. \cite{XZ19}).
-	However in our situation the non-vanishing follows immediately from non-vanishing on the generic fibre of $\pi$, which has dimension at most two and so the result is well-known.
-\end{remark}
-	As a further application of \autoref{Main_Abund1}, we study the invariance of plurigenera for families of klt surface pairs in mixed characteristic.
-	It is well-known that invariance of plurigenera might fail over DVR of positive or mixed characteristic as shown in \cite{KU, Suh08, Bri20}.
-	However it was proven in \cite{EH} that an asymptotic version of invariance of plurigenera holds for log smooth surface pairs if the Kodaira dimension is not one.
-	Using techniques of \cite{HMX18}, we use the MMP and the abundance \autoref{Main_Abund1} to show an asymptotic invariance of plurigenera for families of klt surface pairs (possibly even defined over imperfect fields), extending the work of Egbert and Hacon.
 
 	\begin{theorem}\label{Main_Abund2}\autoref{thm:ADIOP_final2}
 		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
@@ -192,11 +176,7 @@
 		for all $m \in m_{0}\mathbb{N}$.
 		
 	\end{theorem}
-	
-	\textbf{Acknowledgments.}
-	The authors thank F. Bongiorno, P. Cascini, J.A. Chen, S. Filipazzi and C.D. Hacon for useful discussions and comments on the content of this article. 
-	FB was supported by the NSF under grant number DMS-1801851 and by a grant from the Simons Foundation; Award Number: 256202; IB was supported by the National Center for Theoretical Sciences and a grant from the Ministry of Science and Technology; grant number MOST-110-2123-M-002-005; LS is grateful to the EPSRC for his funding.
-	
+
 	\section{Preliminaries}
 	
 
