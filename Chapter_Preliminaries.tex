@@ -124,9 +124,9 @@ In full generality we have the following set-up.
 \begin{definition}\label{setup}
 	An $R$-pair $(X,\Delta)/ T$ with $\mathbb{K}$-boundary will be the following data:
 	\begin{itemize}
-		\item An excellent, normal ring $R$ of mixed characteristic and finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$
-		\item A quasi-projective $R$-variety $T$
-		\item A normal, integral scheme $X$ projective over $T$ with $X_{\mathbb{Q}}:=X \times_{R} \mathbb{Q} \neq \emptyset$ 
+		\item An excellent, normal ring $R$ of finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$;
+		\item A quasi-projective $R$-variety $T$;
+		\item A normal, integral scheme $X$ projective over $T$; and
 		\item A $\mathbb{K}$-divisor $\Delta \geq 0$ with $(K_{X}+\Delta)$ $\mathbb{K}$-Cartier, for $\mathbb{K}=\mathbb{R}$ or $\mathbb{Q}$.
 	\end{itemize}
 	
@@ -135,11 +135,12 @@ In full generality we have the following set-up.
 
 \begin{remark}
 	
-	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the objects we wish to study with. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
-	
+	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the the kind of MMPs we wish to run. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
 \end{remark}
 
-In practice we will often have a field $\kappa$ with $T=R=\kappa$. In this case we omit $R,T$ from the notation and say one of the following, depending on the context: that $(X,\Delta)$ is a $\kappa$-pair, $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair.
+In practice we will often have $T=R$. In this case we omit $T$ from the notation and say only that $(X,\Delta)$ is an $R$-pair. If further $R=\kappa$ is a field, we often say one that $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair, depending on context.
+
+We will often ask that $X \to T$ has positive dimensional image, in this case we just say $(X,\Delta)/T$ is an $R$-pair with positive dimensional image. This is because many results for threefolds are not known in greater generality than this, for example much is unknown when $X$ is a variety over a perfect field.
 
 In cases where $R$ is clear from context we often describe an $R$-pair with $\mathbb{K}$-boundary as a $\mathbb{K}$-pair. While we will sometimes work with schemes over a field of characteristic $0$, it will never be relevant whether that field is $\mathbb{Q}$ or $\mathbb{R}$. Therefore a $\mathbb{K}$-pair will only ever mean a pair with coefficients in $\mathbb{K}$ and never pair whose underlying scheme is of finite type over the field $\mathbb{K}$. 
 
@@ -1032,9 +1033,9 @@ A non-exhaustive list of import kinds of birational models is as follows.
 	\[p^{*}D=q^{*}D'+E\]
 	and $E \geq 0$ is $q$ exceptional (resp. $E \geq 0$ is $q$ exceptional and contains the strict transform of every $\phi$ exceptional divisor in its support). 
 	
-	If $(X,\Delta)$ is a psuedoeffective lc pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
+	If $(X,\Delta)/T$ is a psuedoeffective lc $R$-pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
 	
-	If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log minimal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
+	If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log terminal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
 	
 	If instead $\phi:X \dashrightarrow Y$ is a rational map then it is an ample model for $D$ if there is $H$ ample on $Y$ such that $p^{*}D\sim_{\mathbb{R}}q^{*}H+E$ where $E \geq 0$ is such that $E \leq B$ for any $p^{*}D \sim_{\mathbb{R}} B \geq 0$.
 \end{definition}
@@ -1049,7 +1050,7 @@ If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample mod
 	\begin{itemize}
 		\item If $D \equiv tD'$ and $\phi_{*}D$, $\phi_{*}D'$ are both $\mathbb{R}$-Cartier then $\phi$ is $D$ negative (resp $D$ non-negative) if and only if it is $D'$ negative (resp. non-negative)
 		\item If both pairs are lc and $K_{X}+\Delta \sim_{\mathbb{R}} t(K_{X}+\Delta')$ then $\phi$ is a wlc model for $(X,\Delta)$ if and only if it is a wlc model for $(X,\Delta')$.
-		\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log minimal model for $(X,\Delta)$ if and only if it is a log minimal model for $(X,\Delta')$.
+		\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log terminal model for $(X,\Delta)$ if and only if it is a log terminal model for $(X,\Delta')$.
 		\item If $D\sim_{\mathbb{R}} tD$ then $\phi$ is an ample model for $D$ if and only if it is an ample model for $D'$.
 	\end{itemize}
 \end{lemma}
