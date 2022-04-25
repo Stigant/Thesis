@@ -158,8 +158,9 @@
 	\begin{itemize}
 		\item Rings will often be denoted by $R$. They will always be excellent and admitting a dualising complex. We will often use the ring interchangeably with its spectrum, e.g. Let $R$ be a ring and $X \to R$ an $R$ scheme.
 		\item If $R$ is a local ring we denote the residue field of the closed point by $k$ and the fraction field by $K$, unless otherwise stated.
-		\item Schemes will always be excellent, and typically be denoted $W,X,Y,Z$. $S$ and $T$ are often used also, particularly for surfaces and the base of a pair respectively. They will essentially always be quasi-projective over a ring.
+		\item Schemes will always be excellent  and Noetherian. They will typically be denoted $W,X,Y,Z$. $S$ and $T$ are often used also, particularly for surfaces and the base of a pair respectively. They will essentially always be quasi-projective over a ring.
 		\item If $X$ is a scheme over a local ring we often write $X_{k}$ for the closed fibre and $X_{K}$ for the generic fibre.
+		\item If $X$ is an integral scheme we will write $K(X)$ for the fraction field
 		\item A variety is a projective, integral scheme over a field.
 		\item Given a scheme $X$ we write:
 		\begin{itemize}
@@ -456,8 +457,45 @@
 		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$, then any $K_{X}+\Delta$ MMP terminates.
 	\end{theo}
 	
+	\section{The Augmented Base Locus}
 	
+	In addition to the earlier results related to the MMP and its applications we also study some more technical birational geometry results. The focus is largely on nef line bundle on mixed characteristic schemes which are semiample in characteristic $0$.
 	
+	The augmented base locus is well studied for schemes over a field. It is defined as follows.
+	
+	\begin{definition}
+		Let $L$ be a line bundle on a projective Noetherian scheme $X$. Then base locus is given as 
+		$$\BB(L)= \bigcap_{s \in H^{0}(X,L)} Z(s)_{red}$$
+		where $Z(s)$ is the zero set of $s$ equipped with the obvious scheme structure. The stable base locus is then
+		$$\SB(L)=\bigcap_{m \geq 0}\BB(mL).$$
+		Fix an ample line bundle $A$. The augmented base locus is given as 
+		$$\BS(L)=\bigcap_{m \geq 0}\SB(mL-A)$$
+		and is independent of the choice of $A$.
+		
+	\end{definition} 
+	
+	An important characterisation of the augmented base locus, first noted for smooth varieties of characteristic $0$ by Nakayame \cite{nakamaye2000stable}, is that for a nef line bundle $L$ the augmented base locus $\BS(L)$ agrees with the exceptional locus $\mathbb{E}(L)$. 
+	
+	Since then the result has been shown to hold for projective schemes over a field, first in positive characteristic by Cascini-M\textsuperscript{c}Kernan-Musta\c{t}\v{a} \cite{cascini2014augmented}, and then for $\mathbb{R}$-divisors over any field by Birkar \cite{birkar2017augmented}. Similar results are given for non-nef divisors in \cite{ein2009restricted} and for K\"{a}hler manifolds in \cite{collins2015kahler}.
+	
+	We make use of methods developed in \cite{witaszek2020keel} together with ideas from the positive characteristic proof to show that $\BS(L)=\mathbb{E}(L)$ for a nef line bundle on a projective scheme over an excellent Noetherian base, so long it holds true on the characteristic zero part the scheme. In particular the result holds in the following cases.
+	
+	\begin{theorem}[\autoref{Main_Loci}]
+		Let $X$ be a projective scheme over an excellent Noetherian base $S$ with $L$ a nef line bundle on $X$. 
+		Suppose that one of the following holds:
+		\begin{enumerate}
+			\item $S_{\mathbb{Q}}$ has dimension $0$;
+			\item $L|_{X_{\mathbb{Q}}}$ is semiample;
+		\end{enumerate}
+		
+		Then $\BS(L)=\mathbb{E}(L)$.
+	\end{theorem}
+	
+	We also extend the semiampleness result of \cite{witaszek2020keel} to show that there is an equality of stable base loci when the characteristic $0$ part is semiample.
+	
+	\begin{theorem}[\autoref{Main_Loci2}]
+		Suppose that $X$ is a projective scheme over an excellent Noetherian base with $L$ a nef line bundle on $X$. Then $\SB(L)=\SB(L|_{\mathbb{E}(L)})$ so long as $L|_{X_{\mathbb{Q}}}$ is semiample.
+	\end{theorem} 
 	
 	
 	
@@ -467,6 +505,7 @@
 	%\input{Chapter_Boundedness}
 	%\input{Chapter_Abundance}
 	%\input{Chapter_Finiteness}
+	%\input{Chapter_Loci}
 	
 	\bibliography{refs}
 	\bibliographystyle{alpha}
