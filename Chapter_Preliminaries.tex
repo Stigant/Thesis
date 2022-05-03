@@ -127,9 +127,9 @@ In full generality we have the following set-up.
 \begin{definition}\label{setup}
 	An $R$-pair $(X,\Delta)/ T$ with $\mathbb{K}$-boundary will be the following data:
 	\begin{itemize}
-		\item An excellent, normal ring $R$ of mixed characteristic and finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$
-		\item A quasi-projective $R$-variety $T$
-		\item A normal, integral scheme $X$ projective over $T$ with $X_{\mathbb{Q}}:=X \times_{R} \mathbb{Q} \neq \emptyset$ 
+		\item An excellent, normal ring $R$ of finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$;
+		\item A quasi-projective $R$-variety $T$;
+		\item A normal, integral scheme $X$ projective over $T$; and
 		\item A $\mathbb{K}$-divisor $\Delta \geq 0$ with $(K_{X}+\Delta)$ $\mathbb{K}$-Cartier, for $\mathbb{K}=\mathbb{R}$ or $\mathbb{Q}$.
 	\end{itemize}
 	
@@ -138,11 +138,12 @@ In full generality we have the following set-up.
 
 \begin{remark}
 	
-	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the objects we wish to study with. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
-	
+	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the the kind of MMPs we wish to run. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
 \end{remark}
 
-In practice we will often have a field $\kappa$ with $T=R=\kappa$. In this case we omit $R,T$ from the notation and say one of the following, depending on the context: that $(X,\Delta)$ is a $\kappa$-pair, $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair.
+In practice we will often have $T=R$. In this case we omit $T$ from the notation and say only that $(X,\Delta)$ is an $R$-pair. If further $R=\kappa$ is a field, we often say one that $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair, depending on context.
+
+We will often ask that $X \to T$ has positive dimensional image, in this case we just say $(X,\Delta)/T$ is an $R$-pair with positive dimensional image. This is because many results for threefolds are not known in greater generality than this, for example much is unknown when $X$ is a variety over a perfect field.
 
 In cases where $R$ is clear from context we often describe an $R$-pair with $\mathbb{K}$-boundary as a $\mathbb{K}$-pair. While we will sometimes work with schemes over a field of characteristic $0$, it will never be relevant whether that field is $\mathbb{Q}$ or $\mathbb{R}$. Therefore a $\mathbb{K}$-pair will only ever mean a pair with coefficients in $\mathbb{K}$ and never pair whose underlying scheme is of finite type over the field $\mathbb{K}$. 
 
@@ -740,9 +741,9 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 		\item $Y$ is $\mathbb{Q}$-factorial
 		\item $a(E,X,\Delta) \leq -1$ for every $f$ exceptional divisor $E$
 		\item If $\Delta_{Y}=f^{-1}_{*}\Delta' + \sum_{E \text{ exceptional}} E$ then $(Y,\Delta_{Y})$ is dlt
-		\item $K_{Y}+\Delta_{Y}+F=f^{*}(K_{X}+B)$ where $F= \sum_{E:a(E,X,\Delta)<-1} -(a(E,X,\Delta)+1)E$
+		\item $K_{Y}+\Delta_{Y}+F=f^{*}(K_{X}+\Delta)$ where $F= \sum_{E:a(E,X,\Delta)<-1} -(a(E,X,\Delta)+1)E$
 	\end{itemize}
-	where $\Delta'$ has coefficients $\min\{\text{Coeff}_{E}(\Delta),1\}$ at each $E$ and $F$ is exceptional. Moreover $(X,\Delta)$ is if and only if this is a small morphism.
+	where $\Delta'$ has coefficients $\min\{\text{Coeff}_{E}(\Delta),1\}$ at each $E$. If $\Delta=\Delta'$ then $F$ is exceptional, in general we have $f_{*}F=\Delta-\Delta'$ and $f(F)=\textit{nlc}(X,\Delta)$ \myworries{Prove}. Moreover $(X,\Delta)$ is dlt if and only if this is a small morphism.
 	\myworries{Why $\Delta'?$}
 \end{theorem}
 
@@ -771,7 +772,7 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 	
  	Every component of $F$ has negative coefficient inside $D$ by construction. Thus in fact $F'=0$, since $D' \geq 0$, and in particular every exceptional divisor on $Y$ over $X$ has discrepancy at most $-1$. Hence it must be the case that in fact $$B'-E'-f_{*}^{-1}\Delta_{<1}=\sum_{\substack{E \text{ exceptional} \\ a(E,X,\Delta) \leq  -1}} (1+a(E,X,\Delta))E.$$ Moreover the pair $(Y\Delta_{Y}=S'+f_{*}^{-1}\Delta_{<1})$ is dlt by construction. 
  	
- 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. On the other hand, we have $F=0$ on $Y$ and the contribution from $-C$ ensures that $-(K_{Y}+S+r(-C+\pi^{*}A) + \pi_{*}^{-1}\Delta_{< 0})$ is $\pi|_{E}$-big on restriction to any divisor $E$ on $Y$, centred over $X\setminus Z$ with $a(E,X,\Delta)=-1$. In particular $E$ must be contracted by the MMP, and so $Y \to X$ has no exceptional divisors at all, that is $X \to Y$ is small.
+ 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. On the other hand, we have $F=0$ on $Y$ and the contribution from $-C$ ensures that $-(K_{Y}+S+r(-C+\pi^{*}A) + \pi_{*}^{-1}\Delta_{< 0})$ is $\pi|_{E}$-big on restriction to any divisor $E$ on $Y$, centred over $X\setminus Z$ with $a(E,X,\Delta)=-1$. In particular $E$ must be contracted by the MMP, and so $Y \to X$ has no exceptional divisors at all, that is $X \to Y$ is small. \myworries{Improve!}
  	
  	Conversely if the dlt modification extracts no divisors then we must have that $F=0$ and then $f^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$, ensuring that $(X,\Delta)$ is dlt.
 	
@@ -782,7 +783,7 @@ The case that $(X,\Delta)$ is dlt, or even klt, is particularly important and is
 A useful application of DLT modifications is the study of the non-klt and non-lc loci. In particular we have following generalisation of the Cone Theorem as well as a connectedness result for suitable pairs.
 
 	\begin{theorem}[Nlc Cone Theorem]\label{WCT}
-	Let $(X,B)/T$ be an $R$-pair with the coefficients $B$ bounded above by $1$. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
+	Let $(X,B)/T$ be an $R$-pair. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
 	
 		\begin{enumerate}
 		\item $$\overline{NE}(X/T)=\overline{NE}(X/T)_{K_{Y}+\Delta \geq 0} +\overline{NE}(X/T)_{nlc}+ \sum_{i} \mathbb{R}_{>0}[C_{i}]$$
@@ -798,8 +799,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 \begin{proof}
 	If $(X,B)$ is dlt then it is the limit of klt pairs $(X,\frac{n}{n+1}B)$ and the Cone Theorem follows immediately from the klt case.
 	
-	Suppose then $X$ is not dlt.
-	Let $(Y,B_{Y})$ be a dlt modification of $(X,B)$ and $R$ any $K_{X}+B$ negative extremal ray such that $R \cap\overline{NE(X)}_{nlc}=\{0\}$. Take any class $\gamma$ with $[\gamma] \in R$ and choose $\gamma' \in \overline{NE}(Y/T)$ with $f_{*}\gamma'=\gamma$. Then by the projection formula we have that $(K_{Y}+B_{Y}+F).\gamma'=(K_{X}+B).f_{*}\gamma'=(K_{X}+B).\gamma < 0$ and $\gamma' \not\subseteq$ Supp $F$ by assumption. 
+	Suppose then $(X,B)$ is not dlt. Let $(Y,B_{Y})$ be a dlt modification of $(X,B)$ and $R$ any $K_{X}+B$ negative extremal ray such that $R \cap\overline{NE(X)}_{nlc}=\{0\}$. Take any class $\gamma$ with $[\gamma] \in R$ and choose $\gamma' \in \overline{NE}(Y/T)$ with $f_{*}\gamma'=\gamma$. Then by the projection formula we have that $(K_{Y}+B_{Y}+F).\gamma'=(K_{X}+B).f_{*}\gamma'=(K_{X}+B).\gamma < 0$ and $\gamma' \not\subseteq$ Supp $F$ by assumption. 
 	Since $(Y,B_{Y})$ is $\mathbb{Q}$-factorial and dlt the standard Cone Theorem applies. In particular then $\gamma'=C+ \sum \lambda_{i}C_{i}$ where $\lambda_{i} >0$,$(K_{Y}+B_{Y}).C \geq 0$ and the $C_{i}$ each generate $(K_{Y}+B_{Y})$ negative extremal rays with $-(K_{Y}+B_{Y}).C_{i} \leq 2nd_{c_{i}}$. 
 	
 	We may further decompose $C$ as $C=\sum r_{j}$ where $(K_{Y}+B_{Y}).r_{j} \geq 0$ and each $r_{i}$ has irreducible support. Then for each $j$ either $(K_{Y}+B_{Y}+F).r_{j} \geq 0$ or $r_{j}$ is contained in the support of $F$. In either case $[f_{*}r_{j}]$ cannot be in $R$. Thus as $R$ is extremal it follows $[f_{*}C_{k}] \in R$ for some $k$. Such a $C_{k}$ cannot be contained in the support of $F$ so $F.C_{k} \geq 0$ and thus $(K_{X}+B).f_{*}C_{k}=(K_{Y}+B_{Y}+F).C_{k} \geq -2nd_{c_{i}}$.
@@ -809,7 +809,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 
 
 \begin{theorem}[Weak Connectedness Lemma]\label{WLC}
-	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres such that the coefficients of $\Delta$ bounded above by $1$. Then if $-(K_{X}+\Delta)$ is big and nef, $\textup{Nklt}(X,\Delta)$ is either empty or connected.
+	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres \myworries{such that the coefficients of $\Delta$ bounded above by $1$}. Then if $-(K_{X}+\Delta)$ is big and nef, $\textup{Nklt}(X,\Delta)$ is either empty or connected.
 \end{theorem}
 
 \begin{proof}
@@ -826,7 +826,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 	
 	We claim that on the induced pair $(Y',\D_{Y'})$, $\nklt(Y',\D_{Y'})=\text{Supp}(\lfloor \D_{Y'} \rfloor)=\text{Supp}(P_{Y'})$ has the same number of connected components as $\nklt(X,\Delta)$. Indeed $P_{Y}$ has the same number of components, so suppose for contradiction there is an MMP step which reduced the number of connected components. Replacing $Y$ with the first point of failure, we can assume there is a step $\pi: Y \dashrightarrow \hat{Y}$ such that $P_{\hat{Y}}$ has one fewer connected components. 
 	
-	Since $\text{Supp}(P_{Y})=\lfloor \D_{Y} \rfloor$, we can subtract components of $P_{Y}$ from $\Delta$ and assume that $\lfloor \D_{Y} \rfloor$ contains only two components which are disjoint on $Y$ but whose strict transforms meet on $\hat{Y}$. However $(Y,\Delta_{Y})$ is then plt, and thus so too must $(\hat{Y},\D_{\hat{Y}})$ be. In particular $\lfloor \D_{\hat{Y}} \rfloor$ consists of disconnected divisors, a contradiction.
+	Since $\text{Supp}(P_{Y})=\lfloor \D_{Y} \rfloor$, we can subtract components of $P_{Y}$ from $\Delta$ and assume that $\lfloor \D_{Y} \rfloor$ contains only two components which are disjoint on $Y$ but whose strict transforms meet on $\hat{Y}$. However $(Y,\Delta_{Y})$ is then plt, and thus so too must $(\hat{Y},\D_{\hat{Y}})$ be. In particular $\lfloor \D_{\hat{Y}} \rfloor$ consists of disconnected divisors by \cite[Lemma 2.28]{bhatt2020}, a contradiction.
 
 	Hence, as claimed, the number of connected components of $P_{Y'}$ is the same as $P_{Y}$.
 	
@@ -1035,9 +1035,9 @@ A non-exhaustive list of import kinds of birational models is as follows.
 	\[p^{*}D=q^{*}D'+E\]
 	and $E \geq 0$ is $q$ exceptional (resp. $E \geq 0$ is $q$ exceptional and contains the strict transform of every $\phi$ exceptional divisor in its support). 
 	
-	If $(X,\Delta)$ is a psuedoeffective lc pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
+	If $(X,\Delta)/T$ is a psuedoeffective lc $R$-pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
 	
-	If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log minimal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
+	If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log terminal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
 	
 	If instead $\phi:X \dashrightarrow Y$ is a rational map then it is an ample model for $D$ if there is $H$ ample on $Y$ such that $p^{*}D\sim_{\mathbb{R}}q^{*}H+E$ where $E \geq 0$ is such that $E \leq B$ for any $p^{*}D \sim_{\mathbb{R}} B \geq 0$.
 \end{definition}
@@ -1052,7 +1052,7 @@ If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample mod
 	\begin{itemize}
 		\item If $D \equiv tD'$ and $\phi_{*}D$, $\phi_{*}D'$ are both $\mathbb{R}$-Cartier then $\phi$ is $D$ negative (resp $D$ non-negative) if and only if it is $D'$ negative (resp. non-negative)
 		\item If both pairs are lc and $K_{X}+\Delta \sim_{\mathbb{R}} t(K_{X}+\Delta')$ then $\phi$ is a wlc model for $(X,\Delta)$ if and only if it is a wlc model for $(X,\Delta')$.
-		\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log minimal model for $(X,\Delta)$ if and only if it is a log minimal model for $(X,\Delta')$.
+		\item If both pairs are klt and $K_{X}+\Delta \equiv t(K_{X}+\Delta')$ then $\phi$ is a log terminal model for $(X,\Delta)$ if and only if it is a log terminal model for $(X,\Delta')$.
 		\item If $D\sim_{\mathbb{R}} tD$ then $\phi$ is an ample model for $D$ if and only if it is an ample model for $D'$.
 	\end{itemize}
 \end{lemma}

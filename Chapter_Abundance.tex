@@ -149,30 +149,21 @@
 	\chapter{Abundance}
 	\section{Introduction}
 	
-	The Minimal Model Program is a conjecture on the birational structure of algebraic varieties which aims to extends the theory of minimal models of surfaces to higher-dimensional varieties.
-	While the MMP is usually studied for projective varieties over a field, it is worth developing the program for projective schemes over more general bases, especially if one is interested in arithmetic applications. 
-	Although the MMP for surfaces over excellent schemes can be considered a classical result (see \cite{Sha66} for the regular case and \cite{Tan18} for the logarithmic and singular case), only recent breakthroughs in commutative algebra (see \cite{bhatt2020cohenmacaulayness}) have allowed progress on the birational geometry of arithmetic threefolds in the works \cite{takamatsu2021minimal,bhatt2020}, where the authors show that one can run the MMP for threefolds over rings of mixed characterstic $(0, p>5)$. 
+	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{} and the work was completed in collaboration with F. Bernasconi and I. Brivio.
 	
-	After showing the existence of minimal models, it is natural to ask whether the abundance conjecture, which states that a minimal model has semiample canonical divisor, holds for threefolds in mixed characteristic. 
-	The case of surfaces defined over a field was proven in increasing generality in \cite{fujino2012log, Tan14, tanaka2020abundance} while the case of threefolds over a perfect field characteristic $p>5$ is still open, though the non-vanishing conjecture being settled in \cite{XZ19, Wit} and various cases have been verified (\cite{DW19, Zha20})
-	The aim of this article is to show the validity of the abundance conjecture for mixed characteristic threefolds.
-	
-	\begin{theorem}\label{main-thm}
+	\begin{theorem}\label{Main_Abund1}\autoref{abundance}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
 		
-		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
-		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
+		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with positive dimensional image.
+		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is nef, then it is semiample.
 	\end{theorem}
-	
-	The key idea of the proof is to apply abundance on the generic fibre $X_\eta$ where $\eta$ is the generic point of $\pi(X)$ and on the characteristic zero part $X_{\mathbb{Q}} \to T_{\mathbb{Q}}$. From there we spread out the semiampleness over the positive characteristic points of $\pi(X)$ by a careful application of the MMP developed in \cite{bhatt2020} and Keel-Witaszek's base point free theorem \cite{witaszek2020keels}. 
-	
+
 	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
 	
 	\begin{theorem}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
 		
-		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
-		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{Q}$-boundary. 
+		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with positive dimensional image with $\mathbb{Q}$-boundary. 
 		
 		Then the canonical $\ox[T]$-algebra
 		\[R(\pi,\Delta):=\bigoplus_{m \in \mathbb{N}} \pi_{*}\ox(\lfloor m(K_{X}+\Delta)\rfloor)\]
@@ -181,18 +172,10 @@
 
 	In characteristic $0$, finite generation of the canonical ring follows from finite generation in the log general type case (\cite{BCHM10}) and by a result of Fujino and Mori \cite[Theorem 5.2]{FM00}. However, their result requires a canonical bundle formula which is not available in the positive or mixed characteristic settings.
 
-\begin{remark}
-	An important step towards abundance consists of proving the non-vanishing conjecture, which is already a difficult result for threefolds over fields of characteristic $0$ (resp. over perfect fields $p>5$), proven in  \cite{FA} (resp. \cite{XZ19}).
-	However in our situation the non-vanishing follows immediately from non-vanishing on the generic fibre of $\pi$, which has dimension at most two and so the result is well-known.
-\end{remark}
-	As a further application of \autoref{main-thm}, we study the invariance of plurigenera for families of klt surface pairs in mixed characteristic.
-	It is well-known that invariance of plurigenera might fail over DVR of positive or mixed characteristic as shown in \cite{KU, Suh08, Bri20}.
-	However it was proven in \cite{EH} that an asymptotic version of invariance of plurigenera holds for log smooth surface pairs if the Kodaira dimension is not one.
-	Using techniques of \cite{HMX18}, we use the MMP and the abundance \autoref{main-thm} to show an asymptotic invariance of plurigenera for families of klt surface pairs (possibly even defined over imperfect fields), extending the work of Egbert and Hacon.
-	
-	\begin{theorem}\label{thm:ADIOP_final}
+
+	\begin{theorem}\label{Main_Abund2}\autoref{thm:ADIOP_final2}
 		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
-		Let $(X,B)$ be a three-dimensional klt pair and let $(X,B)\to \Spec(R)$ be a projective surjective morphism of quasi-projective $R$-schemes.  Suppose that the following conditions are satisfied:
+		Let $(X,B)$ be a three-dimensional klt $R$-pair and let $(X,B)\to \Spec(R)$ be a projective, surjective morphism.  Suppose that the following conditions are satisfied:
 		
 		\begin{enumerate}
 		\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
@@ -209,11 +192,7 @@
 		for all $m \in m_{0}\mathbb{N}$.
 		
 	\end{theorem}
-	
-	\textbf{Acknowledgments.}
-	The authors thank F. Bongiorno, P. Cascini, J.A. Chen, S. Filipazzi and C.D. Hacon for useful discussions and comments on the content of this article. 
-	FB was supported by the NSF under grant number DMS-1801851 and by a grant from the Simons Foundation; Award Number: 256202; IB was supported by the National Center for Theoretical Sciences and a grant from the Ministry of Science and Technology; grant number MOST-110-2123-M-002-005; LS is grateful to the EPSRC for his funding.
-	
+
 	\section{Preliminaries}
 	
 
@@ -274,9 +253,10 @@
 	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$.
 	
 
-	\subsubsection{Semi-ampleness criteria}
+	\subsubsection{Semiampleness Criteria}
+	
+	We recall the Keel-Witaszek Theorem, which will be a crucial tool in the proof of abundance.
 
-	We recall Keel-Witaszek's base point free theorem, which will be a crucial tool in the proof of abundance.
 	
 	\begin{theorem}[\cite{witaszek2020keels}]
 		Let $L$ be a nef line bundle on a scheme $X$
@@ -563,7 +543,7 @@ In positive or mixed characteristic a crucial condition we show during our proof
 	
 	
 	\begin{lemma}\label{l-stable-base-loci}
-		Let $(X,\Delta_X)$ be a klt pair, projective over a base scheme $T$.
+		Let $(X,\Delta_X)/T$ be a klt $R$-pair.
 		Let $f\colon (X, \Delta_X) \dashrightarrow (Y, \Delta_Y)$ be a birational contraction which is a step of a  $(K_X+\Delta)$-MMP over $T$.
 		Let
 		\begin{equation*}
@@ -588,7 +568,7 @@ In positive or mixed characteristic a crucial condition we show during our proof
 The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefolds over DVRs. 
 	
 	\begin{proposition}\label{lemma:MMP_in_fam2}
-		Let $R$ be an excellent DVR with residue field $k$ of characteristic $>5$. Let $X \to \Spec(R)$ be a projective surjective morphism and suppose that $(X,B)$ is a three dimensional $\bQ$-factorial klt pair with $\mathbb{Q}$-boundary.
+		Let $R$ be an excellent DVR with residue field $k$ of characteristic $>5$. Let $X \to \Spec(R)$ be a projective surjective morphism and suppose that $(X,B)$ is a three dimensional $\bQ$-factorial klt pair.
 		Suppose the following conditions are satisfied:
 		\begin{itemize}
 		\item[(1)] $(X,B+X_k)$ is plt with $X_k$ integral;
@@ -636,19 +616,18 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	
 	\section{Abundance for mixed characteristic threefolds}
 	
-	Given a lc pair $(X,\Delta)$ with a projective $R$-morphism $f \colon X \to T$ with $K_{X}+\Delta$ $f$-nef, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
+	Given an lc $R$-pair $(X,\Delta)/T$ with a projective $R$-morphism with $K_{X}+\Delta$ nef over T, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
 	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{t-bpf}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
 	
 	The starting point of our proof is to use the abundance theorem for surfaces over excellent bases, which we now recall. 
 	
 	\begin{theorem}\label{abundance-dim2}
-		Let $(S,B)$ be a klt pair of dimension two with $\mathbb{Q}$-boundary. 
-		Let $\pi \colon (S,B) \to T$ be a projective and surjective morphism of integral schemes. If $K_{S}+B$ is $\pi$-nef, then it is $\pi$-semiample.
+		Let $(S,B)/T$ be a klt $R$-pair of dimension two with $\mathbb{Q}$-boundary. If $K_{S}+B$ is nef, then it is semiample.
 	\end{theorem}
 	
 	\begin{proof}	
 		If $T$ is a field then this is \cite[Theorem 1.2]{fujino2012log} for perfect fields and \cite{tanaka2020abundance} for imperfect fields. 
-		Suppose from now on that $\dim T > 0$.
+		Suppose from now on that the image of $X$ in $T$ is positive dimensional.
 		If $K_{S}+B$ is big over $T$ then this follows immediately from the base point free theorem \cite[Theorem 4.2]{Tan18} with $D=2(K_{S}+B)$. Hence we may suppose that $\dim T=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves and the result follows by \autoref{lemma:EDSemiampleness}. 
 	\end{proof}
 	
@@ -691,8 +670,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	The following is a useful technique to reduce to the case of equidimensional morphisms. In turn this will allow us to make use of \autoref{lemma:EDSemiampleness}, at least in codimension $1$.
 	
 	\begin{proposition}\label{three}
-		Let $(X,B)$ be a $\mathbb{Q}$-factorial klt threefold pair.
-		Let $(X,B) \to T$ be a projective $R$-morphism such that $K_{X}+B$ is nef over $T$. Suppose there is a commutative diagram of normal schemes over $T$:
+		Let $(X,B)/T$ be a $\mathbb{Q}$-factorial klt threefold $R$-pair with positive dimensional image such that $K_{X}+B$ is nef over $T$. Suppose there is a commutative diagram of normal schemes over $T$:
 		\[\begin{tikzcd}
 		W \arrow[d, "g"] \arrow[r, "f"] & X \arrow[d, "h"]  \\
 		Y     \arrow[r, "\pi"]           & Z,              
@@ -772,7 +750,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	The following states that it's sufficient to prove abundance for a single minimal model inside its birational class.
 	
 	\begin{lemma}\label{inv}
-		Suppose that $(X,B)$ is a log canonical pair, projective over $T$. 
+		Suppose that $(X,B)/T$ is a log canonical $R$-pair. 
 		Let $\phi_{i} \colon (X, B) \dashrightarrow (Y_{i},B_{i})$ be minimal models for $(X,B)$ over $T$. 
 		Then $K_{Y_{1}}+B_{1}$ is semiample over $T$ if and only if $K_{Y_{2}}+B_{2}$ is so.
 	\end{lemma}
@@ -789,12 +767,11 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	We are now ready to prove the abundance theorem for klt threefolds over positive-dimensional basis.
 	
 	\begin{theorem}\label{abundance}
-		Let $\pi \colon (X,B) \to T$ be a projective morphism of $R$-schemes such that the $\pi(X)$ is positive dimensional.
-		Suppose $(X,B)$ is a klt pair of dimension three with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
+		Let $(X,B)/T$ be a klt $R$-pair such that the $\pi(X)$ is positive dimensional with $\mathbb{R}$-boundary. If $K_X+B$ is nef over $T$, then it is semiample over $T$.
 	\end{theorem}
 	
 	\begin{proof}
-		We can assume $\pi$ to be surjective.
+		We can assume $\pi:X \to T$ to be dominant.
 		If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace $(X,\Delta)$ with a $\mathbb{Q}$-factorialisation by \autoref{Q-factorial}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier divisors).
 		
 		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{t-bpf}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
@@ -847,8 +824,9 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	
 	The purpose of this section is to generalise the asymptotic invariance of plurigenera proven in \cite[Theorem 3.1]{EH} to families of \emph{non-log-smooth} surface pairs, as well as DVRs with non-perfect residue field. Similar results in characteristic zero are proven in \cite{HMX13, HMX18}.
 	The first case we discuss is the asymptotic invariance for families of good minimal models.
+	
 	\begin{theorem}\label{thm:ADIOP_SA}
-		Let $(X,B)$ be a three-dimensional klt pair with $\mathbb{Q}$-boundary.
+		Let $(X,B)$ be a three-dimensional $R$-pair with $\mathbb{Q}$-boundary.
 		Let $\pi \colon X \to\Spec (R)$ be a  surjective projective contraction. Assume that $(X,B+X_k)$ is plt and $K_X+B$ is semiample over $R$.
 		Suppose one of the following holds:
 		\begin{enumerate}
@@ -863,8 +841,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	We start by showing the normality of the central fibre of the image of the $(K_X+B)$-semiample fibration.
 	
 	\begin{proposition}\label{p-gen-case}
-		Let $(X,B)$ be a three-dimensional klt pair with $\mathbb{Q}$-boundary.
-		Let $\pi \colon X \to\Spec (R)$ be a  surjective projective contraction.
+		Let $(X,B)$ be a three-dimensional klt $R$-pair with $\mathbb{Q}$-boundary such that $\pi \colon X \to\Spec (R)$ is a surjective projective contraction.
 		Suppose that $(X,B+X_{k})$ is plt. If $f \colon X \to Z$ is a birational morphism over $R$ such that $-(K_{X}+B)$ is $f$-nef, then $Z_k$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$.
 	\end{proposition}
 	
@@ -876,7 +853,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	The previous is useful for small $(K_{X}+B)$-trivial birational morphisms, and in particular to reduce the non $\mathbb{Q}$-factorial case to the $\mathbb{Q}$-factorial one.
 	
 	\begin{lemma}\label{l-reduce-Q-fac}
-		Let $(X,B)$ be a klt pair of dimension $3$ with a contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt.
+		Let $(X,B)$ be a klt $R$-pair of dimension $3$ such that $\pi \colon X \to \Spec(R)$ is a contraction and $(X,B+X_{k})$ is plt.
 		Let $\pi\colon (Y,\Delta) \to (X,B)$ be a small, birational and $(K_{Y}+\Delta)$-trivial contraction with $B=\pi_{*}\Delta$. 
 		Then
 		$$h^{0}(X_{k},m(K_{X_k}+B_{k}))= h^{0}(Y_{k},m(K_{Y_{k}}+\Delta_{k}))$$ 
@@ -894,7 +871,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	
 	\begin{proposition}\label{p-1-case}
 		
-		Let $(X,B)$ be a klt pair of dimension $3$ with a contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
+		Let $(X,B)/R$ be a klt pair of dimension $3$ with a projective contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
 		\begin{enumerate}
 			\item $K_X+B$ is semiample and let $f\colon X \to Z$ its Iitaka fibration over $R$;
 			\item $\kappa(K_X+B/R)=1$;
@@ -980,7 +957,7 @@ where $h$ may either be an isomorphism or a small birational contraction. As $g$
 Imposing the conditions of \autoref{lemma:MMP_in_fam2}, we are able to prove the invariance of plurigenera for families of klt surfaces from \autoref{thm:ADIOP_SA}.
 	
 	\begin{theorem}\label{thm:ADIOP_final2}
-		Let $X \to \Spec(R)$ be a projective surjective morphism and suppose that $(X,B)$ is a three dimensional klt pair with $\mathbb{Q}$-boundary.
+		Suppose that $(X,B)$ is a projective three dimensional klt $R$-pair with $\mathbb{Q}$-boundary which dominates $R$.
 		Suppose that all of the following are satisfied:
 		
 		\begin{enumerate}

@@ -113,11 +113,12 @@
 	
 
 \section{Introduction}
-There has been great success proving boundedness results in characteristic zero using the techniques and results of the LMMP. Beyond dimension $2$, however, there has not been much progress in positive characteristic. This is perhaps a consequence of the relative newness of the LMMP results in this setting, but it  also tells of the existence of difficulties unique to characteristic $p$.
+
+This chapter focuses on boundedness results for globally $F$-split varieties admitting a Log Fano pair. This work also appears in \cite{}.
 
 In this direction, we prove the following.
 
-\begin{theorem}\label{Main}
+\begin{theorem}\label{Main_Bound}
 	Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions
 	\begin{itemize}
 		\item $X$ is a projective variety over an algebraically closed field of characteristic $p >7, \frac{2}{\delta}$;
@@ -128,63 +129,10 @@ In this direction, we prove the following.
 	
 	Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$. 
 \end{theorem}
-\begin{remark}
-	The condition that $X$ be terminal is to allow us to reduce to the case that $X$ is a terminal Mori fibre space. While we might normally achieve this by taking a terminalisation $\tilde{X} \to X$, we cannot do so while also ensuring that the coefficients of $\tilde{\D}$ are still bounded below. In fact while bounding the coefficients below is used to prove a canonical bundle formula for Mori fibre spaces of relative dimension $1$ it is in many ways the relative dimension $2$ case that forces the assumption $X$ is terminal.
-	
-	If $(X,\Delta) \to S$ is a klt Mori fibre space with coefficients bounded below by $\frac{2}{p}$ then we may freely take a terminalisation and run an MMP to obtain a tame conic bundle, which is what we require for our boundedness proof. If however the relative dimension is $2$ then after taking a terminalisation and running an MMP we may end with a Mori fibration of relative dimension $1$, where we cannot easily control the singularities of the base. This happens whenever $X$ is singular along a curve $C$ which maps inseparably onto the base and we expect this is the only way it might happen. 
-\end{remark}
-
-The main motivation for this result comes from \cite{chen2018birational} where a similar result is proven in the characteristic zero setting. More generally we have the following generalisation of BAB, which essentially appeared in \cite{mckernan2003threefold} and remains unsolved even in characteristic $0$. 
-
-\begin{conjecture}
-	Fix $\kappa$, an algebraically closed field of characteristic $0$, let $d$ be a natural number and take $\epsilon$ a positive real number. Then the projective varieties $X$ over $\kappa$ such that 
-	\begin{itemize}
-		\item $X$ has dimension $d$;
-		\item $(X,B)$ is $\epsilon$-klt for some boundary $B$;
-		\item $-(K_{X}+B)$ is nef; and
-		\item $X$ is rationally connected;
-	\end{itemize}
-	are bounded.	
-\end{conjecture}
-
-With the LMMP for KLT pairs known in dimension $3$ and characteristic $p>5$, it is natural to turn our attention to results and conjectures of this type in positive and mixed characteristic. There are several major problems one would face in the pursuit of such a result, even in the weaker case of birational boundedness in dimension $3$, which do not arise in characteristic zero. Perhaps the most immediate is that $X$ rationally connected no longer removes the possibility that $K_{X} \not\equiv 0$. For example, in positive characteristic there are families of K3 surfaces which are rationally connected. It is not clear then, even in dimension $2$, that such a result would hold.
-
-It is also very difficult to control the singularities of the base, and indeed the fibres, of a Mori fibre space, which makes proofs of an inductive nature very challenging. The failure of Kawamata-Viehweg vanishing presents a similar difficulty.
-
-Unique to positive characteristic, we have singularities characterised by properties of the Frobenius morphism. In particular there are notions of globally $F$-split and globally $F$-regular which can be thought of as positive characteristic analogues of lc log Calabi-Yau varieties and klt log Fano varieties. While the exact nature of this analogy is the subject of a variety of results and conjectures, it is expected, and often known, that these varieties should behave similarly to their characteristic zero counterparts.
-
-Most notably, in this context, the $F$-split and globally $F$-regular conditions are preserved under the steps of the LMMP including Mori fibrations. In fact the conditions are also preserved under taking a general fibre of a fibration. They also come naturally equipped with vanishing theorems, with globally $F$-regular pairs satisfying full Kawamata-Viehweg vanishing. 
-
-We also have some relevant characterisations of uniruled $F$-split varieties. If $X$ is smooth it cannot be simultaneously $F$-split, Calabi-Yau and uniruled. In particular, an $F$-split, canonical surface cannot be uniruled and have pseudo-effective canonical divisor. 
-
-In many ways then, global $F$-singularities begin to resolve the most obvious difficulties in proving positive characteristic boundedness results. They present their own problems however, there is no satisfactory notion of ``$\epsilon$-$F$-split'' or ``$\epsilon$-globally $F$-regular'' which makes it difficult to work solely with these notions in the context of boundedness.
-
-That said, while the $F$-split and globally $F$-regular conditions fit naturally into the study of log pairs, we may also choose to consider them as properties of the underlying base varieties. In such a way we may formulate the following questions, though in practice even the most optimistic might expect further conditions on the characteristic. One could also reasonably ask that the $\epsilon$-klt pair $(X,B)$ is itself $F$-split, or globally $F$-regular, in place of the base variety.
-
-\begin{question}\label{Q1}
-	Fix $d$ a natural number and $\epsilon$ a positive real number. Then is the set, $S$, (resp. $S'$) of projective varieties $X$ such that $(1)-(4)$ (resp. $(1),(2),(3'),(4')$) hold bounded over $\mathbb{Z}$?
-	\begin{enumerate}[label=(\arabic*)]
-		\item $X$ has dimension $d$ over some closed field $\kappa$.
-		\item $(X,B)$ is $\epsilon$-klt for some boundary $B$.
-		\item $-(K_{X}+B)$ is big and nef.
-		\item[$(3')$] $K_{X}+B\equiv 0$.
-		\item If $\kappa$ has characteristic $p>0$, then $X$ is globally $F$-regular.
-		\item[$(4')$] If $\kappa$ has characteristic $p>0$, then $X$ is $F$-split and rationally chain connected.
-	\end{enumerate}
-\end{question}
-
-
-\begin{remark}
-	Here rationally chain connected is chosen over rationally connected in light of \cite{gongyo2015rational} which shows that globally $F$-regular threefolds are rationally chain connected in characteristic $p\geq 11$. Further in characteristic zero, under mild assumptions on the singularities (X admits a boundary $\D$ with $(X,\D)$ dlt), rational chain connectedness coincides with rational connectedness so this is still a natural generalisation. In any case, in dimension $3$ the globally $F$-regular condition is strictly stronger than $F$-split and rationally chain connected whenever the characteristic is at least 11. 
-	
-	In fact other than the case of Fano varieties of Picard number $1$, Gongyo et al are able to show separable rational connectedness. This might, therefore, also be a natural condition to impose instead, especially since the classical proof of the boundedness of characteristic zero prime Fano threefolds so heavily relies on the existence of a free curve. 
-\end{remark}
-
-Given \autoref{Q1}, it is natural to ask what can be gleaned from \autoref{Main} about globally $F$-regular varieties of the type described in \autoref{Q1}. Unfortunately the answer is very little, while every globally $F$-regular variety is $F$-split and if $X$ is of $\epsilon$-log Fano type it is also of $\epsilon$-LCY type, we cannot sensibly ensure that the resulting $\epsilon$-LCY pair $(X,\Delta)$ has coefficients bounded below, even if we require it for the pair $\epsilon$-log Fano pair $(X,\Delta')$.\\
 
 In addition to the main result we prove along the way, essentially in \autoref{J1} and \autoref{J2}, the following result. This in turn drew heavily on the arguments of Jiang in \cite{jiang2014boundedness}.
 
-\begin{theorem}\label{Main2}
+\begin{theorem}\label{Main_Bound2}
 	Fix $0 < \delta, \epsilon <1$ and let $T_{\delta,\epsilon}$ be the set of threefold pairs $(X,\Delta)$ satisfying the following conditions
 	\begin{itemize}
 		\item $X$ is projective over a closed field of characteristic $p >7,\frac{2}{\delta}$;
@@ -678,7 +626,7 @@ First we show that results of this form lift to characterisations of the non-klt
 \end{lemma}
 
 \begin{proof}
-	The anticanonical volumes $\Vol(X,-K_{X})$ are bounded by some $V$ by \autoref{Main2} which is proved in the next section.
+	The anticanonical volumes $\Vol(X,-K_{X})$ are bounded by some $V$ by \autoref{Main_Bound2} which is proved in the next section.
 	
 	Suppose first $\dim Z=1$. Then $\Vol(G,-K_{G})=(-K_{G})^{2} \leq 9$ and so by Lemma 3.4
 	\[\Vol(X,-3K_{X}+nG) \leq \Vol(X,-3K_{X}) + 3t\Vol(G,-3K_{G})\leq 27(V+9t)\]
