@@ -267,17 +267,17 @@ When we have resolution of singularities there is another, more practical versio
 \end{proof}
 
 
- Indeed as $X$ is normal, we may restrict to an open set and assume that $\Delta$ is a prime divisor with $(X,\Delta)$ log smooth. Now blowing up along $V$ inside $\Delta$ of codimension $2$, we may instead assume that 
+% Indeed as $X$ is normal, we may restrict to an open set and assume that $\Delta$ is a prime divisor with $(X,\Delta)$ log smooth. Now blowing up along $V$ inside $\Delta$ of codimension $2$, we may instead assume that 
 
-\begin{corollary}
-	Let $(X,\Delta)$ be a (sub)-log pair and $\pi:Y\to X$ a log resolution of $(X,\Delta)$. Let $$t=\min\{a(E,X,\Delta) \text{ such that } E \text{ is a divisor on } Y\}$$ and $$d=\min\{a(E,X,\Delta) \text{ such that } E \text{ is an exceptional divisor of } \pi:Y\to X\}.$$
-	Then
-		\begin{itemize}
-		\item 	(sub) plt if $d > -1$
-		\item	(sub) $\epsilon-klt$ if $t > \epsilon-1$
-		\item	(sub) $\epsilon-lc$ if $t\geq \epsilon -1$
-	\end{itemize}
-\end{corollary}
+%\begin{corollary}
+%	Let $(X,\Delta)$ be a (sub)-log pair and $\pi:Y\to X$ a log resolution of $(X,\Delta)$. Let $$t=\min\{a(E,X,\Delta) \text{ such that } E \text{ is a divisor on } Y\}$$ and $$d=\min\{a(E,X,\Delta) \text{ such that } E \text{ is an exceptional divisor of } \pi:Y\to X\}.$$
+%	Then $(X,\Delta)$ is
+%		\begin{itemize}
+%		\item 	(sub) plt if $d > -1$
+%		\item	(sub) $\epsilon-klt$ if $t > \epsilon-1$
+%		\item	(sub) $\epsilon-lc$ if $t\geq \epsilon -1$
+%	\end{itemize}
+%\end{corollary}
 
 
 
@@ -735,10 +735,9 @@ Together these conjectures form the key results of the Minimal Model Program and
 For threefolds in mixed and positive characteristic, the current state of the art is the following:
 
 	\begin{theorem}\cite[Theorem 1.7]{BW17}, \cite[Theorem 1.2]{BW17}\cite[Theorem F]{bhatt2020}\label{MMP}
-	Let $(X, \Delta)$ be a three-dimensional klt pair over a ring $R$ of mixed characteristic or $k$ a perfect field of positive characteristic, together with a projective morphism $X \to Z$ a quasi-projective $k$ scheme, then there exists a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates. \myworries{Check}
+	Let $(X, \Delta)/T$ be a $\mathbb{Q}$-factorial three-dimensional klt pair over a ring $R$. Suppose that the closed points of $R$ have residue field of characteristic $p=0$ or $p> 5$. Suppose further that $K(R)$ has characteristic $0$ or $R$ a perfect field of positive characteristic. Then there exists a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates. \myworries{Check. Also $p \geq 5?$}
 	
-	In particular, if $X$ is $\mathbb{Q}$-factorial, then 
-	there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
+	In particular there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
 	\[
 	X=:X_0 \overset{\varphi_0}{\dashrightarrow} X_1 \overset{\varphi_1}{\dashrightarrow} \cdots \overset{\varphi_{\ell-1}}{\dashrightarrow} X_{\ell}
 	\]
@@ -759,14 +758,14 @@ For threefolds in mixed and positive characteristic, the current state of the ar
 	\end{enumerate}
 \end{theorem}
 
+Terminating MMP's can also be run for certain fourfolds birational to their base or semistable over a curve \cite{}. The existence of log terminal models is also known for threefold pairs over an imperfect field \cite{}. 
 
 \myworries{What is known? We will show...}
 
 
 \subsection{Birational Modifications}
 
-A particularly useful application of the Minimal Model Program is to find crepant modifications with suitably mild singularities. We will explore some of these modifications and their consequences in this section. In particular we always assume the existence of log resolutions as well as the conjectures of \autoref{overview} in the case that $X \to T$ is birational.
-
+A particularly useful application of the Minimal Model Program is to find crepant modifications with suitably mild singularities. We will explore some of these modifications and their consequences in this section. In particular we always assume the existence of log resolutions as well as the conjectures of \autoref{overview} \myworries{in the case that $X \to T$ is birational}.  These results are known if $X$ has dimension at most $3$ by \autoref{MMP} and \cite{}.
 
 A vital ingredient in these results is the following lemma.
 
@@ -774,15 +773,6 @@ A vital ingredient in these results is the following lemma.
 	Let $\pi:Y \to X$ be a birational morphism and $E$ an exceptional divisor on $Y$. If $-E$ is nef then $E \geq 0$.
 
 	\end{lemma}
-The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair and conclude it is a crepant modification using the Negativity Lemma.
-\begin{lemma}
-	
-	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a birational morphism $\pi:Y \to X$ such that $(Y,\pi_{*}^{-1}\Delta)$ is terminal. If in fact $(X,\Delta)$ is klt then there is $B \geq \pi_{*}^{-1}\Delta$ such that $(Y,B)$ is terminal and $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$.
-	
-	
-	terminal pair $(Y,B)$ admitting a birational morphism $\pi:Y \to X$ with $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$.
-	
-\end{lemma}
 
 The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair and conclude it is a crepant modification using the Negativity Lemma. We begin with the case of terminalisation.
 
@@ -805,7 +795,7 @@ The approach for all the modifications is the same - take a log resolution, choo
 
 \begin{remark}
 	
-	One can also seek a terminalisation of a pair in a more general sense, looking simply for $\pi:Y \to X$ with $(Y,\pi_{*}^{-1}\Delta)$ terminal, but this is not a crepant modification.
+	One can also seek a terminalisation of a pair in a more general sense, looking simply for $\pi:Y \to X$ with $(Y,\pi_{*}^{-1}\Delta)$ terminal, but this is not a crepant modification. If $\lfloor \Delta \rfloor=0$ then we can run the above MMP with $f^{-1}_{*}\Delta$ in place of $\Delta'$ to yield such a pair.
 	
 	\end{remark}
 
@@ -839,11 +829,11 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 	
 	Let $S$ be the support of $G$, so that $G-S$ is exceptional as $\Delta$ has no coefficients greater than $1$.
 	
-	Roughly speaking we would like to run an MMP for the dlt pair $(Y,S+F+\pi_{*}^{-1}\Delta_{<1})$. This is achieved by making small perturbations by suitable ample divisors.
+	Roughly speaking we would like to run an MMP for the dlt pair $(Y,S+F+\pi_{*}^{-1}\Delta_{<1})$. This is achieved by making small perturbations by suitable ample divisors. In general we do not have sufficiently strong Bertini theorems to create klt pairs from such perturbations. However they are always rlt by \autoref{}. This is sufficient to run a terminating MMP, see further \autoref{}.
 	
 	Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
 	
-	We may choose $H,H_{s}$ so that $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is klt for small $r,s,t > 0$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y'}+B$, so that $$D=K_{Y}+S+(1-t)F+f_{*}^{-1}\Delta_{<0}+rH-\pi^{*}(K_{X}+\Delta+A)=S+(1-t)F+f_{*}^{-1}\Delta_{<0}-rC-B.$$ \myworries{By Bertini}
+	We may choose $H,H_{s}$ so that $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is rlt for small $r,s,t > 0$ by \autoref{}. Write $\pi^{*}(K_{X}+\Delta)=K_{Y'}+B$, so that $$D=K_{Y}+S+(1-t)F+f_{*}^{-1}\Delta_{<0}+rH-\pi^{*}(K_{X}+\Delta+A)=S+(1-t)F+f_{*}^{-1}\Delta_{<0}-rC-B.$$ 
 	
 	Let $f:Y \to X$ be a minimal model for $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$. By construction this is also a minimal model for the pair $(Y',S+(1-t)F+\pi_{*}^{-1}\Delta_{<1}+H)$, and hence $Y$ is $\mathbb{Q}$-factorial. In particular, letting $S',F',H', H'_{s},D'$ be the strict transforms of the corresponding divisors on $Y'$, we have that $(Y,S'+(1-t)F'+f_{*}^{-1}\Delta_{<0}+H')$ is dlt and $N=K_{Y}+S'+(1-t)F'+f_{*}^{-1}\Delta_{<1}+rH'$ is nef over $X$.
 	
@@ -913,6 +903,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 	
 	Otherwise have that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected by induction, a contradiction.
 \end{proof}
+
 
 \myworries{What if $-(K_{X}+B)$ is nef? What about close to a fibre?}
 
@@ -1061,7 +1052,7 @@ Although Kawamata-Viehweg Vanishing fails in positive characteristic, we often h
 	\begin{enumerate}
 		\item $X_k$ is normal;
 		\item there is a contraction $f \colon X \to Z$ over $R$ such that $-(K_{X_{k}}+\Delta_{k})$ is $f_{k}$-big and $f_k$-nef;
-		\item $X$ has dimension $3$ at most 3, or $k$ is perfect of characteristic $p>5$ and $X$ has dimension at most 4.
+		\item $X$ has dimension most $3$, or $k$ is perfect of characteristic $p>5$ and $X$ has dimension at most $4$.
 	\end{enumerate}  
 	Then $Z_{k}$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$. Further, if $f$ is birational and $B:=f_{*}\Delta$, then $(Z, Z_k+B)$ is plt and $(Z_{k},B_{k})$ is klt.
 \end{lemma}
