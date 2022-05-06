@@ -805,14 +805,14 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 \myworries{This section needs more care vis a vis Bertini}
 
 \begin{theorem}
-	Let $(X,\Delta)$ an $R$ pair with coefficients bounded above by $1$. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
+	Let $(X,\Delta)$ an $R$ pair with coefficients bounded above by $1$. Write $\Delta'$ for the divisor with $\textup{Coeff}_{E}(\Delta')=\textup{Min}(\textup{Coeff}_{E}(\Delta),1)$. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
 	\begin{itemize}
 		\item $Y$ is $\mathbb{Q}$-factorial,
 		\item $a(E,X,\Delta) \leq -1$ for every $f$ exceptional divisor $E$,
-		\item If $\Delta_{Y}=f^{-1}_{*}\Delta + \sum_{E \textup{ exceptional}} E$ then $(Y,\Delta_{Y})$ is dlt, and
+		\item If $\Delta_{Y}=f^{-1}_{*}\Delta' + \sum_{E \textup{ exceptional}} E$ then $(Y,\Delta_{Y})$ is dlt, and
 		\item $K_{Y}+\Delta_{Y}+F=f^{*}(K_{X}+\Delta)$ where $F= \sum_{E:a(E,X,\Delta)<-1} -(a(E,X,\Delta)+1)E$
 	\end{itemize}
-	Here $f(F)=\textup{Nlc}(X,\Delta)$ and $f_{*}F=\Delta-\Delta'$. Moreover $(X,\Delta)$ is dlt if and only if this is a small morphism.
+	Here $\textup{Nklt}(Y,\Delta_{Y})=f^{-1}(\textup{Nklt}(X,\Delta))$, $\text{Supp}(F)=f^{-1}(\textup{Nlc}(X,\Delta))$ and $f_{*}F=\Delta-\Delta'$. Moreover if $(X,\Delta)$ is klt if then this is a small morphism.
 \end{theorem}
 
 \begin{proof}
@@ -822,41 +822,50 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 %	Indeed if $E$ is exceptional, this is immediate since $$K_{Y}+f^{-1}_{*}\Delta'+\sum_{E \text{ exceptional}}E +F' = K_{Y} + \sum -a(E,X,\Delta)E$$
 %	and $f^{-1}_{*}\Delta$ is not supported on $E$. If $E$ is not exceptional, then we may assume $\text{Coeff}_{f_{*}E}\Delta \geq 1$. Thus $\text{Coeff}_{E}F'=\text{Coeff}_{f_{*}E}\Delta - \text{Coeff}_{f_{*}E}\Delta'=-(a(E,X,\Delta)+1)$ as claimed. 
 	
-	Take a log resolution $\pi:Y' \to X$ of $(X,\Delta)$ admitting an ample exceptional divisor $-C$ \cite{}. Note that by the Negativity Lemma, as $-C$ is nef we have that $C \geq 0$, justifying the choice of sign.
+	Take a log resolution $\pi:Y \to X$ of $(X,\Delta)$ admitting an ample exceptional divisor $-C$ \cite{}.Note that by the Negativity Lemma, as $-C$ is nef we have that $C \geq 0$, justifying the choice of sign.
 	
-	Let \[F= \sum_{\substack{E \text{exceptional} \\ a(E,X,\Delta) > -1}} E\]
+	Roughly speaking we would like to say that $\pi^{*}(K_{X}+\Delta)=K_{Y}+\pi_{*}^{-1}\Delta'+E$ and run an MMP for the dlt pair $(Y,S+\pi_{*}^{-1}\Delta')$ where $S=\text{Supp}(E)$. Indeed, if such an MMP exists, then we can replace $Y'$ with the output so that $N=\pi^{*}(K_{X}+\Delta)-(K_{Y}+F+\pi_{*}^{-1}\Delta')= \pi_{*}^{-1}(\Delta-\Delta')+(E-F)$ has $\pi_{*}N=\Delta-\Delta' \geq 0$ and $-N$ nef. That is, $N \geq 0$ by the negativity lemma and the result follows immediately taking $F=N$.  
+	
+	When this MMP is not known to exist, the same result is achieved by making small perturbations by suitable ample divisors. In general we do not have sufficiently strong Bertini theorems to create klt pairs from such perturbations. However they are always rlt by \autoref{}. This is sufficient to run a terminating MMP, see further \autoref{}.
+	
+	To this end, let \[D= \sum_{\substack{E \text{exceptional} \\ a(E,X,\Delta) > -1}} E\]
 	and 
 		\[G = \sum_{\substack{E \\ a(E,X,\Delta) \leq  -1}} -a(E,X,\Delta)E\]
 		
-	Let $S$ be the support of $G$, so that $G-S$ is exceptional as $\Delta$ has no coefficients greater than $1$.
+	Let $S$ be the support of $G$, so that $\pi_{*}(G-S)=\Delta-\Delta' \geq 0.$ Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
 	
-	Roughly speaking we would like to run an MMP for the dlt pair $(Y,S+F+\pi_{*}^{-1}\Delta_{<1})$. This is achieved by making small perturbations by suitable ample divisors. In general we do not have sufficiently strong Bertini theorems to create klt pairs from such perturbations. However they are always rlt by \autoref{}. This is sufficient to run a terminating MMP, see further \autoref{}.
-	
-	Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
-	
-	We may choose $H,H_{s}$ so that $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is rlt for small $r,s,t > 0$ by \autoref{}. We may choose $t$ sufficiently small that $a(E,X,\Delta) > t-1$ for each $E$ in the support of $F$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y'}+B$, and then choose $D$ as follows.
+	We may choose $H,H_{s}$ so that $(Y, (1-rs)S+(1-t)D+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is rlt for small $r,s,t > 0$ by \autoref{}. We may choose $t$ sufficiently small that $a(E,X,\Delta) > t-1$ for each $E$ in the support of $D$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$, and then choose $N$ as follows.
 	\begin{align*}
-	-D&=K_{Y}+S+(1-t)F+f_{*}^{-1}\Delta_{<1}+rH-\pi^{*}(K_{X}+\Delta+A)\\
-	&=S+(1-t)F+f_{*}^{-1}\Delta_{<1}-rC-B
+	-N&=K_{Y}+S+(1-t)D+\pi_{*}^{-1}\Delta_{<1}+rH-\pi^{*}(K_{X}+\Delta+A)\\
+	&=S+(1-t)D+\pi_{*}^{-1}\Delta_{<1}-rC-B
 	\end{align*}
-	Let $f:Y \to X$ be a minimal model for $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$. By construction $Y$ is $\mathbb{Q}$-factorial and is also a minimal model for the pair $(Y',S+(1-t)F+\pi_{*}^{-1}\Delta_{<1}+H)$. In particular, letting $S',F',H', H'_{s},D'$ be the strict transforms of the corresponding divisors on $Y'$, we have that $(Y,S'+(1-t)F'+f_{*}^{-1}\Delta_{<1})$ is dlt and $N=K_{Y}+S'+(1-t)F'+f_{*}^{-1}\Delta_{<1}+rH'$ is nef over $X$.
+	From the choice of $t$, we have that for each $E$ in the support of $D$ that $\text{Coeff}_{E}(N)=(t-1)+a(E,X,\Delta) < 0$.
 	
-	Note then that $D'=f^{*}(K_{X}+\Delta+A)-N=$, so that $-D'$ is nef over $X$. On the other hand $D'$ is necessarily exceptional, and hence by negativity $D' \geq 0$. 
+	Let $f:Y' \to X$ be a minimal model for $(Y, (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$. By construction $Y'$ is $\mathbb{Q}$-factorial and is also a minimal model for the pair $(Y,S+(1-t)F+\pi_{*}^{-1}\Delta_{<1}+H)$. In particular, letting $S',F',H', H'_{s},D'$ be the strict transforms of the corresponding divisors on $Y$, we have that $(Y',S'+(1-t)D'+f_{*}^{-1}\Delta_{<1})$ is dlt and $M=K_{Y}+S'+(1-t)D'+f_{*}^{-1}\Delta_{<1}+rH'$ is nef over $X$.
 	
- 	Every component of $F$ has negative coefficient inside $D$ by construction. Thus in fact $F'=0$, since $D' \geq 0$, and in particular every exceptional divisor on $Y$ over $X$ has discrepancy at most $-1$. Hence it must be the case that in fact $$B'-E'-f_{*}^{-1}\Delta_{<1}=\sum_{\substack{E \text{ exceptional} \\ a(E,X,\Delta) \leq  -1}} (1+a(E,X,\Delta))E.$$ Moreover the pair $(Y\Delta_{Y}=S'+f_{*}^{-1}\Delta_{<1})$ is dlt by construction. 
+	Note then that $N'=f^{*}(K_{X}+\Delta+A)-M$, so that $-N'$ is nef over $X$. On the other hand $f_{*}N \geq 0$ and hence by negativity $N' \geq 0$. 
+	
+ 	Every component of $F$ has negative coefficient inside $N$ by construction. Thus in fact $F'=0$, since $N' \geq 0$, and in particular every exceptional divisor on $Y$ over $X$ has discrepancy at most $-1$. Hence we have contracted every $E$ exceptional with $a(E,X,\Delta) >-1$ and therefore $S'=\text{Exc}(\pi)$. Moreover the pair $(Y\Delta_{Y}=S'+f_{*}^{-1}\Delta_{<1})$ is dlt by construction. Consider then $$F=f^{*}(K_{X}+\Delta)-(K_{Y}+\Delta_{Y})=B'-S-f_{*}^{-1}\Delta_{<1}=N+C' \geq 0.$$ If $E$ is exceptional over $X$ then we have $\text{Coeff}_{E}F=\text{Coeff}_{E}(B'-S)=-(a(E,X,\Delta)+1)$. Suppose then $E$ is not exceptional. Then we get $\text{Coeff}_{E}F=\text{Coeff}_{E}(B'-f_{*}^{-1}\Delta_{\leq})=\text{Coeff}_{f_{*}E}(\Delta-\Delta')$. If $\text{Coeff}_{f_{*}E}\Delta \geq 1$ then is yields $-(a(E,X,\Delta)+1)$, otherwise we get $\text{Coeff}_{E}F=0$.
  	
- 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. On the other hand, we have $F=0$ on $Y$ and the contribution from $-C$ ensures that $-(K_{Y}+S+r(-C+\pi^{*}A) + \pi_{*}^{-1}\Delta_{< 0})$ is $\pi|_{E}$-big on restriction to any divisor $E$ on $Y$, centred over $X\setminus Z$ with $a(E,X,\Delta)=-1$. In particular $E$ must be contracted by the MMP, and so $Y \to X$ has no exceptional divisors at all, that is $X \to Y$ is small. \myworries{Improve!}
- 	
- 	Conversely if the dlt modification extracts no divisors then we must have that $F=0$ and then $f^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$, ensuring that $(X,\Delta)$ is dlt.
+% 	By construction $(Y',\Delta_{Y'}+F)$ is dlt away from $F$, so $F$ is precisely the nlc locus of the pair and hence $\text{Supp}(F)=f^{-1}\text{Nlc}(X,\Delta)$. Similarly the nklt locus of $(Y,\Delta_{Y'})$ is $\lfloor \Delta_{Y} \rfloor=f^{-1}\text{Nklt}(X,\Delta)$. 
+%
+% 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. Suppose that $E$ We must have $a(E,X,\Delta)=-1$ as $F=0$, and so $E$ is centred on $X \setminus Z$. Localising on the generic point of it's image, we may suppose that $(X,\Delta)$ is log smooth. 
+% 	
+% 	Conversely if the dlt modification extracts no divisors then we must have that $F=0$ and then $f^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$, ensuring that $(X,\Delta)$ is dlt.
 	
+	If $X$ is klt, then $\lfloor\Delta_{Y}\rfloor=F=0$ and there are no exceptional divisors.
 \end{proof}
 
-The case that $(X,\Delta)$ is dlt, or even klt, is particularly important and is called a $\mathbb{Q}$-factorialisation.
+\begin{remark}
+	Strictly speaking, the assumption that the MMP holds for klt pairs in dimension $\leq n$ includes termination in dimension $\leq n-1$. Thus special termination holds by \cite{fujino2007special} \cite[Theorem 9.7]{bhatt2020}, and if we can run a klt MMP we can run a dlt MMP. Nonetheless the above proof without running a dlt MMP holds is included as it holds in a more general context where we can run terminating MMMP's, but not necessarily every MMP is know to terminate.
+	\end{remark}
+
+The case that $(X,\Delta)$ is klt is particularly important and is called a (small) $\mathbb{Q}$-factorialisation. One would like to be able to say that the dlt modification is small if $(X,\Delta)$ is dlt. This requires quite strong resolution of singularity assumptions, however. If $(X,\Delta)$ is dlt and admits a log resolution which is an isomorphism overt the snc locus, then it admits a small $\mathbb{Q}$-factorialisation.
 
 A useful application of DLT modifications is the study of the non-klt and non-lc loci. In particular we have following generalisation of the Cone Theorem as well as a connectedness result for suitable pairs.
 
 	\begin{theorem}[Nlc Cone Theorem]\label{WCT}
-	Let $(X,B)/T$ be an $R$-pair with coefficients bounded above by $1$. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
+	Let $(X,B)/T$ be an $R$-pair. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
 	
 		\begin{enumerate}
 		\item $$\overline{NE}(X/T)=\overline{NE}(X/T)_{K_{Y}+\Delta \geq 0} +\overline{NE}(X/T)_{nlc}+ \sum_{i} \mathbb{R}_{>0}[C_{i}]$$
@@ -882,7 +891,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 
 
 \begin{theorem}[Weak Connectedness Lemma]\label{WLC}
-	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres such that the coefficients of $\Delta$ bounded above by $1$. Then if $-(K_{X}+\Delta)$ is big and nef, $\textup{Nklt}(X,\Delta)$ is either empty or connected.
+	Let $(X,\Delta)/T$ be an $R$-pair with geometrically connected fibres. Then if $-(K_{X}+\Delta)$ is big and nef, $\textup{Nklt}(X,\Delta)$ is either empty or connected.
 \end{theorem}
 
 \begin{proof}
