@@ -116,25 +116,26 @@
 		
 	\section{Introduction}
 	
-	This chapter addresses remaining questions around Mori Fibrations in mixed characteristic. Much of the content is the same as \cite{}. Here $R$ will always be an excellent ring with dualising complex. We also required that the residue fields of closed points are all of characteristic $p>5$, but this is a limitation only of current MMP results in mixed characteristic.
-		
+	This chapter addresses remaining questions around Mori Fibrations in mixed characteristic. All the results besides termination also apply to pairs of pure characteristic. Much of the content is the same as \cite{}. Here $R$ will always be an excellent ring with dualising complex. We also require that the residue fields of closed points are all of characteristic $p>5$ or $p=0$, but this is a limitation only of current MMP results in mixed characteristic.
+	
+	We keep the notation of \autoref{setup}, however in this chapter we will always work over a base $T$ that is positive dimensional. This is mostly out of an abundance of caution. The results of \cite{DW19} should be sufficient to carry out the arguments needed for \autoref{Main_Finite1} over an $F$-finite field. Care would also need to be taken with \autoref{Main_Finite2}, since termination of an MMP with scaling is needed for \autoref{amp} and \autoref{islinked}. This should follow from \autoref{Main_Finite1}, however. Of course \autoref{Main_Finite3} is classical if $T$ is not positive dimensional.
+	
 	First it is shown that in fact the threefold MMP always terminates, extending the termination result of \cite{bhatt2020globally+} to pairs which are not pseudo-effective.
 	
 	\begin{theorem}[\autoref{termination}]\label{Main_Finite3}
-		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
+		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$. If $T$ is positive dimensional and $K(T)$ has characteristic $0$ then any $K_{X}+\Delta$ MMP terminates.
 	\end{theorem}
 
 	Next, it is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
 	
 	\begin{theorem}[\autoref{sarkisov}]\label{Main_Finite2}
-		Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces of dimension $3$ over $R$. Then they are connected by Sarkisov links.
+		Fix a quasi-projective scheme $T$ over $R$ of positive dimension. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related, klt Mori fibre spaces of dimension $3$, projective and surjective over $T$. Then they are connected by Sarkisov links.
 	\end{theorem}
 	
 	The proof of this second theorem follows closely the work of \cite{hacon2009sarkisov}. The main technical work comes in proving a suitable version of Finiteness of Minimal Models, which is due to \cite{birkar2010existence} in characteristic $0$. 
 	
 		\begin{theorem}[\autoref{rltfiniteness}]\label{Main_Finite1}
-		Let $X \to T$ be a threefold over $R$. Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)/T$ is a klt $R$-pair. Then the following hold:
-		
+		Let $X$ be an integral, normal threefold over $R$ equipped with a projective morphism $X \to T$, where $T$ is quasi-projective over $R$ and the image of $X$ in $T$ is positive dimensional. Let $A$ be an ample $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)/T$ is a klt $R$-pair. Then the following hold:
 		\begin{enumerate}
 			\item There are finitely many birational contractions $\phi_{i}:X \dashrightarrow Y_{i}$ such that 
 			\[\mathcal{E}(C) = \bigcup \mathcal{W}_{i}=\mathcal{W}_{\phi_{i}}(C)\]
@@ -144,13 +145,15 @@
 			\item  For each $W_{i}$ there is a $j$ such that we can find a morphism $f_{i,j}: Y_{i} \to Z_{j}$ and $W_{i} \subseteq \overline{A_{j}}$.
 			\item  $\mathcal{E}(C)$ is a rational polytope and $A_{j}$ is a union of the interiors of finitely many rational polytopes.
 		\end{enumerate}
-	\end{theorem}
 	
+	If $C$ contains only klt boundaries then $A$ big and nef suffices.
+	\end{theorem}
+
 	In fact these results hold for a slightly more general class of singularities - rlt pairs, which are essentially pairs which are replaceable by linearly equivalent klt pairs locally over the base. This generalisation is necessary due to the lack of appropriate Bertini type theorems over a general ring. Even if one starts with Mori Fibre Spaces coming from a klt MMP, the Sarkisov links may involve rlt pairs. A full definition of rlt is given in \autoref{rlt-section} and a description of Sarkisov links in \autoref{Sarkisov-section}.
 	
 	\section{Termination}
 		
-	In this section we study termination for threefold pairs in mixed characteristic. In particular we require that all $R$ pairs are not wholly contained in positive characteristic, so that we can apply generic smoothness arguments.
+	In this section we study termination for threefold pairs in mixed characteristic. In particular we require that all $R$ pairs are not wholly contained in positive characteristic, so that we can apply generic smoothness arguments. As always in this chapter, we consider only positive dimensional bases.
 	
 	Termination for psuedo-effective pairs in this setting is assured by the following theorem, together with the observation that if $\kappa(K_{X}+\Delta) \geq 0$ then the pair is effective. 
 	
@@ -161,7 +164,7 @@
 		is a sequence of $(K_{X}+\Delta)$ flips. Then neither the flipped nor the flipping locus are contained the support of $\Delta_{n}$ for all sufficiently large $n$.
 	\end{theorem}
 
-	The remainder of the chapter will show that any klt MMP terminates for mixed characteristic threefolds. In particular full termination holds for pairs which are not pseudo-effective.We will heavily rely on the observation, due to \cite{katsura1985elliptic}, that $-1$ curves on the special fibre of a smooth family over a DVR can be contracted after possibly taking a finite extension of the base. We will also regularly use the following idea: If $\pi:X \to Y$ is some extremal contraction over $R$, and there is some base change $R' \to R$ such that $X_{R'}$ admits a divisorial contraction over $Y_{R'}$ then the original contraction must also have been divisorial.
+	The remainder of the chapter will show that any klt MMP terminates for mixed characteristic threefolds. In particular full termination holds for pairs which are not pseudo-effective. We will heavily rely on the observation, due to \cite{katsura1985elliptic}, that $-1$ curves on the special fibre of a smooth family over a DVR can be contracted after possibly taking a finite extension of the base. We will also regularly use the following idea: If $\pi:X \to Y$ is some extremal contraction over $R$, and there is some base change $R' \to R$ such that $X_{R'}$ admits a divisorial contraction over $Y_{R'}$ then the original contraction must also have been divisorial.
 
 	We will also need the following construction, essentially due to \cite{mumford1961topology}.
 	
@@ -195,8 +198,6 @@
 		
 		Let $\pi \colon Y' \to Y$ be a resolution of $Y$ and $X'$ be the normalisation of the dominant component of the fibre product $X\times_{Y} Y'$. From above we have $F$ on $Y$ lying over $D$ with $F \equiv_{Y} 0$. We have induced maps $g\colon X' \to Y'$ and $\phi\colon  X' \to X$. Now $g^{*}F$ is numerically trivial over $Y$, and hence over $X$. Thus as $X$ is $\mathbb{Q}$-factorial there is $D'=\phi_{*}g^{*}F$ with $\phi^{*}D'=g^{*}F$. It is clear from the construction that $D'$ is numerically trivial over $Y$ with $f_{*}D'=\pi_{*}F=D$. Suppose that $C$ is a curve lying over $D$, then we must have $D'.C =0$. If $C$ is not contained in $D'$ then since $f$ has connected fibres we may suppose that $D'$ meets $C$, up to replacing $C$ with another curve in the same fibre, but then $D'.C > 0$, a contradiction. Hence $D'$ contains every curve, and hence every fibre, over $D$. In particular it contains $V$.		
 	\end{proof}
-			
-
 	
 	
 	\begin{lemma}\cite[Lemma 9.4]{katsura1985elliptic} \label{KU}
@@ -249,7 +250,7 @@
 
 	
 	\begin{theorem}
-		Let $(X,\Delta) \to T$ be a threefold klt $R$-pair such that $X$ is supported over infinitely many closed points of $T$. Then there is some non-empty open set $U \subseteq T$ such that if $h:X \to X'$ is an extremal birational contraction which contracts a curve $C\subseteq X_{U}=X\times U$ then $h$ is a divisorial contraction.
+		Let $(X,\Delta) \to T$ be a threefold klt $R$-pair such that $X$ is supported over infinitely many closed points of $T$. Suppose that $K=K(T)$ is of characteristic $0$. Then there is some non-empty open set $U \subseteq T$ such that if $h:X \to X'$ is an extremal birational contraction which contracts a curve $C\subseteq X_{U}=X\times U$ then $h$ is a divisorial contraction.
 	\end{theorem}
 	
 	\begin{proof}
@@ -264,7 +265,7 @@
 	\end{proof}
 	
 	\begin{corollary}\label{termination}
-		Let $f:(X,\Delta) \to T$ be a $\mathbb{Q}$-factorial threefold klt pair over $R$ then any $K_{X}+\Delta$ MMP terminates.
+		Let $f:(X,\Delta) \to T$ be a $\mathbb{Q}$-factorial threefold klt pair over $R$, If $K(T)$ is of characteristic $0$ then any $K_{X}+\Delta$ MMP terminates.
 	\end{corollary}
 	
 	\begin{proof}
@@ -278,13 +279,19 @@
 		If instead $\dim T =2$ , then we may replace $f^{*}D$ in the argument above with $D'$ as found in \autoref{num-pull} and the result follows.
 		
 	\end{proof}
+
+	\begin{remark}
+		
+		The same application of $\autoref{num-pull}$ when $\dim T=2$ also shows that termination holds if $R$ is a local ring and $T \to R$ is surjective.
+		
+		\end{remark}
 	
 	
 	
 	\section{Relatively Log Terminal Pairs} \label{rlt-section}
 
 
-	Here we introduce relatively log terminal pairs, which are essentially pairs which are replaceable by a klt pair locally over the base, and verify that the main results of the MMP extends to this setting. A suitable Bertini type theorem is also established.
+	Here we introduce relatively log terminal pairs, which are essentially pairs which are replaceable by a klt pair locally over the base, and verify that the main results of the MMP extends to this setting. A suitable Bertini type theorem is also established. In this section $T$ will always be positive dimensional, in any case the results would be superfluous if $T$ were the spectrum of a field.
 	
 	\begin{definition}
 		We say an $R$-pair $(X,\Delta)/T$ is relatively log terminal (rlt) (resp. relatively log canonical (rlc)) if there is a finite open cover $U_{i}$ of $T$ such that on each $X_{i}=U_{i} \times X$ we have $(K_{X}+\Delta)|_{U_{i}} \sim_{\mathbb{R}} K_{X_{i}}+\Delta_{i}$ where $(X_{i},\Delta_{i})$ is a klt (resp. lc) pair. In this case we say that $(X,\Delta)$ is witnessed by $(X_{i},\Delta_{i})$. We also sometimes say $\Delta$ is witnessed over $U_{i}$. 
@@ -346,7 +353,7 @@
 	
 	
 	\begin{theorem}[rlt Cone Theorem]
-		Let $(X,\Delta)/T$ be an rlt $\mathbb{Q}$-factorial threefold pair $R$-pair with $\mathbb{R}$ boundary. Then there is a countable collection of curves $\{C_{i}\}$ on $X$ such that:
+		Let $(X,\Delta)/T$ be an rlt $\mathbb{Q}$-factorial threefold pair $R$-pair with $\mathbb{R}$ boundary.	Then there is a countable collection of curves $\{C_{i}\}$ on $X$ such that:
 		\begin{enumerate}
 			\item $$\overline{NE}(X/T)=\overline{NE}(X/T)_{K_{Y}+\Delta \geq 0} + \sum_{i} \mathbb{R}[C_{i}]$$
 			\item The rays $C_{i}$ do not accumulate in $(K_{Y}+\Delta)_{<0}$.
@@ -383,25 +390,30 @@
 	\end{proof}
 	
 	\begin{theorem}[Termination of rlt flips]
-		Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary. Then any sequence of $(K_{X}+\Delta)$ flips terminates.
+		Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary. If $K_{X}+\Delta$ is pseudo-effective or $K(T)$ is of characteristic $0$, then any sequence of $(K_{X}+\Delta)$ flips terminates. If $K_{X}+\Delta$ is not pseudo-effective then any MMP with scaling by an ample divisor $A$ terminates.
 	\end{theorem}
 	
 	\begin{proof}
-		Let $f^{i}:X^{i} \to X^{i+1}$ be a sequence of flips from $X=X^{0}$ of an rlt pair $(K_{X}+\Delta)$. Then $(K_{X}+\Delta)$ is witnessed over some finite open cover $U_{j}$ and the restriction $f^{i}_{j}:X_{j}^{i} \to X_{j}^{i+1}$ is a sequence of flips for the klt pair $(K_{X_{j}}+\Delta_{j})$ for each $j$. In particular for fixed $j$ the sequence eventually terminates by Corollary \ref{termination}, but then as there are finitely many $j$, the global sequence $f^{i}$ also terminates. 
+		
+		Suppose first $K_{X}+\Delta$ is pseudo-effective. Let $f^{i}:X^{i} \to X^{i+1}$ be a sequence of flips from $X=X^{0}$ of an rlt pair $(K_{X}+\Delta)$. Then $(K_{X}+\Delta)$ is witnessed over some finite open cover $U_{j}$ and the restriction $f^{i}_{j}:X_{j}^{i} \to X_{j}^{i+1}$ is a sequence of flips for the klt pair $(K_{X_{j}}+\Delta_{j})$ for each $j$. In particular for fixed $j$ the sequence eventually terminates by Corollary \ref{termination}, but then as there are finitely many $j$, the global sequence $f^{i}$ also terminates.
+		
+		Otherwise we run an MMP with scaling, and again termination may be checked on each $U_{i}$ independently. This then follows from \cite{bhatt2020}[Theorem 9.34]
 	\end{proof}
 
 \begin{theorem}[MMP for rlt pairs]\label{rltmmp}
-	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary, then we can run a $K_{X}+\Delta$ MMP and any such MMP terminates. If $K_{X}+\Delta$ is pseudo-effective then this terminates with a good log minimal model, otherwise it ends in a Mori Fibre Space. 
+	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary. If $K_{X}+\Delta$ is pseudo-effective then any MMP terminates and it does so with a good log minimal model. Otherwise there is an MMP which ends in a Mori Fibre Space. 
 \end{theorem}
 
 
 \begin{proof}
-	The first part is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log minimal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $\phi$ is a good log minimal model by \autoref{Main_Abund1} \myworries{cite}.
+	Existence of the claimed MMPs and their termination is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log minimal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $\phi$ is a good log minimal model by \autoref{Main_Abund1} \myworries{cite}.
+	
+	Otherwise $K_{X}+\Delta$ is not pseudo-effective and we run an MMP with scaling by $A$ ample. 
 \end{proof}
 
 	\section{RLT Polytopes}
 	
-	In this section we introduce rlt versions of Shokurov Polytopes and provide some key technical results for their usage in the proof of Finiteness of Minimal Models. In particular we show that $\mathcal{RL}_{A}(V)$ is in fact a rational polytope. In this section, as in all subsequent ones, $R$ will always be an excellent ring with dualising complex, $T$ will be a quasi-projective $R$ scheme and $X$ will always be an integral scheme projective over $T$. All pairs will be considered as $R$ pairs over $T$.
+	In this section we introduce rlt versions of Shokurov Polytopes and provide some key technical results for their usage in the proof of Finiteness of Minimal Models. In particular we show that $\mathcal{RL}_{A}(V)$ is in fact a rational polytope. In this section, as in all subsequent ones, $R$ will always be an excellent ring with dualising complex, $T$ will be a positive dimensional, quasi-projective $R$ scheme and $X$ will always be an integral scheme projective and surjective over $T$. All pairs will be considered as $R$ pairs over $T$.
 	
 	\begin{definition}
 		
@@ -608,9 +620,11 @@
 		After shrinking $H$ we may suppose that $A \sim A'+E$, for $A'$ such that $A'-H$ is ample, $E \geq 0$ and $A'$ shares no components with $V,H$ or $E$ with $A-H$ ample and $E \geq 0$ such that $$\{H+B+E \colon A+B \in C\}$$ is klt. Further we may then take $t >0$ sufficiently small that $$\{tA+H+B+E \colon A+B \in C\}$$ is klt and thus $$C'=\{tA+(1-t)A+H+B+E \colon A+B \in C\}$$ is rlt by Lemma \ref{bertini}. Thus we may extend $V$ to a coefficient space $W$ such that $C' \subseteq \mathcal{RL}_{tA}(W)$. By taking an open cover as before, we may in fact assume that $C$ is klt. But then the result follows by Corollary \ref{klt_finiteness}, since the components of $H$ span $NS(X)$ by constructions.	
 		
 	\end{proof}
+
+
 	
 	\begin{theorem}\label{rltfiniteness}
-		Let $A$ be a big and nef $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{RL}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{RL}_{A}(V)$ such that $(X,A+B)$ is rlt with witnesses in $V_{A}$. Then the following hold:
+		Let $A$ be an ample $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{RL}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{RL}_{A}(V)$ such that $(X,A+B)$ is rlt with witnesses in $V_{A}$. Then the following hold:
 		
 		\begin{enumerate}
 			\item There are finitely many birational contractions $\phi_{i}:X \dashrightarrow Y_{i}$ such that 
@@ -621,6 +635,8 @@
 			\item  For each $W_{i}$ there is a $j$ such that we can find a morphism $f_{i,j}: Y_{i} \to Z_{j}$ and $W_{i} \subseteq \overline{A_{j}}$.
 			\item  $\mathcal{E}(C)$ is a rational polytope and $A_{j}$ is a union of the interiors of finitely many rational polytopes.
 		\end{enumerate}
+	
+	If $C$ is an rlt polytope then $A$ big and nef suffices.
 	\end{theorem}
 	
 	\begin{proof}
@@ -646,10 +662,12 @@
 
 	\section{Geography of Ample Models}
 	
-	We keep the notation of the previous section, though we denote the closure of $\mathcal{A}_{\phi}(C)$ by $\mathcal{D}_{\phi}(C)$. We will say the span of a polytope $C$ is $$\text{Span}(C)=\{\lambda(B-B') \text{ such that } B, B' \in C \text{ and } \lambda \in \mathbb{R}\}.$$  In a slight abuse of notation we say that $C \subseteq WDiv(X)$ spans $NS(X)$ if the span of $C$ surjects onto $NS(X)$. Equivalently this means if $D$ is a divisor and $B$ is in the interior of $C$ then for all sufficiently small $t>0$ $B+tD\equiv D'_{t}$ for some $D'_{t}\in C$.
+	We keep the notation of the previous section, though we denote the closure of $\mathcal{A}_{\phi}(C)$ by $\mathcal{D}_{\phi}(C)$. As before $R$ will always be an excellent ring with dualising complex, $T$ will be a quasi-projective $R$ scheme and all other schemes will be integral and projective, surjective morphism to $T$ over $R$. All pairs will be considered as $R$ pairs over $T$. Unlike in previous sections, we will work with $A$ ample throughout.
+	
+	We will say the span of a polytope $C$ is $$\text{Span}(C)=\{\lambda(B-B') \text{ such that } B, B' \in C \text{ and } \lambda \in \mathbb{R}\}.$$  In a slight abuse of notation we say that $C \subseteq WDiv(X)$ spans $NS(X)$ if the span of $C$ surjects onto $NS(X)$. Equivalently this means if $D$ is a divisor and $B$ is in the interior of $C$ then for all sufficiently small $t>0$ $B+tD\equiv D'_{t}$ for some $D'_{t}\in C$.
 		
 	\begin{lemma}\label{close}
-		Let $X\to T$ be a $\mathbb{Q}$-factorial threefold over $R$. Let $\phi:X \dashrightarrow Y$ be a wlc model of an rlt pair $(X,\Delta)/T$. Let $C$ be an rlt polytope inside $\mathcal{L}_{A}(V)$. Then we have that $\mathcal{D}_{\phi}(C):=\overline{\mathcal{A}_{\phi}(C)} \subseteq \mathcal{W}_{\phi}(C)$ is a rational polytope, moreover if $C$ spans $NS(X)$ and contains an open set around $\Delta$ then this inclusion is an equality.
+		Let $X\to T$ be a $\mathbb{Q}$-factorial, klt threefold over $R$. Let $\phi:X \dashrightarrow Y$ be a wlc model of an rlc pair $(X,\Delta)/T$. Let $A \geq 0$ be an ample $\mathbb{Q}$-divisor and $C$ be a polytope inside $\mathcal{L}_{A}(V)$. Then we have that $\mathcal{D}_{\phi}(C):=\overline{\mathcal{A}_{\phi}(C)} \subseteq \mathcal{W}_{\phi}(C)$ is a rational polytope, moreover if $C$ spans $NS(X)$ and contains an open set around $\Delta$ then this inclusion is an equality.
 	\end{lemma}
 	
 	\begin{proof}
@@ -660,7 +678,7 @@
 	\end{proof}
 	
 	\begin{theorem}\label{assumptions}\cite[Theorem 3.3]{hacon2009sarkisov}
-		Let $C$ be a polytope inside $\mathcal{RL}_{A}(V)$, then there are finitely many $f_{i}:X \dashrightarrow Y_{i}$ with the following. properties.
+		Let $C$ be a polytope inside $\mathcal{RL}_{A}(V)$, then there are finitely many maps $f_{i}:X \dashrightarrow Y_{i}$ over $T$ with the following. properties.
 		
 		\begin{enumerate}
 			\item $\{A_{i}=A_{f_{i}}(C)\}$ partition $\mathcal{E}(C)$. If $f_{i}$ is birational then $\mathcal{D}_{i}=\mathcal{D}_{\phi_{i}}(C)$ is a rational polytope.
@@ -688,7 +706,7 @@
 	For brevity we fix some notation, essentially due to Shokurov.
 	
 	\begin{definition}
-		Take a coefficient space $V$, an ample divisor $A$ and then let $C$ be an rlt polytope inside some $\mathcal{RL}_{A}(V)$.
+		Take a coefficient space $V$, an ample divisor $A$ and then let $C$ be a polytope inside some $\mathcal{RL}_{A}(V)$.
 		
 		Suppose that $3$ and $4$ of the previous lemma hold for $C$, then the triple $(C,A,V)$ is a said to be a geography, when $A$ and $V$ are clear we sometimes just call $C$ a geography. The dimension of $(C,A,V)$ will be the dimension of $C$.
 		The $\mathcal{D}_{\phi}$ are called classes.
@@ -707,7 +725,6 @@
 	\end{proof}
 
 	
-
 	\begin{lemma}
 		Suppose $V$ is a coefficient space which spans $NS(X)$. Let $C$ be any polytope contained $\mathcal{RL}_{A}(V)$, then after perturbing the vertices by an arbitrarily small amount $(C,A,V)$ is a geography.
 	\end{lemma}
@@ -718,8 +735,9 @@
 	\begin{lemma}\cite[Lemma 3.6]{hacon2009sarkisov}\label{amp}
 		Let $(X,\Delta)/T$ be an rlt pair. Suppose that $B-\Delta$ is ample and $f$ is an ample model for $K_{X}+B$. Then $f$ is an MMP for $(X,\Delta)$.
 	\end{lemma}
+
 \begin{lemma}\label{geo}
-	Suppose that $f_{i}: (X,\Delta) \to (Y_{i},\Delta_{i})$ for $i=1,..n$ are a finite collection of $\mathbb{Q}$-factorial Mori Fibre spaces obtained by running an MMP for an rlt pair $(X,\Delta)$ with $X$ smooth. Then there is a geography $(C,A,V)$ for $(X,\Delta)$ of dimension at most $n$ such that every $\mathcal{D}_{f_{i}}$ is a country. 
+	Suppose that $f_{i}: (X,\Delta) \to (Y_{i},\Delta_{i})$ for $i=1,..n$ are a finite collection of $\mathbb{Q}$-factorial Mori Fibre spaces obtained by running an MMP for an rlt pair $(X,\Delta)$ with $X$ regular. Then there is a geography $(C,A,V)$ for $(X,\Delta)$ of dimension at most $n$ such that every $\mathcal{D}_{f_{i}}$ is a country. 
 	
 	Moreover if $g_{i}:Y_{i}\to Z_{i}$ are the Mori Fibrations and we write $h_{i}=g_{i}\circ f_{i}$. Then we may choose $C$ such that $\mathcal{D}_{h_{i}}$ are borders of the $\mathcal{D}_{f_{i}}$ and their interiors are connected by a path through the border of $\mathcal{E}(C)$ contained entirely in the interior of $C$.
 \end{lemma}
@@ -822,8 +840,9 @@
 
 \section{Sarkisov Program} \label{Sarkisov-section}
 
+Fix a positive dimensional quasi-projective $R$ scheme, $T$. Suppose that $f:X \to Z$, $g:Y \to W$ are two Mori Fibre Spaces, projective and surjective over $T$. We say that they are Sarkisov related if they are both outputs of an MMP from the same $\mathbb{Q}$-factorial rlt pair. In particular we require $X,Y$ to be $\mathbb{Q}$-factorial. 
 
-Suppose that $f:X \to Z$, $g:Y \to W$ are two Mori Fibre Spaces over $R$. A sarkisov link $s:X \dashrightarrow Y$ is one the following.
+A sarkisov link $s:X \dashrightarrow Y$ is one the following.
 
 \[\begin{tikzcd}
 X' \arrow[d] \arrow[r, dotted] \arrow[r, "I", phantom, bend left=49] & Y \arrow[d]  & X' \arrow[r, dotted] \arrow[d] \arrow[r, "II",phantom, bend left=49] & Y' \arrow[d] & X \arrow[r, dotted] \arrow[d] \arrow[r, "III", phantom, bend left=49] & Y' \arrow[d] & X \arrow[d] \arrow[rr, dotted] \arrow[rr, "IV",phantom, bend left] &   & Y \arrow[d]       \\
@@ -834,7 +853,7 @@ Z                                                                    &          
 
 Such that the following holds:
 \begin{itemize}
-	\item There is an rlt pair $(X,\Delta)$ or $(X',\Delta')$ as appropriate such that the horizontal map is a sequence of flops for this pair
+	\item There is an rlt pair $(X,\Delta)/T$ or $(X',\Delta')/T$ as appropriate such that the horizontal map is a sequence of flops for this pair
 	\item Every vertical morphism is a contraction
 	\item If the target of a vertical morphism is $X$ or $Y$ then it is an extremal divisorial contraction
 	\item Either $p,q$ are both Mori Fibre Spaces (this is type $IV_{m}$) or they are both small contractions (type $IV_{s}$)
@@ -871,9 +890,9 @@ Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow 
 %	\end{itemize}
 %
 
-	\begin{theorem}\cite[Theorem 3.7]{hacon2009sarkisov}\label{islinked}
+\begin{theorem}\cite[Theorem 3.7]{hacon2009sarkisov}\label{islinked}
 		With notation as above, suppose $B$ is any divisor with $\Delta-B$ ample. Then $q:Y \to S$ and $q: W \to T$ are two Mori Fibre spaces obtained by running $(X,B)$ MMPs and they are connected by Sarkisov links.
-	\end{theorem}
+\end{theorem}
 %	
 %	\begin{proof}
 %		That $\phi$, $\psi$ are obtained by running MMP's follows straight from Lemma \cite{amp}. By Lemma \ref{links}, $p:Y \to S$ and $q:W \to S_{1}$ are both Mori Fibre Spaces.We also have that $h_{i}: Y_{i} \to Z$ have $\rho(Y_{i}/Z) \leq 2$ and they factor as $Y_{i} \to S_{j} \to Z$ for $j=i,i-1$ where $Y_{i} \to S_{j}$ has Picard rank at most $1$. 
@@ -895,12 +914,12 @@ Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow 
 %	\end{proof}
 
 	\begin{theorem}\label{sarkisov}
-		Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces of dimension $3$ over $R$. Then they are connected by Sarkisov links.
+		Fix $T$ an integral, normal, quasi-projective $R$ scheme of positive dimension. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces of dimension $3$. Suppose they are projective and surjective over $T$. Then they are connected by Sarkisov links.
 	\end{theorem}
 
 	\begin{proof}
 		
-		By assumption these Mori fibre spaces are outputs of an MMP for some pair $(X,\Delta)/T$. Replacing $X$ with a suitable resolution, we may suppose that $X$ is smooth and admits morphisms $f_{i}:X \to Y_{i}$. Let $h_{i}=g_{i} \circ f_{i}$ then by Lemma $\ref{geo}$ there is a geography for $(X,\Delta)$ of dimension $2$ such that the $\mathcal{D}_{f_{i}}(C)$ are countries and the interiors of the $\mathcal{D}_{h_{i}}$ are connected by a path along the boundary of $\mathcal{E}(C)$. 
+		By assumption these Mori fibre spaces are outputs of an MMP for some pair klt $(X,\Delta)/T$. Replacing $X$ with a suitable resolution, we may suppose that $X$ is smooth and admits morphisms $f_{i}:X \to Y_{i}$. Let $h_{i}=g_{i} \circ f_{i}$ then by Lemma $\ref{geo}$ there is a geography for $(X,\Delta)$ of dimension $2$ such that the $\mathcal{D}_{f_{i}}(C)$ are countries and the interiors of the $\mathcal{D}_{h_{i}}$ are connected by a path along the boundary of $\mathcal{E}(C)$. 
 		
 		Each ridge in this path corresponds to a Sarkisov link by Theorem \ref{islinked}. Thus following the path gives a (non-unique) decomposition of $f_{2} \circ f_{1}^{-1} \colon Y_{1} \dashrightarrow Y_{2}$ into Sarkisov links. Since $\mathcal{E}(C)$ is a rational polytope, there are finitely many links.
 		
