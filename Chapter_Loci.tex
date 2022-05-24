@@ -159,7 +159,7 @@ Suppose that one of the following holds:
 Then $\BS(L)=\mathbb{E}(L)$.
 \end{theorem}
 
-We also extend the semiampleness result of \cite{witaszek2020keel} to show that there is an equality of stable base loci when the characteristic $0$ part is semiample.
+We also extend the semiampleness result of \cite{witaszek2020keels} to show that there is an equality of stable base loci when the characteristic $0$ part is semiample.
  
  \begin{theorem}[\autoref{Main_Loci2}]
  	Suppose that $X$ is a projective scheme over an excellent Noetherian base with $L$ a nef line bundle on $X$. Then $\SB(L)=\SB(L|_{\mathbb{E}(L)})$ so long as $L|_{X_{\mathbb{Q}}}$ is semiample.
@@ -180,7 +180,6 @@ Since the questions considered are local on the base, it suffices to work only w
 	Fix an ample line bundle $A$. The augmented base locus is given as 
 	$$\BS(L)=\bigcap_{m \geq 0}\SB(mL-A)$$
 	and is independent of the choice of $A$.
-	
 \end{definition}
 
 We could also write \[\BS(L)= \bigcap_{A \text{ ample, } m \geq 0}\SB(mL-A)\] for a definition that involves no choice of ample line bundle. By Noetherianity if we choose $m$ sufficiently large and divisible then in fact $\BS(L)=\SB(mL-A)$.
@@ -191,7 +190,7 @@ We could also write \[\BS(L)= \bigcap_{A \text{ ample, } m \geq 0}\SB(mL-A)\] fo
 
 The previous two definitions are invariant under scaling by $n \in \mathbb{N}_{\geq 0}$ and line bundles will frequently be replaced with higher multiples.
 
-\begin{theorem}\cite{witaszek2020keel}[Theorem 1.10]\label{red}
+\begin{theorem}\cite{witaszek2020keels}[Theorem 1.10]\label{red}
 	Suppose that $X$ is a projective scheme over an excellent Noetherian base $S$ and $L$ is a nef line bundle on $X$. Then if $L|_{X_{red}}$ and $L|_{X_{\mathbb{Q}}}$ are semiample so too is $L$.
 \end{theorem}
 
@@ -245,7 +244,7 @@ The previous two definitions are invariant under scaling by $n \in \mathbb{N}_{\
 	
 \end{remark}
 
-\begin{lemma}\label{Blowup-close}\cite{eisenbud2000geometry}[Proposition IV-21]
+\begin{lemma}\label{Blowup-close}\cite{eisenbud2006geometry}[Proposition IV-21]
 	Let $X$ be a scheme and $Z \subseteq X$ a subscheme with $Y \to X$ the blowup of $X$ along $Z$. If $f:X' \to X$ is any morphism and we write $Z'=f^{-1}Z$, then the closure $W$ of $\pi_{X'}^{-1}(X'\setminus Z')$ inside $X' \times_{X} Y$ is exactly the blowup of $X'$ along $Z'$.
 \end{lemma}
 
@@ -334,13 +333,13 @@ Together these tell us that 'the blowup of the reduction is the reduction of the
 
 \section{Stable Base Loci}
 
-In this section we will examine the stable base locus of line bundles which are semiample over $\mathbb{Q}$. This is then applied to the case of a big and nef line bundle restricted to its exceptional locus.  We begin with an extension of \cite[Theorem 1.10]{witaszek2020keel}. The proof follows the same structure, however more care is needed to keep track of sections.\\
+In this section we will examine the stable base locus of line bundles which are semiample over $\mathbb{Q}$. This is then applied to the case of a big and nef line bundle restricted to its exceptional locus.  We begin with an extension of \cite[Theorem 1.10]{witaszek2020keels}. The proof follows the same structure, however more care is needed to keep track of sections.\\
 
-If $L$ is a line bundle on $X$, semiample over $\mathbb{Q}$, we would like to claim that $\SB(L)=\SB(L|_{X_{red}})$. If $L$ or $L|_{X_{red}}$ is semiample then this follows from \cite[Thereom 1.10]{witaszek2020keel}. We would then like to prove the general case by blowing up the base locus of $L|_{X_{red}}$ and reducing to the case that the line bundle is semiample on the reduction. Unfortunately if $Y \to X$ is a blowup then the pullback map $H^{0}(X,L) \to H^{0}(Y,\pi^{*}L)$ is, in general, neither injective nor surjective if $X$ is not integral. It is the lack of surjectivity that causes the issues, since we ultimately wish to show the existence of sections on the original scheme.\\ 
+If $L$ is a line bundle on $X$, semiample over $\mathbb{Q}$, we would like to claim that $\SB(L)=\SB(L|_{X_{red}})$. If $L$ or $L|_{X_{red}}$ is semiample then this follows from \cite[Thereom 1.10]{witaszek2020keels}. We would then like to prove the general case by blowing up the base locus of $L|_{X_{red}}$ and reducing to the case that the line bundle is semiample on the reduction. Unfortunately if $Y \to X$ is a blowup then the pullback map $H^{0}(X,L) \to H^{0}(Y,\pi^{*}L)$ is, in general, neither injective nor surjective if $X$ is not integral. It is the lack of surjectivity that causes the issues, since we ultimately wish to show the existence of sections on the original scheme.\\ 
 
 Suppose for example $X$ is the union of two normal projective schemes $X_{1}$, $X_{2}$. Then if $\pi:Y \to X$ is the blowup of $X_{2}$, the map factors through the closed immersion $X_{1} \hookrightarrow X$. Of course if $L$ is a line bundle on $X$ then $H^{0}(X,L) \to H^{0}(X_{1},L|_{X_{1}})\simeq H^{0}(Y,\pi^{*}L)$ is typically not a surjection.\\
 
- The idea in \cite[Thereom 1.10]{witaszek2020keel} is essentially to show that $L$ is semiample by producing a candidate morphism via pushout. Then one can lift sections back to $L$ by building them from suitable sections of $L|_{X_{red}}$ and $L|_{X_{\mathbb{Q}}}$, up to perhaps replacing the line bundle with a higher power. The key remedy then, is to show that if we blow up the base locus of $L|_{X_{red}}$ via $\pi:Y \to X$, we may build sections of $\pi^{*}L$ on $Y$ using only those coming from $X_{red}$ and $X_{\mathbb{Q}}$.\\
+ The idea in \cite[Thereom 1.10]{witaszek2020keels} is essentially to show that $L$ is semiample by producing a candidate morphism via pushout. Then one can lift sections back to $L$ by building them from suitable sections of $L|_{X_{red}}$ and $L|_{X_{\mathbb{Q}}}$, up to perhaps replacing the line bundle with a higher power. The key remedy then, is to show that if we blow up the base locus of $L|_{X_{red}}$ via $\pi:Y \to X$, we may build sections of $\pi^{*}L$ on $Y$ using only those coming from $X_{red}$ and $X_{\mathbb{Q}}$.\\
 
 \begin{theorem}\label{BaseRed}
 		Let $S$ be an excellent, Noetherian scheme, take $X$ a projective scheme over $S$ and $L$ a line bundle on $X$. Write $i:X_{red} \to X$ for the inclusion of the reduced scheme. Suppose that $L_{X_{\mathbb{Q}}}$ is semiample. Then $\SB(L)=\SB(L_{X_{red}})$.
@@ -358,7 +357,7 @@ Suppose for example $X$ is the union of two normal projective schemes $X_{1}$, $
 	
 	By definition the basis $s_{i}$ of $H^{0}(X,L)$ now induces $\hat{s}_{i}$ in $H^{0}(Y_{red},M|_{Y_{red}})$ which globally generate the line bundle. This induces a morphism $\psi: Y \to Z$ over $S$. Then $Z_{\mathbb{Q}} \to Z'_{\mathbb{Q}}$ is a finite universal homeomorphism by \cite[Tag 02OG]{stacks-project}. 
 	
-	Now by \cite[Theorem 1.7, Corollary 4.20 and Lemma 2.20]{witaszek2020keel}, there is a scheme $Z'$ and a line bundle $H'$ on $Z$ such that the following diagram commutes at the level of line bundles.
+	Now by \cite[Theorem 1.7, Corollary 4.20 and Lemma 2.20]{witaszek2020keels}, there is a scheme $Z'$ and a line bundle $H'$ on $Z$ such that the following diagram commutes at the level of line bundles.
 	
 	\[\begin{tikzcd}
 	{(Y,M)}                                 & {(Y_{\mathbb{Q}},M_{\mathbb{Q}})} \arrow[ddd, bend left=70] \arrow[l]     \\
@@ -385,7 +384,7 @@ Suppose for example $X$ is the union of two normal projective schemes $X_{1}$, $
 	\\
 	\textbf{Step 3: Glue sections on the original scheme.}\\
 
-	By \cite[Proposition 3.5]{witaszek2020keel}, we have the following commutative diagram. 
+	By \cite[Proposition 3.5]{witaszek2020keels}, we have the following commutative diagram. 
 	
 	\[
 	\begin{tikzcd}
@@ -519,7 +518,7 @@ This section considers the augmented base locus of a nef line bundle and its rel
 	
 	Take $A$ ample with $\SB(mL-A)=\BS(L)$ and $\SB((mL-A)|_{X_{red}})=\BS(L|_{X_{red}})$. Suppose first that $\mathbb{E}(L)=\SB((mL-A)|_{X_{red,\mathbb{Q}}}) \neq X_{red,\mathbb{Q}}$, in which case $\SB((mL-A)|_{X_{\mathbb{Q}}}) \neq X_{\mathbb{Q}}$ since we have $\SB((mL-A)|_{X_{\mathbb{Q}}})=\mathbb{E}(L)$. Hence there is some non-zero section $t$ of $mL-A$ which does not vanish everywhere on $X_{red}$. Otherwise $\SB((mL-A)|_{X_{red,\mathbb{Q}}}) = X_{red}$, that is $$H^{0}(X_{red,\mathbb{Q}},k(mL-A)|_{X_{red,\mathbb{Q}}}) =0$$ for all $k$. 
 	
-	Since $\mathbb{E}(L|_{X_{red}})=\mathbb{E}(L) \neq X$, $L|_{X_{red}}$ is still big. Now by \autoref{bigsecs} there is a section $s\in H^{0}(X_{red},(mL-A)|_{X_{red}})$ which does not vanish on any component on which $L|_{X_{red}}$ is big. In particular it does not vanish everywhere. Then since $H^{0}(X_{red,\mathbb{Q}},(mL-A)|_{X_{red,\mathbb{Q}}}) =0$ we may use \cite[Proposition 3.5]{witaszek2020keel} to lift $s$ to a section $t$ of $H^{0}(X,p^{e}(mL-A))$ for some $e > 0$ with $t|_{X_{red}}=s^{p^{e}}$, so $t$ is precisely the non-vanishing section we seek.\\
+	Since $\mathbb{E}(L|_{X_{red}})=\mathbb{E}(L) \neq X$, $L|_{X_{red}}$ is still big. Now by \autoref{bigsecs} there is a section $s\in H^{0}(X_{red},(mL-A)|_{X_{red}})$ which does not vanish on any component on which $L|_{X_{red}}$ is big. In particular it does not vanish everywhere. Then since $H^{0}(X_{red,\mathbb{Q}},(mL-A)|_{X_{red,\mathbb{Q}}}) =0$ we may use \cite[Proposition 3.5]{witaszek2020keels} to lift $s$ to a section $t$ of $H^{0}(X,p^{e}(mL-A))$ for some $e > 0$ with $t|_{X_{red}}=s^{p^{e}}$, so $t$ is precisely the non-vanishing section we seek.\\
 	\\
 	\textbf{Step 2: Reduce to $Z=Z(t)$.}\\
 	

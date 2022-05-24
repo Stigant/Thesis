@@ -1,4 +1,3 @@
-
 %\documentclass[a4paper,12pt]{book}
 %\usepackage[a4paper, margin=1in]{geometry}
 %\setlength{\parindent}{0cm}
@@ -113,49 +112,56 @@
 %\newcommand\myworries[1]{\textcolor{red}{#1}}
 %
 %\begin{document}
+\begin{document}
 
 \chapter{Preliminaries}
-\section{Singularity Theory}
+\section{Singularity Theory} \label{Sings}
 
 We begin by collecting relevant notions of singularities for the minimal model program in mixed and positive characteristic. These include classic notions coming from the characteristic $0$ setting, as well as algebraic singularity conditions developed in the positive characteristic setting.
 
 \subsection{Singularities of pairs}
 Here $\mathbb{K}$ will be taken to mean either $\mathbb{R}$ or $\mathbb{Q}$. If no field is specified, it is taken to be $\mathbb{R}$.
 
-In full generality we have the following set-up.
+We will be interested in log pairs. 
+
+\begin{definition}
+	
+	A sub-log pair $(X,\Delta)$ is an excellent, Noetherian, integral, normal scheme $X$ together with an $\mathbb{R}$-divisor $\Delta$ such that $(K_{X}+\Delta)$ is $\mathbb{R}$-Cartier. If $\Delta$ is effective, we say $(X,\Delta)$ is a log pair.
+	
+	\end{definition}
+
+In practice we study these almost exclusively in the following context.
 
 \begin{definition}\label{setup}
 	An $R$-pair $(X,\Delta)/ T$ with $\mathbb{K}$-boundary will be the following data:
 	\begin{itemize}
 		\item An excellent, normal ring $R$ of finite dimension which admits a dualising complex and whose residue fields have characteristic at least $5$;
-		\item A quasi-projective $R$-variety $T$;
-		\item A normal, integral scheme $X$ projective over $T$; and
+		\item A quasi-projective $R$-scheme $T$;
+		\item A normal, integral scheme $X$;
+		\item A projective contraction $f \colon X \to T$;
 		\item A $\mathbb{K}$-divisor $\Delta \geq 0$ with $(K_{X}+\Delta)$ $\mathbb{K}$-Cartier, for $\mathbb{K}=\mathbb{R}$ or $\mathbb{Q}$.
 	\end{itemize}
 	
 	The dimension of such a pair is the dimension of $X$. Equally the pair is said to $\mathbb{Q}$-factorial if $X$ is.
+	
+	If $\Delta$ is not effective but $(X,\Delta)$ would otherwise be an $R$-pair with $\mathbb{K}$ boundary we call it an $R$-sub-pair with $\mathbb{K}$ boundary.
 \end{definition}
 
-\begin{remark}
-	
-	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the the kind of MMPs we wish to run. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
-\end{remark}
+Note that $f \colon X \to T$ is a contraction ensures that $X \to T$ is surjective and $T$ is integral and normal. We include this assumption for notational simplicity. All results extend to the case $f$ is not a contraction by taking a Stein factorisation, though for some results this may require assumptions on the dimension of $T$ be replaced with corresponding assumptions on the dimension of $X$. 
 
-In practice we will often have $T=R$. In this case we omit $T$ from the notation and say only that $(X,\Delta)$ is an $R$-pair. If further $R=\kappa$ is a field, we often say one that $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair, depending on context.
 
-We will often ask that $X \to T$ has positive dimensional image, in this case we just say $(X,\Delta)/T$ is an $R$-pair with positive dimensional image. This is because many results for threefolds are not known in greater generality than this, for example much is unknown when $X$ is a variety over a perfect field.
+%\begin{remark}
+%	
+%	We require the relative data of $R$ and $T$ so that the notion of an $R$-pair captures the the kind of MMPs we wish to run. Many notions of singularity do not depend on this data however, instead many of them are local on $X$. For such notions we may work affine locally on $X$ and let $X \to T \to R$ be the identity map to recover these as intrinsic notions of singularity.
+%\end{remark}
+
+In practice we will often have $T=R$. In this case we may omit $T$ from the notation and say only that $(X,\Delta)$ is an $R$-pair. If further $R=\kappa$ is a field, we often say one that $(X,\Delta)$ is a pair over a field or just that $(X,\Delta)$ is a pair, depending on context. Finally if $\Delta=0$ we just say that $X/T$ is an $R$-pair.
+
+We will often ask that $X \to T$ has positive dimensional image, or equally that $T$ is positive dimensional. This is because many results for threefolds are not known in greater generality than this, for example much is unknown when $X$ is a variety over a perfect field.
 
 In cases where $R$ is clear from context we often describe an $R$-pair with $\mathbb{K}$-boundary as a $\mathbb{K}$-pair. While we will sometimes work with schemes over a field of characteristic $0$, it will never be relevant whether that field is $\mathbb{Q}$ or $\mathbb{R}$. Therefore a $\mathbb{K}$-pair will only ever mean a pair with coefficients in $\mathbb{K}$ and never pair whose underlying scheme is of finite type over the field $\mathbb{K}$. 
 
-\begin{definition}
-	If $\Delta$ is not effective but $(X,\Delta)/T$ would otherwise be an $R$-pair with $\mathbb{K}$ boundary we call it an $R$-sub-pair with $\mathbb{K}$ boundary.
-	
-	The index of a (sub)-pair (resp. $\mathbb{Q}$ Gorenstein variety) is the minimal $r>0$ with $r(K_{X}+\Delta)$ ($rK_{X}$) Cartier.
-\end{definition}
-
-Suppose that $X$ is $\mathbb{Q}$-Gorenstein with index $m$. Let $Y$ be an integral, normal scheme then given a projective birational morphism $f:Y \to X$ we have a canonical identification $f^{*}mK_{X}+\sum(ma_{i})E_{i}=mK_{Y}$, where $E_{i}$ are exceptional. For simplicity we write $f^{*}K_{X}+\sum a_{i}E_{i} =K_{Y}$.
-
-More generally if $(X,\Delta)$ is an $R$-sub-pair of index $r$ we may write $f^{*}(K_{X}+\Delta)=K_{Y}+ \Delta_{Y}$ where $\Delta_{Y}=\sum -a(Y,E,X,\Delta)E$ agrees with $\Delta$ away from the exceptional locus. Then $(Y,\Delta_{Y})$ is a sub pair of index $r_{Y}$ dividing $r$. Clearly pulling back $k(K_{X}+\Delta)$ where $r|k$ does not change the outcome.
+Since $K_{X}+\Delta$ is $\mathbb{R}$-Cartier, we may pull it back along any morphism $\pi\colon  Y \to X$. If $\pi$ is birational then there is a unique choice of $\Delta_{Y}=\sum -a(Y,E,X,\Delta)E$ which agrees with $\Delta$ away from the exceptional locus of $\pi$ such that $\pi^{*}(K_{X}+\Delta)\sim_{\mathbb{R}}=K_{Y}+\Delta_{Y}$. In a slight abuse of notation we write $f^{*}(K_{X}+\Delta)=(K_{Y}+ \Delta_{Y})$.
 
 Suppose that there are normal, integral schemes $Y_{i}$ with $f_{i}:Y_{i} \to X$ birational and there is a some normal, integral scheme $Z$ with $g_{i}:Z\to Y_{i}$. If $E_{i}$ are divisors on $Y_{i}$ with a common strict transform $E$ then $a(Z,E,X,\Delta)=a(Z,E,Y_{i},\Delta_{Y_{i}})=a(Y_{i},E_{i},X,\Delta)$ since we have $g_{i}^{*}f_{i}^{*}r(K_{X}+\Delta)=g_{i}^{*}r(K_{Y_{i}}+\Delta_{Y_{i}})$.
 
@@ -165,7 +171,7 @@ For every prime divisor $E$ on a birational model, $Y$, of $X$ we have an associ
 
 In general, the converse is false. Not every valuation can be applied to $K_{X}$ in this fashion.
 
-For example suppose $X$ is a proper normal variety over a field which is not $\mathbb{Q}$-Gorenstein. Let $U$ be the smooth locus and $P$ at which $X$ is not $\mathbb{Q}$-Gorenstein. We may blowup $X$ at $P$ to give $Y \to X$ with $E$ lying over $P$. Then $U$ is smooth and birational to $Y$, but we cannot take the valuation of $K_{U}$ with respect to $E$ since no multiple of $K_{U}$ is Cartier on $X$. If we wish to think of the $a(X,\Delta,E)$ as coming from valuations we must, therefore, consider only those with non-empty center on $X$. 
+For example suppose $X$ is a proper normal variety over a field which is not $\mathbb{Q}$-Gorenstein. Let $U$ be the smooth locus and $P$ a point at which $X$ is not $\mathbb{Q}$-Gorenstein. We may blowup $X$ at $P$ to give $Y \to X$ with $E$ lying over $P$. Then $U$ is smooth and birational to $Y$, but we cannot take the valuation of $K_{U}$ with respect to $E$ since no multiple of $K_{U}$ is Cartier on $X$. If we wish to think of the $a(X,\Delta,E)$ as coming from valuations we must, therefore, consider only those with non-empty center on $X$. 
 
 \begin{definition}
 	Let $A$ be an integral domain with $\text{Frac}(A)=K$ and $R$ a DVR in $K$ with maximal ideal $m_{R}$. Then the center of $R$ in $A$ is $m_{R}\cap A$. We extend the definition to normal, integral schemes in the natural fashion.
@@ -173,24 +179,23 @@ For example suppose $X$ is a proper normal variety over a field which is not $\m
 
 If $X$ is of finite type over a locally Noetherian scheme $T$ then $X$ is proper over $T$ if and only if every $T$-valuation has non-empty centre on $X$, by the valuative criterion of properness \cite{stacks-project}[Tag 0208]. 
 
-Equally for a prime divisor $E$ on a birational model $Y$ of $X$, we can think of it as having non-empty centre on $X$ if there is a dominating model $Z \to X,Y$ such that the generic point of $E$ is contained in the image of $Z$ on $Y$. This is the same as asking for the valuation it induces to have non-empty centre on $X$. In fact we can realise the centre of the valuation is the closure of the strict transform of $E$.
+Equally for a prime divisor $E$ on a birational model $Y$ of $X$, we can think of it as having non-empty centre on $X$ if there is a dominating model $Z \to X,Y$ such that the generic point of $E$ is contained in the image of $Z$ on $Y$. This is the same as asking for the valuation it induces to have non-empty centre on $X$. In fact we can realise the centre of the valuation as the closure of the strict transform of $E$.
 
 For simplicity, we will always think of a divisor $E$ with non-empty centre on $X$ as lying on a model $Y$ which dominates $X$. Since the valuation does not depend on the birational model, we can always choose a higher model to ensure this is a valid assumption. 
 
 \begin{definition}
 	
-	Let $\pi:Y \to X$ be a proper birational morphism of integral, normal $R$ schemes. A divisor $E$ on $Y$ is said to be exceptional if $\pi$ is not an isomorphism at the generic point of $E$, or equally if the centre of $E$ is not a divisor on $X$.
+	Let $\pi:Y \to X$ be a proper birational morphism of integral, normal schemes. A divisor $E$ on $Y$ is said to be exceptional if $\pi$ is not an isomorphism at the generic point of $E$, or equally if the centre of $E$ is not a divisor on $X$.
 	
 	Given a sub-pair $(X,\Delta)$ we define the discrepancy $$\text{Disc}(X,\Delta):=\inf \{a(E,X,\Delta) \text{ such that } E \text{ is exceptional and has non-empty center on } X\}$$
 	and the total discrepancy 
-	
-	$$\text{TDisc}(X,\Delta):=\inf \{a(E,X,\Delta) \text {such that } E \text{ has non-empty center on } X\}$$
+	$$\text{TDisc}(X,\Delta):=\inf \{a(E,X,\Delta) \text { such that } E \text{ has non-empty center on } X\}$$
 \end{definition}
 
 We then use this define a suite of singularities.
 
 \begin{definition}
-	Let $(X,\Delta)/T$ be an $R$-(sub)-pair then we say that $(X,\Delta)/T$ is
+	Let $(X,\Delta)$ be a (sub)-log pair then we say that $(X,\Delta)$ is
 	\begin{itemize}
 	\item 	(sub) terminal if $\text{Disc}(X,\Delta) > 0$
 	\item	(sub) canonical if $\text{Disc}(X,\Delta)\geq 0$
@@ -205,16 +210,16 @@ We then use this define a suite of singularities.
 	Klt is short for Kawamata log terminal and lc is short for log canonical.
 	\end{remark}
 
-For $\epsilon=0$ we say klt, lc respectively. An equivalent formulation of lc is that $\text{Disc}(X,\Delta) \geq -1$ as this condition ensures that $\Delta$ has coefficients bounded above by $1$.
+For $\epsilon=0$ we say klt, lc respectively. We also say $X$ has singularities of type X to mean $(X,0)$ has such. An equivalent formulation of lc is that $\text{Disc}(X,\Delta) \geq -1$ as this condition ensures that $\Delta$ has coefficients bounded above by $1$.
 
 \begin{lemma}
 	
-	Let $(X,\Delta)/T$ be an $R$-(sub)-pair with $\text{Disc}(X,\Delta) \geq -1$, then $X$ is lc.
+	Let $(X,\Delta)$ be a (sub)-log pair with $\text{Disc}(X,\Delta) \geq -1$, then $X$ is lc.
 	
 	\end{lemma}
 
 \begin{proof}
-Since $X$ is normal we may pick $D$ in the support $\Delta$ and localise at $Q$ a point of codimension $2$ inside the smooth locus of $X$ and $D$ which meets no other component of $\Delta$. This reduces us to the case that $X$ is smooth of dimension $2$ and the support of $D$ is a smooth curve, $C$. Now suppose for contradiction that $D=(1+\epsilon)C$ for $\epsilon > 0$. If we blow up the closed point, we get an exceptional divisor $E$ with $a(E,X,\Delta)=-\epsilon$. Blowing up the intersection of $E$ and the strict transform of $\Delta$ gives $E_{2}$ with $a(E_{2},X,\Delta)=-2\epsilon$. Continuing in this fashion we can find $E_{n}$ with $a(E_{n},X,\Delta)=-n\epsilon< -1$ for some suitably large $n$.
+	Suppose for contradiction $X$ has $\text{Disc}(X,\Delta) \geq -1$ but not $\text{TDisc}(X,\Delta) \geq -1$. Let $D$ be in the support of $\Delta$ with $\text{Coeff}_{D}(\Delta) > 1$. Since $X$ is normal we may localise at $Q$ a point of codimension $2$ inside the smooth locus of $X$ and $D$ which meets no other component of $\Delta$. This reduces us to the case that $X$ is smooth of dimension $2$ and the support of $D$ is a smooth curve, $C$. Now by assumption we have that $D=(1+\epsilon)C$ for $\epsilon > 0$. If we blow up the closed point, we get an exceptional divisor $E$ with $a(E,X,\Delta)=-\epsilon$. Blowing up the intersection of $E$ and the strict transform of $\Delta$ gives $E_{2}$ with $a(E_{2},X,\Delta)=-2\epsilon$. Continuing in this fashion we can find $E_{n}$ with $a(E_{n},X,\Delta)=-n\epsilon< -1$ for some suitably large $n$.
 
 Since $\text{Disc}(X,\Delta) \geq -1$ no such $E_{n}$ can exist, so the result holds by contradiction.
 \end{proof}
@@ -225,9 +230,9 @@ When we have resolution of singularities there is another, more practical versio
 
 \begin{definition}
 	
-	We say $(X,\Delta)/T$ is log smooth (resp. regular) if $X$ is a smooth (resp. regular) $T$-scheme and $\Delta=\sum d_{i}D_{i}$ is a divisor with normal crossing support
+	We say $(X,\Delta)$ is log regular if $X$ is a regular $T$-scheme and $\Delta=\sum d_{i}D_{i}$ is a divisor with normal crossing support
 	
-	If $(X,\Delta)/T$ is an $R$ pair and $\pi:Y \to X$ is projective, birational morphism with exceptional locus $E$ such that $(Y,\pi^{-1}_{*}\Delta+E)$ is log regular then $\pi:Y\to X$ is a log resolution of $(X,\Delta)$. In this case, we sometimes say $\pi:Y \to (X,\Delta)$ is a log resolution.
+	If $(X,\Delta)$ is a sub-log pair and $\pi:Y \to X$ is projective, birational morphism with exceptional locus $E$ such that $(Y,\pi^{-1}_{*}\Delta+E)$ is log regular then $\pi:Y\to X$ is a log resolution of $(X,\Delta)$. In this case, we sometimes say $\pi:Y \to (X,\Delta)$ is a log resolution.
 	
 \end{definition}
 
@@ -238,7 +243,7 @@ When we have resolution of singularities there is another, more practical versio
 	\end{remark}
 
 \begin{lemma}
-	Suppose that $(X,\Delta)/T$ is log regular. Let $E$ be a prime divisor with center $V\neq E$ on $X$, write $P$ for the generic point of $V$. 
+	Suppose that $(X,\Delta)$ is log regular. Let $E$ be a prime divisor with center $V\neq E$ on $X$, write $P$ for the generic point of $V$. Let $\Delta= \sum d_{i}D_{i}$.
 	Then \begin{enumerate}
 		\item $a(E,X,D)\geq codim(P,X) -1-\sum_{i: P\in D_{i}}d_{j}$
 		\item $\text{TDisc}(X,\Delta)=\min\{0,-d_{i}\}$
@@ -268,24 +273,39 @@ When we have resolution of singularities there is another, more practical versio
 \end{proof}
 
 
- Indeed as $X$ is normal, we may restrict to an open set and assume that $\Delta$ is a prime divisor with $(X,\Delta)$ log smooth. Now blowing up along $V$ inside $\Delta$ of codimension $2$, we may instead assume that 
+% Indeed as $X$ is normal, we may restrict to an open set and assume that $\Delta$ is a prime divisor with $(X,\Delta)$ log smooth. Now blowing up along $V$ inside $\Delta$ of codimension $2$, we may instead assume that 
+
+%\begin{corollary}
+%	Let $(X,\Delta)$ be a (sub)-log pair and $\pi:Y\to X$ a log resolution of $(X,\Delta)$. Let $$t=\min\{a(E,X,\Delta) \text{ such that } E \text{ is a divisor on } Y\}$$ and $$d=\min\{a(E,X,\Delta) \text{ such that } E \text{ is an exceptional divisor of } \pi:Y\to X\}.$$
+%	Then $(X,\Delta)$ is
+%		\begin{itemize}
+%		\item 	(sub) plt if $d > -1$
+%		\item	(sub) $\epsilon-klt$ if $t > \epsilon-1$
+%		\item	(sub) $\epsilon-lc$ if $t\geq \epsilon -1$
+%	\end{itemize}
+%\end{corollary}
+
+
 
 \begin{corollary}
-	Let $(X,\Delta)/T$ be an $R$-(sub)-pair and $\pi:Y\to X$ a log resolution of $(X,\Delta)$. Let $$t=\min\{a(E,X,\Delta) \text{ such that } E \text{ is a divisor on } Y\}$$ and $$d=\min\{a(E,X,\Delta) \text{ such that } E \text{ is an exceptional divisor of } \pi:Y\to X\}.$$
-	Then
-		\begin{itemize}
-		\item 	(sub) terminal if $d > 0$
-		\item	(sub) canonical if $d\geq 0$
-		\item 	(sub) plt if $d > -1$
-		\item	(sub) $\epsilon-klt$ if $t > \epsilon-1$
-		\item	(sub) $\epsilon-lc$ if $t\geq \epsilon -1$
+	Let $(X,\Delta)$ be a (sub)-log pair and $\pi:Y\to X$ a log resolution of $(X,\Delta)$. Let $-d_{i}$ be the coefficients of $\Delta_{Y}$ and $d=\min d_{i}.$
+	Then $(X,\Delta)$ is
+	\begin{itemize}
+		\item 	(sub) terminal iff $d_{i} > -1$ and $d_{i}+d_{j} > -1$ if $D_{i} \cap D_{j} \neq \emptyset$.
+		\item	(sub) canonical iff $d_{i} \geq -1$ and $d_{i}+d_{j} \geq - 1$ if $D_{i} \cap D_{j} \neq \emptyset$. 
+		\item 	(sub) plt iff $d \geq -1$ and $d_{i}+d_{j} > -2$ if $D_{i} \cap D_{j} \neq \emptyset$.
+		\item	(sub) $\epsilon-klt$ iff $d > \epsilon-1$ .
+		\item	(sub) $\epsilon-lc$ iff $d \leq \epsilon-1$.
 	\end{itemize}
 \end{corollary}
 
-This also gives rise to an additional notion of singularity.
+In particular we see that klt and lc may be checked in terms of the total discrepancy coming from a single log resolution. Terminal and canonical may also be checked in terms of discrepancy of a single resolution if $\Delta=0$. If $X$ is $\mathbb{Q}$-factorial then $(X,\Delta)$ is plt only when $\lfloor \Delta \rfloor$ is disjoint by \cite[Lemma 2.28]{bhatt2020}. In this setting we may say, with notation as above, that $(X,\Delta)$ is plt if and only if $\lfloor \Delta \rfloor$ is disjoint and $d \geq -1$.
+
+
+These calculations also give rise to an additional notion of singularity.
 
 \begin{definition}
-	An $R$ pair $(X,\Delta)/T$ is called dlt if it lc and there is a closed subscheme $Z \subseteq Z$ such that:
+	An $R$ pair $(X,\Delta)$ is called dlt if it lc and there is a closed subscheme $Z \subseteq Z$ such that:
 	
 	\begin{itemize}
 		\item $X\setminus Z$ is smooth, 
@@ -297,13 +317,13 @@ This also gives rise to an additional notion of singularity.
 	 
 \end{definition}
 
-Roughly speaking this says a dlt pair is a lc pair with is klt away from the locus where it is log smooth.
+Roughly speaking this says a dlt pair is an lc pair with is klt away from the locus where it is log smooth.
 
-Note that if $(X,\Delta)$ is plt then it is also dlt, moreover $\lfloor \Delta \rfloor$ must have disjoint support.
+Note that if $(X,\Delta)$ is plt then it is also dlt. 
 
 \begin{remark}
 	
-	We can also characterise dlt with reference to a log resolution as follows. A pair $(X,\Delta)/T$ is dlt if there is a log resolution $\pi:Y \to X$ of $(X,\Delta)$ with $K_{Y}+\Delta_{Y}=\pi^{*}(K_{X}+\Delta)$ such that $\text{Coeff}_{E}(\Delta_{Y}) < 1$ for every $E$ exceptional.
+	We can also characterise dlt with reference to a log resolution as follows. A pair $(X,\Delta)$ is dlt if there is a log resolution $\pi:Y \to X$ of $(X,\Delta)$ with $K_{Y}+\Delta_{Y}=\pi^{*}(K_{X}+\Delta)$ such that $\text{Coeff}_{E}(\Delta_{Y}) < 1$ for every $E$ exceptional. The converse implication holds if sufficiently strong resolution results are known. 
 	
 	This definition is not independent of the resolution. Consider for example $X$ a smooth surface with $\Delta=C_{1}+C_{2}$ with connected log smooth support. This is trivially dlt, however if we blow up a point $P$ in $C_{1}\cap C_{2}$ then the pullback of $K_{X}+\Delta$ has coefficient $1$ at the exceptional divisor.
 
@@ -311,8 +331,8 @@ Note that if $(X,\Delta)$ is plt then it is also dlt, moreover $\lfloor \Delta \
 
 Allowing sub-pairs, being klt, lc etc pulls back naturally along birational morphisms. The following lemma allows us to push forward along them as well.
 
-\begin{lemma}[Negativity Lemma]
-	Let $f:X \to Y$ be a projective birational morphism of normal varieties. Let $D$ be an $\mathbb{R}$ Cartier divisor on $X$ with $-D$ nef over $Y$. Then $D$ is effective if and only if $f_{*}D$ is.
+\begin{lemma}[Negativity Lemma]\cite[Lemma 2.14]{bhatt2020}
+	Let $f:X \to Y$ be a projective birational morphism of normal, excellent, integral schemes. Let $D$ be an $\mathbb{R}$ Cartier divisor on $X$ with $-D$ nef over $Y$. Then $D$ is effective if and only if $f_{*}D$ is.
 \end{lemma}
 
 %\begin{lemma}
@@ -326,15 +346,20 @@ Allowing sub-pairs, being klt, lc etc pulls back naturally along birational morp
 %
 %More generally we have the following.
 
-\begin{lemma}
-	Suppose $(X,\Delta)/T,(X',\Delta')/T$ are $R$-pairs equipped with projective birational $T$-morphisms $f:X \to Y$ and $f':X'\to Y$ with $f_{*}\Delta=f'_{*}\Delta'$.
+\begin{lemma}\label{l:increase-discr}
+	Suppose $(X,\Delta),(X',\Delta')$ are log pairs equipped with projective birational morphisms $f:X \to Y$ and $f':X'\to Y$ with $f_{*}\Delta=f'_{*}\Delta'$.
 	
 	Suppose further that $-(K_{X}+\Delta)$ is $f$ nef and $(K_{X'}+\Delta')$ is $f'$ nef. Then $a(E,X,\Delta) \leq a(E,X',\Delta')$ for any $E$ with non-trivial center on $Y$.
+	
+	If in fact $-(K_X+\Delta)$ is $f$-ample and $f$ is not an isomorphism above the generic point of $\cent_X(E)$, then
+	$$ a(E, X, \Delta ) < a(E, X', \Delta').$$
 \end{lemma}
 \begin{proof}
-	Let $Z$ be a normal scheme with projective, birational morphisms $g:Z \to X$ and $g':Z \to X'$, write $h=f \circ g=f' \circ g'$. Let $D= g^{*}(K_{X}+\Delta)-g'^{*}(K_{X'}+\Delta')$ which is exceptional by construction. Further since nefness is preserved under pulllback, $-H$ is nef over $Y$ and hence we may apply the negativity lemma to see that $H$ is effective. Hence $g^{*}(K_{X}+\Delta) \leq g'^{*}(K_{X'}+\Delta')$. In particular if $E$ is any divisor on $Z$, then $a(E,X,\Delta) \leq a(E,X,\Delta')$.
+	Let $Z$ be a normal, integral scheme with projective, birational morphisms $g:Z \to X$ and $g':Z \to X'$, write $h=f \circ g=f' \circ g'$. Let $D= g^{*}(K_{X}+\Delta)-g'^{*}(K_{X'}+\Delta')$ which is exceptional by construction. Further since nefness is preserved under pulllback, $-D$ is nef over $Y$ and hence we may apply the negativity lemma to see that $D$ is effective. Thus $g^{*}(K_{X}+\Delta) \leq g'^{*}(K_{X'}+\Delta')$. In particular if $E$ is any divisor on $Z$, then $a(E,X,\Delta) > a(E,X,\Delta')$.
 	
-	Suppose now $E$ is a valuation with non-trivial center on $Y$. There is some $Z \to Y$ with $E$ a divisor on $Z$. We may then resolve the indeterminacy of $Z \to X$ and $Z \to X'$ and assume wlog that $Z$ lies over $X,X'$ also and the result follows.
+	Suppose now $E$ is a valuation with non-trivial center on $Y$. There is some $Z \to Y$ with $E$ a divisor on $Z$. We may then resolve the indeterminacy of $Z \to X$ and $Z \to X'$ and assume wlog that $Z$ lies over $X,X'$ also and the first part of result follows.
+	
+	In the latter case, we see that $E$ is covered by curves $C$ with $D.C <0$. Hence we must have that $E$ is in the support of $D$ and $a(E,X,\Delta) > a(E,X,\Delta')$.
 \end{proof}
 
 This is exactly the result that shows these notions of singularity are preserved under a $(K_{X}+\Delta)$ MMP.
@@ -356,12 +381,12 @@ This is exactly the result that shows these notions of singularity are preserved
 
 \subsection{Frobenius singularities}
 
-This section will focus on Frobenius singularities in positive characteristic. These will only be needed for schemes over a field. We will often work with varieties over a field $\kappa$, which here will mean just mean integral, quasi-projective $\kappa$-schemes.
+This section will focus on Frobenius singularities in positive characteristic. These will only be needed for schemes over a field, though one can make sense of these definitions in a more general context. We will often work with varieties over a field $\kappa$, which here will mean just mean integral, quasi-projective $\kappa$-schemes.
 
 \subsubsection{Frobenius singularities of pairs}
 
 \begin{definition}
-Given a $\kappa$ algebra $R$ over positive characteristic we denote the Frobenius morphism by $F:R\to R$ sending $x \to x^{p}$. Any $R$ module $M$ then has an induced module structure, denoted $F_{*}M$ where $R$ acts as $r.x=F(x)r=r^{p}m$. Finally $R$ is said to be $F$-finite if $F_{*}R$ is a finite $R$ module. This is a particularly important notion in the case that $R=\kappa$.
+Given a $\kappa$ algebra $R$ over positive characteristic we denote the Frobenius morphism by $F:R\to R$ sending $x \to x^{p}$. Any $R$ module $M$ then has an induced module structure, denoted $F_{*}M$ where $R$ acts as $r.m=F(r)m=r^{p}m$. Finally $R$ is said to be $F$-finite if $F_{*}R$ is a finite $R$ module. This is a particularly important notion in the case that $R=\kappa$.
 
 These definitions naturally extend to schemes over $\kappa$. 
 \end{definition}
@@ -372,8 +397,8 @@ In this context we can view the Frobenius morphism as a map of $R$ modules $F:R 
 
 We have the following well known result due to Kunz.
 
-\begin{theorem}
-	Let $R$ be a local ring of characteristic $p> 0$, then $R$ is regular if and only if $F_{*}R$ is a flat $R$ module.
+\begin{theorem}\cite[Tag 0EC0]{stacks-project}\cite{kunz1969characterizations}
+	Let $R$ be a reduced Noetherian local ring of characteristic $p> 0$, then $R$ is regular if and only if $F_{*}R$ is a flat $R$ module.
 \end{theorem}
 
 It is natural then to try and understand the singularities of a scheme via flatness conditions on $F_{*}R$. In the first instance we have the following definitions.
@@ -397,20 +422,19 @@ Here for a morphism $f:R \to S$ to be pure means the induced map $M \to M \times
 	
 	\end{remark}
 
-While useful definitions, for the purposes of the MMP we would like ones which can be more naturally applied to pairs $(X,\Delta)$.
+While these are useful definitions in their own right, for the purposes of the MMP we would like ones which can be more naturally applied to pairs $(X,\Delta)$.
 
-Take $X$ a normal variety over an $F$-finite field. To mirror the notion of a boundary we introduce pairs $(\mathcal{L}, \phi)$ where $\mathcal{L}$ is a line bundle and $\phi: \Fe \mathcal{L} \to \ox$. By applying duality on the smooth locus, which contains all the codimension $1$ points, we observe that $\Hom_{\ox}(\Fe \mathcal{L},\ox)=H^{0}(X,\mathcal{L}^{-1}((1-p^{e})K_{X}))$. Therefore such a pair corresponds to a divisor $\Delta_{\phi} \geq 0$ with $(p^{e}-1)(K_{X}+\Delta_{\phi}) \sim \mathcal{L}$. Reversing this procedure is slightly more involved. If ${(p^{e}-1)(K_{X}+\Delta) \sim \mathcal{L}}$ (we sometimes write this $K_{X}+\Delta \sim_{\zp} \mathcal{L}$) we may obtain $\phi_{\Delta}:\Fe \mathcal{L} \to \ox$, however we could also write say $(p^{2e}-1)(K_{X}+\Delta) \sim \mathcal{L'}$ where $\mathcal{L'} \not\sim \mathcal{L}$. We introduce, therefore, the following notion of equivalence.
+Take $X$ a normal variety over an $F$-finite field. To mirror the notion of a boundary we introduce pairs $(\mathcal{L}, \phi)$ where $\mathcal{L}$ is a line bundle and $\phi: \Fe \mathcal{L} \to \ox$. By applying duality on the smooth locus, which contains all the codimension $1$ points, we observe that $\Hom_{\ox}(\Fe \mathcal{L},\ox)=H^{0}(X,\mathcal{L}^{-1}((1-p^{e})K_{X}))$. Therefore such a pair corresponds to a divisor $\Delta_{\phi} \geq 0$ with $(1-p^{e})(K_{X}+\Delta_{\phi}) \sim \mathcal{L}$. Reversing this procedure is slightly more involved. If ${(1-p^{e})(K_{X}+\Delta) \sim \mathcal{L}}$ (we sometimes write this $K_{X}+\Delta \sim_{\zp} \mathcal{L}^{-1}$) we may obtain $\phi_{\Delta}:\Fe \mathcal{L} \to \ox$, however we could also write say $(1-p^{2e})(K_{X}+\Delta) \sim \mathcal{L'}$ where $\mathcal{L'} \not\sim \mathcal{L}$. We introduce, therefore, the following notion of equivalence.
 
 First, we say that two such pairs, $(\mathcal{L}, \phi)$ and $(\mathcal{L}', \phi')$ are said to be equivalent if
 
 \begin{itemize}
-	\item The following diagram is well defined and commutes.
+	\item There is an isomorphism $\phi: \mathcal{L} \to \mathcal{L'}$ such that following diagram commutes.
 	\[\begin{tikzcd}
 	\Fe \mathcal{L} \arrow[rd, "\phi"] \arrow[rr, "\Fe \psi"] &     & \Fe \mathcal{L}' \arrow[ld, "\phi'"] \\
 	& \ox &                                     
 	\end{tikzcd}\]
-	\\
-	\item OR $\mathcal{L}=\mathcal{L}^{p^{(n-1)e+...+1}}$ and $\phi':F_{*}^{ne}\mathcal{L}^{p^{(n-1)e+...+1}}$ is the map generated by composing appropriate tensor products of the form $F_{*}^{m}\mathcal{L}^{k} \otimes F_{*}^{n} \mathcal{L}^{r}\cong F_{*}^{m}(\mathcal{L}^{rp^{m-n}+k}) \to F^{m}_{*}\mathcal{L}^{k}\to \ox$ for $m>n$.
+	\item OR $\mathcal{L}=\mathcal{L}^{p^{(n-1)e+...+1}}$ and $\phi':F_{*}^{ne}\mathcal{L}^{p^{(n-1)e+...+1}}$ is the map generated by composing appropriate tensor products of the form $$F_{*}^{m}\mathcal{L}^{k} \otimes F_{*}^{n} \mathcal{L}^{r}\cong F_{*}^{m}(\mathcal{L}^{rp^{m-n}+k}) \to F^{m}_{*}\mathcal{L}^{k}\to \ox$$ for $m>n$.
 \end{itemize}
 
 We then expand the notion of equivalence to allow any finite combination of the above equivalences, more precisely we take the transitive closure of our initial equivalence relation. In fact we will see that any two equivalent pairs are connected by a step of each type.
@@ -420,8 +444,8 @@ The need for first part of this is clear. The second comes from the following le
 \begin{lemma}\label{twist}
 	Suppose that $(\mathcal{L},\phi)$ and $(\mathcal{L}',\phi')$ are pairs as above. Then we have the following map
 	\[\psi= \phi' \circ_{F} \phi: F^{e+e'}_{*}(\mathcal{L}\otimes (\mathcal{L}')^{p^{e}})\cong F_{*}^{e'}(\Fe \mathcal{L} \otimes \mathcal{L}')\to F^{e'}_{*}\mathcal{L}'\to \ox \]
-	
-	Then the associated divisors are $\Delta_{\psi}= \frac{p^{e}-1}{p^{e+e'}-1}\Delta_{\phi} + \frac{p^{e}(p^{e'}-1)}{p^{e+e'}-1}\Delta_{\phi'}$
+	and the associated divisor is $\Delta_{\psi}= \frac{p^{e}-1}{p^{e+e'}-1}\Delta_{\phi} + \frac{p^{e}(p^{e'}-1)}{p^{e+e'}-1}\Delta_{\phi'}$.
+
 \end{lemma}
 
 \begin{proof}
@@ -440,14 +464,25 @@ The need for first part of this is clear. The second comes from the following le
 	
 \end{proof}
 
-We write $\phi^{n}$ for $\phi^{n-1}\circ_{F} \phi$. Note that $\Delta_{\phi^{n}}=\Delta_{\phi}$, which is why we require the second part of the equivalence relation.
+We write $\phi^{n}$ for $\phi^{n-1}\circ_{F} \phi$. Note that by the above calculation, $\Delta_{\phi^{n}}=\Delta_{\phi}$, which is why we require the second part of the equivalence relation.
 
-We might ask if this construction still makes sense for $e=0$. Obviously we cannot divide by $p^{e}-1$ but if we run through the correspondence, we are simply identifying $\Hom(\mathcal{L},\ox)$ with $\Hom(\ox,\mathcal{L}^{-1})$. So a morphism $\phi: \mathcal{L} \to \ox$ induces a divisor $D_{\phi}$ with $\ox(D_{phi})\simeq \mathcal{L}^{-1}$. Then we get the formula
+\begin{remark}\label{R-twist}
+
+We might ask if this construction still makes sense for $e=0$. Obviously we cannot divide by $p^{e}-1$ but if we run through the correspondence, we are simply identifying $\Hom(\mathcal{L},\ox)$ with $\Hom(\ox,\mathcal{L}^{-1})$. So a morphism $\phi: \mathcal{L} \to \ox$ induces a divisor $D_{\phi}$ with $\ox(D_{\phi})\simeq \mathcal{L}^{-1}$. Then we get the formula
 \[\Delta_{\phi' \circ_{F} \phi}= \frac{1}{p^{e'}-1}D_{\phi} + \Delta_{\phi'}\]
 
-Similarly when $e'=0$ we get $\Delta_{\phi' \circ_{F} \phi}=\Delta_{\phi' \circ \phi}=\Delta_{\phi} + \frac{p^{e}}{p^{e}-1}D_{\phi'}$ and if $e=e'=0$ we recover the usual composition formula $\Delta_{\phi' \circ \phi}=\Delta_{\phi} + D_{\phi'}$.
+Similarly when $e'=0$ we get $\Delta_{\phi' \circ_{F} \phi}=\Delta_{\phi' \circ \phi}=\Delta_{\phi} + \frac{p^{e}}{p^{e}-1}D_{\phi'}$ and if $e=e'=0$ we recover the usual composition formula $D_{\phi' \circ \phi}=D_{\phi} + D_{\phi'}$.
 
 Suppose $\phi: \mathcal{L}\mathcal{L'}^{-1} \to \ox$ then $\phi$ corresponds to a divisor $D\sim \mathcal{L'}\mathcal{L}^{-1}$ in the usual sense. The result is than that $\psi=\phi \circ_{F} \phi': F_{*}^{e'}(\mathcal{L}\mathcal{L'}^{-1} \otimes \mathcal{L'})=F_{*}^{e'}(\mathcal{L}) \to F_{*}^{e'}(\mathcal{L'})\to\ox$ has $\Delta_{\psi}=\frac{1}{p^{e}-1}D+\Delta_{\phi'}$ from above. Equally of course we may view $\phi$ as a morphism $\mathcal{L} \to \mathcal{L'}$. 
+
+\end{remark}
+
+Note that $\autoref{twist}$ can be applied in the opposite direction. Suppose that $\phi,\psi$ have $\Delta_{\phi} \geq \delta_{\psi}$. Let $E=\Delta_{\phi}-\Delta_{\psi}$. Then we get an induced map $\Fe i_{(p^{e}-1)E} \colon \Fe \mathcal{L}_{\phi} \to \Fe \mathcal{L}_{\psi}$. Now $\psi \circ_{F} i_{(p^{e}-1)E}$ has induced boundary $\frac{1}{p^{e}-1}(p^{e}-1)E+\Delta_{\psi}=\Delta_{\phi}$. Hence in fact $\phi=\psi \circ_{F} i_{(p^{e}-1)E}$.
+
+In particular then, every $\phi$ is of the form $\Fe \mathcal{L} \to \Fe \omega_{X}^{\otimes(1-p^{e})} \to \ox$ where $\Fe \mathcal{L} \to \Fe \omega_{X}^{\otimes(1-p^{e})}$ is pushforward of the inclusion $\ox((1-p^{e}(K_{X}+\Delta_{\phi}))) \to \ox((1-p^{e})(K_{X}))$ induced by $(1-p^{e})\Delta_{\phi}=D_{\phi}$. This can also be seen directly from the construction of $D_{\phi}$ if one takes care.
+
+We see then that $\phi$ is dual to the map $\ox \to \Fe\ox \to \Fe\ox((p^{e}-1)\Delta_{\phi})$. We can study the same kinds of pairs by working with such maps instead. This is the setup of \cite{schwede2010globally} for example.
+
 
 \begin{lemma}
 	
@@ -466,7 +501,7 @@ Suppose $\phi: \mathcal{L}\mathcal{L'}^{-1} \to \ox$ then $\phi$ corresponds to 
 	
 \end{proof}
 
-To extend this framework to allow for sub pairs we can instead work with morphisms $\Fe\mathcal{L} \to K(X)$ where we view $K(X)$ as a constant sheaf on $X$. Given such a morphism $\phi$, we can always find $E \geq 0$ Cartier such that when we twist by $E$ we obtain $\phi':=\Fe(\mathcal{L}((1-p^{e})E)) \to \ox$ and thus associate a divisor $\Delta_{\phi'}$ with $(1-p^{e})(K_{X}+\Delta_{\phi'})\sim \mathcal{L}((1-p^{e})E$ and then take $\Delta_{\phi}=\Delta_{\phi'}-E$.
+To extend this framework to allow for sub pairs we can instead work with morphisms $\Fe\mathcal{L} \to K(X)$ where we view $K(X)$ as a constant sheaf on $X$. Given such a morphism $\phi$, we can always find $E \geq 0$ Cartier such that when we twist by $E$ we obtain $$\phi':=\Fe(\mathcal{L}((1-p^{e})E)) \to \ox$$ and thus associate a divisor $\Delta_{\phi'}$ with $(1-p^{e})(K_{X}+\Delta_{\phi'})\sim \mathcal{L}((1-p^{e})E$. We then take $\Delta_{\phi}=\Delta_{\phi'}-E$.
 
 \begin{lemma}
 	With the notation as above, $\Delta_{\phi}$ does not depend on the choice of $E$.
@@ -477,26 +512,62 @@ To extend this framework to allow for sub pairs we can instead work with morphis
 
 
 \begin{definition}
-	A sub $\zp$ pair is a couple $(X,B)$ where $(K_{X}+B)$ is $\zp$-Cartier and the coefficients of $B$ are less than $1$. We write $\phi_{B}: F_{*}^{e_{B}}\mathcal{L}_{e,B} \to K(X)$ for the associated morphism dropping the dependence on $B$ when it remains clear. If $B$ is effective $(X,B)$ is called a $\zp$ pair and we view $\phi$ has being a morphism to $\ox$.
+	A sub $\zp$ pair is a $\kappa$-pair $(X,B)$ where $\kappa$ is $F$-finite, $(K_{X}+B)$ is $\zp$-Cartier and the coefficients of $B$ are less than $1$. We write $\phi_{B}: F_{*}^{e_{B}}\mathcal{L}_{e,B} \to K(X)$ for the associated morphism dropping the dependence on $B$ when it remains clear. If $B$ is effective $(X,B)$ is called a $\zp$ pair and we view $\phi$ has being a morphism to $\ox$.
 	
 	Let $(X,B)$ be a (sub) $\zp$ pair, then $(X,B)$ is
 	\begin{itemize}
 		\item (sub) $F$-pure if $\ox \subseteq \text{Im}(\phi^{e})$ for some $e$
 		\item (sub) $F$-split if $1\in\text{Im}(H^{0}(X,\phi^{e}))$ for some $e$
-		\item (sub) $F$-regular if for every $D \geq 0$ there is some $e$ with $\ox \subseteq \phi^{e}(\Fe(\mathcal{L}_{e}(D))$ 
-		\item globally (sub) $F$-regular if for every $D \geq 0$ there is some $e$ with $1\in\text{Im}(H^{0}(X,\phi^{e}|_{\Fe(\mathcal{L}_{e}(D))})$ 
+		\item (sub) $F$-regular if for every $D \geq 0$ there is some $e$ with $\ox \subseteq \phi^{e}(\Fe(\mathcal{L}_{e}(-D))$ 
+		\item globally (sub) $F$-regular if for every $D \geq 0$ there is some $e$ with $1\in\text{Im}(H^{0}(X,\phi^{e}|_{\Fe(\mathcal{L}_{e}(-D))})$ 
 	\end{itemize}
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{R-Def}
 	
-	We can also extend the definitions to $\mathbb{Q}$ pairs. Roughly we speaking we say $(X,\Delta)$ satisfies the definition if there is $B \geq \Delta$ such that $(X,B)$ is a sub $\zp$ pair satisfying the definition in question. 	
+	We can also extend the definitions to $\mathbb{Q}$ pairs. Roughly we speaking we say $(X,\Delta)$ satisfies the definition if there is $B \geq \Delta$ such that $(X,B)$ is a sub $\zp$ pair satisfying the definition in question. Alternatively one can work with reflexive sheaves in the place of line bundles. By \autoref{perturb} the two are equivalent.	
 	\end{remark}
 
 Being $F$-split is also sometimes called globally $F$-split, to distinguish it from the case of local splittings.
 
-Locally to a point of codimension $1$ these definitions are particularly well-behaved.
+Some immediate consequences of \autoref{twist} and \autoref{R-twist} are the following.
 
+\begin{lemma}\label{perturb}
+	
+	Let $(X,\Delta)$ and $(X,B)$ be globally $F$-split pairs. Then for $0 \leq t <<1$ we have that $(X,t\Delta+(1-t)B)$ is $F$-split and for $0 \leq \lambda \leq 1$ we have that $(X,\lambda \Delta)$ is $F$-split also.. Moreover if $(X,\Delta)$ is in fact globally $F$-regular then
+	
+	\begin{enumerate}
+		\item $(X,t\Delta +(1-t)B)$ is globally $F$-regular for $0 \leq t <<1$.
+		\item For any $D \geq 0$, $(X,\Delta+tD)$ is globally $F$-regular for $0 \leq t <<1$. 
+		\item $B=\Delta+D$ then $(X,\Delta+tD)$ is globally $F$-regular for $0 \leq t <1$.
+	\end{enumerate}
+
+	\end{lemma}
+
+\begin{proof}
+	Let $(X,\Delta)$ and $(X,B)$ be globally $F$-split pairs. By composing the associated morphisms $\phi_{\Delta} \colon \Fe \mathcal{L}_{\Delta} \to \ox$ and $\phi_{\Delta+B} \colon \Fe[e'] \mathcal{L}_{\Delta+B} \to \ox$ as in \autoref{twist} we obtain a split morphism $\psi=\phi_{\Delta}\circ \phi_{\Delta+B}$ with associated divisor $(1-\frac{p^{e}-1}{p^{e+e'}-1})\Delta+ \frac{p^{e}-1}{p^{e+e'}-1}B$. Taking $e'>>e$ yields the result. 
+	
+	To see that $(X,\lambda \Delta)$ is $F$-split for $\lambda \geq 0$, we can assume $\lambda \in \zp$. Then by \autoref{twist} and the discussion following it, we see that we have a factorisation $$\phi_{\Delta} \colon \Fe \mathcal{L} \to \Fe \mathcal{L}_{\lambda \Delta} \to \ox$$ for $e>>0$. This yields the result.
+	
+	Now suppose that $(X,\Delta)$ is globally $F$-regular. Let $H$ be a Cartier divisor whose support contains $B$. 
+	
+	From the definition of globally $F$-regular and previous parts we have small $\epsilon, \delta > 0$ with $(X,\epsilon \Delta +(1-\epsilon)B+\delta H)$ $F$-split. We claim that $(X,\epsilon \Delta +(1-\epsilon)B)$ is globally $F$-regular. Certainly it is $F$-split so let $\phi\colon \mathcal{L} \to \ox$ be the associated morphism. This pair is globally $F$-regular on $U=X\setminus H$, since $H \geq B$. So if we fix $D\geq 0$ then we have a splitting of $\phi_{U}\colon \Fe \mathcal{L}_{U}(-D) \to \ox[U]$, say $i_{U}\colon \ox[U] \Fe \mathcal{L}_{U}(-D)$. We now seek to extend $i_{U}$ to an appropriate splitting on $X$.
+	
+	By \cite[Chapter II, Lemma 5.14(b)]{Ha77} $i_{u}$ extends to a section $i:\ox \to (\Fe \mathcal{L}) \otimes \ox(mH)$ such that the following composition 
+	\[\ox \xrightarrow{i} (\Fe \mathcal{L}(-D)) \otimes \ox(mH) \xrightarrow{\phi\otimes\ox(mH)} \ox(mH)\]
+	
+	is natural inclusion $\ox \to \ox(mH)$ induced by $H$. Tensoring by $\ox(-mH)$ yields
+	\[\ox(-mH) \xrightarrow{i\otimes \ox(-mH)} \Fe \mathcal{L}(-D) \xrightarrow{\phi} \ox.\]
+	Again this is the natural inclusion of $\ox(-mH)$ into $\ox$. Finally we tensor by $\Fe[e']\mathcal{L}$ to yield
+	$$\Fe[e']\mathcal{L}(-mH) \to \Fe[e'+e]\mathcal{L}(-D) \to \Fe[e']\mathcal{L}.$$
+	By assumption, for $e'>>0$ the morphism $\Fe[e']\mathcal{L}(-mH) \to  \Fe[e']\mathcal{L} \to \ox$ splits. Hence so too does $\Fe[e'+e]\mathcal{L}(-D) \to \Fe[e']\mathcal{L} \to \ox$. Thus $(X,\Delta)$ is globally $F$-regular as claimed.
+		
+	Now for $(2)$ fix a $D \geq 0$. Then $$\Fe \mathcal(L)(D) \to \Fe \mathcal{L}(D) \to \ox $$ splits for $e>>0$. The associated divisor is precisely $(X,\Delta+\frac{1}{p^{e}-1}D)$ so $(X,\Delta+tD)$ is $F$-split for small $t$. By (1) with $B=\Delta+tD$, we may shrink $t$ and assume the pair is globally $F$-regular. 
+	
+	The final part follows exactly as in the $F$-split case.
+	
+\end{proof}
+Locally to a point of codimension $1$ these definitions are particularly well-behaved.
 \begin{lemma}
 	Let $R$ be a regular DVR with parameter $t$, then a sub $\zp$ pair $(R,\lambda t)$ is sub $F$-pure iff $\lambda \leq 1$ and sub $F$-regular iff $\lambda < 1$.
 \end{lemma}
@@ -514,7 +585,7 @@ In particular we see that the coefficient of $\Delta_{\phi}$ at $E$ depends only
 While these definitions do not pullback along birational morphisms as obviously as the usual MMP singularities, it is still possible.
 
 \begin{lemma}\label{F-pullback}
-	Suppose that $f:X \to Y$ is a birational morphism with $X$ normal and $(Y,\Delta)$ a sub $F$-split pair then there is $\Delta'$ on $X$ making $(X,\Delta')$ a sub $F$-split pair over such that $(K_{X}+\Delta')=f^{*}(K_{Y}+\Delta)$.  
+	Suppose that $f:X \to Y$ is a birational morphism with $X$ normal and $(Y,\Delta)$ a sub $F$-split pair then there is $\Delta'$ on $X$ making $(X,\Delta')$ a sub $F$-split pair such that $(K_{X}+\Delta')=f^{*}(K_{Y}+\Delta)$.  
 \end{lemma}
 \begin{proof}
 	
@@ -531,7 +602,7 @@ While these definitions do not pullback along birational morphisms as obviously 
 
 Note that a pair $(X,\Delta)$ is sub $F$-pure if and only if there is an open cover $\{U_{i}\}$ with $(U_{i},\Delta|_{U_{i}})$ sub $F$-split. Hence in fact this shows we may also lift sub $F$-pure pairs in the same fashion. 
 
-Similarly a pair $(X,\Delta)$ is (globally) sub $F$-regular if and only if for every $D \geq 0$ there is $\epsilon<0$ with $(X,\Delta+\epsilon D)$ (globally) sub $F$-pure. Further if $f:Y \to X$ is birational with $D \geq 0$ on $Y$ there is always some $D' \geq 0$ on $X$  with $f^{*}D' \geq D$. Therefore pulling back $(X,\Delta +\epsilon D')$ to $(Y,\Delta'+\epsilon f^{*}D')$ we see that  $(Y,\Delta'+\epsilon D)$ is (globally) sub $F$-pure and so $(Y,\Delta')$ is (globally) sub $F$-regular.
+Similarly a pair $(X,\Delta)$ is (globally) sub $F$-regular if and only if for every $D \geq 0$ there is $\epsilon<0$ with $(X,\Delta+\epsilon D)$ sub $F$-pure ($F$-split). Further if $f:Y \to X$ is birational with $D \geq 0$ on $Y$ there is always some $D' \geq 0$ on $X$  with $f^{*}D' \geq D$. Therefore pulling back $(X,\Delta +\epsilon D')$ to $(Y,\Delta'+\epsilon f^{*}D')$ we see that  $(Y,\Delta'+\epsilon D)$ is sub $F$-pure ($F$-split)and so $(Y,\Delta')$ is (globally) sub $F$-regular.
 
 
 \begin{theorem}
@@ -544,7 +615,7 @@ Similarly a pair $(X,\Delta)$ is (globally) sub $F$-regular if and only if for e
 		Let $(Y,\Delta_{Y}) \to (X,\Delta)$ be a log resolution. From above we see that $(Y,\Delta_{Y})$ is sub $F$-pure. However by \autoref{local} we see that this ensures $\text{Coeff}_{D}(\Delta_{Y}) \leq 1$ for every prime divisor $D$ on $X$. Hence $(Y,\Delta_{Y})$ is sub-lc and therefore so too is $(X,\Delta)$. An identical calculation completes the $F$-regular case.
 \end{proof}
 
-In general we cannot push forward the local forms of these singularities, however the global ones often can be pushed forward, even along morphisms which are not birational.
+In general we cannot push forward the local forms of these singularities, however the global ones often can be pushed forward, even along morphisms which are not birational. 
 
 \begin{lemma}
 	Suppose that $(X,\Delta)$ is sub $F$-split and $f:X \to Y$ has $f_{*}\ox =\mathcal{O}_{Y}$ and $K_{X}+\Delta \sim_{\zp} f^{*}\mathcal{L}$. If every component of $\Delta$ which dominates $Y$ is effective then there is $\Delta_{Y}$ with $(Y,\Delta_{Y})$ sub $F$-split and $K_{Y}+\Delta_{Y} \sim_{\zp} \mathcal{L}$.
@@ -568,7 +639,7 @@ If in fact $(X,\Delta)$ is globally $F$-regular then so too is $(Y,\Delta_{Y})$.
 
 By Corollary \ref{local} if $f:X \to Y$ is birational then the conditions are automatically satisfied and the induced $\Delta_{Y}$ is just the pushforward $f_{*}\Delta$. Therefore if $X$ is sub $F$-split so is every $X'$ birational to $X$. Further if $X$ is $F$-split and $X'$ is obtained by taking a terminalisation or running a $K_{X}+B$ MMP for any $B$ then $X'$ is $F$-split.
 
-\subsubsection{Globally Frobenius Singularities}
+\subsubsection{Global Frobenius Singularities}
 
 Pairs $(X,\Delta)$ which are globally $F$-split or globally $F$-regular can always be modified slightly to assume a particularly nice form.
 
@@ -581,14 +652,33 @@ Pairs $(X,\Delta)$ which are globally $F$-split or globally $F$-regular can alwa
 	\end{lemma}
 
 \begin{proof}
-	Suppose $(X,\Delta)$ is a globally $F$-split. Let $\phi:F_{*}^{e}\mathcal{L} \to \ox$ be the corresponding morphism with $1 \in \im(H^{0}(\phi))$. Then by assumption we have a section $s:\ox \to F_{*}^{e}\mathcal{L}$ which is a splitting of $\phi$. 
+	Suppose $(X,\Delta)$ is a globally $F$-split $\zp$ pair. Let $\phi:F_{*}^{e}\mathcal{L} \to \ox$ be the corresponding morphism with $1 \in \im(H^{0}(\phi))$. Then by assumption we have a section $s:\ox \to F_{*}^{e}\mathcal{L}$ which is a splitting of $\phi$. 
 	
-	However we get an induced section $F_{*}^{e} \to F_{*}^{e}\mathcal{L}$ given locally by $r \to r*s(1)$, hence in fact $s$ factors $s: \ox \to F_{*}^{e} \to F_{*}^{e}\mathcal{L}$. Thus we get $D$ with $\ox(D) \simeq \mathcal{L}=\ox((1-p^{e})(K_{X}+\Delta))$, and so $(1-p^{e})(K_{X}+\Delta+\frac{1}{p^{e}-1}D) \sim 0$ as claimed.
+	However we get an induced section $F_{*}^{e} \ox \to F_{*}^{e}\mathcal{L}$ given locally by $r \to r\times s(1)$, hence in fact $s$ factors $s: \ox \to F_{*}^{e}\ox \to F_{*}^{e}\mathcal{L}$. The composition $\Fe \ox \to \Fe \mathcal{L} \to \ox$ induces an $F$-split pair $(X,\Delta')$ with $K_{X}+\Delta' \sim_{\zp} 0$. Moreover we have $\Delta' \geq \Delta$ by \autoref{R-twist}.
+		
+	Now suppose that $(X,\Delta)$ is a globally $F$-regular $\zp$ pair. First, from above, we may take $B$ with $(X,\Delta+B)$ $F$-split and $K_{X}+\Delta+B \sim_{\zp} 0$.
 	
-	Now suppose that $(X,\Delta)$. 
+	Now choose $H\geq B$ an ample divisor. Then we have that the composition $\Fe \mathcal{L}(-H) \to \Fe \ox \xrightarrow{\phi} \ox$ splits. As before the section $\ox \to \mathcal{L}(-H)$ factors $\ox \to \Fe\ox(-H) \to \Fe \mathcal{L}(H)$. The split morphism $\Fe\ox(-H) \to \ox$ induces a globally $F$-split pair $(X,\Delta+D)$ with $K_{X}+\Delta+D \sim_{\zp} \delta H$ where $\delta=\frac{1}{p^{e}-1}$. Moreover the first part of the lemma applied to $(X,\Delta+D)$ yields the $F$-split pair $(X,\Delta+D+\delta H)$, again by \autoref{R-twist}.
 	
-	
+	We now apply \autoref{perturb} to $(X,\Delta+B)$ and $(X,\Delta+D+\delta H)$ to see that $(X,\Delta+ tD + (1-t+\delta')B)$ is $F$-split. By the same lemma we can choose $t$ small enough that $(X,\Delta+tD)$ is globally $F$-regular. Applying the lemma one more time to these two new pairs, we see that $(X,\Delta+tD+(1-t)B)$ is globally $F$-regular. By construction this pair has $K_{X}+\Delta+tD+(1-t)B \sim_{\zp} -tH$ as required. 
+		
 \end{proof}
+
+\begin{lemma}\label{vanish}
+	
+	Let $(X,\Delta)$ be a globally $F$-split pair. Then $H^{i}(X,K_{X}+\Delta+A)=0$ for $A$ an ample $\mathbb{Q}$-Cartier divisor and $i> 0$. In particular $H^{i}(X,A)=0$ for $i> 0$. Moreover if $(X,\Delta)$ is globally $F$-regular then we may suppose only that $A$ is big and nef instead.
+	
+	\end{lemma}
+
+\begin{proof}
+	
+	Suppose first that $(X,\Delta)$ is $F$-split and $A$ is ample. Then we have a split map $\Fe \mathcal{L} \to \ox$ where $\mathcal{L}=\ox((1-p^{e})(K_{X}+\Delta))$. Tensoring by $\ox(K_{X}+\Delta+A)$ yields $\Fe\ox(K_{X}+\Delta+p^{e}A) \to \ox(K_{X}+\Delta+A)$. Taking cohomology then gives a surjection $H^{i}(X,K_{X}+\Delta+p^{e}A) \to H^{i}(X,K_{X}+\Delta+A)$ for $i \geq 0$ where the left hand side vanishes for $e>>0$ and $i>0$ by Serre vanishing. From above, we can assume that $K_{X}+\Delta\sim\_{\zp} 0$, so we have $A'$ ample with $K_{X}+\Delta+A'=A$ and the second part follows.
+	
+	Now suppose that $(X,\Delta)$ is globally $F$-regular. Choose $E\geq 0$ with $nA-E$ ample for $n>>0$. Then we have $\Fe\mathcal{L}(-E) \to \ox$ split. Again we tensor by $K_{X}+\Delta+A$ to yield $\Fe \ox(K_{X}+\Delta+p^{e}A-E) \to \ox(K_{X}+\Delta+A)$. From the first part, the cohomology of $\ox(K_{X}+\Delta+p^{e}A-E)$ vanishes for $e>>0$ and the result follows.
+		
+\end{proof}
+
+If $(X,\Delta)$ is $F$-split (resp. globally $F$-regular) in the sense of \autoref{R-Def} one needs to be slightly more careful. In this case we have a $\zp$ pair $(X,B)$ with $B \geq 0$ and $\mathcal{L}=\ox((1-p^{e})(K_{X}+B))$ which is $F$-split (resp. globally $F$-regular). Then the morphism $\Fe \mathcal{L} \to \ox$ must factor $\Fe \mathcal{L} \to \Fe\ox((1-p^{e})(K_{X}+\Delta) \to \ox$, as in \autoref{perturb} and the result follows exactly as above.
 
 \section{The Minimal Model Program}
 
@@ -640,9 +730,9 @@ The solution to this is to construct a flip. This is a pair $(X^{+},\Delta^{+})$
 
 Divisorial contractions always reduce the Picard rank, so there can only be finitely many. Flips, however, do not have such a clearly associated invariant and it is not immediately clear that there can be no infinite sequence of flips. Nonetheless this is expected to be true.
 
-\begin{conjecture}
+\begin{conjecture}[Termination of flips]
 	
-	Let $(X,\Delta)/T$ be a klt $R$-pair. Then there is no infinite sequence of $(K_{X}+\Delta)$ flips $X \dashrightarrow X_{1} \dashrightarrow ...$ .
+	Let $(X,\Delta)/T$ be a $\mathbb{Q}$-factorial klt $R$-pair. Then there is no infinite sequence of $(K_{X}+\Delta)$ flips $X \dashrightarrow X_{1} \dashrightarrow ...$ .
 	
 	\end{conjecture}
 
@@ -653,13 +743,24 @@ Together these conjectures form the key results of the Minimal Model Program and
 	\item Mori Fibre Space: $Y$ admits a $K_{Y}+B$ negative Mori Fibration
 \end{enumerate}
 
+A closely related conjecture is the following
+
+\begin{conjecture}[Special termination]
+	
+	Let $(X,\Delta)/T$ be a $\mathbb{Q}$-factorial dlt $R$-pair. Then there is no infinite sequence of $(K_{X}+\Delta)$ flips $X \dashrightarrow X_{1} \dashrightarrow ...$ whose flipping or flipped locus meet $\lfloor \Delta \rfloor$.
+	
+\end{conjecture}
+
+By \cite[4.2.1]{fujino2007special}, this holds in dimension $n$ if termination of flips holds in dimensions $\leq n-1$.
+
 For threefolds in mixed and positive characteristic, the current state of the art is the following:
 
 	\begin{theorem}\cite[Theorem 1.7]{BW17}, \cite[Theorem 1.2]{BW17}\cite[Theorem F]{bhatt2020}\label{MMP}
-	Let $(X, \Delta)$ be a three-dimensional klt pair over a ring $R$ of mixed characteristic or $k$ a perfect field of positive characteristic, together with a projective morphism $X \to Z$ a quasi-projective $k$ scheme, then there exists a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates. \myworries{Check}
+	Let $(X, \Delta)/T$ be a $\mathbb{Q}$-factorial three-dimensional dlt pair over a ring $R$. Suppose that the closed points of $R$ have residue field of characteristic $p=0$ or $p> 5$. Suppose further that $K(R)$ has characteristic $0$ or $R$ is a perfect field of positive characteristic. Then the Cone and Basepoint Free Theorem's hold.
 	
-	In particular, if $X$ is $\mathbb{Q}$-factorial, then 
-	there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
+	Moreover there exists a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates. \myworries{Check. Also $p \geq 5?$}
+	
+	In particular there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
 	\[
 	X=:X_0 \overset{\varphi_0}{\dashrightarrow} X_1 \overset{\varphi_1}{\dashrightarrow} \cdots \overset{\varphi_{\ell-1}}{\dashrightarrow} X_{\ell}
 	\]
@@ -680,37 +781,41 @@ For threefolds in mixed and positive characteristic, the current state of the ar
 	\end{enumerate}
 \end{theorem}
 
+In particular this includes the following Basepoint Free Theorem.
 
-\myworries{What is known? We will show...}
+\begin{conjecture}[Basepoint Free Theorem]\label{bpt}
+	Let $(X,\Delta)/T$ be a klt $R$-pair of dimension at most $3$. Suppose that $D$ is a $\mathbb{R}$-Cartier divisor, nef over $T$, such that $D-(K_{X}+\Delta)$ is big and nef over $T$. If either
+	\begin{enumerate}
+		\item $D$ is a big $\mathbb{Q}$-Cartier divisor, or
+		\item $\dim T>1$ and $T$ has no residue fields of char $p=2,3,5$,
+	\end{enumerate}
+	Then if $D$ is semiample.
+\end{conjecture}
+
+Terminating MMP's can also be run for certain fourfolds birational to their base or semistable over a curve \cite{hacon2020relative}. Some of the conjectures of the MMP and the existence of log terminal models are also known for threefold pairs over an imperfect field \cite{das2019log}. 
 
 
 \subsection{Birational Modifications}
 
-A particularly useful application of the Minimal Model Program is to find crepant modifications with suitably mild singularities. We will explore some of these modifications and their consequences in this section. In particular we always assume the existence of log resolutions as well as the conjectures of \autoref{overview} in the case that $X \to T$ is birational.
+A particularly useful application of the Minimal Model Program is to find modifications with suitably mild singularities. We will explore some of these modifications and their consequences in this section. In particular we always assume the existence of log resolutions as well as the conjectures of \autoref{overview}. Strictly speaking it is enough to assume that for a given $X$ projective over $R$ of interest, every normal scheme $X'$ projective and birational to $X'$ over $R$ admits a projective resolution.
 
+We can largely avoid termination arguments, i.e. termination of klt flips and special termination, so long as some terminating MMP exists. This is done where possible, for the sake of generality.
+
+The required results are known if $X$ has dimension at most $3$ by \autoref{MMP}, at least up to avoiding low characteristic or imperfect fields.
 
 A vital ingredient in these results is the following lemma.
 
-\begin{lemma}[Negativity Lemma]\cite{}	
+\begin{lemma}[Negativity Lemma]\cite[Lemma 2.14]{bhatt2020}	
 	Let $\pi:Y \to X$ be a birational morphism and $E$ an exceptional divisor on $Y$. If $-E$ is nef then $E \geq 0$.
 
 	\end{lemma}
-The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair and conclude it is a crepant modification using the Negativity Lemma.
-\begin{lemma}
-	
-	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a birational morphism $\pi:Y \to X$ such that $(Y,\pi_{*}^{-1}\Delta)$ is terminal. If in fact $(X,\Delta)$ is klt then there is $B \geq \pi_{*}^{-1}\Delta$ such that $(Y,B)$ is terminal and $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$.
-	
-	
-	terminal pair $(Y,B)$ admitting a birational morphism $\pi:Y \to X$ with $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$.
-	
-\end{lemma}
 
-The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair and conclude it is a crepant modification using the Negativity Lemma. We begin with the case of terminalisation.
+The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair. We typically then conclude it is a crepant modification, in some sense, using the Negativity Lemma. We begin with the case of terminalisation.
 
 
 \begin{lemma}
 	
-	Let $(X,\Delta)/T$ be a klt $R$ pair. Then there is a terminal pair $(Y,B)$ admitting a birational morphism, called a terminalisation, $\pi:Y \to X$ with $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$.
+	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a terminal pair $(Y,B)$ admitting a birational morphism, called a terminalisation, $\pi:Y \to X$ with $B=\pi_{*}^{-1}\Delta$ and $K_{Y}+B$ $\pi$-nef.
 	
 	\end{lemma}
 
@@ -718,71 +823,97 @@ The approach for all the modifications is the same - take a log resolution, choo
 
 \begin{proof}
 	
-	Let $f:Y' \to X$ be a log resolution of $(X,\Delta)$ such that $f^{*}(K_{X}+\Delta)=(K_{Y'}+\Delta')$. Write $\Delta'=B'-F$ where $B',F \geq 0$ are disjoint divisors, so that $(Y',B')$ is terminal and $F$ is exceptional. We may then run a $K_{Y'}+B$ MMP on $Y'$ over $X$. Let $\pi:(Y,B) \to X$ be the output. 
+	Let $f:Y' \to X$ be a log resolution of $(X,\Delta)$ such that $f^{*}(K_{X}+\Delta)=(K_{Y'}+\Delta')$ and the strict transform of $\Delta$ has disjoint components. Write $\Delta'=B'+E$ where $B'$ is the strict transform of $\Delta$ and $E$ is exceptional. Then $(Y',B')$ is terminal, since it is is log smooth with coefficients less than $1$ and disjoint support. We may then run a $K_{Y'}+B$ MMP on $Y'$ over $X$. Let $\pi:(Y,B) \to X$ be the output. 
 	
 	Let $E=(K_{Y}+B)-\pi^{*}(K_{X}+\Delta)$, then by construction $\pi_{*}E=f_{*}F=0$ and $E$ is nef over $X$. Hence by the Negativity Lemma we have that $-E \geq 0$. On the other hand $E$ is precisely the pushforward of $F$ and hence $E \geq 0$, forcing $E=0$ and hence $K_{Y}+B=\pi^{*}(K_{X}+\Delta)$ as claimed.
 
 \end{proof}
 
+%\begin{remark}
+%	
+%	One can also seek a terminalisation of a pair in a more general sense, looking simply for $\pi:Y \to X$ with $(Y,\pi_{*}^{-1}\Delta)$ terminal, but this is not a crepant modification. If $\lfloor \Delta \rfloor=0$ then we can run the above MMP with $f^{-1}_{*}\Delta$ in place of $\Delta'$ to yield such a pair.
+%	
+%	\end{remark}
+
 \begin{remark}
+	Of course this is not crepant for $(X,B)$. However the main usage is to take a terminalisation of the underlying variety $X$. Then we have $\pi \colon Y \to X$ with $K_{Y}$ nef, so $B_{Y}=K_{Y}-\pi^{*}(K_{X}+B) \geq 0$ by negativity. 
 	
-	One can also seek a terminalisation of a pair in a more general sense, looking simply for $\pi:Y \to X$ with $(Y,\pi_{*}^{-1}\Delta)$ terminal, but this is not a crepant modification.
-	
-	\end{remark}
+\end{remark}
 
 
 Perhaps the most useful form of modification is a dlt modification. The main difficulty versus a terminalisation arises from the need to run an MMP for a pair which is not klt.
 
-\myworries{This section needs more care vis a vis Bertini}
-
 \begin{theorem}
-	Let $(X,\Delta)$ an $R$ pair. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
+	Let $(X,\Delta)$ an $R$ pair with coefficients bounded above by $1$. Write $\Delta'$ for the divisor with $\textup{Coeff}_{E}(\Delta')=\textup{Min}(\textup{Coeff}_{E}(\Delta),1)$. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
 	\begin{itemize}
-		\item $Y$ is $\mathbb{Q}$-factorial
-		\item $a(E,X,\Delta) \leq -1$ for every $f$ exceptional divisor $E$
-		\item If $\Delta_{Y}=f^{-1}_{*}\Delta' + \sum_{E \text{ exceptional}} E$ then $(Y,\Delta_{Y})$ is dlt
+		\item $Y$ is $\mathbb{Q}$-factorial,
+		\item $a(E,X,\Delta) \leq -1$ for every $f$ exceptional divisor $E$,
+		\item If $\Delta_{Y}=f^{-1}_{*}\Delta' + \sum_{E \textup{ exceptional}} E$ then $(Y,\Delta_{Y})$ is dlt, and
 		\item $K_{Y}+\Delta_{Y}+F=f^{*}(K_{X}+\Delta)$ where $F= \sum_{E:a(E,X,\Delta)<-1} -(a(E,X,\Delta)+1)E$
 	\end{itemize}
-	where $\Delta'$ has coefficients $\min\{\text{Coeff}_{E}(\Delta),1\}$ at each $E$. If $\Delta=\Delta'$ then $F$ is exceptional, in general we have $f_{*}F=\Delta-\Delta'$ and $f(F)=\textit{nlc}(X,\Delta)$ \myworries{Prove}. Moreover $(X,\Delta)$ is dlt if and only if this is a small morphism.
-	\myworries{Why $\Delta'?$}
+	Here $\textup{Nklt}(Y,\Delta_{Y})=f^{-1}(\textup{Nklt}(X,\Delta))$, $\text{Supp}(F)=f^{-1}(\textup{Nlc}(X,\Delta))$ and $f_{*}F=\Delta-\Delta'$. Moreover if $(X,\Delta)$ is klt if then this is a small morphism.
 \end{theorem}
 
 \begin{proof}
 	
-	We may freely replace $\Delta$ with $\Delta'$ as given in the statement and assume that $\Delta$ has no coefficients greater than $1$.
+%	It is sufficient to prove this under the assumption that $\Delta'=\Delta$. Indeed if $(Y,\Delta_{Y})$ is a dlt modification of $(X,\Delta')$ then it is also a dlt modification of $(X,\Delta)$. We need only replace $F$ with $F'=F+f^{*}(\Delta-\Delta')$. Then explicit calculation shows that 
+%	\[\text{Coeff}_{E}(F')=-(a(E,X,\Delta)+1).\]
+%	Indeed if $E$ is exceptional, this is immediate since $$K_{Y}+f^{-1}_{*}\Delta'+\sum_{E \text{ exceptional}}E +F' = K_{Y} + \sum -a(E,X,\Delta)E$$
+%	and $f^{-1}_{*}\Delta$ is not supported on $E$. If $E$ is not exceptional, then we may assume $\text{Coeff}_{f_{*}E}\Delta \geq 1$. Thus $\text{Coeff}_{E}F'=\text{Coeff}_{f_{*}E}\Delta - \text{Coeff}_{f_{*}E}\Delta'=-(a(E,X,\Delta)+1)$ as claimed. 
 	
-	Take a log resolution $\pi:Y' \to X$ of $(X,\Delta)$ admitting an ample exceptional divisor $-E$ \cite{}. Note that by the Negativity Lemma, as $-E$ is nef we have that $E \geq 0$, justifying the choice of sign.
+	Take a log resolution $\pi:Y \to X$ of $(X,\Delta)$ admitting an ample exceptional divisor $-C$, which exists by \cite[Theorem 1]{kollar2021resolution}. Note that by the Negativity Lemma, as $-C$ is nef we have that $C \geq 0$, justifying the choice of sign.
 	
-	Let \[F= \sum_{\substack{E \text{ exceptional} \\ a(E,X,\Delta) > -1}} E\]
+	Roughly speaking we would like to say that $\pi^{*}(K_{X}+\Delta)=K_{Y}+\pi_{*}^{-1}\Delta'+E$ and run an MMP for the dlt pair $(Y,S+\pi_{*}^{-1}\Delta')$ where $S=\text{Supp}(E)$. Indeed, if such an MMP exists, then we can replace $Y$ with the output so that $N=\pi^{*}(K_{X}+\Delta)-(K_{Y}+E+\pi_{*}^{-1}\Delta')= \pi_{*}^{-1}(\Delta-\Delta')+(E-F)$ has $\pi_{*}N=\Delta-\Delta' \geq 0$ and $-N$ nef. That is, $N \geq 0$ by the negativity lemma and the result follows immediately taking $F=N$.  
+	
+	When this MMP is not known to exist, the same result is achieved by making small perturbations by suitable ample divisors. In general we do not have sufficiently strong Bertini theorems to create klt pairs from such perturbations. However they are always rlt by \autoref{bertini}. This is sufficient to run a terminating MMP, see further \autoref{rlt-section}.
+	
+	To this end, let \[D= \sum_{\substack{E \text{exceptional} \\ a(E,X,\Delta) > -1}} E\]
 	and 
-		\[G = \sum_{\substack{E \text{ exceptional} \\ a(E,X,\Delta) \leq  -1}} -a(E,X,\Delta)E\]
+		\[G = \sum_{\substack{E \\ a(E,X,\Delta) \leq  -1}} -a(E,X,\Delta)E\]
 		
+	Let $S$ be the support of $G$, so that $\pi_{*}(G-S)=\Delta-\Delta' \geq 0.$ Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
 	
-	Let $S$ be the support of $G$, so that $G-S$ is exceptional as $\Delta$ has no coefficients greater than $1$.
+	We may choose $H,H_{s}$ so that $(Y, (1-rs)S+(1-t)D+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is rlt for small $r,s,t > 0$ by \autoref{bertini}. We may choose $t$ sufficiently small that $a(E,X,\Delta) > t-1$ for each $E$ in the support of $D$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$, and then choose $N$ as follows.
+	\begin{align*}
+	-N&=K_{Y}+S+(1-t)D+\pi_{*}^{-1}\Delta_{<1}+rH-\pi^{*}(K_{X}+\Delta+A)\\
+	&=S+(1-t)D+\pi_{*}^{-1}\Delta_{<1}-rC-B
+	\end{align*}
+	From the choice of $t$, we have that for each $E$ in the support of $D$ that $\text{Coeff}_{E}(N)=(t-1)+a(E,X,\Delta) < 0$.
 	
-	Roughly speaking we would like to run an MMP for the dlt pair $(Y,S+F+\pi_{*}^{-1}\Delta_{<1})$. This is achieved by making small perturbations by suitable ample divisors.
+	Let $f:Y' \to X$ be a minimal model for $(Y, (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$. By construction $Y'$ is $\mathbb{Q}$-factorial and is also a minimal model for the pair $(Y,S+(1-t)F+\pi_{*}^{-1}\Delta_{<1}+rH)$. In particular, letting $S',F',H', H'_{s},D'$ be the strict transforms of the corresponding divisors on $Y$, we have that $(Y',S'+(1-t)D'+f_{*}^{-1}\Delta_{<1})$ is dlt and $M=K_{Y}+S'+(1-t)D'+f_{*}^{-1}\Delta_{<1}+rH'$ is nef over $X$.
 	
-	Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
+	Note then that $N'=f^{*}(K_{X}+\Delta+A)-M$, so that $-N'$ is nef over $X$. On the other hand $f_{*}N \geq 0$ and hence by negativity $N' \geq 0$. 
 	
-	We may choose $H,H_{s}$ so that $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is klt for small $r,s,t > 0$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y'}+B$, so that $$D=K_{Y}+S+(1-t)F+f_{*}^{-1}\Delta_{<0}+rH-\pi^{*}(K_{X}+\Delta+A)=S+(1-t)F+f_{*}^{-1}\Delta_{<0}-rC-B.$$ \myworries{By Bertini}
-	
-	Let $f:Y \to X$ be a minimal model for $(Y', (1-rs)S+(1-t)F+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$. By construction this is also a minimal model for the pair $(Y',S+(1-t)F+\pi_{*}^{-1}\Delta_{<1}+H)$, and hence $Y$ is $\mathbb{Q}$-factorial. In particular, letting $S',F',H', H'_{s},D'$ be the strict transforms of the corresponding divisors on $Y'$, we have that $(Y,S'+(1-t)F'+f_{*}^{-1}\Delta_{<0}+H')$ is dlt and $N=K_{Y}+S'+(1-t)F'+f_{*}^{-1}\Delta_{<1}+rH'$ is nef over $X$.
-	
-	Note then that $D'=f^{*}(K_{X}+\Delta+A)-N$, so that $-D'$ is nef over $X$. On the other hand $D'$ is necessarily exceptional, and hence by negativity $D' \geq 0$. 
-	
- 	Every component of $F$ has negative coefficient inside $D$ by construction. Thus in fact $F'=0$, since $D' \geq 0$, and in particular every exceptional divisor on $Y$ over $X$ has discrepancy at most $-1$. Hence it must be the case that in fact $$B'-E'-f_{*}^{-1}\Delta_{<1}=\sum_{\substack{E \text{ exceptional} \\ a(E,X,\Delta) \leq  -1}} (1+a(E,X,\Delta))E.$$ Moreover the pair $(Y\Delta_{Y}=S'+f_{*}^{-1}\Delta_{<1})$ is dlt by construction. 
+ 	Every component of $D'$ has negative coefficient inside $N'$ by construction. Thus in fact $D'=0$, since $N' \geq 0$, and in particular every exceptional divisor on $Y$ over $X$ has discrepancy at most $-1$. Hence we have contracted every $E$ exceptional with $a(E,X,\Delta) >-1$ and therefore $S'=\text{Exc}(\pi)$. Moreover the pair $(Y\Delta_{Y}=S'+f_{*}^{-1}\Delta_{<1})$ is dlt by construction. 
  	
- 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. On the other hand, we have $F=0$ on $Y$ and the contribution from $-C$ ensures that $-(K_{Y}+S+r(-C+\pi^{*}A) + \pi_{*}^{-1}\Delta_{< 0})$ is $\pi|_{E}$-big on restriction to any divisor $E$ on $Y$, centred over $X\setminus Z$ with $a(E,X,\Delta)=-1$. In particular $E$ must be contracted by the MMP, and so $Y \to X$ has no exceptional divisors at all, that is $X \to Y$ is small. \myworries{Improve!}
+ 	Consider then $$F=f^{*}(K_{X}+\Delta)-(K_{Y}+\Delta_{Y})=B'-S-f_{*}^{-1}\Delta_{<1}=N-rC' \geq 0.$$ If $E$ is exceptional over $X$ then we have $\text{Coeff}_{E}F=\text{Coeff}_{E}(B'-S)=-(a(E,X,\Delta)+1)$. Suppose then $E$ is not exceptional. Then we get $\text{Coeff}_{E}F=\text{Coeff}_{E}(B'-f_{*}^{-1}\Delta_{\leq1})=\text{Coeff}_{f_{*}E}(\Delta-\Delta')$. If $\text{Coeff}_{f_{*}E}\Delta \geq 1$ then this yields $-(a(E,X,\Delta)+1)$, otherwise we get $\text{Coeff}_{E}F=0$.
+
  	
- 	Conversely if the dlt modification extracts no divisors then we must have that $F=0$ and then $f^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$, ensuring that $(X,\Delta)$ is dlt.
+% 	By construction $(Y',\Delta_{Y'}+F)$ is dlt away from $F$, so $F$ is precisely the nlc locus of the pair and hence $\text{Supp}(F)=f^{-1}\text{Nlc}(X,\Delta)$. Similarly the nklt locus of $(Y,\Delta_{Y'})$ is $\lfloor \Delta_{Y} \rfloor=f^{-1}\text{Nklt}(X,\Delta)$. 
+%
+% 	Suppose that $(X,\Delta)$ is dlt. Then there is $Z$ on $X$ with such that $(X,\Delta)$ is log smooth away from $Z$ and every exceptional divisor centred on $Z$ has $a(E,X,\Delta) > -1$. Suppose that $E$ We must have $a(E,X,\Delta)=-1$ as $F=0$, and so $E$ is centred on $X \setminus Z$. Localising on the generic point of it's image, we may suppose that $(X,\Delta)$ is log smooth. 
+% 	
+% 	Conversely if the dlt modification extracts no divisors then we must have that $F=0$ and then $f^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$, ensuring that $(X,\Delta)$ is dlt.
 	
+	If $X$ is klt, then $\lfloor\Delta_{Y}\rfloor=F=0$ and there are no exceptional divisors.
 \end{proof}
 
-The case that $(X,\Delta)$ is dlt, or even klt, is particularly important and is called a $\mathbb{Q}$-factorialisation.
+%\begin{remark}
+%	Strictly speaking, the assumption that the MMP holds for klt pairs in dimension $\leq n$ includes termination in dimension $\leq n-1$. Thus special termination holds by \cite{fujino2007special} \cite[Theorem 9.7]{bhatt2020}, and if we can run a klt MMP we can run a dlt MMP. Nonetheless the above proof without running a dlt MMP holds is included as it holds in a more general context where we can run terminating MMMP's, but not necessarily every MMP is know to terminate.
+%	\end{remark}
+
+\begin{remark}\label{lc-connect}
+	Note that in the construction above we can choose $r$ sufficiently small that $\coeff_{E}(F) > 0$ ensures that $\coeff_{E}(N') > 0$ also. So we may assume $N'$ and $F$ have the same support. In particular if $C$ is a curve on $Y$ contracted over $X$ if it meets $F$ it must be contained in it. Otherwise $N'.C >0$, contradicting nefness of $-N'$.
+	
+	The main consequence of this is that if $F$ dominates $x \in X$ then it contains the fibre over $x$ also.
+	\end{remark}
+
+The case that $(X,\Delta)$ is klt is particularly important and is called a (small) $\mathbb{Q}$-factorialisation. One would like to be able to say that the dlt modification is small if $(X,\Delta)$ is dlt. This requires quite strong resolution of singularity assumptions, however. If $(X,\Delta)$ is dlt and admits a log resolution which is an isomorphism overt the snc locus, then it admits a small $\mathbb{Q}$-factorialisation.
 
 A useful application of DLT modifications is the study of the non-klt and non-lc loci. In particular we have following generalisation of the Cone Theorem as well as a connectedness result for suitable pairs.
 
-	\begin{theorem}[Nlc Cone Theorem]\label{WCT}
+
+	\begin{theorem}[Nlc Cone Theorem]\label{NLCT}
 	Let $(X,B)/T$ be an $R$-pair. Then write $\overline{NE}(X/T)_{nlc}$ for the cone spanned by curves contained in the non log canonical locus of $X$. Then we have the following decomposition
 	
 		\begin{enumerate}
@@ -799,7 +930,8 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 \begin{proof}
 	If $(X,B)$ is dlt then it is the limit of klt pairs $(X,\frac{n}{n+1}B)$ and the Cone Theorem follows immediately from the klt case.
 	
-	Suppose then $(X,B)$ is not dlt. Let $(Y,B_{Y})$ be a dlt modification of $(X,B)$ and $R$ any $K_{X}+B$ negative extremal ray such that $R \cap\overline{NE(X)}_{nlc}=\{0\}$. Take any class $\gamma$ with $[\gamma] \in R$ and choose $\gamma' \in \overline{NE}(Y/T)$ with $f_{*}\gamma'=\gamma$. Then by the projection formula we have that $(K_{Y}+B_{Y}+F).\gamma'=(K_{X}+B).f_{*}\gamma'=(K_{X}+B).\gamma < 0$ and $\gamma' \not\subseteq$ Supp $F$ by assumption. 
+	Suppose then $X$ is not dlt. Let $(Y,B_{Y})$ be a dlt modification of $(X,B)$ and $R$ any $K_{X}+B$ negative extremal ray such that $R \cap\overline{NE(X)}_{nlc}=\{0\}$. Take any class $\gamma$ with $[\gamma] \in R$ and choose $\gamma' \in \overline{NE}(Y/T)$ with $f_{*}\gamma'=\gamma$. Then by the projection formula we have that $(K_{Y}+B_{Y}+F).\gamma'=(K_{X}+B).f_{*}\gamma'=(K_{X}+B).\gamma < 0$ and $\gamma' \not\subseteq$ Supp $F$ by assumption. 
+
 	Since $(Y,B_{Y})$ is $\mathbb{Q}$-factorial and dlt the standard Cone Theorem applies. In particular then $\gamma'=C+ \sum \lambda_{i}C_{i}$ where $\lambda_{i} >0$,$(K_{Y}+B_{Y}).C \geq 0$ and the $C_{i}$ each generate $(K_{Y}+B_{Y})$ negative extremal rays with $-(K_{Y}+B_{Y}).C_{i} \leq 2nd_{c_{i}}$. 
 	
 	We may further decompose $C$ as $C=\sum r_{j}$ where $(K_{Y}+B_{Y}).r_{j} \geq 0$ and each $r_{i}$ has irreducible support. Then for each $j$ either $(K_{Y}+B_{Y}+F).r_{j} \geq 0$ or $r_{j}$ is contained in the support of $F$. In either case $[f_{*}r_{j}]$ cannot be in $R$. Thus as $R$ is extremal it follows $[f_{*}C_{k}] \in R$ for some $k$. Such a $C_{k}$ cannot be contained in the support of $F$ so $F.C_{k} \geq 0$ and thus $(K_{X}+B).f_{*}C_{k}=(K_{Y}+B_{Y}+F).C_{k} \geq -2nd_{c_{i}}$.
@@ -809,33 +941,52 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 
 
 \begin{theorem}[Weak Connectedness Lemma]\label{WLC}
-	Let $(X,\Delta)/T$ be an $R$ pair with geometrically connected fibres \myworries{such that the coefficients of $\Delta$ bounded above by $1$}. Then if $-(K_{X}+\Delta)$ is big and nef, $\textup{Nklt}(X,\Delta)$ is either empty or connected.
+	Let $(X,\Delta)/T$ be an $R$-pair with $f_{*}\ox = \ox[T]$. Then if $-(K_{X}+\Delta)$ is big and nef. Suppose that $\textup{Nklt}(X,\Delta)$ is vertical over $T$ then for any $t \in T$, $f^{-1}t \cap \textup{Nklt}(X,\Delta)$ is connected. Otherwise $\textup{Nklt}(X,\Delta)$ dominates $T$ and it is connected. 
+	
+	In particular $\textup{Nklt}(X,\Delta)$ is always connected in a neighbourhood of any $t\in T$.
 \end{theorem}
 
 \begin{proof}
 	
-	Writing $-K_{X}+\Delta=A+E$ for suitably small $E$ such that $\text{Nklt}(X,\Delta)=\text{Nklt}(X,\Delta+E)$, we may replace $\Delta$ with $\Delta+E$ and assume that $-(K_{X}+\Delta)$ is ample. If $(X,\Delta)$ is klt, the result is trivial so assume otherwise.
+	If $(X,\Delta)$ is klt over $t$ then the result is trivial so assume otherwise.
 	
+	Writing $-K_{X}+\Delta=A+E$ for suitably small $E$ such that $\text{Nklt}(X,\Delta)=\text{Nklt}(X,\Delta+E)$, we may replace $\Delta$ with $\Delta+E$ and assume that $-(K_{X}+\Delta)$ is ample. 
+		
 	We prove this by induction. Suppose first that $(X,\Delta)$ has dimension $1$, then $R$ is a field. If $-(K_{X}+\Delta)$ is big and nef then so is $-K_{X}$. Then we have $\deg K_{X} = -2$ by \cite[Corollary 2.8]{tanaka2018minimal} giving that $ \deg \Delta <2$. The non-klt locus of $(X,\Delta)$ is precisely the support of $\lfloor \D \rfloor$ and hence can contain at most one point.
 	
 	Now suppose that the result holds when the total dimension of $X$ is less than $n$, take $X$ of dimension $n$.
 	
-	Let $(Y,\D_{Y}) \to (X,\D)$ be a dlt modification. Then $-L:=K_{Y}+\D_{Y}+F=f^{*}(K_{X}+\D)$ with $(Y,\D_{Y})$ dlt and $L$ nef and big. We may further write $L=A+E$ with $A$ ample and $E$ effective and exceptional over $X$. In particular $E$ has support contained inside $S_{Y}=\lfloor \D_{Y} \rfloor$. Note that $S_{Y}$ maps surjectively onto $\nklt(X,\D)$ so it is sufficient to show that $S_{Y}$ is connected.
+	Let $f \colon (Y,\D_{Y}) \to (X,\D)$ be a dlt modification. Then $-L:=K_{Y}+\D_{Y}+F=f^{*}(K_{X}+\D)$ with $(Y,\D_{Y})$ dlt and $L$ nef and big. We may further write $L=A+E$ with $A$ ample and $E$ effective and exceptional over $X$. In particular $E$ has support contained inside $S_{Y}=\lfloor \D_{Y} \rfloor$. Note that $S_{Y}$ maps surjectively onto $\nklt(X,\D)$ so it is sufficient to show that $S_{Y}$ is connected.
 	
-	Take a general $G_{Y} \sim \epsilon A +(1-\epsilon) L-\delta S_{Y}$, then for small $\delta$ we may assume $G_{Y}$ is ample, and hence further that $(X,\D_{Y}+G_{Y})$ is dlt. Write $K_{Y}+\D_{Y}+G_{Y}\sim - P_{Y}=-(\epsilon E + F + \delta S_{Y})$ and note $\text{Supp}(P_{Y})=S_{Y}$. In particular $K_{Y}+\D_{Y}+G_{Y}$ is not pseudo-effective and hence we may run a $(Y,\D_{Y}+G_{Y})$ LMMP which terminates in a Mori fibre spaces $Y' \to Z$. 
+	Take a general $G_{Y} \sim \epsilon A +(1-\epsilon) L-\delta S_{Y}$, then for small $\delta$ we may assume $G_{Y}$ is ample. It may not quite true that we can choose $G_{Y}$ such that $(X,\D_{Y}+G_{Y})$ is dlt. However $\D_{Y}+G_{Y}=\D_{Y}-\delta S_{Y} +\epsilon A + (1-\epsilon)L$ so the pair is rlt and we may still run a terminating $K_{Y}+\Delta_{Y}+G_{Y}$ MMP. Moreover the pair $(X,\D_{Y}+G_{Y})$ is generalised dlt, which is preserved by this MMP. In particular if $(Y,\D_{Y})$ remains dlt during this MMP. By the same logic, if $(X,\D_{Y}+G_{Y})$ is plt then it remains so throughout the MMP.
+	
+	Write $K_{Y}+\D_{Y}+G_{Y}\sim - P_{Y}=-(\epsilon E + F + \delta S_{Y})$ and note $\text{Supp}(P_{Y})=S_{Y}$. In particular $K_{Y}+\D_{Y}+G_{Y}$ is not pseudo-effective. Let $Y \dashrightarrow Y'$ be a $(Y,\D_{Y}+G_{Y})$ LMMP. If $\dim T < \dim X$ then this terminates in a Mori fibre spaces $Y' \to Z$. Otherwise we have that $Y'$ such that $-P_{Y}\simeq K_{Y}+\D_{Y}+G_{Y}$ is nef over T. These two possibilities correspond to the verticality conditions. If $\textup{Nklt}(X,\Delta)$ dominates $T$, so does $P_{Y}$ and we must end with a Mori Fibration. Otherwise $\textup{Nklt}(X,\Delta)$ is vertical over $T$ then $-P_{Y}$ is psuedo-effective and we end with $-P_{Y'}$ nef.
 	
 	We claim that on the induced pair $(Y',\D_{Y'})$, $\nklt(Y',\D_{Y'})=\text{Supp}(\lfloor \D_{Y'} \rfloor)=\text{Supp}(P_{Y'})$ has the same number of connected components as $\nklt(X,\Delta)$. Indeed $P_{Y}$ has the same number of components, so suppose for contradiction there is an MMP step which reduced the number of connected components. Replacing $Y$ with the first point of failure, we can assume there is a step $\pi: Y \dashrightarrow \hat{Y}$ such that $P_{\hat{Y}}$ has one fewer connected components. 
 	
-	Since $\text{Supp}(P_{Y})=\lfloor \D_{Y} \rfloor$, we can subtract components of $P_{Y}$ from $\Delta$ and assume that $\lfloor \D_{Y} \rfloor$ contains only two components which are disjoint on $Y$ but whose strict transforms meet on $\hat{Y}$. However $(Y,\Delta_{Y})$ is then plt, and thus so too must $(\hat{Y},\D_{\hat{Y}})$ be. In particular $\lfloor \D_{\hat{Y}} \rfloor$ consists of disconnected divisors by \cite[Lemma 2.28]{bhatt2020}, a contradiction.
+	Since $\text{Supp}(P_{Y})=\lfloor \D_{Y} \rfloor$, we can subtract components of $P_{Y}$ from $\Delta$ and assume that $\lfloor \D_{Y} \rfloor$ contains only two components $S_{1}, S_{2}$ which are disjoint on $Y$ but whose strict transforms meet on $\hat{Y}$. However $(Y,\Delta_{Y})$ is then plt, and thus so too must $(\hat{Y},\D_{\hat{Y}})$ be. In particular $\lfloor \D_{\hat{Y}} \rfloor$ consists of disconnected divisors, a contradiction. 
+	
+	The only possibility then is that $\pi: Y \to \hat{Y}$ is divisorial and contracts a connected component of $P_{Y}$. Let $P_{Y}=\sum P_{Y}^{i}$ be the decomposition into connected components. Then we can assume $P_{Y}^{1}$ is the contracted component, in which case it is a prime divisor. Thus $P_{Y}^{1}.C <0$ for any contracted curve, since $\hat{Y}$ is $\mathbb{Q}$-factorial. On the other hand $P_{Y}^{j}.C=0$ for any such $C$, since $P_{Y}^{j}$ does not meet $P_{Y}^{1}$. Thus $P_{Y}.C <0$. This is a $-P_{Y}$ MMP however, so this cannot be the case. Hence, as claimed, the number of connected components of $P_{Y'}$ is the same as $P_{Y}$.
+	
+	Suppose first that $-P_{Y'} \simeq K_{Y'}+\D_{Y'}+G_{Y'}$ is nef over $T$. Then $P_{Y'} \geq 0$ has $-P_{Y}$ nef over $T$. Thus for any $t \in T$, if $P_{Y'}$ meets the fibre over $t$ it must contain the entire fibre. Otherwise there would be some curve $C$ mapped to $t$ and meeting $P_{Y}$ but not contained in it, contradicting nefness of $-P_{Y}$.
+	
+	Otherwise we assume that $Y' \to Z$ is a Mori Fibration. Suppose then that $\dim Z=0$. Then $Y'$ is a variety over a field with $\rho(Y')=1$. In particular if $D,D'$ are effective and $H$ ample, then $H^{n-2}.D.D' >0$, so certainly $D\cap D' \neq \emptyset$. Thus $P_{Y'}$ cannot have disconnected support.
+	
+	Otherwise have that $\dim Z > 0 $. Let $F$ be the generic fibre. We must have $P_{Y'}|_{F}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. We claim it must also dominate $Z$. Indeed let $S_{1},S_{2}$ be the two connected components and assume that $S_{1}$ dominates $Z$. Then $S.C > 0$ for any contracted curve $C$. If we choose $C$ contained entirely in $S_{2}$ we see that it meets $S_{1}$.
 
-	Hence, as claimed, the number of connected components of $P_{Y'}$ is the same as $P_{Y}$.
-	
-	Suppose then that $\dim Z=0$. Then $\rho(Y')=1$. In particular if $D,D'$ are effective and $H$ ample, then $H^{n-2}.D.D' >0$, so certainly $D\cap D' \neq \emptyset$. Thus $P_{Y'}$ cannot have disconnected support.
-	
-	Otherwise have that $\dim Z > 0 $. Let $T$ be the generic fibre. We must have $P_{Y'}|_{T}> 0$ since $Y' \to Z$ is a $P_{Y'}\sim -(K_{Y'}+\Delta_{Y'}+G_{Y'})$ positive contraction. However $P_{Y'}$ has the same support as $\lfloor \D_{Y'} \rfloor$ so at least one connected component must dominate $Z$. Suppose then, for contradiction, there is a second connected component. Clearly it must also dominate $Z$, else it could not possibly be disjoint from the first. Consider then $(T,\D_{T}=\D_{Y'}|_{T})$. Since $T \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $R$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).R >0$, but since $R$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.R \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).R >0$ also, and so $-K_{T}+\D_{T}$ is ample. Then, however, the non-klt locus of $(T,\D_{T})$ must be connected by induction, a contradiction.
+	Consider then $(F,\D_{F}=\D_{Y'}|_{F})$. Since $F \to Y'$ is flat, the pullback of $\D_{Y'}$ is just the inverse image, and in particular $\lfloor \D_{T} \rfloor$ contains the pullback of both connected components. Suppose $L$ is the extremal ray whose contraction induces the Mori fibration. Then we have $-(K_{Y'}+\D_{Y'}+G_{Y'}).L >0$, but since $L$ is spanned by a nef curve, as contracting it defines a fibration, and $G_{Y'}$ is effective, we must have $G_{Y'}.L \geq 0$. Hence in fact $-(K_{Y'}+\D_{Y'}).L >0$ also, and so $-K_{L}+\D_{L}$ is ample. Then, however, the non-klt locus of $(L,\D_{L})$ must be connected by induction, a contradiction.
+
 \end{proof}
 
-\myworries{What if $-(K_{X}+B)$ is nef? What about close to a fibre?}
+
+In practice we have essentially run a $K_{Y}+B_{Y}-\delta S_{Y}+ M$ MMP for $M=-f^{*}(K_{X}+B)$ big and nef which preserves dltness of $K_{Y}+B_{Y}$. Working with generalised pairs instead, one can push this result quite far. Thinking of $(Y,B_{Y}+M)$ as a generalised dlt pair and instead running a $K_{Y}+B_{Y}+M\simeq_{T} -F$ MMP we obtain the same result for the nlc locus. This proof works even if $M$ is only nef, however termination in this case requires special termination for dlt pairs.
+
+Recovering the result for the $\nklt$ locus takes a bit more work. Suppose $M=f^{*}(K_{X}+B)$ is nef. Let $S=\lfloor B_{Y} \rfloor$ and $G=-S- F$. Then we can run a $K_{Y}+B_{Y}-S+M \simeq_{T}G$ MMP which is also a $K_{Y}+B_{Y}-S$ MMP and has contracts only $M$ non-negative curves. In particular if we contract a curve $C$, we have $G.C=(K_{Y}+B_{Y}-S+M).C <0$. If $F.C >0$ then $(K_{Y}+B_{Y}).C \leq (K_{Y}+B_{Y}+M).C=-F.C < 0$. Otherwise we have $S.C >0$. 
+
+This generalises \autoref{lc-connect}. Finally if $\dim T  \neq 0$ and $\nklt(X,\Delta)$ is vertical, we can take $D \geq 0$ Cartier on $T$ containing it's image. If $g^{*}D$ is the pullback then $\nklt(X,\Delta)=\textup{Nlc}(X,\Delta+\epsilon g^{*}D)$ for small $\epsilon >0$ and $K_{X}+\Delta+\epsilon g^{*}D$ is still nef over $T$. In this case then the $\nklt$ case reduces to the $\textup{Nlc}$ case. Many of these ideas are explored for positive characteristic pairs in \cite{filipazzi2020connectedness}.
+
+
+\myworries{Put in generalised pairs, somewhere for dlt preserving reasons}
 
 \subsection{Adjunction}
 
@@ -843,15 +994,24 @@ Dlt modifications are also closely related to the study of adjunction.
 
 In particular we have the following easy application.
 
-\begin{theorem}
-	Let $(X,S+B)$ be an $R$-pair where $S$ is a prime divisor not contained in the support of $B \geq 0$. Then $(X,S+B)$ is plt if and only if $(S^{N},B_{S^{N}})$ is klt, where $S^{N} \to S$ is the normalisation of $S$ and $B_{S^{N}}$ is the different \cite{}. 
+\begin{theorem}\label{t-inv_adj}
+	Let $(X,S+B)$ be an $R$-pair where $S$ is a prime divisor not contained in the support of $B \geq 0$. If $(X,S+B)$ is plt near $S$ if and only if $(S^{N},B_{S^{N}})$ is klt, where $S^{N} \to S$ is the normalisation of $S$ and $B_{S^{N}}$ is the different \cite[Definition 4.2]{kk-singbook}. Similarly $(X,S+B)$ is lc near $S$ if and only if $(S^{N},B_{S^{N}})$ is lc.
 \end{theorem}
 
 \begin{proof}
-	One direction is \cite{}, so suppose that $(S^{N},B_{S^{N}})$ is klt. Let $\pi:Y \to X$ be a dlt modification, so that $\pi^{*}(K_{X}+S+B)=K_{Y}+S_{Y}+B_{Y}$. By construction every $\pi$ exceptional divisor $E$ has $a(E,X,S+B) \leq 1$, so suppose for contradiction that such an $E$ exists. Then $E \subseteq \lfloor B_{Y} \rfloor$. However then we see that $E|_{S_{Y}^{N}}$ is contained in the support of the different $B_{S_{Y}^{N}}$. Let $f:S_{Y}^{N} \to S^{N}$ be the induced map, so that by construction we have that $f^{*}(K_{S}^{N}+B_{S^{N}})=K_{S_{Y}^{N}}+B_{S_{Y}^{N}}$, so $(S^{N},B_{S^{N}})$ has at best log canonical singularities, a contradiction. So in fact $\pi$ is small, thus $(X,S+B)$ is dlt, and hence plt as $S$ is prime.
+	One direction is \cite[Lemma 4.8]{kk-singbook}, so suppose that $(S^{N},B_{S^{N}})$ is klt. Let $\pi:Y \to X$ be a dlt modification, so that $\pi^{*}(K_{X}+S+B)=K_{Y}+S_{Y}+B_{Y}+F$. Suppose that $E$ is a a divisor exceptional over $X$ with $a(E,X,S+B) \geq 1$. Let $T$ be the normalisation of $S_{Y}$. Now we have that the induced pair $(T,B_{T})\to (S^{N},B_{S^{N}})$ is crepant. Since $(T,B_{T})$ is sub-klt it cannot be that $S_{Y}$ meets $E$ by \cite[Claim 4.7.3]{kk-singbook}. On the other hand, the non-klt locus of $(Y,S_{Y}+B_{Y})$ is connected in a neighbourhood of the fibre over any point by \autoref{WLC}. Hence $\pi(E)$ does not meet $S$.
+	
+	The lc case is identical, using \autoref{lc-connect} in place of \autoref{WLC} to see that if $\pi(F)$ meets $S$ then $F$ meets $T$. 
 \end{proof}
 
-In practice we often wish to know more than this, that in fact $(S,B_{S})$ is klt. From above it is enough to know that $S$ is normal. While normality of plt centres is in general an open problem, it is known that the result holds up to universal homeomorphism for prime $Q$-Cartier centres.
+\begin{remark}\label{no-res}
+	
+	If it is known that one can run an lc MMP, then a similar argument can be made for the lc case that does not use log resolutions. Assume for contradiction that $(X,S+B)$ is not lc. Then there is $Y \to X$ extracting $E$ lying over $s \in S$ with $a(E,X,S+B)> 1$. Let $F$ be the reduced exceptional divisor and run a $K_{Y}+\pi_{*}^{-1}(S+B)+F$ MMP. This does not contract $E$ because the discriminant at $E$ cannot increase, so we can replace $Y$ with the output and assume that $K_{Y}+\pi_{*}^{-1}(B+S)+F+G=\pi^{*}(K_{X}+B+S)$ for $G\geq0$ exceptional with $-G$ nef over $X$. By assumption $\text{Supp}(E) \subseteq \text{Supp}(G)$. Then as $G$ is nef it contains the fibre over $s$, and hence meets $\pi_{*}^{-1}S$, contradicting \cite[Claim 4.7.3]{kk-singbook}.
+	
+	The plt/klt case in slightly more involved, but can also be proven with a modification of the arguments of $\autoref{WLC}$ so long as we can run suitable klt MMPs. We may assume as above there is $\pi \colon Y \to X$ extracting $E$ with $a(E,X,B+S)=1$ lying over $s \in S$ such that $K_{Y}+\pi_{*}^{-1}(B+S)+F$ is nef over $Y$. Then we can run a $-(F+S)$ MMP by perturbing $K_{Y}+\pi_{*}^{-1}(B+S)$. Then we may assume that $-(F+S)$ is nef. This yields a contradiction, however, as then $F+S$ contains the fibre over $s$, and some component of $F$ meets $S$.
+	\end{remark}
+
+In practice we often wish to know more than this, that if $(X,S+B)$ is plt then in fact $(S,B_{S})$ is klt. From above it is enough to know that $S$ is normal. While normality of plt centres is in general an open problem, it is known that the result holds up to universal homeomorphism for prime $Q$-Cartier centres.
 
 \begin{lemma}\cite[Lemma 2.1]{hacon2020relative}\label{plt-universal}
 	
@@ -859,29 +1019,33 @@ In practice we often wish to know more than this, that in fact $(S,B_{S})$ is kl
 	
 	\end{lemma}
 
-More is understood in the case that $S$ is the special fibre of $X$ over a DVR. In this case normality is closely related to Cohen-Macaulay-ness and rationality of klt singularities over the residue field.
+More is understood in the case $X$ has dimension $3$,
 
-The important characterisation to keep in mind is the following.
+\begin{theorem}\cite[Corollary 7.17]{bhatt2020}\label{plt-adj}
+		Let $(X,S+\Delta)$ be a plt pair with $X$ excellent. Suppose that $\Delta$ has standard coefficients all less than $1$. Take any $x \in S$ with $\textup{char } k(x) > 5$ $X_{k}$ is normal at $x$. In particular the same holds if $K_{X}+X_{k}$ is $\mathbb{Q}$-Cartier.
+\end{theorem}
+
+When $S$ is the special fibre of $X$ over a DVR yet more can be said. In this case normality is closely related to Cohen-Macaulay-ness and rationality of klt singularities over the residue field. The important characterisation to keep in mind is the following.
 
 \begin{theorem}
 	Let $X$ be a scheme admitting a dlt pair $(X,\Delta)$, then $X$ has rational singularities if and only if $X$ is Cohen-Macaulay.
 \end{theorem}
 
-The first result, due to \cite{}, lets us extend \cite{} is that if $(X,X_{k})$ is plt and the normalisation of $X_{k}$ is Cohen-Macaulay then $X_{k}$ is normal. In particular this holds if klt singularities are Cohen-Macaulay over $k$, in dimension $\dim X_{k}$.
+The first result, due to \cite{hacon2020relative}, lets us extend the previous theorem. Roughly speaking it says that if $X \to R$ is a fibration such that $(X,X_{k})$ is plt and the normalisation of $X_{k}$ is Cohen-Macaulay then $X_{k}$ is normal. In particular this holds if klt singularities are Cohen-Macaulay over $k$, in dimension $\dim X_{k}$.
 
 The key observation we will use is the following.
 
 \begin{lemma} \label{lift-lemma-1}
 	
-	Let $R$ be a complete, excellent DVR and suppose $\chi \to R$ is an integral, normal $R$ scheme. Let $X$ be the special fibre, and $X^{N} \to X$ be the normalisation map. If $X^{N}$ admits a formal lift over $R$ then $X^{N} \to X$ is an isomorphism.
+	Let $R$ be a complete, excellent DVR and suppose $\mathcal{X} \to R$ is an integral, normal $R$ scheme. Let $X$ be the special fibre, and $X^{N} \to X$ be the normalisation map. If $X^{N}$ admits a formal lift over $R$ then $X^{N} \to X$ is an isomorphism.
 	
 	\end{lemma}
 
 \begin{proof}
-	The morphism $X^{N} \to X$ is necessarily finite. Thus by \cite[Tag 09ZT]{stacks-project} there is an algebraic lift $\bar{X}$ of $X^{N}$, endowed with a corresponding finite morphism $\bar{X} \to X$. On the other hand $\bar{X} \to \chi$ is an isomorphism over the generic point of $X$ inside $\chi$, and hence a birational morphism. Thus as $X$ is normal, $\bar(X)\to \chi$ is an isomorphism. In particular, so too is $X^{N} \to X$.
+	The morphism $X^{N} \to X$ is necessarily finite. Thus by \cite[Tag 09ZT]{stacks-project} there is an algebraic lift $\bar{\mathcal{X}}$ of $X^{N}$, endowed with a corresponding finite morphism $\bar{\mathcal{X}} \to \mathcal{X}$. On the other hand $\bar{X} \to \mathcal{X}$ is an isomorphism over the generic point of $X$ inside $\mathcal{X}$, and hence a birational morphism. Since $X$ is normal, $\bar{\mathcal{X}}\to \mathcal{X}$ must be an isomorphism. In particular, so too is $X^{N} \to X$.
 \end{proof}
 
-The normality of a special fibre, therefore, is closely related to liftability of the normalisation. We then have the following liftability characterisation.
+The normality of a special fibre, therefore, is equivalent to liftability of the normalisation. We then have the following liftability characterisation.
 
 \begin{lemma}\cite[Lemma A.23]{zdanowicz2018liftability}\label{lift-lemma-2}
 	
@@ -891,19 +1055,19 @@ The normality of a special fibre, therefore, is closely related to liftability o
 
 \begin{lemma}\label{adj1}
 	
-	Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p> 5$ and suppose $\chi \to R$ is an integral, normal $R$ scheme. Let $X$ be the special fibre, and $X^{N} \to X$ be the normalisation map. If $(\chi,X)$ is a plt $R$-pair, and $X^{N}$ is Cohen-Macaulay, or even just $S_{3}$, then $X$ is normal.
+	Let $R$ be a complete DVR with $F$-finite residue field of characteristic $p> 5$ and suppose $\mathcal{X} \to R$ is an integral, normal $R$ scheme. Let $X$ be the special fibre, and $X^{N} \to X$ be the normalisation map. If $(\mathcal{X},X)$ is a plt $R$-pair, and $X^{N}$ is Cohen-Macaulay, or even just $S_{3}$, then $X$ is normal.
 	
 	\end{lemma}
 
 \begin{proof}
 
-	We may freely replace $R$ with its completion, without changing $X$. Then by \autoref{lift-lemma-1} it suffices to check that $X^{N}$ admits a formal lift. By \autoref{lift-lemma-2}, since $X^{N}$ is Cohen-Macaulay, we need only check this away from a closed subset of codimension at least $3$. By localising at codimension $2$ points of $X$ and applying \cite{}, however, we see that $X$ is normal in codimension $2$, and hence $X^{N} \to X$ is an isomorphism away from a closed subset of codimension $3$ and the result follows, since $X$ lifts.
+	Then by \autoref{lift-lemma-1} it suffices to check that $X^{N}$ admits a formal lift. By \autoref{lift-lemma-2}, since $X^{N}$ is $S_{3}$, we need only check this away from a closed subset of codimension at least $3$. By localising at codimension $2$ points of $X$ and applying \autoref{t-inv_adj}, however, we see that $X$ is normal in codimension $2$. Therefore $X^{N} \to X$ is an isomorphism away from a closed subset of codimension $3$ and the result follows, since $X$ lifts.
 	
 \end{proof}
 
-Note that $X^{N}$ is always klt under these assumptions. This result does not use the results of the MMP, however if $R$ is not complete then the existence of log resolutions is needed to ensure that the plt condition is preserved by base change to the completion.
-
-While a very useful characterisation in its own right, this result cannot be applied to the case that $(X,X_{P}+B)$ is a plt pair with $X$ not $\mathbb{Q}$-Gorenstein. However we also have a very similar set of results coming from vanishing of certain cohomology classes. 
+Note that $X^{N}$ is always klt under these assumptions. This result does not use the results of the MMP, however if $R$ is not complete then the existence of log resolutions is needed to ensure that the plt condition is preserved by base change to the completion. Alternatively if plt inversion of adjunction is known, then base change to the completion preserves pltness - since the fibre is not changed. In particular, as noted in \autoref{no-res} the existence of certain klt MMPs is enough to ensure that inversion of adjunction holds.
+ 
+While a very useful characterisation in its own right, this result cannot be applied to the case that $(X,X_{P}+B)$ is a plt pair with $X$ not $\mathbb{Q}$-Gorenstein. However we also have a very similar set of results coming from vanishing of certain cohomology classes. For this we need the following liftability result.
 
 \begin{proposition}\label{push-lift}
 	Let $S$ be a local Artinian ring and $T \hookrightarrow S$ be a closed immersion defined by a square-zero ideal $I$.  Let $f\colon Y \to T$, and $h\colon X \to T$ be flat morphisms and let $g\colon Y \to X$ be a morphism of $T$-schemes. 
@@ -920,7 +1084,6 @@ While a very useful characterisation in its own right, this result cannot be app
 \end{proposition}
 
 \begin{proof}
-	
 	This is essentially the construction of \cite[Theorem 3.1]{cynk2009small}.
 	
 	As $Y'$ has the same underlying topological space of $Y$, we may see the sheaf $\mathcal{O}_{Y'}$ as a sheaf on the topological space $Y$. 	
@@ -982,7 +1145,7 @@ Although Kawamata-Viehweg Vanishing fails in positive characteristic, we often h
 	\begin{enumerate}
 		\item $X_k$ is normal;
 		\item there is a contraction $f \colon X \to Z$ over $R$ such that $-(K_{X_{k}}+\Delta_{k})$ is $f_{k}$-big and $f_k$-nef;
-		\item $X$ has dimension $3$ at most 3, or $k$ is perfect of characteristic $p>5$ and $X$ has dimension at most 4.
+		\item $X$ has dimension most $3$, or $k$ is perfect of characteristic $p>5$ and $X$ has dimension at most $4$.
 	\end{enumerate}  
 	Then $Z_{k}$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$. Further, if $f$ is birational and $B:=f_{*}\Delta$, then $(Z, Z_k+B)$ is plt and $(Z_{k},B_{k})$ is klt.
 \end{lemma}
@@ -993,39 +1156,40 @@ Although Kawamata-Viehweg Vanishing fails in positive characteristic, we often h
 	Since $-(K_{X_{k}}+\Delta_{k})$ is $\bar{f}_{k}$-big and $\bar{f}_{k}$-nef, we conclude $R^{i}\bar{f}_{k,*}\ox[X_{k}]=0$ for $i> 0$ by \cite[Proposition 3.2]{tanaka2018minimal}.
 	By \autoref{adj-push} $h_k$ is an isomorphism, $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$ and $Z_{k}$ is normal.
 	
-	Suppose now $f$ is birational. As $(X,\Delta+X_k)$ is plt, so is $(Z,B+Z_k)$ as the plt centre $Z_k$ is not contracted. Hence $(Z_k,B_k)$ is klt by adjunction.			
+	Suppose now $f$ is birational. As $(X,\Delta+X_k)$ is plt, so is $(Z,B+Z_k)$ as the plt centre $X_k$ is not contracted. Hence $(Z_k,B_k)$ is klt by adjunction.			
 \end{proof}
 
-We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-Gorenstein, assuming that klt pairs have rational singularities over the residue field.
+We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-Gorenstein, assuming that klt pairs have rational singularities over the residue field and the base is complete.
 
-\begin{theorem}
-	Let $R$ be an excellent DVR with $F$-finite residue field, $k$, of characteristic $p> 5$. Suppose that every klt pair of dimension $\dim X_{k}$ has rational singularities. Then if $(X,\Delta+X_{k})$ is a plt $R$-pair then $X_{k}$ Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is a klt pair.
+\begin{theorem}\label{NormalToRational}
+	Let $R$ be an complete, excellent DVR with $F$-finite residue field, $k$, of characteristic $p> 5$. Suppose that every klt pair of dimension $\dim X_{k}$ has rational singularities. If $(X,\Delta+X_{k})$ is a plt $R$-pair then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is a klt pair.
 \end{theorem}
 
 \begin{proof}
 	
-	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{adj1}, since $Y_{k}^{N}$ has klt singularities, and hence Cohen-Macaulay singularities by assumption. In particular $Y_{k}=Y^{N}$. Then since $X_{k}^{N}$ is also klt, it has rational singularities and so by \autoref{adj-push}, $X$ is normal also and hence $(X_{k},\Delta_{k})$ is a klt pair.
+	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{adj1}, since $Y_{k}^{N}$ has klt, and hence Cohen-Macaulay, singularities by assumption. In particular $Y_{k}=Y^{N}$. Then since $X_{k}^{N}$ is also klt, it has rational singularities and so by \autoref{adj-push}, $X$ is normal also and hence $(X_{k},\Delta_{k})$ is a klt pair.
 	
 \end{proof}
 
-In particular the result holds when $X$ has dimension $3$ without any further assumptions.
+In particular the result holds when $X$ has dimension $3$, even if $R$ is not complete, without any further assumptions besides those on the characteristic.
  
 
 \begin{corollary}\label{invAdj3}
-	Let $R$ be an excellent DVR with $F$-finite residue field, $k$, of characteristic $p> 5$.	Suppose $(X,\Delta+X_{k})$ is a plt $R$-pair and that either $X$ has dimension $3$. Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is klt.
+	Let $R$ be an excellent DVR with $F$-finite residue field, $k$, of characteristic $p> 5$. Suppose $(X,\Delta+X_{k})$ is a plt $R$-pair and that $X$ has dimension $3$. Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is klt.
 \end{corollary}
 
 \begin{proof}
-	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{normality}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
+	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{plt=adj}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
 \end{proof}
 
-It also holds in dimension $4$ when the residue field is perfect, under the assumption that resolutions exist by \cite{}.
+It also holds in dimension $4$ when the residue field is perfect of char $p>5$, under the assumption that resolutions exist by \cite{hacon2020relative} together with \cite[Theorem 1.1]{hacon2017rationality}, \cite[Corollary 1.3]{arvidsson2020kawamata}.
+
 
 \subsection{Rational Polytopes of Boundaries}
 
 In this section we recall relevant information about rational polytopes and their application to different kinds of birational models.
 
-A non-exhaustive list of import kinds of birational models is as follows.
+A non-exhaustive list of important kinds of birational models is as follows.
 
 \begin{definition}\label{Model-defs}
 	Let $\phi:X \dashrightarrow Y$ be a birational contraction. Take a divisor $D$ and write $D'=\phi_{*}D$. 
@@ -1043,11 +1207,11 @@ A non-exhaustive list of import kinds of birational models is as follows.
 \end{definition}
 
 
-Note that ample models are unique. Indeed if $X \dashrightarrow Y$ and $X \dashrightarrow Z$ are two ample models, then on some common resolution $W$ of both maps we have $f:W \to Y$, $g:W \to Z$ and $h:W \to X$. Now there are ample divisors $A_{Y}$, $A_{Z}$ with $f^{*}A_{Y}+E_{Y}\sim_{\mathbb{R}}h^{*}D \sim_{\mathbb{R}}g^{*}A_{Z}+E_{Z}$. But by definition $E_{Z}=E_{Y}$ and hence $f^{*}A_{Y}\sim_{\mathbb{R}}g^{*}A_{Z}$, so there is an isomorphism $i:Z \to Y$ with $i \circ f= g$ as required.
+Note that ample models are unique and the maps need not be birational. If $X \dashrightarrow Y$ and $X \dashrightarrow Z$ are two ample models, then on some common resolution $W$ of both maps we have $f:W \to Y$, $g:W \to Z$ and $h:W \to X$. Now there are ample divisors $A_{Y}$, $A_{Z}$ with $f^{*}A_{Y}+E_{Y}\sim_{\mathbb{R}}h^{*}D \sim_{\mathbb{R}}g^{*}A_{Z}+E_{Z}$. But by definition $E_{Z}=E_{Y}$ and hence $f^{*}A_{Y}\sim_{\mathbb{R}}g^{*}A_{Z}$, so there is an isomorphism $i:Z \to Y$ with $i \circ f= g$ as required.
 
 If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample model of $(X,\Delta)$ if it is an ample model for $K_{X}+\Delta$. We can often replace pairs with linearly equivalent versions.
 
-\begin{lemma}\label{equiv}\cite[Lemma 3.6.8]{birkar2010existence}
+\begin{lemma}\label{equiv}\cite[Lemma 3.6.8]{BCHM10}
 	Let $\phi:X \to Y$ be a rational map. Suppose $(X,\Delta)$ and $(X,\Delta')$ are two pairs and $D,D'$ two $\mathbb{R}$-Cartier divisors on $X$. Take $t >0$ a positive real number.
 	\begin{itemize}
 		\item If $D \equiv tD'$ and $\phi_{*}D$, $\phi_{*}D'$ are both $\mathbb{R}$-Cartier then $\phi$ is $D$ negative (resp $D$ non-negative) if and only if it is $D'$ negative (resp. non-negative)
@@ -1060,7 +1224,7 @@ If $(X,\Delta)$ is a pair then we say $\phi:X \dashrightarrow Y$ is an ample mod
 An import tool for studying different outputs of the MMP and associated models on a scheme are rational polytopes of divisors. We recall the definition of the various polytopes we will need.
 
 \begin{definition}
-	Let  $X$ be a three-dimensional $\mathbb{Q}$-factorial integral scheme and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ is positive dimensional. 
+	Let  $X$ be a normal, $\mathbb{Q}$-factorial, integral scheme and let $f \colon X \to T$ be a projective morphism such that the image of $X$ in $T$ is positive dimensional. 
 	Fix a $\mathbb{Q}$-divisor $A\geq 0$. Let $V$ be a finite dimensional, rational affine subspace of $\text{WDiv}_{\mathbb{R}}(X)$ containing no components of $A$.
 	
 	We have the following subsets of $\text{WDiv}_\mathbb{R}(X)$.
@@ -1076,13 +1240,19 @@ An import tool for studying different outputs of the MMP and associated models o
 	\[\mathcal{A}_{\phi}(C)=\{\Delta \in \mathcal{E}(C): \phi \text{ is the ample model of } (X,\Delta)\}\]
 \end{definition}
 
-Recall that as long as there is a projective log resolution of $(X,A)$ together with $V$ the set $\mathcal{L}_{A}(V)$ is a rational polytope by the work of Shokurov \cite{Sho92}, in particular this is true when $\dim X \leq 3$. Further if $(X,A+B)$ is klt and $(X,A+B')$ is lc then $(X,A+tB+(1-t)B')$ is klt for any $0 \leq t < 1$, so the set of klt pairs is open in $\mathcal{L}_{A}(V)$. In fact if $\mathcal{L}_{A}(V)$ contains a klt pair, the entire interior consists of klt boundaries and the same is true for any sub-polytope.
+\begin{remark}
+	
+	The polytope $\mathcal{L}_{A}(V)$ does not depend on the morphism $X \to T$, however all the other polytopes introduced above do. We typically consider the projective morphism $X \to T$ as part of the data of $X$ and omit any reliance on it from the notation.
+	
+	\end{remark}
 
-The cone theorem, even the slightly weaker form proved in mixed characteristic in \cite{bhatt2020}, implies that $\mathcal{N}_{A}(V)$ is a rational polytope. 
+Recall that as long as there is a projective log resolution of $(X,A)$ together with (the support of) $V$ the set $\mathcal{L}_{A}(V)$ is a rational polytope by the work of Shokurov \cite{Sho92}, in particular this is true when $\dim X \leq 3$. Further if $(X,A+B)$ is klt and $(X,A+B')$ is lc then $(X,A+tB+(1-t)B')$ is klt for any $0 \leq t < 1$, so the set of klt pairs is open in $\mathcal{L}_{A}(V)$. In fact if $\mathcal{L}_{A}(V)$ contains a klt pair, the entire interior consists of klt boundaries and the same is true for any sub-polytope.
+
+The cone theorem, even the slightly weaker form proved in mixed characteristic in \cite{bhatt2020}, implies that $\mathcal{N}_{A}(V)$ is a rational polytope. We record the result in dimension $3$.
 
 \begin{lemma}\label{neftope} \cite[Proposition 9.31]{bhatt2020}
-	Fix a $\mathbb{Q}$-divisor $A \geq 0$ such that $(X,A)$ is a $\mathbb{Q}$-factorial klt three-dimensional pair.
-	Let $f\colon X \to T$ be a projective morphism of quasi-projective $R$-schemes.
+	Suppose that $R$ is an excellent threefold whose closed points have residue fields of characteristic $p=0$ or $p > 5$.
+	Fix a $\mathbb{Q}$-divisor $A \geq 0$ such that $(X,A)/T$ is a $\mathbb{Q}$-factorial klt three-dimensional $R$-pair.
 	Then $\mathcal{N}_{A}(V)$ is a rational polytope.
 \end{lemma}
 
@@ -1091,10 +1261,9 @@ The further study of these objects will largely be deferred till \myworries{Chap
 We include now, however, one important application. We can prove abundance for pairs with $\mathbb{R}$-boundaries given the appropriate results for $\mathbb{Q}$-boundaries.
 
 \begin{proposition}\label{QtoR}
-	Let $f \colon X \to T$ be a projective $R$-morphism of quasi-projective $R$-schemes such that $(X,\Delta)$ is a $\mathbb{Q}$-factorial klt pair of dimension three and the image of $X$ in $T$ is positive dimensional. 
-	Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ $f$-nef, then $K_{X}+B$ $f$-semiample.
+	Let $X \to T$ be a threefold $R$ pair where $\dim T >1$. Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ nef, then $K_{X}+B$ semiample.
 	
-	Then for every $\mathbb{R}$-divisor $\Delta$ such that $(X, \Delta)$ is klt and $K_X+\Delta$ is $f$-nef, then $K_X+\Delta$ is $f$-semiample.
+	Then for every $\mathbb{R}$-divisor $\Delta$ such that $(X,\Delta)$ is klt and $K_X+\Delta$ is nef, then $K_X+\Delta$ is semiample.
 \end{proposition}
 \begin{proof}
 	Let $\Delta= \sum_{1}^{n} t_{i}B_{i}$ and $V$ be the $\mathbb{R}$-linear span of $B_i$ in $\text{WDiv}_\mathbb{R}(X)$. By \autoref{neftope} we have that $\mathcal{N}_{0}(V)$ is a rational polytope. Hence there are rational boundaries $D_{i} \in \mathcal{N}_{0}(V)$ such that $\Delta=\sum \lambda_{i} D_{i}$ where $\sum \lambda_{i} =1$. Since $(X,\Delta)$ is klt, by choosing $D_{i}$ sufficiently close to $\Delta$ we may suppose that each $(X,D_{i})$ is a klt pair with $\mathbb{Q}$-boundary and $K_X+D_i$ $f$-nef. 

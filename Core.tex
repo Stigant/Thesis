@@ -114,22 +114,22 @@
 \newcommand{\bt}[1]{\mathcal{B}^{\geq #1}}
 \newcommand{\tc}[1]{\mathcal{C}^{\leq #1}}
 \newcommand{\ct}[1]{\mathcal{C}^{\geq #1}}
-\newcommand{\nklt}{\text{Nklt}}
+\newcommand{\nklt}{\textup{Nklt}}
 \newcommand{\Ht}[1]{H^{i}_{t}}
 \newcommand{\orth}{^{\perp}}
 \newcommand{\Hom}{\textup{Hom}}
-\newcommand{\perf}{\textup{perf}}
 \newcommand{\Fe}{F^{e}_{*}}
 \newcommand{\Fn}[1]{F^{#1}_{*}}
 \newcommand{\trip}{(R,\Delta, \alpha_{\bullet})}
 \newcommand{\ai}{\alpha_{\bullet}}
-\newcommand{\im}{\text{Im}}
-\newcommand{\ox}{\mathcal{O}_{X}}
+\newcommand{\im}{\textup{Im}}
+\newcommand{\ox}[1][X]{\mathcal{O}_{#1}}
 \newcommand{\me}{M^{e}_{\Delta,a^{t}}}
 \newcommand{\psim}{\sim_{\mathbb{Z}_{(p)}}}
 \newcommand{\zp}{\mathbb{Z}_{(p)}}
 \newcommand{\Xde}[1]{\mathcal{X}_{\delta,\epsilon,#1}}
 \newcommand{\Pde}[1]{\mathcal{P}_{\delta,\epsilon,#1}}
+
 %
 
 \newtheorem{case}{Case}
@@ -180,8 +180,11 @@
 			\item $N^{1}(X/T)$ for the space of $\mathbb{R}$-Cartier divisors modulo numerical equivalence
 			\item $\overline{NE}(X/T)$ is the closure of the cone of effective one cycles. We sometimes call such one-cycles psuedo-effective, in analogy to divisors.
 		\end{itemize}
-		\item We say a proper morphism of schemes $f:X \to Y$ has (geometrically) connected fibres if $f_{*}\ox=\ox[Y]$. We may also say that $f$ is a contraction. When $\dim X > \dim Y$ such morphisms are also sometimes called fibrations. Note that despite the name, in characteristic $p>0$ this is a strictly stronger condition than the fibres being connected (take $f$ to be the Frobenius for example).
+		\item We say a proper morphism of schemes $f\colon X \to Y$ is a contraction has if $f_{*}\ox=\ox[Y]$. When $\dim X > \dim Y$ such morphisms are also sometimes called fibrations.
+		\item If $f \colon X \dashrightarrow Y$ is a birational map such that for any divisor $E$ on $Y$, $f^{-1}$ is an isomorphism near the generic point of $E$ then $f$ is a birational contraction. The notation is unfortunate, but we reassure ourselves that if $X,Y$ are normal and $f$ is a morphism then $f$ is a contraction in the above sense also. If $f^{-1}$ is also a birational contraction we say that $f$ is small.  
 		\item Given a fibration $X \to T$ and a property $\mathcal{P}$ we say it is a family of $\mathcal{P}$ varieties if the fibre over each closed point $k$ is a $k$-variety with property $\mathcal{P}$.
+		\item We largely consider $X$ admitting a projective morphisms $X\to T$ of quasi-projective $R$-schemes. When $X \to T$ is part of the description of $X$ in this fashion, we often say $D$ is nef/ample/semiample etc, to mean that $D$ is nef/ample/semiample over $T$.
+%		\item Given a morphism $f\colon X \to Y$ often write $H^{0}(X,L)$ for the $\ox{Y}$ module $f_{*}\ox$, especially if $Y$ is affine.
 		
 		
 		
@@ -229,7 +232,7 @@
 	In positive characteristic this role is taken on by applications of the Frobenius morphism. Ideas due to Keel \cite{}, provide a powerful semiampleness criteria along with a weaker, but often still useful, result on the existence of morphisms in the larger category of Algebraic Spaces. 
 	
 	In a different direction, a suite of Frobenius based singularities provide, amongst other important applications, a way to recover certain vanishing type theorems. These are often called $F$-singularities and they consist of local versions - $F$-pure and $F$-regular, as well as global version - $F$-split and globally $F$-regular.
-	
+		
 	Together these are sufficient to prove the MMP for threefolds in positive characteristic, at least for $p > 5$. This is done in \cite{}, and was the state of the art at the beginning of my PhD. \autoref{Boundedness} therefore focuses on some of the consequences of the MMP in this setting.
 	
 	In mixed characteristic, the ideas of Keel are generalised immediately by \cite{} through clever study of universal homeomorphisms in place of the Frobenius morphism. The full statement is as follows and captures both the mixed characteristic and the positive characteristic behaviour.
@@ -240,7 +243,9 @@
 	
 	The $F$-singularities are less smoothly generalised, however. The BCM singularities of \cite{} are similar in some sense to $F$-regularity and provide important adjunction type results as in \cite{}. On the other hand the globally $+$-regular singularities of \cite{} are inspired by, and analogous to, globally $F$-regular singularities. In particular they provide suitable vanishing type results to prove the existence of flips. 
 	
-	The remainder of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance for minimal models and show that Mori Fibrations are connected by Sarkisov links.	
+	The remainder of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance for minimal models and show that Mori Fibrations are connected by Sarkisov links. A more thorough overview of the MMP is given in \autoref{overview}. The results contained therein are largely known, but perhaps not in exactly the same generality as is presented there.
+	
+	In addition, the theory of log pairs and the corresponding $F$-singularities are introduced in \autoref{Sings}. The log pairs will be needed throughout the thesis. Only the notion of $F$-split will be needed in \autoref{Boundedness}, however the globally $F$-regular condition provides important context. The local versions are consider in so far as they are equivalent to the global ones affine locally. No novel material appears in this section.
 	
 	\section{Boundedness}
 	
