@@ -132,7 +132,9 @@
 \begin{document}
 	\section{Introduction}
 	
-	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{} and the work was completed in collaboration with F. Bernasconi and I. Brivio.
+	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{bernasconi2021abundance} and the work was completed in collaboration with F. Bernasconi and I. Brivio. 
+	
+	We work under the assumption that the residue fields of closed points of $R$ have characteristic $p>5$. This can be loosened somewhat. So long as $X_{\mathbb{Q}}$ has dimension at most $2$ the abundance result holds. This can be checked by localising at closed point of positive characteristic and applying \autoref{abundance-dim2} on $X_{\mathbb{Q}}$, since semiampleness is local on the base.
 	
 	\begin{theorem}\label{Main_Abund1}\autoref{abundance}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
@@ -140,6 +142,8 @@
 		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with positive dimensional image.
 		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is nef, then it is semiample.
 	\end{theorem}
+
+	
 
 	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
 	
@@ -340,186 +344,189 @@ See \cite{Bri20} for the details of such a construction when $L=K_X$.
 In positive or mixed characteristic a crucial condition we show during our proof of invariance of plurigenera (see \autoref{thm:ADIOP_SA}) is the validity of $f_{k*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the Iitaka fibration of the canonical divisor.
 \end{remark}
 	
-	\subsection{Adjunction for non $\mathbb{Q}$-factorial threefolds}
-	The aim of this subsection is to study the normality of the special fibres of certain mixed characteristic families. In particular we show that threefold plt centres appearing as fibres of a family over a DVR $R$ whose residue field has characteristic $p>5$ are normal, extending some previous results in the literature to the non $\mathbb{Q}$-factorial case. 
-	
-	We start by recalling normality of plt centres in the $\mathbb{Q}$-factorial case, using results from \cite{ma2019analog}.
-	\begin{theorem}{\cite[Theorem G]{ma2019analog}}\label{invAdj}
-		Let $A$ be a normal 3-dimensional local ring, essentially of finite type over an excellent DVR with $F$-finite residue field of characteristic $p > 5$, and denote $X: = \Spec (A)$.
-		Let $D$ be a prime divisor on $X$ and $\Delta \geq 0$ be a $\bQ$-divisor with standard coefficients such that $K_X + D + \Delta$ is $\bQ$-Cartier.  
-		
-		If $(D^{\mathrm{N}}, \textup{Diff}_{D^N}(\Delta+D))$ is klt, then the completion $(\widehat{A}, \widehat{D}+\widehat{\Delta})$ is purely BCM regular. In particular, $(X, D+\Delta)$ is plt and $D$ is normal.	
-	\end{theorem}
-	
-	We will particularly interested in the case that $D=X_{k}$ is the central fibre over a DVR. 
-	In this case we write $\Delta_{k}=\Delta|_{X_k}$. Note that since $X_{k}$ is Cartier, this is well defined even if $\Delta$ is not $\mathbb{Q}$-Cartier.
-	Moreover, if $(X,\Delta+X_{k})$ is plt then the different $\textup{Diff}_{X_k}(\Delta+X_k)$ coincides with $\Delta_{k}$ by \cite[Proposition 4.5]{kk-singbook}.
-	
-	\begin{corollary}\label{normality}
-		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p>5$. Let $(X,X_{k}+\Delta)$ be a $\mathbb{Q}$-factorial plt pair of dimension three quasi-projective over $R$. 
-		Then $X_{k}$ is normal and $(X_k, \Delta_k)$ is klt.
-	\end{corollary}
-
-	\begin{proof}
-		Since $X$ is $\mathbb{Q}$-factorial, the pair $(X, X_k)$ is plt.
-			By adjunction for this pair, \cite[Lemma 4.8]{kk-singbook}, $X^{N}_{k}$ is klt.  
-		By \autoref{invAdj} we conclude $X_{k}=X^{N}_{k}$ is normal and thus by adjunction $(X_k, \Delta_k)$ is klt.
-	\end{proof}
-	
-	Given suitable vanishing results over $k$, we can extend this adjunction result to more general situations by making use of lifting arguments.
-	
-	\begin{proposition}\label{push-lift}
-		Let $S$ be a local Artinian ring and $T \hookrightarrow S$ be a closed immersion defined by a square-zero ideal $I$.  Let $f\colon Y \to T$, and $h\colon X \to T$ be flat morphisms and let $g\colon Y \to X$ be a morphism of $T$-schemes. 
-		Suppose that $g_{*} \ox[Y]=\ox$, $R^{1}g_{*} \ox[Y] = 0$ and $Y$ has a flat lifting $f' \colon Y' \to S$. Then there exists a flat lifting $X'$ over $S$ and a morphism $g' \colon Y' \to X'$ making the following commutative diagram:
-		
-		\[\begin{tikzcd}
-			Y \arrow[r] \arrow[d, "g"]  \arrow[bend right=60,swap, "f"]{dd}
-			& Y' \arrow[d, "g'"] \arrow[bend left=60,swap, "f'"]{dd} \\
-			X \arrow[d, "h"] \arrow[r] & X' \arrow[d, "h'"] \\
-			T \arrow[r]                        & S    .                     
-		\end{tikzcd}\]
-		
-		Moreover,  $g'_{*} \ox[Y']=\ox[X']$ and $R^{1}g'_{*} \ox[Y'] = 0$.
-	\end{proposition}
-	
-	\begin{proof}
-%		\textcolor{blue}{L: I made some changes based on what we discussed last time. I'm not sure if this is any clearer though... It's weirdly difficult to give a good proof of this}
-		This is the construction of \cite[Theorem 3.1]{cynk2009small}.\end{proof} %of which we write the details for clarity.
-		
-%		As $Y'$ has the same underlying topological space of $Y$, we may see the sheaf $\mathcal{O}_{Y'}$ as a sheaf on the topological space $Y$. 	
-%		Now we define $X'$ to coincide with $X$ as a topological space and the natural map $g'$ coinciding with $g$. The schematic structure on $X'$ is given by the sheaf $g_*\mathcal{O}_{Y'}$. 
-%		This construction fits naturally in a commutative diagram as above and we are only left to check that $X'$ is a flat lifting of $X$ over $S$.
-% Since this can be checked locally, we may assume that $X, X'$ are affine.
-%		The defining short exact sequence of the extension $T \to S$ is
-%		\[\mathcal{E} \colon 0 \to I \to S \to T \to 0 \]
-%		Since $\mathcal{O}_{Y'}$ is flat over $S$, this induces a corresponding short exact sequence of $\ox[Y']$ modules on $Y'$.
-%		\[ \mathbf{L}f'^{*}\mathcal{E} \colon 0 \to f'^{*}I \to \ox[Y'] \to \ox[Y] \to 0 \]
-		
-%		We now push this forward by $g'$ onto $X'$. Since the pushforward is a topological in nature we have $\mathbf{R}g'_{*}\ox[Y]=\mathbf{R}g_{*}\ox[Y]$. Similarly since $I$ has the natural structure of an $R$ module, induced by $I^{2}=0$, we have an identification $f^{*}I=f'^{*}I$ as group sheaves.
-%		Thus we obtain the following.
-%		\[0 \to h^{*}I \to g'_{*}\ox[Y'] \to \ox[X] \to \mathbf{R}^{1}g_{*}\ox[Y] \otimes h^{*}I \to \mathbf{R}^{1}g'_{*}\ox[Y'] \to \mathbf{R}^{1}g_{*}\ox[Y] \to \] 
-%		By assumption $\mathbf{R}^{1}g_{*}\ox[Y]=0$ and so we have
-%		\[\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathbf{E}\colon 0 \to h'^{*}I \to \ox[X'] \to \ox[X] \to 0\]
-%		viewed here as a sequence of $\ox[X']$ modules.
-		
-%		Moreover we have $\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathcal{E}=\mathbf{L}h'^{*}\mathcal{E}$, and thus we see that there is a canonical identification $\ox[X']\otimes R= \ox[X]$. That is $X' \times_{S} T= X$. We also see that $\textup{Tor}^{i}(\ox[X'], R)=0$, since $\mathbf{L}h'^{*}\mathcal{E}$ is nothing but $\ox[X'] \otimes^{L} \mathcal{E}$. Since $\ox= \ox[X']/ I \ox[X']$ is flat over $R$, by assumption, we must have by \cite[\href{https://stacks.math.columbia.edu/tag/0AS8}{Tag 0AS8}]{stacks-project} that $\ox[X']$ is a flat $S$ module, as required.
-		%	
-		%	
-		%	We start by showing that $X' \times_S T \simeq X$.
-		%	We clearly have a morphism of schemes $X \to X' \times_S T$, which is an homeomorphism. We are left to check it is actually an isomorphism of schemes.
-		%	For this, let $U$ be an affine open set of $X'$. Since $g_*\mathcal{O}_Y=\mathcal{O}_X$ we have
-		%	\begin{small}
-		%	$$H^0(U,\mathcal{O}_{X'})  \otimes_{\mathcal{O}_S} \mathcal{O}_T = H^0(g^{-1}(U), \mathcal{O}_{Y'}) \otimes_{\mathcal{O}_S} \mathcal{O}_T=H^0(g^{-1}(U), \mathcal{O}_Y)=H^0(U, \mathcal{O}_X),  $$
-		%	\end{small}
-		%	thus concluding.
-		%	
-		%\textcolor{red}{F: I am a bit confused by this part... are we using local criterion of flatness? To write with more detail!!!}	
-		%	We now show that $X'$ is flat over $S$.
-		%	Since $Y'$ is flat over $S$, we have the following short exact sequence of $\mathcal{O}_{Y'}$-modules on $Y'$:
-		%	\[0 \to (f')^{*}I \to \ox[Y'] \to \ox[Y] \to 0.\]
-		%	
-		%	By construction $g'_{*}\ox[Y']=\mathcal{O}_{X'}$, thus we deduce $g'_*f'^*I \simeq h'^*I$ by projection formula.
-		%	Applying $g'_*$ we thus have the following long exact sequence:
-		%	\[0 \to (h')^{*} I \to \mathcal{O}_{X'} \to g'_* \mathcal{O}_{Y} \to h^{*} I \otimes R^{1}g'_{*}\ox[Y] \to R^{1}g'_{*}\ox[Y'] \to R^{1}g_{*}\ox[Y] \to \dots \]
-		%	
-		%	By assumption $R^{1}g_{*}\ox[Y] =0$ and hence $0 \to h^{*} I \to \mathcal{O}_{X'} \to \ox \to 0$ is exact. We therefore conclude. As $h^*I$ and $\mathcal{O}_X$ are flat, we conclude. \textcolor{red}{is this the point??}
+%	\subsection{Adjunction for non $\mathbb{Q}$-factorial threefolds}
+%	The aim of this subsection is to study the normality of the special fibres of certain mixed characteristic families. In particular we show that threefold plt centres appearing as fibres of a family over a DVR $R$ whose residue field has characteristic $p>5$ are normal, extending some previous results in the literature to the non $\mathbb{Q}$-factorial case. 
+%	
+%	We start by recalling normality of plt centres in the $\mathbb{Q}$-factorial case, using results from \cite{ma2019analog}.
+%	\begin{theorem}{\cite[Theorem G]{ma2019analog}}\label{invAdj}
+%		Let $A$ be a normal 3-dimensional local ring, essentially of finite type over an excellent DVR with $F$-finite residue field of characteristic $p > 5$, and denote $X: = \Spec (A)$.
+%		Let $D$ be a prime divisor on $X$ and $\Delta \geq 0$ be a $\bQ$-divisor with standard coefficients such that $K_X + D + \Delta$ is $\bQ$-Cartier.  
+%		
+%		If $(D^{\mathrm{N}}, \textup{Diff}_{D^N}(\Delta+D))$ is klt, then the completion $(\widehat{A}, \widehat{D}+\widehat{\Delta})$ is purely BCM regular. In particular, $(X, D+\Delta)$ is plt and $D$ is normal.	
+%	\end{theorem}
+%	
+%	We will particularly interested in the case that $D=X_{k}$ is the central fibre over a DVR. 
+%	In this case we write $\Delta_{k}=\Delta|_{X_k}$. Note that since $X_{k}$ is Cartier, this is well defined even if $\Delta$ is not $\mathbb{Q}$-Cartier.
+%	Moreover, if $(X,\Delta+X_{k})$ is plt then the different $\textup{Diff}_{X_k}(\Delta+X_k)$ coincides with $\Delta_{k}$ by \cite[Proposition 4.5]{kk-singbook}.
+%	
+%	\begin{corollary}\label{normality}
+%		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p>5$. Let $(X,X_{k}+\Delta)$ be a $\mathbb{Q}$-factorial plt pair of dimension three quasi-projective over $R$. 
+%		Then $X_{k}$ is normal and $(X_k, \Delta_k)$ is klt.
+%	\end{corollary}
+%
+%	\begin{proof}
+%		Since $X$ is $\mathbb{Q}$-factorial, the pair $(X, X_k)$ is plt.
+%			By adjunction for this pair, \cite[Lemma 4.8]{kk-singbook}, $X^{N}_{k}$ is klt.  
+%		By \autoref{invAdj} we conclude $X_{k}=X^{N}_{k}$ is normal and thus by adjunction $(X_k, \Delta_k)$ is klt.
+%	\end{proof}
+%	
+%	Given suitable vanishing results over $k$, we can extend this adjunction result to more general situations by making use of lifting arguments.
+%	
+%	\begin{proposition}\label{push-lift}
+%		Let $S$ be a local Artinian ring and $T \hookrightarrow S$ be a closed immersion defined by a square-zero ideal $I$.  Let $f\colon Y \to T$, and $h\colon X \to T$ be flat morphisms and let $g\colon Y \to X$ be a morphism of $T$-schemes. 
+%		Suppose that $g_{*} \ox[Y]=\ox$, $R^{1}g_{*} \ox[Y] = 0$ and $Y$ has a flat lifting $f' \colon Y' \to S$. Then there exists a flat lifting $X'$ over $S$ and a morphism $g' \colon Y' \to X'$ making the following commutative diagram:
+%		
+%		\[\begin{tikzcd}
+%			Y \arrow[r] \arrow[d, "g"]  \arrow[bend right=60,swap, "f"]{dd}
+%			& Y' \arrow[d, "g'"] \arrow[bend left=60,swap, "f'"]{dd} \\
+%			X \arrow[d, "h"] \arrow[r] & X' \arrow[d, "h'"] \\
+%			T \arrow[r]                        & S    .                     
+%		\end{tikzcd}\]
+%		
+%		Moreover,  $g'_{*} \ox[Y']=\ox[X']$ and $R^{1}g'_{*} \ox[Y'] = 0$.
+%	\end{proposition}
+%	
+%	\begin{proof}
+%%		\textcolor{blue}{L: I made some changes based on what we discussed last time. I'm not sure if this is any clearer though... It's weirdly difficult to give a good proof of this}
+%		This is the construction of \cite[Theorem 3.1]{cynk2009small}.\end{proof} %of which we write the details for clarity.
+%		
+%%		As $Y'$ has the same underlying topological space of $Y$, we may see the sheaf $\mathcal{O}_{Y'}$ as a sheaf on the topological space $Y$. 	
+%%		Now we define $X'$ to coincide with $X$ as a topological space and the natural map $g'$ coinciding with $g$. The schematic structure on $X'$ is given by the sheaf $g_*\mathcal{O}_{Y'}$. 
+%%		This construction fits naturally in a commutative diagram as above and we are only left to check that $X'$ is a flat lifting of $X$ over $S$.
+%% Since this can be checked locally, we may assume that $X, X'$ are affine.
+%%		The defining short exact sequence of the extension $T \to S$ is
+%%		\[\mathcal{E} \colon 0 \to I \to S \to T \to 0 \]
+%%		Since $\mathcal{O}_{Y'}$ is flat over $S$, this induces a corresponding short exact sequence of $\ox[Y']$ modules on $Y'$.
+%%		\[ \mathbf{L}f'^{*}\mathcal{E} \colon 0 \to f'^{*}I \to \ox[Y'] \to \ox[Y] \to 0 \]
+%		
+%%		We now push this forward by $g'$ onto $X'$. Since the pushforward is a topological in nature we have $\mathbf{R}g'_{*}\ox[Y]=\mathbf{R}g_{*}\ox[Y]$. Similarly since $I$ has the natural structure of an $R$ module, induced by $I^{2}=0$, we have an identification $f^{*}I=f'^{*}I$ as group sheaves.
+%%		Thus we obtain the following.
+%%		\[0 \to h^{*}I \to g'_{*}\ox[Y'] \to \ox[X] \to \mathbf{R}^{1}g_{*}\ox[Y] \otimes h^{*}I \to \mathbf{R}^{1}g'_{*}\ox[Y'] \to \mathbf{R}^{1}g_{*}\ox[Y] \to \] 
+%%		By assumption $\mathbf{R}^{1}g_{*}\ox[Y]=0$ and so we have
+%%		\[\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathbf{E}\colon 0 \to h'^{*}I \to \ox[X'] \to \ox[X] \to 0\]
+%%		viewed here as a sequence of $\ox[X']$ modules.
+%		
+%%		Moreover we have $\mathbf{R}g'_{*}\mathbf{L}f'^{*}\mathcal{E}=\mathbf{L}h'^{*}\mathcal{E}$, and thus we see that there is a canonical identification $\ox[X']\otimes R= \ox[X]$. That is $X' \times_{S} T= X$. We also see that $\textup{Tor}^{i}(\ox[X'], R)=0$, since $\mathbf{L}h'^{*}\mathcal{E}$ is nothing but $\ox[X'] \otimes^{L} \mathcal{E}$. Since $\ox= \ox[X']/ I \ox[X']$ is flat over $R$, by assumption, we must have by \cite[\href{https://stacks.math.columbia.edu/tag/0AS8}{Tag 0AS8}]{stacks-project} that $\ox[X']$ is a flat $S$ module, as required.
+%		%	
+%		%	
+%		%	We start by showing that $X' \times_S T \simeq X$.
+%		%	We clearly have a morphism of schemes $X \to X' \times_S T$, which is an homeomorphism. We are left to check it is actually an isomorphism of schemes.
+%		%	For this, let $U$ be an affine open set of $X'$. Since $g_*\mathcal{O}_Y=\mathcal{O}_X$ we have
+%		%	\begin{small}
+%		%	$$H^0(U,\mathcal{O}_{X'})  \otimes_{\mathcal{O}_S} \mathcal{O}_T = H^0(g^{-1}(U), \mathcal{O}_{Y'}) \otimes_{\mathcal{O}_S} \mathcal{O}_T=H^0(g^{-1}(U), \mathcal{O}_Y)=H^0(U, \mathcal{O}_X),  $$
+%		%	\end{small}
+%		%	thus concluding.
+%		%	
+%		%\textcolor{red}{F: I am a bit confused by this part... are we using local criterion of flatness? To write with more detail!!!}	
+%		%	We now show that $X'$ is flat over $S$.
+%		%	Since $Y'$ is flat over $S$, we have the following short exact sequence of $\mathcal{O}_{Y'}$-modules on $Y'$:
+%		%	\[0 \to (f')^{*}I \to \ox[Y'] \to \ox[Y] \to 0.\]
+%		%	
+%		%	By construction $g'_{*}\ox[Y']=\mathcal{O}_{X'}$, thus we deduce $g'_*f'^*I \simeq h'^*I$ by projection formula.
+%		%	Applying $g'_*$ we thus have the following long exact sequence:
+%		%	\[0 \to (h')^{*} I \to \mathcal{O}_{X'} \to g'_* \mathcal{O}_{Y} \to h^{*} I \otimes R^{1}g'_{*}\ox[Y] \to R^{1}g'_{*}\ox[Y'] \to R^{1}g_{*}\ox[Y] \to \dots \]
+%		%	
+%		%	By assumption $R^{1}g_{*}\ox[Y] =0$ and hence $0 \to h^{*} I \to \mathcal{O}_{X'} \to \ox \to 0$ is exact. We therefore conclude. As $h^*I$ and $\mathcal{O}_X$ are flat, we conclude. \textcolor{red}{is this the point??}
+%%	\end{proof}
+%	
+%	\begin{theorem}\label{adj-push}
+%		Let $R$ be a DVR and let $X$ be a normal projective $R$-scheme such that $X_{k}$ is normal. 
+%		Let $f \colon X \to Z$ be a contraction over $R$ and suppose that $$f_{k}\colon X_{k} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{k}$$ is the Stein factorisation of $f_{k}$. If $R^{1}g_{1,*} \ox[X_{k}]=0$, then $Z_k$ is normal and $h_{1}$ is an isomorphism. In particular $f_{k,*}\ox[X_{k}]=g_{1,*}\ox[X_{k}]=\ox[Z_{k}].$
+%	\end{theorem}
+%	
+%	\begin{proof}
+%		Since we are only interested in the special fibre, we can replace $R$ with its completion at its maximal ideal $\mathfrak{m}$ without any loss of generality.
+%		Write $R_{i}=R/\mathfrak{m}^{i}$ where $m$ is the maximal ideal of $R$, then let $X_{i}=X \times R_{i}$, $Z_{i}=Z\times R_{i}$ and $f_{i}=f\times R_{i}\colon X_{i} \to Z_{i}$.
+%		Then $f_{1}$ factors as $f_{1}\colon X_{1} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{1}$ where $R^{i}g_{1,*}\ox[X_{1}]=0$, so by \autoref{push-lift} we can lift $g_{1}\colon X_{1} \to Y_{1}$ to $g_{i}\colon X_{i} \to Y_{i}$ over $R_{i}$ such that the following diagram commutes.
+%		
+%		\[\begin{tikzcd}
+%			X_{1} \arrow[r] \arrow[d, "g_{1}"] & X_{2} \arrow[r] \arrow[d, "g_{2}"] & ... \\
+%			Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & ... \\
+%			Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & ...
+%		\end{tikzcd}\]
+%		
+%		Here the $h_{i}$ are defined as follows. The underlying topological map is just $h_{1}$ and the map $\ox[Z_{i}] \to h_{i,*}\ox[Y_{i}]$ comes from the map ${\ox[Z_{i}] \to f_{i,*}\ox[X_{i}]}$ and the identification $f_{i,*}\ox[X_{i}]=h_{i,*}g_{i,*}\ox[X_{i}]\simeq h_{i,*}\ox[Y_{i}]$.
+%		Each $h_{i}$ is finite, and thus by
+%		\cite[\href{https://stacks.math.columbia.edu/tag/09ZT}{Tag 09ZT}]{stacks-project} we have that the compatible system $\left\{Y_{i} \to Z_i \right\}$ lifts to a finite morphism $Y \to Z$ over $R$. By \cite[\href{https://stacks.math.columbia.edu/tag/0A42}{Tag 0A42}]{stacks-project} there is a factorisation ${f\colon X \xrightarrow{g} Y \xrightarrow{h} Z}$, where $g_{*}\ox = \cO_Y$, because $g_{i,*}\cO_{X_i}=\cO_{Y_i}$ for all $i$. Similarly $h$ is a finite morphism. 
+%		
+%		Therefore $f \colon X \xrightarrow{g} Y \xrightarrow{h} Z$ is the Stein factorisation for $f$, but since $f$ is a contraction of normal schemes we conclude that $h$ has to be an isomorphism.
+%		In particular, $h_1$ is an isomorphism and $Z_{k}=Y_{k}$, thus concluding.
+%		%By construction the special fibre $Y_k$ of $Y$ is normal, and thus so is $Y$. Hence as $X \to Y$ contracts all the same curves as $X \to Z$ we must have that $h$ defines an isomorphism $Y \simeq Z$.
+%		%	\textcolor{red}{Could we also argue as follows:   - Yes, I think of this as being the case because they're both contractions which contract the same curves, but I can rephrase this if you'd like}
+%	\end{proof}
+%	
+%	
+%	\begin{remark}
+%		The key observation in previous proof is that we can think of $Y_{i}$ as the lift of $Y_{1}$ over $Z_{i}$ rather than simply over $R_{i}$. This construction can be thought of as a generalisation of \autoref{push-lift}.
+%	\end{remark}
+%	
+%	
+%	\begin{lemma}\label{invAdj2}
+%		Let $R$ be an excellent DVR.
+%		Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. Suppose that
+%		\begin{enumerate}
+%			\item $(X, X_k+\Delta)$ is plt and $X_k$ is normal;
+%			\item there is a contraction $f \colon X \to Z$ over $R$ such that $-(K_{X_{k}}+\Delta_{k})$ is $f_{k}$-big and $f_k$-nef.
+%		\end{enumerate}  
+%	Then $Z_{k}$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$. Further, if $f$ is birational and $B:=f_{*}\Delta$, then $(Z, Z_k+B)$ is plt and $(Z_{k},B_{k})$ is klt.
+%	\end{lemma}
+%	
+%	\begin{proof}
+%		Since $X_{k}$ is normal, the pair $(X_{k},\Delta_{k})$ is klt by adjunction (see \cite[Lemma 4.8]{kk-singbook}). 
+%		Let $$f_{k}\colon X_{k} \xrightarrow{\bar{f}_{k}} \bar{Z_k} \xrightarrow{h_k} Z_{k}$$ be the Stein factorisation. 
+%		Since $-(K_{X_{k}}+\Delta_{k})$ is $\bar{f}_{k}$-big and $\bar{f}_{k}$-nef, we conclude $R^{i}\bar{f}_{k,*}\ox[X_{k}]=0$ for $i> 0$ by \cite[Proposition 3.2]{Tan18}.
+%		By \autoref{adj-push} $h_k$ is an isomorphism, $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$ and $Z_{k}$ is normal.
+%		
+%		Suppose now $f$ is birational. As $(X,\Delta+X_k)$ is plt, so is $(Z,B+Z_k)$ as the plt centre $Z_k$ is not contracted. Hence $(Z_k,B_k)$ is klt by adjunction.			\end{proof}
+%	
+%	We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-factorial.
+%	\begin{corollary}\label{invAdj3}
+%		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p> 5$. Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. 
+%		Suppose $(X,\Delta+X_{k})$ is a plt pair. Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is klt.	
+%	\end{corollary}
+%	
+%	\begin{proof}
+%		Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation given by \autoref{Q-factorial}. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{normality}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
 %	\end{proof}
 	
-	\begin{theorem}\label{adj-push}
-		Let $R$ be a DVR and let $X$ be a normal projective $R$-scheme such that $X_{k}$ is normal. 
-		Let $f \colon X \to Z$ be a contraction over $R$ and suppose that $$f_{k}\colon X_{k} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{k}$$ is the Stein factorisation of $f_{k}$. If $R^{1}g_{1,*} \ox[X_{k}]=0$, then $Z_k$ is normal and $h_{1}$ is an isomorphism. In particular $f_{k,*}\ox[X_{k}]=g_{1,*}\ox[X_{k}]=\ox[Z_{k}].$
-	\end{theorem}
+	\subsection{MMP in families}
 	
-	\begin{proof}
-		Since we are only interested in the special fibre, we can replace $R$ with its completion at its maximal ideal $\mathfrak{m}$ without any loss of generality.
-		Write $R_{i}=R/\mathfrak{m}^{i}$ where $m$ is the maximal ideal of $R$, then let $X_{i}=X \times R_{i}$, $Z_{i}=Z\times R_{i}$ and $f_{i}=f\times R_{i}\colon X_{i} \to Z_{i}$.
-		Then $f_{1}$ factors as $f_{1}\colon X_{1} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{1}$ where $R^{i}g_{1,*}\ox[X_{1}]=0$, so by \autoref{push-lift} we can lift $g_{1}\colon X_{1} \to Y_{1}$ to $g_{i}\colon X_{i} \to Y_{i}$ over $R_{i}$ such that the following diagram commutes.
-		
-		\[\begin{tikzcd}
-			X_{1} \arrow[r] \arrow[d, "g_{1}"] & X_{2} \arrow[r] \arrow[d, "g_{2}"] & ... \\
-			Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & ... \\
-			Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & ...
-		\end{tikzcd}\]
-		
-		Here the $h_{i}$ are defined as follows. The underlying topological map is just $h_{1}$ and the map $\ox[Z_{i}] \to h_{i,*}\ox[Y_{i}]$ comes from the map ${\ox[Z_{i}] \to f_{i,*}\ox[X_{i}]}$ and the identification $f_{i,*}\ox[X_{i}]=h_{i,*}g_{i,*}\ox[X_{i}]\simeq h_{i,*}\ox[Y_{i}]$.
-		Each $h_{i}$ is finite, and thus by
-		\cite[\href{https://stacks.math.columbia.edu/tag/09ZT}{Tag 09ZT}]{stacks-project} we have that the compatible system $\left\{Y_{i} \to Z_i \right\}$ lifts to a finite morphism $Y \to Z$ over $R$. By \cite[\href{https://stacks.math.columbia.edu/tag/0A42}{Tag 0A42}]{stacks-project} there is a factorisation ${f\colon X \xrightarrow{g} Y \xrightarrow{h} Z}$, where $g_{*}\ox = \cO_Y$, because $g_{i,*}\cO_{X_i}=\cO_{Y_i}$ for all $i$. Similarly $h$ is a finite morphism. 
-		
-		Therefore $f \colon X \xrightarrow{g} Y \xrightarrow{h} Z$ is the Stein factorisation for $f$, but since $f$ is a contraction of normal schemes we conclude that $h$ has to be an isomorphism.
-		In particular, $h_1$ is an isomorphism and $Z_{k}=Y_{k}$, thus concluding.
-		%By construction the special fibre $Y_k$ of $Y$ is normal, and thus so is $Y$. Hence as $X \to Y$ contracts all the same curves as $X \to Z$ we must have that $h$ defines an isomorphism $Y \simeq Z$.
-		%	\textcolor{red}{Could we also argue as follows:   - Yes, I think of this as being the case because they're both contractions which contract the same curves, but I can rephrase this if you'd like}
-	\end{proof}
-	
-	
-	\begin{remark}
-		The key observation in previous proof is that we can think of $Y_{i}$ as the lift of $Y_{1}$ over $Z_{i}$ rather than simply over $R_{i}$. This construction can be thought of as a generalisation of \autoref{push-lift}.
-	\end{remark}
-	
-	
-	\begin{lemma}\label{invAdj2}
-		Let $R$ be an excellent DVR.
-		Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. Suppose that
-		\begin{enumerate}
-			\item $(X, X_k+\Delta)$ is plt and $X_k$ is normal;
-			\item there is a contraction $f \colon X \to Z$ over $R$ such that $-(K_{X_{k}}+\Delta_{k})$ is $f_{k}$-big and $f_k$-nef.
-		\end{enumerate}  
-	Then $Z_{k}$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$. Further, if $f$ is birational and $B:=f_{*}\Delta$, then $(Z, Z_k+B)$ is plt and $(Z_{k},B_{k})$ is klt.
-	\end{lemma}
-	
-	\begin{proof}
-		Since $X_{k}$ is normal, the pair $(X_{k},\Delta_{k})$ is klt by adjunction (see \cite[Lemma 4.8]{kk-singbook}). 
-		Let $$f_{k}\colon X_{k} \xrightarrow{\bar{f}_{k}} \bar{Z_k} \xrightarrow{h_k} Z_{k}$$ be the Stein factorisation. 
-		Since $-(K_{X_{k}}+\Delta_{k})$ is $\bar{f}_{k}$-big and $\bar{f}_{k}$-nef, we conclude $R^{i}\bar{f}_{k,*}\ox[X_{k}]=0$ for $i> 0$ by \cite[Proposition 3.2]{Tan18}.
-		By \autoref{adj-push} $h_k$ is an isomorphism, $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$ and $Z_{k}$ is normal.
-		
-		Suppose now $f$ is birational. As $(X,\Delta+X_k)$ is plt, so is $(Z,B+Z_k)$ as the plt centre $Z_k$ is not contracted. Hence $(Z_k,B_k)$ is klt by adjunction.			\end{proof}
-	
-	We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-factorial.
-	\begin{corollary}\label{invAdj3}
-		Let $R$ be an excellent DVR with $F$-finite residue field of characteristic $p> 5$. Let $X$ be a quasi-projective normal scheme of dimension three with a surjective morphism $X \to \Spec(R)$. 
-		Suppose $(X,\Delta+X_{k})$ is a plt pair. Then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is klt.	
-	\end{corollary}
-	
-	\begin{proof}
-		Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation given by \autoref{Q-factorial}. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{normality}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
-	\end{proof}
-	
-	\subsection{MMP in families}\myworries{Greater Generality?}
-	
-	We fix $R$ to be an excellent DVR with $F$-finite residue field $k$ of residue field $p>5$.
+	We fix $R$ to be an excellent DVR with residue field of characteristic $p>5$.
 	We collect some results on the MMP in families over $R$ that we will use in \autoref{s-inv-plurigenera}.
 	
-	We start by recalling that discrepancies do not decrease while running an MMP.
-		\begin{lemma}\label{l:increase-discr}
-		Let 
-		\[
-		\xymatrix{
-			(X,\Delta) \ar[dr]_{f}   \ar@{-->}[rr]^{\varphi} &  &  (X', \Delta') \ar[dl]^{f'}  \\
-			&Z & ,
-		}
-		\]
-		be a commutative diagram  where $(X,\Delta)$ and $(X', \Delta')$ are normal excellent log pairs and the morphisms $f$ and $f'$ are birational.
-		Assume that
-		\begin{enumerate}
-			\item $f_*\Delta=f'_*\Delta'$;
-			\item $-(K_X+\Delta)$ is $f$-nef;
-			\item $K_{X'}+\Delta'$ is $f'$-nef. 
-		\end{enumerate}
-		Then for any exceptional divisor $E$ over $Z$ we have $$a(E, X, \Delta ) \leq a(E, X', \Delta').$$
-		Furthermore, if $-(K_X+\Delta)$ is $f$-ample and $f$ is not an isomorphism above the generic point of $\cent_X(E)$, then
-		$$ a(E, X, \Delta ) < a(E, X', \Delta').$$
-	\end{lemma}
-	\begin{proof}
-		Let $E$ be an exceptional divisor over $Z$ and let $W$ be a normal excellent scheme with birational projective morphisms $g \colon W \to X$ and $g' \colon W \to X'$ such that $\textup{centre}_W(E)$ is divisorial. Denote by $\pi:= f \circ g=f' \circ g'$. Let $E_{i}$ be $\pi$ exceptional divisors. By hypothesis, the following divisor
-		$$\Gamma:= \sum_i \left( a(E_i, X, \Delta)-a(E_i, X', \Delta') \right)E_i $$ 
-		is $\pi$-nef and sum of $\pi$-exceptional divisors.
-		Therefore, by the negativity lemma for excellent schemes (see \cite[Lemma 2.14]{bhatt2020}), we have $-\Gamma\geq 0$. Finally, if $\Gamma$ is not numerically $\pi$-trivial over $\cent_Z(E)$, we conclude the strict inequality.
-	\end{proof}
+%	We start by recalling that discrepancies do not decrease while running an MMP.
+%		\begin{lemma}\label{l:increase-discr}
+%		Let 
+%		\[
+%		\xymatrix{
+%			(X,\Delta) \ar[dr]_{f}   \ar@{-->}[rr]^{\varphi} &  &  (X', \Delta') \ar[dl]^{f'}  \\
+%			&Z & ,
+%		}
+%		\]
+%		be a commutative diagram  where $(X,\Delta)$ and $(X', \Delta')$ are normal excellent log pairs and the morphisms $f$ and $f'$ are birational.
+%		Assume that
+%		\begin{enumerate}
+%			\item $f_*\Delta=f'_*\Delta'$;
+%			\item $-(K_X+\Delta)$ is $f$-nef;
+%			\item $K_{X'}+\Delta'$ is $f'$-nef. 
+%		\end{enumerate}
+%		Then for any exceptional divisor $E$ over $Z$ we have $$a(E, X, \Delta ) \leq a(E, X', \Delta').$$
+%		Furthermore, if $-(K_X+\Delta)$ is $f$-ample and $f$ is not an isomorphism above the generic point of $\cent_X(E)$, then
+%		$$ a(E, X, \Delta ) < a(E, X', \Delta').$$
+%	\end{lemma}
+%	\begin{proof}
+%		Let $E$ be an exceptional divisor over $Z$ and let $W$ be a normal excellent scheme with birational projective morphisms $g \colon W \to X$ and $g' \colon W \to X'$ such that $\textup{centre}_W(E)$ is divisorial. Denote by $\pi:= f \circ g=f' \circ g'$. Let $E_{i}$ be $\pi$ exceptional divisors. By hypothesis, the following divisor
+%		$$\Gamma:= \sum_i \left( a(E_i, X, \Delta)-a(E_i, X', \Delta') \right)E_i $$ 
+%		is $\pi$-nef and sum of $\pi$-exceptional divisors.
+%		Therefore, by the negativity lemma for excellent schemes (see \cite[Lemma 2.14]{bhatt2020}), we have $-\Gamma\geq 0$. Finally, if $\Gamma$ is not numerically $\pi$-trivial over $\cent_Z(E)$, we conclude the strict inequality.
+%	\end{proof}
+%	
+	As we will need to impose some conditions on the base loci and non-canonical centres for our applications to invariance of plurigenera (see \autoref{ex-kawamata}), we study the behaviour of the diminished base locus $\mathbf{B}_{-}(K_X+\Delta)$ during an MMP. 
 	
-	As we will need to impose some conditions on the base loci and non-canonical centres for our applications to invariance of plurigenera (see \autoref{ex-kawamata}), we study the behaviour of the diminished base locus $\mathbf{B}_{-}(K_X+\Delta)$ during an MMP.
-	
-	
+	\begin{definition}
+	If $X \to S$ is a projective morphism and $D$ is a $\mathbb{Q}$-Cartier divisor on $X$, the \emph{diminished locus of $D$ over $S$}  is  $$\mathbf{B}_{-}(D/S) = \bigcup_{A \, \mathbb{Q}\text{-divisor} \text{ ample }/S} \mathbf{B}(D+A/S),$$ where $\mathbf{B}(D+A/S)$ is the stable base locus of $D+A$ over $S$. If $S$ is clear from the context, we will simply write $\mathbf{B}_{-}(D)$.
+	\end{definition}
+
 	\begin{lemma}\label{l-stable-base-loci}
 		Let $(X,\Delta_X)/T$ be a klt $R$-pair.
 		Let $f\colon (X, \Delta_X) \dashrightarrow (Y, \Delta_Y)$ be a birational contraction which is a step of a  $(K_X+\Delta)$-MMP over $T$.
@@ -595,7 +602,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	\section{Abundance for mixed characteristic threefolds}
 	
 	Given an lc $R$-pair $(X,\Delta)/T$ with a projective $R$-morphism with $K_{X}+\Delta$ nef over T, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
-	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{t-bpf}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
+	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{bpt}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
 	
 	The starting point of our proof is to use the abundance theorem for surfaces over excellent bases, which we now recall. 
 	
@@ -606,7 +613,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	\begin{proof}	
 		If $T$ is a field then this is \cite[Theorem 1.2]{fujino2012log} for perfect fields and \cite{tanaka2020abundance} for imperfect fields. 
 		Suppose from now on that the image of $X$ in $T$ is positive dimensional.
-		If $K_{S}+B$ is big over $T$ then this follows immediately from the base point free theorem \cite[Theorem 4.2]{Tan18} with $D=2(K_{S}+B)$. Hence we may suppose that $\dim T=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves and the result follows by \autoref{lemma:EDSemiampleness}. 
+		If $K_{S}+B$ is big over $T$ then this follows immediately from the base point free theorem \cite[Theorem 4.2]{tanaka2018minimal} with $D=2(K_{S}+B)$. Hence we may suppose that $\dim T=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves and the result follows by \autoref{lemma:EDSemiampleness}. 
 	\end{proof}
 	
 	The following is \cite[Lemma 2.17]{cascini2020relative}. We include the proof for completeness as the result is used often.
