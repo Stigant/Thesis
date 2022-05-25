@@ -146,8 +146,8 @@
 %
 %\begin{document}
 
-	\chapter{Abundance}
-	\section{Introduction}
+	\chapter{Abundance}\label{abundance-sect}
+	%\section{Introduction}
 	
 	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{bernasconi2021abundance} and the work was completed in collaboration with F. Bernasconi and I. Brivio. 
 	
@@ -778,9 +778,9 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	
 	\begin{proof}
 		We can assume $\pi:X \to T$ to be dominant.
-		If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace $(X,\Delta)$ with a $\mathbb{Q}$-factorialisation by \autoref{Q-factorial}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier divisors).
+		If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace $(X,\Delta)$ with a $\mathbb{Q}$-factorialisation by \autoref{dlt-mod}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier divisors).
 		
-		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{t-bpf}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
+		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{bpt}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
 		
 		From now on, we suppose that $\kappa(K_{X}+B)+\dim T=2$.
 		If $T_\mathbb{Q} \neq \emptyset$, we set $\eta=\Spec(\mathbb{Q})$, otherwise we set $\eta$ to be the generic point of $T$. 

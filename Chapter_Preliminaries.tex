@@ -112,8 +112,6 @@
 %\newcommand\myworries[1]{\textcolor{red}{#1}}
 %
 %\begin{document}
-\begin{document}
-
 \chapter{Preliminaries}
 \section{Singularity Theory} \label{Sings}
 
@@ -783,14 +781,14 @@ For threefolds in mixed and positive characteristic, the current state of the ar
 
 In particular this includes the following Basepoint Free Theorem.
 
-\begin{conjecture}[Basepoint Free Theorem]\label{bpt}
+\begin{theorem}[Basepoint Free Theorem]\label{bpt}
 	Let $(X,\Delta)/T$ be a klt $R$-pair of dimension at most $3$. Suppose that $D$ is a $\mathbb{R}$-Cartier divisor, nef over $T$, such that $D-(K_{X}+\Delta)$ is big and nef over $T$. If either
 	\begin{enumerate}
 		\item $D$ is a big $\mathbb{Q}$-Cartier divisor, or
-		\item $\dim T>1$ and $T$ has no residue fields of char $p=2,3,5$,
+		\item $\dim T>0$ and $T$ has no residue fields of char $p=2,3,5$,
 	\end{enumerate}
 	Then if $D$ is semiample.
-\end{conjecture}
+\end{theorem}
 
 Terminating MMP's can also be run for certain fourfolds birational to their base or semistable over a curve \cite{hacon2020relative}. Some of the conjectures of the MMP and the existence of log terminal models are also known for threefold pairs over an imperfect field \cite{das2019log}. 
 
@@ -843,7 +841,7 @@ The approach for all the modifications is the same - take a log resolution, choo
 
 Perhaps the most useful form of modification is a dlt modification. The main difficulty versus a terminalisation arises from the need to run an MMP for a pair which is not klt.
 
-\begin{theorem}
+\begin{theorem}\label{dlt-mod}
 	Let $(X,\Delta)$ an $R$ pair with coefficients bounded above by $1$. Write $\Delta'$ for the divisor with $\textup{Coeff}_{E}(\Delta')=\textup{Min}(\textup{Coeff}_{E}(\Delta),1)$. Then there is a birational morphism $f:Y \to X$, called a dlt modification, such that the following holds:
 	\begin{itemize}
 		\item $Y$ is $\mathbb{Q}$-factorial,
@@ -1179,7 +1177,7 @@ In particular the result holds when $X$ has dimension $3$, even if $R$ is not co
 \end{corollary}
 
 \begin{proof}
-	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{plt=adj}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
+	Let $f\colon (Y,\Delta_{Y})\to (X,\Delta)$ be a small $\mathbb{Q}$-factorialisation. Then $(Y,\Delta_{Y}+Y_{k})$ is a $\mathbb{Q}$-factorial plt pair and hence $Y_{k}$ is normal by \autoref{plt-adj}. By construction $f$ is $(K_{Y}+\Delta_{Y})$-trivial so \autoref{invAdj2} ensures the result.
 \end{proof}
 
 It also holds in dimension $4$ when the residue field is perfect of char $p>5$, under the assumption that resolutions exist by \cite{hacon2020relative} together with \cite[Theorem 1.1]{hacon2017rationality}, \cite[Corollary 1.3]{arvidsson2020kawamata}.
