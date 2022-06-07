@@ -623,7 +623,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	\section{Abundance for mixed characteristic threefolds}
 	
 	Given an lc $R$-pair $(X,\Delta)/T$ with a projective $R$-morphism with $K_{X}+\Delta$ nef over T, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
-	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{bpt}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
+	In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by the Basepoint Free Theorem \autoref{MMP}. For klt threefolds, the remaining cases occur when $\kappa(K_{X}+\Delta) + \dim T \leq 2$. We address them in this section.
 	
 	The starting point of our proof is to use the abundance theorem for surfaces over excellent bases, which we now recall. 
 	
@@ -767,7 +767,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 		where $E_i$ are effective and contain all $\phi_i$-exceptional divisors.
 		Consider 
 		$$g_1^*(K_{Y_1}+B_1)-g_2^*(K_{Y_2}+B_2)=E_2-E_1. $$
-		In particular, $E_2-E_1$ is $g_2$-nef and therefore by the negativity lemma (\cite[Lemma 2.14]{bhatt2020}) we conclude that $E_2 -E_1 \leq 0$. By symmetry, we conclude that $E_2=E_1$. Therefore $g_1^*(K_{Y_1}+B_1)=g_2^*(K_{Y_2}+B_2)$. In particular, $K_{Y_1}+B_1$ is semiample  iff $K_{Y_2}+B_2$ is so.
+		In particular, $E_2-E_1$ is $g_2$-nef and therefore by the negativity lemma (\autoref{negatvity}) we conclude that $E_2 -E_1 \leq 0$. By symmetry, we conclude that $E_2=E_1$. Therefore $g_1^*(K_{Y_1}+B_1)=g_2^*(K_{Y_2}+B_2)$. In particular, $K_{Y_1}+B_1$ is semiample  iff $K_{Y_2}+B_2$ is so.
 	\end{proof}
 	
 	We are now ready to prove the abundance theorem for klt threefolds over positive-dimensional basis.
@@ -780,7 +780,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 		We can assume $\pi:X \to T$ to be dominant.
 		If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace $(X,\Delta)$ with a $\mathbb{Q}$-factorialisation by \autoref{dlt-mod}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier divisors).
 		
-		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{bpt}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
+		If $K_{X}+B$ is big over $T$, abundance follows from \autoref{MMP}, using $L=2(K_{X}+B)$. Similarly if $T$ is a curve and $\kappa(K_{X}+B)=0$ then this follows from \autoref{lemma:EDSemiampleness}. We can freely replace $T$ with its normalisation. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Let $\eta$ be the generic point of $T$ and $k(\eta)$ be the function field of $T$. Since $(X_{k(\eta)}, B_{k(\eta)})$ is semiample by \autoref{abundance-dim2}, we conclude semiampleness from \autoref{lemma:EDSemiampleness}. 
 		
 		From now on, we suppose that $\kappa(K_{X}+B)+\dim T=2$.
 		If $T_\mathbb{Q} \neq \emptyset$, we set $\eta=\Spec(\mathbb{Q})$, otherwise we set $\eta$ to be the generic point of $T$. 
@@ -867,7 +867,7 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 	\end{lemma}
 
 	\begin{proof}
-		Write $K_Y+\Delta'=\pi^* (K_X+B)$, since $K_{Y}+\Delta$ is numerically $\pi$ trivial we have that $\Delta'-\Delta \equiv_{\pi} 0$. Similarly as $B=\pi_{*}\Delta$ we have that $\Delta'-\Delta$ is exceptional and hence $\Delta'-\Delta=0$ by the negativity lemma \cite[Lemma 2.14]{bhatt2020}. As $\pi$ is small, the central fibre $Y_k$ is irreducible. 
+		Write $K_Y+\Delta'=\pi^* (K_X+B)$, since $K_{Y}+\Delta$ is numerically $\pi$ trivial we have that $\Delta'-\Delta \equiv_{\pi} 0$. Similarly as $B=\pi_{*}\Delta$ we have that $\Delta'-\Delta$ is exceptional and hence $\Delta'-\Delta=0$ by the negativity lemma \autoref{negatvity}. As $\pi$ is small, the central fibre $Y_k$ is irreducible. 
 		Then by \autoref{p-gen-case}, $Y_k$ and $X_k$ are both normal.
 		As $\pi$ is the Iitaka fibration associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
 	\end{proof}
