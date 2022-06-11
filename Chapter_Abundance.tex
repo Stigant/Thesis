@@ -249,12 +249,11 @@
 	
 	\begin{definition}
 		Let $S$ be a scheme and let $\varphi \colon X \to S$ be a proper morphism. A line bundle $L$ on $X$ is said to be \emph{EWM over $S$} if there
-		exists a proper $S$-morphism $f \colon X \rightarrow Y $ to an algebraic space $Y$ proper over $S$ such that a proper curve $C \subset X$ over $S$ is contracted by $f$ if and only if
-		$L \cdot C = 0$.
+		exists a proper $S$-morphism $f \colon X \rightarrow Y $ to an algebraic space $Y$ proper over $S$ such that for every closed subscheme $V\subseteq X$,  $\dim f(V) < \dim V$ if and only if $L|_{V}$ is not big.
 	\end{definition}
 	
 	The definition of semiample (resp. EWM) extends naturally to $\mathbb{Q}$-Cartier divisors (resp. $\mathbb{R}$-Cartier divisors).
-	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$.
+	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$. Note that any semiample $\mathbb{R}$-Cartier divisor is EWM.
 	
 
 	\subsubsection{Semiampleness Criteria}
@@ -262,10 +261,10 @@
 	We recall the Keel-Witaszek Theorem, which will be a crucial tool in the proof of abundance.
 
 	
-	\begin{theorem}[\cite{witaszek2020keels}]
+	\begin{theorem}\cite[Theorem 6.1]{witaszek2020keels}, \cite[Theorem 2.44]{bhatt2020}
 		Let $L$ be a nef line bundle on a scheme $X$
-		projective over an excellent Noetherian base scheme $S$. Then $L$ is semiample over $S$ if and only if both $L|_{\mathbb{E}(L)}$ and $L|_{X_{\mathbb{Q}}}$
-		are so.
+		projective over an excellent Noetherian base scheme $S$. Then $L$ is semiample (resp. EWM) over $S$ if and only if both $L|_{\mathbb{E}(L)}$ and $L|_{X_{\mathbb{Q}}}$
+		are so. 
 	\end{theorem}
 	
 	We will need the following descent result on semiampleness for normal schemes.

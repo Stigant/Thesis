@@ -709,6 +709,8 @@ The key structural result of the Minimal Model Program is the Cone Theorem. In i
 	\end{enumerate}
 \end{conjecture}
 
+If the field is algebraically closed we can take $d_{C_{i}}=1$ for every $i$, but not in general even if the field is perfect. See for example \cite[Example 7.3]{tanaka2018behavior}.
+
 An MMP is then run by contracting extremal $K_{X}+\Delta$ negative curves. The existence of such contractions is a key application of the Basepoint Free Theorem.
 
 \begin{conjecture}[Basepoint Free Theorem]\label{bpt-conj}
@@ -759,14 +761,14 @@ A closely related conjecture is the following
 
 By \cite[4.2.1]{fujino2007special}, this holds in dimension $n$ if termination of flips holds in dimensions $\leq n-1$.
 
-For threefolds in mixed and positive characteristic, the current state of the art is the following:
+For threefolds over a positive dimensional base, the current state of the art is the following:
 
-	\begin{theorem}\cite[Theorem F]{bhatt2020}\label{MMP}
+	\begin{theorem}\cite{bhatt2020}\label{MMP}
 	Let $(X, \Delta)/T$ be a $\mathbb{Q}$-factorial three-dimensional dlt pair over a ring $R$. Suppose that the closed points of $R$ have residue field of characteristic $p=0$ or $p> 5$. Suppose further that $\dim T >0$. Then the Cone and Basepoint Free Theorems hold.
 	
-	Moreover there exists a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates.
+	Moreover there exists a $(K_X+\Delta)$-MMP over $T$ that terminates. If $K_{X}+\Delta$ is pseudo-effective then every MMP terminates.
 	
-	In particular there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
+	In particular there is a sequence of birational maps of three-dimensional integral, normal and $\mathbb{Q}$-factorial schemes:  
 	\[
 	X=:X_0 \overset{\varphi_0}{\dashrightarrow} X_1 \overset{\varphi_1}{\dashrightarrow} \cdots \overset{\varphi_{\ell-1}}{\dashrightarrow} X_{\ell}
 	\]
@@ -775,7 +777,7 @@ For threefolds in mixed and positive characteristic, the current state of the ar
 	\begin{enumerate}
 		\item 
 		For any $i \in \{0, \ldots, \ell\}$, 
-		$(X_i, \Delta_i)$ is klt and projective over $Z$.
+		$(X_i, \Delta_i)$ is dlt, $\mathbb{Q}$-factorial and projective over $Z$.
 		\item 
 		For any $i \in \{0, \ldots, \ell-1\}$, 
 		$\varphi_i\colon X_i \dashrightarrow X_{i+1}$ is either a $(K_{X_i}+\Delta_i)$-divisorial contraction over $Z$ or a $(K_{X_i}+\Delta_i)$-flip over $Z$. 
@@ -787,36 +789,18 @@ For threefolds in mixed and positive characteristic, the current state of the ar
 	\end{enumerate}
 \end{theorem}
 
-Over a positive characteristic field, less is known even if the field is algebraically closed.
+Over a positive characteristic field slightly less is known, even if the field is algebraically closed. 
 
-	\begin{theorem}\cite[Theorem 1.7]{BW17}\cite{Bir16}\cite[Theorem 2]{witaszek2017canonical}\label{p-MMP}
-	Let $(X, \Delta)/T$ be a $\mathbb{Q}$-factorial three-dimensional dlt pair over a closed field $\kappa$. Suppose that $\kappa$ has characteristic $p> 5$, then the Cone and Basepoint Free Theorems hold.
+	\begin{theorem}\cite[Theorem 1.7]{BW17}\cite{Bir16}\cite[Theorem 2]{witaszek2017canonical}\cite[Proposition 6.7]{hashizume2017minimal}\label{p-MMP}
+	Let $(X, \Delta)$ be a $\mathbb{Q}$-factorial three-dimensional dlt pair, projective over a closed field $\kappa$. Suppose that $\kappa$ has characteristic $p> 5$, then the Cone and Basepoint Free Theorems hold.
 	
-	If $(K_{X}+\Delta)$ is not psuedo-effective there is a $(K_X+\Delta)$-MMP over $Z$ that terminates. If $K_{X}+\Delta$ is psuedo-effective then there is a log minimal model. Moreover if $(X,\Delta)$ is klt and $K_{X}+\Delta$ is pseudo-effective then every MMP terminates.
-	
-	In particular there is a sequence of birational maps of three-dimensional normal and $\mathbb{Q}$-factorial varieties:  
-	\[
-	X=:X_0 \overset{\varphi_0}{\dashrightarrow} X_1 \overset{\varphi_1}{\dashrightarrow} \cdots \overset{\varphi_{\ell-1}}{\dashrightarrow} X_{\ell}
-	\]
-	such that if $\Delta_i$ denotes the strict transform of $\Delta$ on $X_i$, then
-	the following properties hold:  
-	\begin{enumerate}
-		\item 
-		For any $i \in \{0, \ldots, \ell\}$, 
-		$(X_i, \Delta_i)$ is klt and projective over $Z$.
-		\item 
-		For any $i \in \{0, \ldots, \ell-1\}$, 
-		$\varphi_i\colon X_i \dashrightarrow X_{i+1}$ is either a $(K_{X_i}+\Delta_i)$-divisorial contraction over $Z$ or a $(K_{X_i}+\Delta_i)$-flip over $Z$. 
-		\item 
-		If $K_X+\Delta$ is pseudo-effective over $Z$, then $K_{X_{\ell}}+\Delta_{\ell}$ is nef over $Z$. 
-		\item 
-		If $K_X+\Delta$ is not pseudo-effective over $Z$, then 
-		there exists a $(K_{X_{\ell}}+\Delta_{\ell})$-Mori fibre space $X_{\ell} \to Y$ over $Z$. 
-	\end{enumerate}
+	Moreover there exists a $(K_X+\Delta)$-MMP over $\kappa$ that terminatess. If in fact $(X,\Delta)$ is klt and $K_{X}+\Delta$ is pseudo-effective then every MMP terminates.
+
 \end{theorem}
 
+These results extend more generally to the case that $\kappa$ is a perfect field by base change.
 
-Terminating MMP's can also be run for certain fourfolds birational to their base or semistable over a curve \cite{hacon2020relative}. Some of the conjectures of the MMP and the existence of log terminal models are also known for threefold pairs over an imperfect field \cite{das2019log}. 
+Terminating MMP's can also be run for certain fourfolds birational to their base or semistable over a curve \cite{hacon2020relative}. Some of the conjectures of the MMP and the existence of log terminal models are also known for threefold pairs over an imperfect field \cite{das2019log} or over perfect characteristic five fields \cite{hacon2019minimal}. Finally many results are also known in the log canonical setting due to \cite{waldron2018lmmp}, \cite{hashizume2017minimal}.
 
 
 \subsection{Birational Modifications}\label{subsec-mod}
