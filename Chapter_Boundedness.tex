@@ -114,7 +114,7 @@
 
 %\section{Introduction}
 
-This chapter focuses on boundedness results for globally $F$-split varieties admitting a Log Fano pair. This work also appears in \cite{stigant2020boundedness}.
+This chapter focuses on boundedness results for globally $F$-split varieties admitting a Log Fano pair. This work also appears in \cite{stigant2020boundedness}. In this chapter we generally work over a field. By variety we will always mean an integral quasi-projective scheme over a field.
 
 In this direction, we prove the following.
 
@@ -408,7 +408,7 @@ We will prove this in several steps. First we consider the case that $\Delta^{h}
 	
 	Then working locally over each point of codimension $1$ and applying $2$ dimensional inversion of adjunction, we see that in fact $D_{Z}$ is determined by the vertical part of $\Delta$, indeed $\Delta^{V}=f^{*}D_{Z}$, and that $M_{Z}$ is the pullback of an ample divisor on $\overline{\mathcal{M}}_{0, n}$ by $\phi$. In particular $M_{Z}$ is semiample and $D_{Z}$ takes coefficients in the same set as $\Delta^{v}$ and therefore they are bounded above by $1-\epsilon$.
 	
-	From the following lemma, we see that in fact we may further suppose that $(Z,D_{Z})$ is log smooth. Since if $\pi\colon (Z',\Delta')\to Z$ is a log resolution of $(Z,D_{Z})$ we have $K_{Z'}+\Delta'=\pi^{*}(K_{Z}+D_{Z})$, $\pi^{*}M_{Z}=M_{Z'}$ and $K_{Z'}+D_{Z'}+M_{Z'}=\pi^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+\Delta'+M_{Z'}$, giving $D_{Z'}=\Delta'$ as required. In particular then \autoref{average} gives that $(Z,D_{Z}+M_{Z})$ is $\epsilon$-klt. 
+	From the following lemma, we see that in fact we may further suppose that $(Z,D_{Z})$ is log smooth. Since if $\pi\colon (Z',\Delta')\to Z$ is a log resolution of $(Z,D_{Z})$ we have $K_{Z'}+\Delta'=\pi^{*}(K_{Z}+D_{Z})$, $\pi^{*}M_{Z}=M_{Z'}$ and $K_{Z'}+D_{Z'}+M_{Z'}=\pi^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+\Delta'+M_{Z'}$, giving $D_{Z'}=\Delta'$ as required. In particular then \autoref{average} gives that $(Z,D_{Z}+M_{Z})$ is sub $\epsilon$-klt. 
 \end{proof}
 
 \begin{lemma}
@@ -490,11 +490,11 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 
 
 \begin{theorem}[Embedded resolution of surface singularities]\cite[Theorem 1.2]{cutkosky2009resolution}
-	Suppose that $V$ is a non-singular threefold, $S$ a reduced surface in $V$ and $E$ a simple normal crossings divisor on $V$ then there is a sequence of blowups $\pi\colon V_{n} \to V_{n-1} \to ... V$ such that the strict transform $S_{n}$ of $S$ to $V_{n}$ is smooth. Further each blowup is the blowup of a non-singular curve or a point and the blown up subvariety is contained in the locus of $V_{i}$ on which the preimage of $S+E$ is not log smooth.
+	Suppose that $V$ is a non-singular variety over an algebraically closed field of dimension $3$, $S$ a reduced surface in $V$ and $E$ a simple normal crossings divisor on $V$ then there is a sequence of blowups $\pi\colon V_{n} \to V_{n-1} \to ... V$ such that the strict transform $S_{n}$ of $S$ to $V_{n}$ is smooth. Further each blowup is the blowup of a non-singular curve or a point and the blown up subvariety is contained in the locus of $V_{i}$ on which the preimage of $S+E$ is not log smooth.
 \end{theorem}
 
 \begin{corollary}
-	Suppose $(X,\Delta,Z)$ is a regular, tame conic bundle and we fix a very ample linear system $|A|$ on $Z$.  Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ such that for any sufficiently general element $H\in |A|$, its pullback $G'$ to $X'$ has $(X',G')$ log smooth.
+	Suppose $(X,\Delta,Z)$ is a regular, tame conic bundle and we fix a very ample linear system $|A|$ on $Z$.  Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ with reduced exceptional divisor $E$ such that for any sufficiently general element $H\in |A|$, its pullback $G'$ to $X'$ has $(X',E+G')$ log smooth.
 \end{corollary}
 \begin{proof}
 	
@@ -514,7 +514,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 \end{theorem}
 \begin{proof}
 	Write $E$ for the reduced exceptional divisor.
-	Clearly a general $G'$ avoids the intersection of any $3$ components of $\text{Supp}(\Delta')+E$, and from above $(X,G'+E)$ is log smooth. Suppose $D$ is a horizontal component of $\Delta$. Then either $G$ can be assumed to avoid it, or to meet it at a smooth fibre. By the usual arguments, since the only non-contracted curves we blow up map separably onto their image, $G'$ meets $D'$ the strict transform of $D$ along a log smooth locus. Further this locus meets any exceptional divisor either transversally or not at all. Now suppose $D_{2}$ is any other component of $\text{Supp}(\Delta')+E$ which does not dominate $Z$. Then if either $D_{2}.D'$ has dimension less than $1$ or is contracted over $Z$ then a general $G'$ avoids it, so suppose otherwise. In which case $D_{2}$ must be exceptional over $X$ with image $V\subseteq D$ on $X$. However $D_{2}.D'$ is just the strict transform of $V$ inside $D'$ and, for a general $G'$, $G'.D_{2}.D$ is log smooth as required. 
+	Clearly a general $G'$ avoids the intersection of any $3$ components of $\text{Supp}(\Delta')+E$, and from above $(X',G'+E)$ is log smooth. Suppose $D$ is a vertical component of $\Delta$. Then either $G$ can be assumed to avoid it, or to meet it at a smooth fibre. By the usual arguments, since the only non-contracted curves we blow up map separably onto their image, $G'$ meets $D'$ the strict transform of $D$ along a log smooth locus. Further this locus meets any exceptional divisor either transversally or not at all. Now suppose $D_{2}$ is any other component of $\text{Supp}(\Delta')+E$ which does not dominate $Z$. Then if either $D_{2}.D'$ has dimension less than $1$ or is contracted over $Z$ then a general $G'$ avoids it, so suppose otherwise. In which case $D_{2}$ must be exceptional over $X$ with image $V\subseteq D$ on $X$. However $D_{2}.D'$ is just the strict transform of $V$ inside $D'$ and, for a general $G'$, $G'.D_{2}.D$ is log smooth as required. 
 	
 	It remains then to consider the horizontal components of $\Delta$. Let $D$ be any such component and $D'$ its strict transform. Since $(X,\Delta,Z)$ is tame, so is $(X',\Delta',Z)$. In particular then $D' \to Z$ is divisorially tamely ramified and so residually separated over $Z$ away from finitely many points of $Z$. Hence by Bertini's Theorem, \autoref{Bertini}, the pullback of a general $H$, which is just the intersection of a general $G'$ with $D'$ is smooth. Further as $D' \to Z$ is divisorially tamely ramified, if $V$ is any curve on $D'$ not contracted over $Z$ a general $G'|_{D'}$ meets it transversally. Hence for any other component $D_{2}$ of $\text{Supp}(\Delta')+E$ we have $(X',D'+D_{2}+G')$ log smooth for a general $G'$ and the result follows.
 \end{proof}
@@ -534,7 +534,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 \section{$F$-Split Mori Fibre Spaces}
 
 \begin{theorem}\label{setup}
-	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic. Suppose that $(X,\Delta)$ admits a $K_{X}$ Mori fibration$f\colon (X,\Delta) \to (Z,\Delta_{Z})$ where either
+	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic. Suppose that $(X,\Delta)$ admits a $K_{X}$ Mori fibration $f\colon (X,\Delta) \to (Z,\Delta_{Z})$ where either
 	\begin{enumerate}
 		\item $Z$ is a smooth rational curve, there is $H$ on $Z$ very ample of degree $1$ and a general fibre $G$ of $X \to Z$ is smooth.\\
 		\[\text{or}\]
@@ -676,7 +676,7 @@ If $\Vol(-K_{X})=0$ the result is trivially true, so we may suppose that $-K_{X}
 	\sim & -(K_{X}|_{G}+kF)+\frac{k+2}{r})B|_{G}+\frac{k+2}{r}(-K_{X}|_{G}-rF)+F_{1}+F_{2} \\	
 	\sim & -(1-\frac{k+2}{r})(K_{X}+B)|_{G} \\
 	\end{align*}
-	and hence we may apply the Weak Connectedness Lemma, \autoref{WLC}, to see that its non-KLT locus is connected. In particular then there is a non-klt center $W$ dominating $H$. Thus it follows that $(F,(1-\frac{k+2}{r})B|_{F}+\frac{k+2}{r}D|_{F})$ is non-klt. However $(F,(1-\frac{k+2}{r})B|_{F})$ is $\epsilon$-klt so we must have $\deg (\frac{k+2}{r}D|_{F})\geq \epsilon$. Finally since $D|_{F}\sim -K_{X}|_{F}=-K_{F}$ we have $\deg(D|_{F})=2$ and hence $\frac{2(c+2)}{r} \geq \frac{2(k+2)}{r} \geq \epsilon$, contradicting the choice of $r$.
+	and hence we may apply the weak connectedness lemma, \autoref{WLC}, to see that its non-KLT locus is connected. In particular then there is a non-klt center $W$ dominating $H$. Thus it follows that $(F,(1-\frac{k+2}{r})B|_{F}+\frac{k+2}{r}D|_{F})$ is non-klt. However $(F,(1-\frac{k+2}{r})B|_{F})$ is $\epsilon$-klt so we must have $\deg (\frac{k+2}{r}D|_{F})\geq \epsilon$. Finally since $D|_{F}\sim -K_{X}|_{F}=-K_{F}$ we have $\deg(D|_{F})=2$ and hence $\frac{2(c+2)}{r} \geq \frac{2(k+2)}{r} \geq \epsilon$, contradicting the choice of $r$.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{J1}]
@@ -706,7 +706,7 @@ If $\Vol(-K_{X})=0$ the result is trivially true, so we may suppose that $-K_{X}
 	Similarly we may further take $G_{2} \sim f^{*}(H)$ not containing $F$ such that
 	\[\nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D)+G_{1}+G_{2}) = \nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D+G_{1})).\]
 	
-	Now $-(K_{X}+(1-\frac{3}{t})B+\frac{3}{t}D+G_{1}+G_{2}) \sim (1-\frac{3}{t})(K_{X}+B)$ is ample, so we may apply the Connectedness Lemma to see there is a curve in the non-klt locus of $(X,(1-\frac{3}{t})B+\frac{3}{t}D)$ meeting $F$. In particular then the non-klt locus dominates $S$. Hence we must also have that $(F,(1-\frac{3}{t})B|_{F}+\frac{3}{t}D|_{F})$ is not-klt for the generic fibre $F$, however $(F,B|_{F})$ is $\epsilon$-klt and $F$ is a smooth rational curve. Therefore by degree considerations, since $-K_{X}|_{F} \sim D|_{F}$ we must have $t \leq \frac{6}{\epsilon}$, contradicting our choice of $t$. 
+	Now $-(K_{X}+(1-\frac{3}{t})B+\frac{3}{t}D+G_{1}+G_{2}) \sim (1-\frac{3}{t})(K_{X}+B)$ is ample, so we may apply \autoref{WLC} to see there is a curve in the non-klt locus of $(X,(1-\frac{3}{t})B+\frac{3}{t}D)$ meeting $F$. In particular then the non-klt locus dominates $S$. Hence we must also have that $(F,(1-\frac{3}{t})B|_{F}+\frac{3}{t}D|_{F})$ is not-klt for the generic fibre $F$, however $(F,B|_{F})$ is $\epsilon$-klt and $F$ is a smooth rational curve. Therefore by degree considerations, since $-K_{X}|_{F} \sim D|_{F}$ we must have $t \leq \frac{6}{\epsilon}$, contradicting our choice of $t$. 
 \end{proof}
 
 \begin{theorem}[Ambro-Jiang Conjecture for surfaces]\label{aj}\cite[Theorem 2.8]{jiang2014boundedness}
@@ -742,7 +742,7 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 	&\sim (1-\frac{t(\epsilon)+2}{s})(-K_{X}+tF) + \frac{t(\epsilon)(t(\epsilon)+2)}{s}F
 	\end{align*}
 	which is ample since $F$ is nef and $-K_{X}+t(\epsilon)F$ is ample.
-	Then the Connectedness Lemma gives that the non-klt locus is connected, and clearly contains $F_{1},F_{2}$, so it must contain a non-klt center $W$ which dominates $\mathbb{P}^{1}$. Thus it must be that $(F,\frac{t+2}{s}D|_{F})$ is not klt. However $F$ is smooth, and equivalently terminal, with $-K_{F}\sim D|_{F}$ ample, so by \autoref{aj} it follows that $\frac{t(\epsilon)+2}{s} \geq lct(F,0;D|_{F}) \geq \mu=\mu(1)$. Thus we have $s \leq \frac{t(\epsilon)+2}{\mu}$ contradicting our choice of $s$ and proving the result.
+	Then \autoref{WLC} gives that the non-klt locus is connected, and clearly contains $F_{1},F_{2}$, so it must contain a non-klt center $W$ which dominates $\mathbb{P}^{1}$. Thus it must be that $(F,\frac{t+2}{s}D|_{F})$ is not klt. However $F$ is smooth, and equivalently terminal, with $-K_{F}\sim D|_{F}$ ample, so by \autoref{aj} it follows that $\frac{t(\epsilon)+2}{s} \geq lct(F,0;D|_{F}) \geq \mu=\mu(1)$. Thus we have $s \leq \frac{t(\epsilon)+2}{\mu}$ contradicting our choice of $s$ and proving the result.
 \end{proof}
 
 
@@ -755,7 +755,7 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 	Since $(X,\Delta)$ is klt so is $(X,0)$ and hence we may run a terminating $K_{X}$ MMP $X=X_{0} \dashrightarrow X_{1} \dashrightarrow... \dashrightarrow X_{n}=X'$. At each step $X_{i} \dashrightarrow X_{i+1}$ we may pushforward $\Delta_{i}$ to $\Delta_{i+1}$, which is still klt since $K_{X}+\Delta \equiv 0$. Similarly since $X_{i}$ is $F$-split and rationally chain connected, so is $X_{i+1}$ as these are preserved under birational maps of normal varieties. Since $K_{X}$ cannot be pseudo-effective, $X'$ has a Mori fibre space structure $X' \to Z$, where $Z$ is also rationally chain connected and $F$-split. If $X$ is terminal we may run a $K_{X}$ MMP terminating at a terminal variety, hence $X'$ is terminal also.	
 \end{proof}
 
-\myworries{Rep Theorem}
+%\myworries{Rep Theorem}
 %DIF < 	\begin{reptheorem}{Main}
 %DIF < 		Fix $0 < \delta, \epsilon <1$. Let $S_{\delta,\epsilon}$ be the set of threefolds satisfying the following conditions:
 %DIF < \begin{itemize}
@@ -768,7 +768,7 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 %DIF < Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$.
 %DIF < \end{reptheorem}
 
-\begin{proof}
+\begin{proof}[Proof of \autoref{Main_Bound}]
 	Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. Further if $Z$ is a surface then $(X',\Delta')\to Z$ is a tame conic bundle. In particular it admits $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY by \autoref{cbf}. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$. 
 	
 	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{setup} this is bounded.	

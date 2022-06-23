@@ -752,22 +752,22 @@ The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefo
 		Let $S'$ be the strict transform of $S$ surface on $W$, which must dominate $Y$. Let $f_{S'}, g_{S'}$ be restrictions of $f,g$ to $S'$. Then $(f^{*}L)|_{S'}=f_{S'}^{*}(L|_{S})=g_{S'}^{*}D$ and since $L|_{S}$ is semiample and $Y$ is normal, we must have that $D$ is semiample by \autoref{pullback}. In turn this implies that $L$ is semiample, since $f^{*}L=g^{*}D$.			
 	\end{proof}
 	
-	The following states that it's sufficient to prove abundance for a single minimal model inside its birational class.
-	
-	\begin{lemma}\label{inv}
-		Suppose that $(X,B)/T$ is a log canonical $R$-pair. 
-		Let $\phi_{i} \colon (X, B) \dashrightarrow (Y_{i},B_{i})$ be minimal models for $(X,B)$ over $T$. 
-		Then $K_{Y_{1}}+B_{1}$ is semiample over $T$ if and only if $K_{Y_{2}}+B_{2}$ is so.
-	\end{lemma}
-	\begin{proof}
-		
-		Let $f \colon Z \to (X,B)$ be a birational contraction of normal schemes such that we induce the maps $g_i \colon Z \to Y_i$. We can write
-		$$K_Z+\Delta_Z \equiv g_i^*(K_{Y_i}+B_i) + E_i,$$
-		where $E_i$ are effective and contain all $\phi_i$-exceptional divisors.
-		Consider 
-		$$g_1^*(K_{Y_1}+B_1)-g_2^*(K_{Y_2}+B_2)=E_2-E_1. $$
-		In particular, $E_2-E_1$ is $g_2$-nef and therefore by the negativity lemma (\autoref{negatvity}) we conclude that $E_2 -E_1 \leq 0$. By symmetry, we conclude that $E_2=E_1$. Therefore $g_1^*(K_{Y_1}+B_1)=g_2^*(K_{Y_2}+B_2)$. In particular, $K_{Y_1}+B_1$ is semiample  iff $K_{Y_2}+B_2$ is so.
-	\end{proof}
+%	The following states that it's sufficient to prove abundance for a single minimal model inside its birational class.
+%	
+%	\begin{lemma}\label{inv}
+%		Suppose that $(X,B)/T$ is a log canonical $R$-pair. 
+%		Let $\phi_{i} \colon (X, B) \dashrightarrow (Y_{i},B_{i})$ be minimal models for $(X,B)$ over $T$. 
+%		Then $K_{Y_{1}}+B_{1}$ is semiample over $T$ if and only if $K_{Y_{2}}+B_{2}$ is so.
+%	\end{lemma}
+%	\begin{proof}
+%		
+%		Let $f \colon Z \to (X,B)$ be a birational contraction of normal schemes such that we induce the maps $g_i \colon Z \to Y_i$. We can write
+%		$$K_Z+\Delta_Z \equiv g_i^*(K_{Y_i}+B_i) + E_i,$$
+%		where $E_i$ are effective and contain all $\phi_i$-exceptional divisors.
+%		Consider 
+%		$$g_1^*(K_{Y_1}+B_1)-g_2^*(K_{Y_2}+B_2)=E_2-E_1. $$
+%		In particular, $E_2-E_1$ is $g_2$-nef and therefore by the negativity lemma (\autoref{negatvity}) we conclude that $E_2 -E_1 \leq 0$. By symmetry, we conclude that $E_2=E_1$. Therefore $g_1^*(K_{Y_1}+B_1)=g_2^*(K_{Y_2}+B_2)$. In particular, $K_{Y_1}+B_1$ is semiample  iff $K_{Y_2}+B_2$ is so.
+%	\end{proof}
 	
 	We are now ready to prove the abundance theorem for klt threefolds over positive-dimensional basis.
 	
