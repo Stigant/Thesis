@@ -822,7 +822,6 @@ A vital ingredient in these results is the negativity lemma, \autoref{negatvity}
 
 The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair. We typically then conclude it is a crepant modification, in some sense, using the negativity lemma. We begin with the case of terminalisation.
 
-
 \begin{lemma}
 	
 	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a terminal pair $(Y,B)$ admitting a birational morphism, called a terminalisation, $\pi\colon Y \to X$ with $B=\pi_{*}^{-1}\Delta$ and $K_{Y}+B$ $\pi$-nef.
@@ -847,6 +846,8 @@ The approach for all the modifications is the same - take a log resolution, choo
 
 \begin{remark}
 	Of course this is not crepant for $(X,B)$. However the main usage is to take a terminalisation of the underlying variety $X$. Then we have $\pi \colon Y \to X$ with $K_{Y}$ nef, so $B_{Y}=\pi^{*}(K_{X}+B)-K_{Y} \geq 0$ by negativity. 
+	
+	Alternatively, if $(X,\Delta)$ is klt then there are only finitely many valuations with discrepancy $\leq 0$. We can then extract these in a similar fashion to \autoref{dlt-mod}. This gives a crepant terminal model $(Y,B_{Y}) \to (X,\Delta)$. See further \cite[Corollary 1.4.3]{BCHM10}.
 	
 \end{remark}
 

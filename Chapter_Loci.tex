@@ -322,14 +322,18 @@ Together these tell us that 'the blowup of the reduction is the reduction of the
 \begin{proof}
 	
 	Thought of as a subscheme of $\mathbb{P}^{V}$, $X$ is cut out by an ideal sheaf $\mathcal{I}$. Hence we have 
-	
 	\[0 \to \mathcal{I}\otimes \ox[\mathbb{P}^{V}](k) \to \ox[\mathbb{P}^{V}](k) \to H^{k} \to 0.\]
-	
 	Since $H^{1}(\mathbb{P}^{V}, \mathcal{I}\otimes \ox[\mathbb{P}^{V}](k))=0$ for large $k$, we get a surjection $$H^{0}(\mathbb{P}^{V},\ox[\mathbb{P}^{V}](k)) \to H^{0}(X,H^{k}).$$ However, the image of this map is precisely $V^{\otimes k}$ since we have $H^{0}(\mathbb{P}^{V},\ox[\mathbb{P}^{V}](k))=\bigotimes_{1}^{k}H^{0}(\mathbb{P}^{V},\ox[\mathbb{P}^{V}](1))$.
-	
-	
-	
+
 \end{proof}
+
+\begin{remark}
+	They key point of this lemma is the following. Suppose we take $|V|$ as in \autoref{elim} on $X$. Then we have a blowup $\phi_{1}^{*} \colon Z \to X$ such that $\phi_{1}^{*}|V|$ is basepoint free inside $H^{0}(Z,M)$. Take the induced morphism $\phi_{2}\colon Z \to Y$ and let $H$ be the very ample divisor on $Y$ induced by $|V|$. Then we have $\phi_{2}^{*}H^{0}(Y,kH) \subseteq \phi_{1}^{*}|V|^{\otimes k}$ for $k>>1$.
+	
+	This may not be true for $k=1$, even without the resolution of indeterminacy. Consider for example $X=\mathbb{P}^{1}$ and $L=\ox(4)$. If we take $$|V|=<x^4,x^3y,y^3x,y^{4}>$$ then we get an induced morphism $X \to \mathbb{P}^{3}$. The image, $Y$, is not projectively normal however, since $X \to Y$ is an isomorphism but $\dim |V| =4$ and $\dim H^{0}(X,L)=5$. In this example $k=3$ suffices.
+	
+\end{remark}
+
 
 \section{Stable Base Loci}
 
@@ -342,58 +346,53 @@ Suppose for example $X$ is the union of two normal projective schemes $X_{1}$, $
  The idea in \cite[Thereom 1.10]{witaszek2020keels} is essentially to show that $L$ is semiample by producing a candidate morphism via pushout. Then one can lift sections back to $L$ by building them from suitable sections of $L|_{X_{red}}$ and $L|_{X_{\mathbb{Q}}}$, up to perhaps replacing the line bundle with a higher power. The key remedy then, is to show that if we blow up the base locus of $L|_{X_{red}}$ via $\pi:Y \to X$, we may build sections of $\pi^{*}L$ on $Y$ using only those coming from $X_{red}$ and $X_{\mathbb{Q}}$.\\
 
 \begin{theorem}\label{BaseRed}
-		Let $S$ be an excellent, Noetherian scheme, take $X$ a projective scheme over $S$ and $L$ a line bundle on $X$. Write $i:X_{red} \to X$ for the inclusion of the reduced scheme. Suppose that $L_{X_{\mathbb{Q}}}$ is semiample. Then $\SB(L)=\SB(L_{X_{red}})$.
+	Let $S$ be an excellent, Noetherian scheme, take $X$ a projective scheme over $S$ and $L$ a line bundle on $X$. Write $i:X_{red} \to X$ for the inclusion of the reduced scheme. Suppose that $L|_{X_{\mathbb{Q}}}$ is semiample. Then $\SB(L)=\SB(L|_{X_{red}})$.
 \end{theorem}
 
 \begin{proof}
-	
-	We always have $\SB(L_{X_{red}}) \subseteq \SB(L)$ since we can pull back sections of $L$, so it suffices to show the converse. We may also freely localise on $S$ and assume that it is an affine, Noetherian $\mathbb{Z}_{(p)}$ scheme. After replacing $L$ with a sufficiently high mulitple, we assume that $\SB(L)=\BB(L)$, $\SB(L_{X_{red}})=\BB(L_{X_{red}})$ and $\SB(L_{X_{\mathbb{Q}}})=\BB(L_{X_{\mathbb{Q}}})$ as reduced schemes.\\
+	We always have $\SB(L|_{X_{red}}) \subseteq \SB(L)$ since we can pull back sections of $L$, so it suffices to show the converse. We may also freely localise on $S$ and assume that it is an affine, Noetherian $\mathbb{Z}_{(p)}$ scheme. After replacing $L$ with a sufficiently high mulitple, we assume that $\SB(L)=\BB(L)$, $\SB(L|_{X_{red}})=\BB(L|_{X_{red}})$ and $\SB(L|_{X_{\mathbb{Q}}})=\BB(L|_{X_{\mathbb{Q}}})$ as reduced schemes.\\
 	\\
 	\textbf{Step 1: Blow-up the base locus.}\\
 	
-	Fix a generating set $s_{i}$ of $H^{0}(X,L_{X_{red}})$.	By \autoref{elim} the blowup $Y_{red} \to X_{red}$ along $Z=\BB(V_{red})$ eliminates the indeterminacy of $L_{red}$. Let $Y \to X$ be the blowup along $X$, viewed here a subscheme of $Z$. Then the reduction of $Y$ is $Y_{red}$ by \autoref{Blowup}.
+	Fix a generating set $s_{i}$ of $H^{0}(X,L|_{X_{red}})$. By \autoref{elim} the blowup $W\to X_{red}$ along a subscheme $Z$ eliminates the indeterminacy of $L_{red}$, where $Z=\BB(L|_{X_{red}})=\SB(L|_{X_{red}})$ as reduced schemes. Let $\pi:Y \to X$ be the blowup along $Z$, viewed here a subscheme of $X$. Then the reduction of $Y$ is $Y_{red}\simeq W$ by \autoref{Blowup}.
 	
-	Let $F$ be the exceptional divisor so that $M = \pi^{*}L(-F)$ is basepoint free. Note that since $L$ is semiample on $X_{\mathbb{Q}}$, we have that $M|_{Y_{\mathbb{Q}}}=\pi^{*}L|_{Y_{\mathbb{Q}}}$. We fix a generating set $t_{i}$ of of $H^{0}(X,M|_{Y_{\mathbb{Q}}})$, which induces a morphism $\phi_{\mathbb{Q}}\colon Y_{\mathbb{Q}} \to Z'_{\mathbb{Q}}$. 
+	Let $F$ be the exceptional divisor and $M = \pi^{*}L(-F)$. Note that since $L$ is semiample on $X_{\mathbb{Q}}$, we have that $Y_{\mathbb{Q}}=X_{\mathbb{Q}}$ and $M|_{Y_{\mathbb{Q}}}=L|_{X_{\mathbb{Q}}}$ under this identification. We fix a generating set $t_{i}$ of of $H^{0}(Y_{\mathbb{Q}},M|_{Y_{\mathbb{Q}}})$, which induces a morphism $\phi_{\mathbb{Q}}\colon Y_{\mathbb{Q}} \to Z'_{\mathbb{Q}}$.
 	
-	By definition the basis $s_{i}$ of $H^{0}(X,L)$ now induces $\hat{s}_{i}$ in $H^{0}(Y_{red},M|_{Y_{red}})$ which globally generate the line bundle. This induces a morphism $\psi: Y \to Z$ over $S$. Then $Z_{\mathbb{Q}} \to Z'_{\mathbb{Q}}$ is a finite universal homeomorphism by \cite[Tag 02OG]{stacks-project}. 
+	By definition the basis $s_{i}$ of $H^{0}(X,L|_{X_{red}})$ now induces $\hat{s}_{i}$ in $H^{0}(Y_{red},M|_{Y_{red}})$ which globally generate the line bundle. This induces a morphism $\psi: Y_{red} \to Z$ over $S$. Then $Z_{\mathbb{Q}} \to Z'_{\mathbb{Q}}$ is a finite universal homeomorphism by \cite[Tag 02OG]{stacks-project}. We write $S=\pi^{*}_{red}H^{0}(X,L|_{X_{red}}) \subseteq H^{0}(Y_{red},M|_{Y_{red}})$, which is generated by the $\hat{s}_{i}$ by construction. 
 	
-	Now by \cite[Theorem 1.7, Corollary 4.20 and Lemma 2.20]{witaszek2020keels}, there is a scheme $Z'$ and a line bundle $H'$ on $Z$ such that the following diagram commutes at the level of line bundles.
+	Now by \cite[Theorem 1.7, Corollary 4.20 and Lemma 2.20]{witaszek2020keel}, there is a scheme $Z'$, a universal homeomorphism $Z \to Z'$ and a line bundle $H'$ on $Z$ such that the following diagram commutes at the level of line bundles.
 	
 	\[\begin{tikzcd}
-	{(Y,M)}                                 & {(Y_{\mathbb{Q}},M_{\mathbb{Q}})} \arrow[ddd, bend left=70] \arrow[l]     \\
-	{(Y_{red},M_{red})} \arrow[d] \arrow[u] & {(Y_{red, \mathbb{Q}},M_{red, \mathbb{Q}})} \arrow[d] \arrow[u] \arrow[l] \\
-	{(Z,H)} \arrow[d]                       & {(Z_{\mathbb{Q}},H_{\mathbb{Q}})} \arrow[l] \arrow[d]                    \\
-	{(Z',H')}                               & {(Z'_{\mathbb{Q}},H'_{\mathbb{Q}})} \arrow[l]                            
+	{(Y,M)}                                 & {(Y_{\mathbb{Q}},M|_{Y_{\mathbb{Q}}})} \arrow[ddd, bend left=70, "\phi_{\mathbb{Q}}"] \arrow[l]     \\
+	{(Y_{red},M|_{Y_{red}})} \arrow[d, "\psi"] \arrow[u] & {(Y_{red, \mathbb{Q}},M|_{Y_{red, \mathbb{Q}}})} \arrow[d, "\psi_{\mathbb{Q}}"] \arrow[u] \arrow[l] \\
+	{(Z,H)} \arrow[d]                       & {(Z_{\mathbb{Q}},H|_{Z_{\mathbb{Q}}})} \arrow[l] \arrow[d]                    \\
+	{(Z',H')}                               & {(Z'_{\mathbb{Q}},H'|_{Z'_{\mathbb{Q}}})} \arrow[l]                            
 	\end{tikzcd}\]\\
 	\\
 	\textbf{Step 2: Find compatible sections.}\\
 	
-	By definition we have $v_{i} \in H^{0}(Z,H)$ pulling back to the $\hat{s}_{i}$ and $w_{i} \in H^{0}(Z'_{\mathbb{Q}},H'_{\mathbb{Q}})$ pulling back to the $t_{i}$. These sections define closed immersion of $Z, Z'_{\mathbb{Q}}$ into projective space. Let $V,W$ be the submodules generated by the $v_{i}$ and $w_{i}$ respectively.  Then for some $n>>0$ we have that $H'^{\otimes n}$ is very ample, that $V^{\otimes n}=H^{0}(Z,H^{\otimes n})$ and $W^{\otimes n}=H^{0}(Z'_{\mathbb{Q}},H'^{\otimes n}_{\mathbb{Q}})$. The latter two following from \autoref{ampall}.
+	By \autoref{ampall}, we may replace $M,L,S,H,H'$ with higher multiples so that $\psi^{*}H^{0}(Z,H)\subseteq S$. and $\phi_{\mathbb{Q}}^{*}H^{0}(Z_{\mathbb{Q}}',H'|_{Z_{\mathbb{Q}}'})\subseteq H^{0}(Y_{\mathbb{Q}},M|_{Y_{\mathbb{Q}}})$. 
+	Taking further powers as needed, we may suppose also that $H'$ is very ample.
 	
-	Hence, after replacing $L$ with a higher power, we can fix generating sets as follows:
+	We fix $u_{i}$ a generating set for $H^{0}(Z',H')$, then let $v_{i}=u_{i}|_{Z}$ and $w_{i}=u_{i}|_{Z_\mathbb{Q}}$. By construction we have $\pi^{*}v_{i}\subseteq S$ so we can choose $x_{i}\in H^{0}(X_{red},L|_{X_{red}})$ with $\pi^{*}x_{i}=\psi^{*}v_{i}$. Similarly we have $y_{i} \in H^{0}(X_{\mathbb{Q}},L|_{X_{\mathbb{Q}}})=H^{0}(X_{\mathbb{Q}},M|_{X_{\mathbb{Q}}})$ with $\phi_{\mathbb{Q}}^{*}t_{i}=y_{i}$. Since the above diagram commutes we have the following identifications. $$\pi^{*}v_{i}|_{Y_{red,\mathbb{Q}}}=\psi_{\mathbb{Q}}^{*}(u_{i}|_{Z_{red,\mathbb{Q}}})=y_{i}|_{Y_{red,\mathbb{Q}}}$$
 	
-	\begin{enumerate}
-		\item We select a generating set $u_{i}$ for $H^{0}(Z',H')$.
-		\item We let $v_{i}=u_{i}|_{Z}$ and $w_{i}=u_{i}|_{Z_{\mathbb{Q}}}$
-		\item We reselect $\hat{s}_{i}$, $t_{i}$ to be pullbacks of $v_{i}$ and $w_{i}$
-		\item We reselect $s_{i}$ so that they pullback to $\hat{s}_{i}$
-	\end{enumerate}
-	We are always able to perform selections $3$ and $4$ since the tensor powers of original $v_{i},w_{i}$ generate $H^{0}(Z,H^{\otimes n})$ and $H^{0}(Z'_{\mathbb{Q}},H'^{\otimes n}_{\mathbb{Q}})$. In particular the pullbacks of the $v_{i}$ are contained in the image of $H^{0}(X,L|_{X_{red}})$. By construction, the $v_{i}, w_{i}$ still form a base point free linear system, and thus so do the $\hat{s_{i}}$ and $t_{i}$. Note that we may allow duplicates if needed, e.g. we have $t_{i}=t_{j}$ for $i \neq j$ with no issue.
+	Since $H'$ is very ample the $y_{i}$ must generate a basepoint free linear system. Similarly the $\phi^{*}v_{i}$ are xbasepoint free on $Y_{red}$. Then as $\pi^{-1}\colon X \dashrightarrow Y$ is an isomorphism away from $\SB(L|_{X_{red}})$, the $x_{i}$ are basepoint free away from it also.
 	
-	By construction, we must also have that $\hat{s}_{i}|_{Y_{red,\mathbb{Q}}}=t_{i}|_{Y_{red,\mathbb{Q}}}=\psi^{*}(u_{i}|_{Z_{\mathbb{Q}}})$. Since $\pi: Y \to X$ is an isomorphism over $\mathbb{Q}$ we therefore have that $s_{i}|_{X_{red,\mathbb{Q}}}=t_{i}|_{X_{red,\mathbb{Q}}}$. Since the $\hat{s_{i}}$ globally generate $M$ on $Y$, it must be that $L|_{X_[red}$ is globally generated by the $s_{i}$ away from the exceptional locus of $\pi$, which is precisely the stable base locus of $L$.\\
+	Finally note that since $H^{0}(X_{red,\mathbb{Q}},L|_{X_{red,\mathbb{Q}}}) \to H^{0}(Y_{red,\mathbb{Q}},M|_{Y_{red,\mathbb{Q}}})$ is an isomorphism, we must have $x_{i}|_{X_{red,\mathbb{Q}}}=y_{i}|_{X_{red,\mathbb{Q}}}$.\\
 	\\
 	\textbf{Step 3: Glue sections on the original scheme.}\\
-
-	By \cite[Proposition 3.5]{witaszek2020keels}, we have the following commutative diagram. 
+	
+	By \cite[Proposition 3.5]{witaszek2020keel}, we have the following commutative diagram. 
 	
 	\[
 	\begin{tikzcd}
-	{H^{0}(X,L)^{\perf}} \arrow[d] \arrow[r]                 & {H^{0}(X_{\mathbb{Q}},L_{X_{\mathbb{Q}}})^{\perf}} \arrow[d] \\
-	{H^{0}(X_{red},L_{X_{red}})^{\perf}} \arrow[r] \arrow[r] & {H^{0}(X_{red,\mathbb{Q}},L_{X_{red,\mathbb{Q}}})^{\perf}}  
+	{H^{0}(X,L)^{\perf}} \arrow[d] \arrow[r]                 & {H^{0}(X_{\mathbb{Q}},L|_{X_{\mathbb{Q}}})^{\perf}} \arrow[d] \\
+	{H^{0}(X_{red},L|_{X_{red}})^{\perf}} \arrow[r] \arrow[r] & {H^{0}(X_{red,\mathbb{Q}},L|_{X_{red,\mathbb{Q}}})^{\perf}}  
 	\end{tikzcd}	
 	\]
-	Hence we can again replace $L$ with a higher power, and $s_{i}$, $t_{i}$ with the corresponding multiples, such that there are $r_{i} \in H^{0}(X,L)$ with $r_{i}|_{X_{red}}=s_{i}$ and $r_{i}|_{X_{\mathbb{Q}}}=t_{i}$. Once again then $L$ is globally generated by the $r_{i}$ away from $\SB(L|_{X_{red}})$. Hence we have that $\SB(L)\subseteq \SB(L|_{X_{red}})$ as claimed.
+	Hence we can again replace $L$ with a higher power, and $x_{i}$, $y_{i}$ with the corresponding multiples, such that there are $r_{i} \in H^{0}(X,L)$ with $r_{i}|_{X_{red}}=x_{i}$ and $r_{i}|_{X_{\mathbb{Q}}}=y_{i}$. Once again then $L$ is globally generated by the $r_{i}$ away from $\SB(L|_{X_{red}})$, so we must have that $\SB(L)\subseteq \SB(L|_{X_{red}})$ as claimed.
 \end{proof}
+
 
 \begin{remark}
 	
