@@ -754,7 +754,6 @@ Together these conjectures form the key results of the Minimal Model Program and
 	\item Minimal Model: $K_{Y}+B$ is nef
 	\item Mori Fibre Space: $Y$ admits a $K_{Y}+B$ negative Mori Fibration
 \end{enumerate}
-
 A closely related conjecture is the following
 
 \begin{conjecture}[Special termination]
@@ -822,19 +821,35 @@ A vital ingredient in these results is the negativity lemma, \autoref{negatvity}
 
 The approach for all the modifications is the same - take a log resolution, choose a suitable pair on the resolution, run an MMP for this new pair. We typically then conclude it is a crepant modification, in some sense, using the negativity lemma. We begin with the case of terminalisation.
 
-\begin{lemma}
-	
-	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a terminal pair $(Y,B)$ admitting a birational morphism, called a terminalisation, $\pi\colon Y \to X$ with $B=\pi_{*}^{-1}\Delta$ and $K_{Y}+B$ $\pi$-nef.
-	
-	\end{lemma}
+%\begin{lemma}
+%	
+%	Let $(X,\Delta)/T$ be an $R$ pair with $\lfloor \Delta \rfloor =0$. Then there is a terminal pair $(Y,B)$ admitting a birational morphism, called a terminalisation, $\pi\colon Y \to X$ with $B=\pi_{*}^{-1}\Delta$ and $K_{Y}+B$ $\pi$-nef.
+%	
+%	\end{lemma}
 
 
+
+%\begin{proof}
+%	
+%	Let $f\colon Y' \to X$ be a log resolution of $(X,\Delta)$ such that $f^{*}(K_{X}+\Delta)=(K_{Y'}+\Delta')$ and the strict transform of $\Delta$ has disjoint components. Write $\Delta'=B'+E$ where $B'$ is the strict transform of $\Delta$ and $E$ is exceptional. Then $(Y',B')$ is terminal, since it is is log smooth with coefficients less than $1$ and disjoint support. We may then run a $K_{Y'}+B$ MMP on $Y'$ over $X$. Let $\pi:(Y,B) \to X$ be the output. 
+%	
+%	Let $F=(K_{Y}+B)-\pi^{*}(K_{X}+\Delta)$, then by construction $\pi_{*}F=f_{*}E=0$ and $F$ is nef over $X$. Hence by the negativity lemma we have that $-F \geq 0$. On the other hand $F$ is precisely the pushforward of $E$ and hence $F \geq 0$, forcing $F=0$ and so $K_{Y}+B=\pi^{*}(K_{X}+\Delta)$ as claimed.
+%
+%\end{proof}
+
+\begin{lemma}\label{term-mod}
+	
+	Let $(X,\Delta)/T$ be a klt $R$-pair Then there is a terminal pair $(Y,\Delta_{Y})$ admitting a birational morphism, called a terminalisation, $\pi\colon Y \to X$ with $\pi^{*}(K_{X}+\Delta)=K_{Y}+\Delta_{Y}$.
+	
+\end{lemma}
 
 \begin{proof}
 	
-	Let $f\colon Y' \to X$ be a log resolution of $(X,\Delta)$ such that $f^{*}(K_{X}+\Delta)=(K_{Y'}+\Delta')$ and the strict transform of $\Delta$ has disjoint components. Write $\Delta'=B'+E$ where $B'$ is the strict transform of $\Delta$ and $E$ is exceptional. Then $(Y',B')$ is terminal, since it is is log smooth with coefficients less than $1$ and disjoint support. We may then run a $K_{Y'}+B$ MMP on $Y'$ over $X$. Let $\pi:(Y,B) \to X$ be the output. 
+	Let $f \colon Y' \to X$ be a log resolution extracting every divisor with discrepancy at most $0$. Write $f^{*}(K_{X}+\Delta)+E=K_{Y'}+\Delta_{Y'}$ where $E$ is exceptional and $E, \Delta_{Y'} \geq 0$ share no support. Blowing up further, if needed, we can assume that $\Delta_{Y'}$ has disjoint support, so that $(Y',\Delta_{Y'})$ is terminal.
 	
-	Let $F=(K_{Y}+B)-\pi^{*}(K_{X}+\Delta)$, then by construction $\pi_{*}F=f_{*}E=0$ and $F$ is nef over $X$. Hence by the negativity lemma we have that $-F \geq 0$. On the other hand $F$ is precisely the pushforward of $E$ and hence $F \geq 0$, forcing $F=0$ and so $K_{Y}+B=\pi^{*}(K_{X}+\Delta)$ as claimed.
+	Then we can run a $K_{Y'}+\Delta_{Y'}$ MMP over $X$ to get $\phi \colon Y \dashrightarrow Y'$ where $\pi \colon Y \to X$ has $(Y,\Delta_{Y})$ terminal and $K_{Y}+B_{Y}$ $\pi$ nef. By negativity, $G=\pi^{*}(K_{X}+\Delta)-K_{Y}+\Delta_{Y}$ has $G \geq 0$, since $G$ is exceptional and $-G$ is $\pi$-nef. On the other hand $G=\phi_{*}E$, so $G \geq 0$. Thus $G=0$ and we have $K_{Y}+\Delta_{Y}=\pi^{*}(K_{X}+\Delta)$ as required.
+	
+%	Now take any $\Delta$ with $(X,\Delta)$ klt. Then by adding a small ample divisor we get $\Delta' \geq \Delta$ such that $(X,\Delta')$ has no valuations with discrepancy exactly $0$. Thus there is $\pi \colon Y \to X$ with $(Y,B'_{Y})$ terminal and $K_{Y}+B'_{Y}=\pi^{*}(K_{X}+\Delta')$. However then we have $K_{Y}+B_{Y}=\pi^{*}(K_{X}+\Delta)$ with $B_{Y} \leq B'_{Y}$ so it must be that $(Y,B_{Y})$ is nef
 
 \end{proof}
 
@@ -844,13 +859,12 @@ The approach for all the modifications is the same - take a log resolution, choo
 %	
 %	\end{remark}
 
-\begin{remark}
-	Of course this is not crepant for $(X,B)$. However the main usage is to take a terminalisation of the underlying variety $X$. Then we have $\pi \colon Y \to X$ with $K_{Y}$ nef, so $B_{Y}=\pi^{*}(K_{X}+B)-K_{Y} \geq 0$ by negativity. 
-	
-	Alternatively, if $(X,\Delta)$ is klt then there are only finitely many valuations with discrepancy $\leq 0$. We can then extract these in a similar fashion to \autoref{dlt-mod}. This gives a crepant terminal model $(Y,B_{Y}) \to (X,\Delta)$. See further \cite[Corollary 1.4.3]{BCHM10}.
-	
-\end{remark}
-
+%\begin{remark}
+%	Of course this is not crepant for $(X,B)$. However the main usage is to take a terminalisation of the underlying variety $X$. Then we have $\pi \colon Y \to X$ with $K_{Y}$ nef, so $B_{Y}=\pi^{*}(K_{X}+B)-K_{Y} \geq 0$ by negativity. 
+%	
+%	Alternatively, if $(X,\Delta)$ is klt then there are only finitely many valuations with discrepancy $\leq 0$. We can then extract these in a similar fashion to \autoref{dlt-mod}. This gives a crepant terminal model $(Y,B_{Y}) \to (X,\Delta)$. See further \cite[Corollary 1.4.3]{BCHM10}.
+%	
+%\end{remark}
 
 Perhaps the most useful form of modification is a dlt modification. The main difficulty versus a terminalisation arises from the need to run an MMP for a pair which is not klt. The following proof comes from \cite[Theorem 10.4]{fujino2009fundamental}, but is largely due to Hacon.
 
@@ -881,7 +895,6 @@ Perhaps the most useful form of modification is a dlt modification. The main dif
 	To this end, let \[D= \sum_{\substack{E \text{exceptional} \\ a(E,X,\Delta) > -1}} E\]
 	and 
 		\[G = \sum_{\substack{E \\ a(E,X,\Delta) \leq  -1}} -a(E,X,\Delta)E\]
-		
 	Let $S$ be the support of $G$, so that $\pi_{*}(G-S)=\Delta-\Delta' \geq 0.$ Let $A$ be sufficiently ample on $X$, so that $H=-C+\pi^{*}A$ is ample. Note that for small $s > 0$ we still have that $sS -C+\pi^{*}A=H_{s}$ is ample.
 	
 	Then $(Y, (1-rs)S+(1-t)D+rH_{s}+\pi_{*}^{-1}\Delta_{<1})$ is rlt for small $r,s,t > 0$ by \autoref{bertini}. We may choose $t$ sufficiently small that $a(E,X,\Delta) > t-1$ for each $E$ in the support of $D$. Write $\pi^{*}(K_{X}+\Delta)=K_{Y}+B$, and then choose $N$ as follows.
@@ -1095,8 +1108,7 @@ While this is a very useful characterisation, it cannot be applied to the case t
 	& Y' \arrow[d, "g'"] \arrow[bend left=60,swap, "f'"]{dd} \\
 	X \arrow[d, "h"] \arrow[r] & X' \arrow[d, "h'"] \\
 	T \arrow[r]                        & S    .                     
-	\end{tikzcd}\]
-	
+	\end{tikzcd}\]	
 	Moreover,  $g'_{*} \ox[Y']=\ox[X']$ and $R^{1}g'_{*} \ox[Y'] = 0$.
 \end{proposition}
 
@@ -1139,7 +1151,6 @@ While this is a very useful characterisation, it cannot be applied to the case t
 	Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & ... \\
 	Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & ...
 	\end{tikzcd}\]
-	
 	Here the $h_{i}$ are defined as follows. The underlying topological map is just $h_{1}$ and the map $\ox[Z_{i}] \to h_{i,*}\ox[Y_{i}]$ comes from the map ${\ox[Z_{i}] \to f_{i,*}\ox[X_{i}]}$ and the identification $f_{i,*}\ox[X_{i}]=h_{i,*}g_{i,*}\ox[X_{i}]\simeq h_{i,*}\ox[Y_{i}]$.
 	Each $h_{i}$ is finite, and thus by
 	\cite[\href{https://stacks.math.columbia.edu/tag/09ZT}{Tag 09ZT}]{stacks-project} we have that the compatible system $\left\{Y_{i} \to Z_i \right\}$ lifts to a finite morphism $Y \to Z$ over $R$. By \cite[\href{https://stacks.math.columbia.edu/tag/0A42}{Tag 0A42}]{stacks-project} there is a factorisation ${f\colon X \xrightarrow{g} Y \xrightarrow{h} Z}$, where $g_{*}\ox = \cO_Y$, because $g_{i,*}\cO_{X_i}=\cO_{Y_i}$ for all $i$. Similarly $h$ is a finite morphism. 

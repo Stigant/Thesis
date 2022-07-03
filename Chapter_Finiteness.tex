@@ -120,12 +120,12 @@
 	
 	All the results besides termination also apply to pairs of pure characteristic. Much of the content is the same as \cite{stigant2021mori}. Here $R$ will always be an excellent ring with dualising complex. We also require that the residue fields of closed points are all of characteristic $p>5$ or $p=0$, but this is a limitation only of current MMP results in mixed characteristic.
 	
-	We keep the notation of \autoref{setup}, however in this chapter we will always work over a base $T$ that is positive dimensional. This is mostly out of an abundance of caution. The results of \cite{DW19} should be sufficient to carry out the arguments needed for \autoref{Main_Finite1} over an $F$-finite field. Care would also need to be taken with \autoref{Main_Finite2} in this setting, since termination of an MMP with scaling is needed for \autoref{amp} and \autoref{islinked}. This should follow from \autoref{Main_Finite1}, however. Of course \autoref{Main_Finite3} is classical if $T$ is not positive dimensional.
+	We keep the notation of \autoref{setup}, however in this chapter we will always work over a base $T$ that is positive dimensional. This is mostly out of an abundance of caution. The results of \cite{DW19} should be sufficient to carry out the arguments needed for \autoref{Main_Finite1} over an $F$-finite field. Care would also need to be taken with \autoref{Main_Finite2} in this setting, since termination of an MMP with scaling is needed for \autoref{amp-geo} and \autoref{islinked}. This should follow from \autoref{Main_Finite1}, however. Over a perfect field of positive characteristic this theorem is already known due to \cite{das2020finiteness} and in characteristic $0$ due to \cite{shokurov2011geography}. The result is also known in higher dimensions over characteristic fields by \cite{BCHM10}.
 	
-	First it is shown that in fact the threefold MMP always terminates in mixed characteristic, extending the termination result of \cite{bhatt2020} to pairs which are not pseudo-effective. In fact the same argument holds over a base of dimension at least $2$.
+	First it is shown that in fact the threefold MMP over a positive dimensional base always terminates, extending the termination result of \cite{bhatt2020} to pairs which are not pseudo-effective.
 	
 	\begin{theorem}[\autoref{termination}]\label{Main_Finite3}
-		Let $f:(X,\Delta) \to T$ be a threefold klt pair over $R$. If $T$ is positive dimensional and $K(T)$ has characteristic $0$, or $\dim T \geq 2$ then any $K_{X}+\Delta$ MMP terminates.
+		Let $f:(X,\Delta) \to T$ be a threefold dlt pair over $R$, then any $K_{X}+\Delta$ MMP terminates.
 	\end{theorem}
 
 	Next, it is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
@@ -134,7 +134,7 @@
 		Fix a quasi-projective scheme $T$ over $R$ of positive dimension. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related, klt Mori fibre spaces of dimension $3$, projective and surjective over $T$. Then they are connected by Sarkisov links.
 	\end{theorem}
 	
-	The proof of this second theorem follows closely the work of \cite{hacon2009sarkisov}. The main technical work comes in proving a suitable version of Finiteness of Minimal Models, which is due to \cite{BCHM10} in characteristic $0$. 
+	The proof of this second theorem follows closely the work of \cite{hacon2009sarkisov}. The main technical work comes in proving a suitable version of Finiteness of Minimal Models.
 	
 		\begin{theorem}[\autoref{rltfiniteness}]\label{Main_Finite1}
 		Let $X$ be an integral, normal threefold over $R$ equipped with a projective morphism $X \to T$, where $T$ is quasi-projective over $R$ and the image of $X$ in $T$ is positive dimensional. Let $A$ be an ample $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{L}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{L}_{A}(V)$ such that $(X,A+B)/T$ is a klt $R$-pair. Then the following hold:
@@ -147,8 +147,7 @@
 			\item  For each $W_{i}$ there is a $j$ such that we can find a morphism $f_{i,j}: Y_{i} \to Z_{j}$ and $W_{i} \subseteq \overline{A_{j}}$.
 			\item  $\mathcal{E}(C)$ is a rational polytope and $A_{j}$ is a union of the interiors of finitely many rational polytopes.
 		\end{enumerate}
-	
-	If $C$ contains only klt boundaries then $A$ big and nef suffices.
+%	If $C$ contains only klt boundaries then $A$ is big suffices.
 	\end{theorem}
 
 	In fact these results hold for a slightly more general class of singularities - rlt pairs, which are essentially pairs which are replaceable by linearly equivalent klt pairs locally over the base. This generalisation is necessary due to the lack of appropriate Bertini type theorems over a general ring. Even if one starts with Mori Fibre Spaces coming from a klt MMP, the Sarkisov links may involve rlt pairs. A full definition of rlt is given in \autoref{rlt-section} and a description of Sarkisov links in \autoref{Sarkisov-section}.
@@ -156,153 +155,123 @@
 
 	\section{Termination}
 		
-	In this section we study termination for threefold pairs in mixed characteristic. In particular we require that all $R$ pairs are not wholly contained in positive characteristic, so that we can apply generic smoothness arguments. As always in this chapter, we consider only positive dimensional bases.
+	In this section we study termination for threefold pairs over positive dimensional bases. In this setting we will show that every $K_{X}+\Delta$ MMP terminates for a dlt pair $(X,\Delta)/T$. As always in this chapter, we consider only positive dimensional bases.
 	
 	Termination for psuedo-effective pairs in this setting is assured by the following theorem, together with the observation that if $\kappa(K_{X}+\Delta) \geq 0$ then the pair is effective. 
 	
 	\begin{theorem}\cite[Proposition 9.20]{bhatt2020}\label{partial-termination}
-		Let $(X,\Delta)\to T$ be a threefold dlt $R$-pair. Suppose that
+		Let $(X,\Delta)/T$ be a threefold dlt $R$-pair. Suppose that
 		$$(X,\Delta)=:(X_{0},\Delta_{0}) \dashrightarrow (X_{1},\Delta_{1}) \dashrightarrow$$
 		
 		is a sequence of $(K_{X}+\Delta)$ flips. Then neither the flipped nor the flipping locus are contained the support of $\Delta_{n}$ for all sufficiently large $n$.
 	\end{theorem}
 
 
-	The remainder of the chapter will show that any klt MMP terminates for mixed characteristic threefolds. In particular full termination holds for pairs which are not pseudo-effective. We will heavily rely on the observation, due to \cite{KU}, that $-1$ curves on the special fibre of a smooth family over a DVR can be contracted after possibly taking a finite extension of the base. We will also regularly use the following idea: If $\pi:X \to Y$ is some extremal contraction over $R$, and there is some base change $R' \to R$ such that $X_{R'}$ admits a divisorial contraction over $Y_{R'}$ then the original contraction must also have been divisorial.
-
-
+ We rely heavily on \autoref{partial-termination}. The key remaining argument is if $X \to T$ is a klt pair then there is an open set on which every contraction is a horizontal divisorial contraction. We prove this by reducing to the case that $(X,\Delta)$ is terminal. In mixed and positive characteristic this then follows from the liftablity of $-1$ curves, see \cite{KU}. This argument does not work in purely positive characteristic but provides motivation for our approach. Instead we adapt a termination argument for terminal pairs, largely due to Shokurov \cite{shokurov1986nonvanishing}.
+ 
 	We will also need the following construction, essentially due to \cite{mumford1961topology}.
-	
-	\begin{lemma}
-		
-		Let $\pi:X \to Y$ be a projective morphism from a regular scheme to a normal scheme, both of dimension $2$, with geometrically connected fibres. Let $E_{1},...,E_{n}$ be the exceptional curves. Choose a divisor $D$ on $Y$ and write $D'$ for the strict transform of $D$. Then there are unique $m_{i} \geq 0$ with $D'+\sum m_{i}E_{i} \equiv_{Y} 0$. If $D$ is $\mathbb{Q}$-Cartier then we have $\pi^{*}D= D'+\sum m_{i}E_{i}$.
-		
-	\end{lemma}
-	
-	\begin{proof}
-		
-		By \cite[Theorem 10.1]{kk-singbook}, the intersection form $[E_{i}.E_{j}]$ is negative definite. Hence there is a unique choice of $m_{i}$ with $D'+\sum m_{i}E_{i} \equiv_{Y} 0$. It remains to show that $m_{i} \geq 0$. Now suppose for contradiction that $m_{k} < 0$ for some $k$. Then we may suppose that $m_{k}/r_{k}$ is minimal, otherwise if $m_{j}/r_{j}$ is minimal we just replace $k$ with $j$ as we must still have $m_{j} < 0$.
-		
-		By \cite[Lemma 10.2]{kk-singbook} there is $E= \sum r_{i}E_{i}$ effective on $X$ with $-E$ ample over $Y$. Then $E.E_{i} < 0$ for each $i$ ensures that $r_{i} > 0$ for all $i$.
-				
-		We must have, for every $j$, that $D'.E_{j}\geq 0 $ as it does not contain any $E_{j}$ and thus as $D' \equiv_{Y} - \sum m_{i}E_{i}$ we have
-		
-		\[0\geq (\sum_{i} m_{i} E_{i}).E_{j} = \sum_{I} \frac{m_{i}}{r_{i}}(r_{i}E_{i}.E_{j}) \geq \frac{m_{k}}{r_{k}} \sum_{i} (r_{i}E_{i}.E_{j}) > 0\]
-		
-		This is a contradiction and hence in fact $m_{i} \geq 0$ for each $i$. That this agrees with the pullback when $D$ is $\mathbb{Q}$-Cartier is immediate from uniqueness.
-		
-	\end{proof}
-	
-	\begin{lemma}\label{num-pull}
-		
-		Let $X$ be an $\mathbb{Q}$-factorial scheme together with a projective morphism $f:X \to Y$  with geometrically connected fibres to an excellent normal scheme of dimension $2$. Suppose $V$ is a closed subscheme of $X$ with $f(V)$ contained in a divisor $D$. Then there is a divisor $D'$ on $X$ lying over $D$, numerically trivial over $Y$, and containing $V$.
-		
-		\end{lemma}
-	
-	\begin{proof}
-		
-		Let $\pi \colon Y' \to Y$ be a resolution of $Y$ and $X'$ be the normalisation of the dominant component of the fibre product $X\times_{Y} Y'$. From above we have $F$ on $Y$ lying over $D$ with $F \equiv_{Y} 0$. We have induced maps $g\colon X' \to Y'$ and $\phi\colon  X' \to X$. Now $g^{*}F$ is numerically trivial over $Y$, and hence over $X$. Thus as $X$ is $\mathbb{Q}$-factorial there is $D'=\phi_{*}g^{*}F$ with $\phi^{*}D'=g^{*}F$. It is clear from the construction that $D'$ is numerically trivial over $Y$ with $f_{*}D'=\pi_{*}F=D$. Suppose that $C$ is a curve lying over $D$, then we must have $D'.C =0$. If $C$ is not contained in $D'$ then since $f$ has connected fibres we may suppose that $D'$ meets $C$, up to replacing $C$ with another curve in the same fibre, but then $D'.C > 0$, a contradiction. Hence $D'$ contains every curve, and hence every fibre, over $D$. In particular it contains $V$.		
-	\end{proof}
 
-	\begin{lemma}\cite[Lemma 9.4]{KU} \label{KU}
-		Let $R$ be a DVR with algebraically closed residue field $k$. Take $X$ a smooth threefold over $R$ and suppose $C$ is a $-1$ curve on $X_{k}$. Then there is a DVR $R' \supseteq R$ with residue field $k$ such that $X'=X\times R$ admits a proper surjective morphism of algebraic spaces $\pi:X' \to Y$  contracting $C$. Moreover $\pi$ contracts a $-1$ curve $C'$ on the generic fibre of $X' \to X$ which specialises to $C$.
-	\end{lemma}
+\begin{lemma}
 	
-	The observation that $R'$ can be chosen to have the same residue field as $R$ is due to \cite[Lemma 3.6]{egbert2016log}.
+	Let $\pi:X \to Y$ be a projective contraction from a regular scheme to a normal scheme, both of dimension $2$. Let $E_{1},...,E_{n}$ be the exceptional curves. Choose a divisor $D$ on $Y$ and write $D'$ for the strict transform of $D$. Then there are unique $m_{i} \geq 0$ with $D'+\sum m_{i}E_{i} \equiv_{Y} 0$. If $D$ is $\mathbb{Q}$-Cartier then we have $\pi^{*}D= D'+\sum m_{i}E_{i}$.
 	
-	\begin{theorem}\label{curves}
-		Let $R$ be a DVR and $X \to R$ be a smooth threefold. Suppose $C$ is an extremal $K_{X}$ negative curve and that the contraction of $C$, $X\to Y$ is birational, then $C$ lifts to a family of curves $\tilde{C}$ on $X$. 
-	\end{theorem}
+\end{lemma}
+
+\begin{proof}
 	
-	\begin{proof}
-		
-		Let $\pi:X \to Y$ be the contraction of $C$. 
-		
-		If $\kappa$ is not closed then we can take an inclusion $R \hookrightarrow R'$ so that $R'$ is a DVR with residue field $\bar{\kappa}$. Then $X'=R'\times X$ is still smooth and $X' \to Y'$ is divisorial if and only if $X \to Y$ is. Then $X'_{k} \to Y'_{k}$ is birational and $K_{X}$ negative, so there is some $-1$ curve, $C'$ contracted by $X'_{k} \to Y'_{k}$. 
-		
-		Now by \autoref{KU} we can find an extension $R \subseteq R'$ with residue field $\kappa$ such $X''=X'\times R'$ admits a divisorial contraction which corresponds to a contraction of $C'$, viewed here as a curve on $X''$. By construction, however $\pi':X'' \to Y''=Y'\times R'$ must factor as $X''\xrightarrow{\phi} Z \to Y''$, and hence $X' \to Y'$ is necessarily divisorial.
-		
-		Let $E$ be a prime divisor contracted by $X' \to Y'$, then the image $\tilde{C}$ on $X$ is a divisor contracted by $X \to Y$. In particular $\tilde{C} \cap X_{k}$ contains $C$. On the other hand $E\cap X'_{k}$ is irreducible, hence so too is $\tilde{C} \cap X_{k}$. Hence $\tilde{C}$ specialises to $C$ as claimed.
-
-	\end{proof}
-
-	\begin{lemma}\label{lifting}
-		
-		Let $X \to T$ be a klt threefold over a $R$. Suppose that $X$ has a terminalisation which is smooth over $T$, then any birational $K_{X}$ negative extremal contraction is divisorial.
-		
-	\end{lemma}
+	By \cite[Theorem 10.1]{kk-singbook}, the intersection form $[E_{i}.E_{j}]$ is negative definite. Hence there is a unique choice of $m_{i}$ with $D'+\sum m_{i}E_{i} \equiv_{Y} 0$. It remains to show that $m_{i} \geq 0$. By \cite[Lemma 10.2]{kk-singbook} there is $E= \sum r_{i}E_{i}$ effective on $X$ with $-E$ ample over $Y$. Then $E.E_{i} < 0$ for each $i$ ensures that $r_{i} > 0$ for all $i$.
 	
-	\begin{proof}
-		
-		Since $X$ is normal we may freely replace $T$ with its normalisation.
-		
-		Let $h:X \to Z$ be a birational contraction of a $K_{X}$ negative extremal ray. Let $C$ be a curve contracted by $h$. Let $\pi:Y \to X$ be the smooth terminalisation. Then $K_{Y}+\Delta=\pi^{*}K_{X}$ for some exceptional $\Delta \geq 0$. Let $C'$ be a curve dominating $C$. Then $(K_{Y}+\Delta).C' <0$ and thus $K_{Y}.C' < 0$ since $C'$ cannot be contained in the support of $\Delta$ as $Y$ has no vertical exceptional divisors, because it is smooth over $R$.
-		
-		By assumption $C'$ is contained in a smooth fibre $Y_{p}$ of $Y \to T$. It cannot be the case that $\dim Y_{p}=1$ else $C=Y_{p}$ and $h$ is not birational. Thus we may assume that $\dim Y_{p}=2$ and consequently that $\dim R=1$. Then $Y_{p} \to Z_{p}$ is birational and $K_{Y_{p}}$ is not nef over $Z_{p}$, since $K_{Y_{p}}.C' < 0$. Thus we have an extremal $K_{Y_{p}}$ negative contraction $g:Y_{p} \to Z'$. This is necessarily birational, and hence contracts a curve $\Gamma$.
-		
-		We have the following diagram.
-		
-		\[\begin{tikzcd}
-		& Y_{p} \arrow[ld, "g"] \arrow[r]  \arrow[d, "\pi_{p}"]& Y \arrow[d, "\pi"] \\
-		Z' \arrow[rd]         & X_{p} \arrow[r] \arrow[d]         & X \arrow[d, "h"]   \\
-		& Z_{p} \arrow[r]                & Z                 
-		\end{tikzcd}\]
-		
-		
-		By \autoref{curves}, therefore, $\Gamma$ lifts to a family of curves $\tilde{\Gamma}$ on $Y$. We can push $\tilde{\Gamma}$ forward to $\Gamma'$ on $X$. Then $\Gamma'$ is contracted by $h$ as $g$ contracts $\Gamma$. However $h$ must therefore contract $\pi_{*}\tilde{\Gamma}$, so it is divisorial as claimed. 		
-	\end{proof}
-
-	\begin{theorem}\label{open-1}
-		Let $(X,\Delta) \to T$ be a threefold klt $R$-pair such that $X$ is supported over infinitely many closed points of $T$. Suppose that $K=K(T)$ is of characteristic $0$. Then there is some non-empty open set $U \subseteq T$ such that if $h:X \to X'$ is an extremal birational contraction which contracts a curve $C\subseteq X_{U}=X\times U$ then $h$ is a divisorial contraction.
-	\end{theorem}
 	
-	\begin{proof}
-		
-		Let $X' \to X$ be a terminalisation of $X$. Then since $X'$ is terminal, it has isolated singularities and thus the generic fibre over $T$, $X'_{K}$, is regular. Since $K$ has characteristic $0$, $X'_{K}$ is necessarily smooth. Hence as smoothness is an open condition, and since $f(X)$ contains infinitely many points, there is a non-trivial open set $U \subseteq T$ such that $X'_{U}$ is smooth over $U$. Shrinking $U$ we may suppose that every component of $\Delta$ either has irreducible fibres over $U$ or does not meet $X_{U}$. 
-		
-		Take $h:X \to Z$ be an extremal $(K_{X}+\Delta)$ negative birational contraction over $T$ and suppose it contracts $C \subseteq X_{U}$. 
-		
-		If $C \subseteq \Delta_{i}$ for some component $\Delta_{i}$ of $\Delta$ then since $\Delta_{i}$ has irreducible fibres we must contract the whole component, in particular $h$ is divisorial.
-		
-		Suppose instead $C \nsubseteq \text{Supp}(\Delta)$ then we must have $\Delta.C \geq 0$ and hence $K_{X}.C < 0$. So $h$ is a $K_{X}$ negative extremal contraction. However by construction $X_{U}$ admits a smooth terminalisation $X'_{U}$ and so by \autoref{lifting} we must then have that $h$ is divisorial.
-	\end{proof}
-
-	If $\dim T =2$ we do not need the generic fibre to be smooth.
-
-	\begin{lemma}\label{open-2}
-	Let $(X,\Delta) \to T$ be a threefold dlt $R$-pair such that $X$ is supported over infinitely many closed points of $T$.. If $\dim T=2$ then there is a non-empty open set $U \subseteq T$, such that every $K_{X}+\Delta$ MMP takes place over $T \setminus U$.
-	\end{lemma}
-
-	\begin{proof}
-		
-		There is a terminating MMP $X \dashrightarrow X'$ over $T$ by \cite[Theorem F]{bhatt2020}. This MMP does not change the generic fibre $X \to T$, since it is an irreducible curve. Hence there $X \dashrightarrow X'$ is an isomorphism over some open set $U$ of $T$. In particular $X_{U}$ either $(K_{X}+\Delta)|_{X_{U}}$ is nef, or it is anti-ample and $X_{U}$ has Picard rank 1 over $U$. In either case, any $K_{X}+\Delta$ MMP takes place entirely on $X\setminus U$. 
-				
-	\end{proof}
-
+	Now suppose for contradiction that $m_{k} < 0$ for some $k$. Then we may suppose that $m_{k}/r_{k}$ is minimal, otherwise if $m_{j}/r_{j}$ is minimal we just replace $k$ with $j$ as we must still have $m_{j} < 0$. We must have, for every $j$, that $D'.E_{j}\geq 0 $ as it does not contain any $E_{j}$ and thus as $D' \equiv_{Y} - \sum m_{i}E_{i}$ we have
+	\[0\geq (\sum_{i} m_{i} E_{i}).E_{j} = \sum_{I} \frac{m_{i}}{r_{i}}(r_{i}E_{i}.E_{j}) \geq \frac{m_{k}}{r_{k}} \sum_{i} (r_{i}E_{i}.E_{j}) > 0\]
+	This is a contradiction and hence in fact $m_{i} \geq 0$ for each $i$. That this agrees with the pullback when $D$ is $\mathbb{Q}$-Cartier is immediate from uniqueness.
 	
-	\begin{corollary}\label{termination}
-		Let $f:(X,\Delta) \to T$ be a $\mathbb{Q}$-factorial threefold dlt pair over $R$, If $K(T)$ is of characteristic $0$ or $\dim T =2$ then any $K_{X}+\Delta$ MMP terminates.
-	\end{corollary}
+\end{proof}
+
+\begin{lemma}\label{num-pull}
 	
-	\begin{proof}
-				
-		It is enough to show there is no infinite sequence of flips. If $\dim T=3$ then every pair is effective, so this follows immediately from \cite[Theorem F]{bhatt2020}. Suppose then that $\dim T \leq 2$. Note that\autoref{partial-termination} also ensures that the flipping and flipped curves are eventually disjoint from $\lfloor \Delta \rfloor$. Therefore, replacing $\Delta$ with $\Delta-\lfloor \Delta \rfloor$, we may assume $(X,\Delta)$ is klt. We may also Stein factorise and assume that $T$ is normal.
-		
-		Suppose first $\dim T=1$.
-		
-		There is always some open divisor on $T$ such that all the flips take place over $D$. If $X$ is supported over only finitely many points of $R$ then any divisor $D$ which contains them all will suffices. Otherwise we apply \autoref{open-2} to see all the flips take place outside some open set $U \subseteq R$. Shrinking $U$ if needed we may suppose that $D=R \setminus U$ is a divisor as claimed.
+	Let $X$ be an $\mathbb{Q}$-factorial scheme together with a projective morphism $f:X \to Y$  with geometrically connected fibres to an excellent normal scheme of dimension $2$. Suppose $V$ is a closed subscheme of $X$ with $f(V)$ contained in a divisor $D$. Then there is a divisor $D'$ on $X$ lying over $D$, numerically trivial over $Y$ and containing $V$.
+	
+\end{lemma}
 
-		Then $(X,\Delta'=\Delta+tf^{*}D)$ is klt for small $t$ and a $K_{X}+\Delta$ MMP is also a $K_{X}+\Delta'$ MMP. Since all the flips are contained in the support of $\Delta'$ the sequence must terminate.
-		
-		Suppose instead that $\dim T=2$. Then either $X$ is support over finitely many points, or we may apply \autoref{open-2}. In either case there is a divisor $D$ on $T$ such that every flip takes place over $D$. Then we argue as in the dimension $1$ case, if $D$ is not $\mathbb{Q}$-Cartier, we use \autoref{num-pull} in place of pulling back $D$.
-		 
-	\end{proof}
+\begin{proof}
+	
+	Let $\pi \colon Y' \to Y$ be a resolution of $Y$ and $X'$ be the normalisation of the dominant component of the fibre product $X\times_{Y} Y'$. From above we have $F$ on $Y$ lying over $D$ with $F \equiv_{Y} 0$. We have induced maps $g\colon X' \to Y'$ and $\phi\colon  X' \to X$. Now $g^{*}F$ is numerically trivial over $Y$, and hence over $X$. Thus as $X$ is $\mathbb{Q}$-factorial there is $D'$ with $\phi^{*}D'=F$. It is clear from the construction that $f_{*}D'=\pi_{*}F=D$. Suppose that $C$ is a curve lying over $D$, then we must have $D'.C =0$. If $C$ is not contained in $D'$ then since $f$ has connected fibres we may suppose that $D'$ meets $C$, up to replacing $C$ with another curve in the same fibre, but then $D'.C > 0$, a contradiction. Hence $D'$ contains every curve, and hence every fibre, over $D$. In particular it contains $V$.
+	
+	
+\end{proof} 
 
-	\begin{remark}
-		
-		The same application of $\autoref{num-pull}$ when $\dim T=2$ also shows that termination holds if $R$ is a local ring and $T \to R$ is surjective.
-		
-		\end{remark}
+
+
+\begin{definition}
+	
+	Let $X$ be a terminal threefold log pair quasi-projective over $R$. We define the difficulty 
+	\[d(X)=\#\{E\colon a(E,X) < 1\}\]
+	this is finite by \cite[Proposition 2.36]{KM}, since log resolutions exist by \cite[Proposition 2.12]{bhatt2020}.
+	
+\end{definition}
+
+Clearly if $Y\hookrightarrow X$ is an open immersion then $d(Y) \leq d(X)$ since every valuation with centre on $Y$ is also a valuation with centre on $X$.
+If $X \dashrightarrow X'$ is a $K_{X}$ flip then $d(X') \leq d(X)$ by \autoref{l:increase-discr} We claim in fact this inequality is strict.
+
+\begin{lemma}(see \cite[Lemma 6.21]{KM})
+	
+	Let $X/T$ be a terminal threefold $R$-pair and $X \dashrightarrow X'$ a $K_{X}$ flip, then $d(X') < d(X)$.  
+	
+\end{lemma}
+
+\begin{proof}
+	It suffices to find a divisor $E$ with $a(E,X) <1$ and $a(E,X') \geq 1$.
+	Let $C'$ be an irreducible component of the flipped curve. Then $X'$ is terminal, so it is smooth at the generic point $P$ of $C$ by \cite[Corollary 2.30]{kk-singbook}. Let $Y \to X$ be the blowup of $C'$ and $E$ the dominant component of the exceptional divisor. By localising at $P$ we see that $a(E,X')=1$, since this is the blowup of a smooth point on a surface.
+	
+	Let $C$ be the centre of $E$ on $X$. Then $C$ is a component of the flipping curve and so we have $a(E,X) < a(E,X')$ by \cite[Lemma 3.38]{KM} concluding the proof.	
+\end{proof}
+
+\begin{theorem}\label{l-open-term}
+	
+	Let $(X,\Delta)/T$ be a terminal threefold $R$-pair. Then there is an open set $U \subseteq T$ such that every $K_{X_{U}}+\Delta_{U}$ negative contraction is a horizontal divisorial contraction.
+\end{theorem}
+
+\begin{proof}
+	
+	Write $\Delta=\sum_{1}^{n} a_{k}D_{k}$, we argue by induction on $n$. Suppose first that $n=0$ and for contradiction there is no such $U$. Thus we have a sequence of non-empty open sets $U_{i} \subseteq U_{i-1}$ such that there is a $K_{X_{U_{i}}}$ negative extremal ray $L_{i}$ supported away from $U_{i+1}$. We write $X_{i}=X\times U_{i}$.
+	
+	If $L_{i}$ induces a divisorial contraction $f_{i} \colon X_{i} \to X'_{i}$ then $\rho(X_{i+1}) \leq \rho(X'_{i}) < \rho(X_{i})$ since $f_{i}$ is an isomorphism over $U_{i+1}$. Similarly if $L_{i}$ induces a flip $f_{i} \colon X_{i} \dashrightarrow X'_{i}$ then $d(X_{i+1}) \leq d(X'_{i}) < d(X_{i})$. Since both are positive integers there can be only finitely many such $U_{i}$, a contradiction.
+	
+	Now suppose $n>0$.	Let $\Delta^{n-1}=\sum_{1}^{n-1}a_{i}D_{i}$ then by induction there is an open set $U\subseteq T$ such that every $K_{X_{U}}+\Delta^{n-1}_{U}$ negative contraction is a horizontal divisorial contraction. If $D_{n}$ is not horizontal, we can shrink $U$ so it doesn't meet the image of $D_{n}$ and the result follows immediately. This gives the result if $\dim T=3$.
+	
+	Otherwise let $S$ be the normalisation of $D_{n}$. If $\dim T=2$ then there is an open set $V$ of $T$ on which $S_{V} \to T$ is finite, and hence of relative Picard rank $0$. In particular $S_{V}$ contains no curves. If $\dim T=1$ then by \cite[Lemma 2.13]{tanaka2018minimal} there is an open set $V$ of $T$ such that $S_{V}$ has relative Picard rank $1$. 
+	
+	In either case, replace $U$ with $U \cap V$, then $X,S$ with $X_{U},S_{U}$ and $\Delta$ with $\Delta|_{X_{U}}$. It suffices to show that every extremal $K_{X}+\Delta$ negative contraction is a horizontal divisorial contraction. Suppose for contradiction $L$ is an extremal ray inducing one that is not. We must have $D_{n}.L <0$ from our choice of $U$. Thus induced contraction restricts to a nontrivial birational morphism $S\to S'$ say. However $S$ has Picard rank at most $1$, so the only possibility is this map contracts $S$ entirely. In particular this defines a horizontal divisorial contraction, a contradiction. The claim follows.
+	
+\end{proof}
+
+We can extend this immediately to klt pairs.
+
+\begin{theorem}\label{c-open-klt}
+	
+	Let $(X,\Delta)/T$ be a terminal threefold $R$-pair. Then there is an open set $U \subseteq T$ such that every $K_{X_{U}}+\Delta_{U}$ negative contraction is a horizontal divisorial contraction.
+\end{theorem}
+
+\begin{proof}
+	
+	Let $\pi \colon (Y,\Delta_{Y}) \to (X,\Delta)$ be a terminalisation, which exists by \cite[Proposition 9.17]{bhatt2020}. Then by \autoref{l-open-term} there is an open set $U\subseteq T$ over which every $K_{Y_{U}}+\Delta_{Y_{U}}$ negative contraction is divisorial. We claim the same holds for $K_{X_{U}}+\Delta_{U}$ negative contractions. 
+	
+	Indeed if $f \colon X_{U} \to Z$ is any such contraction then $K_{Y_{U}}+\Delta_{Y_{U}}$ is not nef over $Z$. In particular we get a contraction $g \colon Y_{U} \to Z$, which is necessarily a horizontal divisorial contraction. In particular $g$ is not an isomorphism over the generic point $\nu$ of $T$. However then neither can $f$ be, else $K_{Y_{\nu}}+\Delta_{Y_{\nu}}$ would be nef over $Z_{\nu}$. Thus $f$ is a horizontal divisorial contraction as claimed.
+	
+\end{proof}
+
+\begin{corollary}\label{termination}
+	Let $f:(X,\Delta) \to T$ be a $\mathbb{Q}$-factorial threefold dlt pair over $R$, then any $K_{X}+\Delta$ MMP terminates.
+\end{corollary}
+
+\begin{proof}
+	
+	It is enough to show there is no infinite sequence of flips. Note that \autoref{partial-termination} ensures that the flipping and flipped curves are eventually disjoint from $\lfloor \Delta \rfloor$. Therefore, replacing $\Delta$ with $\Delta-\lfloor \Delta \rfloor$, we may assume $(X,\Delta)$ is klt. 
+	
+	By \autoref{c-open-klt}, there is always some divisor $D$ on $T$ such that all the flips take place over $D$.	If $T$ is $\mathbb{Q}$-factorial then $(X,\Delta'=\Delta+tf^{*}D)$ is klt for small $t>0$ and a $K_{X}+\Delta$ MMP is also a $K_{X}+\Delta'$ MMP. Since all the flips are contained in the support of $\Delta'$ the sequence must terminate. Otherwise we must have $\dim T =2$ so we use \autoref{num-pull} in place of pulling back $D$ and conclude exactly as above.
+	
+\end{proof}
 	
 	
 	
@@ -384,12 +353,11 @@
 	
 	
 	\begin{proof}
-		
 		For ease of notation we will often view cycles on $X_{i}$ as cycles on $X$ without renaming.
 		
 		Suppose that $(X,\Delta)$ has witnesses $(X_{i}=X \times U_{i}, \Delta_{i})$ for some open cover $U_{i}$ of $T$. Then $U_{i}$ is still quasi-projective over $R$ and the Cone Theorem holds for each $(X_{i},\Delta_{i})$. Let $\gamma_{i,j}$ be the $K_{X_{i}}+\Delta_{i}$ negative extremal curves. These are also $K_{X}+\Delta$ negative, though they need not be extremal on $X$.
 		
-		Suppose now that $R$ is a $K_{X}+\Delta$ negative extremal ray. Let $r\in R$ be a non-zero cycle. Then $r$ is the limit of some effective cycles $r^{k}$. In particular if we write $r^{k}_{i}=r^{k}|_{X_{i}}$ then $r_{i}=r|_{X_{i}}=\lim r^{k}_{i}$ is still pseudo-effective. Moreover $r-r_{i}=\lim r^{k}-r^{k}_{i}$ is also psuedo-effective. Since $R$ is extremal we must have for each $i$ that either $r_{i}=0$ or $r=t_{i}r_{i}$ for some $t_{i} > 0$. There must be some $i$ with $r_{i} \neq 0$. However $r_{i}$ then generates an extremal $K_{X}+\Delta$ negative ray, hence $r_{i}=t\gamma_{i,j}$ for some $j$ and some $t>0$. Thus the $\gamma_{i,j}$ generate all the $K_{X}+\Delta$ negative extremal rays. $(1)$ and $(3)$ follow immediately by \cite[Theorem H]{bhatt2020}. Since there are finitely many $U_{i}$ if the rays accumulated on $X$ we could chose a subsequence consisting of extremal rays coming from some $X_{i}$ which would then accumulate on $X_{i}$, thus $2$ also holds.
+		Suppose now that $R$ is a $K_{X}+\Delta$ negative extremal ray. Let $r\in R$ be a non-zero cycle. Then $r$ is the limit of some effective cycles $r^{k}$. We write $r_{i}^{k}$ for the part of $r$ supported over $U_{i}$. Then $r_{i}=\lim r^{k}_{i}$ is still pseudo-effective, moreover $r-r_{i}=\lim r^{k}-r^{k}_{i}$ is also. Since $R$ is extremal we must have for each $i$ that either $r_{i}=0$ or $r=t_{i}r_{i}$ for some $t_{i} > 0$. There must be some $i$ with $r_{i} \neq 0$, else we would have $r=0$. However $r_{i}$ then generates an extremal $K_{X_{i}}+\Delta_{i}$ negative ray, hence $r=t_{i}r_{i}=t\gamma_{i,j}$ for some $j$ and some $t>0$. Thus the $\gamma_{i,j}$ generate all the $K_{X}+\Delta$ negative extremal rays. $(1)$ and $(3)$ follow immediately by \cite[Theorem H]{bhatt2020}. Since there are finitely many $U_{i}$ if the rays accumulated on $X$ we could chose a subsequence consisting of extremal rays coming from some $X_{i}$ which would then accumulate on $X_{i}$, thus $2$ also holds.
 	\end{proof}
 
 	\begin{theorem}[rlt Basepoint Free Theorem]
@@ -409,7 +377,7 @@
 	\end{proof}
 	
 	\begin{theorem}[Termination of rlt flips]\label{rlt-term}
-		Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary. If $K_{X}+\Delta$ is pseudo-effective or $K(T)$ is of characteristic $0$, then any sequence of $(K_{X}+\Delta)$ flips terminates.
+		Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary, then any sequence of $(K_{X}+\Delta)$ flips terminates.
 	\end{theorem}
 	
 	\begin{proof}
@@ -418,21 +386,20 @@
 	\end{proof}
 
 \begin{theorem}[MMP for rlt pairs]\label{rltmmp}
-	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary. If $K_{X}+\Delta$ is pseudo-effective then any MMP terminates and it does so with a good log minimal model. Otherwise there is an MMP which ends in a Mori Fibre Space. 
+	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary, then we can run a $K_{X}+\Delta$ MMP. If $K_{X}+\Delta$ is pseudo-effective then this terminates with a log terminal model, otherwise it ends in a Mori fibre space. If the output $X \dashrightarrow Y$ is a log terminal model then $K_{Y}+\Delta_{Y}$ is semiample.
 \end{theorem}
 
 
 \begin{proof}
-	Suppose first $K_{X}+\Delta$ is pseudo-effective.
-	Existence of the claimed MMPs and their termination is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log minimal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $\phi$ is a good log minimal model by \autoref{Main_Abund1}.
 	
-	Otherwise $K_{X}+\Delta$ is not pseudo-effective and we run an MMP with scaling by $A$ ample. That this can be run and that it terminates is checked locally as in \autoref{rlt-term}.
+	Existence of the claimed MMPs and their termination is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log terminal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $K_{Y}+\Delta_{Y}$ is a good log minimal model by \autoref{Main_Abund1}.
+
 \end{proof}
 
 
 	\section{RLT Polytopes}
 	
-	In this section we introduce rlt versions of Shokurov Polytopes and provide some key technical results for their usage in the proof of Finiteness of Minimal Models. In particular we show that $\mathcal{RL}_{A}(V)$ is in fact a rational polytope. In this section, as in all subsequent ones, $R$ will always be an excellent ring with dualising complex, $T$ will be a positive dimensional, quasi-projective $R$ scheme and $X$ will always be an integral scheme projective and surjective over $T$. All pairs will be considered as $R$ pairs over $T$.
+	In this section we introduce rlt versions of Shokurov polytopes and provide some key technical results for their usage in the proof of Finiteness of Minimal Models. In particular we show that $\mathcal{RL}_{A}(V)$ is in fact a rational polytope. In this section, as in all subsequent ones, $R$ will always be an excellent ring with dualising complex, $T$ will be a positive dimensional, quasi-projective $R$ scheme and $X$ will always be an integral scheme projective and surjective over $T$. All pairs will be considered as $R$ pairs over $T$.
 	
 	\begin{definition}
 		
@@ -477,7 +444,7 @@
 		We can take the vertices $D_{i}$ of $C$. Then take witnesses $(X_{i,j}, B_{i,j})$ of $D_{i}$. Since there are finitely many $D_{i}$, we can assume that for all $i$ we have $X_{i,j}=X_{j}$ for some $X_{j}$ not depending on $i$, after taking intersections of combinations of the $X_{i,j}$ and renumbering as necessary. Now $C$ is the convex hull of the $D_{i}$ and $\Delta= \sum \lambda_{i}D_{i}$ has witnesses $\Delta_{j}= \sum \lambda_{i}B_{i,j}$ as required.
 	\end{proof}
 
-	Note that if $C$ is not an rlt polytope and $\Delta \in C$ is an rlt boundary, it might be that the above lemma gives only rlc witnesses on each $U_{i}$. If $\Delta$ is in the interior of $C$ or $C$ is rlt then this does not happen.
+	Note that if $C$ is not an rlt polytope and $\Delta \in C$ is an rlt boundary, it might be that the above lemma gives only log canonical witnesses on each $U_{i}$. 
 	
 	We will essentially only ever work with rational polytopes containing a klt boundary. Since the questions are always local we can normally assume these polytopes are simplices. By the following lemma, it is then enough to work with rlt polytopes.
 	
@@ -488,7 +455,7 @@
 	\begin{proof}
 		To show a rational polytope $C'\subseteq \mathcal{RL}_{A'}(V')$ is rlt it is enough to show that every vertex boundary $B_{i}$ of $C'$ is rlt with witnesses in $V'$.
 				
-		Indeed if this is the case then for $B \in C'$ we have $B= \sum \lambda_{i} B_{i}$ for $0 \leq \lambda_{i} \leq 1$. Let $U_{j}$ be an open cover such that each $B_{i}$ is witnessed by $(X_{j},B_{i,j})$, then $B|_{X_{j}}\sim \sum \lambda_{i}B_{i,j}$, so $(X,B)$ must be rlt as claimed.
+		Indeed if this is the case then for $B \in C'$ we have $B= \sum \lambda_{i} B_{i}$ for $\lambda_{i} \geq 0$ with $\sum \lambda_{i}=1$. Let $U_{j}$ be an open cover such that each $B_{i}$ is witnessed by $(X_{j},B_{i,j})$, then $B|_{X_{j}}\sim \sum \lambda_{i}B_{i,j}$, so $(X,B)$ must be rlt as claimed.
 		
 		
 		
@@ -559,7 +526,7 @@
 	
 	In this section we prove our Finiteness of Minimal Models result. Here $R$ will always be an excellent ring with dualising complex, $T$ will be a quasi-projective $R$ scheme and $X$ will always be an integral scheme projective over $T$. All pairs will be considered as $R$ pairs over $T$.
 	
-	\begin{lemma}\label{neftope}
+	\begin{lemma}\label{neftope2}
 		Fix a $\mathbb{Q}$-divisor $A \geq 0$ and let $C\subseteq \mathcal{L}_{A}(V)$ be a rational polytope. Then $\mathcal{N}(C)=\{\Delta \in C \text{ such that } K_{X}+\Delta \text{ is nef } \}$ is also a rational polytope.
 	\end{lemma}
 
@@ -573,41 +540,40 @@
 		Let $\phi: X \dashrightarrow Y$ be a birational contraction and fix $A \geq 0$. Let $C \subseteq \mathcal{RL}_{A}(V)$ be an rlt polytope, then $\mathcal{W}_{\phi}(C)$ is a rational polytope.
 	\end{lemma}
 	\begin{proof}
-		We can choose a finite open cover, $U_{i}$ such that $C$ is witnessed by klt pairs over $U_{i}$. On $X_{i}$ we can write $N_{i}=\{E\sim_{\mathbb{R}} 0\} \subseteq V_{i}=V|_{X_{i}}$, $C_{i}=C|_{X_{i}}$ and consider the induced map $\phi_{i}:X_{i} \to Y_{i}$. Now let $C'_{i}=\mathcal{L}_{A_{i}}(V_{i}) \cap C_{i}^{*}$. After perhaps shrinking $C'_{i}$ we may suppose it is a klt polytope and $C_{i} \subseteq (C')^{*}_{i}$. Thus $\mathcal{W}_{\phi_{i}}(C'_{i})$ is a rational polytope by \cite[Corollary 3.11.2]{BCHM10} with \cite[Theorem 3.11.1]{BCHM10} and \cite[Lemma 3.7.4]{BCHM10} replaced by \autoref{neftope}.
+		We can choose a finite open cover, $U_{i}$ such that $C$ is witnessed by klt pairs over $U_{i}$. On $X_{i}$ we can write $N_{i}=\{E\sim_{\mathbb{R}} 0\} \subseteq V_{i}=V|_{X_{i}}$, $C_{i}=C|_{X_{i}}$ and consider the induced map $\phi_{i}:X_{i} \to Y_{i}$. Now let $C'_{i}=\mathcal{L}_{A_{i}}(V_{i}) \cap C_{i}^{*}$. After perhaps shrinking $C'_{i}$ we may suppose it is a klt polytope and $C_{i} \subseteq (C')^{*}_{i}$. Thus $\mathcal{W}_{\phi_{i}}(C'_{i})$ is a rational polytope by \cite[Corollary 3.11.2]{BCHM10} with \cite[Theorem 3.11.1]{BCHM10} and \cite[Lemma 3.7.4]{BCHM10} replaced by \autoref{neftope2}.
 		
 		Therefore $\mathcal{W}_{i}=\mathcal{W}_{\phi_{i}}(C_{i})=\mathcal{W}_{\phi_{i}}(C'_{i})^{*}\cap C_{i}$ is also a rational polytope. For each $\mathcal{W}_{i}$ we have a rational polytope $\hat{\mathcal{W}_{i}}=\{\Delta \in C: \Delta|_{X_{i}} \in \mathcal{W}_{i}\} \subseteq C$. The intersection of these polytopes is precisely $\mathcal{W}_{\phi}(C)$.
 	\end{proof}
 	
 	\begin{lemma}\label{faces}
-		Let $\phi: X \dashrightarrow Y$ be a and fix $A \geq 0$. Let $C \subseteq \mathcal{RL}_{A}(V)$ be an rlt polytope and $F \subseteq \mathcal{W}_{\phi}(C)$ be a face, possibly with $F =\mathcal{W}_{\phi}(C)$. Suppose $f: X \dashrightarrow Z$ is an ample model for some $B$ in the interior of $F$. Then there is a factorisation $f=g \circ \phi$ for some morphism $g:Y \to Z$, and moreover $f$ is an ample model for every boundary in the interior of $F$.
+		Let $\phi: X \dashrightarrow Y$ be a birational contraction and fix $A \geq 0$. Let $C \subseteq \mathcal{RL}_{A}(V)$ be an rlt polytope and $F \subseteq \mathcal{W}_{\phi}(C)$ be a face, possibly with $F =\mathcal{W}_{\phi}(C)$. Suppose $f: X \dashrightarrow Z$ is an ample model for some $B$ in the interior of $F$. Then there is a factorisation $f=g \circ \phi$ for some morphism $g:Y \to Z$, and moreover $f$ is an ample model for every boundary in the interior of $F$.
 	\end{lemma}
 	
 	\begin{proof}
-		Since $\phi$ is a wlc model for $B$ we have an induced map $g: Y \to Z'$. However then $g\circ \phi$ is an ample model for $(X,B)$, so after post-composition with an isomorphism we may suppose $Z=Z'$ and $f=g\circ \phi$. Suppose $B' \in \mathcal{W}_{\phi}(C)$ then $f$ is an ample model for $(X,B')$ if and only $g$ is an ample model for $(Y,\phi_{*}B')$. Since $K_{Y}+\phi_{*}B$' is semiample $g$ is an ample model if and only if the curves contracted by $g$ are precisely those $\Gamma$ with $(K_{Y}+\phi_{*}B').\Gamma=0$.
+		Since $\phi$ is a wlc model for $B$ we have an induced map $g: Y \to Z'$ by \autoref{rltmmp}. However then $g\circ \phi$ is an ample model for $(X,B)$, so after post-composition with an isomorphism we may suppose $Z=Z'$ and $f=g\circ \phi$. Suppose $B' \in \mathcal{W}_{\phi}(C)$ then $f$ is an ample model for $(X,B')$ if and only $g$ is an ample model for $(Y,\phi_{*}B')$. Since $K_{Y}+\phi_{*}B$' is semiample $g$ is an ample model if and only if the curves contracted by $g$ are precisely those $\Gamma$ with $(K_{Y}+\phi_{*}B').\Gamma=0$.
 		
-		Suppose then $B'$ is in the interior of $F$. Consider $B_{t}=tB+(1-t)B'$, so that $$K_{Y}+\phi_{*}B_{t}= t(K_{Y}+\phi_{*}B)+(1-t)(K_{Y}+\phi_{*}B').$$ Then if $(K_{Y}+\phi_{*}B').\Gamma \neq 0$ then and $(K_{Y}+\phi_{*}B).\Gamma=0$ it must be that $(K_{Y}+\phi_{*}B_{t}).\Gamma < 0$ for all $t < 0$. However for small $t$ we have $B_{t} \in F$, a contradiction. By symmetry, we see that $\Gamma$ is contracted by $g$ if and only if $(K_{Y}+\phi_{*}B').\Gamma=0$, so $f$ is an ample model for $K_{X}+\phi_{*}B'$ also.
+		Suppose then $B'$ is in the interior of $F$. Consider $B_{t}=tB+(1-t)B'$, so that $$K_{Y}+\phi_{*}B_{t}= t(K_{Y}+\phi_{*}B)+(1-t)(K_{Y}+\phi_{*}B').$$ Then if $(K_{Y}+\phi_{*}B').\Gamma \neq 0$ and $(K_{Y}+\phi_{*}B).\Gamma=0$ it must be that $(K_{Y}+\phi_{*}B_{t}).\Gamma < 0$ for all $t < 0$. However for small $t$ we have $B_{t} \in F$, a contradiction. By symmetry, we see that $\Gamma$ is contracted by $g$ if and only if $(K_{Y}+\phi_{*}B').\Gamma=0$, so $f$ is an ample model for $K_{X}+\phi_{*}B'$ also.
 	\end{proof} 
 
 
 	\begin{theorem}\cite[Theorem 9.33]{bhatt2020}
-		Let $C$ be a klt polytope in $\mathcal{L}_{A}(V)$ for $A$ big. There is a finite collection of log terminal models $\phi_{i}: X \dashrightarrow Y_{i}$ such that  every $B \in \mathcal{E}(C)$ has some $j$ with $\phi_{j}$ a log terminal model of $(X,B)$. 
+		Suppose that $X$ is $\mathbb{Q}$-factorial and let $C$ be a klt polytope in $\mathcal{L}_{A}(V)$ for $A$ big. There is a finite collection of log terminal models $\phi_{i}: X \dashrightarrow Y_{i}$ such that  every $B \in \mathcal{E}(C)$ has some $j$ with $\phi_{j}$ a log terminal model of $(X,B)$. 
 	\end{theorem}
 	
 	
 	\begin{corollary}\label{klt_finiteness}
-		Let $C$ be a klt polytope with $A$ big. Suppose that every $B \in C$ has components which span $NS(X)$, then there are finitely many birational maps $\phi_{i}: X \dashrightarrow Y_{i}$ such that for any $B \in \mathcal{E}(C)$ if $\phi: X \dashrightarrow Y$ is a wlc model then $\phi_{i}=f \circ \phi$ for some $i$ and some isomorphism $f: Y \to Y_{i}$.
+		Suppose that $X$ is $\mathbb{Q}$-factorial and let $C$ be a klt polytope with $A$ big. Suppose that every $B \in C$ has components which span $NS(X)$, then there are finitely many birational maps $\phi_{i}: X \dashrightarrow Y_{i}$ such that for any $B \in \mathcal{E}(C)$ if $\phi: X \dashrightarrow Y$ is a wlc model then $\phi_{i}=f \circ \phi$ for some $i$ and some isomorphism $f: Y \to Y_{i}$.
 	\end{corollary}
 	
 	\begin{proof}
 		
-		Take $C'\subseteq \mathcal{L}_{A}(V)$ a klt polytope with $C \subseteq C'$ such that for any $B \in C$ if $D$ is a component of $B$ then $B+tD$ is in $C'$ for $|t| > \epsilon$, for some $\epsilon >0$ depending on $B$ and $D$. This can be done by taking $C'$ to be the convex hull of small perturbations of the vertices of $C$.
+		After possibly expanding $V$, we can take $C'\subseteq \mathcal{L}_{\frac{A}{2}}(V)$ a klt polytope with $C \subseteq C'$ such that for any $B \in C$ if $D$ is a component of $B$ then $B+tD$ is in $C'$ for any $|t| < \epsilon$, for some $\epsilon >0$ depending only on $B$. This can be done by taking $C'$ to be the convex hull of small perturbations of the vertices of $C$.
 		
 		By the previous theorem there are finitely many birational maps $\phi_{i}: X \dashrightarrow Y_{i}$ such that for every $B \in \mathcal{E}(C')$ there is some $\phi_{i}$ a log terminal model of $(X,\Delta)$.
 		
 		Further are then finitely many morphisms $f_{i,j}:Y_{i}\to Z_{j}$ such that $\psi_{i,j}=f_{i,j} \circ \phi_{i}$ are ample models such that $B \in \mathcal{E}(C')$ some $\psi_{i,j}$ is the (unique) ample model of $(X,B)$. This is because the $f_{i,j}$ correspond to faces of the rational polytope $\mathcal{W}_{\phi_{i}}(C')$ by \autoref{faces}.
 		
-		Now pick $\Delta \in C$. Let $\psi: X \dashrightarrow Y$ be a wlc for $\Delta$. We can take $D$ in the span of the components of $B$ such that $\phi$ is $B+D$ negative and $\phi_{*}D$ is ample. By shrinking $D$, we can suppose that $B+D\in C'$. Thus we have that $\psi$ is the ample model of some $B+D \in \mathcal{W}_{\psi}(C')$. Now take a log terminal model of $B+D$ of the form $\phi_{i}$ for some $i$, then up to post-composition with an isomorphism we have $\psi=f_{i,j} \circ \phi_{i}=\psi_{i,j}$ for some $j$. 
-		
+		Now pick $\Delta \in C$. Let $\psi: X \dashrightarrow Y$ be a wlc model for $\Delta$. We can take $D$ in the span of the components of $B$ such that $\phi$ is $B+D$ negative and $\phi_{*}D$ is ample. By shrinking $D$, we can suppose that $B+D\in C'$. Thus we have that $\psi$ is the ample model of some $B+D \in \mathcal{W}_{\psi}(C')$. Now take a log terminal model of $B+D$ of the form $\phi_{i}$ for some $i$,. By uniqueness of the ample model, up to post-composition with an isomorphism, we have $\psi=f_{i,j} \circ \phi_{i}=\psi_{i,j}$ for some $j$. 
 		Thus the family of models $\{\psi_{i,j}\}$ give the required maps.
 		
 	\end{proof}
@@ -615,7 +581,6 @@
 
 	\begin{theorem}\label{weak finiteness}
 		Let $A$ be a big $\mathbb{Q}$-divisor and chose $V$ a coefficient space. Take $C$ be an rlt polytope inside $\mathcal{RL}_{A}(V)$, then
-		
 		\begin{enumerate}
 			\item There are finitely many birational maps $\phi_{j}: X \dashrightarrow Y_{j}$ such that for any $B \in \mathcal{E}(C)$ if $\phi: X \dashrightarrow Y$ is a wlc model then $\phi_{j}=f \circ \phi$ for some $j$ and some isomorphism $f: Y \to Y_{j}$. \\
 			\item There are finitely many rational maps $\psi_{k}: X \dashrightarrow Z_{k}$ such that if $\psi:X \dashrightarrow Z$ is an ample model for some $B \in \mathcal{E}(C)$ then there is an isomorphism $f:Z \to Z_{k}$ with $\psi_{k}=f \circ \psi_{k}$.
@@ -632,25 +597,24 @@
 		
 		Suppose then that $C$ is a klt polytope.		
 		
-		Let $\pi:Y \to X$ be a log resolution of the support of $V$. Then for any $\Delta$ in $C$ we have $\pi^{*}(K_{X}+\Delta)+E=(K_{Y}+\Delta')$ where $E \geq $ is exceptional and shares no components with $\Delta'$ and $(Y,\Delta')$ is klt. Sending $\Delta \to \Delta'$ as above we can find a new polytope $C'$ on which it is sufficient to check the result holds. By replacing $C$ with $C'$, $A$ with $\pi^{*}A$, $X$ with $Y$ and $V$ with a suitable space, we may suppose that $X$ is smooth, though it may no longer be the case that $A$ shares no support with $V$. 
+		Let $\pi:Y \to X$ be a log resolution of the support of $V$. Then for any $\Delta$ in $C$ we have $\pi^{*}(K_{X}+\Delta)+E=(K_{Y}+\Delta')$ where $E \geq $ is exceptional and shares no components with $\Delta'$ and $(Y,\Delta')$ is klt. Sending $\Delta \to \Delta'$ as above we can find a new polytope $C'$ on which it is sufficient to check the result holds. By replacing $C$ with $C'$, $A$ with $\pi^{*}A$, $X$ with $Y$ and $V$ with a suitable space, we may suppose that $X$ is regular, though it may no longer be the case that $A$ shares no support with $V$. 
 		
-		Let $H_{k}$ be ample divisors spanning $NS(X)$. Let $H= \sum H_{k}$. Note that for any open $U$ in $T$ we still have the components of $H|_{X_{U}}$ span $NS(X_{U})$, since $NS(X)$ surjects on $NS(X_{U})$.
+		Let $H_{k}$ be ample divisors spanning $NS(X)$ and sharing no components with $A$ or $V$. Let $H= \sum H_{k}$. Note that for any open $U$ in $T$ we still have the components of $H|_{X_{U}}$ span $NS(X_{U})$, since $NS(X)$ surjects on $NS(X_{U})$ by $\mathbb{Q}$-factoriality of $X$.
 		
 		After shrinking $H$ we may take some $A',E \geq 0$ and a small $t>0$ such that:
+		
 		\begin{itemize}
-			\item $E \geq 0$;
+			\item $E \geq 0$ shares no components with $H$;
 			\item $A-E$ is ample;
 			\item $t(A-E)-H \simeq A' > 0$ is ample and shares no components with $V,H$ or $E$;
 			\item $\{A+H+B+tE \colon A+B \in C\}$ is a klt polytope; and
 			\item $C'=\{A'+(1-t)A+H+B+tE \colon A+B \in C\}$ is an rlt polytope.
 		\end{itemize}
-		
-		That we can choose $C'$ to be rlt follows from \autoref{bertini}. Note that $A'+(1-t)A+H+B+tE \simeq A+B$ by construction. Thus it suffices to check the result for $C'$, which is a rlt polytope in $\mathcal{L}_{(1-t)A+H}(W)$ for some coefficient space $W$. As above, by taking an open cover, we may in fact assume that $C'$ is klt. But then the result follows by Corollary \ref{klt_finiteness}, since the components of $H$, and hence $(1-t)A+H$, span $NS(X)$ by constructions.	
+		That we can choose $C'$ to be rlt follows from \autoref{bertini}. Note that $A'+(1-t)A+H+B+tE \simeq A+B$ by construction. Thus it suffices to check the result for $C'$ since $C'\subseteq \mathcal{L}_{H}(W)$ for some coefficient space $W$. As above, by taking an open cover, we may in fact assume that $C'$ is klt. But then the result follows by \autoref{klt_finiteness}, since the components of $H$ span $NS(X)$ by construction.	
 
 	\end{proof}
 
 
-	
 	\begin{theorem}\label{rltfiniteness}
 		Let $A$ be an ample $\mathbb{Q}$-Cartier divisor and $C$ be a rational polytope inside $\mathcal{RL}_{A}(V)$. Suppose there is a boundary $A+B \in \mathcal{RL}_{A}(V)$ such that $(X,A+B)$ is rlt with witnesses in $V_{A}$. Then the following hold:
 		
@@ -663,7 +627,6 @@
 			\item  For each $W_{i}$ there is a $j$ such that we can find a morphism $f_{i,j}: Y_{i} \to Z_{j}$ and $W_{i} \subseteq \overline{A_{j}}$.
 			\item  $\mathcal{E}(C)$ is a rational polytope and $A_{j}$ is a union of the interiors of finitely many rational polytopes.
 		\end{enumerate}
-	
 	If $C$ is an rlt polytope then $A$ big suffices.
 	\end{theorem}
 	
@@ -690,7 +653,7 @@
 
 	\section{Geography of Ample Models}
 	
-	We keep the notation of the previous section, though we denote the closure of $\mathcal{A}_{\phi}(C)$ by $\mathcal{D}_{\phi}(C)$. As before $R$ will always be an excellent ring with dualising complex, $T$ will be a quasi-projective $R$ scheme and all other schemes will be integral and projective, surjective morphism to $T$ over $R$. All pairs will be considered as $R$ pairs over $T$. Unlike in previous sections, we will work with $A$ ample throughout.
+	We keep the notation of the previous section, though we denote the closure of $\mathcal{A}_{\phi}(C)$ by $\mathcal{D}_{\phi}(C)$. As before $R$ will always be an excellent ring with dualising complex, $T$ will be a quasi-projective $R$ scheme and all other schemes will be integral and admitting a projective, surjective morphism to $T$ over $R$. All pairs will be considered as $R$ pairs over $T$. Unlike in previous sections, we will work with $A$ ample throughout.
 	
 	We will say the span of a polytope $C$ is $$\text{Span}(C)=\{\lambda(B-B') \text{ such that } B, B' \in C \text{ and } \lambda \in \mathbb{R}\}.$$  In a slight abuse of notation we say that $C \subseteq WDiv(X)$ spans $NS(X)$ if the span of $C$ surjects onto $NS(X)$. Equivalently this means if $D$ is a divisor and $B$ is in the interior of $C$ then for all sufficiently small $t>0$ $B+tD\equiv D'_{t}$ for some $D'_{t}\in C$.
 		
@@ -702,28 +665,25 @@
 		Suppose that $B \in \mathcal{A}_{\phi}(C)$. Then by \cite[Theorem 3.6.5]{BCHM10} we see that in fact $\phi$ is a wlc model for $B$ and thus we have $\mathcal{A}_{\phi}(C) \subseteq \mathcal{W}_{\phi}(C)$. So $\overline{\mathcal{A}_{\phi}(C)}$ is a union of faces of $\mathcal{W}_{\phi}(C)$ by \autoref{faces} and \autoref{rlt-repl}. However $\mathcal{A}_{\phi}$ is convex inside $\mathcal{W}_{\phi}(C)$ so it must be that $\overline{\mathcal{A}_{\phi}(C)}$ is a face of $\mathcal{W}_{\phi}(C)$, and thus is a polytope.
 		
 		Now suppose $C$ spans $NS(X)$ and contains an open set around $\Delta$.
-		Let $H$ be a general ample divisor on $Y$. Let $W$ be a common resolution with maps $p:W \to X$, $q:W \to Y$. Then by assumption there is some $H' \equiv p_{*}q^{*}H$ with support contained in the support of $\Delta$, and hence in the support of any $B$ in the interior of $\mathcal{W}_{\phi}(C)$. Take such a $B$, then there is $\epsilon >0$ with $(X,B+\epsilon H') \in C$ , for any $\epsilon' \in ((0,\epsilon])$ $\phi$ is an ample model of $(X,B+ \epsilon' H')$, such an $\epsilon$ exists since $\phi$ is necessarily $H'$ negative. Thus $B+\epsilon' H' \in \mathcal{A}_{\phi}(C)$. But then we must have $\mathcal{W}_{\phi}(C)\subseteq \overline{\mathcal{A}_{\phi}(C)}$.
+		Let $H$ be a general ample divisor on $Y$. Let $W$ be a common resolution with maps $p:W \to X$, $q:W \to Y$. Then by assumption there is some $H' \equiv p_{*}q^{*}H$ with support contained in the support of $\Delta$, and hence in the support of any $B$ in the interior of $\mathcal{W}_{\phi}(C)$. Take such a $B$, then there is $\epsilon >0$ with $(X,B+\epsilon H') \in C$ , for any $\epsilon' \in ((0,\epsilon])$ $\phi$ is an ample model of $(X,B+ \epsilon' H')$, such an $\epsilon$ exists since $\phi$ is necessarily $H'$ non-negative. Thus $B+\epsilon' H' \in \mathcal{A}_{\phi}(C)$. But then we must have $\mathcal{W}_{\phi}(C)\subseteq \overline{\mathcal{A}_{\phi}(C)}$.
 	\end{proof}
 	
 	\begin{theorem}\label{assumptions}\cite[Theorem 3.3]{hacon2009sarkisov}
 		Let $C$ be a polytope inside $\mathcal{RL}_{A}(V)$, then there are finitely many maps $f_{i}:X \dashrightarrow Y_{i}$ over $T$ with the following. properties.
 		
 		\begin{enumerate}
-			\item $\{A_{i}=A_{f_{i}}(C)\}$ partition $\mathcal{E}(C)$. If $f_{i}$ is birational then $\mathcal{D}_{i}=\mathcal{D}_{\phi_{i}}(C)$ is a rational polytope.
+			\item $\{A_{i}=A_{f_{i}}(C)\}$ partition $\mathcal{E}(C)$. If $f_{i}$ is birational then $\mathcal{D}_{i}=\mathcal{D}_{f_{i}}(C)$ is a rational polytope.
 			\item If $A_{j} \cap \mathcal{D}_{i} \neq \emptyset$ then there is a morphism $f_{i,j}:Y_{i} \to Y_{j}$ such that $f_{i}=f_{i,j} \circ f_{j}$.
 		\end{enumerate}
-		
 		Moreover if $C$ spans $NS(X)$ then we also have the following.
-		
 		\begin{enumerate}
 			\item[3.] Pick $i$ such that a connected component, $\mathcal{D}$ of $\mathcal{D}_{i}$ meets the interior of $C$. Then the following are equivalent:
 			\begin{itemize}
 				\item $\dim \mathcal{D}= \dim C$.
-				\item $\text{Span}(\mathcal{D})=\text{Span}(C)$.
+				\item $\textup{Span}(\mathcal{D})=\textup{Span}(C)$.
 				\item If $B \in \mathcal{A}_{i} \cap \mathcal{D}$ then $f_{i}$ is a log terminal model of $(X,B)$.
 				\item $f_{i}$ is birational and $X_{i}$ is $\mathbb{Q}$-factorial.
 			\end{itemize} 
-			
 			\item[4.] Suppose that $\mathcal{D}_{i}$ has the same span as $C$ and $B$ is a general point in $\mathcal{A}_{j} \cap \mathcal{D}_{i}$. If in fact $B$ is in the interior of $C$ then the relative picard number of $Y_{i}/Y_{j}$ is the difference in dimension of $\mathcal{D}_{i}$ and $\mathcal{D}_{j} \cap \mathcal{D}_{i}$. 
 			
 		\end{enumerate}
@@ -760,8 +720,8 @@
 		Since we can perturb the vertices of $C$ we may suppose it is rational and contained in the interior of $\mathcal{RL}_{A}(V)$. Let $W$ be the minimal coefficient space in $V$ with $C \subseteq W_{A}\cap \mathcal{RL}_{A}(V)$. Since $C$ is contained in the interior of $\mathcal{RL}_{A}(V)$, we can pick an rlt polytope $C'$ which spans $NS(X)$ with $W_{A}\cap C'=C$. Then after a small perturbation of the vertices we may suppose that $W_{A}\cap C'$ is a geography, as required.
 	\end{proof}
 
-	\begin{lemma}\cite[Lemma 3.6]{hacon2009sarkisov}\label{amp}
-		Let $(X,\Delta)/T$ be an rlt pair. Suppose that $B-\Delta$ is ample and $f$ is an ample model for $K_{X}+B$. Then $f$ is an MMP for $(X,\Delta)$.
+	\begin{lemma}\cite[Lemma 3.6]{hacon2009sarkisov}\label{amp-geo}
+		Let $(X,\Delta)/T$ be an rlt pair. Suppose that $B-\Delta$ is ample and $f\colon X \dashrightarrow Y$ is an ample model for $K_{X}+B$. If $Y$ is $\mathbb{Q}$-factorial, then $f$ is a log terminal model for $(X,\Delta)$.
 	\end{lemma}
 
 \begin{lemma}\label{geo}
@@ -790,7 +750,7 @@
 	
 	Let $C$ be the convex hull of the $\Delta+B_{i}+H+A$ and $\Delta+H$. Since the components of $H$ span NS(X), and the $f_{i}$ are wlc models for boundaries in $C$, we can find boundaries in $\mathcal{RL}_{A}(W)$ for which the $f_{i}$ is an ample model. Moreover we can find them arbitrarily close to $C$. Thus we can freely move the vertices of $C$ an arbitrarily small amount such that it meets the interior of each of the $\mathcal{D}_{f_{i}}$ and their borders $\mathcal{D}_{h_{i}}$ while ensuring they are sufficiently general that $C$ is a geography. 
 	
-	By construction, $C_{-\Delta}$ is contained in the ample cone and $\dim C \leq n$. It remains to check that $\mathcal{D}_{h_{i}}$ are borders of the $\mathcal{D}_{f_{i}}$ and their interiors are connected by a path through the border of $\mathcal{E}(C)$ contained entirely in the interior of $C$.
+	By construction, $C_{-\Delta}$ is contained in the ample cone and $\dim C \leq n$. In particular $C$ is a geography for $(X,\Delta)$ by \autoref{amp-geo}. It remains to check that $\mathcal{D}_{h_{i}}$ are borders of the $\mathcal{D}_{f_{i}}$ and their interiors are connected by a path through the border of $\mathcal{E}(C)$ contained entirely in the interior of $C$.
 	
 	Since $C$ contains a vertex $D=\Delta+H \notin \mathcal{E}(C)$ such that $C_{-D}$ is contained in the effective cone, it is enough to check that for each $i$ the interior of $\mathcal{D}_{h_{i}}$ meets the interior of $C$, but this again is ensured by the construction. Thus we may take $E_{i},E_{j}$ in the interiors of $\mathcal{D}_{h_{i}},\mathcal{D}_{h_{j}}$ respectively and both contained in the interior of $C$. Then the simplex formed by $D,E_{i},E_{j}$ meets the boundary of $\mathcal{E}(C)$ along a path connecting $E_{i}$ and $E_{j}$, wholly contained in the interior of $C$.
 
@@ -871,14 +831,11 @@
 Fix a positive dimensional quasi-projective $R$ scheme, $T$. Suppose that $f:X \to Z$, $g:Y \to W$ are two Mori Fibre Spaces, projective and surjective over $T$. We say that they are Sarkisov related if they are both outputs of an MMP from the same $\mathbb{Q}$-factorial rlt pair. In particular we require $X,Y$ to be $\mathbb{Q}$-factorial. 
 
 A sarkisov link $s:X \dashrightarrow Y$ is one the following.
-
 \[\begin{tikzcd}
 X' \arrow[d] \arrow[r, dotted] \arrow[r, "I", phantom, bend left=49] & Y \arrow[d]  & X' \arrow[r, dotted] \arrow[d] \arrow[r, "II",phantom, bend left=49] & Y' \arrow[d] & X \arrow[r, dotted] \arrow[d] \arrow[r, "III", phantom, bend left=49] & Y' \arrow[d] & X \arrow[d] \arrow[rr, dotted] \arrow[rr, "IV",phantom, bend left] &   & Y \arrow[d]       \\
 X \arrow[d]                                                          & W \arrow[ld] & X \arrow[d]                                               & Y \arrow[d]  & Z \arrow[rd]                                              & Y \arrow[d]  & Z \arrow[rd, "p"]                                          &   & W \arrow[ld, "q"'] \\
 Z                                                                    &              & Z \arrow[r, equal]                                                         & W            &                                                           & W            &                                                            & T &                  
 \end{tikzcd} \]
-
-
 Such that the following holds:
 \begin{itemize}
 	\item There is an rlt pair $(X,\Delta)/T$ or $(X',\Delta')/T$ as appropriate such that the horizontal map is a sequence of flops for this pair
@@ -923,7 +880,7 @@ Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow 
 \end{theorem}
 %	
 %	\begin{proof}
-%		That $\phi$, $\psi$ are obtained by running MMP's follows straight from Lemma \cite{amp}. By \autoref{links}, $p:Y \to S$ and $q:W \to S_{1}$ are both Mori Fibre Spaces.We also have that $h_{i}: Y_{i} \to Z$ have $\rho(Y_{i}/Z) \leq 2$ and they factor as $Y_{i} \to S_{j} \to Z$ for $j=i,i-1$ where $Y_{i} \to S_{j}$ has Picard rank at most $1$. 
+%		That $\phi$, $\psi$ are obtained by running MMP's follows straight from Lemma \cite{amp-geo}. By \autoref{links}, $p:Y \to S$ and $q:W \to S_{1}$ are both Mori Fibre Spaces.We also have that $h_{i}: Y_{i} \to Z$ have $\rho(Y_{i}/Z) \leq 2$ and they factor as $Y_{i} \to S_{j} \to Z$ for $j=i,i-1$ where $Y_{i} \to S_{j}$ has Picard rank at most $1$. 
 %		
 %		Thus if $\rho(h_{i})=1$ then either $h_{i}=id:S_{j} \to Z$ and $Y_{i} \to S_{j}$ is a MFS, in which case $S_{j}=S$ or $S_{j}=T$, or $Y_{i} \to S_{j}$ is the identity. Conversely if $Y_{i} \to S_{j}$ is the identity for $j=i$ or $j=i+1$ then $Y_{i} \to Z$ has relative picard rank $1$, and thus $\mathcal{D}_{h} \cap \mathcal{D}_{\phi}$ has dimension $1$. In particular $S_{k}=Z$ for $j \neq k \in \{i,i+1\}$, thus $\rho(Y_{i}/Z)=1$ only when $i=0$ or $i=k$.  
 %		

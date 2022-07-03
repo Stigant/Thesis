@@ -160,7 +160,6 @@
 		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is nef, then it is semiample.
 	\end{theorem}
 
-	
 
 	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
 	
@@ -185,7 +184,6 @@
 		\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
 		\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
 		\end{enumerate}
-		
 		Suppose further that at least one of the following holds:
 		\begin{enumerate}
 			\item $\kappa(K_{X_{k}}+B_{k}) \neq 1$; or
@@ -294,7 +292,7 @@
 		The direction $(1) \implies (2) \implies (3)$ is the content of \cite[Theorem 2.1.26]{La1}. That $(3) \implies (1)$ follows straight from the definition of ample.
 	\end{proof}
 	
-	The morphism $f$ is the same in both (a) and (b) of \autoref{t-semi-amplefibration} is called the \textit{semi-ample fibration of $L$}.	
+	The morphism $f$ is the same in both (a) and (b) of \autoref{t-semiamplefibration} is called the \textit{semiample fibration of $L$}.	
 	
 	\begin{definition}
 	Let $\varphi \colon X \to S$ be a proper morphism of schemes. 
@@ -331,10 +329,10 @@
 	The proof is similar to \cite[Lemma 2.10]{Keel}.	
 	We may freely assume that $X$ is normal. 
 	Let $X \xrightarrow{\varphi} Z \xrightarrow{\psi} Y$ be the Stein factorisation of $f$, where $\varphi$ is a contraction and $\psi$ is a finite map. 
-	We first show that $\psi^*L$ is semi-ample. Take $m>0$ such that $f^*L^{ m}$ is base point free. By the projection formula $H^0(X, f^*L^{m})=H^0(Z, \psi^*L^{m})$ and so $\psi^*L^{m}$ is base point free.
+	We first show that $\psi^*L$ is semiample. Take $m>0$ such that $f^*L^{ m}$ is base point free. By the projection formula $H^0(X, f^*L^{m})=H^0(Z, \psi^*L^{m})$ and so $\psi^*L^{m}$ is base point free.
 	
 	We can thus assume that $f$ is a finite morphism of degree $d$.
-	By \stacks{0BD3}, there exists a norm function $\Norm_f \colon f_*\mathcal{O}_X \to \mathcal{O}_Y$ of degree $d$ for $f$ which induces a group homomorphim $\Norm_f \colon \text{Pic}(X) \to \text{Pic}(Y)$ by \stacks{0BCY}. Take $m>0$ such that $f^*L^{m}$ induces the semi-ample fibration, and let $y\in Y$ be a point. Then there is a section $s\colon \cO_X\to f^*L^{m}$ not vanishing at any of the points in $f^{-1}(y)$. By \stacks{0BCY} and \stacks{0BCZ} we then construct a section $\Norm_f(s)\colon \cO_{Y}\to L^{md}$ not vanishing at $y$, concluding.
+	By \stacks{0BD3}, there exists a norm function $\Norm_f \colon f_*\mathcal{O}_X \to \mathcal{O}_Y$ of degree $d$ for $f$ which induces a group homomorphim $\Norm_f \colon \text{Pic}(X) \to \text{Pic}(Y)$ by \stacks{0BCY}. Take $m>0$ such that $f^*L^{m}$ induces the semiample fibration, and let $y\in Y$ be a point. Then there is a section $s\colon \cO_X\to f^*L^{m}$ not vanishing at any of the points in $f^{-1}(y)$. By \stacks{0BCY} and \stacks{0BCZ} we then construct a section $\Norm_f(s)\colon \cO_{Y}\to L^{md}$ not vanishing at $y$, concluding.
 	
 \end{proof}
 
@@ -371,7 +369,7 @@
 \end{remark}
 
 	\subsubsection{Semiample line bundles over DVRs}
-	We now specialize to the case in which $X\to\Spec (R)$ is a family of normal projective varieties over a DVR and we study how the spaces of global sections of $L$ behave in family. 	Given a $\mathbb{Q}$-Cartier $\bQ$-divisor $L$ on a normal variety $X$ over a field $k$, we denote by $\kappa(L)$ its Iitaka dimension (see \cite[Definition 2.1.3]{Laz04}).
+	We now specialize to the case in which $X\to\Spec (R)$ is a family of normal projective varieties over a DVR and we study how the spaces of global sections of $L$ behave in family. 	Given a $\mathbb{Q}$-Cartier $\bQ$-divisor $L$ on a normal variety $X$ over a field $k$, we denote by $\kappa(L)$ its Iitaka dimension (see \cite[Definition 2.1.3]{La1}).
 	
 	\begin{lemma}\label{lemma_DIOK}
 		Let $R$ be a DVR and let $\pi \colon X\to \Spec (R)$ be a flat projective morphism. 
@@ -380,7 +378,7 @@
 	\end{lemma}
 	
 	\begin{proof}
-	Let $f\colon X \to Z$ be the semi-ample fibration of $L$ over $R$, let $\delta\colon Z\to\Spec(R)$ be the structure morphism, and note that $\delta$ is flat, hence equi-dimensional. Let $d$ be the dimension of the fibers of $\delta$, and let $A$ be an ample $\bQ$-divisor on $Z$ such that $L\sim_{\bQ}f^\ast A$. By the projection formula (\cite[\href{https://stacks.math.columbia.edu/tag/01E8}{Tag 01E8}]{stacks-project})  and asymptotic Riemann-Roch (\cite[Theorem VI.2.15]{k-rat-curves}), for each $t \in \Spec(R)$ we have
+	Let $f\colon X \to Z$ be the semiample fibration of $L$ over $R$, let $\delta\colon Z\to\Spec(R)$ be the structure morphism, and note that $\delta$ is flat, hence equi-dimensional. Let $d$ be the dimension of the fibers of $\delta$, and let $A$ be an ample $\bQ$-divisor on $Z$ such that $L\sim_{\bQ}f^\ast A$. By the projection formula (\cite[\href{https://stacks.math.columbia.edu/tag/01E8}{Tag 01E8}]{stacks-project})  and asymptotic Riemann-Roch (\cite[Theorem VI.2.15]{k-rat-curves}), for each $t \in \Spec(R)$ we have
 	\begin{equation*}
 	\begin{split}
 	h^0(X_t,mL_t)&=h^0(Z_t,f_{t,*} \cO_{X_t}\otimes\cO_{Z_t}(mA_t))\\
@@ -393,7 +391,7 @@
 	
 	\begin{lemma}\label{l-stein-invariance}
 	Let $R$ be a DVR and let $\pi \colon X \to \Spec(R)$ be a flat, projective, normal, integral $R$-scheme such that $X_k$ is normal. 
-	Let $L$ be a $\bQ$-Cartier $\bQ$-divisor on $X$, semi-ample over $R$ and let $f \colon X \to Z$ be the semi-ample fibration induced by $L$.
+	Let $L$ be a $\bQ$-Cartier $\bQ$-divisor on $X$, semiample over $R$ and let $f \colon X \to Z$ be the semiample fibration induced by $L$.
 	Then the following are equivalent:
 	\begin{enumerate}
 		\item[(1)] $f_{k,*} \cO_{X_k} = \cO_{Z_k}$;
@@ -413,13 +411,13 @@
 	
 	$(2) \Rightarrow (1)$. By Grauert's theorem (\cite[Corollary III.12.9]{Ha77}) the natural restriction map
 	$H^0(X,\mathcal{O}_X(mL))\to H^0(X_k,\mathcal{O}_{X_k}(mL_k))$
-	is surjective for all $m \geq 0$ sufficiently divisible. Hence $f_k$ is the semi-ample fibration of $L_k$ by \autoref{t-semi-amplefibration}, in particular $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. 
+	is surjective for all $m \geq 0$ sufficiently divisible. Hence $f_k$ is the semiample fibration of $L_k$ by \autoref{t-semiamplefibration}, in particular $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. 
 \end{proof}
 	
 	\begin{remark}\label{r-connected fibers v contraction}
 	Suppose that $Z_{k}$ is normal in \autoref{l-stein-invariance} and let $X_{k}\to Y_{k} \xrightarrow{g} Z_{k}$ be the Stein factorisation of $f_{k}$. If $k$ is a field of characteristic $0$ then $g$ is birational and finite, hence an isomorphism.
 	
-	On the other hand if $k$ is a positive characteristic field then $g$ may be a non-trivial purely inseparable morphism of normal varieties. This an obstruction to lifting sections of $mL_k$ (see \cite{Bri20} for an explicit construction with $L=K_X+B$). For this reason, a crucial step in \autoref{thm:ADIOP_SA} will be showing $f_{k,*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the semi-ample fibration of the canonical divisor.
+	On the other hand if $k$ is a positive characteristic field then $g$ may be a non-trivial purely inseparable morphism of normal varieties. This an obstruction to lifting sections of $mL_k$ (see \cite{Bri20} for an explicit construction with $L=K_X+B$). For this reason, a crucial step in \autoref{thm:ADIOP_SA} will be showing $f_{k,*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the semiample fibration of the canonical divisor.
 	\end{remark}
 	
 		
@@ -434,7 +432,7 @@
 	\end{definition}
 
 	\begin{lemma}\label{l-stable-base-loci}
-	Let $(X,\Delta)$ be a klt pair, projective over a quasi-projective $R$-scheme $T$.
+	Let $(X,\Delta)/T$ be a klt $R$-pair.
 	Let $f\colon X \dashrightarrow Y$ be a step of a  $(K_X+\Delta)$-MMP over $T$ and write $\Delta_Y=f_*\Delta$.
 	Let
 	\begin{equation*}
@@ -536,28 +534,27 @@ To explain the conditions we need to impose on the non-canonical locus of the fa
 	
 \section{Abundance for mixed characteristic threefolds}
 
-Given a klt pair $(X,\Delta)$ with a projective $R$-morphism $f \colon X \to T$ so that $K_{X}+\Delta$ is $f$-nef, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semi-ample. 
-In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{t-bpf}. 
+Given a klt pair $(X,\Delta)$ with a projective $R$-morphism $f \colon X \to T$ so that $K_{X}+\Delta$ is $f$-nef, then the abundance conjecture asserts that $K_{X}+\Delta$ is $f$-semiample. 
+In the case where $(X,\Delta)$ is a klt threefold pair and $K_{X}+\Delta$ (or even just $\Delta$) is big this is immediate by \autoref{MMP}. 
 We address the remaining cases in this section.
 
 The starting point of our proof is the abundance theorem for surfaces over excellent bases, which we now recall. 
 
 \begin{theorem}\label{abundance-dim2}
-	Let $\pi \colon (S,B) \to T$ be a projective and surjective morphism of normal quasi-projective schemes over $R$, 
-	where  $(S,B)$ is a klt pair of dimension 2.  
-	If $K_{S}+B$ is a $\pi$-nef $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor, then it is $\pi$-semi-ample.
+	Let $\pi \colon (S,B)/T$ be a klt $R$-pair of dimension 2.  
+	If $K_{S}+B$ is a $\pi$-nef $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor, then it is $\pi$-semiample.
 \end{theorem}
 
 \begin{proof}	
 	If $T$ is a field then this is \cite[Theorem 1.2]{fujino2012log} for perfect fields and \cite{tanaka2020abundance} for imperfect fields. 
 	Suppose from now on that $\dim (T) > 0$.
-	If $K_{S}+B$ is big over $T$ then this follows immediately from the base-point-free theorem (\cite[Theorem 4.2]{Tan18}) with $D=2(K_{S}+B)$. Hence we may suppose that $\dim (T)=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves (\cite[Lemma 9.22]{bhatt2020}) and the result follows by \autoref{lemma:EDsemi-ampleness}.
+	If $K_{S}+B$ is big over $T$ then this follows immediately from the base-point-free theorem (\cite[Theorem 4.2]{tanaka2018minimal}) with $D=2(K_{S}+B)$. Hence we may suppose that $\dim (T)=1$ and $K_{S}+B$ is not big. In this case we have $(K_{S}+B)|_{S_{K(T)}} \sim_{\mathbb{Q}} 0$ by the abundance theorem for curves (\cite[Lemma 9.22]{bhatt2020}) and the result follows by \autoref{lemma:EDsemiampleness}.
 \end{proof}
 
 The following is \cite[Lemma 2.17]{cascini2020relative}. We include the proof for completeness as the result is used often.
 
 
-\begin{lemma}\label{lemma:EDsemi-ampleness}
+\begin{lemma}\label{lemma:EDsemiampleness}
 	Let $f\colon X \to Y$ be a contraction of integral, normal and excellent schemes. Suppose $L$ is an $f$-nef $\mathbb{Q}$-Cartier $\bQ$-divisor with $L|_{X_{K(Y)}} \sim_{\mathbb{Q}} 0$. If $Y$ is $\mathbb{Q}$-factorial and $f$ is equi-dimensional then $L \sim_{Y,\mathbb{Q}} 0$.
 \end{lemma}
 
@@ -575,7 +572,7 @@ The following gives a sufficient condition for a nef divisor to be EWM together 
 
 \begin{lemma}\label{two}
 	Let $X \to T$ be a projective contraction of normal, integral, quasi-projective $R$-schemes.
-	Let $L$ be a $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$, nef over $T$ such that $L|_{X_{K(T)}}$ and $L|_{X_{\mathbb{Q}}}$ are semi-ample.
+	Let $L$ be a $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$, nef over $T$ such that $L|_{X_{K(T)}}$ and $L|_{X_{\mathbb{Q}}}$ are semiample.
 	Assume $\dim (X) \leq 3$ and $L$ is not big. 
 	Then $L$ is EWM and there is a commutative diagram of proper algebraic spaces over $T$:
 	\[
@@ -606,12 +603,12 @@ The following gives a sufficient condition for a nef divisor to be EWM together 
 	By \autoref{as-ext} and \autoref{pp-EWM} it is sufficient to show that $D$ is EWM to conclude. If $\dim(Y) \leq 1,$ the result is trivial and if $\dim(Y)=2$, we apply \cite[Lemma 2.48]{bhatt2020}.
 \end{proof}	
 
-If $f$ is equi-dimensional, it is possible to prove a suitable semi-ampleness result.
+If $f$ is equi-dimensional, it is possible to prove a suitable semiampleness result.
 
-\begin{proposition}\label{EDsemi-ampleness2}
+\begin{proposition}\label{EDsemiampleness2}
 	Let $X \to T$ be a projective contraction of normal quasi-projective schemes over $R$, where $\dim(X) \leq 3$.
 	Let $L$ be an EWM $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$ such that its associated EWM-contraction $f \colon X \to Z$ is equi-dimensional.
-	If $L|_{X_{K(T)}}$ and $L|_{X_{\mathbb{Q}}}$ are semi-ample, then $L$ is semi-ample.
+	If $L|_{X_{K(T)}}$ and $L|_{X_{\mathbb{Q}}}$ are semiample, then $L$ is semiample.
 \end{proposition}
 
 \begin{proof}
@@ -620,8 +617,7 @@ If $f$ is equi-dimensional, it is possible to prove a suitable semi-ampleness re
 	\[\begin{tikzcd}
 	W \arrow[d, "g"] \arrow[r, "\phi"] & X \arrow[d, "f"] \\
 	Y \arrow[r, "\pi"]             & Z  ,                
-	\end{tikzcd}\]
-	
+	\end{tikzcd}\]	
 	such that the following hold:
 	
 	\begin{enumerate}
@@ -630,30 +626,28 @@ If $f$ is equi-dimensional, it is possible to prove a suitable semi-ampleness re
 		\item the horizontal maps $\phi$ and $\pi$ are proper and birational;
 		\item there exists a $\mathbb{Q}$-Cartier $\bQ$-divisor $D$ on $Y$ such that $\phi^{*}L \sim_{\mathbb{Q}} g^{*}D$.
 	\end{enumerate}
-	
 	Since $Z$ is normal, there is an open immersion of a regular scheme $U \to Z$ containing every codimension 1 point of $Z$ by \autoref{l-cod1}.
-	By (b), $X_{U} \to U$ satisfies the assumptions of \autoref{lemma:EDsemi-ampleness} and thus $L|_{X_{U}} \sim_{U,\mathbb{Q}} 0$. 
+	By (b), $X_{U} \to U$ satisfies the assumptions of \autoref{lemma:EDsemiampleness} and thus $L|_{X_{U}} \sim_{U,\mathbb{Q}} 0$. 
 	
 	If $\dim(Z)=1$, then we conclude immediately, so we can suppose $Z$ is a surface. Therefore $Z \setminus U$ consists of finitely many points.  
 	Then we may choose $S$ to be a general hyperplane on $X$ such that $S$ meets each fibre over $Z \setminus U$ at only finitely many points. 
 	%This may be done inductively by choosing hyperplanes $H_{i}$ such that they do not contain any component of any fibre of $S_{i}=\bigcap_{j< i} H_{j}$ over $Z\setminus U$. Then if $F$ is such a fibre, we have $\dim F\cap S_{i}=\dim F-i=r-i$, so $S=S_{r}$ meets $F$ at finitely many points.
 	
-	Note that $L|_{S}$ is clearly big and moreover if $C$ is any curve on $S$ with $L \cdot C =0$, then $C$ must be contracted by $X \to Z$ as $f$ is the EWM-contraction associated to $L$. In particular $C$ is contained in some fibre of $f$ and by construction $C$ is not contained in a fibre over $Z \setminus U$, as $S$ contains no such curves. Thus in fact $C \subseteq X_{U}$. Therefore $\mathbb{E}(L|_{S}) \subseteq X_{U}$ and so $S|_{\mathbb{E}(L|_{S})}$ is semi-ample since $L|_{X_{U}}$ is. As $L|_{S_{\mathbb{Q}}}$ is semi-ample by assumption, we conclude that $L|_{S}$ is semi-ample by \cite[Theorem 6.1]{witaszek2020keels}. 
+	Note that $L|_{S}$ is clearly big and moreover if $C$ is any curve on $S$ with $L \cdot C =0$, then $C$ must be contracted by $X \to Z$ as $f$ is the EWM-contraction associated to $L$. In particular $C$ is contained in some fibre of $f$ and by construction $C$ is not contained in a fibre over $Z \setminus U$, as $S$ contains no such curves. Thus in fact $C \subseteq X_{U}$. Therefore $\mathbb{E}(L|_{S}) \subseteq X_{U}$ and so $S|_{\mathbb{E}(L|_{S})}$ is semiample since $L|_{X_{U}}$ is. As $L|_{S_{\mathbb{Q}}}$ is semiample by assumption, we conclude that $L|_{S}$ is semiample by \cite[Theorem 6.1]{witaszek2020keels}. 
 	
-	Let $S'$ be the strict transform of the surface $S$ on $W$, which must dominate $Y$. Let $\phi_{S'}, g_{S'}$ be the restrictions of $\phi, g$ to $S'$. Then $(\phi^{*}L)|_{S'}=\phi_{S'}^{*}(L|_{S})=g_{S'}^{*}D$ and since $L|_{S}$ is semi-ample and $Y$ is normal, we must have that $D$ is semi-ample by \autoref{pullback}. In turn this implies that $L$ is semi-ample as $\phi^{*}L=g^{*}D$.	
+	Let $S'$ be the strict transform of the surface $S$ on $W$, which must dominate $Y$. Let $\phi_{S'}, g_{S'}$ be the restrictions of $\phi, g$ to $S'$. Then $(\phi^{*}L)|_{S'}=\phi_{S'}^{*}(L|_{S})=g_{S'}^{*}D$ and since $L|_{S}$ is semiample and $Y$ is normal, we must have that $D$ is semiample by \autoref{pullback}. In turn this implies that $L$ is semiample as $\phi^{*}L=g^{*}D$.	
 \end{proof}	
 
 The following is a useful MMP technique to reduce to the case of equi-dimensional morphisms.
 
 \begin{proposition}\label{three}
 	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
-	Let $X \to T$ be a projective $R$-morphism of quasi-projective $R$-schemes with positive dimensional image and let $(X,B)$ be a $\mathbb{Q}$-factorial klt threefold pair.
+	Let $(X,B)/T$ be a $\mathbb{Q}$-factorial klt threefold $R$-pair.
 	Suppose that
 	\begin{enumerate}
 		\item $K_X+B$ is a nef EWM $\mathbb{Q}$-divisor over $T$ with  $h \colon X \to Z$ be the associated EWM-contraction;
 		\item $Z$ has dimension 2.
 	\end{enumerate}
-	
 	Then there exists a $(K_X+B)$-trivial birational contraction $(X,B) \dashrightarrow (X', B')$ over $Z$ such that $X' \to Z$ is equi-dimensional. 
 \end{proposition}
 
@@ -693,30 +687,29 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 
 \begin{theorem}\label{abundance}
 	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
-	Let $\pi \colon X \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional and it contains a closed point of characteristic $p>5$.
-	Suppose $(X,B)$ is a klt threefold pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semi-ample.
+	Let $(X,B)/T$ be a $\mathbb{Q}$-factorial klt threefold $R$-pair which contains a point of positive characteristic. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
 \end{theorem}
 
 \begin{proof}
 	By Stein factorisation we can assume $\pi$ to be a contraction of normal schemes, so $\dim(T) \geq 1$.
-	If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace it with a $\mathbb{Q}$-factorialisation by \autoref{Q-factorial} and \autoref{l-inv-model}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier $\bQ$-divisors).
+	If $X$ is not $\mathbb{Q}$-factorial, then we may freely replace it with a $\mathbb{Q}$-factorialisation by \autoref{dlt-mod} and \autoref{inv}. Moreover by \autoref{QtoR} we can suppose that $\Delta$ is a $\mathbb{Q}$-boundary (we reduce to this case where we can apply the results of \cite{witaszek2020keels} which apply only to $\mathbb{Q}$-Cartier $\bQ$-divisors).
 	As the dimension $X_{k(T)}$ is at most 2, we conclude by \cite[Lemma 9.22]{bhatt2020} and \autoref{abundance-dim2} that $\kappa(K_{X_{k(T)}}+B_{k(T)}) \geq 0$. We now divide the proof according to the value of $\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim (T)$.
 	
 	\begin{case} 
 		$\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim (T)=3$.
 	\end{case}
-	In this case, $K_X+B$ is big and we can conclude by applying \autoref{t-bpf} to $L:=2(K_{X}+B)$.
+	In this case, $K_X+B$ is big and we can conclude by applying the basepoint free theorem (\autoref{MMP}) to $L:=2(K_{X}+B)$.
 	
 	\begin{case}
 		$\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim (T)=2$.
 	\end{case}
-	By \autoref{abundance-dim2},  $K_{X_{k(T)}}+B_{k(T)}$ and $K_{X_\mathbb{Q}}+B_{\mathbb{Q}}$ are semi-ample $\mathbb{Q}$-divisors. As $K_X+B$ is not big, by \autoref{two} then $K_X+B$ is EWM and we denote by $f \colon X \to Z$ the associated EWM-contraction.
-	By \autoref{three} and \autoref{inv} we may replace $X$ so that $X \to Z$ is equi-dimensional. We then apply \autoref{EDsemi-ampleness2} to deduce that $K_{X}+\Delta$ is $\pi$-semi-ample.
+	By \autoref{abundance-dim2},  $K_{X_{k(T)}}+B_{k(T)}$ and $K_{X_\mathbb{Q}}+B_{\mathbb{Q}}$ are semiample $\mathbb{Q}$-divisors. As $K_X+B$ is not big, by \autoref{two} then $K_X+B$ is EWM and we denote by $f \colon X \to Z$ the associated EWM-contraction.
+	By \autoref{three} and \autoref{inv} we may replace $X$ so that $X \to Z$ is equi-dimensional. We then apply \autoref{EDsemiampleness2} to deduce that $K_{X}+\Delta$ is $\pi$-semiample.
 	
 	\begin{case}
 		$\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim (T)=1$.
 	\end{case} 
-	The hypothesis $\dim (T) \geq 1$ implies  $\kappa(K_{X_{k(T)}}+B_{k(T)})=0$. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Since $K_{X_{{k(T)}}}+ B_{{k(T)}}$ is semi-ample by \autoref{abundance-dim2}, we conclude $K_X+B$ is semi-ample by \autoref{lemma:EDsemi-ampleness}. 
+	The hypothesis $\dim (T) \geq 1$ implies  $\kappa(K_{X_{k(T)}}+B_{k(T)})=0$. Then $\pi \colon X \to T$ is flat, since $T$ is a Dedekind scheme and $X$ is integral by \cite[Proposition 9.7]{Ha77}. Since $K_{X_{{k(T)}}}+ B_{{k(T)}}$ is semiample by \autoref{abundance-dim2}, we conclude $K_X+B$ is semiample by \autoref{lemma:EDsemiampleness}. 
 \end{proof}
 	
 	\begin{remark}
@@ -736,7 +729,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	
 	\begin{theorem}\label{thm:ADIOP_SA}
 		Let $(X,B)$ be a three-dimensional $R$-pair with $\mathbb{Q}$-boundary.
-		Let $\pi \colon X \to\Spec (R)$ be a  surjective projective contraction. Assume that $(X,B+X_k)$ is plt and $K_X+B$ is semiample over $R$.
+		Assume that $(X,B+X_k)$ is plt and $K_X+B$ is semiample over $R$.
 		Suppose one of the following holds:
 		\begin{enumerate}
 			\item $\kappa(K_{X_k}+B_k)\neq 1$; or
@@ -750,7 +743,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	We start by showing the normality of the central fibre of the image of the $(K_X+B)$-semiample fibration.
 	
 	\begin{proposition}\label{p-gen-case}
-		Let $(X,B)$ be a three-dimensional klt $R$-pair with $\mathbb{Q}$-boundary such that $\pi \colon X \to\Spec (R)$ is a surjective projective contraction.
+		Let $(X,B)$ be a three-dimensional klt $R$-pair with $\mathbb{Q}$-boundary.
 		Suppose that $(X,B+X_{k})$ is plt. If $f \colon X \to Z$ is a birational morphism over $R$ such that $-(K_{X}+B)$ is $f$-nef, then $Z_k$ is normal and $f_{k,*}\ox[X_{k}]=\ox[Z_{k}]$.
 	\end{proposition}
 	
@@ -763,7 +756,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	
 	
 	\begin{lemma}\label{l-reduce-Q-fac}
-		Let $Y \to \Spec(R)$ be a projective contraction such that $(Y,Y_{k}+\Delta)$ is a plt threefold.
+		Let $Y \to \Spec(R)$ be a projective contraction such that $(Y,Y_{k}+\Delta)$ is a plt threefold $R$-pair.
 		Let $f \colon Y \to X$ be a $(K_{Y}+\Delta)$-trivial small birational contraction over $R$ with $B=\pi_{*}\Delta$. 
 		Then
 		$$h^{0}(X_{k},m(K_{X_k}+B_{k}))= h^{0}(Y_{k},m(K_{Y_{k}}+\Delta_{k}))$$ 
@@ -774,17 +767,17 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	%Write $K_Y+\Delta'=\pi^* (K_X+B)$, since $K_{Y}+\Delta$ is numerically $\pi$-trivial we have that $\Delta'-\Delta \equiv_{\pi} 0$. Similarly as $B=\pi_{*}\Delta$ we have that $\Delta'-\Delta$ is exceptional and hence $\Delta'-\Delta=0$ by the negativity lemma \cite[Lemma 2.14]{bhatt2020}. 
 	
 	As $f$ is small, the central fibre $Y_k$ is irreducible. 
-	By \autoref{t-bpf},	$K_Y+Y_k+\Delta \sim_{\mathbb{Q}} f^*(K_X+X_k+B)$.
+	By the basepoint free theorem \autoref{MMP},	$K_Y+Y_k+\Delta \sim_{\mathbb{Q}} f^*(K_X+X_k+B)$.
 	Then by \autoref{p-gen-case}, $Y_k$ and $X_k$ are both normal.
-	As $f$ is the semi-ample fibration associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
-\	end{proof}
+	As $f$ is the semiample fibration associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
+	\end{proof}
 
 	We now discuss the delicate case of invariance for plurigenera where the Kodaira dimension is one and the boundary is big.
 	
 	
 	\begin{proposition}\label{p-1-case}
 		
-		Let $(X,B)/R$ be a $\mathbb{Q}$-factorial klt pair of dimension $3$ with a projective contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
+		Let $(X,B)/R$ be a $\mathbb{Q}$-factorial klt $R$-pair of dimension $3$ with a projective contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
 		\begin{enumerate}
 			\item $K_X+B$ is semiample and let $f\colon X \to Z$ its Iitaka fibration over $R$;
 			\item $\kappa(K_X+B/R)=1$;
@@ -809,8 +802,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 			& Y \arrow[d] &                        \\
 			& Z ,         &                       
 		\end{tikzcd}\]
-
-where $h$ may either be an isomorphism or a small birational contraction. As $g$ is $(K_X+B)$-trivial, by \autoref{p-gen-case} we have that $Y_k$ is irreducible and normal as well. Let now $(Y,\Xi)$ be the induced pair on $Y$: we then have
+		where $h$ may either be an isomorphism or a small birational contraction. As $g$ is $(K_X+B)$-trivial, by \autoref{p-gen-case} we have that $Y_k$ is irreducible and normal as well. Let now $(Y,\Xi)$ be the induced pair on $Y$: we then have
 		$$h^{0}(X_{k},m(K_{X_k}+B_{k}))=h^{0}(Y_{k},m(K_{Y_{k}}+\Xi_k))=h^{0}(X'_{k},m(K_{X'_k}+B'_{k}))$$ 
 		
 		where the first equality also follows from \autoref{p-gen-case} and \autoref{l-stein-invariance} and the latter is \autoref{l-reduce-Q-fac}. Also the sections of $m(K_{X}+B)$ are preserved by this MMP for large divisible $m > 0$.
@@ -843,14 +835,13 @@ where $h$ may either be an isomorphism or a small birational contraction. As $g$
 	Imposing the conditions of \autoref{lemma:MMP_in_fam2}, we are able to prove the invariance of plurigenera for families of klt surfaces from \autoref{thm:ADIOP_SA}.
 	
 	\begin{theorem}\label{thm:ADIOP_final2}
-		Suppose that $(X,B)$ is a projective three dimensional klt $R$-pair with $\mathbb{Q}$-boundary which dominates $R$.
+		Suppose that $(X,B)$ is a three dimensional klt $R$-pair with $\mathbb{Q}$-boundary.
 		Suppose that all of the following are satisfied:
 		
 		\begin{enumerate}
 			\item[(1)] $(X, X_{k}+B)$ is plt with $X_k$ integral and normal;
 			\item[(2)]  ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
 		\end{enumerate}
-		
 		Suppose further that at least one of the following holds:
 		\begin{enumerate}
 			\item $\kappa(K_{X_{k}}+B_{k}) \neq 1$; or
