@@ -203,38 +203,38 @@
 	\monthname[\THEMONTH], \THEYEAR}
 
 
-%\makeatletter
-%\renewcommand*{\maketitle}{%
-%	\begin{titlepage}
-%		\begin{center}
-%			\vspace*{2.5cm}
-%			
-%			\huge\@title\\
-%			\vspace{1.5cm}
-%			\Large\@author
-%			\vspace{1.5cm}
-%			
-%			\normalsize
-%			A thesis presented for the degree of\\
-%			Doctor of Philosophy
-%			
-%			\vfill
-%			
-%			\normalsize
-%			\monthyeardate\today\\
-%			Supervised by Paolo Cascini\\
-%			\@supervisor
-%			
-%			\vfill
-%
-%			\normalsize
-%			Imperial College London\\
-%			Department of Mathematics
-%			
-%			
-%		\end{center}%
-%	\end{titlepage}%
-%}
+\makeatletter
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{2.5cm}
+			
+			\huge\@title\\
+			\vspace{1.5cm}
+			\Large\@author
+			\vspace{1.5cm}
+			
+			\normalsize
+			A thesis presented for the degree of\\
+			Doctor of Philosophy
+			
+			\vfill
+			
+			\normalsize
+			\monthyeardate\today\\
+			Supervised by Paolo Cascini\\
+			\@supervisor
+			
+			\vfill
+
+			\normalsize
+			Imperial College London\\
+			Department of Mathematics
+			
+			
+		\end{center}%
+	\end{titlepage}%
+}
 
 
 \usepackage[titles]{tocloft}
@@ -244,7 +244,20 @@
 	\author{Liam Stigant}
 	\maketitle
 	
+	\textbf{Declaration of originality}
 	
+	I certify that this thesis, and the research to which it refers, are the product of my own work,
+	and that any ideas or quotations from the work of other people, published or otherwise, are
+	fully acknowledged in accordance with the standard referencing practices of the discipline.
+	
+	\textbf{Copyright Declaration}
+	
+	The copyright of this thesis rests with the author and is made available under a Creative
+	Commons Attribution Non-Commercial No Derivatives licence.
+	Researchers are free to copy, distribute or transmit the thesis on the condition that
+	they attribute it, that they do not use it for commercial purposes and that they do not
+	alter, transform or build upon it. For any reuse or redistribution, researchers must make
+	clear to others the licence terms of this work.
 	
 	\chapter*{Abstract\markboth{Abstract}}
 		
@@ -253,6 +266,12 @@
 		For threefolds over a base of dimension at least one, we resolve the Abundance Conjecture for klt pairs in joint work with F. Bernasconi and I. Brivio. Showing in particular that every klt minimal model in mixed characteristic admits an Iitaka Fibration. This is then applied to prove an Invariance of Plurigenera result for suitable families of surfaces.
 		
 		Finally we consider outstanding questions around Mori fibrations in mixed characteristic. We show that every klt threefold MMP terminates and that any two Mori fibre space outputs of an MMP from the same starting pair are connected by a series of Sarkisov links. As part of this we prove a mixed characteristic Finiteness of Minimal Models result. While the proof is focused in dimension three, the arguments work in any generality given that the requisite MMP results are known.
+	
+	\chapter*{Acknowledgements\markboth{Acknowledgements}}
+	
+	I would like to thank my supervisor, Paolo Cascini, for his invaluable support and guidance after the past four years. He has provided both the problems to study and the means to tackle them. I am also thankful to the Engineering and Physical Sciences Research Council and the London School of Geometry and Number Theory for my funding and for their great running of the Phd program. I am also grateful to the other members of my LSGNT cohort for expanding my mathematical horizons. In particular to Federico Bongiorno who always brings new insights and ideas into any conversation. I am further indebted to Fabio Bernasconi and Iacopo Brivio for our fruitful collaborations and all that they have taught me about our field.
+	
+	Outside of mathematics; I could not have finished this thesis without the assistance of my friends and family. My parents in particular have provided unwavering support since long before I began this degree, even if they're still not quite sure what I do. I have also relied heavily on my wife Rose, whose patience has been stretched thin but never quite snapped. My daughter Alice has been less helpful, but I am thankful for her nonetheless. And finally I am grateful for Shanosky's attempts to keep me sane and grounded.   
 		
 	\tableofcontents
 	
