@@ -954,7 +954,7 @@ A useful application of DLT modifications is the study of the non-klt and non-lc
 	
 %	Suppose next that $\Delta=B+F$ where $(X,B)$ is dlt and $F$ has the same support as $\lfloor B \rfloor$. Note that if $C$ is an irreducible curve with $F.C <0$ then $C \subseteq F$. Therefore any effective curve $C$ can be written $C=C_{\geq 0} +C_{F}+C_{<0}$ where $F.C_{\geq 0},(K_{X}+B).C_{\geq 0} \geq 0$, $C_{F} \subseteq F$ and $(K_{X}+B).C_{< 0} <0$. Thus by compactness of the unit ball, any $\gamma \in \overline{NE}(X/T)$ can be written $\gamma = \gamma_{\geq} +\gamma_{F}+\gamma_{<0}$ in the same fashion.
 %	
-	Suppose next that $\Delta=B+F$ where $(X,B)$ is dlt and $F$ has the same support as $\lfloor B \rfloor$. Note that if $C$ is an irreducible curve with $F.C <0$ then $C \subseteq F$. Therefore any effective curve $C$ can be written $C=C_{0} +C_{F}$ where $F.C_{0}\geq 0$ and $C_{F} \subseteq F$. Thus by compactness of the unit ball, any $[\gamma] \in \overline{NE}(X/T)$ can be written $[\gamma] = [\gamma_{0}] + [\gamma_{F}]$ with $F.\gamma_{0} >0$ and $[\gamma_{F}] \in \overline{NE}(F/T)$ in the same fashion.
+	Suppose next that $\Delta=B+F$ where $(X,B)$ is dlt and $F$ has support contained in $\lfloor B \rfloor$. Note that if $C$ is an irreducible curve with $F.C <0$ then $C \subseteq F$. Therefore any effective curve $C$ can be written $C=C_{0} +C_{F}$ where $F.C_{0}\geq 0$ and $C_{F} \subseteq F$. Thus by compactness of the unit ball in a finite dimensional vector space, any $[\gamma] \in \overline{NE}(X/T)$ can be written $[\gamma] = [\gamma_{0}] + [\gamma_{F}]$ with $F.\gamma_{0} \geq 0$ and $[\gamma_{F}] \in \overline{NE}(F/T)$ in the same fashion.
 	
 	Take any $K_{X}+\Delta$ negative extremal ray $L$. Take a non-zero $[\gamma] \in L$, then as $L$ is extremal we have $[\gamma_{F}],[\gamma_{0}] \in L$. If $[\gamma_{F}] \neq 0$ then $L \subseteq \overline{NE}(F/T)$. Otherwise if $[\gamma_{F}]=0$ then $L$ is $K_{X}+B$ negative. Hence we can conclude the result from the Cone Theorem for dlt pairs.
 	
@@ -1013,12 +1013,7 @@ In practice we have essentially run a $K_{Y}+B_{Y}-\delta S_{Y}+ M$ MMP for $M=-
 
 %Finally if $\dim T  \neq 0$ and $\nklt(X,\Delta)$ is vertical, we can take $D \geq 0$ Cartier on $T$ containing it's image. If $g^{*}D$ is the pullback then $\nklt(X,\Delta)=\textup{Nlc}(X,\Delta+\epsilon g^{*}D)$ for small $\epsilon >0$ and $-(K_{X}+\Delta+\epsilon g^{*}D)$ is still nef over $T$. In this case then the $\nklt$ case reduces to the $\textup{Nlc}$ case.
 
-
-\myworries{Put in generalised pairs, somewhere for dlt preserving reasons}
-
 \subsection{Adjunction}
-
-\myworries{Put in adjunction section}
 
 Dlt modifications are also closely related to the study of adjunction. We work under the same assumptions as \autoref{subsec-mod}, however the main focus is on the setting of \autoref{MMP}. 
 In particular we have the following easy application.
@@ -1048,7 +1043,7 @@ In practice we often wish to know more than this, that if $(X,S+B)$ is plt then 
 	
 	\end{lemma}
 
-More is understood in the case $X$ has dimension $3$,
+More is understood in the case $X$ has dimension $3$. 
 
 \begin{theorem}\cite[Corollary 7.17]{bhatt2020}\label{plt-adj}
 		Let $(X,S+\Delta)$ be a plt log-pair. Suppose that $\Delta$ has standard coefficients all less than $1$. Take any $x \in S$ with $\textup{char } k(x) > 5$ $S$ is normal at $x$. In particular the same holds if $K_{X}+S$ is $\mathbb{Q}$-Cartier.
@@ -1147,9 +1142,9 @@ While this is a very useful characterisation, it cannot be applied to the case t
 	Then $f_{1}$ factors as $f_{1}\colon X_{1} \xrightarrow{g_{1}} Y_{1} \xrightarrow{h_{1}} Z_{1}$ where $R^{i}g_{1,*}\ox[X_{1}]=0$, so by \autoref{push-lift} we can lift $g_{1}\colon X_{1} \to Y_{1}$ to $g_{i}\colon X_{i} \to Y_{i}$ over $R_{i}$ such that the following diagram commutes.
 	
 	\[\begin{tikzcd}
-	X_{1} \arrow[r] \arrow[d, "g_{1}"] & X_{2} \arrow[r] \arrow[d, "g_{2}"] & ... \\
-	Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & ... \\
-	Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & ...
+	X_{1} \arrow[r] \arrow[d, "g_{1}"] & X_{2} \arrow[r] \arrow[d, "g_{2}"] & \dots \\
+	Y_{1} \arrow[r] \arrow[d, "h_{1}"] & Y_{2} \arrow[d, dotted, "h_{2}"] \arrow[r]  & \dots \\
+	Z_{1} \arrow[r]                    & Z_{2} \arrow[r]                    & \dots
 	\end{tikzcd}\]
 	Here the $h_{i}$ are defined as follows. The underlying topological map is just $h_{1}$ and the map $\ox[Z_{i}] \to h_{i,*}\ox[Y_{i}]$ comes from the map ${\ox[Z_{i}] \to f_{i,*}\ox[X_{i}]}$ and the identification $f_{i,*}\ox[X_{i}]=h_{i,*}g_{i,*}\ox[X_{i}]\simeq h_{i,*}\ox[Y_{i}]$.
 	Each $h_{i}$ is finite, and thus by
@@ -1192,7 +1187,7 @@ Although Kawamata-Viehweg Vanishing fails in positive characteristic, we often h
 	If $\dim(Z_k)=0$ and $\dim X \leq 3$, then $H^1(X_k, \mathcal{O}_{X_k})=0$ if $k$ is perfect (\cite[Proposition 2.20]{NT20}) or $p \geq 7$ (\cite[Theorem 5.7]{BT22}). Under these assumptions, the proof of \autoref{invAdj2} still holds, though it is typically less interesting in this setting.
 \end{remark}
 
-We are now able to prove the normality of a special fibre in a plt family, not necessarily $\mathbb{Q}$-Gorenstein, assuming that klt pairs have rational singularities over the residue field and the base is complete.
+We are now able to prove the normality of the special fibre in a plt family which is not $\mathbb{Q}$-Gorenstein, assuming that klt pairs have rational singularities over the residue field and the base is complete.
 
 \begin{theorem}\label{NormalToRational}
 	Let $R$ be a complete, excellent DVR with residue field, $k$, of characteristic $p> 5$. Suppose that every klt pair of dimension $\dim X_{k}$ has rational singularities. If $(X,\Delta+X_{k})$ is a plt $R$-pair then $X_{k}$ is normal and $(X_{k}, \Delta_{k})$ is a klt pair.
@@ -1313,7 +1308,6 @@ We include now, however, one important application. We can prove abundance for p
 \begin{proposition}\label{QtoR}
 	Suppose that $R$ is an excellent threefold whose closed points have residue fields of characteristic $p=0$ or $p > 5$.
 	Let $X \to T$ be a threefold $R$ pair where $\dim T \geq 1$. Suppose that for every $\mathbb{Q}$-divisor such that $(X,B)$ is klt and $K_{X}+B$ nef, then $K_{X}+B$ semiample.
-	
 	Then $K_X+\Delta$ is semiample for every $\mathbb{R}$-divisor $\Delta$ such that $(X,\Delta)$ is klt and $K_X+\Delta$ is nef.
 \end{proposition}
 \begin{proof}

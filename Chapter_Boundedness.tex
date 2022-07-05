@@ -533,7 +533,7 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 
 \section{$F$-Split Mori Fibre Spaces}
 
-\begin{theorem}\label{setup}
+\begin{theorem}\label{b-setup}
 	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic. Suppose that $(X,\Delta)$ admits a $K_{X}$ Mori fibration $f\colon (X,\Delta) \to (Z,\Delta_{Z})$ where either
 	\begin{enumerate}
 		\item $Z$ is a smooth rational curve, there is $H$ on $Z$ very ample of degree $1$ and a general fibre $G$ of $X \to Z$ is smooth.\\
@@ -558,7 +558,7 @@ If, for some $t>0$, the non-klt locus of $(X,(1+t)\Delta)$ is contracted then si
 \end{theorem}
 First we show that results of this form lift to characterisations of the non-klt locus of $(X,(1+t)\Delta)$, then show how the result above may be applied here.
 \begin{lemma}
-	We use the notation of \autoref{setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt. Then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	We use the notation of \autoref{b-setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt. Then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 \begin{proof}
 	Let $\pi\colon X' \to X$ be a log resolution of $(X,\Delta+G)$ with $(K_{X'}+\Delta')=\pi^{*}(K_{X}+\Delta)$, then $(X',\Delta'+G')$ is log smooth and $\Delta'$ and $G$ have no common components, where $G'$ is the pullback of $G$. Now $X' \to X$ must also be a log resolution of $(X,(1+t)\Delta)$, and hence if we write $(K_{X'}+B)=\pi^{*}(K_{X}+(1+t)\Delta)$ then it is also true that $(X',B+G')$ is log smooth and that $B$ and $G'$ have no common components. Hence $(G',B|_{G'})$ is sub klt by assumption and in particular it has coefficients strictly less than $1$. 
@@ -568,7 +568,7 @@ First we show that results of this form lift to characterisations of the non-klt
 
 
 \begin{lemma}
-	Using the notation of \autoref{setup} suppose that $Z$ is a curve and write $Y$ for the generic fibre of $f\colon X\to Z$. If there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	Using the notation of \autoref{b-setup} suppose that $Z$ is a curve and write $Y$ for the generic fibre of $f\colon X\to Z$. If there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 
 \begin{proof}
@@ -597,7 +597,7 @@ First we show that results of this form lift to characterisations of the non-klt
 	Therefore we may choose $A$ small and ample with $A.\Delta_{G} < c$ and write $N=kF+A$ to satisfy the conditions of \autoref{Jiang}. The result then follows as $\Delta_{G}.N=kF.\Delta_{G}+A.B\leq 3c$ is still bounded.
 \end{proof}
 \begin{corollary}\label{nAmple}
-	There is some $n$ such that for any $(X,\Delta) \to Z$ and $G$ as in \autoref{setup} we have $-K_{X}+nG$ is ample.
+	There is some $n$ such that for any $(X,\Delta) \to Z$ and $G$ as in \autoref{b-setup} we have $-K_{X}+nG$ is ample.
 \end{corollary}
 
 
@@ -606,7 +606,7 @@ First we show that results of this form lift to characterisations of the non-klt
 \end{proof}
 
 \begin{theorem}
-	Let $(X,\Delta) \to Z$ and $G$ be as in \autoref{setup}. Then there is $t$ not depending on the pair $(X,\Delta)$ nor on $G$ with $-3K_{X}+tG$ ample and defining a birational map. 
+	Let $(X,\Delta) \to Z$ and $G$ be as in \autoref{b-setup}. Then there is $t$ not depending on the pair $(X,\Delta)$ nor on $G$ with $-3K_{X}+tG$ ample and defining a birational map. 
 \end{theorem}
 \begin{proof}
 	Consider first the case that $\dim Z=1$. Then $G$ is a smooth del Pezzo surface, so $-3K_{X}$ is very ample. Let $G_{1},G_{2}$ be other general fibres and consider
@@ -639,7 +639,7 @@ First we show that results of this form lift to characterisations of the non-klt
 	and boundedness follows.
 \end{proof}
 
-\begin{proof}[Proof of \autoref{setup}]
+\begin{proof}[Proof of \autoref{b-setup}]
 	Suppose $(X,\Delta) \in S$. Then $A=-3K_{X}+tG$ is birational with bounded volume by the preceding results. Thus $S'$ is birationally bounded by \autoref{l_birationally-bounded}.
 \end{proof}
 
@@ -771,7 +771,7 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 \begin{proof}[Proof of \autoref{Main_Bound}]
 	Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. Further if $Z$ is a surface then $(X',\Delta')\to Z$ is a tame conic bundle. In particular it admits $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY by \autoref{cbf}. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$. 
 	
-	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{setup} this is bounded.	
+	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{b-setup} this is bounded.	
 
 	\end{proof}
 

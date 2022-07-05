@@ -151,23 +151,19 @@
 	
 	The key focus of this section is to show the validity of the abundance conjecture for mixed characteristic threefolds. It contains the main results of \cite{bernasconi2021abundance} and the work was completed in collaboration with F. Bernasconi and I. Brivio. 
 	
-	We work under the assumption that the residue fields of closed points of $R$ have characteristic $p>5$. This can be loosened somewhat. So long as $X_{\mathbb{Q}}$ has dimension at most $2$ the abundance result holds. This can be checked by localising at closed point of positive characteristic and applying \autoref{abundance-dim2} on $X_{\mathbb{Q}}$, since semiampleness is local on the base.
+	We work under the assumption that the residue fields of closed points of $R$ have characteristic $p\neq 2,3$ or $5$ and that $T$ has a point of positive characteristic. 
 	
-	\begin{theorem}\label{Main_Abund1}\autoref{abundance}
-		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
-		
-		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with positive dimensional image.
-		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is nef, then it is semiample.
+	\begin{theorem}[\autoref{abundance}]\label{Main_Abund1}
+%		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		Suppose that $(X,B)/T$ is a klt $R$-pair of dimension $3$ with positive dimensional image containing a positive characteristic point.
+		If $K_X+B$ is nef, then it is semiample.
 	\end{theorem}
-
 
 	A well-known and immediate consequence of abundance is the finite generation of the canonical ring.
 	
 	\begin{theorem}
-		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
-		
-		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with positive dimensional image with $\mathbb{Q}$-boundary. 
-		
+%		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
+		Suppose that $(X,B)/T$ is an $R$-pair of dimension $3$ with $\mathbb{Q}$-boundary where $T$ is positive dimensional and contains a positive characteristic point. 
 		Then the canonical $\ox[T]$-algebra
 		\[R(\pi,\Delta):=\bigoplus_{m \in \mathbb{N}} \pi_{*}\ox(\lfloor m(K_{X}+\Delta)\rfloor)\]
 		is finitely generated.
@@ -176,13 +172,12 @@
 	In characteristic $0$, finite generation of the canonical ring follows from finite generation in the log general type case (\cite{BCHM10}) and by a result of Fujino and Mori \cite[Theorem 5.2]{FM00}. However, their result requires a canonical bundle formula which is not available in the positive or mixed characteristic settings.
 
 
-	\begin{theorem}\label{Main_Abund2}\autoref{thm:ADIOP_final2}
-		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
-		Let $(X,B)$ be a three-dimensional klt $R$-pair and let $(X,B)\to \Spec(R)$ be a projective, surjective morphism.  Suppose that the following conditions are satisfied:
-		
+	\begin{theorem}[\autoref{thm:ADIOP_final2}]\label{Main_Abund2}
+%		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
+		Let $(X,B)$ be a three-dimensional klt $R$-pair. Suppose that the following conditions are satisfied:
 		\begin{enumerate}
 		\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
-		\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+		\item[(2)] if $V$ is a non-canonical centre of $(X,B+X_k)$ contained in ${\mathbf{B}_{-}(K_{X}+B)}$, then $\dim (V_{k})=\dim (V) -1$.
 		\end{enumerate}
 		Suppose further that at least one of the following holds:
 		\begin{enumerate}
@@ -196,21 +191,7 @@
 	\end{theorem}
 
 	\section{Preliminaries}
-	
-
-
-%	\begin{enumerate}
-%		\item In this article, $R$ denotes an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
-%		\item We say $(X, \Delta)$ is a \emph{log pair} if $X$ is an excellent normal scheme with a dualising complex, $\Delta$ is a $\mathbb{K}$-divisor and $K_X+\Delta$ is $\mathbb{K}$-Cartier, where $\mathbb{K}=\mathbb{Q}$ or $\mathbb{R}$.  When not specified we default to $\mathbb{K}=\mathbb{R}$. By $\dim(X)$ we mean the dimension of the scheme $X$.
-%		%	\item For us, an $R$-pair $(X,\Delta)/T$ with $\mathbb{K}$-boundary is a projective, surjective morphism $X \to T$ of normal integral schemes of finite type over $R$, with $T$ quasi-projective over $R$, such that $K_X+\Delta$ is $\mathbb{K}$-Cartier and $X_{\mathbb{Q}} \neq \emptyset$. When $T=\Spec (R)$ it is omitted from the notation. Here $\mathbb{K}=  \mathbb{Q}$ or $\mathbb{R}$ and. When we say $\dim(X)$ we mean the dimension of the scheme $X$.
-%		\item For the definitions of the singularities of the MMP (as klt, plt, lc), we refer to \cite{kk-singbook,bhatt2020}.
-%		\item A \textit{contraction} of normal schemes is a projective morphism $f\colon X\to Y$ such that $f_*\cO_X=\cO_Y$.  A \emph{birational contraction} $\varphi \colon X \dashrightarrow Y$ is a birational map of normal integral schemes such that $\varphi^{-1}$ does not contract any divisor.
-%		\item Let $L$ be a nef line bundle on a scheme $X$ projective over $S$. We define $\mathbb{E}(L)$ to be the union of subschemes of $X$ on which the restriction of $L$ is not big.
-%		\item If $X \to S$ is a projective morphism and $D$ is a $\mathbb{Q}$-Cartier divisor on $X$, the \emph{diminished locus of $D$ over $S$}  is  $$\mathbf{B}_{-}(D/S) = \bigcup_{A \, \mathbb{Q}\text{-divisor} \text{ ample }/S} \mathbf{B}(D+A/S),$$ where $\mathbf{B}(D+A/S)$ is the stable base locus of $D+A$ over $S$. If $S$ is clear from the context, we will simply write $\mathbf{B}_{-}(D)$.
-%		\item We say that a field $k$ of positive characteristic $p>0$ is $F$-finite if $[k:k^p]< \infty$.
-%		\item When $R$ is a DVR with residue field $k$ and fraction field $K$, and $(X,\Delta)$ is a pair defined over $R$, we will denote the special, resp. generic, fibre as $X_{k}$, resp. $X_K$. An analogous notation will be used for sheaves and $R$-horizontal $\mathbb{K}$-divisors on $X$.
-%	\end{enumerate}
-
+	In this section we fix $S$ to be an excellent Noetherian base scheme.
 	\subsection{Algebraic spaces}
 	
 	We refer to \stacks{0ELT} for the definition of algebraic spaces and their general theory. We record here a few key results to be used later. First, Stein factorisation exists for algebraic spaces. 
@@ -231,9 +212,9 @@
 	We also have the following descent result for proper contractions of algebraic spaces.
 	
 	\begin{lemma}\label{as-ext}
-		Let $f \colon W \to X$ and $g \colon W \to Y$ be contraction of Noetherian integral normal algebraic spaces over $S$. 
+		Let $f \colon W \to X$ and $g \colon W \to Y$ be projective contractions of Noetherian integral normal algebraic spaces over $S$. 
 		Suppose that every proper curve $C \subset W$ contracted by $f$ is contracted by $g$. 
-		Then there is a contraction $h\colon X \to Y$ with $g=h \circ f$. Morover, $h$ is unique.
+		Then there is a unique contraction $h\colon X \to Y$ with $g=h \circ f$.
 	\end{lemma}
 	
 	\begin{proof}
@@ -254,7 +235,7 @@
 	
 	\begin{lemma}\label{l-cod1}
 		Let $S$ be a Noetherian scheme and $X$ be a proper algebraic space over $S$. 
-		Then there is an open immersion of a scheme $U\to X$ whose image is a big open subset of $X$. 
+		Then there is a big open immersion of a scheme $U\to X$.
 		If $X$ is normal, we can choose $U$ to be regular.
 	\end{lemma}
 	
@@ -269,7 +250,7 @@
 	
 	\subsection{Semiample and EWM line bundles}
 	
-	In this subsection we recall some basic results about semiample and EWM line bundles we will need later on. We fix $S$ to be a excellent Noetherian base scheme.
+	In this subsection we recall some basic results about semiample and EWM line bundles we will need later on. 
 	
 	\begin{definition}
 		Let $\varphi \colon X \to S$ be a proper morphism. A line bundle $L$ on $X$ is said to be \textit{semiample} over $S$ if there exists $m>0$ such that $L^{\otimes m}$ is globally generated over $S$, \emph{i.e.} the natural morphism $\varphi^*(\varphi_*L^{\otimes m}) \to L^{\otimes m}$ is surjective.
@@ -292,14 +273,14 @@
 		The direction $(1) \implies (2) \implies (3)$ is the content of \cite[Theorem 2.1.26]{La1}. That $(3) \implies (1)$ follows straight from the definition of ample.
 	\end{proof}
 	
-	The morphism $f$ is the same in both (a) and (b) of \autoref{t-semiamplefibration} is called the \textit{semiample fibration of $L$}.	
+	The morphism $f$ is the same in both (a) and (b) of \autoref{t-semiamplefibration} is called the \textit{semiample contraction of $L$}.	
 	
 	\begin{definition}
 	Let $\varphi \colon X \to S$ be a proper morphism of schemes. 
 	A nef line bundle $L$ on $X$ is said to be \emph{EWM over $S$} if there exists a proper $S$-morphism $f \colon X \rightarrow Y$ to an algebraic space $Y$ proper over $S$ such that an integral closed subscheme $V \subset X$ is contracted (that is, $\dim(V) < \dim (f(V))$) if and only if $L|_V$ is not big. 
 	\end{definition}
 	
-	By \autoref{Stein}, we can suppose $f$ is a contraction and we call this the \emph{EWM-contraction} associated to $L$, which is unique up to isomorphism by \autoref{as-ext}.
+	By \autoref{Stein}, we can suppose $f$ is a contraction and we call this the \emph{EWM contraction} associated to $L$, which is unique up to isomorphism by \autoref{as-ext}.
 	
 	The definition of semiample (resp. EWM) extends naturally to $\mathbb{Q}$-Cartier divisors (resp. $\mathbb{R}$-Cartier divisors).
 	We say that an $\mathbb{R}$-Cartier divisor $D$ is semiample if there exist $r_i>0$ and $L_i$ semiample Cartier divisors such that $D \sim_{\mathbb{R}}\sum_i r_{i}L_{i}$. A natural extension of condition $(c)$ in \autoref{t-semiamplefibration} is that $D$ is semiample if and only if there is a morphism $f \colon X \to Z$ of $S$-schemes such that $D\sim_{\mathbb{R}} f^*A,$ where $A$ is an ample $\mathbb{R}$-divisor over $S$. Note that any semiample $\mathbb{R}$-Cartier divisor is EWM.
@@ -320,7 +301,7 @@
 	
 	\begin{lemma}\label{pullback}
 		
-		Let $f \colon X \to Y$ be a proper surjective morphism of integral, excellent schemes over a base $S$. Suppose that $Y$ is normal and $L$  is a line bundle on $Y$ such that $f^{*}L$ semiample over $S$.
+		Let $f \colon X \to Y$ be a proper surjective morphism of integral, excellent schemes over $S$. Suppose that $Y$ is normal and $L$  is a line bundle on $Y$ such that $f^{*}L$ is semiample over $S$.
 		Then $L$ is semiample over $S$.
 		
 	\end{lemma}
@@ -332,14 +313,15 @@
 	We first show that $\psi^*L$ is semiample. Take $m>0$ such that $f^*L^{ m}$ is base point free. By the projection formula $H^0(X, f^*L^{m})=H^0(Z, \psi^*L^{m})$ and so $\psi^*L^{m}$ is base point free.
 	
 	We can thus assume that $f$ is a finite morphism of degree $d$.
-	By \stacks{0BD3}, there exists a norm function $\Norm_f \colon f_*\mathcal{O}_X \to \mathcal{O}_Y$ of degree $d$ for $f$ which induces a group homomorphim $\Norm_f \colon \text{Pic}(X) \to \text{Pic}(Y)$ by \stacks{0BCY}. Take $m>0$ such that $f^*L^{m}$ induces the semiample fibration, and let $y\in Y$ be a point. Then there is a section $s\colon \cO_X\to f^*L^{m}$ not vanishing at any of the points in $f^{-1}(y)$. By \stacks{0BCY} and \stacks{0BCZ} we then construct a section $\Norm_f(s)\colon \cO_{Y}\to L^{md}$ not vanishing at $y$, concluding.
+	By \stacks{0BD3}, there exists a norm function $\Norm_f \colon f_*\mathcal{O}_X \to \mathcal{O}_Y$ of degree $d$ for $f$ which induces a group homomorphim $\Norm_f \colon \text{Pic}(X) \to \text{Pic}(Y)$ by \stacks{0BCY}. Take $m>0$ such that $f^*L^{m}$ induces the semiample contraction, and let $y\in Y$ be a point. Then there is a section $s\colon \cO_X\to f^*L^{m}$ not vanishing at any of the points in $f^{-1}(y)$. By \stacks{0BCY} and \stacks{0BCZ} we then construct a section $\Norm_f(s)\colon \cO_{Y}\to L^{md}$ not vanishing at $y$, concluding.
 	
 \end{proof}
 
 	We will need a similar, but slightly weaker result for algebraic spaces. First we make the following observation.
 
 	\begin{lemma}\label{com-big}
-	Let $S$ be an excellent Noetherian scheme and $f \colon Y \to X$ be a contraction of integral normal schemes, proper over S. Let $L$ be an $S$-nef line bundle on $X$. Choose $V,V'$ integral closed subschemes of $X$ and $Y$ respectively with $f(V')=V$. Then $f^{*}L$ is $S$-big on $V'$ if and only if $L$ is $S$-big on $V$ and $\dim (V)=\dim (V')$.  
+	Let $f \colon Y \to X$ be a contraction of integral normal proper $S$-schemes. Let $L$ be a line bundle on $X$ nef over $S$. Let $V \subset X$ (resp. $V' \subset Y$) be an integral closed subscheme.
+	Suppose $f(V')=V$. Then $f^{*}L|_{V'}$ is big over $S$ if and only if $L|_V$ is big over $S$ and $\dim (V)=\dim (V')$.  
 	\end{lemma}
 
 	\begin{proof}
@@ -354,11 +336,11 @@
 \end{lemma}
 
 \begin{proof}
-	Suppose first that $L$ is EWM and let $g \colon X \to Z$ be the associated EWM-contraction. 	
+	Suppose first that $L$ is EWM and let $g \colon X \to Z$ be the associated EWM contraction. 	
 	We claim that $h=g \circ f$ contracts an integral subscheme $V$ of $Y$ if and only if $f^{*}L|_{V}$ is not big. 	
 	By \autoref{com-big}, $f^{*}L|_{V}$ is not big if and only $\dim (f(V))< \dim (V)$ or $L|_{f(V)}$ is not big, concluding. %Therefore $V$ is contracted by $h$ if and only $f^{*}L|_{V}$ is not big.
 	
-	Now suppose that $f^{*}L$ is EWM. Let $g \colon Y \to Z$ be the associated EWM-contraction. 
+	Now suppose that $f^{*}L$ is EWM. Let $g \colon Y \to Z$ be the associated EWM contraction. 
 	By \autoref{as-ext} there exists a morphism $h \colon X \to Z$ with $g=h\circ f$. 
 	Take $V\subset X$ integral of dimension $d$. We can choose an integral $V'$ lying over $V$ of dimension $d$ by cutting $f^{-1}(V)$ with hyperplanes and taking a dominant component. 
 	By \autoref{com-big} we see that $L$ is not big on $V$ if and only if $V'$ is contracted by $h$, concluding.
@@ -369,16 +351,16 @@
 \end{remark}
 
 	\subsubsection{Semiample line bundles over DVRs}
-	We now specialize to the case in which $X\to\Spec (R)$ is a family of normal projective varieties over a DVR and we study how the spaces of global sections of $L$ behave in family. 	Given a $\mathbb{Q}$-Cartier $\bQ$-divisor $L$ on a normal variety $X$ over a field $k$, we denote by $\kappa(L)$ its Iitaka dimension (see \cite[Definition 2.1.3]{La1}).
+	We now specialize to the case in which $X\to R$ is a family of normal projective varieties over a DVR and we study how the spaces of global sections of $L$ behave in family. Given a $\mathbb{Q}$-Cartier $\bQ$-divisor $L$ on a normal variety $X$ over a field $k$, we denote by $\kappa(L)$ its Iitaka dimension (see \cite[Definition 2.1.3]{La1}).
 	
 	\begin{lemma}\label{lemma_DIOK}
-		Let $R$ be a DVR and let $\pi \colon X\to \Spec (R)$ be a flat projective morphism. 
+		Let $R$ be a DVR and let $\pi \colon X\to R$ be a flat projective morphism. 
 		Let $L$ be a $\bQ$-Cartier divisor on $X$, semiample over $R$. 
 		Then $\kappa(L_k)=\kappa(L_K)$.
 	\end{lemma}
 	
 	\begin{proof}
-	Let $f\colon X \to Z$ be the semiample fibration of $L$ over $R$, let $\delta\colon Z\to\Spec(R)$ be the structure morphism, and note that $\delta$ is flat, hence equi-dimensional. Let $d$ be the dimension of the fibers of $\delta$, and let $A$ be an ample $\bQ$-divisor on $Z$ such that $L\sim_{\bQ}f^\ast A$. By the projection formula (\cite[\href{https://stacks.math.columbia.edu/tag/01E8}{Tag 01E8}]{stacks-project})  and asymptotic Riemann-Roch (\cite[Theorem VI.2.15]{k-rat-curves}), for each $t \in \Spec(R)$ we have
+	Let $f\colon X \to Z$ be the semiample contraction of $L$ over $R$, let $\delta\colon Z\to\Spec(R)$ be the structure morphism, and note that $\delta$ is flat, hence equi-dimensional. Let $d$ be the dimension of the fibers of $\delta$, and let $A$ be an ample $\bQ$-divisor on $Z$ such that $L\sim_{\bQ}f^\ast A$. By the projection formula (\cite[\href{https://stacks.math.columbia.edu/tag/01E8}{Tag 01E8}]{stacks-project})  and asymptotic Riemann-Roch (\cite[Theorem VI.2.15]{k-rat-curves}), for each $t \in \Spec(R)$ we have
 	\begin{equation*}
 	\begin{split}
 	h^0(X_t,mL_t)&=h^0(Z_t,f_{t,*} \cO_{X_t}\otimes\cO_{Z_t}(mA_t))\\
@@ -390,8 +372,8 @@
 	
 	
 	\begin{lemma}\label{l-stein-invariance}
-	Let $R$ be a DVR and let $\pi \colon X \to \Spec(R)$ be a flat, projective, normal, integral $R$-scheme such that $X_k$ is normal. 
-	Let $L$ be a $\bQ$-Cartier $\bQ$-divisor on $X$, semiample over $R$ and let $f \colon X \to Z$ be the semiample fibration induced by $L$.
+	Let $R$ be a DVR and let $\pi \colon X \to R$ be a projective, normal, integral $R$-scheme such that $X_k$ is normal. 
+	Let $L$ be a $\bQ$-Cartier $\bQ$-divisor on $X$, semiample over $R$ and let $f \colon X \to Z$ be the semiample contraction induced by $L$.
 	Then the following are equivalent:
 	\begin{enumerate}
 		\item[(1)] $f_{k,*} \cO_{X_k} = \cO_{Z_k}$;
@@ -411,13 +393,13 @@
 	
 	$(2) \Rightarrow (1)$. By Grauert's theorem (\cite[Corollary III.12.9]{Ha77}) the natural restriction map
 	$H^0(X,\mathcal{O}_X(mL))\to H^0(X_k,\mathcal{O}_{X_k}(mL_k))$
-	is surjective for all $m \geq 0$ sufficiently divisible. Hence $f_k$ is the semiample fibration of $L_k$ by \autoref{t-semiamplefibration}, in particular $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. 
+	is surjective for all $m \geq 0$ sufficiently divisible. Hence $f_k$ is the semiample contraction of $L_k$ by \autoref{t-semiamplefibration}, in particular $f_{k,\ast}\cO_{X_k}=\cO_{Z_k}$. 
 \end{proof}
 	
 	\begin{remark}\label{r-connected fibers v contraction}
 	Suppose that $Z_{k}$ is normal in \autoref{l-stein-invariance} and let $X_{k}\to Y_{k} \xrightarrow{g} Z_{k}$ be the Stein factorisation of $f_{k}$. If $k$ is a field of characteristic $0$ then $g$ is birational and finite, hence an isomorphism.
 	
-	On the other hand if $k$ is a positive characteristic field then $g$ may be a non-trivial purely inseparable morphism of normal varieties. This an obstruction to lifting sections of $mL_k$ (see \cite{Bri20} for an explicit construction with $L=K_X+B$). For this reason, a crucial step in \autoref{thm:ADIOP_SA} will be showing $f_{k,*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the semiample fibration of the canonical divisor.
+	On the other hand if $k$ is a positive characteristic field then $g$ may be a non-trivial purely inseparable morphism of normal varieties. This an obstruction to lifting sections of $mL_k$ (see \cite{Bri20} for an explicit construction with $L=K_X+B$). For this reason, a crucial step in \autoref{thm:ADIOP_SA} will be showing $f_{k,*} \mathcal{O}_{X_k}=\mathcal{O}_{Z_k}$ for the semiample contraction of the canonical divisor.
 	\end{remark}
 	
 		
@@ -452,7 +434,7 @@
 	As $\mathbf{B}_{-}(K_Y+\Delta_Y)=\bigcup_{n \geq 0} \mathbf{SB}(K_Y+\Delta_Y+\frac{1}{n}H)$ by \cite[Proposition 1.19]{asympt-baseloci} we conclude.
 \end{proof}
 
-We recall that, given a log pair $(X,\Delta)$, a \emph{non-canonical centre} $V$ of $(X,\Delta)$ is the centre of a divisorial valuation $E$ with discrepancy $a(E, X, \Delta)<0$.  The following is a generalisation of \cite[Lemma 3.1]{HMX18} for general threefolds over DVRs. 
+We recall that, given a log pair $(X,\Delta)$, a \emph{non-canonical centre} $V$ of $(X,\Delta)$ is the centre of a divisorial valuation $E$ with discrepancy $a(E, X, \Delta)<0$.  The following is a generalisation of \cite[Lemma 3.1]{HMX18} for arithmetic and positive characteristic threefolds. 
 
 \begin{proposition}\label{lemma:MMP_in_fam2}
 	Let $R$ be an excellent DVR with residue field $k$ of characteristic $>5$. Let $X \to \Spec(R)$ be a projective contraction and suppose that $(X,B)$ is a $\bQ$-factorial klt threefold pair with $\mathbb{Q}$-boundary.
@@ -468,13 +450,13 @@ We recall that, given a log pair $(X,\Delta)$, a \emph{non-canonical centre} $V$
 		\subitem(i) $f$ is a divisorial contraction;
 		\subitem(ii) if $\Gamma:=f_\ast B$, then conditions (1) and (2) also hold for $(Y,\Gamma)$.
 	\end{enumerate} 
-	In particular, if $f$ is projective birational then $h^0(X_t,m(K_{X_t}+B_t))=h^0(Y_t,m(K_{Y_t}+\Gamma_t))$ for all $t\in\Spec (R)$ and all $m\geq 0$ sufficiently divisible.
+	In particular, if $f$ is a projective birational morphism then $h^0(X_t,m(K_{X_t}+B_t))=h^0(Y_t,m(K_{Y_t}+\Gamma_t))$ for all $t\in\Spec (R)$ and all $m\geq 0$ sufficiently divisible.
 \end{proposition}
 
 \begin{proof}
 	If $f$ is a contraction of fibre type, hence $f_k$ is not birational by upper semi-continuity of the dimension of the fibres for proper morphisms (\cite[\href{https://stacks.math.columbia.edu/tag/0D4Q}{Tag 0D4Q}]{stacks-project}). 
 	
-	From now on, we assume that $f$ is birational. Suppose by contradiction that $f$ is a flip and consider the following diagram:
+	From now on, we assume that $f$ is birational. Suppose for contradiction that $f$ is a flip and consider the following diagram:
 	
 	\begin{equation*}
 	\xymatrix{
@@ -486,13 +468,13 @@ We recall that, given a log pair $(X,\Delta)$, a \emph{non-canonical centre} $V$
 	where $g$ is a $(K_X+B)$-flipping contraction.
 	Note that $Y_k$ is irreducible since $f$ does not extract divisors, thus $f_k$ is birational. As $(X,B+X_k)$ is plt, so is $(Y,\Gamma+Y_k)$ hence both $X_k$ and $Y_k$ are normal by \autoref{invAdj3}. 
 	
-	We now derive the contradiction. Since $f$ is a flip, there exists a prime divisor $D$ on $Y_k$ such that its centre $p$ on $X_k$ is a closed point.
+	We now derive the contradiction. Since $f$ is a flip, there exists a prime divisor $D$ on $Y_k$ such that its centre $P$ on $X_k$ is a closed point.
 	Since $f_k$ is not an isomorphism at $N$ we have
 	$$a(D;X_k,B_k)<a(D;Y_k,\Gamma_k)\leq 0$$
 	by \autoref{l:increase-discr}.
-	Hence $p$ is a non-canonical centre of $(X_{k},B_k)$. Note that $p \subseteq \textup{Exc}(g) \subseteq \mathbf{B}_{-}(K_{X}+B)$ since $D$ is exceptional over $Z_k$. 
-	Moreover $p$ is also a non-canonical centre of $(X,B+X_{k})$ as $$0 > \textup{totdiscrep}(p, X_k, B_k) \geq \textup{discrep}(p, X, X_k+B), $$ by easy adjunction (\cite[Theorem 17.2]{FA}).
-	So $p$ is an isolated non-canonical centre of $(X,X_k+B)$ contained in $\mathbf{B}_{-}(K_{X}+B)$, thus contradicting (2).
+	Hence $P$ is a non-canonical centre of $(X_{k},B_k)$. Note that $P \subseteq \textup{Exc}(g) \subseteq \mathbf{B}_{-}(K_{X}+B)$ since $D$ is exceptional over $Z_k$. 
+	Moreover $P$ is also a non-canonical centre of $(X,B+X_{k})$ as $$0 > \textup{TDisc}(P, X_k, B_k) \geq \textup{Disc}(P, X, X_k+B), $$ by easy adjunction (\cite[Lemma 4.8]{kk-singbook}).
+	So $P$ is an isolated non-canonical centre of $(X,X_k+B)$ contained in $\mathbf{B}_{-}(K_{X}+B)$, thus contradicting (2).
 	
 	Thus $f$, and therefore $f_k$, is a divisorial birational projective contraction. Condition (1) holds on $(Y,\Gamma+Y_k)$ immediately, so it remains to check condition (2).
 	
@@ -559,12 +541,12 @@ The following is \cite[Lemma 2.17]{cascini2020relative}. We include the proof fo
 \end{lemma}
 
 \begin{proof}
-	Since $L|_{X_{K(Y)}} \sim_{\mathbb{Q}} 0$ we may write $L\sim_{Y, \mathbb{Q}} D\geq 0$ such that $D|_{X_{K(Y)}}=0$. If $C$ is any component of $D$ then $f(C)$ is a prime divisor, since $f$ is equi-dimensional. Thus, since $Y$ is $\mathbb{Q}$-factorial, it is enough to know that $L \sim_{\bQ,Y} 0$ after localisation about any codimension one point of $Y$. In particular we may suppose that $Y= \Spec (R)$ for some DVR $R$ with closed point $p$.
+	Since $L|_{X_{K(Y)}} \sim_{\mathbb{Q}} 0$ we may write $L\sim_{Y, \mathbb{Q}} D\geq 0$ such that $D|_{X_{K(Y)}}=0$. If $C$ is any component of $D$ then $f(C)$ is a prime divisor, since $f$ is equi-dimensional. Thus, since $Y$ is $\mathbb{Q}$-factorial, it is enough to know that $L \sim_{\bQ,Y} 0$ after localisation about any codimension one point of $Y$. In particular we may suppose that $Y= \Spec (R)$ for some DVR $R$ with closed point $P$.
 	
-	Let $\left\{G_i \right\}_{i=1}^n$ be the irreducible components of the special fibre $F_p=f^*p$, so that by construction $D = \sum_{i=1}^n a_i G_i$ for certain $a_i \geq 0$.	
+	Let $\left\{G_i \right\}_{i=1}^n$ be the irreducible components of the special fibre $F=f^*P$, so that by construction $D = \sum_{i=1}^n a_i G_i$ for certain $a_i \geq 0$.	
 	
-	We introduce $r:= \min \left\{ t \mid D -tF_p \leq 0 \right\}$. We are left to show that $D-rF_p=0$. 
-	If not, up to rearranging the order of $G_i$, we have $D-rF_p=-\sum_{i=2}^n l_i G_i \equiv_Y 0$, with $l_2 >0, l_i \geq 0$ and $G_{1}$ meeting $G_{2}$. Note that $(rF_p-D)$ is effective curve not containing $G_{1}$ but intersecting it. Hence there must be a curve $C$ on $G_{1}$ with $(rF-D) \cdot C >0$, but $rF-D \sim_{T} -D$ and $D$ is nef, a contradiction. Therefore $D-rF_p=0$ as claimed.
+	We introduce $r:= \min \left\{ t \mid D -tF \leq 0 \right\}$. We are left to show that $D-rF=0$. 
+	If not, up to rearranging the order of $G_i$, we have $D-rF=-\sum_{i=2}^n l_i G_i \equiv_Y 0$, with $l_2 >0, l_i \geq 0$ and $G_{1}$ meeting $G_{2}$. Note that $(rF-D)$ is effective curve not containing $G_{1}$ but intersecting it. Hence there must be a curve $C$ on $G_{1}$ with $(rF-D) \cdot C >0$, but $rF-D \sim_{T} -D$ and $D$ is nef, a contradiction. Therefore $D-rF=0$ as claimed.
 \end{proof}
 
 
@@ -583,7 +565,7 @@ The following gives a sufficient condition for a nef divisor to be EWM together 
 	\]
 	such that 
 	\begin{enumerate}
-		\item $f$ is the EWM-contraction associated to $L$;
+		\item $f$ is the EWM contraction associated to $L$;
 		\item $\phi$ and $\pi$ are proper birational contraction;
 		\item  $g$ is equi-dimensional, $W$ is a $T$-projective scheme, and $Y$ is a $T$-projective regular scheme of dimension $\leq 2$;
 		\item $g$ agrees with the map induced by $\phi^*L$ over the generic point of $Z$;
@@ -607,7 +589,7 @@ If $f$ is equi-dimensional, it is possible to prove a suitable semiampleness res
 
 \begin{proposition}\label{EDsemiampleness2}
 	Let $X \to T$ be a projective contraction of normal quasi-projective schemes over $R$, where $\dim(X) \leq 3$.
-	Let $L$ be an EWM $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$ such that its associated EWM-contraction $f \colon X \to Z$ is equi-dimensional.
+	Let $L$ be an EWM $\mathbb{Q}$-Cartier $\mathbb{Q}$-divisor on $X$ such that its associated EWM contraction $f \colon X \to Z$ is equi-dimensional.
 	If $L|_{X_{K(T)}}$ and $L|_{X_{\mathbb{Q}}}$ are semiample, then $L$ is semiample.
 \end{proposition}
 
@@ -633,7 +615,7 @@ If $f$ is equi-dimensional, it is possible to prove a suitable semiampleness res
 	Then we may choose $S$ to be a general hyperplane on $X$ such that $S$ meets each fibre over $Z \setminus U$ at only finitely many points. 
 	%This may be done inductively by choosing hyperplanes $H_{i}$ such that they do not contain any component of any fibre of $S_{i}=\bigcap_{j< i} H_{j}$ over $Z\setminus U$. Then if $F$ is such a fibre, we have $\dim F\cap S_{i}=\dim F-i=r-i$, so $S=S_{r}$ meets $F$ at finitely many points.
 	
-	Note that $L|_{S}$ is clearly big and moreover if $C$ is any curve on $S$ with $L \cdot C =0$, then $C$ must be contracted by $X \to Z$ as $f$ is the EWM-contraction associated to $L$. In particular $C$ is contained in some fibre of $f$ and by construction $C$ is not contained in a fibre over $Z \setminus U$, as $S$ contains no such curves. Thus in fact $C \subseteq X_{U}$. Therefore $\mathbb{E}(L|_{S}) \subseteq X_{U}$ and so $S|_{\mathbb{E}(L|_{S})}$ is semiample since $L|_{X_{U}}$ is. As $L|_{S_{\mathbb{Q}}}$ is semiample by assumption, we conclude that $L|_{S}$ is semiample by \cite[Theorem 6.1]{witaszek2020keels}. 
+	Note that $L|_{S}$ is clearly big and moreover if $C$ is any curve on $S$ with $L \cdot C =0$, then $C$ must be contracted by $X \to Z$ as $f$ is the EWM contraction associated to $L$. In particular $C$ is contained in some fibre of $f$ and by construction $C$ is not contained in a fibre over $Z \setminus U$, as $S$ contains no such curves. Thus in fact $C \subseteq X_{U}$. Therefore $\mathbb{E}(L|_{S}) \subseteq X_{U}$ and so $S|_{\mathbb{E}(L|_{S})}$ is semiample since $L|_{X_{U}}$ is. As $L|_{S_{\mathbb{Q}}}$ is semiample by assumption, we conclude that $L|_{S}$ is semiample by \cite[Theorem 6.1]{witaszek2020keels}. 
 	
 	Let $S'$ be the strict transform of the surface $S$ on $W$, which must dominate $Y$. Let $\phi_{S'}, g_{S'}$ be the restrictions of $\phi, g$ to $S'$. Then $(\phi^{*}L)|_{S'}=\phi_{S'}^{*}(L|_{S})=g_{S'}^{*}D$ and since $L|_{S}$ is semiample and $Y$ is normal, we must have that $D$ is semiample by \autoref{pullback}. In turn this implies that $L$ is semiample as $\phi^{*}L=g^{*}D$.	
 \end{proof}	
@@ -641,11 +623,11 @@ If $f$ is equi-dimensional, it is possible to prove a suitable semiampleness res
 The following is a useful MMP technique to reduce to the case of equi-dimensional morphisms.
 
 \begin{proposition}\label{three}
-	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
+%	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
 	Let $(X,B)/T$ be a $\mathbb{Q}$-factorial klt threefold $R$-pair.
 	Suppose that
 	\begin{enumerate}
-		\item $K_X+B$ is a nef EWM $\mathbb{Q}$-divisor over $T$ with  $h \colon X \to Z$ be the associated EWM-contraction;
+		\item $K_X+B$ is a nef EWM $\mathbb{Q}$-divisor over $T$ with  $h \colon X \to Z$ be the associated EWM contraction;
 		\item $Z$ has dimension 2.
 	\end{enumerate}
 	Then there exists a $(K_X+B)$-trivial birational contraction $(X,B) \dashrightarrow (X', B')$ over $Z$ such that $X' \to Z$ is equi-dimensional. 
@@ -664,7 +646,7 @@ The following is a useful MMP technique to reduce to the case of equi-dimensiona
 	Since this is an MMP of a pseudo-effective klt pair over $T$ it terminates by \autoref{MMP}. In fact we claim it terminates when the strict transform of $F$ is contracted.
 	
 	If $X\dashrightarrow X'$ does not contract $F$ then its transform on $X'$ remains the divisorial part of a fibre, so to establish this claim it is sufficient to show that such divisorial part is never nef. 
-	By abundance on the generic fibre $(X'_{K(Z)},B'_{K(Z)})$ (\autoref{abundance-dim2}) we can apply \autoref{two} to find a commutative diagram 
+	By abundance (\autoref{abundance-dim2}) on the generic fibre $(X'_{K(Z)},B'_{K(Z)})$ we can apply \autoref{two} to find a commutative diagram 
 	\[
 	\begin{tikzcd}
 	W \arrow[d, "g"] \arrow[r, "\phi"] & X' \arrow[d, "f'"]  \\
@@ -683,10 +665,10 @@ The following is a useful MMP technique to reduce to the case of equi-dimensiona
 	Since there are only finitely many closed points $z \in Z$ for which the fibres are not one dimensional, we can repeat the above process a finite number of times and we terminate with a crepant model $(X',B')$ which is equi-dimensional over $Z$.	
 \end{proof}
 
-We are now ready to prove the abundance theorem for klt threefolds over positive-dimensional basis, which are not of pure characteristic $0$.
+We are now ready to prove the abundance theorem for klt threefolds over a positive-dimensional base which is not of pure characteristic $0$.
 
 \begin{theorem}\label{abundance}
-	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
+%	Suppose that none of the residue fields of $R$ have characteristic $2,3$ and $5$. 
 	Let $(X,B)/T$ be a $\mathbb{Q}$-factorial klt threefold $R$-pair which contains a point of positive characteristic. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
 \end{theorem}
 
@@ -703,7 +685,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	\begin{case}
 		$\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim (T)=2$.
 	\end{case}
-	By \autoref{abundance-dim2},  $K_{X_{k(T)}}+B_{k(T)}$ and $K_{X_\mathbb{Q}}+B_{\mathbb{Q}}$ are semiample $\mathbb{Q}$-divisors. As $K_X+B$ is not big, by \autoref{two} then $K_X+B$ is EWM and we denote by $f \colon X \to Z$ the associated EWM-contraction.
+	By \autoref{abundance-dim2},  $K_{X_{k(T)}}+B_{k(T)}$ and $K_{X_\mathbb{Q}}+B_{\mathbb{Q}}$ are semiample $\mathbb{Q}$-divisors. As $K_X+B$ is not big, by \autoref{two} then $K_X+B$ is EWM and we denote by $f \colon X \to Z$ the associated EWM contraction.
 	By \autoref{three} and \autoref{inv} we may replace $X$ so that $X \to Z$ is equi-dimensional. We then apply \autoref{EDsemiampleness2} to deduce that $K_{X}+\Delta$ is $\pi$-semiample.
 	
 	\begin{case}
@@ -713,7 +695,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 \end{proof}
 	
 	\begin{remark}
-		While in this section we worked on threefolds over mixed characteristic rings whose residue fields have characteristic $p> 5$, this is just due to the current state of the art on the MMP. 
+		While in this section we worked on threefolds over mixed characteristic rings whose residue fields have characteristic different from $2,3$ and $5$, this is just due to the current state of the art on the MMP. 
 		The arguments in the section for $\kappa(K_{X_{k(T)}}+B_{k(T)})+\dim(T) \leq 2$ work as long as the MMP results are known to hold.
 		In particular, abundance holds for mixed characteristic threefolds over a Dedekind domain with residue characteristics different from $2, 3$ by \cite{XX22}.
 		%In fact the arguments in this section show that abundance in mixed characteristic holds in the case that $\kappa(K_{X}+B)+\dim R = 2$, assuming the MMP holds for pairs of dimension $\dim X $ and that appropriate resolution and abundance results hold in lower dimensions. 
@@ -722,7 +704,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 \section{Applications to invariance of plurigenera}\label{s-inv-plurigenera}
 	
 	
-	In this section, $R$ will always be an excellent DVR with $F$-finite residue field $k$ of characteristic $p>5$ and fraction field $K$. 
+	In this section, $R$ will always be an excellent DVR with residue field $k$ of characteristic $p>5$ and fraction field $K$. 
 	
 	The purpose of this section is to generalise the asymptotic invariance of plurigenera proven in \cite[Theorem 3.1]{EH} to families of \emph{non-log-smooth} surface pairs, as well as DVRs with non-perfect residue field. Similar results in characteristic zero are proven in \cite{HMX13, HMX18}.
 	The first case we discuss is the asymptotic invariance for families of good minimal models.
@@ -740,7 +722,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 		for all $m\in m_0\bN$.
 	\end{theorem}
 	
-	We start by showing the normality of the central fibre of the image of the $(K_X+B)$-semiample fibration.
+	We start by showing the normality of the central fibre of the image of the $(K_X+B)$ semiample contraction.
 	
 	\begin{proposition}\label{p-gen-case}
 		Let $(X,B)$ be a three-dimensional klt $R$-pair with $\mathbb{Q}$-boundary.
@@ -769,7 +751,7 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	As $f$ is small, the central fibre $Y_k$ is irreducible. 
 	By the basepoint free theorem \autoref{MMP},	$K_Y+Y_k+\Delta \sim_{\mathbb{Q}} f^*(K_X+X_k+B)$.
 	Then by \autoref{p-gen-case}, $Y_k$ and $X_k$ are both normal.
-	As $f$ is the semiample fibration associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
+	As $f$ is the semiample contraction associated to $K_Y+\Delta$ over $X$ and it is birational, we conclude by \autoref{l-stein-invariance}.
 	\end{proof}
 
 	We now discuss the delicate case of invariance for plurigenera where the Kodaira dimension is one and the boundary is big.
@@ -777,10 +759,10 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	
 	\begin{proposition}\label{p-1-case}
 		
-		Let $(X,B)/R$ be a $\mathbb{Q}$-factorial klt $R$-pair of dimension $3$ with a projective contraction $\pi \colon X \to \Spec(R)$ such that $(X,B+X_{k})$ is plt. Suppose that
+		Let $(X,B)/R$ be a $\mathbb{Q}$-factorial klt $R$-pair with $\mathbb{Q}$-boundary of dimension $3$ such that $(X,B+X_{k})$ is plt. Suppose that
 		\begin{enumerate}
 			\item $K_X+B$ is semiample and let $f\colon X \to Z$ its Iitaka fibration over $R$;
-			\item $\kappa(K_X+B/R)=1$;
+			\item $\kappa(K_{X_{k}}+B_{k})=1$;
 			\item $B_{k}$ is big over $Z_{k}$.
 		\end{enumerate}
 		Then there exists an $m_{0} \in \mathbb{N}$  such that 
@@ -837,10 +819,9 @@ We are now ready to prove the abundance theorem for klt threefolds over positive
 	\begin{theorem}\label{thm:ADIOP_final2}
 		Suppose that $(X,B)$ is a three dimensional klt $R$-pair with $\mathbb{Q}$-boundary.
 		Suppose that all of the following are satisfied:
-		
 		\begin{enumerate}
 			\item[(1)] $(X, X_{k}+B)$ is plt with $X_k$ integral and normal;
-			\item[(2)]  ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+			\item[(2)] if $V$ is a non-canonical centre of $(X,B+X_k)$ contained in ${\mathbf{B}_{-}(K_{X}+B)}$, then $\dim (V_{k})=\dim (V) -1$.
 		\end{enumerate}
 		Suppose further that at least one of the following holds:
 		\begin{enumerate}

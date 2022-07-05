@@ -203,38 +203,38 @@
 	\monthname[\THEMONTH], \THEYEAR}
 
 
-\makeatletter
-\renewcommand*{\maketitle}{%
-	\begin{titlepage}
-		\begin{center}
-			\vspace*{2.5cm}
-			
-			\huge\@title\\
-			\vspace{1.5cm}
-			\Large\@author
-			\vspace{1.5cm}
-			
-			\normalsize
-			A thesis presented for the degree of\\
-			Doctor of Philosophy
-			
-			\vfill
-			
-			\normalsize
-			\monthyeardate\today\\
-			Supervised by Paolo Cascini\\
-			\@supervisor
-			
-			\vfill
-
-			\normalsize
-			Imperial College London\\
-			Department of Mathematics
-			
-			
-		\end{center}%
-	\end{titlepage}%
-}
+%\makeatletter
+%\renewcommand*{\maketitle}{%
+%	\begin{titlepage}
+%		\begin{center}
+%			\vspace*{2.5cm}
+%			
+%			\huge\@title\\
+%			\vspace{1.5cm}
+%			\Large\@author
+%			\vspace{1.5cm}
+%			
+%			\normalsize
+%			A thesis presented for the degree of\\
+%			Doctor of Philosophy
+%			
+%			\vfill
+%			
+%			\normalsize
+%			\monthyeardate\today\\
+%			Supervised by Paolo Cascini\\
+%			\@supervisor
+%			
+%			\vfill
+%
+%			\normalsize
+%			Imperial College London\\
+%			Department of Mathematics
+%			
+%			
+%		\end{center}%
+%	\end{titlepage}%
+%}
 
 
 \usepackage[titles]{tocloft}
@@ -269,9 +269,9 @@
 	
 	\chapter*{Acknowledgements\markboth{Acknowledgements}}
 	
-	I would like to thank my supervisor, Paolo Cascini, for his invaluable support and guidance after the past four years. He has provided both the problems to study and the means to tackle them. I am also thankful to the Engineering and Physical Sciences Research Council and the London School of Geometry and Number Theory for my funding and for their great running of the Phd program. I am also grateful to the other members of my LSGNT cohort for expanding my mathematical horizons. In particular to Federico Bongiorno who always brings new insights and ideas into any conversation. I am further indebted to Fabio Bernasconi and Iacopo Brivio for our fruitful collaborations and all that they have taught me about our field.
+	I would like to thank my supervisor, Paolo Cascini, for his invaluable support and guidance after the past four years. He has provided both the problems to study and the means to tackle them. I am thankful to the Engineering and Physical Sciences Research Council and the London School of Geometry and Number Theory for my funding and for their great running of the Phd program. I am also grateful to the other members of my LSGNT cohort for expanding my mathematical horizons. In particular to Federico Bongiorno who always brings new insights and ideas into any conversation. I am further indebted to Fabio Bernasconi and Iacopo Brivio for our fruitful collaborations and all that they have taught me about our field.
 	
-	Outside of mathematics; I could not have finished this thesis without the assistance of my friends and family. My parents in particular have provided unwavering support since long before I began this degree, even if they're still not quite sure what I do. I have also relied heavily on my wife Rose, whose patience has been stretched thin but never quite snapped. My daughter Alice has been less helpful, but I am thankful for her nonetheless. And finally I am grateful for Shanosky's attempts to keep me sane and grounded.   
+	Outside of mathematics; I could not have finished this thesis without the assistance of my friends and family. My parents have provided unwavering support since long before I began this degree, even if they're still not quite sure what I do. I have also relied heavily on my wife Rose, whose patience has been stretched thin but never quite snapped. My daughter Alice has been less helpful, but I am thankful for her nonetheless. And finally I am grateful for Shanosky's attempts to keep me sane and grounded.   
 		
 	\tableofcontents
 	
@@ -305,7 +305,7 @@
 		\item If $f \colon X \dashrightarrow Y$ is a birational contraction with $f^{-1}$ also a birational contraction we say that $f$ is small.
 		\item Given a fibration $X \to T$ and a property $\mathcal{P}$ we say it is a family of $\mathcal{P}$ varieties if the fibre over each closed point $k$ is a $k$-variety with property $\mathcal{P}$.
 		\item We largely consider $X$ admitting a projective morphisms $X\to T$ of quasi-projective $R$-schemes. When $X \to T$ is part of the description of $X$ in this fashion, we often say $D$ is nef/ample/semiample etc, to mean that $D$ is nef/ample/semiample over $T$. Since $T$ need not contain any proper curves over $R$ this should cause no confusion.
-		\item We say an open set $U \subseteq X$ is big if it contains every point of codimension $1$.
+		\item We say an open immersion  $U \hookrightarrow X$ is big if its image contains every point of codimension $1$.
 %		\item Given a morphism $f\colon X \to Y$ often write $H^{0}(X,L)$ for the $\ox{Y}$ module $f_{*}\ox$, especially if $Y$ is affine.
 		
 		
@@ -314,11 +314,11 @@
 	
 	\chapter{Introduction}
 
-	Algebraic Geometry is the study of geometric shapes described as solutions to polynomials; or perhaps more generally the study geometric objects which are locally the spectra of rings.
+	Algebraic Geometry is the study of geometric shapes described as solutions to polynomials, or perhaps more generally the study of geometric objects which are locally the spectra of rings.
 	
-	While this set of definitions offers a rich and fruitful area of study and a firm mathematical foundation from which to approach, they are not particularly useful methods of actually describing the objects of interest. One would not expect to see a variety given by some list of equations, nor as a list of rings and gluing information, except perhaps in the very simplest of examples.
+	While this set of definitions offers a rich and fruitful area of study and a firm mathematical foundation from which to approach, they are not particularly useful for describing the objects of interest. One would not expect to see a variety given by some list of equations, nor as a list of rings and gluing information, except perhaps in the very simplest of examples.
 	
-	One of the key aims, then, of modern birational geometry is to provide a language and structure to better understand and describe the geometric objects appearing as part of the wider study of algebraic geometry. This is a role taken on directly by flagship conjectures like the Minimal Model Program (MMP), but is also supported by the myriad of ideas developed in the study of birational geometry. Notions like klt, for instance, which were developed to better understand the singularities appearing in the MMP have quickly spread throughout the larger field of algebraic geometry.
+	One of the key aims of modern birational geometry is to provide a language and structure to better understand and describe the geometric objects appearing as part of the wider study of algebraic geometry. This is a role taken on directly by flagship conjectures like the Minimal Model Program (MMP), but is also supported by the myriad of ideas developed in the study of birational geometry. Notions like klt, for instance, which were developed to better understand the singularities appearing in the MMP have quickly spread throughout the larger field of algebraic geometry.
 	
 	We might summarise the key claim of the (klt) MMP as follows.
 	
@@ -349,13 +349,13 @@
 	
 	Here nefness is an entirely numerical condition, and bigness has both numerical and cohomological characterisations, whereas semiampleness is an entirely algebraic phenomenon. We can also understand singularity conditions like klt and log canonical to be numerical conditions, though of a very different flavour to the intersection based conditions we impose upon divisors.
 	
-	In characteristic zero, one the most important tools for proving these kinds of results is Kawamata-Viehweg (KV) vanishing. A result which is known to fail in positive and mixed characteristic. Much of the difficulty of recreating the success of the MMP in characteristic zero comes from the need to find alternative methods of generating these kinds of translations from numerical conditions to algebraic. More philosophically, KV vanishing and similar results provide a clear impetus for the focus on the the canonical divisor, and more generally on klt pairs. It is less obvious in other settings exactly what the role of $K_{X}$ should be.
+	In characteristic zero, one of the most important tools for proving these kinds of results is Kawamata-Viehweg (KV) vanishing; a result which is known to fail in positive and mixed characteristic. Much of the difficulty of recreating the success of the MMP in characteristic zero comes from the need to find alternative methods of generating these kinds of translations from numerical conditions to algebraic. More philosophically, KV vanishing and similar results provide a clear impetus for the focus on the the canonical divisor, and more generally on klt pairs. It is less obvious in other settings exactly what the role of $K_{X}$ should be.
 	
 	In positive characteristic this role is taken on by applications of the Frobenius morphism. Ideas due to Keel \cite{Keel}, provide a powerful semiampleness criteria along with a weaker, but often still useful, result on the existence of morphisms in the larger category of Algebraic Spaces. 
 	
-	In a different direction, a suite of Frobenius based singularities provide, amongst other important applications, a way to recover certain vanishing type theorems. These are often called $F$-singularities and they consist of local versions - $F$-pure and $F$-regular, as well as global versions - $F$-split and globally $F$-regular.
+	In a different direction, a suite of Frobenius based singularities provide, amongst other important applications, a way to recover certain vanishing type theorems. These are often called $F$-singularities and they consist of local versions, $F$-pure and $F$-regular, as well as global versions, $F$-split and globally $F$-regular.
 		
-	Together these ideas are sufficient to prove the bulk of MMP for threefolds in positive characteristic, at least for $p > 5$. This is done in \cite{HX15},\cite{Bir16}, \cite{BW17}. It was the state of the art at the beginning of my PhD. \autoref{Boundedness} therefore focuses on some of the consequences of the MMP in this setting.
+	Together these ideas are sufficient to prove the bulk of MMP for threefolds in positive characteristic, at least for $p > 5$. This is done in \cite{HX15}, \cite{Bir16},  \cite{BW17}. It was the state of the art at the beginning of my PhD in 2018. \autoref{Boundedness} therefore focuses on some of the consequences of the MMP in this setting.
 	
 	In mixed characteristic, the ideas of Keel are generalised immediately by \cite{witaszek2020keels} through clever study of universal homeomorphisms in place of the Frobenius morphism. The full statement is as follows and captures both the mixed characteristic and the positive characteristic behaviour.
 	
@@ -365,9 +365,9 @@
 	
 	The $F$-singularities are less smoothly generalised, however. The BCM singularities of \cite{ma2021singularities} are similar in some sense to $F$-regularity and provide important adjunction type results as in \cite{ma2019analog}. On the other hand the globally $+$-regular singularities of \cite{bhatt2020} are inspired by, and analogous to, globally $F$-regular singularities. In particular they provide suitable vanishing type results for the proof of the existence of flips. 
 	
-	The remainder of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance Conjecture holds in this setting and show that Mori Fibrations are connected by Sarkisov links. A more thorough overview of the MMP is given in \autoref{overview}. The results contained therein are largely known, but perhaps not in exactly the same generality as is presented there.
+	The rest of the thesis is devoted to exploring some of the remaining questions regarding the MMP for threefold klt pairs in mixed characteristic, with an emphasis on the structure and properties of the outputs of the MMP. In particular we prove Abundance Conjecture holds in this setting and show that Mori Fibrations are connected by Sarkisov links. A more thorough overview of the MMP is given in \autoref{overview}. The results contained therein are largely known, but perhaps not in exactly the same generality as is presented there.
 	
-	In addition, the theory of log pairs and the corresponding $F$-singularities are introduced in \autoref{Sings}. The log pairs will be needed throughout the thesis. Only the notion of $F$-split will be needed in \autoref{Boundedness}, however the globally $F$-regular condition provides important context. The local versions are considered in so far as they are equivalent to the global ones affine locally. No novel material appears in this section.
+	In addition, the theory of log pairs and the corresponding $F$-singularities are introduced in \autoref{Sings}. The log pairs are needed throughout the thesis. Only the notion of $F$-split is needed in \autoref{Boundedness}, however the globally $F$-regular condition provides important context. The local versions are considered in so far as they are equivalent to the global ones affine locally. No novel material appears in this section.
 	
 	\section{Boundedness}
 	
@@ -428,7 +428,6 @@
 	
 	\begin{theo}\autoref{Main_Abund1}
 		Let $R$ be an excellent ring of finite Krull dimension, equipped with a dualising complex and whose residue fields of closed points have characteristic $p>5$.
-		
 		Let $\pi \colon (X,B) \to T$ be a projective morphism of quasi-projective $R$-schemes such that $\pi(X)$ is positive dimensional.
 		Suppose $(X,B)$ is a three-dimensional klt pair with $\mathbb{R}$-boundary. If $K_X+B$ is $\pi$-nef, then it is $\pi$-semiample.
 	\end{theo}
@@ -446,11 +445,10 @@
 	
 	\begin{theo}\autoref{Main_Abund2}
 		Let $R$ be an excellent DVR such that the residue field $k$ has characteristic $p>5$.
-		Let $(X,B)$ be a three-dimensional klt pair and let $(X,B)\to \Spec(R)$ be a projective surjective morphism of quasi-projective $R$-schemes.  Suppose that the following conditions are satisfied:
-		
+		Let $(X,B)$ be a three-dimensional klt $R$-pair. Suppose that the following conditions are satisfied:
 		\begin{enumerate}
 			\item[(1)] $(X,X_{k}+B)$ is plt with $X_k$ integral and normal;
-			\item[(2)] ${\mathbf{B}_{-}(X, K_{X}+B)}$ contains a non-canonical centre $V$ of $(X,B+X_{k})$ only if $\dim V_{k}=\dim V -1$.
+			\item[(2)] if $V$ is a non-canonical centre of $(X,B+X_k)$ contained in ${\mathbf{B}_{-}(K_{X}+B)}$, then $\dim (V_{k})=\dim (V) -1$.
 		\end{enumerate}
 		Suppose further that at least one of the following holds:
 		\begin{enumerate}
