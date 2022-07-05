@@ -131,7 +131,7 @@
 	Next, it is shown that any two threefold Mori fibres spaces which are the output of the same MMP are related by Sarkisov links.
 	
 	\begin{theorem}[\autoref{sarkisov}]\label{Main_Finite2}
-		Fix a quasi-projective scheme $T$ over $R$ of positive dimension. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related, klt Mori fibre spaces of dimension $3$, projective and surjective over $T$. Then they are connected by Sarkisov links.
+		Fix an integral quasi-projective scheme $T$ over $R$. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related, klt Mori fibre spaces of dimension $3$, projective $T$. If the $Y_{i}$ have positive dimension image in $T$, then they are connected by Sarkisov links.
 	\end{theorem}
 	
 	The proof of this second theorem follows closely the work of \cite{hacon2009sarkisov}. The main technical work comes in proving a suitable version of Finiteness of Minimal Models.
@@ -155,9 +155,9 @@
 
 	\section{Termination}
 		
-	In this section we study termination for threefold pairs over positive dimensional bases. In this setting we will show that every $K_{X}+\Delta$ MMP terminates for a dlt pair $(X,\Delta)/T$. As always in this chapter, we consider only positive dimensional bases.
+	In this section we study termination for threefold pairs over positive dimensional bases. In this setting we will show that every $K_{X}+\Delta$ MMP terminates for a dlt pair $(X,\Delta)/T$. As always in this chapter, we consider only positive dimensional bases. If $X \to T$ is projective and $U\subseteq T$ is an open set we will write $X_{U}=X\times_{T}U$ and $\Delta_{U}=\Delta|_{X_{U}}$
 	
-	Termination for psuedo-effective pairs in this setting is assured by the following theorem, together with the observation that if $\kappa(K_{X}+\Delta) \geq 0$ then the pair is effective. 
+	Termination for pseudo-effective pairs in this setting is assured by the following theorem, together with non-vanishing on the generic fibre.
 	
 	\begin{theorem}\cite[Proposition 9.20]{bhatt2020}\label{partial-termination}
 		Let $(X,\Delta)/T$ be a threefold dlt $R$-pair. Suppose that
@@ -167,9 +167,9 @@
 	\end{theorem}
 
 
- We rely heavily on \autoref{partial-termination}. The key remaining argument is if $X \to T$ is a klt pair then there is an open set on which every contraction is a horizontal divisorial contraction. We prove this by reducing to the case that $(X,\Delta)$ is terminal. In mixed and positive characteristic this then follows from the liftablity of $-1$ curves, see \cite{KU}. This argument does not work in purely positive characteristic but provides motivation for our approach. Instead we adapt a termination argument for terminal pairs, largely due to Shokurov \cite{shokurov1986nonvanishing}.
+ We rely heavily on \autoref{partial-termination}. The key remaining argument is if $X \to T$ is a klt pair then there is an open set on which every contraction is horizontal. We prove this by reducing to the case that $(X,\Delta)$ is terminal. In mixed and positive characteristic this then follows from the liftablity of $-1$ curves, see \cite{KU}. This argument does not work in purely positive characteristic but provides motivation for our approach. Instead we adapt a termination argument for terminal pairs, largely due to Shokurov \cite{shokurov1986nonvanishing}.
  
-	We will also need the following construction, essentially due to \cite{mumford1961topology}.
+We will also need the following construction, essentially due to \cite{mumford1961topology}.
 
 \begin{lemma}
 	
@@ -289,11 +289,10 @@ We can extend this immediately to klt pairs.
 		$T$ is always quasi-compact so this is equivalent to asking for $K_{X}+\Delta \sim K_{X_{p}}+\Delta_{p}$ with $(X_{p},\Delta_{p})$ klt for each $p \in T$ where $X_{p}=X \times T_{p}$ for $T_{p}$ the localisation at $p$.
 	\end{remark}
 	
-	Being rlt can be quite a sensitive condition. In particular it's not true that if $B \leq B'$ and $(X,B')$ is rlt that $(X,B)$ must be rlt. For example, for any choice of $B$ and sufficiently ample $H$, on $X$ klt and $\mathbb{Q}$-factorial, we have that $(X,B+H)$ is rlt, though $B$ might not be.
-	
+	Being rlt can be quite a sensitive condition. In particular it's not true that if $B \leq B'$ and $(X,B')$ is rlt that $(X,B)$ must be rlt. For example, for any choice of $B$ and sufficiently ample $H$, on $X$ klt and $\mathbb{Q}$-factorial, we have that $(X,B+H)$ is rlt, though $B$ might not be.	
 	It fits well in the context of polytopes however as if $B_{i}$ are rlt then so is $\sum_{1}^{n} \lambda_{i}B_{i}$ for any choices of $\lambda_{i} \geq 0$ with $\sum \lambda_{i} \leq 1$.
 	
-	The psuedoeffective cone is the closure of the big cone, and $D$ is big if and only if its pullback to the generic fibre of $X \to T$ is. Hence if $U_{i}$ is any open cover of $T$, then $D$ is psuedoeffective if and only if $D|_{U_{i}}$ is. In particular an rlc pair is psuedoeffective (resp. big) if and only if its witnesses are.
+	The pseudo-effective cone is the closure of the big cone, and $D$ is big if and only if its pullback to the generic fibre of $X \to T$ is. Hence if $U_{i}$ is any open cover of $T$, then $D$ is pseudo-effective if and only if $D|_{U_{i}}$ is. In particular an rlc pair is pseudo-effective (resp. big) if and only if its witnesses are.
 	
 %	\begin{definition}
 %		Let $\phi:X \dashrightarrow Y$ be a birational contraction. Take a divisor $D$ and write $D'=\phi_{*}D$. 
@@ -303,9 +302,9 @@ We can extend this immediately to klt pairs.
 %		\[p^{*}D=q^{*}D'+E\]
 %		and $E \geq 0$ is $q$ exceptional (resp. $E \geq 0$ is $q$ exceptional and contains the strict transform of every $\phi$ exceptional divisor in its support). 
 %		
-%		If $(X,\Delta)$ is a psuedoeffective lc pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
+%		If $(X,\Delta)$ is a pseudo-effective lc pair then $\phi$ is a weak log canonical (wlc) model if $\phi$ is $K_{X}+\Delta$ non-positive with $K_{Y}+\Delta_{Y}$ nef, where $\Delta_{Y}=\phi_{*}\Delta$. As $\phi$ is non-positive $(Y,\Delta_{Y})$ is always lc and if $(X,\Delta)$ is klt then so is $(Y,\Delta_{Y})$. 
 %		
-%		If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log minimal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
+%		If in fact $\phi$ is $K_{X}+\Delta$ negative, $Y$ is $\mathbb{Q}$-factorial, and $(Y,\Delta_{Y})$ is dlt then $\phi$ is a log terminal model. Again if $(X,\Delta)$ is dlt then the dlt condition on $(Y,\Delta_{Y})$ is automatic as $\phi$ is negative.
 %		
 %		If instead $\phi:X \dashrightarrow Y$ is a rational map then it is an ample model for $D$ if there is $H$ ample on $Y$ such that $p^{*}D\sim_{\mathbb{R}}q^{*}H+E$ where $E \geq 0$ is such that $E \leq B$ for any $p^{*}D \sim_{\mathbb{R}} B \geq 0$.
 %	\end{definition}
@@ -315,7 +314,7 @@ We can extend this immediately to klt pairs.
 
 	\begin{definition}
 		Let $\phi:X \dashrightarrow Y$ be a rational map. If $U_{i}$ is an open cover of $T$ we write $\phi_{i}:X_{i}\dashrightarrow Y_{i}=Y\times U_{i}$.
-		If $(X,\Delta)$ is a psuedoeffective rlc pair witnessed by $(X_{i},\Delta_{i})$ then $\phi$ is a weak log canonical (wlc) model of $(X,\Delta)$ if $\phi_{i}$ is an $(X,\Delta_{i})$ wlc model for each $i$. Equally if $(X,\Delta)$ is rlt then $\phi$ is a log minimal model of $(X,\Delta)$ if and only if each $\phi_{i}$ is a log minimal model of $(X_{i},\Delta_{i})$.
+		If $(X,\Delta)$ is a pseudo-effective rlc pair witnessed by $(X_{i},\Delta_{i})$ then $\phi$ is a weak log canonical (wlc) model of $(X,\Delta)$ if $\phi_{i}$ is an $(X,\Delta_{i})$ wlc model for each $i$. Equally if $(X,\Delta)$ is rlt then $\phi$ is a log terminal model of $(X,\Delta)$ if and only if each $\phi_{i}$ is a log terminal model of $(X_{i},\Delta_{i})$.
 	\end{definition}
 	
 	By \autoref{equiv} these definitions are independent of the choice of witnesses. In particular if $(X,\Delta)$ is lc then the definition of wlc models agrees with usual one, equally if it is klt then the definition of log terminal model is unchanged.
@@ -339,7 +338,6 @@ We can extend this immediately to klt pairs.
 
 	The MMP for these pairs lifts naturally from the klt case. We work in the setting of \cite{bhatt2020}, however the rlt (resp. rlc) case always follows from corresponding results for klt (resp. lc) pairs.
 	
-	
 	\begin{theorem}[rlc Cone Theorem]
 		Let $(X,\Delta)/T$ be an rlc $\mathbb{Q}$-factorial threefold pair $R$-pair with $\mathbb{R}$ boundary.	Then there is a countable collection of curves $\{C_{i}\}$ on $X$ such that:
 		\begin{enumerate}
@@ -357,7 +355,7 @@ We can extend this immediately to klt pairs.
 		
 		Suppose that $(X,\Delta)$ has witnesses $(X_{i}=X \times U_{i}, \Delta_{i})$ for some open cover $U_{i}$ of $T$. Then $U_{i}$ is still quasi-projective over $R$ and the Cone Theorem holds for each $(X_{i},\Delta_{i})$. Let $\gamma_{i,j}$ be the $K_{X_{i}}+\Delta_{i}$ negative extremal curves. These are also $K_{X}+\Delta$ negative, though they need not be extremal on $X$.
 		
-		Suppose now that $R$ is a $K_{X}+\Delta$ negative extremal ray. Let $r\in R$ be a non-zero cycle. Then $r$ is the limit of some effective cycles $r^{k}$. We write $r_{i}^{k}$ for the part of $r$ supported over $U_{i}$. Then $r_{i}=\lim r^{k}_{i}$ is still pseudo-effective, moreover $r-r_{i}=\lim r^{k}-r^{k}_{i}$ is also. Since $R$ is extremal we must have for each $i$ that either $r_{i}=0$ or $r=t_{i}r_{i}$ for some $t_{i} > 0$. There must be some $i$ with $r_{i} \neq 0$, else we would have $r=0$. However $r_{i}$ then generates an extremal $K_{X_{i}}+\Delta_{i}$ negative ray, hence $r=t_{i}r_{i}=t\gamma_{i,j}$ for some $j$ and some $t>0$. Thus the $\gamma_{i,j}$ generate all the $K_{X}+\Delta$ negative extremal rays. $(1)$ and $(3)$ follow immediately by \cite[Theorem H]{bhatt2020}. Since there are finitely many $U_{i}$ if the rays accumulated on $X$ we could chose a subsequence consisting of extremal rays coming from some $X_{i}$ which would then accumulate on $X_{i}$, thus $2$ also holds.
+		Suppose now that $R$ is a $K_{X}+\Delta$ negative extremal ray. Let $r\in R$ be a non-zero cycle. Then $r$ is the limit of some effective cycles $r^{k}$. We write $r_{i}^{k}$ for the part of $r$ supported over $U_{i}$. Then $r_{i}=\lim r^{k}_{i}$ is still pseudo-effective, moreover $r-r_{i}=\lim r^{k}-r^{k}_{i}$ is also. Since $R$ is extremal we must have for each $i$ that either $r_{i}=0$ or $r=t_{i}r_{i}$ for some $t_{i} > 0$. There must be some $i$ with $r_{i} \neq 0$, else we would have $r=0$. However $r_{i}$ then generates an extremal $K_{X_{i}}+\Delta_{i}$ negative ray, hence $r=t_{i}r_{i}=t\gamma_{i,j}$ for some $j$ and some $t>0$. Thus the $\gamma_{i,j}$ generate all the $K_{X}+\Delta$ negative extremal rays. $(1)$ and $(3)$ follow immediately by \autoref{WLC}. Since there are finitely many $U_{i}$ if the rays accumulated on $X$ we could chose a subsequence consisting of extremal rays coming from some $X_{i}$ which would then accumulate on $X_{i}$, thus $2$ also holds.
 	\end{proof}
 
 	\begin{theorem}[rlt Basepoint Free Theorem]
@@ -386,13 +384,13 @@ We can extend this immediately to klt pairs.
 	\end{proof}
 
 \begin{theorem}[MMP for rlt pairs]\label{rltmmp}
-	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary, then we can run a $K_{X}+\Delta$ MMP. If $K_{X}+\Delta$ is pseudo-effective then this terminates with a log terminal model, otherwise it ends in a Mori fibre space. If the output $X \dashrightarrow Y$ is a log terminal model then $K_{Y}+\Delta_{Y}$ is semiample.
+	Let $(X,\Delta)/T$ be a threefold rlt $R$-pair with $\mathbb{R}$-boundary, then we can run a $K_{X}+\Delta$ MMP. If $K_{X}+\Delta$ is pseudo-effective then this terminates with a good log terminal model, otherwise it ends in a Mori fibre space.
 \end{theorem}
 
 
 \begin{proof}
 	
-	Existence of the claimed MMPs and their termination is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log terminal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $K_{Y}+\Delta_{Y}$ is a good log minimal model by \autoref{Main_Abund1}.
+	Existence of the claimed MMPs and their termination is immediate from the above results. Suppose then $\phi:X \dashrightarrow Y$ is a log terminal model, since semiampleness is checked locally over the base we can assume that $(X,\Delta)$ is klt. Then $K_{Y}+\Delta_{Y}$ is a good log terminal model by \autoref{Main_Abund1}.
 
 \end{proof}
 
@@ -557,7 +555,7 @@ We can extend this immediately to klt pairs.
 
 
 	\begin{theorem}\cite[Theorem 9.33]{bhatt2020}
-		Suppose that $X$ is $\mathbb{Q}$-factorial and let $C$ be a klt polytope in $\mathcal{L}_{A}(V)$ for $A$ big. There is a finite collection of log terminal models $\phi_{i}: X \dashrightarrow Y_{i}$ such that  every $B \in \mathcal{E}(C)$ has some $j$ with $\phi_{j}$ a log terminal model of $(X,B)$. 
+		Suppose that $X$ is $\mathbb{Q}$-factorial and let $C$ be a klt polytope in $\mathcal{L}_{A}(V)$ for $A\geq 0$ big. There is a finite collection of log terminal models $\phi_{i}: X \dashrightarrow Y_{i}$ such that every $B \in \mathcal{E}(C)$ has some $j$ with $\phi_{j}$ a log terminal model of $(X,B)$. 
 	\end{theorem}
 	
 	
@@ -721,14 +719,14 @@ We can extend this immediately to klt pairs.
 	\end{proof}
 
 	\begin{lemma}\cite[Lemma 3.6]{hacon2009sarkisov}\label{amp-geo}
-		Let $(X,\Delta)/T$ be an rlt pair. Suppose that $B-\Delta$ is ample and $f\colon X \dashrightarrow Y$ is an ample model for $K_{X}+B$. If $Y$ is $\mathbb{Q}$-factorial, then $f$ is a log terminal model for $(X,\Delta)$.
-	\end{lemma}
+		Let $(X,\Delta)/T$ be an rlt threefold pair and $f\colon X \dashrightarrow Y$ a birational contraction of $\mathbb{Q}$-factorial projective $T$-schemes. Suppose that $B-\Delta$ is ample and $f$ is an ample model for $K_{X}+B$. Then $f$ is a log terminal model for $(X,\Delta)$.
+\end{lemma}
 
-\begin{lemma}\label{geo}
-	Suppose that $f_{i}: (X,\Delta) \to (Y_{i},\Delta_{i})$ for $i=1,..n$ are a finite collection of $\mathbb{Q}$-factorial Mori Fibre spaces obtained by running an MMP for an rlt pair $(X,\Delta)$ with $X$ regular. Then there is a geography $(C,A,V)$ for $(X,\Delta)$ of dimension at most $n$ such that every $\mathcal{D}_{f_{i}}$ is a country. 
+	\begin{lemma}\label{geo}
+	Suppose that $f_{i}: (X,\Delta) \to (Y_{i},\Delta_{i})$ for $i=1,..n$ are a finite collection of $\mathbb{Q}$-factorial Mori Fibre spaces obtained by running an MMP for a rlt threefold pair $(X,\Delta)$ with $X$ regular. Then there is a geography $(C,A,V)$ for $(X,\Delta)$ of dimension at most $n$ such that every $\mathcal{D}_{f_{i}}$ is a country. 
 	
 	Moreover if $g_{i}:Y_{i}\to Z_{i}$ are the Mori Fibrations and we write $h_{i}=g_{i}\circ f_{i}$. Then we may choose $C$ such that $\mathcal{D}_{h_{i}}$ are borders of the $\mathcal{D}_{f_{i}}$ and their interiors are connected by a path through the border of $\mathcal{E}(C)$ contained entirely in the interior of $C$.
-\end{lemma}
+	\end{lemma}
 
 \begin{proof}
 
@@ -738,7 +736,7 @@ We can extend this immediately to klt pairs.
 	\begin{itemize}
 		\item $(X,H+A)$ is klt,
 		\item the $A_{i} = g_{i}^{*}A'_{i}-(K_{Y_{i}}+\Delta_{i}+f_{i,*}(A+H))$ are ample,
-		\item $(X,\Delta+A+H)$ is an rlt pair which is not psuedoeffective, and
+		\item $(X,\Delta+A+H)$ is an rlt pair which is not pseudo-effective, and
 		\item each $f_{i}$ is $(K_{X}+\Delta+A+H)$ negative.
 	\end{itemize}
 
@@ -777,7 +775,7 @@ We can extend this immediately to klt pairs.
 %	
 %	Suppose now that $g_{i}:(Y_{i},\Delta_{i}) \to Z_{i}$ is a Mori Fibre Space, in which case there is such a $g_{j}:Y_{j} \to Z_{j}$ for any other $j$. Pick $A'_{i}$ ample on $Z_{i}$ such that $g_{i}^{*}A_{i}-(K_{Y_{i}}+\Delta_{i})$ is ample. 
 %	
-%	We may choose $H$ ample on $X$ whose components span $NS(X)$ sufficiently small together with $A$ ample such that $A_{i} = g_{i}^{*}A'_{i}-(K_{Y_{i}}+\Delta_{i}+f_{i,*}(A+H))$ is ample and that $(X,\Delta+A+H)$ is an rlt which is not psuedoeffective. We may pick $A$ such that it avoids the exceptional loci of the $f_{i}$.
+%	We may choose $H$ ample on $X$ whose components span $NS(X)$ sufficiently small together with $A$ ample such that $A_{i} = g_{i}^{*}A'_{i}-(K_{Y_{i}}+\Delta_{i}+f_{i,*}(A+H))$ is ample and that $(X,\Delta+A+H)$ is an rlt which is not pseudo-effective. We may pick $A$ such that it avoids the exceptional loci of the $f_{i}$.
 %	
 %	As before we can take $B_{i} \sim f_{i}^{*}A_{i}$ such that each $(X,\Delta+H+A+B_{i})$ is rlt. Moreover we can choose the $B_{i}$ such that they share no components with $A$. Indeed the augmented base locus of $B_{i}$ is precisely the exceptional locus of $f_{i}$, so by \autoref{bertini} we are free to choose them such that the $(X,\Delta+B_{i})$ all have witnesses in some $W$ for which $(X,\Delta+H+A+B_{i})$ have witnesses in $W_{A+H}$.
 %	
@@ -830,7 +828,7 @@ We can extend this immediately to klt pairs.
 
 Fix a positive dimensional quasi-projective $R$ scheme, $T$. Suppose that $f:X \to Z$, $g:Y \to W$ are two Mori Fibre Spaces, projective and surjective over $T$. We say that they are Sarkisov related if they are both outputs of an MMP from the same $\mathbb{Q}$-factorial rlt pair. In particular we require $X,Y$ to be $\mathbb{Q}$-factorial. 
 
-A sarkisov link $s:X \dashrightarrow Y$ is one the following.
+A Sarkisov link $s:X \dashrightarrow Y$ is one the following.
 \[\begin{tikzcd}
 X' \arrow[d] \arrow[r, dotted] \arrow[r, "I", phantom, bend left=49] & Y \arrow[d]  & X' \arrow[r, dotted] \arrow[d] \arrow[r, "II",phantom, bend left=49] & Y' \arrow[d] & X \arrow[r, dotted] \arrow[d] \arrow[r, "III", phantom, bend left=49] & Y' \arrow[d] & X \arrow[d] \arrow[rr, dotted] \arrow[rr, "IV",phantom, bend left] &   & Y \arrow[d]       \\
 X \arrow[d]                                                          & W \arrow[ld] & X \arrow[d]                                               & Y \arrow[d]  & Z \arrow[rd]                                              & Y \arrow[d]  & Z \arrow[rd, "p"]                                          &   & W \arrow[ld, "q"'] \\
@@ -846,11 +844,11 @@ Such that the following holds:
 
 We realise these Sarkisov links inside two dimensional geographies as follows.
 
-Fix $X\to T$ over $R$ and a geography $(C,A,V)$ on $X$ of dimension $2$.
+Fix $X\to T$ a threefold over $R$ and a geography $(C,A,V)$ on $X$ of dimension $2$.
 
-Let $\Delta$ be a point in the boundary of $\mathcal{E}(C)$ but in the interior of $C$. Let $\mathcal{T}_{1}=\mathcal{D}_{f_{1}},..., \mathcal{T}_{k}=\mathcal{D}_{f_{k}}$ be the countries which meet $\Delta$. Let $\mathcal{B}_{i}$ be the borders $\mathcal{T}_{i}$ meeting $\Delta$ such that after reordering we have $\mathcal{B}_{i}=\mathcal{T}_{i}\cap \mathcal{T}_{i+1}$ for $1 \leq i \leq k-1$. Then $\mathcal{B}_{0}, \mathcal{B}_{k}$ are contained in the boundary of $\mathcal{E}(C)$. Let $g_{i}:X \to S_{i}$ be the ample models associated to the interiors of $\mathcal{B}_{i}$
+Let $\Delta$ be a point in the boundary of $\mathcal{E}(C)$ but in the interior of $C$. Let $\mathcal{T}_{1}=\mathcal{D}_{f_{1}},..., \mathcal{T}_{k}=\mathcal{D}_{f_{k}}$ be the countries which meet $\Delta$. Let $\mathcal{B}_{i}$ be the borders $\mathcal{T}_{i}$ meeting $\Delta$ such that after reordering we have $\mathcal{B}_{i}=\mathcal{T}_{i}\cap \mathcal{T}_{i+1}$ for $1 \leq i \leq k-1$. Then $\mathcal{B}_{0}, \mathcal{B}_{k}$ are contained in the boundary of $\mathcal{E}(C)$. Let $g_{i}:X \to Z_{i}$ be the ample models associated to the interiors of $\mathcal{B}_{i}$
 
-Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow W$ and $T=S_{k}$. Then we have $p,q$ with $p \circ \phi=g_{0}$ and $q \circ \psi =g_{k}$.
+Relabel $\phi=f_{0}:X \dashrightarrow Y$, $Z=Z_{0}$, $\psi=f_{k}\dashrightarrow W$ and $T=Z_{k}$. Then we have $p,q$ with $p \circ \phi=g_{0}$ and $q \circ \psi =g_{k}$.
 
 
 %	. Let $h:X \dashrightarrow Z$ be the ample model of $\Delta$.
@@ -876,7 +874,7 @@ Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow 
 %
 
 \begin{theorem}\cite[Theorem 3.7]{hacon2009sarkisov}\label{islinked}
-		With notation as above, suppose $B$ is any divisor with $\Delta-B$ ample. Then $q:Y \to S$ and $q: W \to T$ are two Mori Fibre spaces obtained by running $(X,B)$ MMPs and they are connected by Sarkisov links.
+	With notation as above, suppose $B$ is any divisor on $X$ with $\Delta-B$ ample. Then $q:Y \to Z$ and $q: W \to T$ are two Mori Fibre spaces obtained by running $(X,B)$ MMPs and they are connected by Sarkisov links.
 \end{theorem}
 %	
 %	\begin{proof}
@@ -899,11 +897,10 @@ Relabel $\phi=f_{0}:X \dashrightarrow Y$, $S=S_{0}$, $\psi=f_{k}\dashrightarrow 
 %	\end{proof}
 
 	\begin{theorem}\label{sarkisov}
-		Fix $T$ an integral, normal, quasi-projective $R$ scheme of positive dimension. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related Mori fibre spaces of dimension $3$. Suppose they are projective and surjective over $T$. Then they are connected by Sarkisov links.
+		Fix an integral quasi-projective scheme $T$ over $R$. Let $g_{1}:Y_{1} \to Z_{1}$ and $g_{2}:Y_{2} \to Z_{2}$ be two Sarkisov related, klt Mori fibre spaces of dimension $3$, projective $T$. If the $Y_{i}$ have positive dimension image in $T$, then they are connected by Sarkisov links.
 	\end{theorem}
 
 	\begin{proof}
-		
 		By assumption these Mori fibre spaces are outputs of an MMP for some pair klt $(X,\Delta)/T$. Replacing $X$ with a suitable resolution, we may suppose that $X$ is smooth and admits morphisms $f_{i}:X \to Y_{i}$. Let $h_{i}=g_{i} \circ f_{i}$ then by Lemma $\ref{geo}$ there is a geography for $(X,\Delta)$ of dimension $2$ such that the $\mathcal{D}_{f_{i}}(C)$ are countries and the interiors of the $\mathcal{D}_{h_{i}}$ are connected by a path along the boundary of $\mathcal{E}(C)$. 
 		
 		Each ridge in this path corresponds to a Sarkisov link by \autoref{islinked}. Thus following the path gives a (non-unique) decomposition of $f_{2} \circ f_{1}^{-1} \colon Y_{1} \dashrightarrow Y_{2}$ into Sarkisov links. Since $\mathcal{E}(C)$ is a rational polytope, there are finitely many links.
