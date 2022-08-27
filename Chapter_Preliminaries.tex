@@ -421,15 +421,15 @@ While these are useful definitions in their own right, for the purposes of the M
 
 Take $X$ a normal variety over an $F$-finite field. To mirror the notion of a boundary we introduce pairs $(\mathcal{L}, \phi)$ where $\mathcal{L}$ is a line bundle and $\phi: \Fe \mathcal{L} \to \ox$. By applying duality on the regular locus, which contains all the codimension $1$ points, we observe that $\Hom_{\ox}(\Fe \mathcal{L},\ox)=H^{0}(X,\mathcal{L}^{-1}((1-p^{e})K_{X}))$. Therefore such a pair corresponds to a divisor $\Delta_{\phi} \geq 0$ with $(1-p^{e})(K_{X}+\Delta_{\phi}) \sim \mathcal{L}$. Reversing this procedure is slightly more involved. If ${(1-p^{e})(K_{X}+\Delta) \sim \mathcal{L}}$ (we sometimes write this $K_{X}+\Delta \sim_{\zp} \mathcal{L}^{-1}$) we may obtain $\phi_{\Delta}:\Fe \mathcal{L} \to \ox$, however we could also write say $(1-p^{2e})(K_{X}+\Delta) \sim \mathcal{L'}$ where $\mathcal{L'} \not\sim \mathcal{L}$. We introduce, therefore, the following notion of equivalence.
 
-First, we say that two such pairs, $(\mathcal{L}, \phi)$ and $(\mathcal{L}', \phi')$ are said to be equivalent if:
+First, we say that two such pairs, $(\mathcal{L}, \phi)$ and $(\mathcal{L}', \phi')$ are equivalent if:
 
 \begin{itemize}
-	\item There is an isomorphism $\psi: \mathcal{L} \to \mathcal{L'}$ such that following diagram commutes.
+	\item There is an isomorphism $\psi: \mathcal{L} \to \mathcal{L'}$ such that following diagram commutes; or
 	\[\begin{tikzcd}
 	\Fe \mathcal{L} \arrow[rd, "\phi"] \arrow[rr, "\Fe \psi"] &     & \Fe \mathcal{L}' \arrow[ld, "\phi'"] \\
 	& \ox &                                     
 	\end{tikzcd}\]
-	\item Or $\mathcal{L}=\mathcal{L}^{p^{e'}+1}$ and $\phi'\colon \Fe[e+e']\mathcal{L}^{p^{e'}+1}\to \ox$ is the precisely the map given by
+	\item $\mathcal{L}=\mathcal{L}^{p^{e'}+1}$ and $\phi'\colon \Fe[e+e']\mathcal{L}^{p^{e'}+1}\to \ox$ is the precisely the map given by
 		$$\Fe[e+e'](\mathcal{L}\otimes \mathcal{L}^{p^{e'}}) \xrightarrow{\Fe\phi} \Fe \mathcal{L} \xrightarrow{\phi} \ox.$$
 		
 % $$F_{*}^{m}\mathcal{L}^{k} \otimes F_{*}^{n} \mathcal{L}^{r}\cong F_{*}^{m}(\mathcal{L}^{rp^{m-n}+k}) \to F^{m}_{*}\mathcal{L}^{k}\to \ox$$ for $m>n$.
