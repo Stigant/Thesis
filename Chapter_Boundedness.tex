@@ -162,9 +162,9 @@ We will be interested in LCY varieties in which general points can be connected 
 	\end{itemize}
 \end{definition}
 
-If $X \to X'$ is a dominant morphism from $X$ uniruled/RCC/rationally connected then we may compose $U \to X \to X'$ to see that $X'$ is uniruled/RCC/rationally connected. 
+If $X \to X'$ is a dominant morphism from $X$ uniruled/RCC/rationally connected then we may compose $U \to X \to X'$ to see that $X'$ is uniruled/RCC/rationally connected.
 
-\begin{theorem}\cite[Theorem 1.2]{patakfalvi2019ordinary}\label{split}
+\begin{theorem}\cite[Theorem 1.2]{patakfalvi2019ordinary}\label{WO-unir}
 	Let $X$ be a normal, Cohen Macaulay variety with $W\mathcal{O}$-rational singularities over a perfect field of positive characteristic. Then $X$ cannot simultaneously satisfy all the following conditions.
 	\begin{enumerate}
 		\item $X$ is uniruled.
@@ -173,6 +173,15 @@ If $X \to X'$ is a dominant morphism from $X$ uniruled/RCC/rationally connected 
 	\end{enumerate}
 	If in fact $X$ is smooth then we may replace $K_{X}\sim 0$ with $K_{X} \equiv 0$.
 \end{theorem}
+
+	\begin{corollary}\label{split}
+	Let $X$ be a uniruled, $F$-split surface over a closed field of positive characteristic. If $K_{X} \equiv 0$ then $X$ has worse than canonical singularities.
+	\end{corollary}
+	\begin{proof}
+
+		Suppose for contradiction that $X$ has canonical singularities. Then we can replace $X$ with its minimal resolution and suppose that $X$ is smooth. In particular it is Cohen-Macaulay and has $W\mathcal{O}$-rational singularities and we may apply \autoref{WO-unir} to obtain the result.
+
+	\end{proof}
 
 \begin{lemma}\label{vol}\cite[Lemma 2.5]{jiang2018birational}
 	Suppose $X$ is projective and normal, $D$ is an $\mathbb{R}$-Cartier divisor and $S$ is a basepoint free normal and prime divisor. Then for any $q >0$,
@@ -287,7 +296,9 @@ Alexeev shows boundedness over a fixed field, however it is not immediately clea
 
 
 \section{Conic Bundles}
-We start with some useful results on finite morphisms and klt singularities.
+
+	In this section the ground field will always be algebraically closed of characteristic $p> 0$. In some results we put additional restrictions on the characteristic.
+	We start with some useful results on finite morphisms and klt singularities.
 
 \begin{definition}
 	Take a finite, separable and dominant morphism of normal varieties $f\colon X \to Y$.
@@ -330,9 +341,9 @@ If $f$ is generically finite of degree $d <p$ then it is always divisorially tam
 	
 	At $E'$ we can write $$K_{Y'}= \pi'^{*}(K_{X'}+\Delta')+a(E',X',\Delta')E'=g^{*}\pi^{*}(K_{X}+\Delta)+a(E',X',\Delta')E'$$
 	essentially by definition. Conversely however we have $K_{Y'}=g^{*}K_{Y}+\delta_{E'}E'$ which may be rewritten as 
-	$$K_{Y}'=g^{*}(\pi^{*}(K_{X}+\Delta)+a(E,X,\Delta)E)+\delta_{E'}E'.$$
+	$$K_{Y'}=g^{*}(\pi^{*}(K_{X}+\Delta)+a(E,X,\Delta)E)+\delta_{E'}E'.$$
 	
-	In particular equating the two descriptions, as $\delta_{E'}=r_{E'}-1$ we have that
+	In particular equating the two descriptions, as $\delta_{E'}=r_{E'}-1$ by \autoref{finite adjunction}, we have that
 	\[r_{E'}a(E,X,\Delta)+(r_{E'}-1)=a(E',X',\Delta')\]
 	and thus $a(E,X,\Delta)+1=\frac{1}{r_{E'}}(a(E',X',\Delta')+1)$ with $1 \leq r_{E'} \leq d$.
 	
@@ -364,10 +375,9 @@ Suppose, however, that $(X,\Delta) \to Z$ is a tame conic bundle. We may take a 
 	
 	Suppose then $g\colon Z' \to Z$ is generically finite. From above, and by Stein factorisation we may freely suppose that $g$ is finite. Then the base change morphism $g'\colon X' \to X$ is a finite morphism of normal varieties and we may induce $\Delta'$ with $g'^{*}(K_{X}+\Delta)=K_{X'}+\Delta'$. Again the horizontal components of $\Delta'$ are precisely the base changes of the horizontal components of $\Delta$. 
 	
-	It suffices to show then that if $D \to Z$ is divisorially tamely ramified then $D' \to Z'$, the base change, is also divisorially tamely ramified. Certainly $D' \to Z'$ is still separable. Suppose $C$ is any curve on $Z$ and $C'$ a curve on $Z'$ lying over it. In turn take any $C_{D'}$ lying over $C'$ on $D'$. Then $C_{D'}$ is the base change of some $C_{D}$. Since $C_{D} \to C$ is separable, so too is $C_{D'} \to C'$. Equally as the ramification indices of $C', C_{D}$ not divisible by $p$, neither can the ramification index of $C_{D'}$ over $C_{D}$ be. This same argument holds after base change by any higher birational model of $Z$, and by
-	\cite[Theorem VI.1.3]{k-rat-curves} every valuation with centre on $Z'$ is can be realised on the pullback of some such model. Thus $D' \to Z'$ is divisorially tamely ramified.
+	It suffices to show then that if $D$ is a horizontal divisor on $X$ such that $D \to Z$ is divisorially tamely ramified then $D' \to Z'$, the base change, is also divisorially tamely ramified. Certainly $D' \to Z'$ is still separable. Suppose $C$ is any curve on $Z$ and $C'$ a curve on $Z'$ lying over it. In turn take any $C_{D'}$ lying over $C'$ on $D'$. Then $C_{D'}$ is the base change of some $C_{D}$. Since $C_{D} \to C$ is separable, so too is $C_{D'} \to C'$. Equally as the ramification indices of $C', C_{D}$ are not divisible by $p$, neither can the ramification index of $C_{D'}$ over $C_{D}$ be. This same argument holds after base change by any higher birational model of $Z$, and by \cite[Theorem VI.1.3]{kollar1999rational} every valuation with centre on $Z'$ is can be realised on the pullback of some such model. Thus $D' \to Z'$ is divisorially tamely ramified and hence $(X',\Delta') \to Z'$ is tame.
 	
-	It is enough to show that $X' \to X$ is divisorially tamely ramified after taking base changing by higher birational model of $Z$. In particular, after taking a flatification we may assume $f\colon X \to Z$ is flat. Now suppose $D$ is a divisor on $X$, lying over some curve $C$ on $Z$. We have $f^{*}C=\sum E_{i}$ with $E_{0}=D$. Let $C_{j}$ be the curves lying over $C$ in $Z'$, then if $E_{i,j}$ are the divisors lying over $E_{i}$, for some fixed $i$, they are in one-to-one correspondence with the $C_{j}$. We have $g'^{*}f^{*}C=\sum r_{i,j}E_{i,j}=\sum_{j} r_{i}\sum _{i}E_{j}$ and thus none of the $r_{i,j}$, in particular the $r_{0,j}$ are divisible by $p$. Moreover the $E_{0,j} \to E_{0}$ must be separable since the $C_{j} \to C$ are.
+	It is enough to show that $X' \to X$ is divisorially tamely ramified after base changing by a higher birational model of $Z$. In particular, after taking a flatification we may assume $f\colon X \to Z$ is flat. Now suppose $D$ is a divisor on $X$, lying over some curve $C$ on $Z$. We have $f^{*}C=\sum E_{i}$ with $E_{0}=D$. Let $C_{j}$ be the curves lying over $C$ in $Z'$, then if $E_{i,j}$ are the divisors lying over $E_{i}$, for some fixed $i$, they are in one-to-one correspondence with the $C_{j}$. We have $g'^{*}f^{*}C=\sum r_{i,j}E_{i,j}=\sum_{j} r_{i}\sum _{i}E_{j}$ and thus none of the $r_{i,j}$, in particular the $r_{0,j}$ are divisible by $p$. Moreover the $E_{0,j} \to E_{0}$ must be separable since the $C_{j} \to C$ are.
 	
 	The same holds after taking a higher birational model of $X$, and thus $X' \to X$ is divisorially tamely ramified as claimed.
 	
@@ -376,11 +386,11 @@ Suppose, however, that $(X,\Delta) \to Z$ is a tame conic bundle. We may take a 
 In practice we deal exclusively with tame conic bundles arising in the following fashion.
 
 \begin{lemma}\label{S2}
-	Suppose that $(X,\Delta)$ is klt and equipped with a Mori fibre space structure over a surface $Z$ and the horizontal components of $\Delta$ have coefficients bounded below by $\delta$. Then if $X$ is defined over a field of characteristic $p > \frac{2}{\delta}$, $f\colon (X,\Delta) \to Z$ is a tame conic bundle.
+	Suppose that $(X,\Delta)$ is klt and LCY, equipped with a Mori fibre space structure over a surface $Z$ and the horizontal components of $\Delta$ have coefficients bounded below by $\delta$. Then if $X$ is defined over a field of characteristic $p > \frac{2}{\delta}$, $f\colon (X,\Delta) \to Z$ is a tame conic bundle.
 \end{lemma}
 \begin{proof}
 	
-	Since $\delta <1$, the characteristic is larger than $2$ and the general fibre is necessarily a smooth rational curve, in particular $X$ is a conic bundle. Let $G$ be the generic fibre, so that $(G,\Delta_{G})$ is klt and $G$ is also smooth rational curve. Then if $D$ is some horizontal component of $\Delta$ the degree of $f\colon D \to Z$ is precisely the degree of $D|_{G}$. However $\deg \delta D|_{G} <2$ and thus $\deg D < p$. Replacing $D$ by its normalisation, $D'$ does not change the degree, so $D'\to Z$ has degree $<p$ and thus is divisorially tamely ramified.
+	Since $\delta <1$, the characteristic is larger than $2$ and the general fibre is necessarily a smooth rational curve, in particular $X$ is a conic bundle. Let $G$ be the generic fibre, so that $(G,\Delta_{G})$ is klt and $G$ is also smooth rational curve. Then if $D$ is some horizontal component of $\Delta$ the degree of $f\colon D \to Z$ is precisely the degree of $D|_{G}$. However $\deg \delta D|_{G} < \deg \Delta|_{G} =-2$ and thus $\deg D < p$. Replacing $D$ by its normalisation, $D'$ does not change the degree, so $D'\to Z$ has degree $<p$ and thus is divisorially tamely ramified.
 \end{proof}
 
 \begin{remark}
@@ -388,7 +398,7 @@ In practice we deal exclusively with tame conic bundles arising in the following
 \end{remark}
 
 \begin{theorem}\label{cbf}
-	Let $f\colon (X,\Delta) \to Z$ be a sub $\epsilon$-klt, tame conic bundle. Then for some choice of $M\sim_{\mathbb{Q}} M_{Z'}$ we have $(Z,D_{Z}+M)$ $\epsilon$-sub klt. If in fact $\Delta \geq 0$, we may take $D_{Z},M$ to be effective also.
+	Let $f\colon (X,\Delta) \to Z$ be a sub $\epsilon$-klt, tame conic bundle. Then for some choice of $M\sim_{\mathbb{Q}} M_{Z}$ we have $(Z,D_{Z}+M)$ sub $\epsilon$-klt. If in fact $\Delta \geq 0$, we may take $D_{Z},M$ to be effective also.
 \end{theorem}
 \begin{remark}
 	The implicit condition that $(X,\Delta)$ is a threefold pair is necessary only in that it assures the existence of log resolutions. This result holds in dimension $d$ so long as the existence of log resolutions of singularities holds in dimensions $d,d-1$.
@@ -397,7 +407,7 @@ In practice we deal exclusively with tame conic bundles arising in the following
 We will prove this in several steps. First we consider the case that $\Delta^{h}$, the horizontal part of $\Delta$, is a union of sections of $f$. In this setting we have an even stronger result. After moving to a higher birational model, we have that $(Z,D_{Z})$ is klt and $M_{Z}$ is semiample.
 
 \begin{lemma}\label{ShokurovAdjunction}
-	Suppose that $f\colon (X,\Delta) \to Z$ is a sub $\epsilon$-klt conic bundle with $\Delta^{h}$ effective and with support that is generically a union of sections of $f$, then there is $Z'\to Z$ a birational morphism with $(Z',D_{Z'})$ sub $\epsilon$-klt and $M_{Z'}$ semiample. In particular for some choice of $M\sim M_{Z'}$ we have $(Z,D_{Z}+f_{*}M)$ sub $\epsilon$-klt. 
+	Suppose that $f\colon (X,\Delta) \to Z$ is a sub $\epsilon$-klt conic bundle with $\Delta^{h}$ effective and with support that is generically a union of sections of $f$, then there is $\pi \colon Z'\to Z$ a birational morphism with $(Z',D_{Z'})$ sub $\epsilon$-klt and $M_{Z'}$ semiample. In particular for some choice of $M\sim M_{Z'}$ we have $(Z,D_{Z}+\pi_{*}M)$ sub $\epsilon$-klt.
 \end{lemma}
 \begin{proof}
 	This result is well known and essentially comes from \cite{prokhorov2009towards}. Details specific to positive characteristic can be found in \cite[Section 4]{das2016adjunction}, \cite[Lemma 3.1]{witaszek2017canonical} and \cite[Lemma 6.7]{cascini2013base}
@@ -412,7 +422,7 @@ We will prove this in several steps. First we consider the case that $\Delta^{h}
 \end{proof}
 
 \begin{lemma}
-	Suppose that $Z$ is as given above and $Z'\to Z$ is the birational model found in the proof with $M_{Z'}$ semiample. Suppose further that $\pi\colon Y \to Z'$ is birational then $\pi^{*}M_{Z'}=M_{Y}$. 
+	Suppose that $Z$ is as given above and $Z'\to Z$ is the birational model found in the proof with $M_{Z'}$ semiample. Suppose further that $Y$ is a normal variety admitting a birational morphism $\pi\colon Y \to Z'$. If $M_{Y}$ is the moduli part coming from the induced conic bundle $X_{Y} \to Y$ then $\pi^{*}M_{Z'}=M_{Y}$.
 \end{lemma}
 \begin{proof}
 	
@@ -423,14 +433,14 @@ We will prove this in several steps. First we consider the case that $\Delta^{h}
 	Write then that $M_{Z'}=\phi^{*}A$ and $M_{Y}=\chi^{*}A'$. A more careful study of the proof of the previous result would give $A=A'$ and the result follows. However for simplicity one can also note that $M_{Z'}=\pi_{*}M_{Y}=\pi_{*}\chi^{*}A'=\phi^{*}A'$, so that $M_{Y}=\pi^{*}\phi^{*}A'=\pi^{*}M_{Z'}$.		
 \end{proof}
 
-We now need to reduce to this case. This requires the following lemma, due essentially to Ambro.
+	We now reduce from the general case of \autoref{cbf} to the special case of \autoref{ShokurovAdjunction} to prove the theorem. This requires the following lemma, due essentially to Ambro.
 
 \begin{lemma}\cite[Theorem 3.2]{ambro1999adjunction}
 	Suppose that $f\colon (X,\Delta) \to Z$ is a tame conic bundle. Let $g\colon Z' \to Z$ be a finite, divisorially tamely ramified morphism of normal varieties and $(X',\Delta') \to Z'$ the induced fibration. Then $(X',\Delta') \to Z$ is tame and $g^{*}(K_{Z}+D_{Z})=K_{Z'}+D_{Z'}$ for $D_{Z'}$ the induced discriminant divisor of $(X',\Delta') \to Z'$.
 \end{lemma}
 
 \begin{proof}
-	By \autoref{tame base change}, $(X',\Delta') \to Z'$ is tame and hence $D_{Z'}$ is well defined.
+	By \autoref{tame base change}, $(X',\Delta') \to Z'$ is tame and hence $D_{Z'}$ is well defined by the discussion proceeding \autoref{tame base change}.
 	
 	It remains to show that $g^{*}(K_{Z}+D_{Z})=K_{Z'}+D_{Z'}$. To see this fix $Q$ a prime of $Z'$ and write $r_{Q}$ for the degree of the induced map onto some $P$ a prime of $Z$. 
 	
@@ -445,12 +455,12 @@ We now need to reduce to this case. This requires the following lemma, due essen
 Note that in the setup above $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ so we must have that $M_{Z'}=g^{*}M_{Z}$.
 
 \begin{lemma}
-	Suppose that $f\colon X \to Z$ is a tame conic bundle. Then there is a finite, divisorially tamely ramified morphism $g\colon Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and a birational morphism $h\colon Z'' \to Z$ such that $M_{Z''}$ is semiample.
+	Suppose that $f\colon X \to Z$ is a tame conic bundle. Then there is a finite, divisorially tamely ramified morphism $g\colon Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and a birational morphism $h\colon Z'' \to Z'$ such that $M_{Z''}$ is semiample.
 \end{lemma}
 \begin{proof}
-	Let $D$ be any horizontal component of $\Delta$ which is not a section of $f$ then $f$ restricts to a divisorially tamely ramified morphism $D \to Z$. After replacing $D$ with its normalisation and Stein Factorising, we may suppose that $D\to Z$ is finite with $D$ normal. Taking the fibre product of $X \to Z$ with the normalisation $\tilde{D}$ of $D$ we find $X' \to \tilde{D}$ satisfying the initial conditions but with the one component of $\Delta$ is now  generically a section.
+	Let $D$ be any horizontal component of $\Delta$ which is not a section of $f$ then $f$ restricts to a divisorially tamely ramified morphism $D \to Z$. After replacing $D$ with its normalisation and Stein factorising, we may suppose that $D\to Z$ is finite with $D$ normal. Taking the fibre product of $X \to Z$ with the normalisation $\tilde{D}$ of $D$ we find $X' \to \tilde{D}$ satisfying the initial conditions but with the one component of $\Delta$ is now  generically a section.
 	
-	In this fashion, we eventually get to $Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and all the horizontal components of $\Delta$ being generically sections. Hence we may apply \autoref{ShokurovAdjunction} to give the result.
+	 In this fashion, we eventually get to $Z' \to Z$ with $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ and all the horizontal components of $\Delta$ being generically sections. Hence we may apply \autoref{ShokurovAdjunction} to give the result.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{cbf}]
@@ -468,22 +478,27 @@ Note that in the setup above $g^{*}(K_{Z}+D_{Z}+M_{Z})=K_{Z'}+D_{Z'}+M_{Z'}$ so 
 	
 	We have that $M_{Y''}=\pi''^{*}M_{Z''}$, so write $B_{Y''}=\pi''^{*}B_{Z''}$ and $\frac{1}{d}g'_{*}h'_{*}B_{Y''}=B_{Y}$. Then we must have that $\pi_{*}B_{Y}=B_{Z}$ and $K_{Y}+D_{Y}+B_{Y}\sim \pi^{*}(K_{Z}+D_{Z}+B_{Z})$. Note further that $\pi^{*}B_{Z}$ and $B_{Y}$ differ only over the exceptional locus, hence $B_{Y}$ has SNC support. Indeed $D_{Y}+B_{Y}$ has SNC support. Further since $(Y'',D_{Y''}+B_{Y''})$ is sub $\epsilon$-klt and $g'_{*}h'_{*}(D_{Y''}+B_{Y''})=d(D_{Y}+B_{Y})$ it must be that $D_{Y}+B_{Y}$ have coefficients strictly less than $1-\epsilon$, thus $(Y,D_{Y}+B_{Y})$ is sub $\epsilon$-klt and therefore so is $(Z,D_{Z}+B_{Z})$.
 \end{proof}
-We also need to consider the pullbacks of very ample divisors on the base of a suitably smooth conic bundle, in particular an adjunction result is required in the next section.
 
-\begin{lemma}
-	Let $(X,\Delta) \to Z$ be a regular conic bundle. Then there is some, possibly reducible, curve $C$ on $Z$ such that for any $P \in Z$ the fibre. $F_{P}$ over $P$ is determined as follows:
+\subsection{Generic smoothness}
+
+We will also need to consider the pullbacks of very ample divisors on the base of a suitably smooth conic bundle. This is done to obtain an adjunction result which is required in the next section. We work here under the assumption the ground field is closed of positive characteristic $p>2$.
+
+	\begin{lemma}\label{disc-smooth}
+	Let $(X,\Delta) \to Z$ be a regular conic bundle. Then there is some, possibly reducible, curve $C$ on $Z$ such that for any $P \in Z$ the fibre, $F_{P}$, over $P$ is determined as follows:
 	\begin{enumerate}
 		\item If $P \in Z\setminus C$ then $F_{p}$ is a smooth rational curve.
 		\item If $P \in C\setminus \Sing(C)$ then $F_{p}$ is a the union of two rational curves meeting transversally.
 		\item If $P \in \Sing(C)$ then $F_{p}$ is a non-reduced rational curve.
 	\end{enumerate}
-	Further if $H$ is a smooth curve meeting $C$ transversely away from $\Sing(C)$ then $f^{*}(H)$ is smooth.
+	Further if $H$ is a smooth curve meeting $C$ transversely away from $\Sing(C)$ then $f^{*}H$ is smooth.
 \end{lemma}
 \begin{proof}
 	This is essentially \cite[Proposition 1.8]{sarkisov1983conic}. We sketch the proof as our statement is slightly different.
 	
 	Since $X$ is smooth $-K_{X}$ is relatively ample and defines an embedding into a $\mathbb{P}^{2}$ bundle over $Z$.
-	Fix any point $P$ in $X$ then in some neighbourhood $U$ around $P$, $X_{U}$ is given inside $\mathbb{P}^{2} \times U$ by the vanishing of $x^{t}Qx$. Here $Q$ is a diagonalisable $3\times 3$ matrix taking coefficients in $\kappa[U]$, unique up to invertible linear transformation, so we may take $C$ to be the divisor on which the rank of $Q$ is less than $3$. Then the singular points of $C$ are precisely the locus on which $Q$ has rank less than $2$. By taking a diagonalisation of $Q$ we may write $X_{U}$ as the vanishing of $\sum A_{i}x_{i}^{2}$ for some $A_{i} \in \kappa[U]$ and we obtain the classification of fibres by consideration of the rank.
+	Fix any point $P$ in $X$ then in some neighbourhood $U$ around $P$, $X_{U}$ is given inside $\mathbb{P}^{2} \times U$ by the vanishing of $x^{t}Qx$. Here $Q$ is a diagonalisable $3\times 3$ matrix taking coefficients in $\kappa[U]$, unique up to invertible linear transformation, so we may take $C$ to be the divisor on which the rank of $Q$ is less than $3$. That $Q$ has rank $3$ on some open set follows from smoothness of the generic fibre.
+
+	Then the singular points of $C$ are precisely the locus on which $Q$ has rank less than $2$. By taking a diagonalisation of $Q$ we may write $X_{U}$ as the vanishing of $\sum A_{i}x_{i}^{2}$ for some $A_{i} \in \kappa[U]$ and we obtain the classification of fibres by consideration of the rank.
 	
 	Suppose then $H$ is a smooth curve as given. Away from $C$, $f^{*}H$ is clearly smooth, so it suffices to consider the intersection with $C$, however we can see it is smooth here by computing the Jacobian using the local description of $X$ given above. 
 \end{proof}
@@ -493,35 +508,40 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 	Suppose that $V$ is a non-singular variety over an algebraically closed field of dimension $3$, $S$ a reduced surface in $V$ and $E$ a simple normal crossings divisor on $V$ then there is a sequence of blowups $\pi\colon V_{n} \to V_{n-1} \to ... V$ such that the strict transform $S_{n}$ of $S$ to $V_{n}$ is smooth. Further each blowup is the blowup of a non-singular curve or a point and the blown up subvariety is contained in the locus of $V_{i}$ on which the preimage of $S+E$ is not log smooth.
 \end{theorem}
 
-\begin{corollary}
-	Suppose $(X,\Delta,Z)$ is a regular, tame conic bundle and we fix a very ample linear system $|A|$ on $Z$.  Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ with reduced exceptional divisor $E$ such that for any sufficiently general element $H\in |A|$, its pullback $G'$ to $X'$ has $(X',E+G')$ log smooth.
+\begin{corollary}\label{c_res_1}
+	Suppose $(X,\Delta) \to Z$ is a regular, tame conic bundle and we fix a very ample linear system $|A|$ on $Z$.  Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ such that for any sufficiently general element $H\in |A|$, its pullback $G'$ to $X'$ has $(X',G'+E)$ log smooth for $E$ the reduced exceptional divisor of $\pi$.
 \end{corollary}
 \begin{proof}
 	
-	By the previous theorem we we may find birational morphism $\pi\colon X' \to X$ which is a log resolution of $(X,\Delta)$ factoring as blowups $X'=X_{n} \to X_{n-1} \to .... X_{0}=X$ of smooth subvarieties contained in the non-log smooth locus of each step.
+	By the previous theorem we may find birational morphism $\pi\colon X' \to X$ which is a log resolution of $(X,\Delta)$ factoring as blowups $X'=X_{n} \to X_{n-1} \to .... X_{0}=X$ of smooth subvarieties contained in the non-log smooth locus of each step.
 	
-	We show first a general $G'$ is smooth. At each stage we blow-up smooth curves $V_{i}$ in the non-log smooth locus. Let $G_{i}$ be the pullback of $H$ to $X_{i}$, suppose for induction it is smooth. We may assume that $f_{i,*}V_{i}=V'_{i}$ is a curve for $f_{i}\colon X_{i} \to X \to Z$ else a general $H$ avoids it and so a general $G_{i+1}$ is smooth also. Note that each vertical component of $\Delta$ is log smooth near the generic point of their image, since $X$ is a regular conic bundle, so $V_{i}$ must be contained in the strict transform of some horizontal component of $\Delta$. Since $V_{i}$ is not contracted, it follows that $V_{i} \to V_{i}'$ is separable as $(X,\Delta,Z)$ is tame. Thus as a general $H$ meets $V$ transversely, a general $G_{i}$ meets $V_{i}$ transversely and hence a general $G_{i+1}$ is smooth.
+	We show first a general $G'$ is smooth. At each stage we blow-up smooth curves $V_{i}$ in the non-log smooth locus. Let $G_{i}$ be the pullback of $H$ to $X_{i}$, suppose for induction it is smooth. That $G_{0}$ is smooth is the content of \autoref{disc-smooth} and so the base case of the induction argument holds.
 	
-	Suppose that $V$ is a curve contained in the locus on which $\pi^{-1}$ is not an isomorphism that is not contracted by $f$. Then for a general point $p$ of $V$, the fibre over $p$ is log smooth. Again we prove by induction, noting it is sufficient to show that if we blowup a curve $V'$ over $V$ then $V'$ must meet the fibre over $p$ transversally. Indeed suppose we have such a curve $V'$ and write $V''$ for the image of $V$ under $f$. Then $V' \to V \to V''$ is separable, as above, forcing $V' \to V$ to be separable also. But then $V''$ meets a general fibre of $p$ transversally.
+	We may assume that $f_{i,*}V_{i}=V_{Z,i}$ is a curve for $f_{i}\colon X_{i} \to X \to Z$ else a general $H$ avoids it and so a general $G_{i+1}$ is smooth also. Note that each vertical component of $\Delta$ is log smooth near the generic point of their image, since $X$ is a regular conic bundle, so $V_{i}$ must be contained in the strict transform of some horizontal component of $\Delta$. Since $V_{i}$ is not contracted, it follows that $V_{i} \to V_{Z,i}$ is separable as $(X,\Delta,Z)$ is tame. Thus as a general $H$ meets $V_{Z,i}$ transversely, a general $G_{i}$ meets $V_{i}$ transversely and hence a general $G_{i+1}$ is smooth. By induction then $G'=G_{n}$ is smooth.
 	
-	Suppose now that $E$ is a reduced, irreducible exceptional divisor of $X'\to X$. Let $V=\pi_{*}E$, then as before general $G$ meets $V$ transversely. Further for a general point $p$ of $V$, the fibre over $p$ is a system of log smooth curves. Finally then the intersection of a general $G'$ and $E$ contained in the disjoint union of such systems of log smooth curves, in particular it is log smooth. 
+%		We may assume that $f_{i,*}V_{i}=V_{Z,i}$ is a curve for $f_{i}\colon X_{i} \to X \to Z$ else a general $H$ avoids it and so $(X_{i+1},G_{i+1}E_{i+1})$ is still log smooth. Note that each vertical component of $\Delta$ is log smooth near the generic point of their image, since $X$ is a regular conic bundle, so $V_{i}$ must be contained in the strict transform of some horizontal component of $\Delta$. Since $V_{i}$ is not contracted, it follows that $V_{i} \to V_{Z,i}$ is separable as $(X,\Delta,Z)$ is tame. Thus as a general $H$ meets $V_{Z,i}$ transversely, a general $G_{i}$ meets $V_{i}$ transversely and hence a general $G_{i+1}$ is smooth. Suppose $H$ meets $V_{Z}$ at a point $P$ on $Z$, then since $V_{i}\to V_{Z}$ is separable, for a general $H$ we have that $V$ meets the fibre over $P$ transversely. In particular $G_{i+1} \cap E_{i+1}$ is unchanged from $G_{i} \cap E_{i}$ except for over $V_{i}$ where it consists of finitely many smooth fibres. Thus the result holds by induction.
+%
+	Suppose that $V$ is a curve contained in the locus on which $\pi^{-1}$ is not an isomorphism that is not contracted by $f$. Then for a general point $P$ of $V$, we claim that the fibre over $P$ is log smooth. As before we argue by induction, the the base case trivially true. Suppose then that we blowup a curve $V_{i}$ lying over $V$ on $X$ and $V_{Z}$ on $Z$. Then $V_{i}$ must meet the fibre over $P$ transversally. Indeed $V_{i} \to V \to V_{Z}$ is separable, as above, forcing $V_{i} \to V$ to be separable also. But then $V_{i}$ meets a general fibre transversally as claimed.
 	
-	Suppose then we fix two exceptional divisors $E_{1},E_{2}$ meeting at a curve $V$. Again we suppose that $V$ is not contracted by $f'=f \circ \pi$. Write $\pi_{*}V=V'$ and $f_{*}V=V''$. Then $V' \to V''$ is separable as before and for a general $G'$ meeting $V$ transversely, the intersection of $G$ with $f^{*}V'$ is a log smooth system of rational curves, and then $G.V \subseteq G.f^{*}V'$ is log smooth, or equally it is finitely many points with multiplicity $1$. 
+	Suppose now that $E$ is an integral exceptional divisor of $X'\to X$. Let $V=\pi_{*}E$, then as before general $G$ meets $V$ transversely if $V$ is a curve, or not at all otherwise. Suppose $V$ is a curve, then for a general point $P$ of $V$, the fibre over $P$ is a system of log smooth curves. Finally then the intersection of a general $G'$ and $E$ is a scheme of pure dimension $1$ contained in the disjoint union of such systems of log smooth curves, in particular it is log smooth.
+
+	Suppose then we fix two exceptional divisors $E_{1},E_{2}$ meeting at a curve $V$. Again we suppose that $V$ is not contracted by $f'=f \circ \pi$. Write $\pi_{*}V=V_{X}$ and $f'_{*}V=V_{Z}$. Then $V_{X} \to V_{Z}$ is separable as before and for a general $G'$ meeting $V$ transversely, the intersection of $G$ with $\pi^{*}V'$ is a log smooth system of rational curves, and then $G.V \subseteq G.\pi^{*}V_{X}$ is log smooth, or equally it is finitely many points with multiplicity $1$.
 \end{proof}
 
-\begin{theorem}
-	Let $(X,\Delta,Z)$ be a regular, tame conic bundle and $|A|$ a very ample linear system on $Z$. Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ such that for a general $H \in |A|$, the pullback $G'$ to $X'$ is smooth with $(X',\Delta'+G')$ log smooth. 
+	\begin{theorem}
+	Let $(X,\Delta) \to Z$ be a regular, tame conic bundle and $|A|$ a very ample linear system on $Z$. Then there is a log resolution $(X',\Delta') \to (X,\Delta)$ such that for a general $H \in |A|$, the pullback $G'$ to $X'$ is smooth with $(X',\Delta'+G')$ log smooth.
 \end{theorem}
 \begin{proof}
-	Write $E$ for the reduced exceptional divisor.
-	Clearly a general $G'$ avoids the intersection of any $3$ components of $\text{Supp}(\Delta')+E$, and from above $(X',G'+E)$ is log smooth. Suppose $D$ is a vertical component of $\Delta$. Then either $G$ can be assumed to avoid it, or to meet it at a smooth fibre. By the usual arguments, since the only non-contracted curves we blow up map separably onto their image, $G'$ meets $D'$ the strict transform of $D$ along a log smooth locus. Further this locus meets any exceptional divisor either transversally or not at all. Now suppose $D_{2}$ is any other component of $\text{Supp}(\Delta')+E$ which does not dominate $Z$. Then if either $D_{2}.D'$ has dimension less than $1$ or is contracted over $Z$ then a general $G'$ avoids it, so suppose otherwise. In which case $D_{2}$ must be exceptional over $X$ with image $V\subseteq D$ on $X$. However $D_{2}.D'$ is just the strict transform of $V$ inside $D'$ and, for a general $G'$, $G'.D_{2}.D$ is log smooth as required. 
+	Write $E$ for the reduced exceptional divisor. For a general $H \in |A|$ we let $G=f^{*}H$ be the pullback to $X$. We then take $X'$ as in \autoref{c_res_1}.
+
+	Clearly a general $G'$ avoids the intersection of any $3$ components of $\text{Supp}(\Delta')+E$, and from above $(X',G'+E)$ is log smooth. Suppose $D$ is a vertical component of $\Delta$. Then either $G$ can be assumed to avoid it, or to meet it at a smooth fibre. By the usual arguments, since the only non-contracted curves we blow up map separably onto their image, $G'$ meets $D'$ the strict transform of $D$ on $X'$ along a log smooth locus. Further this locus meets any exceptional divisor either transversally or not at all. Now suppose $D_{2}$ is any other component of $\text{Supp}(\Delta')+E$ which does not dominate $Z$. Then if either $D_{2}.D'$ has dimension less than $1$ or is contracted over $Z$ then a general $G'$ avoids it, so suppose otherwise. In which case $D_{2}$ must be exceptional over $X$ with image $V\subseteq D$ on $X$. However $D_{2}.D'$ is just the strict transform of $V$ inside $D'$ and, for a general $G'$, $G'.D_{2}.D$ is log smooth as required.
 	
 	It remains then to consider the horizontal components of $\Delta$. Let $D$ be any such component and $D'$ its strict transform. Since $(X,\Delta,Z)$ is tame, so is $(X',\Delta',Z)$. In particular then $D' \to Z$ is divisorially tamely ramified and so residually separated over $Z$ away from finitely many points of $Z$. Hence by Bertini's Theorem, \autoref{Bertini}, the pullback of a general $H$, which is just the intersection of a general $G'$ with $D'$ is smooth. Further as $D' \to Z$ is divisorially tamely ramified, if $V$ is any curve on $D'$ not contracted over $Z$ a general $G'|_{D'}$ meets it transversally. Hence for any other component $D_{2}$ of $\text{Supp}(\Delta')+E$ we have $(X',D'+D_{2}+G')$ log smooth for a general $G'$ and the result follows.
 \end{proof}
 
 \begin{corollary}\label{tameAdjunction}
 	Suppose $(X,\Delta,Z)$ is a terminal, sub $\epsilon$-klt, tame conic bundle. Take a general very ample $H$ on $Z$, with $G=f^{*}H$, then
-	$(G,\Delta|_{G}=\Delta_{G})$ is sub $\epsilon$-klt.
+	 $(G,\Delta|_{G}=\Delta_{G})$ is sub $\epsilon$-klt.
 \end{corollary}
 \begin{proof}
 	Throwing away finitely many points of $Z$ we may freely suppose that the conic bundle is regular.
@@ -531,49 +551,51 @@ We also need to consider the pullbacks of very ample divisors on the base of a s
 
 
 
-\section{$F$-Split Mori Fibre Spaces}
+\section{$F$-Split Mori Fibre Spaces}\label{S-MFS}
 
-\begin{theorem}\label{b-setup}
-	Let $S$ be a set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over a closed field of positive characteristic. Suppose that $(X,\Delta)$ admits a $K_{X}$ Mori fibration $f\colon (X,\Delta) \to (Z,\Delta_{Z})$ where either
+The aim of this section is to prove the following theorem.
+
+\begin{theorem}\label{setup}
+	For a field $\kappa$ of positive characteristic we let $S_{\kappa}$ be the set of $(X,\Delta)$, $\epsilon$-LCY threefold pairs with $X$ terminal, globally $F$-split and rationally chain connected over $\kappa$. We further require that $(X,\Delta)$ admits a $K_{X}$ Mori fibration $f\colon (X,\Delta) \to Z$ where either
 	\begin{enumerate}
-		\item $Z$ is a smooth rational curve, there is $H$ on $Z$ very ample of degree $1$ and a general fibre $G$ of $X \to Z$ is smooth.\\
+		\item $Z$ is a smooth rational curve, there is $H$ on $Z$ very ample of degree $1$ and a general fibre $G$ of $X \to Z$ is smooth.
 		\[\text{or}\]
-		\item $(X,\Delta) \to Z$ is a tame, terminal conic bundle and there is a very ample linear system $|A|$ on $Z$  with $A^{2} \leq c$. In which case $G$ the pullback of a sufficiently general $H \in |A|$ is smooth with $(G,\Delta_{G}=\Delta|_{G})$ $\epsilon$-klt by \autoref{tameAdjunction}.
+		\item $p>2$ and $(X,\Delta) \to Z$ is a tame, terminal conic bundle such that there is a very ample linear system $|A|$ on $Z$ with $A^{2} \leq c$. In which case $G$ the pullback of a sufficiently general $H \in |A|$ is smooth with $(G,\Delta_{G}=\Delta|_{G})$ $\epsilon$-klt by \autoref{tameAdjunction}.
 	\end{enumerate}
-	Then the set of base varieties $$S'=\{X \text{ such that } \exists \Delta \text{ with } (X,\Delta) \in S\}$$ is birationally bounded over $\mathbb{Z}$. 
+	Then the set of base varieties $$S'=\{X \text{ such that } \exists \Delta \text{ with } (X,\Delta) \in S_{\kappa} \text{ for algebraically closed } \kappa\}$$ is birationally bounded over $\mathbb{Z}$.
 \end{theorem}
 
 \begin{remark}
-	In practice this will be applied to pairs over fields of characteristic $p > 7,\frac{2}{\delta}$ with boundary coefficients bounded below by $\delta$.
+	In practice this will be applied to pairs over fields of characteristic $p > 7,\frac{2}{\delta}$ with boundary coefficients bounded below by $\delta$. The constraints on $p$ come from \autoref{smoothness} and \autoref{cbf}, via \autoref{S2}.
 \end{remark}
 
-This chapter is devoted to the proof, but the outline is as follows. We fix a general, very ample divisor $H$ on the base and write $G=f^{*}H$. Then argue that $A=-mK_{X}+nG$ is ample, for $m,n$ not depending on $X,\Delta$ or $G$. This is done by bounding the intersection of $K_{X}$ with curves not contracted by $f$ and generating an extremal ray in the cone of curves. We then show that in fact we may choose these $m,n$ such that $A$ defines a birational map, by lifting sections from $G$ using appropriate boundedness results in lower dimensions. 
+This chapter is devoted to the proof, but the outline is as follows. We fix a general, very ample divisor $H$ on the base and write $G=f^{*}H$. Then argue that $A=-mK_{X}+nG$ is ample, for $m,n$ not depending on $X,\Delta$ or $G$. This is done by bounding the intersection of $K_{X}$ with curves not contracted by $f$ and generating an extremal ray in the cone of curves. We then show that in fact we may choose these $m,n$ such that $A$ defines a birational map, by lifting sections from $G$ using appropriate boundedness results in lower dimensions. The $F$-split assumption is used to lift sections from $G$ with \autoref{vanish}, it will also be needed to apply \autoref{setup} by ensuring that the bases $Z$ are suitably bounded.
 
 If, for some $t>0$, the non-klt locus of $(X,(1+t)\Delta)$ is contracted then since $(K_{X}+(1+t)\Delta) \sim -tK_{X}$ it follows that every $-K_{X}$ negative extremal ray is generated by a curve $\gamma$ with $K_{X}.\gamma \leq \frac{6}{t}$. In particular as we have $G.C \geq 1$ for any $-K_{X}$ negative curve $C$ it must be that $-K_{X}+\frac{7}{t}G$ is ample. Clearly for any $(X,\Delta) \to Z$ there is such a $t$, however we wish to find one independent of the pair. For this we may use a result due to Jiang, the original proof is a-priori for characteristic $0$, but the proof is arithmetic in nature and holds in arbitrary characteristic.
 
 \begin{theorem}\label{Jiang}\cite[Theorem 5.1]{jiang2018birational}
 	Fix a positive integer $m$ and $\epsilon >0$ a real number. Then there is some $\lambda$ depending only on $m,\epsilon$ satisfying the following property.
 	
-	Take $(T,B)$ any smooth, projective $\epsilon$-klt surface. Write $B=\sum b_{i}B^{i}$ and suppose $K_{T}+B \equiv N-A$ for $N$ nef and $A$ ample. If $B.N,\sum b_{i}, B^{2} \leq m$ then $(T,(1+\lambda)B)$ is klt. 
+	Take $(T,B)$ any smooth, projective $\epsilon$-klt surface. Write $B=\sum b_{i}B_{i}$ and suppose $K_{T}+B \equiv N-A$ for $N$ nef and $A$ ample. If $B.N,\sum b_{i}, B^{2} \leq m$ then $(T,(1+\lambda)B)$ is klt.
 \end{theorem}
 First we show that results of this form lift to characterisations of the non-klt locus of $(X,(1+t)\Delta)$, then show how the result above may be applied here.
 \begin{lemma}
-	We use the notation of \autoref{b-setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt. Then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	 We use the notation of \autoref{setup}. Suppose $Z$ is a surface and there is $t$ such that $(G,(1+t)\Delta_{G})$ is klt. Then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 \begin{proof}
-	Let $\pi\colon X' \to X$ be a log resolution of $(X,\Delta+G)$ with $(K_{X'}+\Delta')=\pi^{*}(K_{X}+\Delta)$, then $(X',\Delta'+G')$ is log smooth and $\Delta'$ and $G$ have no common components, where $G'$ is the pullback of $G$. Now $X' \to X$ must also be a log resolution of $(X,(1+t)\Delta)$, and hence if we write $(K_{X'}+B)=\pi^{*}(K_{X}+(1+t)\Delta)$ then it is also true that $(X',B+G')$ is log smooth and that $B$ and $G'$ have no common components. Hence $(G',B|_{G'})$ is sub klt by assumption and in particular it has coefficients strictly less than $1$. 
+	Let $\pi\colon X' \to X$ be a log resolution of $(X,\Delta+G)$ with $K_{X'}+\Delta'=\pi^{*}(K_{X}+\Delta)$, then $(X',\Delta'+G')$ is log smooth and $\Delta'$ and $G$ have no common components, where $G'$ is the pullback of $G$. Now $X' \to X$ must also be a log resolution of $(X,(1+t)\Delta)$, and hence if we write $K_{X'}+B=\pi^{*}(K_{X}+(1+t)\Delta)$ then it is also true that $(X',B+G')$ is log smooth and that $B$ and $G'$ have no common components. Hence $(G',B|_{G'})$ is sub klt by assumption and in particular it has coefficients strictly less than $1$.
 	
 	Suppose $Z$ is a non-klt center of $(X,(1+t)\Delta)$ and $E$ is a prime divisor lying over $Z$ inside $X'$. Then $E$ has coefficients strictly larger than $1$ in $B$. Since $(X',B+G')$ is log smooth, it must be that $E|_{G'}$ is an integral divisor and it is trivial if and only if $E$ and $G'$ do not meet. But then $E|_{G'} =\lfloor E|_{G'} \rfloor =0$ and so $E$ does not meet $G'$. Hence neither does $H$ meet $f_{*}\pi_{*}E=f_{*}Z$. In particular if $C$ is a curve in the non-klt locus, then there is an ample divisor $H$ on $Z$ not meeting $f_{*}C$. This is possible only if $f_{*}C$ is a point. 
 \end{proof}
 
 
 \begin{lemma}
-	Using the notation of \autoref{b-setup} suppose that $Z$ is a curve and write $Y$ for the generic fibre of $f\colon X\to Z$. If there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
+	Using the notation of \autoref{setup} suppose that $Z$ is a curve and write $Y$ for the generic fibre of $f\colon X\to Z$. If there is $t$ such that $(Y,(1+t)\Delta_{Y})$ is klt, then every curve in the non-klt locus of $(X,(1+t)\Delta)$ is contracted by $f$.
 \end{lemma}
 
 \begin{proof}
 	This follows essentially as above.
-	Take a log resolution $\pi\colon (X',\Delta') \to (X,\Delta)$. Write $Y'$ for the generic fibre of $X' \to G'$. Then $(Y',\Delta'|_{Y'}) \to (Y,\Delta_{Y})$ is a log resolution. Again write $K_{X'}+B=\pi^{*}(K_{X}+(1+t)\Delta)$. Then again if $B$ has a component $D$ with coefficient at least $1$ then $D$ cannot dominate $Z$, else it would pull back to $G'$ to give a contradiction. Hence the non-klt locus of $(X,(1+t)\Delta)$ must be contracted as claimed. 
+	Take a log resolution $\pi\colon (X',\Delta') \to (X,\Delta)$. Write $Y'$ for the generic fibre of $X' \to Z$. Then $(Y',\Delta'|_{Y'}) \to (Y,\Delta_{Y})$ is a log resolution. Again write $K_{X'}+B=\pi^{*}(K_{X}+(1+t)\Delta)$. Then again if $B$ has a component $D$ with coefficient at least $1$ then $D$ cannot dominate $Z$, else it would pull back to $G'$ to give a contradiction. Hence the non-klt locus of $(X,(1+t)\Delta)$ must be contracted as claimed.
 \end{proof}
 
 \begin{lemma}
@@ -582,11 +604,11 @@ First we show that results of this form lift to characterisations of the non-klt
 \begin{proof}
 	We consider two cases. 
 	
-	Suppose first $Z$ is a curve, so the generic fibre $Y$ is a regular del Pezzo surface and $(G,\Delta_{G})$ is $\epsilon$-klt LCY. Then, by the work of Tanaka \cite[Corollary 4.8]{tanaka2019boundedness}, $(-K_{G}^{2}) \leq 9$. In particular if $\Delta_{G}=\sum \lambda_{i}D_{i}$ then $\sum \lambda_{i} \leq \Delta_{G}.(-K_{X}) \leq 9$ and $\Delta_{G}^{2} =(-K_{G})^{2} \leq 9$ and the result holds by \autoref{Jiang}. 
-	
-	Suppose then that $Z$ is a surface, so $G$ is a smooth conic bundle over $H$ a general ample divisor on $Z$. Further $(G,\Delta_{G})$ is $\epsilon$-klt and $K_{G}+\Delta_{G}\sim kF$ where $F$ is the general fibre over $H$ and $H^{2}=k \leq c$. Finally note that $\Delta_{G}^{v} \sim_{f,\mathbb{Q}} 0$.
-	
-	We may write $\Delta_{G}= \sum \lambda_{i}D_{i}+ \sum \mu_{i}F_{i}$ where $F_{i}$ are fibres over $H$ and $D_{i}$ dominate $H$. Since $F_{i}$ is a fibre and $G$ is smooth, each $F_{i}$ is reduced by the genus formula and contains at most $2$ components since $-K_{X}.F_{i}=-2$. Further $\Delta_{G}.F=(-K_{G}).F=2$ and hence $\Delta_{G}^{2}=(-K_{G}+kF)^{2}=(-K_{G}^{2})-2kK_{G}.F +(kF)^{2} \leq (-K_{G}^{2})+4c$ which in turn is bounded above by $8+4c$ due to \cite[Proposition III.21]{beauville1996complex}, since $G$ is a smooth conic bundle.
+	Suppose first $Z$ is a curve, so the generic fibre $Y$ is a regular del Pezzo surface and $(G,\Delta_{G})$ is $\epsilon$-klt LCY. Then, by the work of Tanaka \cite[Corollary 4.8]{tanaka2019boundedness}, $(-K_{G})^{2} \leq 9$. We write $\Delta_{G}=\sum \lambda_{i}D_{i}$ and since $G$ is regular we have $D_{i}.K_{G} \geq 1$. Hence $\sum \lambda_{i} \leq \Delta_{G}.(-K_{G}) \leq 9$ and $\Delta_{G}^{2} =(-K_{G})^{2} \leq 9$. We conclude the result holds by \autoref{Jiang} with $N=-K_{G}$ and $A=-2K_{G}$.
+
+	Suppose then that $Z$ is a surface. Then by \autoref{disc-smooth}$G$ is a smooth surface, geometrically over a general very ample divisor $H$ on $Z$. Further by \autoref{tameAdjunction}, $(G,\Delta_{G})$ is $\epsilon$-klt and by assumption $K_{G}+\Delta_{G}\sim kF$ where $F$ is the general fibre over $H$ and $H^{2}=k \leq c$. Finally note that $\Delta_{G}^{V} \sim_{f,\mathbb{Q}} 0$.
+
+	We may write $\Delta_{G}= \sum \lambda_{i}D_{i}+ \sum \mu_{i}F_{i}$ where $F_{i}$ are fibres over $H$ and $D_{i}$ dominate $H$. Since $F_{i}$ is a fibre and $G$ is smooth, each $F_{i}$ is reduced by the genus formula and contains at most $2$ components since $-K_{X}.F_{i}=-2$. Further $\Delta_{G}.F=(-K_{G}).F=2$ and hence $\Delta_{G}^{2}=(-K_{G}+kF)^{2}=(-K_{G})^{2}-2kK_{G}.F +(kF)^{2} \leq (-K_{G})^{2}+4c$ which in turn is bounded above by $8+4c$ due to \cite[Proposition 11.19]{buadescu2001algebraic}, since $G$ is a smooth geometrically ruled surface.
 	
 	It remains then to show that the sum of the coefficients of $\Delta_{G}$ is bounded. Note that $\sum \lambda_{i} \leq \sum \lambda_{i}D_{i}.F =\Delta_{G}.F =2$. We therefore need only bound $\sum \mu_{i}$.
 	
@@ -602,36 +624,36 @@ First we show that results of this form lift to characterisations of the non-klt
 
 
 \begin{proof}
-	Take any $n \geq \frac{7}{\lambda}$ for $\lambda$ as in the previous lemma. Then any curve, $C$, on $X$ is either contracted by $X \to Z$, in which case $-K_{X}.C>0=G.C$. Else $C$ is not contracted and we may apply the Nlc Cone Theorem, \autoref{NLCT}, to $(X,(1+\lambda)\Delta)$. It follows that $C$ is in the span of curves $\Gamma_{i}$ with $(-K_{X}+(1+\lambda)\Delta).\Gamma_{i} = -\lambda K_{X}.\Gamma_{i} \geq -6$. In either case, since $G$ is Cartier, $n> \frac{\lambda}{7}$ ensures $(-K_{X}+nG).C >0$.
+	Take any $n \geq \frac{7}{\lambda}$ for $\lambda$ as in the previous lemma. Then any curve, $C$, on $X$ is either contracted by $X \to Z$, in which case $-K_{X}.C>0=G.C$. Else $C$ is not contracted and we may apply the Nlc Cone Theorem, \autoref{WCT}, to $(X,(1+\lambda)\Delta)$. It follows that $C$ is in the span of curves $\Gamma_{i}$ with $(-K_{X}+(1+\lambda)\Delta).\Gamma_{i} = -\lambda K_{X}.\Gamma_{i} \geq -6$. In either case, since $G$ is Cartier, $n> \frac{\lambda}{7}$ ensures $(-K_{X}+nG).C >0$.
 \end{proof}
 
-\begin{theorem}
-	Let $(X,\Delta) \to Z$ and $G$ be as in \autoref{b-setup}. Then there is $t$ not depending on the pair $(X,\Delta)$ nor on $G$ with $-3K_{X}+tG$ ample and defining a birational map. 
+\begin{theorem}\label{t-ample}
+	Let $(X,\Delta) \to Z$ and $G$ be as in \autoref{setup}. Then there is $t$ not depending on the pair $(X,\Delta)$ nor on $G$ with $-3K_{X}+tG$ ample and defining a birational map.
 \end{theorem}
 \begin{proof}
-	Consider first the case that $\dim Z=1$. Then $G$ is a smooth del Pezzo surface, so $-3K_{X}$ is very ample. Let $G_{1},G_{2}$ be other general fibres and consider
+	Consider first the case that $\dim Z=1$. Then $G$ is a smooth del Pezzo surface, so $-3K_{X}$ is very ample \myworries{Globally generated? - Tanaka}. Let $G_{1},G_{2}$ be other general fibres and consider
 	\[0 \to \ox(-3K_{X}+kG-G_{1}-G_{2}) \to \ox(-3K_{X}+kG) \to \mathcal{O}_{G_{1}}(-3K_{G_{1}})\oplus \mathcal{O}_{G_{2}}(-3K_{G_{2}}) \to 0.\]
 	
 	Since $X$ is globally $F$-split $H^{i}(X,A)=0$ for all $i>0$ and $A$ ample by \autoref{vanish}. In particular then $H^{1}(X,\ox(-3K_{X}+kG-G_{1}-G_{2}))$ vanishes when $k\geq 3n+2$ for $n$ as given by the proceeding corollary. Therefore we may lift sections of $-3K_{G_{i}}$ to see that $-3K_{X}+kG$ defines a birational map for any $k \geq 3n+2$. 
-	
-	Suppose instead that $\dim Z=2$, so $G$ is a conic bundle. Choose a general $H'\sim H$ on $Z$ and let $G'$ be its pullback. Consider $A_{k}=(-K_{X}+kG)|_{G'}=(-k_{G'}+(k-1)dF)$ for $d \geq 1$, where $F$ is the general fibre of $G'\to H'$. Then $A$ is ample for $k >n$ and is Cartier since $G$ is smooth. In particular by the Fujita conjecture for smooth surfaces \cite[Corollary 2.5]{terakawa1999d}, $k_{G'}+4A_{k}$ is very ample. Choosing suitable $k,k'$ we may write $k_{X}+4A_{k}=-3K_{G'}+4(k-1)dF=(-3K_{X}+k'G)|_{G'}$. Consider now
+
+	Suppose instead that $\dim Z=2$, so $G$ is a conic bundle. Choose a general $H'\sim H$ on $Z$ and let $G'$ be its pullback. Consider $A_{k}=(-K_{X}+kG)|_{G'}=(-k_{G'}+(k-1)dF)$ for $d \geq 1$, where $F$ is the general fibre of $G'\to H'$. Then $A_{k}$ is ample for $k >n$ and is Cartier since $G$ is smooth. In particular by the Fujita conjecture for smooth surfaces \cite[Corollary 2.5]{terakawa1999d}, $K_{G'}+4A_{k}$ is very ample. Choosing suitable $k,k'$ we may write $K_{G'}+4A_{k}=-3K_{G'}+4(k-1)dF=(-3K_{X}+k'G)|_{G'}$. Consider now
 	\[0 \to \ox(-3K_{X}+(k'-1)G)\to \ox(-3K_{X}+k'G)\to \mathcal{O}_{G'}(-3K_{G'}+4(k-1)dF) \to 0.\]
 	Again the higher cohomology of $-3K_{X}+(k'-1)G$ vanishes and we may lift sections to $H^{0}(X,\ox(-3K_{X}+k'G))$ from general fibres. In particular $-3K_{X}+k'G$ separates points on a general $G'$ so $-3K_{X}+(k'+1)G$ separates general points and thus defines a birational map. 
-	
+
 	We may then pick some suitably large $t$ for which the result holds as $k,k'$ were chosen independently of $(X,\Delta) \to Z$ and $G,G_{1},G_{2}$.
 \end{proof}
 
 \begin{lemma}
-	There is some constant $C$ with $(-3K_{X}+tG)^{3} \leq C$ for $t$ as given previously and $(X,\Delta)\in S$.
+	Let $(X,\Delta) \to Z,S$ and $G$ be as in \autoref{setup} and $t$ as in \autoref{t-ample}. Then there is some constant $C$ with $(-3K_{X}+tG)^{3} \leq C$ and $(X,\Delta)\in S$.
 \end{lemma}
 
 \begin{proof}
-	The anticanonical volumes $\Vol(X,-K_{X})$ are bounded by some $V$ by \autoref{Main_Bound2} which is proved in the next section.
+	The anticanonical volumes $\Vol(X,-K_{X})$ are bounded by some $V$ by \autoref{Main2} which is proved in the next section.
 	
 	Suppose first $\dim Z=1$. Then $\Vol(G,-K_{G})=(-K_{G})^{2} \leq 9$ and so by Lemma 3.4
 	\[\Vol(X,-3K_{X}+nG) \leq \Vol(X,-3K_{X}) + 3t\Vol(G,-3K_{G})\leq 27(V+9t)\]
 	as required.
-	
+
 	Suppose instead then that $\dim Z=2$. So $G$ is a conic bundle over some $H$ on $Z$ with $H^{2} \leq c$. Hence we get
 	\[\Vol(G,(-3K_{X}+tG)|_{G})= (-3K_{G}+(t+1)H^{2}F)^{2}=9K_{G}^{2}-2(t+1)H^{2}(K_{G}.F)\]
 	where $F$ is a general fibre of $G \to H$. Hence $F$ is a smooth rational curve and $K_{G}.F=-2$ and $\Vol(G,(-3K_{X}+tG)|_{G})\leq 72+4(t+1)c$. Then as before we may apply \autoref{vol} to get 
@@ -639,15 +661,16 @@ First we show that results of this form lift to characterisations of the non-klt
 	and boundedness follows.
 \end{proof}
 
-\begin{proof}[Proof of \autoref{b-setup}]
+\begin{proof}[Proof of \autoref{setup}]
 	Suppose $(X,\Delta) \in S$. Then $A=-3K_{X}+tG$ is birational with bounded volume by the preceding results. Thus $S'$ is birationally bounded by \autoref{l_birationally-bounded}.
-\end{proof}
+	\end{proof}
 
-\section{Weak BAB for Mori Fibre Spaces}
-This section is devoted to providing a bounds on the volume of $-K_{X}$ under suitable conditions. Namely that $X$ belongs to a suitable family of $\epsilon$-LCY Mori fibre spaces whose bases are bounded. We consider the first the case that $X$ is a tame conic bundle over a surface.
+\section{Weak BAB for Mori Fibre Spaces}\label{S-BAB}
+
+This section is devoted to providing a bound on the volume of $-K_{X}$ under suitable conditions. Namely we show that the claim holds if $X$ belongs to a suitable family of $\epsilon$-LCY Mori fibre spaces whose bases are bounded. We consider first the case that $X$ that is a tame conic bundle over a surface.
 
 \begin{theorem}\label{J1}
-	Pick $\epsilon,c >0$. Then there is $V(\epsilon,c)$ such that if $f\colon (X,\Delta) \to S$ is any projective, tame conic bundle over any closed field of characteristic $p> 0$, $(X,\Delta)$ is $\epsilon$-klt and $S$ admits a very ample divisor $H$ with $H^{2} \leq c$, then $\Vol(-K_{X}) \leq V(\epsilon,c)$. 
+	Pick $\epsilon,c >0$. Then there is $V(\epsilon,c)$ such that if $f\colon (X,\Delta) \to S$ is any projective, tame conic bundle over any closed field of characteristic $p> 5$, $(X,\Delta)$ is $\epsilon$-klt and $S$ admits a very ample divisor $H$ with $H^{2} \leq c$, then $\Vol(-K_{X}) \leq V(\epsilon,c)$.
 \end{theorem}
 
 We may further assume that $H$ and $G=f^{-1}H$ are smooth. Moreover $H$ may be taken so that $(G,\Delta|_{G})$ is $\epsilon$-klt also by \autoref{tameAdjunction}.
@@ -660,35 +683,37 @@ If $\Vol(-K_{X})=0$ the result is trivially true, so we may suppose that $-K_{X}
 \begin{proof}
 	Suppose for contradiction $\Vol(-K_{X}|_{G}) >\frac{8(c+2)}{\epsilon}$ and choose $r$ rational with $\Vol(-K_{X}|_{G}) > 4r >\frac{8(c+2)}{\epsilon}$.
 	
-	Write $F$ for the general fibre of $G \to H$. Then $G|_{G}=H^{2}F=kF$ and for divisible $m$ and any $n$ we have the following short exact sequence.
+	Write $F$ for the general fibre of $G \to H$. Then $G|_{G}=H^{2}F=kF$ and for suitably divisible $m$ and any $n$ we have the following short exact sequence.
 	
 	\[0 \to \mathcal{O}_{G}(-mK_{X}|_{G}-nF) \to \mathcal{O}_{G}(-mK_{X}|_{G}-(n-1)F) \to \mathcal{O}_{F}(-mK_{F}) \to 0\]
 	
 	In particular then $h^{0}(G,-mK_{X}|_{G}-nF) \geq h^{0}(G,-mK_{X}|_{G}-(n-1)F)-h^{0}(F,-mK_{F})$.
 	Hence by induction we have $h^{0}(G,-mK_{X}|_{G}-nF) \geq h^{0}(G,-mK_{X}|_{G})-n\cdot h^{0}(F,-mK_{F})$.
 	
-	Note however that, letting $n=mr$ we have $\lim \frac{2}{m^{2}}(h^{0}(G,-mK_{X}|_{G})-n\cdot h^{0}(F,-mK_{F}))= \Vol(-K_{X}|_{G})-2r\Vol(-K_{F}) > 0$ since $F$ is a smooth rational curve. Hence $-mK_{X}|_{G}-mrF$ admits a section for $m$ sufficiently large and divisible. Choose an effective $D\sim_{\mathbb{Q}} -K_{X}|_{G}-rF$.
+	Note however that, letting $n=mr$ we have $$\lim_{m \to \infty} \frac{2}{m^{2}}(h^{0}(G,-mK_{X}|_{G})-n\cdot h^{0}(F,-mK_{F}))= \Vol(-K_{X}|_{G})-2r\Vol(-K_{F}) > 0$$ since $F$ is a smooth rational curve. Hence $-mK_{X}|_{G}-mrF$ admits a section for $m$ sufficiently large and divisible. Choose an effective $D\sim_{\mathbb{Q}} -K_{X}|_{G}-rF$.
 	
 	Consider now \[(G,(1-\frac{k+2}{r})B|_{G}+\frac{k+2}{r}D+F_{1}+F_{2})\]
-	for two general fibres $F_{1}, F_{2}$.
+	 for two general fibres $F_{1}, F_{2}$.
 	This has \begin{align*}
 	&-K_{G}+(1-\frac{k+2}{r})B|_{G}+\frac{k+2}{r}D+F_{1}+F_{2}	\\
 	\sim & -(K_{X}|_{G}+kF)+\frac{k+2}{r})B|_{G}+\frac{k+2}{r}(-K_{X}|_{G}-rF)+F_{1}+F_{2} \\	
 	\sim & -(1-\frac{k+2}{r})(K_{X}+B)|_{G} \\
 	\end{align*}
-	and hence we may apply the weak connectedness lemma, \autoref{WLC}, to see that its non-KLT locus is connected. In particular then there is a non-klt center $W$ dominating $H$. Thus it follows that $(F,(1-\frac{k+2}{r})B|_{F}+\frac{k+2}{r}D|_{F})$ is non-klt. However $(F,(1-\frac{k+2}{r})B|_{F})$ is $\epsilon$-klt so we must have $\deg (\frac{k+2}{r}D|_{F})\geq \epsilon$. Finally since $D|_{F}\sim -K_{X}|_{F}=-K_{F}$ we have $\deg(D|_{F})=2$ and hence $\frac{2(c+2)}{r} \geq \frac{2(k+2)}{r} \geq \epsilon$, contradicting the choice of $r$.
+	and hence we may apply the Connectedness Lemma for surfaces, \autoref{WLC}, to see that its non-klt locus is connected. Note that we have $r> c+2 \geq k+2$ and so as $-(K_{X}+B)$ is ample, this pair satisfies the assumptions of the Connectedness Lemma.
+
+	Since both $F_{1}$ and $F_{2}$ are contained in the non-klt locus, there must be a non-klt center $W$ dominating $H$. Thus it follows that $(F,(1-\frac{k+2}{r})B|_{F}+\frac{k+2}{r}D|_{F})$ is non-klt. However $(F,(1-\frac{k+2}{r})B|_{F})$ is $\epsilon$-klt so we must have $\deg (\frac{k+2}{r}D|_{F})\geq \epsilon$. Finally since $D|_{F}\sim -K_{X}|_{F}=-K_{F}$ we have $\deg(D|_{F})=2$ and hence $\frac{2(c+2)}{r} \geq \frac{2(k+2)}{r} \geq \epsilon$, contradicting the choice of $r$.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{J1}]
 	
 	Take $V(\epsilon,c)=\frac{144(c+2)}{\epsilon^{2}}$ suppose for contradiction that $ \Vol(-K_{X}) > \frac{144(c+2)}{\epsilon^{2}}$. Choose $t$ with $\Vol(-K_{X})> t\cdot\frac{24(c+2)}{\epsilon} > \frac{144(c+2)}{\epsilon^{2}}$ and consider the following short exact sequence.
-	\[0 \to \ox(-mK_{X}-nG)\to \ox(-mK_{X}+(n-1)G)\to \mathcal{O}_{G}(-mK_{X}|_{G}-(n-1)G)\]
+	\[0 \to \ox(-mK_{X}-nG)\to \ox(-mK_{X}+(n-1)G)\to \mathcal{O}_{G}(-mK_{X}|_{G}-(n-1)G) \to 0\]
 	
 	Arguing as before we see that $h^{0}(X,-mK_{X}-tmG)$ grows like $\frac{r}{6}m^{3}$ with $r\geq \Vol(-K_{X})-3t\Vol(-K_{X}|_{G}) >0$ by the previous lemma. In particular we may find $D \sim_{\mathbb{Q}} -K_{X}+tG$.
 	
 	Let $\pi\colon Y \to X$ be a log resolution of $(X, (1-\frac{3}{t})B+\frac{3}{t}D)$. We may write $K_{Y}+\Delta_{Y}+E=\pi^{*}(K_{X}+(1-\frac{3}{t})B+\frac{3}{t}D)$ where $(Y,\Delta_{Y})$ is klt and $E$ is supported on the non-klt places of $(X, (1-\frac{3}{t})B+\frac{3}{t}D)$. 
 	
-	As shown by Tanaka in \cite[Theorem 1]{tanaka2017semiample}, since $|L|=\pi^{*}f^{*}|H|$ is base point free there is some $m$ with $(Y,\Delta_{Y}+\frac{1}{m}(L_{1}+L_{2}+L_{3}))$	 still klt for every choice of $L_{i} \in |L|$. In particular, fixing some $z\in Z$ we may take $H_{i} \in |H|$ meeting $Z$ for $1\leq  i \leq 2m$ such that for any $I \subseteq \{0,1,...,2m\}$ with $|I| =3$ the following hold:
+	As shown by Tanaka in \cite[Theorem 1]{tanaka2017semiample}, since $|L|=\pi^{*}f^{*}|H|$ is base point free there is some $m$ with $(Y,\Delta_{Y}+\frac{1}{m}(L_{1}+L_{2}+L_{3}))$	 still klt for every choice of $L_{i} \in |L|$. In particular, fixing some general $z\in Z$ we may take $H_{i} \in |H|$ meeting $Z$ for $1\leq  i \leq 2m$ such that for any $I \subseteq \{0,1,...,2m\}$ with $|I| =3$ the following hold:
 	
 	\begin{itemize}
 		\item $(Y,\Delta_{Y}+\sum_{i \in I}\frac{1}{m}\pi^{*}f^{*}H_{i})$ is klt;
@@ -696,14 +721,14 @@ If $\Vol(-K_{X})=0$ the result is trivially true, so we may suppose that $-K_{X}
 	\end{itemize} 
 	
 	Thus we must have 
-	\[\nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D))=\nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D+\frac{1}{m}f^{*}H_{i})\]
+	\[\nklt(X,(1-\frac{3}{t})B+\frac{3}{t}D)=\nklt(X, (1-\frac{3}{t})B+\frac{3}{t}D+\frac{1}{m}f^{*}H_{i})\]
 	for each $i$. 
 	
-	Let $G_{1} = \sum_{1}^{2m} \frac{1}{m}H_{i}$, then clearly $\text{mult}_{F}(G_{1}) \geq 2$ and hence $(X,G)$ cannot be klt at $F$. By construction we have
+	Let $F$ be the fibre over $z$ and $G_{1} = \sum_{i=1}^{2m} \frac{1}{m}H_{i}$. Then clearly $\text{mult}_{F}(G_{1}) \geq 2$ and hence $(X,G)$ cannot be klt at $F$. By construction we have
 	
 	\[\nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D)) \cup F = \nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D+G_{1})).\]
 	
-	Similarly we may further take $G_{2} \sim f^{*}(H)$ not containing $F$ such that
+	Similarly we may further take $G_{2} \sim f^{*}H$ not containing $F$ such that
 	\[\nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D)+G_{1}+G_{2}) = \nklt(X, (X, (1-\frac{3}{t})B+\frac{3}{t}D+G_{1})).\]
 	
 	Now $-(K_{X}+(1-\frac{3}{t})B+\frac{3}{t}D+G_{1}+G_{2}) \sim (1-\frac{3}{t})(K_{X}+B)$ is ample, so we may apply \autoref{WLC} to see there is a curve in the non-klt locus of $(X,(1-\frac{3}{t})B+\frac{3}{t}D)$ meeting $F$. In particular then the non-klt locus dominates $S$. Hence we must also have that $(F,(1-\frac{3}{t})B|_{F}+\frac{3}{t}D|_{F})$ is not-klt for the generic fibre $F$, however $(F,B|_{F})$ is $\epsilon$-klt and $F$ is a smooth rational curve. Therefore by degree considerations, since $-K_{X}|_{F} \sim D|_{F}$ we must have $t \leq \frac{6}{\epsilon}$, contradicting our choice of $t$. 
@@ -720,7 +745,7 @@ Though the proof is given for characteristic zero, it is essentially an arithmet
 By applying this result to a general fibre of a Mori fibration over a curve we obtain the desired boundedness result.
 
 \begin{theorem}\label{J2}
-	Pick $\epsilon>0$. Then there is $W(\epsilon)$ such that if $f\colon X \to \mathbb{P}^{1}$ is a terminal Mori fibre space with smooth fibres and $(X,\Delta)$ is $\epsilon$-LCY then $\Vol(-K_{X})\leq W(\epsilon)$.
+	Pick $\epsilon>0$. Suppose that $f\colon X \to \mathbb{P}^{1}$ is a terminal threefold Mori fibre space with smooth generic fibre over a closed field of characteristic $p> 0$. If there is a pair $(X,\Delta)$ which is $\epsilon$-LCY then $\Vol(-K_{X})\leq W(\epsilon)$ for some $W(\epsilon)$ depending only on $\epsilon$.
 \end{theorem}
 
 \begin{proof}
@@ -730,10 +755,10 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 	
 	For any $n$ and for sufficiently divisible $m$, we have the following short exact sequence.
 	
-	\[0 \to \ox (-mK_{X}-nF) \to \ox(-mK_{X}-(n-1)F) \to \mathcal{O}_{F}(-mK_{F}).\]
+	\[0 \to \ox (-mK_{X}-nF) \to \ox(-mK_{X}-(n-1)F) \to \mathcal{O}_{F}(-mK_{F})\to 0.\]
 	
 	This gives $h^{0}(X,-mK_{X}-nF) \geq h^{0}(X,-mK_{X})-nh^{0}(F,-mK_{F})$ and subsequently 
-	\[\lim \frac{6}{m^{3}}(h^{0}(X,-mK_{X})-smh^{0}(F,-mK_{F})= \Vol(-K_{X})-3s\Vol(-K_{F}).\] Since $F$ is a smooth del Pezzo surface we have $\Vol(-K_{F})\leq 9$.  So by construction $-mK_{X}-smF$ is effective for large, divisible $m$. 
+	\[\lim_{m \to \infty} \frac{6}{m^{3}}(h^{0}(X,-mK_{X})-smh^{0}(F,-mK_{F})= \Vol(-K_{X})-3s\Vol(-K_{F}).\] Since $F$ is a smooth del Pezzo surface we have $\Vol(-K_{F})\leq 9$.  So by construction $-mK_{X}-smF$ is effective for large, divisible $m$.
 	
 	Choose $D\geq 0$ with $D \sim_{\mathbb{Q}} -K_{X}-sF$ and consider $(X,\frac{t(\epsilon)+2}{s}D+F_{1}+F_{2})$ for $F_{1},F_{2}$ general fibres. By construction we have
 	
@@ -745,8 +770,9 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 	Then \autoref{WLC} gives that the non-klt locus is connected, and clearly contains $F_{1},F_{2}$, so it must contain a non-klt center $W$ which dominates $\mathbb{P}^{1}$. Thus it must be that $(F,\frac{t+2}{s}D|_{F})$ is not klt. However $F$ is smooth, and equivalently terminal, with $-K_{F}\sim D|_{F}$ ample, so by \autoref{aj} it follows that $\frac{t(\epsilon)+2}{s} \geq lct(F,0;D|_{F}) \geq \mu=\mu(1)$. Thus we have $s \leq \frac{t(\epsilon)+2}{\mu}$ contradicting our choice of $s$ and proving the result.
 \end{proof}
 
+\section{Birational Boundedness}\label{S-res}
 
-\section{Birational Boundedness}
+We are now ready to prove the main theorems using the results of the previous sections.
 
 \begin{lemma}\label{S1}
 	Suppose that $(X,\Delta)$ is an $\epsilon$-klt LCY pair in characteristic $p>5$, with $\Delta \neq 0$ and $X$ both rationally chain connected and $F$-split. Then there is a birational map $\pi\colon X \dashrightarrow X'$ such that $X'$ has a Mori fibre space structure $X' \to Z$ and $\Delta'=\pi_{*}\Delta$ on $X'$ making $(X',\Delta')$ klt and LCY. Further both $X'$ and $Z$ are rationally chain connected and $F$-split and if $X$ is terminal, so is $X'$.
@@ -768,10 +794,17 @@ By applying this result to a general fibre of a Mori fibration over a curve we o
 %DIF < Then there is a set $S'_{\delta,\epsilon}$, bounded over $\text{Spec}(\mathbb{Z})$ such that any $X\in S_{\delta,\epsilon}$ is either birational to a member of $S'_{\delta,\epsilon}$ or to some $X'\in S_{\delta,\epsilon}$, Fano with Picard number $1$.
 %DIF < \end{reptheorem}
 
-\begin{proof}[Proof of \autoref{Main_Bound}]
-	Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. Further if $Z$ is a surface then $(X',\Delta')\to Z$ is a tame conic bundle. In particular it admits $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY by \autoref{cbf}. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$. 
-	
-	Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{b-setup} this is bounded.	
+
+	\begin{proof}[Proof of \autoref{Main_Bound}]
+		Take any $(X,\Delta)\in S$ and replace it by a Mori fibre space $(X',\Delta') \to Z$ by \autoref{S1}. Then $Z$ is $F$-split and rationally chain connected. If $Z$ is a surface then $p>\frac{2}{\delta}$ ensures that $(X',\Delta')\to Z$ is a tame conic bundle by \autoref{S2}. In particular $Z$ admits a boundary $\Delta_{Z}$ such that $(Z,\Delta_{Z})$ is $\epsilon$-LCY by \autoref{cbf}. Hence by BAB for surfaces, \autoref{SBAB}, there is $|A|$ a very ample linear system on $Z$ with $A^{2}\leq c$ for some $c$ independent of $X,\Delta,Z$.
+
+		On the other hand, if $Z$ is a curve then it is a smooth rational curve and $p>7$ gives that the general fibre of $X \to Z$ is smooth by \autoref{smoothness}. Let then $S'_{\delta,\epsilon,V}$ be set of such Mori fibre space $(X',\Delta') \to Z$ with $Z$ not a point and $\Vol(-K_{X})\leq V(\epsilon,c)$. By \autoref{setup} this is birationally bounded.
+	\end{proof}
+
+
+\begin{proof}[Proof of \autoref{Main_Bound2}]
+		Take $(X,\Delta) \in T_{\delta,\epsilon}$ and let $X \to Z$ be the associated Mori Fibre Space structure. If $Z$ is a curve then we conclude that $\Vol(-K_{X})$ is bounded by \autoref{J2} in light of \autoref{smoothness}. If instead $Z$ is a surface then the set of possible such $Z$ is bounded by \autoref{SBAB} and \autoref{cbf} as above. Hence we conclude the claim by \autoref{J1}.
+
 
 	\end{proof}
 
