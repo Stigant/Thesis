@@ -5,7 +5,7 @@
 
 %Official requirements
 \usepackage{setspace} \doublespacing
-
+\usepackage[a-1b]{pdfx}
 
 \usepackage{fancyhdr}   
 
@@ -66,7 +66,7 @@
 \usepackage[shortlabels]{enumitem}
 
 
-\RequirePackage[dvipsnames,usenames]{xcolor}
+%\RequirePackage[dvipsnames,usenames]{xcolor}
 \usepackage{mathtools}
 %\usepackage{showkeys}
 \usepackage[abbrev,alphabetic]{amsrefs}
@@ -149,7 +149,7 @@
 
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
-\newcommand{\C}{\mathcal{C}}
+%\newcommand{\C}{\mathcal{C}}
 \newcommand{\D}{\Delta}
 \newcommand{\Vol}{\text{Vol}}
 \newcommand{\Sing}{\text{Sing}}
@@ -202,42 +202,42 @@
 \newdateformat{monthyeardate}{%
 	\monthname[\THEMONTH], \THEYEAR}
 
-
-%\makeatletter
-%\renewcommand*{\maketitle}{%
-%	\begin{titlepage}
-%		\begin{center}
-%			\vspace*{2.5cm}
-%			
-%			\huge\@title\\
-%			\vspace{1.5cm}
-%			\Large\@author
-%			\vspace{1.5cm}
-%			
-%			\normalsize
-%			A thesis presented for the degree of\\
-%			Doctor of Philosophy
-%			
-%			\vfill
-%			
-%			\normalsize
-%			\monthyeardate\today\\
-%			Supervised by Paolo Cascini\\
-%			\@supervisor
-%			
-%			\vfill
-%
-%			\normalsize
-%			Imperial College London\\
-%			Department of Mathematics
-%			
-%			
-%		\end{center}%
-%	\end{titlepage}%
-%}
-
-
 \usepackage[titles]{tocloft}
+\makeatletter
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{2.5cm}
+			
+			\huge\@title\\
+			\vspace{1.5cm}
+			\Large\@author
+			\vspace{1.5cm}
+			
+			\normalsize
+			A thesis presented for the degree of\\
+			Doctor of Philosophy
+			
+			\vfill
+			
+			\normalsize
+			\monthyeardate\today\\
+			Supervised by Paolo Cascini\\
+			\@supervisor
+			
+			\vfill
+
+			\normalsize
+			Imperial College London\\
+			Department of Mathematics
+			
+			
+		\end{center}%
+	\end{titlepage}%
+}
+\makeatother
+
+
 
 \begin{document}
 	\title{On the Threefold Minimal Model Program in Positive and Mixed Characteristic}
@@ -252,12 +252,19 @@
 	
 	\textbf{Copyright Declaration}
 	
-	The copyright of this thesis rests with the author and is made available under a Creative
-	Commons Attribution Non-Commercial No Derivatives licence.
-	Researchers are free to copy, distribute or transmit the thesis on the condition that
-	they attribute it, that they do not use it for commercial purposes and that they do not
-	alter, transform or build upon it. For any reuse or redistribution, researchers must make
-	clear to others the licence terms of this work.
+	The copyright of this thesis rests with the author. Unless otherwise indicated,
+	its contents are licensed under a Creative Commons Attribution-Non
+	Commercial 4.0 International Licence (CC BY-NC).
+	Under this licence, you may copy and redistribute the material in any medium
+	or format. You may also create and distribute modified versions of the work.
+	This is on the condition that: you credit the author and do not use it, or any
+	derivative works, for a commercial purpose.
+	When reusing or sharing this work, ensure you make the licence terms clear to
+	others by naming the licence and linking to the licence text. Where a work has
+	been adapted, you should indicate that the work has been changed and
+	describe those changes.
+	Please seek permission from the copyright holder for uses of this work that are
+	not included in this licence or permitted under UK Copyright Law.
 	
 	\chapter*{Abstract\markboth{Abstract}}
 		
